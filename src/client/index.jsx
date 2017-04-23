@@ -6,7 +6,7 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { AppContainer } from 'react-hot-loader';
 import reducer from './reducers';
-import App from 'App';
+import App from './App';
 import './style.css';
 
 const middleware = [thunk];
