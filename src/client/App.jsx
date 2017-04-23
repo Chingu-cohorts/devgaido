@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Router } from 'react-router';
+import { Router, Route, Switch } from 'react-router';
 import { createBrowserHistory } from 'history';
 
-import getRoutes from './routes';
+import Home from './pages/Home';
+import Login from './pages/Login';
 
 // Application components
 // TODO: add application components
@@ -10,11 +11,15 @@ import getRoutes from './routes';
 class App extends Component {
   render() {
     return (
-      <Router children={getRoutes()} history={createBrowserHistory()}>
-        <div className="App">
-          <h1>Hello DevGaido World!</h1>
-        </div>
-      </Router>
+      <div>
+        <h1>I AM APP!</h1>
+        <Router history={createBrowserHistory()}>
+          <Switch>
+            <Route path="/" component={Home} />
+            <Route path="/login" component={Login} />
+          </Switch>
+        </Router>
+      </div>
     );
   }
 }
