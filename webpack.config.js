@@ -1,18 +1,26 @@
 const path = require('path');
 const webpack = require('webpack');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-
-const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
-  template: path.join(__dirname, '/src/client/index.html'),
-  filename: 'index.html',
-  inject: 'body',
-});
 
 const config = {
+  devServer: {
+    host: 'localhost',
+    port: '8081',
+    historyApiFallback: true,
+    hot: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
+  },
   entry: [
+    'webpack-dev-server/client?http://localhost:8081',
     'react-hot-loader/patch',
     path.join(__dirname, '/src/client/index.jsx'),
   ],
+  output: {
+    publicPath: 'http://localhost:8081/',
+    path: path.join(__dirname, '/dist/public'),
+    filename: 'client.bundle.js',
+  },
   module: {
     loaders: [
       {
@@ -29,11 +37,10 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
-  output: {
-    filename: 'index.js',
-    path: path.join(__dirname, '/build'),
-  },
-  plugins: [HTMLWebpackPluginConfig],
+  plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 };
 
 

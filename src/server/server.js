@@ -2,10 +2,7 @@ const express = require('express');
 
 const app = express();
 
-const path = require('path');
-
-// app.get('*', handleReactRoutes);
-// app.use(express.static(path.join(__dirname, '../../dist/public')));
+const webRoot = (process.env.NODE_ENV !== 'production') ? 'http://localhost:8081' : '';
 
 const renderPage = reactHTML => `
   <!DOCTYPE html>
@@ -20,6 +17,7 @@ const renderPage = reactHTML => `
     </head>
     <body>
       <div id="root">${reactHTML}</div>
+      <script src="${webRoot}/client.bundle.js"></script>
     </body>
   </html>
   `;
