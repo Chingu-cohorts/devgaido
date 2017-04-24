@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "npm-run-all --parallel dev:server dev:client",
-    "dev:server": "node ./src/server",
+    "dev:server": "webpack --config webpack.server.config.js --display-error-details",
     "dev:client": "webpack-dev-server",
     "start": "NODE_ENV=development webpack-dev-server"
   },
@@ -29,13 +29,15 @@
     "react": "^15.5.4",
     "react-hot-loader": "3.0.0-beta.6",
     "redux-logger": "^3.0.1",
+    "start-server-webpack-plugin": "^2.2.0",
     "style-loader": "^0.16.1",
     "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.4"
+    "webpack-dev-server": "^2.4.4",
+    "webpack-node-externals": "^1.5.4"
   },
   "dependencies": {
     "express": "^4.15.2",
-    "history": "^4.6.1",    
+    "history": "^4.6.1",
     "prop-types": "^15.5.8",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",

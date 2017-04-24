@@ -1,5 +1,5 @@
-const http = require('http');
-const app = require('./server');
+import http from 'http';
+import app from './server';
 
 const PORT = process.env.PORT || 8080;
 
