@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server",
+    "dev:server": "node ./src/server",
     "start": "NODE_ENV=development webpack-dev-server"
   },
   "devDependencies": {
@@ -32,10 +33,13 @@
     "webpack-dev-server": "^2.4.4"
   },
   "dependencies": {
+    "express": "^4.15.2",
     "history": "^4.6.1",
+    "npm-run-all": "^4.0.2",
     "prop-types": "^15.5.8",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
+    "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0"
