@@ -10,7 +10,7 @@ import Footer from './pages/shared/Footer';
 class App extends Component {
   render() {
     const Router = this.props.router;
-    const routerProps = { ...this.props.routerProps };
+    const routerProps = this.props.routerProps;
     const routes = this.props.routes;
 
     return (

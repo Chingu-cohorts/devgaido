@@ -1,11 +1,8 @@
 import React, { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
-import { StaticRouter, matchPath, Switch, Route } from 'react-router';
+import { StaticRouter, matchPath, Route } from 'react-router';
 
 import App from '../client/App';
-
-import Header from '../client/pages/shared/Header';
-import Footer from '../client/pages/shared/Footer';
 
 import routes from '../client/routes';
 
@@ -34,7 +31,11 @@ const initialView = (req, match) => {
     path: match.path, exact: match.exact, component: match.component,
   });
   return renderToString(
-    <App router={StaticRouter} routerProps={{ context: {}, location: match.path }} routes={route} />,
+    <App
+      router={StaticRouter}
+      routerProps={{ context: {}, location: match.path }}
+      routes={route}
+    />,
   );
 };
 
