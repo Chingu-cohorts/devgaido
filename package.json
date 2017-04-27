@@ -38,6 +38,7 @@
   "dependencies": {
     "express": "^4.15.2",
     "history": "^4.6.1",
+    "json-loader": "^0.5.4",
     "prop-types": "^15.5.8",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
