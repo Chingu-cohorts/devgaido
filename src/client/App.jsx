@@ -1,34 +1,41 @@
-import React, { Component, createElement } from 'react';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
+import React, { Component } from 'react';
+import { Switch } from 'react-router';
+import PropTypes from 'prop-types';
 
-import routes from './routes';
+import Header from './pages/shared/Header';
+import Footer from './pages/shared/Footer';
 
 // Application components
-// TODO: add application components
 
 class App extends Component {
   render() {
-    const routeComponents = routes.map(({ path, exact, component }, index) => (
-      createElement(Route, { path, exact, component, key: index })
-    ));
+    const Router = this.props.router;
+    const routerProps = this.props.routerProps;
+    const routes = this.props.routes;
+
     return (
       <div>
-        <h1>I AM APP!</h1>
-        <BrowserRouter history={createBrowserHistory()}>
+        <Router {...routerProps}>
           <div>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/login">Login</Link></li>
-            </ul>
+            <Header />
             <Switch>
-              {routeComponents}
+              {routes}
             </Switch>
+            <Footer />
           </div>
-        </BrowserRouter>
+        </Router>
       </div>
     );
   }
 }
+
+App.propTypes = {
+  router: PropTypes.func.isRequired,
+  routerProps: PropTypes.objectOf(PropTypes.shape).isRequired,
+  routes: PropTypes.oneOfType([
+    PropTypes.objectOf(PropTypes.shape),
+    PropTypes.arrayOf(PropTypes.objectOf((PropTypes.shape))),
+  ]).isRequired,
+};
 
 export default App;

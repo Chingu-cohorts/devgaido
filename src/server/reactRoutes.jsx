@@ -1,9 +1,9 @@
 import React, { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
-import { StaticRouter, matchPath, Switch, Route } from 'react-router';
-import { Link } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { AppContainer } from 'react-hot-loader';
+import { StaticRouter, matchPath, Route } from 'react-router';
+
+import App from '../client/App';
+
 import routes from '../client/routes';
 
 const webRoot = (process.env.NODE_ENV !== 'production') ? 'http://localhost:8081' : '';
@@ -26,28 +26,18 @@ const renderPage = reactHTML => `
   </html>
   `;
 
-const initialView = (req, match) => renderToString(
-  <AppContainer>
-    <Provider store={{}}>
-      <div>
-        <h1>I AM APP!</h1>
-        <StaticRouter context={{}} location={match.path}>
-          <div>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/login">Login</Link></li>
-            </ul>
-            <Switch>
-              {createElement(Route, {
-                path: match.path, exact: match.exact, component: match.component,
-              })}
-            </Switch>
-          </div>
-        </StaticRouter>
-      </div>
-    </Provider>
-  </AppContainer>,
-);
+const initialView = (req, match) => {
+  const route = createElement(Route, {
+    path: match.path, exact: match.exact, component: match.component,
+  });
+  return renderToString(
+    <App
+      router={StaticRouter}
+      routerProps={{ context: {}, location: match.path }}
+      routes={route}
+    />,
+  );
+};
 
 export default (req, res, next) => {
   let match = null;
