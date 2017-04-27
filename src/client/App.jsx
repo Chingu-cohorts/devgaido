@@ -7,6 +7,14 @@ import Footer from './pages/shared/Footer';
 
 // Application components
 
+// TODO: Make it so, that this would work in index.jsx:
+/*      ...
+        <Component routes={routeComponents}>
+          <BrowserRouter history={createBrowserHistory()} />
+        </Component>
+        ...
+*/
+
 class App extends Component {
   render() {
     const Router = this.props.router;
