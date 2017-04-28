@@ -22,17 +22,19 @@ class App extends Component {
     const routes = this.props.routes;
 
     return (
-      <div>
-        <Router {...routerProps}>
-          <div>
-            <Header />
-            <Switch>
-              {routes}
-            </Switch>
-            <Footer />
-          </div>
-        </Router>
-      </div>
+      <Router {...routerProps}>
+        <div className="App">
+          <Header />
+          <main>
+            <div className="main">
+              <Switch>
+                {routes}
+              </Switch>
+            </div>
+          </main>
+          <Footer />
+        </div>
+      </Router>
     );
   }
 }

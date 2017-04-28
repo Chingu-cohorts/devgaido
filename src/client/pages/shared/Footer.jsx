@@ -1,10 +1,12 @@
 import React from 'react';
 
 const Footer = () =>
-   (
-     <footer>
-       <h1>I AM FOOTER, DAMMIT!</h1>
-     </footer>
-    );
+  (
+    <footer>
+      <div className="constrained">
+        <h1>I AM FOOTER, DAMMIT!</h1>
+      </div>
+    </footer>
+  );
 
 export default Footer;

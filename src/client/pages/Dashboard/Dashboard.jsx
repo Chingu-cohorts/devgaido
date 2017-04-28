@@ -38,7 +38,7 @@ const Dashboard = () => {
   return (
     <div>
       <h1>Do a dash! You look dashing today, hun!</h1>
-      <div className="clearfix">
+      <div className="learningPathContainer">
         <ul className="learningPath">
           {items}
         </ul>
