@@ -11,7 +11,7 @@ const CourseCatalog = () =>
      <div>
        <h1>DevGaido Course Catalog</h1>
        <p>Feel free to browse through our course catalog to see what we have to offer.</p>
-       <p>I&quote;m interested in seeing lessons about...</p>
+       <p>I&quot;m interested in seeing lessons about...</p>
        <div className="centeredContent">
          <button className="buttonPill" type="button" onClick={handleRegisterClick} >Javascript</button>
          <button className="buttonPill" type="button" onClick={handleRegisterClick} >HTML</button>
