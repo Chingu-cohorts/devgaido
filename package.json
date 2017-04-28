@@ -49,6 +49,7 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
+    "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1"
   }
 }
