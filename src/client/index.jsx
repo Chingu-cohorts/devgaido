@@ -10,7 +10,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import reducer from './reducers';
 import App from './App';
-import './style.css';
+// import './style.css';
+import './stylus/style.styl';
 import routes from './routes';
 
 

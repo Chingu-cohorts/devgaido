@@ -1,0 +1,101 @@
+colBackground = #FFF
+colBackgroundAccent = #E8EAF7
+colPrimary = #3F51B5
+colSecondary = #3CC688
+colText = rgba(0,0,0,0.84)
+colTextInverted = white
+
+constraintWidth = 980px
+footerHeight = 80px
+
+@import '../../../node_modules/normalize.css'
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700')
+@import '_base'
+@import '_typography'
+@import '_input'
+
+body
+  font-family "Open Sans"
+  color colText
+  background colBackgroundAccent
+
+.App
+  display flex
+  flex-direction column
+  min-height 100vh
+
+header, footer
+  background colBackground
+
+header
+  box-shadow 4px 4px 4px rgba(0,0,0,0.1)
+a
+  text-decoration none
+
+.constrained
+  lost-center constraintWidth
+  display flex
+
+.logoText
+  align-self center
+  flex 1
+  font-weight bold
+  font-size 2em
+  span:first-child
+    color colPrimary
+  span
+    color colSecondary
+nav
+  align-self center
+  ul
+    margin 0
+    li
+      display inline-block
+      margin-right 10px
+      a
+        color colPrimary
+        font-weight bold
+        &:hover
+          color colSecondary
+
+.navItemActive
+  box-shadow 0px 4px colSecondary
+
+main
+  flex 1
+
+.main
+  lost-center constraintWidth
+  background colBackground
+  border-radius 15px
+  margin-top 20px
+  margin-bottom 20px
+  padding 10px
+  box-shadow 14px 7px 21px rgba(0,0,0,0.1)
+
+button
+  border none
+  color colTextInverted
+
+.buttonPill
+  background colPrimary
+  border none
+  font-weight 300
+  font-size: 2.2rem
+  padding 10px 30px
+  border-radius 99999px
+
+.centeredContent
+  text-align center
+
+.inputWrapper
+  padding 10px
+
+.learningPathContainer
+  lost-center 980px
+
+.learningPath
+  lost-column 1/3
+
+.learningPathItemDetails
+  lost-column 2/3

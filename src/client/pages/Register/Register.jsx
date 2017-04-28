@@ -17,28 +17,28 @@ const Register = () => {
   // const { errors } = this.state;
   return (
     <div>
-      <div>
+      <div className="inputWrapper">
         <label htmlFor="Email">Email</label>
         <input type="email" id="email" name="email" onChange={handleChange} />
         {errors.email ? errors.email : null}
       </div>
-      <div>
+      <div className="inputWrapper">
         <label htmlFor="username">Username</label>
         <input id="username" name="username" type="text" onChange={handleChange} />
         {errors.username ? errors.username : null}
       </div>
-      <div>
+      <div className="inputWrapper">
         <label htmlFor="password">Password</label>
         <input id="password" name="password" type="password" onChange={handleChange} />
         {errors.password ? errors.password : null}
       </div>
-      <div>
+      <div className="inputWrapper">
         <label htmlFor="password_confirmation">Password</label>
         <input id="password_confirmation" name="password_confirmation" type="password" onChange={handleChange} />
         {errors.password_confirmation ? errors.password_confirmation : null}
       </div>
-      <div>
-        <button type="button" onClick={handleSubmitClick} >Login</button>
+      <div className="centeredContent">
+        <button className="buttonPill centered" type="button" onClick={handleSubmitClick} >Login</button>
       </div>
     </div>);
 };

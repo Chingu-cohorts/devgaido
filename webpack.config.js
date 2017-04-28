@@ -33,6 +33,10 @@ const config = {
         loader: 'style-loader!css-loader',
       },
       {
+        test: /\.styl$/,
+        loader: ['style-loader', 'css-loader', 'postcss-loader', 'stylus-loader'],
+      },
+      {
         test: /\.json$/,
         loader: 'json-loader',
       },

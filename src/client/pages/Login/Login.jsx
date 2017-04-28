@@ -17,18 +17,18 @@ const Login = () => {
   // const { errors } = this.state;
   return (
     <div>
-      <div>
+      <div className="inputWrapper">
         <label htmlFor="email">Email</label>
         <input id="email" name="email" type="text" onChange={handleChange} />
         {errors.email ? errors.email : null}
       </div>
-      <div>
+      <div className="inputWrapper">
         <label htmlFor="password">Password</label>
         <input id="password" name="password" type="password" onChange={handleChange} />
         {errors.password ? errors.password : null}
       </div>
-      <div>
-        <button type="button" onClick={handleSubmitClick} >Login</button>
+      <div className="centeredContent">
+        <button className="buttonPill" type="button" onClick={handleSubmitClick} >Login</button>
       </div>
     </div>);
 };
