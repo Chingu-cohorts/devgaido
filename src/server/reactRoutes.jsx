@@ -8,13 +8,6 @@ import routes from '../client/routes';
 
 const webRoot = (process.env.NODE_ENV !== 'production') ? 'http://localhost:8081' : '';
 
-let store = {
-  user: {
-    name: '',
-    authenticated: false,
-  },
-};
-
 const renderPage = (reactHTML, initialStore) => `
   <!DOCTYPE html>
   <html lang="en_US">
@@ -55,18 +48,14 @@ export default (req, res, next) => {
       match = { ...tmp, component: route.component };
     }
   });
-  
+
   if (!match) {
     next();
   } else {
-    if (req.user) {
-      console.log('we got a badass here!');
-      const user = {
-        name: req.user.username,
-        authenticated: true,
-      };
-      store = { user };
-    }
+    const user = req.user ? { name: req.user.username, authenticated: true }
+                          : { name: '', authenticated: false };
+    const store = { user };
+    
     res.set('Content-Type', 'text/html')
     .status(200)
     .end(renderPage(initialView(req, match), store));
