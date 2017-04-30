@@ -8,7 +8,14 @@ import routes from '../client/routes';
 
 const webRoot = (process.env.NODE_ENV !== 'production') ? 'http://localhost:8081' : '';
 
-const renderPage = reactHTML => `
+let store = {
+  user: {
+    name: '',
+    authenticated: false,
+  },
+};
+
+const renderPage = (reactHTML, initialStore) => `
   <!DOCTYPE html>
   <html lang="en_US">
     <head>
@@ -21,6 +28,7 @@ const renderPage = reactHTML => `
     </head>
     <body>
       <div id="root">${reactHTML}</div>
+      <script>window.__INITIAL_STORE__ = ${JSON.stringify(initialStore).replace(/</g, '\\u003c')};</script>
       <script src="${webRoot}/client.bundle.js"></script>      
     </body>
   </html>
@@ -47,12 +55,20 @@ export default (req, res, next) => {
       match = { ...tmp, component: route.component };
     }
   });
-
+  
   if (!match) {
     next();
   } else {
+    if (req.user) {
+      console.log('we got a badass here!');
+      const user = {
+        name: req.user.username,
+        authenticated: true,
+      };
+      store = { user };
+    }
     res.set('Content-Type', 'text/html')
     .status(200)
-    .end(renderPage(initialView(req, match)));
+    .end(renderPage(initialView(req, match), store));
   }
 };

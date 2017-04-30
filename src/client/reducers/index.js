@@ -1,10 +1,4 @@
 import { combineReducers } from 'redux';
+import user from './userReducer';
 
-const selection = (state = 0, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
-
-export default combineReducers({ selection });
+export default combineReducers({ user });

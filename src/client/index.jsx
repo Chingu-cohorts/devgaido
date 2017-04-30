@@ -1,3 +1,5 @@
+/* global window */
+/* eslint-disable no-underscore-dangle */
 import React, { createElement } from 'react';
 import { render } from 'react-dom';
 import { Route } from 'react-router';
@@ -14,17 +16,26 @@ import App from './App';
 import './stylus/style.styl';
 import routes from './routes';
 
+const getInitialStore = () => {
+  let initialStore = {};
+
+  if (window.__INITIAL_STORE__) {
+    initialStore = { ...window.__INITIAL_STORE__ };
+  }
+  delete window.__INITIAL_STORE__;
+  return initialStore;
+};
 
 const middleware = [thunk];
 if (process.env.NODE_ENV !== 'production') middleware.push(logger);
 
-const store = createStore(reducer, applyMiddleware(...middleware));
+const store = createStore(reducer, getInitialStore(), applyMiddleware(...middleware));
 const root = document.getElementById('root');
 
 const routeComponents = routes.map(({ path, exact, component }, index) => (
       createElement(Route, { path, exact, component, key: index })
     ));
-
+console.log('STORE.GETSTATE:', store.getState());
 const hotRender = (Component) => {
   render(
     <AppContainer>
