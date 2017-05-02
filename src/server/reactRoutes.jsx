@@ -1,6 +1,6 @@
-import React, { createElement } from 'react';
+import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { StaticRouter, matchPath, Route } from 'react-router';
+import { StaticRouter, matchPath } from 'react-router';
 
 import App from '../client/App';
 
@@ -26,19 +26,13 @@ const renderPage = (reactHTML, initialStore) => `
     </body>
   </html>
   `;
-
-const initialView = (req, match) => {
-  const route = createElement(Route, {
-    path: match.path, exact: match.exact, component: match.component,
-  });
-  return renderToString(
-    <App
-      router={StaticRouter}
-      routerProps={{ context: {}, location: match.path }}
-      routes={route}
-    />,
+// We need to provide the serverMatch prop to <App /> since we are on the server side
+// and can only render a single route with StaticRouter (Switch is not working like on client side)
+const initialView = (req, match) => renderToString(
+  <StaticRouter context={{}} location={match.path}>
+    <App serverMatch={match} />
+  </StaticRouter>,
   );
-};
 
 export default (req, res, next) => {
   let match = null;
@@ -55,7 +49,7 @@ export default (req, res, next) => {
     const user = req.user ? { name: req.user.username, authenticated: true }
                           : { name: '', authenticated: false };
     const store = { user };
-    
+
     res.set('Content-Type', 'text/html')
     .status(200)
     .end(renderPage(initialView(req, match), store));

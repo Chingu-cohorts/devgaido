@@ -1,8 +1,6 @@
-/* global window */
 /* eslint-disable no-underscore-dangle */
-import React, { createElement } from 'react';
-import { render } from 'react-dom';
-import { Route } from 'react-router';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
@@ -12,9 +10,9 @@ import { BrowserRouter } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import reducer from './reducers';
 import App from './App';
+
 // import './style.css';
 import './stylus/style.styl';
-import routes from './routes';
 
 const getInitialStore = () => {
   let initialStore = {};
@@ -30,27 +28,21 @@ const middleware = [thunk];
 if (process.env.NODE_ENV !== 'production') middleware.push(logger);
 
 const store = createStore(reducer, getInitialStore(), applyMiddleware(...middleware));
-const root = document.getElementById('root');
 
-const routeComponents = routes.map(({ path, exact, component }, index) => (
-      createElement(Route, { path, exact, component, key: index })
-    ));
 console.log('STORE.GETSTATE:', store.getState());
-const hotRender = (Component) => {
-  render(
+const render = (Component) => {
+  ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
-        <Component
-          router={BrowserRouter}
-          routerProps={{ history: createBrowserHistory() }}
-          routes={routeComponents}
-        />
+        <BrowserRouter history={createBrowserHistory()}>
+          <Component />
+        </BrowserRouter>
       </Provider>
     </AppContainer>,
-  root,
+  document.getElementById('root'),
   );
 };
 
-hotRender(App);
+render(App);
 
-if (module.hot) module.hot.accept('./App', () => hotRender(App));
+if (module.hot) module.hot.accept('./App', () => render(App));

@@ -1,51 +1,45 @@
-import React, { Component } from 'react';
-import { Switch } from 'react-router';
+import React, { createElement } from 'react';
+import { Switch, Route } from 'react-router';
 import PropTypes from 'prop-types';
 
 import Header from './pages/shared/Header';
 import Footer from './pages/shared/Footer';
 
-// Application components
+import routesArr from './routes';
 
-// TODO: Make it so, that this would work in index.jsx:
-/*      ...
-        <Component routes={routeComponents}>
-          <BrowserRouter history={createBrowserHistory()} />
-        </Component>
-        ...
-*/
+const App = (props) => {
+// If <App /> is rendered on the server we need to provide the serverMatch prop
+// since StaticRouter can only render a single Route (Switch only works on client side).
+// On the client though, just return all routes and let Switch do the work.
 
-class App extends Component {
-  render() {
-    const Router = this.props.router;
-    const routerProps = this.props.routerProps;
-    const routes = this.props.routes;
+  const match = props.serverMatch;
 
-    return (
-      <Router {...routerProps}>
-        <div className="App">
-          <Header />
-          <main>
-            <div className="main">
-              <Switch>
-                {routes}
-              </Switch>
-            </div>
-          </main>
-          <Footer />
+  const routes = !match ? routesArr.map(({ path, exact, component }, index) => (
+      createElement(Route, { path, exact, component, key: index })
+    )) : createElement(Route, {
+      path: match.path, exact: match.exact, component: match.component,
+    });
+
+  return (
+    <div className="App">
+      <Header />
+      <main>
+        <div className="main">
+          <Switch>
+            {routes}
+          </Switch>
         </div>
-      </Router>
-    );
-  }
-}
+      </main>
+      <Footer />
+    </div>);
+};
 
 App.propTypes = {
-  router: PropTypes.func.isRequired,
-  routerProps: PropTypes.objectOf(PropTypes.shape).isRequired,
-  routes: PropTypes.oneOfType([
-    PropTypes.objectOf(PropTypes.shape),
-    PropTypes.arrayOf(PropTypes.objectOf((PropTypes.shape))),
-  ]).isRequired,
+  serverMatch: PropTypes.objectOf(PropTypes.shape),
+};
+
+App.defaultProps = {
+  serverMatch: null,
 };
 
 export default App;
