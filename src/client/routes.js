@@ -1,6 +1,8 @@
 import Home from './pages/Home/Home';
 import CourseCatalog from './pages/CourseCatalog/CourseCatalog';
 import Login from './pages/Login/Login';
+import RequestResetPassword from './pages/Login/RequestResetPassword';
+import SetNewPassword from './pages/Login/SetNewPassword';
 import Register from './pages/Register/Register';
 import Dashboard from './pages/Dashboard/Dashboard';
 
@@ -14,6 +16,16 @@ const routes = [
     path: '/login',
     exact: true,
     component: Login,
+  },
+  {
+    path: '/requestresetpassword',
+    exact: true,
+    component: RequestResetPassword,
+  },
+  {
+    path: '/setnewpassword',
+    exact: true,
+    component: SetNewPassword,
   },
   {
     path: '/register',

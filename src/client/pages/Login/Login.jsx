@@ -1,21 +1,28 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
+import { connect } from 'react-redux';
+import { loginTestUser } from '../../actions/userActions';
 
 const errors = {
-  email: 'NO EMAIL, RETARD!',
-  password: 'WTH, DO YOU KNOW WHAT A PASSWORD IS?',
+  email: 'No email entered',
+  password: 'No password entered',
 };
 
 const handleChange = () => {
   console.log('CHANGE BABY');
 };
 
-const handleSubmitClick = () => {
-  console.log('CLICK BABY');
+const handleSubmitClick = (dispatch) => {
+  dispatch(loginTestUser({
+    name: 'TESTUSER',
+    authenticated: true,
+  }));
+  // TODO: ADD A MEANS OF REDIRECTING TO THE DASHBOARD
 };
 
-const Login = () => {
-  // const { errors } = this.state;
-  return (
+const Login = props =>
+  (
     <div>
       <div className="inputWrapper">
         <label htmlFor="email">Email</label>
@@ -28,9 +35,13 @@ const Login = () => {
         {errors.password ? errors.password : null}
       </div>
       <div className="centeredContent">
-        <button className="buttonPill" type="button" onClick={handleSubmitClick} >Login</button>
+        <button className="buttonPill" type="button" onClick={() => handleSubmitClick(props.dispatch)} >Login</button>
+        <NavLink to="/requestresetpassword" className="buttonPill">I forgot my password</NavLink>
+        <a href="/auth/github" className="buttonPill">Sign in with Github</a>
       </div>
     </div>);
-};
 
-export default Login;
+// TODO: Have only container component have access to store and maybe pass down as props?
+const mapStateToProps = state => state.user;
+
+export default connect(mapStateToProps)(Login);

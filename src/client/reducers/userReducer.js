@@ -3,6 +3,8 @@ const user = (state = {
   authenticated: false,
 }, action) => {
   switch (action.type) {
+    case 'TEST_LOGIN':
+      return action.user;
     default:
       return state;
   }

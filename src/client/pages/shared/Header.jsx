@@ -5,15 +5,12 @@ const Header = () =>
   (
     <header>
       <div className="constrained">
-        <div className="logoText"><span>dev</span><span>Gaido</span></div>
+        <NavLink to="/" exact>
+          <div className="logoText"><span>dev</span><span>Gaido</span></div>
+        </NavLink>
         <nav>
           <ul>
-            <li><NavLink to="/" exact activeClassName="navItemActive">Home</NavLink></li>
             <li><NavLink to="/login" activeClassName="navItemActive">Login</NavLink></li>
-            <li><NavLink to="/register" activeClassName="navItemActive">Register</NavLink></li>
-            <li><a href="/auth/github">Sign in with Github</a></li>
-            <li><NavLink to="/courses" activeClassName="navItemActive">Course Catalog</NavLink></li>
-            <li><NavLink to="/dashboard" activeClassName="navItemActive">Dashboard</NavLink></li>
           </ul>
         </nav>
       </div>
