@@ -11,8 +11,7 @@ import { createBrowserHistory } from 'history';
 import reducer from './reducers';
 import App from './App';
 
-// import './style.css';
-import './stylus/style.css';
+import './stylus/style.styl';
 
 const getInitialStore = () => {
   let initialStore = {};

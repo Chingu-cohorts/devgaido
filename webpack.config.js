@@ -29,20 +29,12 @@ const config = {
         loader: 'babel-loader',
       },
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader',
-      },
-      {
         test: /\.styl$/,
         loader: ['style-loader', 'css-loader', 'postcss-loader', 'stylus-loader'],
       },
       {
         test: /\.json$/,
         loader: 'json-loader',
-      },
-      { 
-        test: /\.svg$/, 
-        loader: 'svg-inline-loader', 
       },
     ],
   },

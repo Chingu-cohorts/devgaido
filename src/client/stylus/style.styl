@@ -1,3 +1,6 @@
+@import '../../../node_modules/normalize.css'
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700')
+
 /*--------------------------------------------------------------
 # Color palette
 --------------------------------------------------------------*/
@@ -32,15 +35,16 @@ body {
   background: linear-gradient(135deg, #f6f7fb, #e7eaf6); */
   /* background: #e7eaf6; */
   /* background: #f6f7fb; */
+  margin: 0;
   background-color: #e7eaf6;
-  background-image: url('../img/background.svg');
+  background-image: url('/assets/img/background.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 80%; 
   height: 100vh;
 
   background-position: center;
-  background-repeat: repeat; */
+  background-repeat: repeat;
 }
 
 .body:before {
@@ -600,7 +604,7 @@ a.add i, a.remove i {
 .schedule > div,
 .target > div {
   /* background-color: #e7eaf6; */
-  background-image: url('../img/profile2.svg');
+  background-image: url('/assets/img/profile2.svg');
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -615,11 +619,11 @@ a.add i, a.remove i {
 }
 
 .schedule > div {
-  background-image: url('../img/schedule2.svg');
+  background-image: url('/assets/img/schedule2.svg');
 }
 
 .target > div {
-  background-image: url('../img/target2.svg');
+  background-image: url('/assets/img/target2.svg');
 }
 
 a.edit-image {
@@ -836,7 +840,7 @@ button.inline {
 
 button i {
   background-color: #1a237e;
-  background-image: url('img/arrow-right.svg');
+  background-image: url('/assets/img/arrow-right.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 20px;
@@ -904,7 +908,7 @@ textarea {
 }
 .progress-bar {
   align-items: center;
-  background-image: url('../img/dot.svg') ;
+  background-image: url('/assets/img/dot.svg') ;
   background-position: center;
   background-repeat: repeat-x;
   background-size: 26px ;

@@ -7,10 +7,10 @@
   "author": "Francesco Agnoletto, Kim Kwanka, Jim Medlock, Erik Hos, Oussama Bouguerne",
   "license": "MIT",
   "scripts": {
-    "dev": "npm-run-all --parallel dev:server dev:client",
+    "dev": "yarn run copyassets && npm-run-all --parallel dev:server dev:client",
     "dev:server": "webpack --config webpack.server.config.js --display-error-details",
     "dev:client": "webpack-dev-server",
-    "start": "NODE_ENV=development webpack-dev-server"
+    "copyassets": "rimraf ./dist && mkdirp ./dist/public && ncp ./src/client/assets/ ./dist/public/assets"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -41,7 +41,8 @@
     "express-session": "^1.15.2",
     "history": "^4.6.1",
     "json-loader": "^0.5.4",
-    "lost": "^8.0.0",
+    "mkdirp": "^0.5.1",
+    "ncp": "^2.0.0",
     "normalize.css": "^6.0.0",
     "passport": "^0.3.2",
     "passport-github2": "^0.1.10",
@@ -53,9 +54,9 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
+    "rimraf": "^2.6.1",
     "session-file-store": "^1.0.0",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1",
-    "svg-inline-loader": "^0.7.1"
+    "stylus-loader": "^3.0.1"
   }
 }
