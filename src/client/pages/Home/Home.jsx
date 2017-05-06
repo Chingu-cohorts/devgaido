@@ -22,7 +22,7 @@ include Javascript, HTML, CSS, and popular Javascript libraries such as Angular,
 React, and Vue.</p>
     <h2>Want to See More?</h2>
     <div className="centeredContent">
-      <button className="buttonPill" type="button" onClick={handleShowMeClick} >Show Me the Courses!</button>
+      <button className="inline button-continue" type="button" onClick={handleShowMeClick} ><i></i>&nbsp;&nbsp;Show Me the Courses!</button>
     </div>
   </div>
 );

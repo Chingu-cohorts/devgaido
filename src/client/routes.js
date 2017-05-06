@@ -1,4 +1,5 @@
 import Home from './pages/Home/Home';
+import Profile from './pages/Profile/Profile';
 import CourseCatalog from './pages/CourseCatalog/CourseCatalog';
 import Login from './pages/Login/Login';
 import RequestResetPassword from './pages/Login/RequestResetPassword';
@@ -41,6 +42,11 @@ const routes = [
     path: '/courses',
     exact: true,
     component: CourseCatalog,
+  },
+  {
+    path: '/profile',
+    exact: true,
+    component: Profile,
   },
 ];
 
