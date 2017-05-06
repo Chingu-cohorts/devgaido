@@ -1,4 +1,4 @@
-export default function loginTestUser(user) {
+export function loginTestUser(user) {
   return {
     type: 'TEST_LOGIN',
     user,

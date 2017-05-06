@@ -12,7 +12,7 @@ import reducer from './reducers';
 import App from './App';
 
 // import './style.css';
-import './stylus/style.styl';
+import './stylus/style.css';
 
 const getInitialStore = () => {
   let initialStore = {};

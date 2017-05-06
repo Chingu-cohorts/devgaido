@@ -55,6 +55,7 @@
     "redux-thunk": "^2.2.0",
     "session-file-store": "^1.0.0",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1"
+    "stylus-loader": "^3.0.1",
+    "svg-inline-loader": "^0.7.1"
   }
 }
