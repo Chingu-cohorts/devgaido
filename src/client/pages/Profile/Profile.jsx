@@ -12,7 +12,7 @@ const Profile = () => (
     </div>
     <div className="panel-menu">
       <h1>Welcome back Erik!</h1>
-      
+      <a>test link</a>
       <h2>Your learning path</h2>
       <ul>
         <li className="times"><i className="fa fa-calendar" aria-hidden="true"></i>Schedule</li>
@@ -38,7 +38,10 @@ const Profile = () => (
         </div>
         <div className="form-explanation">
           <h2>Basic user information</h2>
-          <p>Please fill out your profile details</p>
+          <h3 className="original" href="google.com">test link</h3>
+          <h3 className="origDark" href="google.com">test link</h3>
+          <h3 className="newDark" href="google.com">test link</h3>
+        <p>Please fill out your profile details</p>
         </div>
         <form>
           <label className="username">

@@ -5,8 +5,30 @@
 # Color palette
 --------------------------------------------------------------*/
 
+// Color used to mainly for input borders and hint text
+primaryColor=#3f51b5
+primaryColorDark=darken(primaryColor, 25) //#1A237E
+primaryColorLight=lighten(primaryColor, 25) //#9EA8DB
+secondaryColor=#3CC688
+secondaryColorDark=darken(secondaryColor, 25) //#00BC67 
+secondaryColorLight=lighten(secondaryColor, 25) //#C9F0DB
+tertiaryColor=#e7eaf6
+textColor=#222e3e
+textColorSubdued=#afb9bb
+paleWhite=#f6f7fb
+linkColor=lighten(primaryColor, 15) //#26a3dd
+linkHoverColor=primaryColor //#26a3dd
+codeColor=primaryColor //#264880
 
+// TODO: Remove after testing
+.original
+  color: secondaryColor
 
+.origDark
+  color: #C9F0DB
+
+.newDark
+  color: secondaryColorLight
 
 /*--------------------------------------------------------------
 # General
@@ -21,7 +43,7 @@ html {
 
 html, body {
   /* background: #2f3187; */
-  color: #222e3e;
+  color: textColor;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -29,14 +51,14 @@ html, body {
 
 body {
   /* background: linear-gradient(135deg, #2f3187, #20aadd); */
-/*  background: #f6f7fb;
-  background: #e7eaf6;
+  /*  background: paleWhite;
+  background: tertiaryColor;
   background: linear-gradient(135deg, #86edbb, #138ac5);
-  background: linear-gradient(135deg, #f6f7fb, #e7eaf6); */
-  /* background: #e7eaf6; */
-  /* background: #f6f7fb; */
+  background: linear-gradient(135deg, paleWhite, tertiaryColor); */
+  /* background: tertiaryColor; */
+  /* background: paleWhite; */
   margin: 0;
-  background-color: #e7eaf6;
+  background-color: tertiaryColor;
   background-image: url('/assets/img/background.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -48,7 +70,8 @@ body {
 }
 
 .body:before {
-  background: #f6f7fb;
+  // TODO: Change background color to use stylus variable
+  background: paleWhite;
   display: block;
   height: 10rem;
 }
@@ -58,7 +81,7 @@ html.full-height {
 }
 
 h1 {
-  color: #3f51b5;
+  color: primaryColor;
   font-size: 0.9rem;
   letter-spacing: 1px;
   margin: 0;
@@ -73,7 +96,7 @@ h2 {
 }
 
 p {
-  color: #afb9bb;
+  color: textColorSubdued;
   font-size: 0.8rem;
   margin: 0;
 }
@@ -122,8 +145,8 @@ p {
 }
 
 .side-panel ul li {
-  border-bottom: 1px solid #f6f7fb;
-  color: #222e3e;
+  border-bottom: 1px solid paleWhite;
+  color: textColor;
   font-size: 0.8rem;
   line-height: 2rem;
   padding: 1rem 2rem;
@@ -134,7 +157,7 @@ p {
 }
 
 .side-panel ul li i {
-  background-color: #3f51b5;
+  background-color: primaryColor;
   border-radius: 50%;
   color: white;
   font-size: 1rem;
@@ -146,8 +169,9 @@ p {
 }
 
 .side-panel ul li.information i {
-  /* background-color: #3f51b5; */
-  color: #00e676;
+  /* background-color: primaryColor; */
+  //color: #00e676;
+  color: secondaryColorDark
 }
 
 .side-panel ul li.times i {
@@ -163,7 +187,7 @@ p {
 }
 
 /* .side-panel ul li:before {
-  background-color: #e7eaf6;
+  background-color: tertiaryColor;
   border-radius: 50%;
   content: "";
   display: block;
@@ -181,7 +205,7 @@ p {
 } */
 
 .panel-links {
-  /* background-color: #3f51b5; */
+  /* background-color: primaryColor; */
   height: 5rem;
 }
 
@@ -206,19 +230,20 @@ p {
 code, code.inverse {
   background: white;
   border-radius: 0.3rem;
-  color: #264880;
+  color: codeColor;
   font-family: 'Bree Serif', serif;
   font-size: 0.9rem;
   padding: 0.1rem 0.4rem 0.3rem 0.4rem;
 }
 
 a {
-  color: #264880;
+  //color: #264880;
+  color: linkColor;
 }
 
 a:hover,
 a:visited {
-  color: #26a3dd;
+  color: linkHoverColor;
 }
 
 
@@ -269,7 +294,7 @@ section {
 --------------------------------------------------------------*/
 
 header {
-  background-color: #3f51b5;
+  background-color: primaryColor;
   background-color: white;
   box-shadow: 0 2px 6px rgba(30, 33, 94, 0.15);
   /* background-image: url('../img/devgaida.svg'); */
@@ -336,7 +361,7 @@ header {
 .objectives .check {
   display: block;
   position: absolute;
-  border: 3px solid #e7eaf6;
+  border: 3px solid tertiaryColor;
   border-radius: 100%;
   height: 18px;
   width: 18px;
@@ -350,7 +375,7 @@ header {
 .objectives .checkmark {
   display: block;
   position: absolute;
-  border: 3px solid #e7eaf6;
+  border: 3px solid tertiaryColor;
   border-radius: 3px;
   height: 18px;
   width: 18px;
@@ -383,7 +408,7 @@ header {
   display: block;
   position: absolute;
   content: '';
-  color: #00bc67;
+  color: secondaryColorDark;
   font-family: FontAwesome;
   font-size: 0.7rem;
     height: 6px;
@@ -397,11 +422,12 @@ header {
 
 input[type=radio]:checked ~ .check,
 input[type=checkbox]:checked ~ .checkmark {
-  border: 3px solid #c8f0db;
+  // TODO: Check substitution of secondary color against original value
+  border: 3px solid secondaryColorLight //#c8f0db;
 }
 
 input[type=radio]:checked ~ .check::before{
-  background: #00bc67;
+  background: secondaryColorDark;
 }
 
 input[type=checkbox]:checked ~ .checkmark::before{
@@ -409,7 +435,8 @@ input[type=checkbox]:checked ~ .checkmark::before{
 }
 
 input[type=radio]:checked ~ label{
-  color: #0DFF92;
+  // TODO: Check substitution of secondary color against original value
+  color: secondaryColor //#0DFF92;
 }
 
 
@@ -421,11 +448,11 @@ table {
   width: 100%;
 }
 tr {
-  border-bottom: 1px solid #f6f7fb;
+  border-bottom: 1px solid paleWhite;
 }
 
 tr.additional {
-  /* background-color: #f6f7fb; */
+  /* background-color: paleWhite; */
 }
 
 .schedule td {
@@ -442,7 +469,7 @@ tr.additional {
   font-size: 0.8rem;
   padding: 0.8rem 0.5rem;
   vertical-align: middle;
-  border-bottom: 1px solid #f6f7fb;
+  border-bottom: 1px solid paleWhite;
 }
 
 .objectives th {
@@ -476,7 +503,7 @@ td.range {
 a.add, a.remove {
   /* background-color: #20aadd;
   background: linear-gradient(135deg, #2f3187, #20aadd); */
-  background-color: #3f51b5;
+  background-color: primaryColor;
   border-radius: 50%;
   color: white;
   display: flex;
@@ -487,7 +514,7 @@ a.add, a.remove {
 }
 
 a.remove {
-  background-color: #1a237e;
+  background-color: primaryColorDark;
 }
 
 a.add i, a.remove i {
@@ -501,11 +528,11 @@ a.add i, a.remove i {
 }
 
 .ui-widget.ui-widget-content {
-  background-color: #f6f7fb;
-  border:  1px solid #f6f7fb;
+  background-color: paleWhite;
+  border:  1px solid paleWhite;
 }
 .ui-widget-header {
-  background-color: #9ea8db ;
+  background-color: primaryColorLight ;
 }
 
 /*--------------------------------------------------------------
@@ -538,7 +565,7 @@ a.add i, a.remove i {
 }
 
 .notation-toggle span {
-  color: #afb9bb;
+  color: textColorSubdued;
   display: inline-block;
   float: left;
   font-size: 0.8rem;
@@ -603,7 +630,7 @@ a.add i, a.remove i {
 .profile-picture > div,
 .schedule > div,
 .target > div {
-  /* background-color: #e7eaf6; */
+  /* background-color: tertiaryColor; */
   background-image: url('/assets/img/profile2.svg');
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -629,7 +656,7 @@ a.add i, a.remove i {
 a.edit-image {
   /* background-color: #20aadd;
   background: linear-gradient(135deg, #2f3187, #20aadd); */
-  background-color: #3f51b5;
+  background-color: primaryColor;
   border-radius: 50%;
   color: white;
   display: flex;
@@ -667,7 +694,7 @@ a.edit-image i {
 }
 
 .form-icon-links a {
-  color: #f6f7fb;
+  color: paleWhite;
   font-size: 1rem;
 }
 
@@ -695,7 +722,7 @@ textarea {
   background-color: white;
   background-image: none;
   border: none;
-  border: 1px solid #e7eaf6;
+  border: 1px solid tertiaryColor;
   border-radius: 0;
   /* box-shadow: 0 0 10px rgba(30, 33, 94, 0.15); */
   /* box-shadow: none; */
@@ -716,7 +743,7 @@ select,
   background-color: white;
   background-image: none;
   border: none;
-  border: 1px solid #f6f7fb;
+  border: 1px solid paleWhite;
   border-radius: 0;
   box-shadow: none;
   font-size: 0.9rem;
@@ -742,8 +769,8 @@ select,
 
 label:before {
   background-color: white;
-  color: #e7eaf6;
-  border: 1px solid #e7eaf6;
+  color: tertiaryColor;
+  border: 1px solid tertiaryColor;
   border-right: none;
   /* box-shadow: 0 0 10px rgba(30, 33, 94, 0.15); */
   display: block;
@@ -805,7 +832,7 @@ button {
 
 input[type="submit"], 
 button {
-  background: #3f51b5;
+  background: primaryColor;
   border: none;
   border-radius: 1.5rem;
   box-shadow: 6px 6px 12px rgba(30, 33, 94, 0.15);
@@ -839,7 +866,7 @@ button.inline {
 }
 
 button i {
-  background-color: #1a237e;
+  background-color: primaryColorDark;
   background-image: url('/assets/img/arrow-right.svg');
   background-position: center;
   background-repeat: no-repeat;
@@ -862,9 +889,10 @@ button i:before {
 
 
 .button-continue {
+  // TODO: Resolve repeated background-color tag
   background-color: #00e676;
-  background-color: #3f51b5;
-  background-color: #3f51b5;
+  background-color: primaryColor;
+  background-color: primaryColor;
 }
 
 textarea {
@@ -878,18 +906,18 @@ textarea {
 
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-  color: #e7eaf6;
+  color: tertiaryColor;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-   color: #e7eaf6;
+   color: tertiaryColor;
    opacity: 1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-   color: #e7eaf6;
+   color: tertiaryColor;
    opacity: 1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: #e7eaf6;
+   color: tertiaryColor;
 }
 
 /*--------------------------------------------------------------
@@ -920,7 +948,7 @@ textarea {
 }
 
 .progress-bar-element {
-  background-color: #e7eaf6;
+  background-color: tertiaryColor;
   border-radius: 50%;
   display: flex;
   height: 40px;
@@ -939,7 +967,7 @@ textarea {
 
 .progress-bar-element span {
   bottom: -40px;
-  color: #222e3e;
+  color: textColor;
   display: table-cell;
   height: 36px;
   font-size: 0.7rem;
@@ -963,7 +991,8 @@ textarea {
 
 .completed {
   /* background-color: #2863eb; */
-  background-color: #3cc788;
+  // TODO: Resolve color specification
+  background-color: secondaryColor //#3cc788;
 }
 
 /*--------------------------------------------------------------
@@ -991,7 +1020,7 @@ textarea {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #f6f7fb;
+  background-color: paleWhite;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -1010,11 +1039,12 @@ textarea {
 }
 
 input:checked + .switch-slider {
-  background-color: #3f51b5;
+  background-color: primaryColor;
 }
 
 input:focus + .switch-slider {
-  box-shadow: 0 0 1px #2196F3;
+  // TODO: Resolve color
+  box-shadow: 0 0 1px primaryColorLight //#2196F3;
 }
 
 input:checked + .switch-slider:before {
@@ -1083,12 +1113,14 @@ input:checked + .switch-slider:before {
 }
 .contact a {
   text-decoration: none;
-  color: #264880;
+  // TODO: Resolve color specification
+  color: primaryColor //#264880;
 }
 
 a i.fa-github,
 a i.fa-envelope {
-  color: #264880;
+  // TODO: Resolve color specification
+  color: primaryColor //#264880;
   font-size: 1.8rem;
 }
 
@@ -1125,7 +1157,8 @@ a i.fa-envelope {
     margin-top: 1rem;
   }
   .contact {
-    background: #264880;
+    // TODO: Resolve color specification
+    background: primaryColor //#264880;
     padding: 1rem 2rem 4rem 2rem;
     text-align: center;
   }
