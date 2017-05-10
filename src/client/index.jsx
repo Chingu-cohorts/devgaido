@@ -29,6 +29,10 @@ if (process.env.NODE_ENV !== 'production') middleware.push(logger);
 const store = createStore(reducer, getInitialStore(), applyMiddleware(...middleware));
 
 console.log('STORE.GETSTATE:', store.getState());
+
+if (store.getState().user.name !== '') {
+  console.log('Hello', store.getState().user.name);
+}
 const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
