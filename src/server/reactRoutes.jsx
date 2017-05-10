@@ -7,8 +7,25 @@ import App from '../client/App';
 import routes from '../client/routes';
 
 const webRoot = (process.env.NODE_ENV !== 'production') ? 'http://localhost:8081' : '';
+const loginWidget = `<script>
+var lock = new Auth0Lock('L90m0rEGvEWnCkQOBYE3U30J6m68HDIb', 'devgaido.auth0.com', { auth: {
+          redirectUrl: 'p1EmwSaGtMd-8o_q7XU4nayvO7aNmuh58nIfij5tXpyU8zq9ACT0WOTVGfEb3Tf8'
+        , responseType: 'code'
+        , params: {
+          scope: 'openid name email picture'
+        }
+      }
+        , theme: {
+            logo: 'https://example.com/assets/logo.png',
+            primaryColor: 'green'
+        }
+        , languageDictionary: {
+            title: "My Company"
+        }});
+    lock.show();
+</script>`;
 
-const renderPage = (reactHTML, initialStore) => `
+const renderPage = (reactHTML, initialStore, datLoginWidget) => `
   <!DOCTYPE html>
   <html lang="en_US">
     <head>
@@ -23,7 +40,9 @@ const renderPage = (reactHTML, initialStore) => `
     <body>
       <div id="root">${reactHTML}</div>
       <script>window.__INITIAL_STORE__ = ${JSON.stringify(initialStore).replace(/</g, '\\u003c')};</script>
-      <script src="${webRoot}/client.bundle.js"></script>      
+      <script src="${webRoot}/client.bundle.js"></script>
+      <script src="https://cdn.auth0.com/js/lock/10.14/lock.min.js"></script>
+      ${datLoginWidget}   
     </body>
   </html>
   `;
@@ -45,14 +64,23 @@ export default (req, res, next) => {
   });
 
   if (!match) {
+    console.log('no match', req.baseUrl)
+    /*const user = req.user ? { name: req.user.username, authenticated: true }
+                          : { name: '', authenticated: false };
+    const store = { user };
+    console.log('WE SHOULD SEE LOGIN WIDGET');
+    res.set('Content-Type', 'text/html')
+    .status(200)
+    .end(renderPage(initialView(req, match), store, loginWidget));*/
     next();
   } else {
+    console.log('match', match)
     const user = req.user ? { name: req.user.username, authenticated: true }
                           : { name: '', authenticated: false };
     const store = { user };
 
     res.set('Content-Type', 'text/html')
     .status(200)
-    .end(renderPage(initialView(req, match), store));
+    .end(renderPage(initialView(req, match), store, loginWidget));
   }
 };
