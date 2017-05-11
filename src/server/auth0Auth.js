@@ -1,3 +1,5 @@
+import { getSubjects } from './services/subjects';
+
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -44,12 +46,18 @@ const auth0Auth = (app) => {
     req.logout();
     res.redirect('/');
   });
+
   app.get('/callback',
     passport.authenticate('auth0', { failureRedirect: '/url-if-something-fails' }),
     (req, res) => {
       res.redirect(req.session.returnTo || '/');
       console.log('user', req.user);
     });
+
+  app.get('/subjects', (req, res) => {
+    console.log("Got here first");
+    return res.json(getSubjects(req, res));
+  });
 };
 
 export default auth0Auth;
