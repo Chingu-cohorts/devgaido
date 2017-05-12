@@ -1,11 +1,17 @@
-import LearningPath from '../models/learningpath.json';
+import CoreLearningPath from '../models/learningpath.json';
 
-let subjectsList = {};
-
-const getSubjects = (req, res) => {
-  console.log('Got here');
-  subjectsList = res.json({ LearningPath });
-  return subjectsList;
+/**
+ * Extract a unique list of unique subjects from the Core Learning Path 
+ * 
+ * @returns {String[]} - Array of subject names in ascending sequence
+ */
+const getSubjects = () => {
+  return JSON.stringify(CoreLearningPath.reduce((uniqueList, currentElement) => {
+    if (!uniqueList.includes(currentElement.Subject)) {
+      uniqueList.push(currentElement.Subject);
+    }
+    return uniqueList;
+  }, []).sort());
 };
 
 export { getSubjects };
