@@ -6,28 +6,7 @@ const handleShowMeClick = () => {
 
 const Profile = () => (
 <div>                       
-  <div className="side-panel">
-    <div className="panel-links">
-      <a className="side-panel-close" href="#">Close</a>
-    </div>
-    <div className="panel-menu">
-      <h1>Welcome back Erik!</h1>
-      <a>test link</a>
-      <h2>Your learning path</h2>
-      <ul>
-        <li className="times"><i className="fa fa-calendar" aria-hidden="true"></i>Schedule</li>
-        <li className="times"><i className="fa fa-graduation-cap" aria-hidden="true"></i>Lessons</li>
-        <li><i className="fa fa-book" aria-hidden="true"></i>Resources</li>
-      </ul>
-      <h2>Your Settings</h2>
-      <ul>
-        <li className="information"><i className="fa fa-user-o" aria-hidden="true"></i>Your profile</li>
-        <li><i className="fa fa-cog" aria-hidden="true"></i>Preferences</li>
-        <li><i className="fa fa-flag" aria-hidden="true"></i>Notifications</li>
-      </ul>
-    </div>
-  </div>
-  
+   
   <div className="content">
     <div className="form-container">
       <div className="form">
@@ -38,9 +17,6 @@ const Profile = () => (
         </div>
         <div className="form-explanation">
           <h2>Basic user information</h2>
-          <h3 className="original" href="google.com">test link</h3>
-          <h3 className="origDark" href="google.com">test link</h3>
-          <h3 className="newDark" href="google.com">test link</h3>
         <p>Please fill out your profile details</p>
         </div>
         <form>
