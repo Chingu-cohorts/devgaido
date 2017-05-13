@@ -1,8 +1,8 @@
 import CoreLearningPath from '../models/learningpath.json';
 
 /**
- * Extract a specific subject and its details from the Core Learning Path 
- * 
+ * Extract a specific subject and its details from the Core Learning Path
+ *
  * @param {String} subjectId - Unique subject identifier
  * @returns {String[]} - JSON object containing subject details
  */
@@ -10,7 +10,8 @@ import CoreLearningPath from '../models/learningpath.json';
 const getSubject = (subjectId) => {
   console.log(`Entered getSubject: ${subjectId}`);
   return JSON.stringify(CoreLearningPath.reduce((uniqueList, currentElement) => {
-    if (currentElement.Subject.toLowerCase() === subjectId.toLocaleLowerCase() && !uniqueList.includes(subjectId)) {
+    if (currentElement.Subject.toLowerCase() === subjectId.toLocaleLowerCase()
+      && !uniqueList.includes(subjectId)) {
       uniqueList.push(currentElement.Subject);
     }
     return uniqueList;
@@ -18,8 +19,8 @@ const getSubject = (subjectId) => {
 };
 
 /**
- * Extract a unique list of unique subjects from the Core Learning Path 
- * 
+ * Extract a unique list of unique subjects from the Core Learning Path
+ *
  * @returns {String[]} - Array of subject names in ascending sequence
  */
 const getSubjects = () => {

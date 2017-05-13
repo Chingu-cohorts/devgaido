@@ -45,14 +45,12 @@ class Header extends React.Component {
   render() {
     return (
       <header>
-        <div>
-          <a href="#" onClick={e => handleClick(e)}>Login</a>
-        </div>
-        <div>
-          <a href="/logout">Logout</a>
-        </div>
         <div className="menu">
           <a className="menu-btn" href="#" onClick={e => this.toggleMenu(e)} >Menu</a>
+        </div>
+        <div>
+          <a href="#" onClick={e => handleClick(e)}>Login</a>
+          <a href="/logout">Logout</a>
         </div>
         <div className="search-header">
           <label className="search">
@@ -64,8 +62,6 @@ class Header extends React.Component {
             <a className="side-panel-close" href="#">Close</a>
           </div>
           <div className="panel-menu">
-            <h1>Welcome back Erik!</h1>
-
             <h2>Your learning path</h2>
             <ul>
               <li className="times"><i className="fa fa-calendar" aria-hidden="true" />Schedule</li>
