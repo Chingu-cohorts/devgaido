@@ -10,10 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, '../../dist/public')));
-
 auth0Auth(app);
-
 app.use('*', handleReactRoutes);
-
 
 export default app;
