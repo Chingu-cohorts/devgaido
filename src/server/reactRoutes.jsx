@@ -23,10 +23,11 @@ const renderPage = (reactHTML, initialStore) => `
     <body>
       <div id="root">${reactHTML}</div>
       <script>window.__INITIAL_STORE__ = ${JSON.stringify(initialStore).replace(/</g, '\\u003c')};</script>
-      <script src="${webRoot}/client.bundle.js"></script>      
+      <script src="${webRoot}/client.bundle.js"></script>
     </body>
   </html>
   `;
+
 // We need to provide the serverMatch prop to <App /> since we are on the server side
 // and can only render a single route with StaticRouter (Switch is not working like on client side)
 const initialView = (req, match) => renderToString(
@@ -47,7 +48,7 @@ export default (req, res, next) => {
   if (!match) {
     next();
   } else {
-    const user = req.user ? { name: req.user.username, authenticated: true }
+    const user = req.user ? { name: req.user.nickname, authenticated: true }
                           : { name: '', authenticated: false };
     const store = { user };
 
