@@ -73,6 +73,10 @@ html.full-height {
     background: linear-gradient(to bottom, #f5faff 10%, rgba(255, 255, 255, 0) 100%);
 }
 
+.hidden {
+    display: none;
+}
+
 /*--------------------------------------------------------------
 # Headings & typography
 --------------------------------------------------------------*/
@@ -105,10 +109,11 @@ p {
  
 .side-panel {
     background-color: colorTextInverse;
-    box-shadow: 15px 0 40px rgba(30, 33, 94, 0.15);
+    box-shadow: -15px 0 40px rgba(30, 33, 94, 0.15);
     height: 100vh;
     padding: 0;
     position: fixed;
+    right: 0;
     top: 80px;
     transition: visibility 0s 0s;
     visibility: hidden;
@@ -223,6 +228,8 @@ p {
 
 
 .side-panel-catalog {
+    box-shadow: 5px 0 10px rgba(30,33,94,0.15);
+    left: 0;
     h1 {
         background-color: colorPrimary;
         color: colorTextInverse;
@@ -349,7 +356,7 @@ section {
 header {
     background-color: colorPrimary;
     background-color: colorTextInverse;
-    box-shadow: 0 2px 6px rgba(30, 33, 94, 0.15);
+    box-shadow: 0 5px 10px rgba(30,33,94,0.15);
     background-image: url('/assets/img/devgaida.svg'); 
     background-position: center;
     background-repeat: no-repeat;
@@ -362,6 +369,12 @@ header {
     z-index: 999;
 }
 
+.header-content {
+    margin: 0 auto;
+    // max-width: widthMax;
+    
+}
+
 .sub-header {
     background-color: colorPrimary;
     // box-shadow: 0 2px 6px rgba(30, 33, 94, 0.15);
@@ -372,24 +385,50 @@ header {
     width:100%;
     z-index: 100;
 }
-
+.menu {
+    margin-right:1rem;
+}
 .menu a {
-    float: left;
-    background-image: url('/assets/img/menu.svg'); 
+    float: right;
+    height: 5rem;
+    width: auto;
+}
+.menu a:before {
+    border-radius: 50%;
+    color: colorTextInverse;
+    float: right;
+    font-family: FontAwesome;
+    font-size: 1.3rem;
+    font-weight: normal;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 24px;
-    height: 5rem;
-    padding: 1rem;
-    text-indent: -9999px;
-    width: 5rem;
+    height: 3rem;
+    line-height: 3rem;
+    margin: 1rem;
+    text-align: center;
+    width: 3rem;
+}
+
+.menu a.menu-btn:before {
+    background-color: colorPrimary;
+    content:"\f0c9"
+    margin-left: 0.3rem;
+}
+
+
+.menu a.login:before {
+    background-color: colorSecondary;
+    content:"\f13e";
+    margin-right: 0.3rem;
 }
 
 .search-header {
-    float: right;
-    padding: 0.3rem 2rem 0 0.5rem;
+    float: left;
+    padding: 0.3rem 2rem 0 2rem;
     width: 300px;
 }
+    
 
 
 /*--------------------------------------------------------------
@@ -892,7 +931,7 @@ a.add i, a.remove i {
     display: table;
     margin: 50px auto;
     margin-top: 50px;
-    min-width: 300px;
+    min-width: 700px;
     position: relative;
     width: 40%;
 }
@@ -1449,6 +1488,17 @@ a i.fa-envelope {
 a i.fa-envelope {
     font-size: 1.6rem;
 }
+
+/*--------------------------------------------------------------
+# auth0
+--------------------------------------------------------------*/
+
+.auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-input {
+    float: none;
+    margin: 0;
+}
+
+
 
 /*--------------------------------------------------------------
 # Media queuries
