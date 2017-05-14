@@ -3,6 +3,7 @@
   "Source": "P1XT",
   "Sequence #": "200100",
   "Lesson Name": "Try Git",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Source Code Control",
   "External Source": "https://try.github.io"
@@ -11,6 +12,7 @@
   "Source": "P1XT",
   "Sequence #": "200200",
   "Lesson Name": "Git - the simple guide",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Source Code Control",
   "External Source": "http://git.huit.harvard.edu/guide/"
@@ -19,6 +21,7 @@
   "Source": "P1XT",
   "Sequence #": "200300",
   "Lesson Name": "GitHub Training & Guide",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Source Code Control",
   "External Source": "https://guides.github.com/"
@@ -27,6 +30,7 @@
   "Source": "P1XT",
   "Sequence #": "200400",
   "Lesson Name": "GitHub Hello World",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Source Code Control",
   "External Source": "https://guides.github.com/activities/hello-world/"
@@ -35,6 +39,7 @@
   "Source": "P1XT",
   "Sequence #": "200500",
   "Lesson Name": "Git Immersion",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Source Code Control",
   "External Source": "http://gitimmersion.com/"
@@ -43,6 +48,7 @@
   "Source": "P1XT",
   "Sequence #": "200600",
   "Lesson Name": "How to Use Git and GitHub",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Source Code Control",
   "External Source": ""
@@ -51,6 +57,7 @@
   "Source": "P1XT",
   "Sequence #": "200700",
   "Lesson Name": "Book: You Don't Know JS: Up & Going",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Javascript",
   "External Source": "https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going"
@@ -59,6 +66,7 @@
   "Source": "P1XT",
   "Sequence #": "200800",
   "Lesson Name": "Book: You Don't Know JS: Scope & Closures",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Javascript",
   "External Source": "https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures"
@@ -67,6 +75,7 @@
   "Source": "P1XT",
   "Sequence #": "200900",
   "Lesson Name": "Book: You Don't Know JS: this & Object Prototypes",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Javascript",
   "External Source": "https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes"
@@ -75,6 +84,7 @@
   "Source": "P1XT",
   "Sequence #": "200950",
   "Lesson Name": "Course: Introduction to Computer Science - CS50",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x"
@@ -83,6 +93,7 @@
   "Source": "P1XT",
   "Sequence #": "201000",
   "Lesson Name": "Course: Learn to Code HTML & CSS",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "HTML/CSS",
   "External Source": "http://learn.shayhowe.com/html-css/"
@@ -91,6 +102,7 @@
   "Source": "P1XT",
   "Sequence #": "201100",
   "Lesson Name": "Project: Clone this online resume template",
+  "Description": "",
   "Category": "Project",
   "Subject": "HTML/CSS",
   "External Source": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2"
@@ -99,6 +111,7 @@
   "Source": "P1XT",
   "Sequence #": "201050",
   "Lesson Name": "Book: You Don't Know JS: Types & Grammar",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Javascript",
   "External Source": "https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&%20grammar/README.md#you-dont-know-js-types--grammar"
@@ -107,6 +120,7 @@
   "Source": "P1XT",
   "Sequence #": "201150",
   "Lesson Name": "Book: You Don't Know JS: Async & Performance",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Javascript",
   "External Source": "https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/README.md#you-dont-know-js-async--performance"
@@ -115,6 +129,7 @@
   "Source": "P1XT",
   "Sequence #": "201250",
   "Lesson Name": "Book: You Don't Know JS: ES6 & Beyond",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Javascript",
   "External Source": "https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond"
@@ -123,6 +138,7 @@
   "Source": "P1XT",
   "Sequence #": "201350",
   "Lesson Name": "Course: Learn to Code Advanced HTML & CSS",
+  "Description": "",
   "Category": "Course",
   "Subject": "HTML/CSS",
   "External Source": "http://learn.shayhowe.com/advanced-html-css/"
@@ -131,6 +147,7 @@
   "Source": "P1XT",
   "Sequence #": "201450",
   "Lesson Name": "Project: Portfolio from the frontend section of FCC",
+  "Description": "",
   "Category": "Project",
   "Subject": "HTML/CSS",
   "External Source": ""
@@ -138,7 +155,8 @@
   "Type": "Tier 1 - Getting Started",
   "Source": "P1XT",
   "Sequence #": "201550",
-  "Lesson Name": "Article: Read Project Specification Documents and get in the habit of including every bit of information it details that makes sense for a project in the README.md or other supporting documentation for your projects",
+  "Lesson Name": "Article: Read Project Specification Documents",
+  "Description": "Article: Read Project Specification Documents and get in the habit of including every bit of information it details that makes sense for a project in the README.md or other supporting documentation for your projects",
   "Category": "Reading",
   "Subject": "Project Management",
   "External Source": "http://www.pixelearth.net/pages/project-specification"
@@ -147,6 +165,7 @@
   "Source": "P1XT",
   "Sequence #": "201650",
   "Lesson Name": "Course: Effective Thinking Through Mathematics",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Mathematics",
   "External Source": "https://www.edx.org/course/effective-thinking-through-mathematics-utaustinx-ut-9-01x-0"
@@ -155,6 +174,7 @@
   "Source": "P1XT",
   "Sequence #": "201750",
   "Lesson Name": "Book: Setting Up ES6",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Javascript",
   "External Source": "https://leanpub.com/setting-up-es6/read"
@@ -163,6 +183,7 @@
   "Source": "P1XT",
   "Sequence #": "201850",
   "Lesson Name": "Book: JavaScript Allongé, the \"Six\" Edition",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Javascript",
   "External Source": "https://leanpub.com/javascriptallongesix"
@@ -171,6 +192,7 @@
   "Source": "P1XT",
   "Sequence #": "201950",
   "Lesson Name": "Course: Getting Sassy with Sass",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "HTML/CSS",
   "External Source": "http://www.sassshop.com/"
@@ -178,7 +200,8 @@
   "Type": "Tier 1 - Getting Started",
   "Source": "P1XT",
   "Sequence #": "202050",
-  "Lesson Name": "Project: Build an online Towers of Hanoi solver that accepts a tower height between 5 and 10, and then displays a graphical (animated) solution, iteratively moving each piece until the puzzle is solved",
+  "Lesson Name": "Project: Towers of Hanoi solver",
+  "Description": "Project: Build an online Towers of Hanoi solver that accepts a tower height between 5 and 10, and then displays a graphical (animated) solution, iteratively moving each piece until the puzzle is solved",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": ""
@@ -186,7 +209,8 @@
   "Type": "Tier 1 - Getting Started",
   "Source": "P1XT",
   "Sequence #": "202100",
-  "Lesson Name": "Project: Pick a template from here and create a new template with it as your inspiration (do not use it's assets)",
+  "Lesson Name": "Project: Create a new template",
+  "Description": "Project: Pick a template from here and create a new template with it as your inspiration (do not use it's assets)",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": "http://www.free-css.com/free-css-templates"
@@ -195,6 +219,7 @@
   "Source": "P1XT",
   "Sequence #": "202150",
   "Lesson Name": "Course: How to Code: Systematic Program Design - Part 1",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd1x"
@@ -203,6 +228,7 @@
   "Source": "P1XT",
   "Sequence #": "202250",
   "Lesson Name": "Course: How to Code: Systematic Program Design - Part 2",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd2x"
@@ -211,6 +237,7 @@
   "Source": "P1XT",
   "Sequence #": "202350",
   "Lesson Name": "Course: How to Code: Systematic Program Design - Part 3",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd3x"
@@ -219,6 +246,7 @@
   "Source": "P1XT",
   "Sequence #": "202450",
   "Lesson Name": "Book: DOM Enlightenment",
+  "Description": "",
   "Category": "Reading",
   "Subject": "HTML/CSS",
   "External Source": "http://domenlightenment.com/"
@@ -226,7 +254,8 @@
   "Type": "Tier 2 - Develop More Expertise",
   "Source": "P1XT",
   "Sequence #": "202550",
-  "Lesson Name": "Project: Read up on Gulp - try to incorporate it into your workflow if you aren't using it regularly already",
+  "Lesson Name": "Project: Read up on Gulp",
+  "Description": "Project: Read up on Gulp - try to incorporate it into your workflow if you aren't using it regularly already",
   "Category": "Project",
   "Subject": "Gulp",
   "External Source": "http://gulpjs.com/"
@@ -234,7 +263,8 @@
   "Type": "Tier 2 - Develop More Expertise",
   "Source": "P1XT",
   "Sequence #": "202650",
-  "Lesson Name": "Project: Simon Game from the frontend section of FCC",
+  "Lesson Name": "Project: Simon Game",
+  "Description": "Project: Simon Game from the frontend section of FCC",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": ""
@@ -242,7 +272,8 @@
   "Type": "Tier 2 - Develop More Expertise",
   "Source": "P1XT",
   "Sequence #": "202850",
-  "Lesson Name": "Course: Introduction to MongoDB using the MEAN Stack on edX",
+  "Lesson Name": "Course: Introduction to MongoDB",
+  "Description": "Course: Introduction to MongoDB using the MEAN Stack on edX",
   "Category": "Supplemental Course",
   "Subject": "Database",
   "External Source": "https://www.edx.org/course/introduction-mongodb-using-mean-stack-mongodbx-m101x-0"
@@ -250,7 +281,8 @@
   "Type": "Tier 2 - Develop More Expertise",
   "Source": "P1XT",
   "Sequence #": "202950",
-  "Lesson Name": "The FCC Backend Certification - all projects, ignore the tutorials and just read the official docs if you want.",
+  "Lesson Name": "FCC Backend Certification",
+  "Description": "The FCC Backend Certification - all projects, ignore the tutorials and just read the official docs if you want.",
   "Category": "",
   "Subject": "Backend",
   "External Source": ""
@@ -259,6 +291,7 @@
   "Source": "P1XT",
   "Sequence #": "203050",
   "Lesson Name": "Course: Calculus One",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Mathematics",
   "External Source": "https://www.coursera.org/learn/calculus1"
@@ -267,6 +300,7 @@
   "Source": "P1XT",
   "Sequence #": "203150",
   "Lesson Name": "Book: JavaScript Design Patterns",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Javascript",
   "External Source": "https://addyosmani.com/resources/essentialjsdesignpatterns/book/"
@@ -275,6 +309,7 @@
   "Source": "P1XT",
   "Sequence #": "203250",
   "Lesson Name": "Project: Clone this landing page",
+  "Description": "",
   "Category": "Project",
   "Subject": "Frontend",
   "External Source": "https://blackrockdigital.github.io/startbootstrap-creative/"
@@ -283,6 +318,7 @@
   "Source": "P1XT",
   "Sequence #": "203350",
   "Lesson Name": "Course: Mathematics for Computer Science",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Mathematics",
   "External Source": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm"
@@ -290,7 +326,8 @@
   "Type": "Tier 2 - Develop More Expertise",
   "Source": "P1XT",
   "Sequence #": "203450",
-  "Lesson Name": "Article: Read Algorithms and Flowcharts and then familiarize yourself with Pencil ... start flowcharting complex portions of your code logic as part of your documentation",
+  "Lesson Name": "Article: Read Algorithms and Flowcharts",
+  "Description": "Article: Read Algorithms and Flowcharts",
   "Category": "Reading",
   "Subject": "Computer Science",
   "External Source": "http://www.academia.edu/7857144/ALGORITHMS_AND_FLOWCHARTS"
@@ -298,7 +335,8 @@
   "Type": "Tier 2 - Develop More Expertise",
   "Source": "P1XT",
   "Sequence #": "203550",
-  "Lesson Name": "Article: Read Algorithms and Flowcharts and then familiarize yourself with Pencil ... start flowcharting complex portions of your code logic as part of your documentation",
+  "Lesson Name": "Familiarize yourself with Pencil",
+  "Description": "Familiarize yourself with Pencil ... start flowcharting complex portions of your code logic as part of your documentation",
   "Category": "Reading",
   "Subject": "Computer Science",
   "External Source": "http://pencil.evolus.vn/"
@@ -307,6 +345,7 @@
   "Source": "P1XT",
   "Sequence #": "203650",
   "Lesson Name": "Project: Clone this Admin template using React, Angular, or Vue",
+  "Description": "",
   "Category": "Project",
   "Subject": "Frontend",
   "External Source": "http://rubix410.sketchpixy.com/ltr/dashboard"
@@ -315,6 +354,7 @@
   "Source": "P1XT",
   "Sequence #": "203750",
   "Lesson Name": "Book: Think Java - How to Think Like a Computer Scientist",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Computer Science",
   "External Source": ""
@@ -322,7 +362,8 @@
   "Type": "Tier 2 - Develop More Expertise",
   "Source": "P1XT",
   "Sequence #": "202750",
-  "Lesson Name": "Project: Complete all Classic Puzzles - Easy on CodinGame in JavaScript",
+  "Lesson Name": "Project: Complete all Classic Puzzles",
+  "Description": "Project: Complete all Classic Puzzles - Easy on CodinGame in JavaScript",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": "https://www.codingame.com/"
@@ -331,6 +372,7 @@
   "Source": "P1XT",
   "Sequence #": "202800",
   "Lesson Name": "Book: Open Data Structures",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Computer Science",
   "External Source": "http://www.aupress.ca/books/120226/ebook/99Z_Morin_2013-Open_Data_Structures.pdf"
@@ -339,6 +381,7 @@
   "Source": "P1XT",
   "Sequence #": "202900",
   "Lesson Name": "Course: Algorithms, Part I",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": "https://www.coursera.org/learn/introduction-to-algorithms"
@@ -347,6 +390,7 @@
   "Source": "P1XT",
   "Sequence #": "203000",
   "Lesson Name": "Course: Algorithms, Part II",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": "https://www.coursera.org/learn/java-data-structures-algorithms-2"
@@ -354,7 +398,8 @@
   "Type": "Tier 2 - Develop More Expertise",
   "Source": "P1XT",
   "Sequence #": "203100",
-  "Lesson Name": "Project: Complete all challenges from the Code Jam Qualification Round 2",
+  "Lesson Name": "Project: Complete Code Jam Qualification Round 2",
+  "Description": "Project: Complete all challenges from the Code Jam Qualification Round 2",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": "https://code.google.com/codejam/contest/6224486/dashboard"
@@ -362,7 +407,8 @@
   "Type": "Tier 2 - Develop More Expertise",
   "Source": "P1XT",
   "Sequence #": "203200",
-  "Lesson Name": "Project: Clone the front page of this website modifying it to highlight a different product or industry. Make special note of the secondary navigation bar at the top. Implementing that is the highlight of this project.",
+  "Lesson Name": "Project: Clone the front page of this website",
+  "Description": "Project: Clone the front page of this website modifying it to highlight a different product or industry. Make special note of the secondary navigation bar at the top. Implementing that is the highlight of this project.",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": "https://urbanarmorgear.com/"
@@ -371,6 +417,7 @@
   "Source": "P1XT",
   "Sequence #": "203300",
   "Lesson Name": "Course: UX Design for Mobile Developers",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "UX/UI",
   "External Source": ""
@@ -379,6 +426,7 @@
   "Source": "P1XT",
   "Sequence #": "203400",
   "Lesson Name": "Course: Android Development for Beginners",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Android",
   "External Source": ""
@@ -386,7 +434,8 @@
   "Type": "Tier 2 - Develop More Expertise",
   "Source": "P1XT",
   "Sequence #": "203500",
-  "Lesson Name": "Project: Build the Pomodoro project from the FCC frontend curriculum - as an android app",
+  "Lesson Name": "Project: Build a Pomodoro",
+  "Description": "Project: Build the Pomodoro project from the FCC frontend curriculum - as an android app",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": ""
@@ -395,30 +444,34 @@
   "Source": "P1XT",
   "Sequence #": "203600",
   "Lesson Name": "Book: Professor Frisby's Mostly Adequate Guide to Functional Programming",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Javascript",
-  "External Source": ""
+  "External Source": "https://www.gitbook.com/book/drboolean/mostly-adequate-guide/details"
 }, {
   "Type": "Tier 3 - Add More Rigor",
   "Source": "P1XT",
   "Sequence #": "203700",
   "Lesson Name": "Course: Software Testing",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
-  "External Source": ""
+  "External Source": "https://www.udacity.com/course/software-testing--cs258"
 }, {
   "Type": "Tier 3 - Add More Rigor",
   "Source": "P1XT",
   "Sequence #": "203800",
   "Lesson Name": "Course: Software Debugging",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
-  "External Source": ""
+  "External Source": "https://www.udacity.com/course/software-debugging--cs259"
 }, {
   "Type": "Tier 3 - Add More Rigor",
   "Source": "P1XT",
   "Sequence #": "203900",
-  "Lesson Name": "Project: Clone the Netflix interface using React, Angular, or Vue - pulling data from the Movie DB API or an API in a backend you create yourself.",
+  "Lesson Name": "Project: Clone the Netflix interface",
+  "Description": "Project: Clone the Netflix interface using React, Angular, or Vue - pulling data from the Movie DB API or an API in a backend you create yourself.",
   "Category": "Project",
   "Subject": "Frontend",
   "External Source": ""
@@ -427,14 +480,16 @@
   "Source": "P1XT",
   "Sequence #": "204000",
   "Lesson Name": "Course: Calculus Two: Sequences and Series",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Mathematics",
-  "External Source": ""
+  "External Source": "https://www.coursera.org/learn/advanced-calculus"
 }, {
   "Type": "Tier 3 - Add More Rigor",
   "Source": "P1XT",
   "Sequence #": "204100",
   "Lesson Name": "Project: Complete all Classic Puzzles - Medium on CodinGame in JavaScript",
+  "Description": "",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": ""
@@ -443,14 +498,16 @@
   "Source": "P1XT",
   "Sequence #": "204200",
   "Lesson Name": "Course: Software Architecture & Design",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
-  "External Source": ""
+  "External Source": "https://www.udacity.com/course/software-architecture-design--ud821"
 }, {
   "Type": "Tier 3 - Add More Rigor",
   "Source": "P1XT",
   "Sequence #": "204300",
   "Lesson Name": "Project: Complete all challenges from the Code Jam Round 1A 2015",
+  "Description": "",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": ""
@@ -459,22 +516,25 @@
   "Source": "P1XT",
   "Sequence #": "204400",
   "Lesson Name": "Book: JavaScript Spessore",
+  "Description": "",
   "Category": "Reading",
   "Subject": "Javascript",
-  "External Source": ""
+  "External Source": "https://leanpub.com/javascript-spessore/read"
 }, {
   "Type": "Tier 3 - Add More Rigor",
   "Source": "P1XT",
   "Sequence #": "204500",
-  "Lesson Name": "Project: Clone this blog template - note that there are multiple pages",
+  "Lesson Name": "Project: Clone this blog template",
+  "Description": "Project: Clone this blog template - note that there are multiple pages",
   "Category": "Project",
   "Subject": "Javascript",
-  "External Source": ""
+  "External Source": "https://blackrockdigital.github.io/startbootstrap-clean-blog/"
 }, {
   "Type": "Tier 3 - Add More Rigor",
   "Source": "P1XT",
   "Sequence #": "204600",
   "Lesson Name": "Course: Databases",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Database",
   "External Source": ""
@@ -483,22 +543,25 @@
   "Source": "P1XT",
   "Sequence #": "204700",
   "Lesson Name": "Course: Agile Software Development",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Project Management",
-  "External Source": ""
+  "External Source": "https://www.edx.org/course/agile-software-development-ethx-asd-1x"
 }, {
   "Type": "Tier 3 - Add More Rigor",
   "Source": "P1XT",
   "Sequence #": "204800",
   "Lesson Name": "Project: Complete all ES6 Katas here",
+  "Description": "",
   "Category": "Project",
   "Subject": "Javascript",
-  "External Source": ""
+  "External Source": "http://es6katas.org/"
 }, {
   "Type": "Tier 3 - Add More Rigor",
   "Source": "P1XT",
   "Sequence #": "204900",
   "Lesson Name": "Course: Introduction to Cloud Computing",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Backend",
   "External Source": ""
@@ -507,6 +570,7 @@
   "Source": "P1XT",
   "Sequence #": "205000",
   "Lesson Name": "Project: Complete all challenges from the Code Jam Round 1B 2015",
+  "Description": "",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": ""
@@ -514,15 +578,17 @@
   "Type": "Tier 3 - Add More Rigor",
   "Source": "P1XT",
   "Sequence #": "205100",
-  "Lesson Name": "Project: Build FaceBook: yes, all the functionality. See here for a list of requirements you should fullfill.",
+  "Lesson Name": "Project: Build FaceBook",
+  "Description": "Project: Build FaceBook: yes, all the functionality. See here for a list of requirements you should fullfill.",
   "Category": "Project",
   "Subject": "Fullstack",
-  "External Source": ""
+  "External Source": "http://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project"
 }, {
   "Type": "Tier 3 - Add More Rigor",
   "Source": "P1XT",
   "Sequence #": "205200",
   "Lesson Name": "Course: Intro to Theoretical Computer Science",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": ""
@@ -531,6 +597,7 @@
   "Source": "P1XT",
   "Sequence #": "205300",
   "Lesson Name": "Project: Complete all challenges from the Code Jam Round 1C 2015",
+  "Description": "",
   "Category": "Project",
   "Subject": "",
   "External Source": ""
@@ -539,6 +606,7 @@
   "Source": "P1XT",
   "Sequence #": "205400",
   "Lesson Name": "Course: Introduction to Probability - The Science of Uncertainty",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Mathematics",
   "External Source": ""
@@ -546,23 +614,26 @@
   "Type": "Tier 3 - Add More Rigor",
   "Source": "P1XT",
   "Sequence #": "205500",
-  "Lesson Name": "Project: Write the CSS Necessary to create your own 12 column based grid layout - see here for an example",
+  "Lesson Name": "Project: Write the CSS Necessary to create your own 12 column grid",
+  "Description": "Project: Write the CSS Necessary to create your own 12 column based grid layout - see here for an example",
   "Category": "Project",
   "Subject": "CSS",
-  "External Source": ""
+  "External Source": "http://960.gs/"
 }, {
   "Type": "Tier 3 - Add More Rigor",
   "Source": "P1XT",
   "Sequence #": "205600",
   "Lesson Name": "Course: Linear Algebra - Foundations to Frontiers",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Mathematics",
-  "External Source": ""
+  "External Source": "https://www.edx.org/course/linear-algebra-foundations-frontiers-utaustinx-ut-5-05x#!"
 }, {
   "Type": "Tier 3 - Add More Rigor",
   "Source": "P1XT",
   "Sequence #": "205700",
   "Lesson Name": "Project: Complete all Classic Puzzles - Hard on CodinGame in JavaScript",
+  "Description": "",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": ""
@@ -571,6 +642,7 @@
   "Source": "P1XT",
   "Sequence #": "205800",
   "Lesson Name": "Course: Cryptography I",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": ""
@@ -579,6 +651,7 @@
   "Source": "P1XT",
   "Sequence #": "205900",
   "Lesson Name": "Project: Complete all challenges from the Code Jam Round 2 2015",
+  "Description": "",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": ""
@@ -587,6 +660,7 @@
   "Source": "P1XT",
   "Sequence #": "206000",
   "Lesson Name": "Course: Cryptography II",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": ""
@@ -595,6 +669,7 @@
   "Source": "P1XT",
   "Sequence #": "206100",
   "Lesson Name": "Project: Clone Twitter - yes, all the functionality",
+  "Description": "",
   "Category": "Project",
   "Subject": "Fullstack",
   "External Source": ""
@@ -603,6 +678,7 @@
   "Source": "P1XT",
   "Sequence #": "206200",
   "Lesson Name": "Course: Computer Architecture",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": ""
@@ -611,6 +687,7 @@
   "Source": "P1XT",
   "Sequence #": "206300",
   "Lesson Name": "Project: Complete all challenges from the Code Jam Round 3 2015",
+  "Description": "",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": ""
@@ -619,6 +696,7 @@
   "Source": "P1XT",
   "Sequence #": "206400",
   "Lesson Name": "Course: Introduction to Cyber Security",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": ""
@@ -627,6 +705,7 @@
   "Source": "P1XT",
   "Sequence #": "206500",
   "Lesson Name": "Project: Complete all Classic Puzzles - Very Hard on CodinGame in JavaScript",
+  "Description": "",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": ""
@@ -635,22 +714,25 @@
   "Source": "P1XT",
   "Sequence #": "206600",
   "Lesson Name": "Course: Computer Graphics",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
-  "External Source": ""
+  "External Source": "https://www.edx.org/course/computer-graphics-uc-san-diegox-cse167x-1"
 }, {
   "Type": "Tier 4 - Polish the Rough Edges",
   "Source": "P1XT",
   "Sequence #": "206700",
   "Lesson Name": "Course: Artificial Intelligence",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
-  "External Source": ""
+  "External Source": "https://www.edx.org/course/artificial-intelligence-ai-columbiax-csmm-101x#!"
 }, {
   "Type": "Tier 4 - Polish the Rough Edges",
   "Source": "P1XT",
   "Sequence #": "206800",
   "Lesson Name": "Project: Complete all challenges from the Code Jam World Finals 2015",
+  "Description": "",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": ""
@@ -659,14 +741,16 @@
   "Source": "P1XT",
   "Sequence #": "206900",
   "Lesson Name": "Course: Machine Learning",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
-  "External Source": ""
+  "External Source": "https://www.coursera.org/learn/machine-learning"
 }, {
   "Type": "Tier 4 - Polish the Rough Edges",
   "Source": "P1XT",
   "Sequence #": "207000",
-  "Lesson Name": "Project: Design, implement, test, and deploy a game that is playable on the web, using the technologies of your choice. The only criteria are that it be playable online, and that it inculde a substantial AI component.",
+  "Lesson Name": "Project: Design, implement, test, and deploy a web-based game",
+  "Description": "Project: Design, implement, test, and deploy a game that is playable on the web, using the technologies of your choice. The only criteria are that it be playable online, and that it inculde a substantial AI component.",
   "Category": "Project",
   "Subject": "Fullstack",
   "External Source": ""
@@ -675,6 +759,7 @@
   "Source": "P1XT",
   "Sequence #": "207100",
   "Lesson Name": "Course: Operating Systems and System Programming",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": ""
@@ -682,7 +767,8 @@
   "Type": "Tier 4 - Polish the Rough Edges",
   "Source": "P1XT",
   "Sequence #": "207200",
-  "Lesson Name": "Project: Create a node module that will convert markdown to properly formatted html",
+  "Lesson Name": "Project: Create a node module for MD conversion",
+  "Description": "Project: Create a node module that will convert markdown to properly formatted html",
   "Category": "Project",
   "Subject": "Javascript",
   "External Source": ""
@@ -691,6 +777,7 @@
   "Source": "P1XT",
   "Sequence #": "207300",
   "Lesson Name": "Course: Compilers",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": ""
@@ -699,6 +786,7 @@
   "Source": "P1XT",
   "Sequence #": "207400",
   "Lesson Name": "Course: Introduction to Natural Language Processing",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": ""
@@ -707,14 +795,16 @@
   "Source": "P1XT",
   "Sequence #": "207500",
   "Lesson Name": "Project: Clone Learn Harmony",
+  "Description": "",
   "Category": "Project",
   "Subject": "Fullstack",
-  "External Source": ""
+  "External Source": "http://learnharmony.org/#/?_k=0okjs7"
 }, {
   "Type": "Tier 4 - Polish the Rough Edges",
   "Source": "P1XT",
   "Sequence #": "207600",
   "Lesson Name": "Course: Computer Networks",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": ""
@@ -723,6 +813,7 @@
   "Source": "P1XT",
   "Sequence #": "207700",
   "Lesson Name": "Course: Parallel Computer Architecture and Programming",
+  "Description": "",
   "Category": "Supplemental Course",
   "Subject": "Computer Science",
   "External Source": ""
@@ -730,7 +821,8 @@
   "Type": "Tier 4 - Polish the Rough Edges",
   "Source": "P1XT",
   "Sequence #": "207800",
-  "Lesson Name": "Project: Complete all problems from all rounds of the Distributed Google Code Jam 2015 - scroll down to the appropriate section",
+  "Lesson Name": "Project: Complete all problems from Distributed Google Code Jam 2015 ",
+  "Description": "Project: Complete all problems from all rounds of the Distributed Google Code Jam 2015 - scroll down to the appropriate section",
   "Category": "Project",
   "Subject": "Fullstack",
   "External Source": ""
@@ -738,7 +830,8 @@
   "Type": "Tier 4 - Polish the Rough Edges",
   "Source": "P1XT",
   "Sequence #": "207900",
-  "Lesson Name": "Project: Clone Slack - the functionality should be complete to the point that one user can create a room, invite other users, and all users of that room can real-time chat. The room should be secure and inaccessible to anyone but those invited.",
+  "Lesson Name": "Project: Clone Slack ",
+  "Description": "Project: Clone Slack - the functionality should be complete to the point that one user can create a room, invite other users, and all users of that room can real-time chat. The room should be secure and inaccessible to anyone but those invited.",
   "Category": "Project",
   "Subject": "Fullstack",
   "External Source": ""
@@ -746,7 +839,8 @@
   "Type": "Tier 4 - Polish the Rough Edges",
   "Source": "P1XT",
   "Sequence #": "208000",
-  "Lesson Name": "Project: Create an npm module that bootstraps a fullstack application, with Node.js on the backend, and the SPA library/framework of your choice on the frontend. Include a full test suite and comprehensive build processes. Publish it to NPM.",
+  "Lesson Name": "Project: Create an npm module that bootstraps a fullstack application",
+  "Description": "Project: Create an npm module that bootstraps a fullstack application, with Node.js on the backend, and the SPA library/framework of your choice on the frontend. Include a full test suite and comprehensive build processes. Publish it to NPM.",
   "Category": "Project",
   "Subject": "Fullstack",
   "External Source": ""
@@ -754,7 +848,8 @@
   "Type": "Tier 4 - Polish the Rough Edges",
   "Source": "P1XT",
   "Sequence #": "208100",
-  "Lesson Name": "Project: Complete all problems from all rounds of the Google Code Jam 2016 - scroll down to the appropriate section",
+  "Lesson Name": "Project: Complete all problems from Google Code Jam 2016",
+  "Description": "Project: Complete all problems from all rounds of the Google Code Jam 2016 - scroll down to the appropriate section",
   "Category": "Project",
   "Subject": "Fullstack",
   "External Source": ""
@@ -762,7 +857,8 @@
   "Type": "Tier 4 - Polish the Rough Edges",
   "Source": "P1XT",
   "Sequence #": "208200",
-  "Lesson Name": "Project: Extend your CSS grid framework to include the CSS and JavaScript required to implement 5 to 10 material design components",
+  "Lesson Name": "Project: Extend your CSS grid framework to implement material design components",
+  "Description": "Project: Extend your CSS grid framework to include the CSS and JavaScript required to implement 5 to 10 material design components",
   "Category": "Project",
   "Subject": "CSS",
   "External Source": ""
