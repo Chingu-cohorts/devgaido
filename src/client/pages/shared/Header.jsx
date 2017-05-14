@@ -31,6 +31,7 @@ class Header extends React.Component {
     super(props);
     this.state = { menuOpen: false };
     this.menuClass = 'side-panel';
+    this.menuButtonClass = 'menu-btn';
   }
   toggleMenu(e) {
     e.preventDefault();
@@ -38,8 +39,10 @@ class Header extends React.Component {
     this.forceUpdate();
     if (this.state.menuOpen) {
       this.menuClass = 'side-panel is-visible';
+      this.menuButtonClass = 'menu-btn menu-btn-close';
     } else {
       this.menuClass = 'side-panel';
+      this.menuButtonClass = 'menu-btn';
     }
   }
   render() {
@@ -48,7 +51,7 @@ class Header extends React.Component {
         <header>
           <div className="header-content">
             <div className="menu">
-              <a className="menu-btn" href="#" onClick={e => this.toggleMenu(e)} title="Menu"></a>
+              <a className={this.menuButtonClass} href="#" onClick={e => this.toggleMenu(e)} title="Menu"></a>
               <a className="login" href="#" onClick={e => handleClick(e)} title="Login"></a>
               <a className="hidden" href="/logout" title="Logout"></a>
             </div>
