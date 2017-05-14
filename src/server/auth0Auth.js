@@ -78,7 +78,7 @@ const auth0Auth = (app) => {
   });
   // Get a list of all subjects in the Core Learning Path
   app.get('/subjects', (req, res) => {
-    res.json(getSubjects());
+    res.send(getSubjects());
   });
 };
 
