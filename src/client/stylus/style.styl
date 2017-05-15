@@ -32,6 +32,10 @@ colorTextInverse = white
 
 widthMax = 1024px
 
+spaceSmall = 10px
+spaceMedium = 20px 
+spaceLarge = 40px
+
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -329,7 +333,7 @@ section {
 }
 
 .grid-half {
-    margin: 0 2% 2% 0;
+    margin: 0 spaceMedium spaceMedium 0;
     width:calc(98% / 2);
     flex: 1 calc(98% / 2);
 }
@@ -339,7 +343,7 @@ section {
 }
 
 .grid-quarter {
-    margin: 0 2% 2% 0;
+    margin: 0 spaceMedium spaceMedium 0;
     max-width: 320px;
     min-width: 250px;
     width:calc(100% / 4);
@@ -347,7 +351,7 @@ section {
 }
 
 .grid-third {
-    margin: 0 2% 2% 0;
+    margin: 0 spaceMedium spaceMedium 0;
     max-width: 450px;
     min-width: 250px;
     width:calc(100% / 3);
