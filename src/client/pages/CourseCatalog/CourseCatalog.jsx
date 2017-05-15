@@ -1,45 +1,59 @@
 import React from 'react';
+import axios from 'axios';
 import LearningPath from './../shared/LearningPath';
 
 const handleRegisterClick = () => {
   console.log('CLICKED ON REGISTER');
 };
 
-const CourseCatalog = () =>
-	// const { errors } = this.state;
-	(
-		<div>
+class CourseCatalog extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      subjects: []
+    };   
+  }
+  componentDidMount() {
+    // TODO: Move this to /server/reactRoutes.jsx
+    // TODO: Add keys to JSON subjects list object
+    axios.get(`/subjects`)
+      .then(res => {
+        const subjects = res.data;
+        console.log('subjects=',subjects);
+        this.setState({subjects});
+        console.log(this.state.subjects);
+      });
+  }
+  render() {
+    return (
+      <div>
+        <div className="side-panel side-panel-catalog is-visible">
+          <h1>Course Catalog</h1>
+          <div className="panel-menu">
+            <h2>Select topic</h2>
+            <div className="catalog">
+            {this.state.subjects.map(subject => 
+              <label htmlFor={subject}><input type="checkbox" name={subject} value={subject} /><div className="checkmark" />{subject}</label>
+            )}
+            </div>
+            <h2>Select skill level</h2>
+            <div className="catalog">
+              <label htmlFor="Prerequisite"><input type="checkbox" name="Prerequisite" value="Prerequisite" /><div className="checkmark" />Prerequisite</label>
+              <label htmlFor="Beginner"><input type="checkbox" name="Beginner" value="Beginner" /><div className="checkmark" />Beginner</label>
+              <label htmlFor="Intermediate"><input type="checkbox" name="Intermediate" value="Intermediate" /><div className="checkmark" />Intermediate</label>
+              <label htmlFor="Advanced"><input type="checkbox" name="Advanced" value="Advanced" /><div className="checkmark" />Advanced</label>
+            </div>
+            <h2>Ready to Get Started?</h2>
+            <button className="inline button-continue" type="button" onClick={handleRegisterClick} ><i />Sign Me Up!</button>
+          </div>
+        </div>
 
-			<div className="side-panel side-panel-catalog is-visible">
-				<h1>Course Catalog</h1>
-			    <div className="panel-menu">
-			     	
-			    	<h2>Select topic</h2>
-			    	<div className="catalog">
-			    		<label><input type="checkbox" name="Javascript" value="Javascript" /><div className="checkmark"></div>Javascript</label>
-			    		<label><input type="checkbox" name="HTML" value="HTML" /><div className="checkmark"></div>HTML</label>
-			    		<label><input type="checkbox" name="CSS" value="CSS" /><div className="checkmark"></div>CSS</label>
-			    		<label><input type="checkbox" name="SCC" value="Source Code Control" /><div className="checkmark"></div>Source Code Control</label>
-			    		<label><input type="checkbox" name="CS" value="Computer Science" /><div className="checkmark"></div>Computer Science</label>
-			    	</div>
-					
-					<h2>Select skill level</h2>
-					<div className="catalog">
-			    		<label><input type="checkbox" name="Prerequisite" value="Prerequisite" /><div className="checkmark"></div>Prerequisite</label>
-			    		<label><input type="checkbox" name="Beginner" value="Beginner" /><div className="checkmark"></div>Beginner</label>
-			    		<label><input type="checkbox" name="Intermediate" value="Intermediate" /><div className="checkmark"></div>Intermediate</label>
-			    		<label><input type="checkbox" name="Advanced" value="Advanced" /><div className="checkmark"></div>Advanced</label>
-			    	</div>
-					<h2>Ready to Get Started?</h2>
-					<button className="inline button-continue" type="button" onClick={handleRegisterClick} ><i></i>Sign Me Up!</button>
-			    </div>
-			  </div>
-
-	  		<div className="content container-wide">
-
-				<LearningPath />
-			</div>
-		</div>
-		);
+        <div className="content container-wide">
+          <LearningPath />
+        </div>
+      </div>
+    );
+  };
+};
 
 export default CourseCatalog;

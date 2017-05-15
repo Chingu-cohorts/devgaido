@@ -1,3 +1,6 @@
+import { getLesson, getLessons } from './services/lessons';
+import { getSubject, getSubjects } from './services/subjects';
+
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -44,12 +47,39 @@ const auth0Auth = (app) => {
     req.logout();
     res.redirect('/');
   });
+
   app.get('/callback',
     passport.authenticate('auth0', { failureRedirect: '/url-if-something-fails' }),
     (req, res) => {
       res.redirect(req.session.returnTo || '/');
       console.log('user', req.user);
     });
+
+  /*
+   * Intercept and route API request for lessons in the Core Learning Path
+   */
+
+  // Get the details for a specific lesson in the Core Learning Path
+  app.get('/lesson/:lessonId(*)', (req, res) => {
+    res.json(getLesson(req.params.lessonId));
+  });
+  // Get a list of all lessons for specific subject in the Core Learning Path
+  app.get('/lessons/:subjectId(*)', (req, res) => {
+    res.json(getLessons(req.params.subjectId));
+  });
+
+  /*
+   * Intercept and route API requests for subjects in  the Core Learning Path
+   */
+
+  // Get the details for a specific subject in the Core Learning Path
+  app.get('/subject/:subjectId(*)', (req, res) => {
+    res.json(getSubject(req.params.subjectId));
+  });
+  // Get a list of all subjects in the Core Learning Path
+  app.get('/subjects', (req, res) => {
+    res.send(getSubjects());
+  });
 };
 
 export default auth0Auth;

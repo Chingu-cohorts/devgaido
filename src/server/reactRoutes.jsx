@@ -48,6 +48,7 @@ export default (req, res, next) => {
   if (!match) {
     next();
   } else {
+    // TODO: Add subjects list to initial store at this point.
     const user = req.user ? { name: req.user.nickname, authenticated: true }
                           : { name: '', authenticated: false };
     const store = { user };
