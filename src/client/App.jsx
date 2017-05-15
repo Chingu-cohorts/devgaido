@@ -1,6 +1,10 @@
 import React, { createElement } from 'react';
-import { Switch, Route } from 'react-router';
+import { Switch } from 'react-router';
+
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import SuperRoute from './pages/shared/SuperRoute';
 
 import Header from './pages/shared/Header';
 import Footer from './pages/shared/Footer';
@@ -14,11 +18,13 @@ const App = (props) => {
 
   const match = props.serverMatch;
 
-  const routes = !match ? routesArr.map(({ path, exact, component }, index) => (
-      createElement(Route, { path, exact, component, key: index })
-    )) : createElement(Route, {
-      path: match.path, exact: match.exact, component: match.component,
-    });
+  const routes = !match ? routesArr.map(({ path, exact, component, passdown }, index) => (
+    createElement(SuperRoute, { path, exact, key: index, passdown, passdownProps: { user: props.user, learningPaths: props.learningPaths } },
+      createElement(component),
+    )
+  )) : createElement(SuperRoute, {
+    path: match.path, exact: match.exact, passdown: match.passdown, passdownProps: { user: props.user, learningPaths: props.learningPaths },
+  }, createElement(match.component));
 
   return (
     <div className="App">
@@ -42,4 +48,7 @@ App.defaultProps = {
   serverMatch: null,
 };
 
-export default App;
+export default connect(store => ({
+  user: store.user,
+  learningPaths: store.learningPaths,
+}))(App);

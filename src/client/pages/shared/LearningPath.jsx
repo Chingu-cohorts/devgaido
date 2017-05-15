@@ -12,21 +12,21 @@ const handleClick = (e, props) => {
 };
 
 const learningPathItem = props => (
-  <div className={ 'grid-quarter learning-path-item ' + props.Category }>
-      <div className="learning-path-item-header">
-        <i className={props.Category}></i>
-        <i className={props.Type}></i>
+  <div className={`grid-quarter learning-path-item ${  props.Category}`}>
+    <div className="learning-path-item-header">
+        <i className={props.Category} />
+        <i className={props.Type} />
       </div>
-      <span className="learning-path-category">{props.Category}</span>
-      <h3 className="learning-path-item-name">{props['Lesson Name']}</h3>
-      <ul>
+    <span className="learning-path-category">{props.Category}</span>
+    <h3 className="learning-path-item-name">{props['Lesson Name']}</h3>
+    <ul>
         <li className="learning-path-item-subject">{props.Subject}</li>
         <li className="learning-path-item-category">Category: {props.Category}</li>
         <li className="learning-path-item-type">{props.Type}</li>
       </ul>
-      <div className="learning-path-item-footer">
+    <div className="learning-path-item-footer">
         <a className="view-item" href="#" onClick={e => handleClick(e, props)} >View</a>
-        <i className={props['Lesson Name']}></i>
+        <i className={props['Lesson Name']} />
       </div>
   </div>
   );
@@ -43,11 +43,11 @@ const detailedPathItem = props => (
   </div>
   );
 
-const LearningPath = () => {
+const LearningPath = ({ learninPath }) => {
   const items = learningPath.map((item, index) => learningPathItem({ ...item, index }));
   return (
     <div className="container-flex learning-path-items">
-        {items}
+      {items}
       <div className="learningPathItemDetails">
         {detailedPathItem(detailedLesson)}
       </div>

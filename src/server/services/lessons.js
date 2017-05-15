@@ -29,4 +29,9 @@ const getLessons = (subjectId) => {
   }, []));
 };
 
-export { getLesson, getLessons };
+const getAllLessons = () => {
+  console.log('Entered getAllLessons');
+  return CoreLearningPath;
+};
+
+export { getLesson, getLessons, getAllLessons };

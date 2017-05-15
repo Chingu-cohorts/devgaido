@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import LearningPath from './../shared/LearningPath';
 
 const handleRegisterClick = () => {
@@ -10,21 +9,11 @@ class CourseCatalog extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      subjects: []
-    };   
-  }
-  componentDidMount() {
-    // TODO: Move this to /server/reactRoutes.jsx
-    // TODO: Add keys to JSON subjects list object
-    axios.get(`/subjects`)
-      .then(res => {
-        const subjects = res.data;
-        console.log('subjects=',subjects);
-        this.setState({subjects});
-        console.log(this.state.subjects);
-      });
+      subjects: [],
+    };
   }
   render() {
+    console.log('Props:', this.props);
     return (
       <div>
         <div className="side-panel side-panel-catalog is-visible">
@@ -32,8 +21,8 @@ class CourseCatalog extends React.Component {
           <div className="panel-menu">
             <h2>Select topic</h2>
             <div className="catalog">
-            {this.state.subjects.map(subject => 
-              <label htmlFor={subject}><input type="checkbox" name={subject} value={subject} /><div className="checkmark" />{subject}</label>
+              {this.state.subjects.map(subject =>
+              <label htmlFor={subject}><input type="checkbox" name={subject} value={subject} /><div className="checkmark" />{subject}</label>,
             )}
             </div>
             <h2>Select skill level</h2>
@@ -53,7 +42,8 @@ class CourseCatalog extends React.Component {
         </div>
       </div>
     );
-  };
-};
+  }
+}
 
 export default CourseCatalog;
+
