@@ -14,10 +14,9 @@ class CourseCatalog extends React.Component {
     };   
   }
   componentDidMount() {
-    // TODO: Create a configuration file for settings such as the app webserver address
-    // TODO: Should we be using Fetch instead of Axios?
-    // TODO: Is this the best spot to retrieve the list of subjects or should it be higher in the hierarchy?
-    axios.get(`http://localhost:8080/subjects`)
+    // TODO: Move this to /server/reactRoutes.jsx
+    // TODO: Add keys to JSON subjects list object
+    axios.get(`/subjects`)
       .then(res => {
         const subjects = res.data;
         console.log('subjects=',subjects);
