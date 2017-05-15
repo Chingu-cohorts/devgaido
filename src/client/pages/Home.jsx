@@ -1,3 +1,4 @@
+// TODO: This doesn't appear to be used. Delete after verifying with Kim
 import React from 'react';
 
 const Home = () => (

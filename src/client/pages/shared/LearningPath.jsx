@@ -1,4 +1,5 @@
 import React from 'react';
+// TODO: Remove the learningpath.json file and instead pass a JSON object in props from CourseCatalog.jsx containing the filtered lessons to be displayed.
 import learningPath from '../../../server/models/learningpath.json';
 
 let detailedLesson = learningPath[0];
