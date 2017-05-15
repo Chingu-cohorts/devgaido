@@ -8,7 +8,6 @@ import CoreLearningPath from '../models/learningpath.json';
  */
 // TODO: Add details other than just subject name once subjects have been defined
 const getSubject = (subjectId) => {
-  console.log(`Entered getSubject: ${subjectId}`);
   return JSON.stringify(CoreLearningPath.reduce((uniqueList, currentElement) => {
     if (currentElement.Subject.toLowerCase() === subjectId.toLocaleLowerCase()
       && !uniqueList.includes(subjectId)) {
@@ -24,7 +23,6 @@ const getSubject = (subjectId) => {
  * @returns {String[]} - Array of subject names in ascending sequence
  */
 const getSubjects = () => {
-  console.log('Entered getSubjects');
   return JSON.stringify(CoreLearningPath.reduce((uniqueList, currentElement) => {
     if (!uniqueList.includes(currentElement.Subject)) {
       uniqueList.push(currentElement.Subject);
