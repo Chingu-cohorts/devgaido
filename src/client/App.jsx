@@ -18,13 +18,33 @@ const App = (props) => {
 
   const match = props.serverMatch;
 
-  const routes = !match ? routesArr.map(({ path, exact, component, passdown }, index) => (
-    createElement(SuperRoute, { path, exact, key: index, passdown, passdownProps: { user: props.user, learningPaths: props.learningPaths } },
-      createElement(component),
-    )
-  )) : createElement(SuperRoute, {
-    path: match.path, exact: match.exact, passdown: match.passdown, passdownProps: { user: props.user, learningPaths: props.learningPaths },
-  }, createElement(match.component));
+  const routes = [];
+
+  if (match) {
+    routes.push(
+      <SuperRoute
+        {...match}
+        key={0}
+        passdownProps={{
+          user: props.user,
+          learningPath: props.learningPath,
+        }}
+      >
+        {createElement(match.component)}
+      </SuperRoute>);
+  } else {
+    let key = 0;
+    routesArr.forEach((route) => {
+      routes.push(
+        <SuperRoute
+          {...route}
+          key={key += 1}
+          passdownProps={{ user: props.user, learningPath: props.learningPath }}
+        >
+          {createElement(route.component)}
+        </SuperRoute>);
+    });
+  }
 
   return (
     <div className="App">
@@ -42,13 +62,16 @@ const App = (props) => {
 
 App.propTypes = {
   serverMatch: PropTypes.objectOf(PropTypes.shape),
+  user: PropTypes.objectOf(PropTypes.shape).isRequired,
+  learningPath: PropTypes.objectOf(PropTypes.shape),
 };
 
 App.defaultProps = {
   serverMatch: null,
+  learningPath: [],
 };
 
 export default connect(store => ({
   user: store.user,
-  learningPaths: store.learningPaths,
+  learningPath: store.learningPath,
 }))(App);

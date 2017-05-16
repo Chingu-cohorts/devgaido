@@ -60,12 +60,12 @@ export default (req, res, next) => {
     // TODO: Add subjects list to initial store at this point.
     const user = req.user ? { name: req.user.nickname, authenticated: true }
                           : { name: '', authenticated: false };
-    const learningPaths = {
+    const learningPath = {
       subjects: getAllSubjects(),
       lessons: getAllLessons(),
     };
 
-    const state = { user, learningPaths };
+    const state = { user, learningPath };
     const store = createStore(reducers, state);
 
     res.set('Content-Type', 'text/html')

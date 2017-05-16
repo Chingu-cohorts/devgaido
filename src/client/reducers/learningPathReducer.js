@@ -1,5 +1,6 @@
-const learningPaths = (state = {
+const learningPath = (state = {
   lessons: [],
+  subjects: [],
 }, action) => {
   switch (action.type) {
     default:
@@ -7,4 +8,4 @@ const learningPaths = (state = {
   }
 };
 
-export default learningPaths;
+export default learningPath;
