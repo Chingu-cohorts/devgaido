@@ -12,7 +12,7 @@ const handleClick = (e, props) => {
 };
 
 const learningPathItem = props => (
-  <div className={`grid-quarter learning-path-item ${  props.Category}`}>
+  <div className={`grid-quarter learning-path-item ${  props.Category}`} key={props["Sequence #"]}>
     <div className="learning-path-item-header">
         <i className={props.Category} />
         <i className={props.Type} />

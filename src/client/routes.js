@@ -20,7 +20,7 @@ const routes = [
     path: '/courses',
     exact: true,
     component: CourseCatalog,
-    passdown: ['learningPaths'],
+    passdown: ['subjects', 'learningPaths'],
   },
   {
     path: '/profile',

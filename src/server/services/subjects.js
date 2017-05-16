@@ -1,34 +1,29 @@
-import CoreLearningPath from '../models/learningpath.json';
+import Subjects from '../models/subjects.json';
 
 /**
- * Extract a specific subject and its details from the Core Learning Path
+ * Extract a specific subject and its details from the Subjects
  *
  * @param {String} subjectId - Unique subject identifier
  * @returns {String[]} - JSON object containing subject details
  */
 // TODO: Add details other than just subject name once subjects have been defined
 const getSubject = (subjectId) => {
-  return JSON.stringify(CoreLearningPath.reduce((uniqueList, currentElement) => {
-    if (currentElement.Subject.toLowerCase() === subjectId.toLocaleLowerCase()
-      && !uniqueList.includes(subjectId)) {
-      uniqueList.push(currentElement.Subject);
+  return JSON.stringify(Subjects.reduce((subjectsList, currentSubject) => {
+    if (currentSubject.Name.toLowerCase() === subjectId.toLocaleLowerCase()
+      && !subjectsList.includes(subjectId)) {
+      subjectsList.push(currentSubject);
     }
-    return uniqueList;
+    return subjectsList;
   }, []));
 };
 
 /**
- * Extract a unique list of unique subjects from the Core Learning Path
+ * Extract a unique list of unique subjects from the Subjects
  *
  * @returns {String[]} - Array of subject names in ascending sequence
  */
-const getSubjects = () => {
-  return JSON.stringify(CoreLearningPath.reduce((uniqueList, currentElement) => {
-    if (!uniqueList.includes(currentElement.Subject)) {
-      uniqueList.push(currentElement.Subject);
-    }
-    return uniqueList;
-  }, []).sort());
+const getAllSubjects = () => {
+  return Subjects;
 };
 
-export { getSubject, getSubjects };
+export { getSubject, getAllSubjects };

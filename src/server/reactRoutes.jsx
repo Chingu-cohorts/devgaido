@@ -6,6 +6,7 @@ import { createStore } from 'redux';
 import reducers from '../client/reducers';
 
 import { getAllLessons } from './services/lessons';
+import { getAllSubjects } from './services/subjects';
 
 
 import App from '../client/App';
@@ -60,6 +61,7 @@ export default (req, res, next) => {
     const user = req.user ? { name: req.user.nickname, authenticated: true }
                           : { name: '', authenticated: false };
     const learningPaths = {
+      subjects: getAllSubjects(),
       lessons: getAllLessons(),
     };
 

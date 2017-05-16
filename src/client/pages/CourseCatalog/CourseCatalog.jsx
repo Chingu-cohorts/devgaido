@@ -1,5 +1,5 @@
 import React from 'react';
-import LearningPath from './../shared/LearningPath';
+import LearningPath from '../shared/LearningPath';
 
 const handleRegisterClick = () => {
   console.log('CLICKED ON REGISTER');
@@ -21,8 +21,11 @@ class CourseCatalog extends React.Component {
           <div className="panel-menu">
             <h2>Select topic</h2>
             <div className="catalog">
-              {this.state.subjects.map(subject =>
-              <label htmlFor={subject}><input type="checkbox" name={subject} value={subject} /><div className="checkmark" />{subject}</label>,
+              {this.props.learningPaths.subjects.map(subject => 
+                <label htmlFor={subject.Name} key={subject.Name}>
+                  <input type="checkbox" name={subject.Name} value={subject.Name} />
+                  <div className="checkmark" />{subject.Name}
+                </label>,
             )}
             </div>
             <h2>Select skill level</h2>
