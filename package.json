@@ -37,7 +37,6 @@
   },
   "dependencies": {
     "auth0-lock": "^10.16.0",
-    "axios": "^0.16.1",
     "body-parser": "^1.17.1",
     "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",

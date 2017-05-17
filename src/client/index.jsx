@@ -8,25 +8,25 @@ import thunk from 'redux-thunk';
 import { AppContainer } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import reducer from './reducers';
+import reducers from './reducers';
 import App from './App';
 
 import './stylus/style.styl';
 
-const getInitialStore = () => {
+const getInitialState = () => {
   let initialStore = {};
 
-  if (window.__INITIAL_STORE__) {
-    initialStore = { ...window.__INITIAL_STORE__ };
+  if (window.__INITIAL_STATE__) {
+    initialStore = { ...window.__INITIAL_STATE__ };
   }
-  delete window.__INITIAL_STORE__;
+  delete window.__INITIAL_STATE__;
   return initialStore;
 };
 
 const middleware = [thunk];
 if (process.env.NODE_ENV !== 'production') middleware.push(logger);
 
-const store = createStore(reducer, getInitialStore(), applyMiddleware(...middleware));
+const store = createStore(reducers, getInitialState(), applyMiddleware(...middleware));
 
 console.log('STORE.GETSTATE:', store.getState());
 

@@ -23,7 +23,7 @@ const Home = () => (
   React, and Vue.</p>
       <h2>Want to See More?</h2>
       <div className="centeredContent">
-        <button className="inline button-continue" type="button" onClick={handleShowMeClick} ><i></i>&nbsp;&nbsp;Show Me the Courses!</button>
+        <button className="inline button-continue" type="button" onClick={handleShowMeClick} ><i />&nbsp;&nbsp;Show Me the Courses!</button>
       </div>
     </div>
   </div>
