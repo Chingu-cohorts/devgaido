@@ -5,8 +5,8 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../client/reducers';
 
-import { getAllLessons } from './services/lessons';
-import { getAllSubjects } from './services/subjects';
+import { getAllLessons } from './services/coreLessons';
+import { getAllSubjects } from './services/coreSubjects';
 
 
 import App from '../client/App';

@@ -1,4 +1,4 @@
-import Subjects from '../models/subjects.json';
+import CoreSubjects from '../models/coresubjects.json';
 
 /**
  * Extract a specific subject and its details from the Subjects
@@ -8,7 +8,7 @@ import Subjects from '../models/subjects.json';
  */
 // TODO: Add details other than just subject name once subjects have been defined
 const getSubject = (subjectId) => {
-  return JSON.stringify(Subjects.reduce((subjectsList, currentSubject) => {
+  return JSON.stringify(CoreSubjects.reduce((subjectsList, currentSubject) => {
     if (currentSubject.Name.toLowerCase() === subjectId.toLocaleLowerCase()
       && !subjectsList.includes(subjectId)) {
       subjectsList.push(currentSubject);
@@ -18,12 +18,12 @@ const getSubject = (subjectId) => {
 };
 
 /**
- * Extract a unique list of unique subjects from the Subjects
+ * Extract a unique list of unique subjects from the Core Subjects
  *
  * @returns {String[]} - Array of subject names in ascending sequence
  */
 const getAllSubjects = () => {
-  return Subjects;
+  return CoreSubjects;
 };
 
 export { getSubject, getAllSubjects };
