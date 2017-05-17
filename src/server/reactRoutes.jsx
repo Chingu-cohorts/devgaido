@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../client/reducers';
 
+import { getAllPaths } from './services/corePaths';
+import { getAllCourses } from './services/coreCourses';
 import { getAllLessons } from './services/coreLessons';
 import { getAllSubjects } from './services/coreSubjects';
 
@@ -62,6 +64,8 @@ export default (req, res, next) => {
                           : { name: '', authenticated: false };
     const learningPath = {
       subjects: getAllSubjects(),
+      paths: getAllPaths(),
+      courses: getAllCourses(),
       lessons: getAllLessons(),
     };
 
