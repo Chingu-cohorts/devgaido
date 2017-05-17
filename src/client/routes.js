@@ -1,4 +1,5 @@
 import Home from './pages/Home/Home';
+import Paths from './pages/Paths/Paths';
 import Profile from './pages/Profile/Profile';
 import Times from './pages/Times/Times';
 import Objectives from './pages/Objectives/Objectives';
@@ -10,6 +11,12 @@ const routes = [
     path: '/',
     exact: true,
     component: Home,
+  },
+  {
+    path: '/paths',
+    exact: true,
+    component: Paths,
+    passdown: ['dispatch', 'PathsState'],
   },
   {
     path: '/dashboard',

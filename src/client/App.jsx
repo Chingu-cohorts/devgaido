@@ -17,18 +17,17 @@ const App = (props) => {
 // On the client though, just return all routes and let Switch do the work.
 
   const match = props.serverMatch;
+  const passdownProps = {
+    dispatch: props.dispatch, user: props.user, learningPath: props.learningPath, PathsState: props.PathsState,
+  };
 
   const routes = [];
-
   if (match) {
     routes.push(
       <SuperRoute
         {...match}
         key={0}
-        passdownProps={{
-          user: props.user,
-          learningPath: props.learningPath,
-        }}
+        passdownProps={passdownProps}
       >
         {createElement(match.component)}
       </SuperRoute>);
@@ -39,7 +38,7 @@ const App = (props) => {
         <SuperRoute
           {...route}
           key={key += 1}
-          passdownProps={{ user: props.user, learningPath: props.learningPath }}
+          passdownProps={passdownProps}
         >
           {createElement(route.component)}
         </SuperRoute>);
@@ -64,14 +63,18 @@ App.propTypes = {
   serverMatch: PropTypes.objectOf(PropTypes.shape),
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
   learningPath: PropTypes.objectOf(PropTypes.shape),
+  PathsState: PropTypes.objectOf(PropTypes.shape),
+  dispatch: PropTypes.func.isRequired,
 };
 
 App.defaultProps = {
   serverMatch: null,
   learningPath: [],
+  PathsState: null,
 };
 
 export default connect(store => ({
   user: store.user,
   learningPath: store.learningPath,
+  PathsState: store.PathsState,
 }))(App);

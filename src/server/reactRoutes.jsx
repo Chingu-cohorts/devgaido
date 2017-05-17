@@ -65,7 +65,12 @@ export default (req, res, next) => {
       lessons: getAllLessons(),
     };
 
-    const state = { user, learningPath };
+    const PathsState = {
+      paths: getAllLessons(),
+    };
+    PathsState.paths = PathsState.paths.map((path, index) => ({ ...path, id: index, opened: false }));
+
+    const state = { user, learningPath, PathsState };
     const store = createStore(reducers, state);
 
     res.set('Content-Type', 'text/html')
