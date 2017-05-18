@@ -2,7 +2,7 @@
   {
     "name": "Source Code Control Systems",
     "description": "Learn the tools and techniques needed to effectively and efficiently manage your projects source code.",
-    "lessons": [
+    "courses": [
       "Understanding & Working with Git",
       "Understanding & Working with GitHub",
       "Advanced Git"
@@ -11,14 +11,14 @@
   {
     "name": "Webpage Design & Construction",
     "description": "Learn the technologies necessary to build simple webpages.",
-    "lessons": [
+    "courses": [
       "Building Webpages"
     ]
   },
   {
     "name": "Javascript",
     "description": "Learn Javascript so you can be the next Kim Kwanka",
-    "lessons": [
+    "courses": [
       "Beginning Javascript",
       "Intermediate Javascript",
       "Advanced Javascript"

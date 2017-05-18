@@ -20,6 +20,9 @@ const getLessons = subjectId => JSON.stringify(CoreLessons.reduce((lessonsForSub
   return lessonsForSubject;
 }, []));
 
+/**
+ * Retrieve all lessons from the Core Lessons
+ */
 const getAllLessons = () => CoreLessons;
 
 export { getLesson, getLessons, getAllLessons };

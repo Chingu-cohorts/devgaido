@@ -10,7 +10,6 @@ import { getAllCourses } from './services/coreCourses';
 import { getAllLessons } from './services/coreLessons';
 import { getAllSubjects } from './services/coreSubjects';
 
-
 import App from '../client/App';
 
 import routes from '../client/routes';
@@ -59,17 +58,18 @@ export default (req, res, next) => {
   if (!match) {
     next();
   } else {
-    // TODO: Add subjects list to initial store at this point.
+     // TODO: Add subjects list to initial store at this point.
     const user = req.user ? { name: req.user.nickname, authenticated: true }
                           : { name: '', authenticated: false };
     const learningPath = {
       subjects: getAllSubjects(),
       paths: getAllPaths(),
+      // TODO: Review the following two with the team. They should be removed and access specific code relocated to individual pages
       courses: getAllCourses(),
       lessons: getAllLessons(),
     };
 
-    const PathsState = {
+   const PathsState = {
       paths: getAllLessons(),
     };
     PathsState.paths = PathsState.paths.map((path, index) => ({ ...path, id: index, opened: false }));

@@ -6,8 +6,12 @@ import CorePaths from '../models/corepaths.json';
  * @param {String} lessonId - Unique path identifier
  * @returns {String[]} - JSON object containing attributes of the path
  */
-const getPath = pathId => JSON.stringify(CorePaths.find(currentPath => currentPath.name === pathId));
+const getPath = pathName => JSON.stringify(
+  CorePaths.find(currentPath => currentPath.name === pathName));
 
+/**
+ * Retrieve all paths from the Core Paths
+ */
 const getAllPaths = () => CorePaths;
 
 export { getPath, getAllPaths };
