@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../client/reducers';
 
-import { getAllPaths } from './services/corePaths';
+import { getAllPaths, getFullPaths } from './services/corePaths';
 import { getAllCourses } from './services/coreCourses';
 import { getAllLessons } from './services/coreLessons';
 import { getAllSubjects } from './services/coreSubjects';
@@ -67,6 +67,7 @@ export default (req, res, next) => {
       // TODO: Review the following two with the team. They should be removed and access specific code relocated to individual pages
       courses: getAllCourses(),
       lessons: getAllLessons(),
+      fullPaths: getFullPaths(),
     };
 
    const PathsState = {
