@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const learningPathItem = props => (
-  <div className={`grid-quarter learning-path-item ${props.Category}`} key={props['Sequence #']}>
+  <div className={`grid-quarter learning-path-item ${props.Category}`} key={props.index}>
     <div className="learning-path-item-header">
       <i className={props.Category} />
       <i className={props.Type} />
@@ -20,7 +20,7 @@ const learningPathItem = props => (
     </div>
   </div>
   );
-
+/*
 const detailedPathItem = props => (
   <div className="grid-third learning-path-item">
     <h3 className="learning-path-item-name">{props['Lesson Name']}</h3>
@@ -32,27 +32,27 @@ const detailedPathItem = props => (
     <p className="learning-path-item-seq-num">{props['Sequence #']}</p>
   </div>
   );
-
+*/
 const LearningPath = ({ lessons, detailedLesson }) => {
   const items = lessons.map((item, index) => learningPathItem({ ...item, index }));
   return (
     <div className="container-flex learning-path-items">
       {items}
-      <div className="learningPathItemDetails">
+      {/* <div className="learningPathItemDetails">
         {detailedPathItem(detailedLesson)}
-      </div>
+      </div> */}
     </div>
   );
 };
 
 learningPathItem.propTypes = {
   Category: PropTypes.string.isRequired,
-  'Sequence #': PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
   Type: PropTypes.string.isRequired,
   Subject: PropTypes.string.isRequired,
   'Lesson Name': PropTypes.string.isRequired,
 };
-
+/*
 detailedPathItem.propTypes = {
   Category: PropTypes.string.isRequired,
   Type: PropTypes.string.isRequired,
@@ -61,7 +61,7 @@ detailedPathItem.propTypes = {
   'Sequence #': PropTypes.string.isRequired,
   'Lesson Name': PropTypes.string.isRequired,
   'External Source': PropTypes.string.isRequired,
-};
+}; */
 
 LearningPath.propTypes = {
   lessons: PropTypes.arrayOf(PropTypes.shape).isRequired,

@@ -1,6 +1,5 @@
 @import '../../../node_modules/normalize.css'
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700')
-
 /*--------------------------------------------------------------
 <<<<<<< Updated upstream
 # Color palette
@@ -1505,7 +1504,37 @@ a
     
 .learning-path-item
     cursor pointer
-.learning-path-item.opened
-    background red
+//.learning-path-item.opened
+//    background red
+
+@lost flexbox flex;
+
+.lostGridColumn
+    lost-column: 1/3 3;
+    margin-bottom 10px
+.lostContainer
+    margin-top: 6rem
+    lost-center: widthMax;
+    display: flex
+
+.lostFullWidth
+    lost-column: 1;
+
+.courseDescription
+    font-size 80%
+    color colorPrimary
+    margin-bottom: 10px
+    padding 10px
+    
+.courseInfo
+    box-shadow: 15px 0 40px rgba(30, 33, 94, 0.15);
+
+@media only screen and (max-width: 800px)
+    .lostGridColumn
+        lost-column: 1/2 2;
+
+@media only screen and (max-width: 600px)
+    .lostGridColumn
+        lost-column: 1/1 1;
 /*---------------------------------------------------------------
 ---------------------------------------------------------------*/
