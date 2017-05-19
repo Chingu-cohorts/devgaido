@@ -61,20 +61,29 @@ export default (req, res, next) => {
      // TODO: Add subjects list to initial store at this point.
     const user = req.user ? { name: req.user.nickname, authenticated: true }
                           : { name: '', authenticated: false };
-    const learningPath = {
+    const curriculum = {
       subjects: getAllSubjects(),
       paths: getAllPaths(),
       courses: getAllCourses(),
       lessons: getAllLessons(),
     };
 
-    const PathsState = {
-      paths: getAllLessons(),
+    const uiState = {
+      Pages: {
+        Paths: {
+          pathStates: [],
+        },
+      },
     };
-    PathsState.paths = PathsState.paths.map((path, index) => (
-      { ...path, id: index, opened: false }));
 
-    const state = { user, learningPath, PathsState };
+    const nPaths = curriculum.paths.length;
+    for (let i = 0; i < nPaths; i += 1) {
+      uiState.Pages.Paths.pathStates.push({
+        id: i,
+        opened: false,
+      });
+    }
+    const state = { user, curriculum, uiState };
     const store = createStore(reducers, state);
 
     res.set('Content-Type', 'text/html')

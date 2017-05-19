@@ -8,8 +8,8 @@ const toggleItem = (e, id, dispatch) => {
 };
 const openedClass = opened => (opened ? 'opened' : '');
 
-const Path = ({ id, name, description, dispatch, opened }) => (
-  <div className={`grid-quarter learning-path-item ${openedClass(opened)}`} onClick={e => toggleItem(e, id, dispatch)}>
+const Path = ({ id, name, description, dispatch, opened, key }) => (
+  <div className={`grid-quarter learning-path-item ${openedClass(opened)}`} onClick={e => toggleItem(e, id, dispatch)} key={key}>
     <div className="learning-path-item-header">
       <i className="path-icon" />
       <i className="no-icon" />
@@ -25,16 +25,21 @@ const Path = ({ id, name, description, dispatch, opened }) => (
   </div>
 );
 
-const Paths = ({ PathsState, dispatch }) => {
+const Paths = ({ curriculum, uiState, dispatch }) => {
   const description = 'Welcome to the WordPress Development Track. You\'ll be led through a series of Courses and Workshops so you can efficiently master the skills you need achieve your goals.';
 
   const pathsArr = [];
 
-  let i = -1;
-
-  PathsState.paths.forEach((path) => {
+  curriculum.paths.forEach((path, index) => {
     const name = path['Lesson Name'];
-    pathsArr.push(Path({ id: i += 1, dispatch, name, opened: path.opened, description }));
+    pathsArr.push(Path({
+      key: uiState.Pages.Paths.pathStates[index].id,
+      id: uiState.Pages.Paths.pathStates[index].id,
+      dispatch,
+      name,
+      opened: uiState.Pages.Paths.pathStates[index].opened,
+      description,
+    }));
   });
 
   return (
@@ -46,6 +51,7 @@ const Paths = ({ PathsState, dispatch }) => {
 
 Path.propTypes = {
   id: PropTypes.number.isRequired,
+  key: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   opened: PropTypes.bool.isRequired,
@@ -53,12 +59,14 @@ Path.propTypes = {
 };
 
 Paths.propTypes = {
-  PathsState: PropTypes.objectOf(PropTypes.shape),
+  uiState: PropTypes.objectOf(PropTypes.shape),
+  curriculum: PropTypes.objectOf(PropTypes.shape),
   dispatch: PropTypes.func,
 };
 
 Paths.defaultProps = {
-  PathsState: null,
+  uiState: null,
+  curriculum: null,
   dispatch: null,
 };
 

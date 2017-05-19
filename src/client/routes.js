@@ -16,7 +16,7 @@ const routes = [
     path: '/paths',
     exact: true,
     component: Paths,
-    passdown: ['dispatch', 'PathsState'],
+    passdown: ['dispatch', 'curriculum', 'uiState'],
   },
   {
     path: '/dashboard',
@@ -27,7 +27,7 @@ const routes = [
     path: '/courses',
     exact: true,
     component: CourseCatalog,
-    passdown: ['learningPath'],
+    passdown: ['curriculum'],
   },
   {
     path: '/profile',

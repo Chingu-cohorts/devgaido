@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import user from './userReducer';
-import learningPath from './learningPathReducer';
-import PathsState from '../pages/Paths/PathsReducer';
+import curriculum from './curriculumReducer';
+import uiState from './uiStateReducer';
 
-export default combineReducers({ user, learningPath, PathsState });
+export default combineReducers({ user, curriculum, uiState });

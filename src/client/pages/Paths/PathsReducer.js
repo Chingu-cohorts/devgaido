@@ -1,4 +1,4 @@
-const path = (state = {}, action) => {
+const pathState = (state = {}, action) => {
   switch (action.type) {
     case 'TOGGLE_PATH': {
       const newState = { ...state, opened: !state.opened };
@@ -9,16 +9,16 @@ const path = (state = {}, action) => {
   }
 };
 
-const pathPage = (state = {
-  paths: [],
+const Paths = (state = {
+  pathStates: [],
 }, action) => {
   switch (action.type) {
     case 'TOGGLE_PATH': {
-      const paths = state.paths.slice(0);
-      const newPaths = paths.map(el => ((el.id !== action.id) ? el : path(el, action)));
+      const pathStatesCopy = state.pathStates.slice(0);
+      const newPathStates = pathStatesCopy.map(el => ((el.id !== action.id) ? el : pathState(el, action)));
       return {
         ...state,
-        paths: newPaths,
+        pathStates: newPathStates,
       };
     }
     default:
@@ -26,4 +26,4 @@ const pathPage = (state = {
   }
 };
 
-export default pathPage;
+export default Paths;
