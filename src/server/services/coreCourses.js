@@ -1,5 +1,4 @@
 import CoreCourses from '../models/corecourses.json';
-import { getLesson } from './coreLessons';
 
 /**
  * Extract a specific course and its details from the Core Courses
@@ -7,7 +6,8 @@ import { getLesson } from './coreLessons';
  * @param {String} courseName - Unique path identifier
  * @returns {String[]} - JSON object containing attributes of the path
  */
-const getCourse = (courseName) => JSON.stringify(CoreCourses.find(currentCourse => currentCourse.name === courseName));
+const getCourse = courseName => JSON.stringify(CoreCourses.find(
+  currentCourse => currentCourse.name === courseName));
 
 /**
  * Retrieve all courses and their details
@@ -16,29 +16,4 @@ const getCourse = (courseName) => JSON.stringify(CoreCourses.find(currentCourse 
  */
 const getAllCourses = () => CoreCourses;
 
-/**
- * Build a JSON document from containing the full representation of the
- * course names provided in the input parameter and the Core Lessons owned by
- * each. The resulting JSON document will contain all details for each course
- * as well as the details for each lesson it owns.
- *
- * @param {String} courseNames - JSON document containing 0 or more course names
- * @returns {Object} - JSON object containing all paths, courese, and lessons.
- */
-const getFullCourses = (courseNames) => {
-  const allCourses = courseNames.forEach((currentCourseName) => {
-    let fullCourse = [];
-    const course = CoreCourses.find(currentCourse => currentCourse.name === currentCourseName);
-    const lessonsInCourse = course.lessonNames.reduce((fullLessons, currentLessonName) => {
-      const lesson = getLesson(currentLessonName);
-      fullLessons.push(lesson);
-      return fullLessons;
-    }, []);
-    console.log(JSON.stringify(course) + ', \"lessonsDetail:\"' + (JSON.stringify(lessonsInCourse)));
-    fullCourse.push(JSON.stringify(course) + ', \"lessonsDetail:\"' + (JSON.stringify(lessonsInCourse)));
-    return fullCourse;
-  });
-  return allCourses;
-};
-
-export { getCourse, getAllCourses, getFullCourses };
+export { getCourse, getAllCourses };

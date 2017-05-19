@@ -1,5 +1,4 @@
 import CorePaths from '../models/corepaths.json';
-import { getFullCourses } from './coreCourses';
 
 /**
  * Extract a specific path and its details from the Core Paths
@@ -17,21 +16,4 @@ const getPath = pathName => JSON.stringify(
  */
 const getAllPaths = () => CorePaths;
 
-/**
- * Build a JSON document containing the full representation of the Core Path,
- * and it's relationships. Namely, the Core Courses owned by each path and the
- * Core Lessons owned by each course.
- *
- * @returns {Object} - JSON object containing all paths, courese, and lessons.
- */
-const getFullPaths = () => {
-  CorePaths.reduce((fullPath, currentPath) => {
-    console.log(`Path Name: ${currentPath.name}`);
-    const coursesInPath = getFullCourses(currentPath.courseNames);
-    const path = `${currentPath} ${coursesInPath}`;
-    console.log(`\n..Path element: \n${path}\n`);
-    return fullPath.push(path);
-  }, []);
-};
-
-export { getPath, getAllPaths, getFullPaths };
+export { getPath, getAllPaths };

@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../client/reducers';
 
-import { getAllPaths, getFullPaths } from './services/corePaths';
+import { getAllPaths } from './services/corePaths';
 import { getAllCourses } from './services/coreCourses';
 import { getAllLessons } from './services/coreLessons';
 import { getAllSubjects } from './services/coreSubjects';
@@ -64,17 +64,15 @@ export default (req, res, next) => {
     const learningPath = {
       subjects: getAllSubjects(),
       paths: getAllPaths(),
-      // TODO: Review the following two with the team. They should be removed and access specific code relocated to individual pages
       courses: getAllCourses(),
       lessons: getAllLessons(),
-      // TODO: Uncomment the following line once testing has been completed.
-      //fullPaths: getFullPaths(),
     };
 
-   const PathsState = {
+    const PathsState = {
       paths: getAllLessons(),
     };
-    PathsState.paths = PathsState.paths.map((path, index) => ({ ...path, id: index, opened: false }));
+    PathsState.paths = PathsState.paths.map((path, index) => (
+      { ...path, id: index, opened: false }));
 
     const state = { user, learningPath, PathsState };
     const store = createStore(reducers, state);
