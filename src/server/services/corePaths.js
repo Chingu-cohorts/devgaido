@@ -26,8 +26,11 @@ const getAllPaths = () => CorePaths;
  */
 const getFullPaths = () => {
   CorePaths.reduce((fullPath, currentPath) => {
-    const coursesInPath = getFullCourses(currentPath.courses);
-    return fullPath.push(coursesInPath);
+    console.log(`Path Name: ${currentPath.name}`);
+    const coursesInPath = getFullCourses(currentPath.courseNames);
+    const path = `${currentPath} ${coursesInPath}`;
+    console.log(`\n..Path element: \n${path}\n`);
+    return fullPath.push(path);
   }, []);
 };
 

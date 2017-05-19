@@ -67,7 +67,8 @@ export default (req, res, next) => {
       // TODO: Review the following two with the team. They should be removed and access specific code relocated to individual pages
       courses: getAllCourses(),
       lessons: getAllLessons(),
-      fullPaths: getFullPaths(),
+      // TODO: Uncomment the following line once testing has been completed.
+      //fullPaths: getFullPaths(),
     };
 
    const PathsState = {

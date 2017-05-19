@@ -26,19 +26,19 @@ const getAllCourses = () => CoreCourses;
  * @returns {Object} - JSON object containing all paths, courese, and lessons.
  */
 const getFullCourses = (courseNames) => {
-  console.log(`..getFullCourses courseNames: ${JSON.stringify(courseNames, undefined, 2)}`);
-  const allCourses = courseNames.reduce((fullCourse, currentCourseName) => {
+  const allCourses = courseNames.forEach((currentCourseName) => {
+    let fullCourse = [];
     const course = CoreCourses.find(currentCourse => currentCourse.name === currentCourseName);
-    console.log(`course: ${course}`);
-    const lessonsInCourse = course.lessons.reduce((fullLessons, currentLessonName) => {
+    const lessonsInCourse = course.lessonNames.reduce((fullLessons, currentLessonName) => {
       const lesson = getLesson(currentLessonName);
       fullLessons.push(lesson);
       return fullLessons;
     }, []);
-    const courseInfo = JSON.stringify(course) + lessonsInCourse;
-    console.log(`courseInfo: ${courseInfo}`);
-    return fullCourse.push(courseInfo);
-  }, []);
+    console.log(JSON.stringify(course) + ', \"lessonsDetail:\"' + (JSON.stringify(lessonsInCourse)));
+    fullCourse.push(JSON.stringify(course) + ', \"lessonsDetail:\"' + (JSON.stringify(lessonsInCourse)));
+    return fullCourse;
+  });
   return allCourses;
 };
+
 export { getCourse, getAllCourses, getFullCourses };

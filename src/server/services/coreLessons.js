@@ -6,8 +6,8 @@ import CoreLessons from '../models/corelessons.json';
  * @param {String} lessonName - Unique lesson identifier
  * @returns {String[]} - JSON object containing attributes of the lesson
  */
-const getLesson = lessonName => JSON.stringify(CoreLessons.find(currentLesson =>
-  currentLesson['Lesson Name'] === lessonName));
+const getLesson = lessonName => CoreLessons.find(currentLesson =>
+  currentLesson['Lesson Name'] === lessonName);
 
 /**
  * Extract lessons for a given subject from the Core Lessons
