@@ -5,9 +5,10 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../client/reducers';
 
+import { getAllPaths } from './services/corePaths';
+import { getAllCourses } from './services/coreCourses';
 import { getAllLessons } from './services/coreLessons';
 import { getAllSubjects } from './services/coreSubjects';
-
 
 import App from '../client/App';
 
@@ -57,15 +58,32 @@ export default (req, res, next) => {
   if (!match) {
     next();
   } else {
-    // TODO: Add subjects list to initial store at this point.
+     // TODO: Add subjects list to initial store at this point.
     const user = req.user ? { name: req.user.nickname, authenticated: true }
                           : { name: '', authenticated: false };
-    const learningPath = {
+    const curriculum = {
       subjects: getAllSubjects(),
+      paths: getAllPaths(),
+      courses: getAllCourses(),
       lessons: getAllLessons(),
     };
 
-    const state = { user, learningPath };
+    const uiState = {
+      Pages: {
+        Paths: {
+          pathStates: [],
+        },
+      },
+    };
+
+    const nPaths = curriculum.paths.length;
+    for (let i = 0; i < nPaths; i += 1) {
+      uiState.Pages.Paths.pathStates.push({
+        id: i,
+        opened: false,
+      });
+    }
+    const state = { user, curriculum, uiState };
     const store = createStore(reducers, state);
 
     res.set('Content-Type', 'text/html')

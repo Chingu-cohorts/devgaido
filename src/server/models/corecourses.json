@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Understanding & Working with Git",
+    "description": "Learn what Git is and how developers use it to manage source code in a highly distributed manner.",
+    "lessonNames": [
+      "Try Git",
+      "Git - the simple guide"
+    ]
+  }, {
+    "name": "Understanding & Working with GitHub",
+    "description": "Learn the value of GitHub and how it is used not only to manage your team's source code, but also how it can help improve project management.",
+    "lessonNames": [
+      "How to Use Git and GitHub",
+      "GitHub Hello World",
+      "GitHub Training & Guide"
+    ]
+  }, {
+    "name": "Advanced Git",
+    "description": "Learn the workflows and techniques senior webdevs use to be more productive with Git and to solve everyday source code management problems.",
+    "lessonNames": [
+      "How to Use Git and GitHub",
+      "GitHub Hello World",
+      "GitHub Training & Guide"
+    ]
+  }, {
+    "name": "Building Webpages",
+    "description": "Learn how to build simple webpages using HTML and CSS",
+    "lessonNames": [
+      "Course: Learn to Code HTML & CSS",
+      "Project: Clone this online resume template"
+    ]
+  }, {
+    "name": "Beginning Javascript",
+    "description": "Learn the basics of the Javascript language",
+    "lessonNames": [
+      "Book: You Don't Know JS: Up & Going", 
+      "Book: You Don't Know JS: Scope & Closures" 
+    ]
+  }, {
+    "name": "Intermediate Javascript",
+    "description": "Gain insight into how Javascript handles datatypes and objects",
+    "lessonNames": [
+      "Book: You Don't Know JS: this & Object Prototypes",
+      "Book: You Don't Know JS: Types & Grammar"
+    ]
+  }, {
+    "name": "Advanced Javascript",
+    "description": "Acquire and indepth understanding of asynchronous operations and modern ES6 Javascript",
+    "lessonNames": [
+      "Book: You Don't Know JS: Async & Performance", 
+      "Book: You Don't Know JS: ES6 & Beyond"  
+    ]
+  }
+]

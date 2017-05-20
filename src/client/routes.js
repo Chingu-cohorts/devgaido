@@ -1,4 +1,5 @@
 import Home from './pages/Home/Home';
+import Paths from './pages/Paths/Paths';
 import Profile from './pages/Profile/Profile';
 import Times from './pages/Times/Times';
 import Objectives from './pages/Objectives/Objectives';
@@ -12,6 +13,12 @@ const routes = [
     component: Home,
   },
   {
+    path: '/paths',
+    exact: true,
+    component: Paths,
+    passdown: ['dispatch', 'curriculum', 'uiState'],
+  },
+  {
     path: '/dashboard',
     exact: true,
     component: Dashboard,
@@ -20,7 +27,7 @@ const routes = [
     path: '/courses',
     exact: true,
     component: CourseCatalog,
-    passdown: ['learningPath'],
+    passdown: ['curriculum'],
   },
   {
     path: '/profile',

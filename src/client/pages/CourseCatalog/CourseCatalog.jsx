@@ -13,7 +13,7 @@ const CourseCatalog = props => (
       <div className="panel-menu">
         <h2>Select topic</h2>
         <div className="catalog">
-          {props.learningPath.subjects.map(subject =>
+          {props.curriculum.subjects.map(subject =>
             <label htmlFor={subject.Name} key={subject.Name}>
               <input type="checkbox" name={subject.Name} value={subject.Name} />
               <div className="checkmark" />{subject.Name}
@@ -34,19 +34,19 @@ const CourseCatalog = props => (
 
     <div className="content container-wide">
       <LearningPath
-        lessons={props.learningPath.lessons}
-        detailedLesson={props.learningPath.lessons[0]}
+        lessons={props.curriculum.lessons}
+        detailedLesson={props.curriculum.lessons[0]}
       />
     </div>
   </div>
 );
 
 CourseCatalog.propTypes = {
-  learningPath: PropTypes.objectOf(PropTypes.shape),
+  curriculum: PropTypes.objectOf(PropTypes.shape),
 };
 
 CourseCatalog.defaultProps = {
-  learningPath: null,
+  curriculum: null,
 };
 
 export default CourseCatalog;

@@ -1,6 +1,8 @@
-const learningPath = (state = {
+const curriculum = (state = {
   lessons: [],
   subjects: [],
+  courses: [],
+  paths: [],
 }, action) => {
   switch (action.type) {
     default:
@@ -8,4 +10,4 @@ const learningPath = (state = {
   }
 };
 
-export default learningPath;
+export default curriculum;
