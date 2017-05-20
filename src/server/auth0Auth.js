@@ -44,6 +44,7 @@ const auth0Auth = (app) => {
     req.logout();
     res.redirect('/');
   });
+
   app.get('/callback',
     passport.authenticate('auth0', { failureRedirect: '/url-if-something-fails' }),
     (req, res) => {

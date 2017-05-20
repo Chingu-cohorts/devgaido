@@ -79,7 +79,7 @@ class Header extends React.Component {
                 <li><i className="fa fa-flag" aria-hidden="true" />Notifications</li>
               </ul>
             </div>
-          </div>
+        </div>
       </div>
 
     );

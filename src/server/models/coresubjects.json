@@ -1,0 +1,108 @@
+[
+  {
+    "Type": "Technology",
+    "Focus Area": "Mobile",
+    "Name": "Android",
+    "Description": "Android mobile development",
+    "Release No.": "",
+    "Authority URL": "https://www.android.com/"
+  }, {
+    "Type": "Concept",
+    "Focus Area": "Backend",
+    "Name": "Backend",
+    "Description": "Server-side application development",
+    "Release No.": "",
+    "Authority URL": ""
+  }, {
+    "Type": "Technology",
+    "Focus Area": "Frontend",
+    "Name": "CSS",
+    "Description": "Cascading Stype Sheets",
+    "Release No.": "",
+    "Authority URL": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+  }, {
+    "Type": "Concept",
+    "Focus Area": "Foundation",
+    "Name": "Computer Science",
+    "Description": "Computer Science ",
+    "Release No.": "",
+    "Authority URL": ""
+  }, {
+    "Type": "Technology",
+    "Focus Area": "Backend",
+    "Name": "Database",
+    "Description": "Database Management Systems",
+    "Release No.": "",
+    "Authority URL": ""
+  }, {
+    "Type": "Concept",
+    "Focus Area": "Frontend",
+    "Name": "Frontend",
+    "Description": "Client-side application development",
+    "Release No.": "",
+    "Authority URL": ""
+  }, {
+    "Type": "Concept",
+    "Focus Area": "Fullstack",
+    "Name": "Fullstack",
+    "Description": "Client-side + Server-side application development",
+    "Release No.": "",
+    "Authority URL": ""
+  }, {
+    "Type": "Library",
+    "Focus Area": "Backend",
+    "Name": "Gulp",
+    "Description": "Application development automation",
+    "Release No.": "",
+    "Authority URL": ""
+  }, {
+    "Type": "Library",
+    "Focus Area": "Frontend",
+    "Name": "HTML",
+    "Description": "Hypertext Markup Language",
+    "Release No.": "5",
+    "Authority URL": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+  }, {
+    "Type": "Language",
+    "Focus Area": "Javascript",
+    "Name": "Javascript",
+    "Description": "Javascript ES5",
+    "Release No.": "ES5",
+    "Authority URL": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  }, {
+    "Type": "Language",
+    "Focus Area": "Javascript",
+    "Name": "Javascript ES6",
+    "Description": "Javascript ES6",
+    "Release No.": "ES6",
+    "Authority URL": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+  }, {
+    "Type": "Concept",
+    "Focus Area": "Foundation",
+    "Name": "Mathematics",
+    "Description": "Mathematics",
+    "Release No.": "",
+    "Authority URL": ""
+  }, {
+    "Type": "Concept",
+    "Focus Area": "Foundation",
+    "Name": "Project Management",
+    "Description": "Agile Project Management",
+    "Release No.": "",
+    "Authority URL": ""
+  }, {
+    "Type": "Concept",
+    "Focus Area": "Fullstack",
+    "Name": "Source Code Control",
+    "Description": "Source Code Management",
+    "Release No.": "",
+    "Authority URL": ""
+  }, {
+    "Type": "Concept",
+    "Focus Area": "Frontend",
+    "Name": "UX/UI",
+    "Description": "User Experience/User Interface",
+    "Release No.": "",
+    "Authority URL": ""
+  }
+]

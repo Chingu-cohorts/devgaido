@@ -1,6 +1,13 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter, matchPath } from 'react-router';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from '../client/reducers';
+
+import { getAllLessons } from './services/coreLessons';
+import { getAllSubjects } from './services/coreSubjects';
+
 
 import App from '../client/App';
 
@@ -8,7 +15,7 @@ import routes from '../client/routes';
 
 const webRoot = (process.env.NODE_ENV !== 'production') ? 'http://localhost:8081' : '';
 
-const renderPage = (reactHTML, initialStore) => `
+const renderPage = (reactHTML, initialState) => `
   <!DOCTYPE html>
   <html lang="en_US">
     <head>
@@ -22,7 +29,7 @@ const renderPage = (reactHTML, initialStore) => `
     </head>
     <body>
       <div id="root">${reactHTML}</div>
-      <script>window.__INITIAL_STORE__ = ${JSON.stringify(initialStore).replace(/</g, '\\u003c')};</script>
+      <script>window.__INITIAL_STATE__ = ${JSON.stringify(initialState).replace(/</g, '\\u003c')};</script>
       <script src="${webRoot}/client.bundle.js"></script>
     </body>
   </html>
@@ -30,10 +37,12 @@ const renderPage = (reactHTML, initialStore) => `
 
 // We need to provide the serverMatch prop to <App /> since we are on the server side
 // and can only render a single route with StaticRouter (Switch is not working like on client side)
-const initialView = (req, match) => renderToString(
-  <StaticRouter context={{}} location={match.path}>
-    <App serverMatch={match} />
-  </StaticRouter>,
+const initialView = (req, match, store) => renderToString(
+  <Provider store={store}>
+    <StaticRouter context={{}} location={match.path}>
+      <App serverMatch={match} />
+    </StaticRouter>
+  </Provider>,
   );
 
 export default (req, res, next) => {
@@ -41,19 +50,26 @@ export default (req, res, next) => {
   routes.forEach((route) => {
     const tmp = matchPath(req.baseUrl, { path: route.path, exact: route.exact, strict: false });
     if (tmp) {
-      match = { ...tmp, component: route.component };
+      match = { ...tmp, component: route.component, passdown: route.passdown };
     }
   });
 
   if (!match) {
     next();
   } else {
+    // TODO: Add subjects list to initial store at this point.
     const user = req.user ? { name: req.user.nickname, authenticated: true }
                           : { name: '', authenticated: false };
-    const store = { user };
+    const learningPath = {
+      subjects: getAllSubjects(),
+      lessons: getAllLessons(),
+    };
+
+    const state = { user, learningPath };
+    const store = createStore(reducers, state);
 
     res.set('Content-Type', 'text/html')
     .status(200)
-    .end(renderPage(initialView(req, match), store));
+    .end(renderPage(initialView(req, match, store), state));
   }
 };

@@ -1,6 +1,10 @@
 import React, { createElement } from 'react';
-import { Switch, Route } from 'react-router';
+import { Switch } from 'react-router';
+
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+
+import SuperRoute from './pages/shared/SuperRoute';
 
 import Header from './pages/shared/Header';
 import Footer from './pages/shared/Footer';
@@ -14,11 +18,33 @@ const App = (props) => {
 
   const match = props.serverMatch;
 
-  const routes = !match ? routesArr.map(({ path, exact, component }, index) => (
-      createElement(Route, { path, exact, component, key: index })
-    )) : createElement(Route, {
-      path: match.path, exact: match.exact, component: match.component,
+  const routes = [];
+
+  if (match) {
+    routes.push(
+      <SuperRoute
+        {...match}
+        key={0}
+        passdownProps={{
+          user: props.user,
+          learningPath: props.learningPath,
+        }}
+      >
+        {createElement(match.component)}
+      </SuperRoute>);
+  } else {
+    let key = 0;
+    routesArr.forEach((route) => {
+      routes.push(
+        <SuperRoute
+          {...route}
+          key={key += 1}
+          passdownProps={{ user: props.user, learningPath: props.learningPath }}
+        >
+          {createElement(route.component)}
+        </SuperRoute>);
     });
+  }
 
   return (
     <div className="App">
@@ -36,10 +62,16 @@ const App = (props) => {
 
 App.propTypes = {
   serverMatch: PropTypes.objectOf(PropTypes.shape),
+  user: PropTypes.objectOf(PropTypes.shape).isRequired,
+  learningPath: PropTypes.objectOf(PropTypes.shape),
 };
 
 App.defaultProps = {
   serverMatch: null,
+  learningPath: [],
 };
 
-export default App;
+export default connect(store => ({
+  user: store.user,
+  learningPath: store.learningPath,
+}))(App);
