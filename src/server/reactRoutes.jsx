@@ -15,6 +15,7 @@ import App from '../client/App';
 import routes from '../client/routes';
 
 const webRoot = (process.env.NODE_ENV !== 'production') ? 'http://localhost:8081' : '';
+const cssFile = (process.env.NODE_ENV !== 'production') ? '' : `<link rel="stylesheet" href="${webRoot}/style.css">`;
 
 const renderPage = (reactHTML, initialState) => `
   <!DOCTYPE html>
@@ -25,12 +26,14 @@ const renderPage = (reactHTML, initialState) => `
       <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
       <meta name="description" content="React/Redux Front-end for DevGaido">
       <meta name="author" content="Chingu DevGaido Team">
+      ${cssFile}
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <title>DevGaido - Chingu Learning Path</title>
     </head>
     <body>
       <div id="root">${reactHTML}</div>
       <script>window.__INITIAL_STATE__ = ${JSON.stringify(initialState).replace(/</g, '\\u003c')};</script>
+      <script src="${webRoot}/vendor.bundle.js"></script>
       <script src="${webRoot}/client.bundle.js"></script>
     </body>
   </html>

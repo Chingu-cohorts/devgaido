@@ -25,7 +25,7 @@ const handleClick = (e) => {
   e.preventDefault();
   lock.show();
 };
-
+// TODO: Change nav bar to be hidden on scroll down and visible on scroll up instead of just "fixed"
 class Header extends React.Component {
   constructor(props) {
     super(props);
