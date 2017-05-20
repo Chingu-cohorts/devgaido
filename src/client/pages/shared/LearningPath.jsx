@@ -33,7 +33,7 @@ const detailedPathItem = props => (
   </div>
   );
 */
-const LearningPath = ({ lessons, detailedLesson }) => {
+const LearningPath = ({ lessons }) => {
   const items = lessons.map((item, index) => learningPathItem({ ...item, index }));
   return (
     <div className="container-flex learning-path-items">
@@ -65,7 +65,6 @@ detailedPathItem.propTypes = {
 
 LearningPath.propTypes = {
   lessons: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  detailedLesson: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default LearningPath;

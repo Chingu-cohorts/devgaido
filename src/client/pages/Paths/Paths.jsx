@@ -47,6 +47,8 @@ const toggleItem = (e, id, dispatch) => {
 
 const openedClass = opened => (opened ? ' opened lostFullWidth' : ' lostGridColumn');
 
+// TODO: Add proper key for courses
+
 const Path = ({ id, name, description, curriculum, dispatch, opened, key, courseNames }) => (
   <div className={`learning-path-item${openedClass(opened)}`} onClick={e => toggleItem(e, id, dispatch)} key={key}>
     <div className="learning-path-item-header">
@@ -58,8 +60,8 @@ const Path = ({ id, name, description, curriculum, dispatch, opened, key, course
     <ul>
       <li className="learning-path-item-subject">{description}</li>
     </ul>
-    {opened ? courseNames.map(courseName => (
-      <div>
+    {opened ? courseNames.map((courseName, index) => (
+      <div key={index}>
         <div className="courseInfo">
           <h1>{courseName}</h1>
           <p className="courseDescription">{getCourseDescription(courseName, curriculum)}</p>
