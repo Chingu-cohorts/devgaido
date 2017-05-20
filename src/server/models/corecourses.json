@@ -18,8 +18,7 @@
     "name": "Advanced Git",
     "description": "Learn the workflows and techniques senior webdevs use to be more productive with Git and to solve everyday source code management problems.",
     "lessonNames": [
-      "How to Use Git and GitHub",
-      "GitHub Hello World",
+      "Git Immersion",
       "GitHub Training & Guide"
     ]
   }, {

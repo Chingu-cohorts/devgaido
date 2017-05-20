@@ -32,7 +32,7 @@ const getAllCourseLessons = (courses, curriculum) => {
   courses.forEach((course) => {
     course.lessonNames.forEach((lessonName) => {
       curriculum.lessons.forEach((lesson, index) => {
-        if (lessonName === lesson['Lesson Name']) {
+        if (lessonName === lesson.name) {
           lessons.push(curriculum.lessons[index]);
         }
       });
