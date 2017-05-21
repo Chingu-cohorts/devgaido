@@ -1,6 +1,6 @@
 const dev = process.env.NODE_ENV !== 'production' && process.argv.indexOf('-p') === -1;
 
-const usePreact = true;
+const usePreact = false;
 
 const path = require('path');
 const webpack = require('webpack');

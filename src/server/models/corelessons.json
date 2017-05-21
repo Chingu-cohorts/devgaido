@@ -1,6 +1,5 @@
 {
   "200100": {
-    "p1xtClassification": "Prerequisite",
     "source": "GitHub",
     "id": "200100",
     "name": "Try Git",
@@ -10,7 +9,6 @@
     "externalSource": "https://try.github.io"
     }, 
   "200200": {
-    "p1xtClassification": "Prerequisite",
     "source": "P1XT",
     "id": "200200",
     "name": "Git - the simple guide",
@@ -20,7 +18,6 @@
     "externalSource": "http://git.huit.harvard.edu/guide/"
   }, 
   "200300": {
-    "p1xtClassification": "Prerequisite",
     "source": "P1XT",
     "id": "200300",
     "name": "GitHub Training & Guide",
@@ -30,7 +27,6 @@
     "externalSource": "https://guides.github.com/"
   }, 
   "200400": {
-    "p1xtClassification": "Prerequisite",
     "source": "P1XT",
     "id": "200400",
     "name": "GitHub Hello World",
@@ -40,7 +36,6 @@
     "externalSource": "https://guides.github.com/activities/hello-world/"
   }, 
   "200500": {
-    "p1xtClassification": "Prerequisite",
     "source": "P1XT",
     "id": "200500",
     "name": "Git Immersion",
@@ -50,7 +45,6 @@
     "externalSource": "http://gitimmersion.com/"
   }, 
   "200600": {
-    "p1xtClassification": "Prerequisite",
     "source": "P1XT",
     "id": "200600",
     "name": "How to Use Git and GitHub",
@@ -60,7 +54,6 @@
     "externalSource": ""
   }, 
   "200700": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "200700",
     "name": "Book: You Don't Know JS: Up & Going",
@@ -70,7 +63,6 @@
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going"
   }, 
   "200800": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "200800",
     "name": "Book: You Don't Know JS: Scope & Closures",
@@ -80,7 +72,6 @@
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures"
   }, 
   "200900": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "200900",
     "name": "Book: You Don't Know JS: this & Object Prototypes",
@@ -90,7 +81,6 @@
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes"
   }, 
   "200950": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "200950",
     "name": "Course: Introduction to Computer Science - CS50",
@@ -100,7 +90,6 @@
     "externalSource": "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x"
   }, 
   "201000": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "201000",
     "name": "Course: Learn to Code HTML & CSS",
@@ -110,7 +99,6 @@
     "externalSource": "http://learn.shayhowe.com/html-css/"
   }, 
   "201100": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "201100",
     "name": "Project: Clone this online resume template",
@@ -120,7 +108,6 @@
     "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2"
   }, 
   "201050": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "201050",
     "name": "Book: You Don't Know JS: Types & Grammar",
@@ -130,7 +117,6 @@
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&%20grammar/README.md#you-dont-know-js-types--grammar"
   }, 
   "201150": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "201150",
     "name": "Book: You Don't Know JS: Async & Performance",
@@ -140,7 +126,6 @@
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/README.md#you-dont-know-js-async--performance"
   }, 
   "201250": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "201250",
     "name": "Book: You Don't Know JS: ES6 & Beyond",
@@ -150,7 +135,6 @@
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond"
   }, 
   "201350": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "201350",
     "name": "Course: Learn to Code Advanced HTML & CSS",
@@ -160,7 +144,6 @@
     "externalSource": "http://learn.shayhowe.com/advanced-html-css/"
   }, 
   "201450": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "201450",
     "name": "Project: Portfolio from the frontend section of FCC",
@@ -170,7 +153,6 @@
     "externalSource": ""
   }, 
   "201550": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "201550",
     "name": "Article: Read Project Specification Documents",
@@ -180,7 +162,6 @@
     "externalSource": "http://www.pixelearth.net/pages/project-specification"
   }, 
   "201650": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "201650",
     "name": "Course: Effective Thinking Through Mathematics",
@@ -190,7 +171,6 @@
     "externalSource": "https://www.edx.org/course/effective-thinking-through-mathematics-utaustinx-ut-9-01x-0"
   }, 
   "201750": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "201750",
     "name": "Book: Setting Up ES6",
@@ -200,7 +180,6 @@
     "externalSource": "https://leanpub.com/setting-up-es6/read"
   }, 
   "201850": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "201850",
     "name": "Book: JavaScript Allongé, the \"Six\" Edition",
@@ -210,7 +189,6 @@
     "externalSource": "https://leanpub.com/javascriptallongesix"
   }, 
   "201950": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "201950",
     "name": "Course: Getting Sassy with Sass",
@@ -220,7 +198,6 @@
     "externalSource": "http://www.sassshop.com/"
   }, 
   "202050": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "202050",
     "name": "Project: Towers of Hanoi solver",
@@ -230,7 +207,6 @@
     "externalSource": ""
   }, 
   "202100": {
-    "p1xtClassification": "Tier 1 - Getting Started",
     "source": "P1XT",
     "id": "202100",
     "name": "Project: Create a new template",
@@ -240,7 +216,6 @@
     "externalSource": "http://www.free-css.com/free-css-templates"
   }, 
   "202150": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "202150",
     "name": "Course: How to Code: Systematic Program Design - Part 1",
@@ -250,7 +225,6 @@
     "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd1x"
   }, 
   "202250": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "202250",
     "name": "Course: How to Code: Systematic Program Design - Part 2",
@@ -260,7 +234,6 @@
     "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd2x"
   }, 
   "202350": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "202350",
     "name": "Course: How to Code: Systematic Program Design - Part 3",
@@ -270,7 +243,6 @@
     "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd3x"
   }, 
   "202450": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "202450",
     "name": "Book: DOM Enlightenment",
@@ -280,7 +252,6 @@
     "externalSource": "http://domenlightenment.com/"
   }, 
   "202550": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "202550",
     "name": "Project: Read up on Gulp",
@@ -290,7 +261,6 @@
     "externalSource": "http://gulpjs.com/"
   }, 
   "202650": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "202650",
     "name": "Project: Simon Game",
@@ -300,7 +270,6 @@
     "externalSource": ""
   }, 
   "202850": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "202850",
     "name": "Course: Introduction to MongoDB",
@@ -310,7 +279,6 @@
     "externalSource": "https://www.edx.org/course/introduction-mongodb-using-mean-stack-mongodbx-m101x-0"
   }, 
   "202950": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "202950",
     "name": "FCC Backend Certification",
@@ -320,7 +288,6 @@
     "externalSource": ""
   }, 
   "203050": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "203050",
     "name": "Course: Calculus One",
@@ -330,7 +297,6 @@
     "externalSource": "https://www.coursera.org/learn/calculus1"
   }, 
   "203150": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "203150",
     "name": "Book: JavaScript Design Patterns",
@@ -340,7 +306,6 @@
     "externalSource": "https://addyosmani.com/resources/essentialjsdesignpatterns/book/"
   }, 
   "203250": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "203250",
     "name": "Project: Clone this landing page",
@@ -350,7 +315,6 @@
     "externalSource": "https://blackrockdigital.github.io/startbootstrap-creative/"
   }, 
   "203350": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "203350",
     "name": "Course: Mathematics for Computer Science",
@@ -360,7 +324,6 @@
     "externalSource": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm"
   }, 
   "203450": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "203450",
     "name": "Article: Read Algorithms and Flowcharts",
@@ -370,7 +333,6 @@
     "externalSource": "http://www.academia.edu/7857144/ALGORITHMS_AND_FLOWCHARTS"
   }, 
   "203550": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "203550",
     "name": "Familiarize yourself with Pencil",
@@ -380,7 +342,6 @@
     "externalSource": "http://pencil.evolus.vn/"
   }, 
   "203650": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "203650",
     "name": "Project: Clone this Admin template using React, Angular, or Vue",
@@ -390,7 +351,6 @@
     "externalSource": "http://rubix410.sketchpixy.com/ltr/dashboard"
   }, 
   "203750": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "203750",
     "name": "Book: Think Java - How to Think Like a Computer Scientist",
@@ -400,7 +360,6 @@
     "externalSource": ""
   }, 
   "202750": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "202750",
     "name": "Project: Complete all Classic Puzzles",
@@ -410,7 +369,6 @@
     "externalSource": "https://www.codingame.com/"
   }, 
   "202800": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "202800",
     "name": "Book: Open Data Structures",
@@ -420,7 +378,6 @@
     "externalSource": "http://www.aupress.ca/books/120226/ebook/99Z_Morin_2013-Open_Data_Structures.pdf"
   }, 
   "202900": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "202900",
     "name": "Course: Algorithms, Part I",
@@ -430,7 +387,6 @@
     "externalSource": "https://www.coursera.org/learn/introduction-to-algorithms"
   }, 
   "203000": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "203000",
     "name": "Course: Algorithms, Part II",
@@ -440,7 +396,6 @@
     "externalSource": "https://www.coursera.org/learn/java-data-structures-algorithms-2"
   }, 
   "203100": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "203100",
     "name": "Project: Complete Code Jam Qualification Round 2",
@@ -450,7 +405,6 @@
     "externalSource": "https://code.google.com/codejam/contest/6224486/dashboard"
   }, 
   "203200": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "203200",
     "name": "Project: Clone the front page of this website",
@@ -460,7 +414,6 @@
     "externalSource": "https://urbanarmorgear.com/"
   }, 
   "203300": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "203300",
     "name": "Course: UX Design for Mobile Developers",
@@ -470,7 +423,6 @@
     "externalSource": ""
   }, 
   "203400": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "203400",
     "name": "Course: Android Development for Beginners",
@@ -480,7 +432,6 @@
     "externalSource": ""
   }, 
   "203500": {
-    "p1xtClassification": "Tier 2 - Develop More Expertise",
     "source": "P1XT",
     "id": "203500",
     "name": "Project: Build a Pomodoro",
@@ -490,7 +441,6 @@
     "externalSource": ""
   }, 
   "203600": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "203600",
     "name": "Book: Professor Frisby's Mostly Adequate Guide to Functional Programming",
@@ -500,7 +450,6 @@
     "externalSource": "https://www.gitbook.com/book/drboolean/mostly-adequate-guide/details"
   }, 
   "203700": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "203700",
     "name": "Course: Software Testing",
@@ -510,7 +459,6 @@
     "externalSource": "https://www.udacity.com/course/software-testing--cs258"
   }, 
   "203800": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "203800",
     "name": "Course: Software Debugging",
@@ -520,7 +468,6 @@
     "externalSource": "https://www.udacity.com/course/software-debugging--cs259"
   }, 
   "203900": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "203900",
     "name": "Project: Clone the Netflix interface",
@@ -530,7 +477,6 @@
     "externalSource": ""
   }, 
   "204000": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "204000",
     "name": "Course: Calculus Two: Sequences and Series",
@@ -540,7 +486,6 @@
     "externalSource": "https://www.coursera.org/learn/advanced-calculus"
   }, 
   "204100": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "204100",
     "name": "Project: Complete all Classic Puzzles - Medium on CodinGame in JavaScript",
@@ -550,7 +495,6 @@
     "externalSource": ""
   }, 
   "204200": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "204200",
     "name": "Course: Software Architecture & Design",
@@ -560,7 +504,6 @@
     "externalSource": "https://www.udacity.com/course/software-architecture-design--ud821"
   }, 
   "204300": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "204300",
     "name": "Project: Complete all challenges from the Code Jam Round 1A 2015",
@@ -570,7 +513,6 @@
     "externalSource": ""
   }, 
   "204400": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "204400",
     "name": "Book: JavaScript Spessore",
@@ -580,7 +522,6 @@
     "externalSource": "https://leanpub.com/javascript-spessore/read"
   }, 
   "204500": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "204500",
     "name": "Project: Clone this blog template",
@@ -590,7 +531,6 @@
     "externalSource": "https://blackrockdigital.github.io/startbootstrap-clean-blog/"
   }, 
   "204600": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "204600",
     "name": "Course: Databases",
@@ -600,7 +540,6 @@
     "externalSource": ""
   }, 
   "204700": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "204700",
     "name": "Course: Agile Software Development",
@@ -610,7 +549,6 @@
     "externalSource": "https://www.edx.org/course/agile-software-development-ethx-asd-1x"
   }, 
   "204800": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "204800",
     "name": "Project: Complete all ES6 Katas here",
@@ -620,7 +558,6 @@
     "externalSource": "http://es6katas.org/"
   }, 
   "204900": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "204900",
     "name": "Course: Introduction to Cloud Computing",
@@ -630,7 +567,6 @@
     "externalSource": ""
   }, 
   "205000": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "205000",
     "name": "Project: Complete all challenges from the Code Jam Round 1B 2015",
@@ -640,7 +576,6 @@
     "externalSource": ""
   }, 
   "205100": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "205100",
     "name": "Project: Build FaceBook",
@@ -650,7 +585,6 @@
     "externalSource": "http://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project"
   }, 
   "205200": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "205200",
     "name": "Course: Intro to Theoretical Computer Science",
@@ -660,7 +594,6 @@
     "externalSource": ""
   }, 
   "205300": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "205300",
     "name": "Project: Complete all challenges from the Code Jam Round 1C 2015",
@@ -670,7 +603,6 @@
     "externalSource": ""
   }, 
   "205400": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "205400",
     "name": "Course: Introduction to Probability - The Science of Uncertainty",
@@ -680,7 +612,6 @@
     "externalSource": ""
   }, 
   "205500": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "205500",
     "name": "Project: Write the CSS Necessary to create your own 12 column grid",
@@ -690,7 +621,6 @@
     "externalSource": "http://960.gs/"
   }, 
   "205600": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "205600",
     "name": "Course: Linear Algebra - Foundations to Frontiers",
@@ -700,7 +630,6 @@
     "externalSource": "https://www.edx.org/course/linear-algebra-foundations-frontiers-utaustinx-ut-5-05x#!"
   }, 
   "205700": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "205700",
     "name": "Project: Complete all Classic Puzzles - Hard on CodinGame in JavaScript",
@@ -710,7 +639,6 @@
     "externalSource": ""
   }, 
   "205800": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "205800",
     "name": "Course: Cryptography I",
@@ -720,7 +648,6 @@
     "externalSource": ""
   },
   "205900": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "205900",
     "name": "Project: Complete all challenges from the Code Jam Round 2 2015",
@@ -730,7 +657,6 @@
     "externalSource": ""
   }, 
   "206000": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "206000",
     "name": "Course: Cryptography II",
@@ -740,7 +666,6 @@
     "externalSource": ""
   }, 
   "206100": {
-    "p1xtClassification": "Tier 3 - Add More Rigor",
     "source": "P1XT",
     "id": "206100",
     "name": "Project: Clone Twitter - yes, all the functionality",
@@ -750,7 +675,6 @@
     "externalSource": ""
   }, 
   "206200": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "206200",
     "name": "Course: Computer Architecture",
@@ -760,7 +684,6 @@
     "externalSource": ""
   }, 
   "206300": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "206300",
     "name": "Project: Complete all challenges from the Code Jam Round 3 2015",
@@ -770,7 +693,6 @@
     "externalSource": ""
   }, 
   "206400": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "206400",
     "name": "Course: Introduction to Cyber Security",
@@ -780,7 +702,6 @@
     "externalSource": ""
   }, 
   "206500": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "206500",
     "name": "Project: Complete all Classic Puzzles - Very Hard on CodinGame in JavaScript",
@@ -790,7 +711,6 @@
     "externalSource": ""
   }, 
   "206600": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "206600",
     "name": "Course: Computer Graphics",
@@ -800,7 +720,6 @@
     "externalSource": "https://www.edx.org/course/computer-graphics-uc-san-diegox-cse167x-1"
   }, 
   "206700": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "206700",
     "name": "Course: Artificial Intelligence",
@@ -810,7 +729,6 @@
     "externalSource": "https://www.edx.org/course/artificial-intelligence-ai-columbiax-csmm-101x#!"
   }, 
   "206800": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "206800",
     "name": "Project: Complete all challenges from the Code Jam World Finals 2015",
@@ -820,7 +738,6 @@
     "externalSource": ""
   }, 
   "206900": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "206900",
     "name": "Course: Machine Learning",
@@ -830,7 +747,6 @@
     "externalSource": "https://www.coursera.org/learn/machine-learning"
   }, 
   "207000": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "207000",
     "name": "Project: Design, implement, test, and deploy a web-based game",
@@ -840,7 +756,6 @@
     "externalSource": ""
   }, 
   "207100": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "207100",
     "name": "Course: Operating Systems and System Programming",
@@ -850,7 +765,6 @@
     "externalSource": ""
   }, 
   "207200": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "207200",
     "name": "Project: Create a node module for MD conversion",
@@ -860,7 +774,6 @@
     "externalSource": ""
   },
   "207300": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "207300",
     "name": "Course: Compilers",
@@ -870,7 +783,6 @@
     "externalSource": ""
   }, 
   "207400": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "207400",
     "name": "Course: Introduction to Natural Language Processing",
@@ -880,7 +792,6 @@
     "externalSource": ""
   }, 
   "207500": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "207500",
     "name": "Project: Clone Learn Harmony",
@@ -890,7 +801,6 @@
     "externalSource": "http://learnharmony.org/#/?_k=0okjs7"
   }, 
   "207600": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "207600",
     "name": "Course: Computer Networks",
@@ -900,7 +810,6 @@
     "externalSource": ""
   }, 
   "207700": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "207700",
     "name": "Course: Parallel Computer Architecture and Programming",
@@ -910,7 +819,6 @@
     "externalSource": ""
   }, 
   "207800": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "207800",
     "name": "Project: Complete all problems from Distributed Google Code Jam 2015 ",
@@ -920,7 +828,6 @@
     "externalSource": ""
   }, 
   "207900": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "207900",
     "name": "Project: Clone Slack ",
@@ -930,7 +837,6 @@
     "externalSource": ""
   }, 
   "208000": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "208000",
     "name": "Project: Create an npm module that bootstraps a fullstack application",
@@ -940,7 +846,6 @@
     "externalSource": ""
   }, 
   "208100": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "208100",
     "name": "Project: Complete all problems from Google Code Jam 2016",
@@ -950,7 +855,6 @@
     "externalSource": ""
   }, 
   "208200": {
-    "p1xtClassification": "Tier 4 - Polish the Rough Edges",
     "source": "P1XT",
     "id": "208200",
     "name": "Project: Extend your CSS grid framework to implement material design components",
