@@ -1,5 +1,5 @@
 import React, { createElement } from 'react';
-import { Switch } from 'react-router';
+import { Switch, withRouter } from 'react-router';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -10,7 +10,7 @@ import Header from './pages/shared/Header';
 import Footer from './pages/shared/Footer';
 
 import routesArr from './routes';
-
+// TODO: Add documentation for all the "Super Route and reducer magic"
 const App = ({ serverMatch, dispatch, user, curriculum, uiState }) => {
 // If <App /> is rendered on the server we need to provide the serverMatch prop
 // since StaticRouter can only render a single Route (Switch only works on client side).
@@ -43,7 +43,7 @@ const App = ({ serverMatch, dispatch, user, curriculum, uiState }) => {
         </SuperRoute>);
     });
   }
-
+  // TODO: Re-add sticky footer - position sticky or flexbox? (Check caniuse.com)
   return (
     <div className="App">
       <Header />
@@ -71,9 +71,11 @@ App.defaultProps = {
   curriculum: [],
   uiState: null,
 };
-
-export default connect(store => ({
+// Without "withRouter" when using connect routes don't actually change
+// Maybe this is just a workaround so check back later maybe.
+// TODO: Get rid of withRouter?
+export default withRouter(connect(store => ({
   user: store.user,
   curriculum: store.curriculum,
   uiState: store.uiState,
-}))(App);
+}))(App));

@@ -1,5 +1,5 @@
 import React from 'react';
-// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Auth0Lock from 'auth0-lock';
 
 // Only use on client side
@@ -25,12 +25,13 @@ const handleClick = (e) => {
   e.preventDefault();
   lock.show();
 };
-
+// TODO: Change nav bar to be hidden on scroll down and visible on scroll up instead of just "fixed"
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = { menuOpen: false };
     this.menuClass = 'side-panel';
+    this.menuButtonClass = 'menu-btn';
   }
   toggleMenu(e) {
     e.preventDefault();
@@ -38,30 +39,39 @@ class Header extends React.Component {
     this.forceUpdate();
     if (this.state.menuOpen) {
       this.menuClass = 'side-panel is-visible';
+      this.menuButtonClass = 'menu-btn menu-btn-close';
     } else {
       this.menuClass = 'side-panel';
+      this.menuButtonClass = 'menu-btn';
     }
   }
   render() {
     return (
-      <header>
-        <div className="menu">
-          <a className="menu-btn" href="#" onClick={e => this.toggleMenu(e)} >Menu</a>
-        </div>
-        <div>
-          <a href="#" onClick={e => handleClick(e)}>Login</a>
-          <a href="/logout">Logout</a>
-        </div>
-        <div className="search-header">
-          <label className="search">
-            <input type="text" name="search" placeholder="Search" />
-          </label>
-        </div>
-        <div className={this.menuClass}>
-          <div className="panel-links">
-            <a className="side-panel-close" href="#">Close</a>
+      <div>
+        <header>
+          <div className="header-content">
+            <div className="menu">
+              {/* There is an invisible ascii char as content in the anchor tags!
+              TODO: Change anchor tags to buttons! (and shift button tag styling to .button class */}
+              <a className={this.menuButtonClass} href="/" onClick={e => this.toggleMenu(e)} title="Menu">‌‌ </a>
+              <a className="login" href="/" onClick={e => handleClick(e)} title="Login">‌‌ </a>
+              <a className="hidden" href="/logout" title="Logout">‌‌ </a>
+            </div>
+            <div className="search-header">
+              <label className="search" htmlFor="search">
+                <input type="text" name="search" placeholder="Search" />
+              </label>
+            </div>
           </div>
+        </header>
+        <div className={this.menuClass}>
           <div className="panel-menu">
+            <h1>Welcome back Erik!</h1>
+            <ul>
+              <li><NavLink to="/" activeClassName="linkActive" exact><i className="fa fa-graduation-cap" aria-hidden="true" />Home</NavLink></li>
+              <li><NavLink to="/paths" activeClassName="linkActive"><i className="fa fa-graduation-cap" aria-hidden="true" />Paths</NavLink></li>
+              <li><NavLink to="/courses" activeClassName="linkActive"><i className="fa fa-graduation-cap" aria-hidden="true" />Courses</NavLink></li>
+            </ul>
             <h2>Your learning path</h2>
             <ul>
               <li className="times"><i className="fa fa-calendar" aria-hidden="true" />Schedule</li>
@@ -76,7 +86,7 @@ class Header extends React.Component {
             </ul>
           </div>
         </div>
-      </header>
+      </div>
 
     );
   }

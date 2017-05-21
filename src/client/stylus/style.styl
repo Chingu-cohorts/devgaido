@@ -12,21 +12,28 @@
 =======
 # Variables
 --------------------------------------------------------------*/
-colorPrimary = #3f51b5
+// colorPrimary = #3f51b5
+colorPrimary = darkslateblue
 colorPrimaryLight = #e7eaf6
-colorPrimaryDark = #1a237e
+// colorPrimaryDark = #1a237e
+colorPrimaryDark = #372e6b
 
 colorSecondary = #3cc788
 colorSecondaryLight = #c9f0db
 colorSecondaryDark = #00bc67
 
-colorTertiary = #7faebd
+// colorTertiary = #7faebd
+colorTertiary = deepskyblue
 
 colorQuarternary = #ffea7e
 
 colorTextInverse = white
 
 widthMax = 1024px
+
+spaceSmall = 10px
+spaceMedium = 20px 
+spaceLarge = 40px
 
 /*--------------------------------------------------------------
 # General
@@ -72,6 +79,10 @@ html.full-height {
     background: linear-gradient(to bottom, #f5faff 10%, rgba(255, 255, 255, 0) 100%);
 }
 
+.hidden {
+    display: none;
+}
+
 /*--------------------------------------------------------------
 # Headings & typography
 --------------------------------------------------------------*/
@@ -104,10 +115,11 @@ p {
  
 .side-panel {
     background-color: colorTextInverse;
-    box-shadow: 15px 0 40px rgba(30, 33, 94, 0.15);
+    box-shadow: -15px 0 40px rgba(30, 33, 94, 0.15);
     height: 100vh;
     padding: 0;
     position: fixed;
+    right: 0;
     top: 80px;
     transition: visibility 0s 0s;
     visibility: hidden;
@@ -222,6 +234,8 @@ p {
 
 
 .side-panel-catalog {
+    box-shadow: 5px 0 10px rgba(30,33,94,0.15);
+    left: 0;
     h1 {
         background-color: colorPrimary;
         color: colorTextInverse;
@@ -318,9 +332,9 @@ section {
 }
 
 .grid-half {
-    flex: 1 calc(98% / 2);
-    margin: 0 2% 2% 0;
+    margin: 0 spaceMedium spaceMedium 0;
     width:calc(98% / 2);
+    flex: 1 calc(98% / 2);
 }
 
 .grid-half:nth-of-type(2n+2) {
@@ -328,17 +342,19 @@ section {
 }
 
 .grid-quarter {
-    margin: 0 2% 2% 0;
+    margin: 0 spaceMedium spaceMedium 0;
     max-width: 320px;
     min-width: 250px;
     width:calc(100% / 4);
+    flex: 1 calc(100% / 4);
 }
 
 .grid-third {
-    margin: 0 2% 2% 0;
+    margin: 0 spaceMedium spaceMedium 0;
     max-width: 450px;
     min-width: 250px;
     width:calc(100% / 3);
+    flex: 1 calc(100% / 3);
 }
 
 /*--------------------------------------------------------------
@@ -348,8 +364,8 @@ section {
 header {
     background-color: colorPrimary;
     background-color: colorTextInverse;
-    box-shadow: 0 2px 6px rgba(30, 33, 94, 0.15);
-    background-image: url('/assets/img/devgaida.svg'); 
+    box-shadow: 0 5px 10px rgba(30,33,94,0.15);
+    background-image: url('/assets/img/devgaida.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 200px;
@@ -359,6 +375,12 @@ header {
     top: 0;
     width:100%;
     z-index: 999;
+}
+
+.header-content {
+    margin: 0 auto;
+    // max-width: widthMax;
+    
 }
 
 .sub-header {
@@ -371,24 +393,54 @@ header {
     width:100%;
     z-index: 100;
 }
-
+.menu {
+    margin-right:1rem;
+}
 .menu a {
-    float: left;
-    background-image: url('/assets/img/menu.svg'); 
+    float: right;
+    height: 5rem;
+    width: auto;
+}
+.menu a:before {
+    border-radius: 50%;
+    color: colorTextInverse;
+    float: right;
+    font-family: FontAwesome;
+    font-size: 1.3rem;
+    font-weight: normal;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 24px;
-    height: 5rem;
-    padding: 1rem;
-    text-indent: -9999px;
-    width: 5rem;
+    height: 3rem;
+    line-height: 3rem;
+    margin: 1rem;
+    text-align: center;
+    width: 3rem;
+}
+
+.menu a.menu-btn:before {
+    background-color: colorPrimary;
+    content:"\f0c9"
+    margin-left: 0.3rem;
+}
+
+.menu a.menu-btn-close:before {
+    content:"\f00d"
+}
+
+
+.menu a.login:before {
+    background-color: colorSecondary;
+    content:"\f13e";
+    margin-right: 0.3rem;
 }
 
 .search-header {
-    float: right;
-    padding: 0.3rem 2rem 0 0.5rem;
+    float: left;
+    padding: 0.3rem 2rem 0 2rem;
     width: 300px;
 }
+    
 
 
 /*--------------------------------------------------------------
@@ -469,6 +521,7 @@ header {
             content: "\f005 \f005 \f005";
             line-height: 52px;
         }
+        
     }
     .learning-path-category {
         font-size: 0.8rem;
@@ -565,6 +618,9 @@ header {
     }
     i.Calculus::before {
         content: "\f12b";
+    }
+    i.FCC::before {
+        content: "\f2c5";
     }
 }
 
@@ -891,7 +947,7 @@ a.add i, a.remove i {
     display: table;
     margin: 50px auto;
     margin-top: 50px;
-    min-width: 300px;
+    min-width: 700px;
     position: relative;
     width: 40%;
 }
@@ -1450,6 +1506,32 @@ a i.fa-envelope {
 }
 
 /*--------------------------------------------------------------
+# auth0
+--------------------------------------------------------------*/
+
+.auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-input {
+    float: none;
+    margin: 0;
+}
+
+.auth0-lock.auth0-lock .auth0-lock-overlay {
+    background: rgba(10, 10, 10, 0.85);
+}
+
+.auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-widget {
+    box-shadow: 15px 0 40px rgba( 10, 10, 10, 0.35);
+}
+
+.auth0-lock.auth0-lock .auth0-lock-widget {
+    background-color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+.auth0-lock-submit {
+    background-color: colorSecondary !important;
+}
+
+/*--------------------------------------------------------------
 # Media queuries
 --------------------------------------------------------------*/
 
@@ -1528,6 +1610,9 @@ a
     
 .courseInfo
     box-shadow: 15px 0 40px rgba(30, 33, 94, 0.15);
+
+.linkActive
+    background red
 
 @media only screen and (max-width: 800px)
     .lostGridColumn

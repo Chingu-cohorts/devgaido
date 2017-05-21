@@ -65,7 +65,6 @@ detailedPathItem.propTypes = {
 
 LearningPath.propTypes = {
   lessons: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  detailedLesson: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default LearningPath;
