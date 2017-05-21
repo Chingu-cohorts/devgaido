@@ -1,5 +1,6 @@
 [
   {
+    "id": "10000",
     "name": "Source Code Control Systems",
     "description": "Learn the tools and techniques needed to effectively and efficiently manage your projects source code.",
     "courseIds": [
@@ -7,13 +8,17 @@
       "10010",
       "10020"
     ]
-  }, {
+  },
+  {
+    "id": "10010",
     "name": "Webpage Design & Construction",
     "description": "Learn the technologies necessary to build simple webpages.",
     "courseIds": [
       "10030"
     ]
-  }, {
+  },
+  {
+    "id": "10020",
     "name": "Javascript",
     "description": "Learn Javascript so you can be the next Kim Kwanka",
     "courseIds": [
@@ -21,7 +26,9 @@
       "10050",
       "10060"
     ]
-  }, {
+  },
+  {
+    "id": "10030",
     "name": "The P1XT Guide",
     "description": "Follow the P1XT Guide to master the Javascript Ecosystem",
     "courseIds": [
@@ -31,4 +38,5 @@
       "10100",
       "10110"
     ]
-  }]
+  }
+]
