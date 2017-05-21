@@ -33,7 +33,7 @@ const detailedPathItem = props => (
   );
 */
 const LearningPath = ({ lessons, detailedLesson }) => {
-  const items = lessons.map((item, index) => learningPathItem({ ...item, index }));
+  const items = Object.values(lessons).map((item, index) => learningPathItem({ ...item, index }));
   return (
     <div className="container-flex learning-path-items">
       {items}

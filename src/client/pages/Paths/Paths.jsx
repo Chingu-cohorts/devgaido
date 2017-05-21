@@ -4,39 +4,20 @@ import PropTypes from 'prop-types';
 import LearningPath from '../shared/LearningPath';
 import { togglePath } from './PathsActions';
 
-
-const getCourseDescription = (courseName, curriculum) => {
-  let description = '';
-  curriculum.courses.forEach((course) => {
-    if (course.name === courseName) {
-      description = course.description;
-    }
-  });
-  return description;
-};
-
-const getPathCourses = (courseNames, curriculum) => {
+/*
+const getPathCourses = (courseIds, curriculum) => {
   const courses = [];
-  courseNames.forEach((courseName) => {
-    curriculum.courses.forEach((course, index) => {
-      if (course.name === courseName) {
-        courses.push(curriculum.courses[index]);
-      }
-    });
+  courseIds.forEach((courseId) => {
+    courses.push(curriculum.courses[courseId]);
   });
   return courses;
 };
+*/
 
-const getAllCourseLessons = (courses, curriculum) => {
+const getAllCourseLessons = (course, curriculum) => {
   const lessons = [];
-  courses.forEach((course) => {
-    course.lessonNames.forEach((lessonName) => {
-      curriculum.lessons.forEach((lesson, index) => {
-        if (lessonName === lesson.name) {
-          lessons.push(curriculum.lessons[index]);
-        }
-      });
-    });
+  course.lessonIds.forEach((lessonId) => {
+    lessons.push(curriculum.lessons[lessonId]);
   });
   return lessons;
 };
@@ -47,7 +28,7 @@ const toggleItem = (e, id, dispatch) => {
 
 const openedClass = opened => (opened ? ' opened lostFullWidth' : ' lostGridColumn');
 
-const Path = ({ id, name, description, curriculum, dispatch, opened, key, courseNames }) => (
+const Path = ({ id, name, description, curriculum, dispatch, opened, key, courseIds }) => (
   <div className={`learning-path-item${openedClass(opened)}`} onClick={e => toggleItem(e, id, dispatch)} key={key}>
     <div className="learning-path-item-header">
       <i className="path-icon" />
@@ -58,14 +39,14 @@ const Path = ({ id, name, description, curriculum, dispatch, opened, key, course
     <ul>
       <li className="learning-path-item-subject">{description}</li>
     </ul>
-    {opened ? courseNames.map(courseName => (
+    {opened ? courseIds.map(courseId => (
       <div>
         <div className="courseInfo">
-          <h1>{courseName}</h1>
-          <p className="courseDescription">{getCourseDescription(courseName, curriculum)}</p>
+          <h1>{curriculum.courses[courseId].name}</h1>
+          <p className="courseDescription">{curriculum.courses[courseId].description}</p>
         </div>
         <LearningPath
-          lessons={getAllCourseLessons(getPathCourses([courseName], curriculum), curriculum)}
+          lessons={getAllCourseLessons(curriculum.courses[courseId], curriculum)}
           detailedLesson={null}
         />
       </div>
@@ -87,7 +68,7 @@ const Paths = ({ curriculum, uiState, dispatch }) => {
       name: path.name,
       opened: uiState.Pages.Paths.pathStates[index].opened,
       description: path.description,
-      courseNames: path.courseNames,
+      courseIds: path.courseIds,
       curriculum,
     }));
   });
@@ -107,7 +88,7 @@ Path.propTypes = {
   opened: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired,
   curriculum: PropTypes.func.isRequired,
-  courseNames: PropTypes.func.isRequired,
+  courseIds: PropTypes.func.isRequired,
 };
 
 Paths.propTypes = {

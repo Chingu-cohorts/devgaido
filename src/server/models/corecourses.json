@@ -1,53 +1,66 @@
-[
-  {
+{
+  "10000": {
+    "id": "10000",
     "name": "Understanding & Working with Git",
     "description": "Learn what Git is and how developers use it to manage source code in a highly distributed manner.",
-    "lessonNames": [
-      "Try Git",
-      "Git - the simple guide"
+    "lessonIds": [
+      "200100",
+      "200200"
     ]
-  }, {
+  },
+  "10010": {
+    "id": "10010",
     "name": "Understanding & Working with GitHub",
     "description": "Learn the value of GitHub and how it is used not only to manage your team's source code, but also how it can help improve project management.",
-    "lessonNames": [
-      "How to Use Git and GitHub",
-      "GitHub Hello World",
-      "GitHub Training & Guide"
+    "lessonIds": [
+      "200600",
+      "200400",
+      "200300"
     ]
-  }, {
+  },
+  "10020": {
+    "id": "10020",
     "name": "Advanced Git",
     "description": "Learn the workflows and techniques senior webdevs use to be more productive with Git and to solve everyday source code management problems.",
-    "lessonNames": [
-      "Git Immersion",
-      "GitHub Training & Guide"
+    "lessonIds": [
+      "200500",
+      "200300"
     ]
-  }, {
+  },
+  "10030": {
+    "id": "10030",
     "name": "Building Webpages",
     "description": "Learn how to build simple webpages using HTML and CSS",
-    "lessonNames": [
-      "Course: Learn to Code HTML & CSS",
-      "Project: Clone this online resume template"
+    "lessonIds": [
+      "201000",
+      "201100"
     ]
-  }, {
+  },
+  "10040": {
+    "id": "10040",
     "name": "Beginning Javascript",
     "description": "Learn the basics of the Javascript language",
-    "lessonNames": [
-      "Book: You Don't Know JS: Up & Going", 
-      "Book: You Don't Know JS: Scope & Closures" 
+    "lessonIds": [
+      "200700",
+      "200800"
     ]
-  }, {
+  },
+  "10050": {
+    "id": "10050",
     "name": "Intermediate Javascript",
     "description": "Gain insight into how Javascript handles datatypes and objects",
-    "lessonNames": [
-      "Book: You Don't Know JS: this & Object Prototypes",
-      "Book: You Don't Know JS: Types & Grammar"
+    "lessonIds": [
+      "200900",
+      "201050"
     ]
-  }, {
+  },
+  "10060": {
+    "id": "10060",
     "name": "Advanced Javascript",
     "description": "Acquire and indepth understanding of asynchronous operations and modern ES6 Javascript",
-    "lessonNames": [
-      "Book: You Don't Know JS: Async & Performance", 
-      "Book: You Don't Know JS: ES6 & Beyond"  
+    "lessonIds": [
+      "201150",
+      "201250"
     ]
   }
-]
+}
