@@ -3,8 +3,8 @@ import CoreCourses from '../models/corecourses.json';
 /**
  * Extract a specific course and its details from the Core Courses
  *
- * @param {String} courseName - Unique path identifier
- * @returns {String[]} - JSON object containing attributes of the path
+ * @param {String} courseName - Unique course identifier
+ * @returns {String[]} - JSON object containing attributes of the course
  */
 const getCourse = courseName => JSON.stringify(CoreCourses.find(
   currentCourse => currentCourse.name === courseName));

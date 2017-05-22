@@ -16,8 +16,9 @@ import Paths from '../pages/Paths/PathsReducer';
  *
  * @param {*} state -
  * @param {*} action - 
- * @returns {state} state - The curriculum data maintained in state
- */const uiState = (state = {
+ * @returns {state} state - UI data maintained in state
+ */
+const uiState = (state = {
   global: {
     navMenuOpen: false,
   },
