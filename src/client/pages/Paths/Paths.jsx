@@ -4,39 +4,22 @@ import PropTypes from 'prop-types';
 import LearningPath from '../shared/LearningPath';
 import { togglePath } from './PathsActions';
 
+/**
+ * An HTML element, such as a '/div' to be used by React.
+ * @typedef {object} HTMLElement
+ */
 
-const getCourseDescription = (courseName, curriculum) => {
-  let description = '';
-  curriculum.courses.forEach((course) => {
-    if (course.name === courseName) {
-      description = course.description;
-    }
-  });
-  return description;
-};
-
-const getPathCourses = (courseNames, curriculum) => {
-  const courses = [];
-  courseNames.forEach((courseName) => {
-    curriculum.courses.forEach((course, index) => {
-      if (course.name === courseName) {
-        courses.push(curriculum.courses[index]);
-      }
-    });
-  });
-  return courses;
-};
-
-const getAllCourseLessons = (courses, curriculum) => {
+/**
+ * Retrieve all lessons in a given course.
+ *
+ * @param {Object} course - An course object
+ * @param {Object} curriculum - An object containing all elements of the curriculum (paths, courses, and lessons)
+ * @returns {Object[]} curriculum - An array of lesson objects
+ */
+const getAllCourseLessons = (course, curriculum) => {
   const lessons = [];
-  courses.forEach((course) => {
-    course.lessonNames.forEach((lessonName) => {
-      curriculum.lessons.forEach((lesson, index) => {
-        if (lessonName === lesson['Lesson Name']) {
-          lessons.push(curriculum.lessons[index]);
-        }
-      });
-    });
+  course.lessonIds.forEach((lessonId) => {
+    lessons.push(curriculum.lessons[lessonId]);
   });
   return lessons;
 };
@@ -47,9 +30,7 @@ const toggleItem = (e, id, dispatch) => {
 
 const openedClass = opened => (opened ? ' opened lostFullWidth' : ' lostGridColumn');
 
-// TODO: Add proper key for courses
-
-const Path = ({ id, name, description, curriculum, dispatch, opened, key, courseNames }) => (
+const Path = ({ id, name, description, curriculum, dispatch, opened, key, courseIds }) => (
   <div className={`learning-path-item${openedClass(opened)}`} onClick={e => toggleItem(e, id, dispatch)} key={key}>
     <div className="learning-path-item-header">
       <i className="path-icon" />
@@ -60,14 +41,14 @@ const Path = ({ id, name, description, curriculum, dispatch, opened, key, course
     <ul>
       <li className="learning-path-item-subject">{description}</li>
     </ul>
-    {opened ? courseNames.map((courseName, index) => (
+    {opened ? courseIds.map((courseId, index) => (
       <div key={index}>
         <div className="courseInfo">
-          <h1>{courseName}</h1>
-          <p className="courseDescription">{getCourseDescription(courseName, curriculum)}</p>
+          <h1>{curriculum.courses[courseId].name}</h1>
+          <p className="courseDescription">{curriculum.courses[courseId].description}</p>
         </div>
         <LearningPath
-          lessons={getAllCourseLessons(getPathCourses([courseName], curriculum), curriculum)}
+          lessons={getAllCourseLessons(curriculum.courses[courseId], curriculum)}
           detailedLesson={null}
         />
       </div>
@@ -78,6 +59,14 @@ const Path = ({ id, name, description, curriculum, dispatch, opened, key, course
   </div>
 );
 
+/**
+ * Construct the Paths HTML to be displayed.
+ *
+ * @param {Object} curriculum - An object containing all elements of the curriculum (paths, courses, and lessons)
+ * @param {Object} uiState - UI State managed by Redux
+ * @param {} dispatch - 
+ * @returns {HTMLElement} - A /div containing the path cards
+ */
 const Paths = ({ curriculum, uiState, dispatch }) => {
   const pathsArr = [];
 
@@ -89,7 +78,7 @@ const Paths = ({ curriculum, uiState, dispatch }) => {
       name: path.name,
       opened: uiState.Pages.Paths.pathStates[index].opened,
       description: path.description,
-      courseNames: path.courseNames,
+      courseIds: path.courseIds,
       curriculum,
     }));
   });
@@ -109,7 +98,7 @@ Path.propTypes = {
   opened: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired,
   curriculum: PropTypes.func.isRequired,
-  courseNames: PropTypes.func.isRequired,
+  courseIds: PropTypes.func.isRequired,
 };
 
 Paths.propTypes = {

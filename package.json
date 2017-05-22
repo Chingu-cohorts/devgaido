@@ -4,7 +4,7 @@
   "description": "Chingu Learning Path application",
   "main": "package.json",
   "repository": "https://github.com/Chingu-cohorts/devgaido.git",
-  "author": "Francesco Agnoletto, Kim Kwanka, Jim Medlock, Erik Hos, Oussama Bouguerne",
+  "author": "Francesco Agnoletto, Kim Kwanka, Matt Leonard, Jim Medlock, Erik Hos, Oussama Bouguerne",
   "license": "MIT",
   "scripts": {
     "start": "yarn run build && node ./dist/server",

@@ -5,8 +5,10 @@
 [![Downloads][downloads-image]][downloads-url]
 [![js-standard-style][standard-image]][standard-url]
 
-Preview markdown files in a separate window. Markdown is formatted exactly the
-same as on GitHub.
+devGaido provides a guided learning experience through the Web Development 
+ecosystem. This application provides supplies a progressive path towards 
+acquiring web development skills. But it also provides a motivation towards a
+goal as well as a means of tracking progress tracking.
 
 [Features](#features) | [Installation](#installation) | [Usage](#usage) | [Examples](#examples) | [Command-line options](#options) | [Configuration](#configuration) | [Authors](#authors) |
 [License](#license)
@@ -15,6 +17,9 @@ same as on GitHub.
 
 ## Features
 
+ - **Predefined Learning Paths** Predefined learning paths guide the user in
+ a journal to acquire or strengthen understanding of a particular topic in
+ the web development ecosystem.
  - **Security:** Authentication is provided through integration with Auth0 to 
  provide the user with the option of specifying application-specific 
  credentials or integration with either GitHub or Google for authentication.
@@ -27,10 +32,17 @@ $ yarn
 
 ## Usage
 
-Developer testing:
-```
-yarn dev
-```
+| Command           | Purpose                           |
+|:------------------|:----------------------------------|
+| yarn start        | Start                             |
+| yarn build        | Build application                 |
+| yarn build:client | Build client                      |
+| yarn build:server | Build server                      |
+| yarn dev          | Start development client & server |
+| yarn dev:server   | Start development client          |
+| yarn dev:client   | Start development server          |
+| yarn analyzesize  | Analyze bundle sizes              |
+
 
 
 ### Examples
