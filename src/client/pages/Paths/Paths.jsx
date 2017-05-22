@@ -4,16 +4,18 @@ import PropTypes from 'prop-types';
 import LearningPath from '../shared/LearningPath';
 import { togglePath } from './PathsActions';
 
-/*
-const getPathCourses = (courseIds, curriculum) => {
-  const courses = [];
-  courseIds.forEach((courseId) => {
-    courses.push(curriculum.courses[courseId]);
-  });
-  return courses;
-};
-*/
+/**
+ * An HTML element, such as a '/div' to be used by React.
+ * @typedef {object} HTMLElement
+ */
 
+/**
+ * Retrieve all lessons in a given course.
+ *
+ * @param {Object} course - An course object
+ * @param {Object} curriculum - An object containing all elements of the curriculum (paths, courses, and lessons)
+ * @returns {Object[]} curriculum - An array of lesson objects
+ */
 const getAllCourseLessons = (course, curriculum) => {
   const lessons = [];
   course.lessonIds.forEach((lessonId) => {
@@ -39,8 +41,8 @@ const Path = ({ id, name, description, curriculum, dispatch, opened, key, course
     <ul>
       <li className="learning-path-item-subject">{description}</li>
     </ul>
-    {opened ? courseIds.map(courseId => (
-      <div>
+    {opened ? courseIds.map((courseId, index) => (
+      <div key={index}>
         <div className="courseInfo">
           <h1>{curriculum.courses[courseId].name}</h1>
           <p className="courseDescription">{curriculum.courses[courseId].description}</p>
@@ -57,6 +59,14 @@ const Path = ({ id, name, description, curriculum, dispatch, opened, key, course
   </div>
 );
 
+/**
+ * Construct the Paths HTML to be displayed.
+ *
+ * @param {Object} curriculum - An object containing all elements of the curriculum (paths, courses, and lessons)
+ * @param {Object} uiState - UI State managed by Redux
+ * @param {} dispatch - 
+ * @returns {HTMLElement} - A /div containing the path cards
+ */
 const Paths = ({ curriculum, uiState, dispatch }) => {
   const pathsArr = [];
 
