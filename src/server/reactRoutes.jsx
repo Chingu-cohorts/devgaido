@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter, matchPath } from 'react-router';
@@ -62,8 +63,8 @@ export default (req, res, next) => {
     next();
   } else {
      // TODO: Add subjects list to initial store at this point.
-    const user = req.user ? { name: req.user.nickname, authenticated: true }
-                          : { name: '', authenticated: false };
+    const user = req.user ? { name: req.user.nickname, authenticated: true, email: req.user._json.email }
+                          : { name: '', authenticated: false, email: '' };
     const curriculum = {
       subjects: getAllSubjects(),
       paths: getAllPaths(),
@@ -72,6 +73,9 @@ export default (req, res, next) => {
     };
 
     const uiState = {
+      global: {
+        navMenuOpen: false,
+      },
       Pages: {
         Paths: {
           pathStates: [],

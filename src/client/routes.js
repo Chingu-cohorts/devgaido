@@ -33,6 +33,7 @@ const routes = [
     path: '/profile',
     exact: true,
     component: Profile,
+    passdown: ['user'],
   },
   {
     path: '/times',

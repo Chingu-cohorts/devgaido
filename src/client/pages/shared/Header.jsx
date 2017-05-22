@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Auth0Lock from 'auth0-lock';
-
+import PropTypes from 'prop-types';
+import { toggleNavMenu } from '../../actions/globalActions';
 // Only use on client side
 const lock = (typeof window !== 'undefined') ? new Auth0Lock('L90m0rEGvEWnCkQOBYE3U30J6m68HDIb', 'devgaido.auth0.com',
   {
@@ -21,76 +22,75 @@ const lock = (typeof window !== 'undefined') ? new Auth0Lock('L90m0rEGvEWnCkQOBY
     },
   }) : null;
 
-const handleClick = (e) => {
+const handleLoginClick = (e) => {
   e.preventDefault();
   lock.show();
 };
+
+const toggleMenu = (e, dispatch) => {
+  e.preventDefault();
+  dispatch(toggleNavMenu());
+};
+
+const toggleMenuAfterNav = (dispatch) => {
+  dispatch(toggleNavMenu());
+};
 // TODO: Change nav bar to be hidden on scroll down and visible on scroll up instead of just "fixed"
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { menuOpen: false };
-    this.menuClass = 'side-panel';
-    this.menuButtonClass = 'menu-btn';
-  }
-  toggleMenu(e) {
-    e.preventDefault();
-    this.state = { menuOpen: !this.state.menuOpen };
-    this.forceUpdate();
-    if (this.state.menuOpen) {
-      this.menuClass = 'side-panel is-visible';
-      this.menuButtonClass = 'menu-btn menu-btn-close';
-    } else {
-      this.menuClass = 'side-panel';
-      this.menuButtonClass = 'menu-btn';
-    }
-  }
-  render() {
-    return (
-      <div>
-        <header>
-          <div className="header-content">
-            <div className="menu">
-              {/* There is an invisible ascii char as content in the anchor tags!
-              TODO: Change anchor tags to buttons! (and shift button tag styling to .button class */}
-              <a className={this.menuButtonClass} href="/" onClick={e => this.toggleMenu(e)} title="Menu">‌‌ </a>
-              <a className="login" href="/" onClick={e => handleClick(e)} title="Login">‌‌ </a>
-              <a className="hidden" href="/logout" title="Logout">‌‌ </a>
-            </div>
-            <div className="search-header">
-              <label className="search" htmlFor="search">
-                <input type="text" name="search" placeholder="Search" />
-              </label>
-            </div>
-          </div>
-        </header>
-        <div className={this.menuClass}>
-          <div className="panel-menu">
-            <h1>Welcome back Erik!</h1>
-            <ul>
-              <li><NavLink to="/" activeClassName="linkActive" exact><i className="fa fa-graduation-cap" aria-hidden="true" />Home</NavLink></li>
-              <li><NavLink to="/paths" activeClassName="linkActive"><i className="fa fa-graduation-cap" aria-hidden="true" />Paths</NavLink></li>
-              <li><NavLink to="/courses" activeClassName="linkActive"><i className="fa fa-graduation-cap" aria-hidden="true" />Courses</NavLink></li>
-            </ul>
-            <h2>Your learning path</h2>
-            <ul>
-              <li className="times"><i className="fa fa-calendar" aria-hidden="true" />Schedule</li>
-              <li className="times"><i className="fa fa-graduation-cap" aria-hidden="true" />Lessons</li>
-              <li><i className="fa fa-book" aria-hidden="true" />Resources</li>
-            </ul>
-            <h2>Your Settings</h2>
-            <ul>
-              <li className="information"><i className="fa fa-user-o" aria-hidden="true" />Your profile</li>
-              <li><i className="fa fa-cog" aria-hidden="true" />Preferences</li>
-              <li><i className="fa fa-flag" aria-hidden="true" />Notifications</li>
-            </ul>
-          </div>
+const Header = ({ uiState, dispatch }) => (
+  <div>
+    <header>
+      <div className="header-content lostContainerHeader">
+        <NavLink to="/" className="headerLogo" />
+        <div className="menu putRight">
+          {/* There is an invisible ascii char as content in the anchor tags!
+          TODO: Change anchor tags to buttons! (and shift button tag styling to .button class */}
+          <a className={uiState.global.navMenuOpen ? 'menu-btn menu-btn-close' : 'menu-btn'} href="/" onClick={e => toggleMenu(e, dispatch)} title="Menu">‌‌ </a>
+          <a className="login" href="/" onClick={e => handleLoginClick(e)} title="Login">‌‌ </a>
+          <a className="hidden" href="/logout" title="Logout">‌‌ </a>
+        </div>
+        {/* <div className="search-header">
+          <label className="search" htmlFor="search">
+            <input type="text" name="search" placeholder="Search" />
+          </label>
+        </div>*/}
+      </div>
+    </header>
+    <div className="constrained">
+      <div className={uiState.global.navMenuOpen ? 'side-panel is-visible' : 'side-panel'}>
+        <div className="panel-menu">
+          <h1>Welcome back Erik!</h1>
+          <ul>
+            <li><NavLink to="/" activeClassName="linkActive" exact onClick={() => toggleMenuAfterNav(dispatch)} ><i className="fa fa-graduation-cap" aria-hidden="true" />Home</NavLink></li>
+            <li><NavLink to="/paths" activeClassName="linkActive" onClick={() => toggleMenuAfterNav(dispatch)}><i className="fa fa-graduation-cap" aria-hidden="true" />Paths</NavLink></li>
+            <li><NavLink to="/courses" activeClassName="linkActive" onClick={() => toggleMenuAfterNav(dispatch)}><i className="fa fa-graduation-cap" aria-hidden="true" />Courses</NavLink></li>
+          </ul>
+          <h2>Your learning path</h2>
+          <ul>
+            <li className="times"><i className="fa fa-calendar" aria-hidden="true" />Schedule</li>
+            <li className="times"><i className="fa fa-graduation-cap" aria-hidden="true" />Lessons</li>
+            <li><i className="fa fa-book" aria-hidden="true" />Resources</li>
+          </ul>
+          <h2>Your Settings</h2>
+          <ul>
+            <li className="information"><NavLink to="/profile" activeClassName="linkActive" onClick={() => toggleMenuAfterNav(dispatch)}><i className="fa fa-user-o" aria-hidden="true" />Your profile</NavLink></li>
+            <li><i className="fa fa-cog" aria-hidden="true" />Preferences</li>
+            <li><i className="fa fa-flag" aria-hidden="true" />Notifications</li>
+          </ul>
         </div>
       </div>
+    </div>
+  </div>
+);
 
-    );
-  }
-}
+Header.propTypes = {
+  uiState: PropTypes.objectOf(PropTypes.shape),
+  dispatch: PropTypes.func,
+};
+
+Header.defaultProps = {
+  uiState: null,
+  dispatch: null,
+};
 
 export default Header;
 

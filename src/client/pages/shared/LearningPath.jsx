@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const learningPathItem = props => (
-  <div className={`grid-quarter learning-path-item ${props.type}`} key={props.index}>
+  <div className={`grid-quarter learning-path-item ${props.type}`} key={props.key}>
     <div className="learning-path-item-header">
       <i className={props.category} />
       <i className={props.type} />
@@ -32,8 +32,8 @@ const detailedPathItem = props => (
   </div>
   );
 */
-const LearningPath = ({ lessons, detailedLesson }) => {
-  const items = Object.values(lessons).map((item, index) => learningPathItem({ ...item, index }));
+const LearningPath = ({ lessons }) => {
+  const items = Object.keys(lessons).map(itemIndex => learningPathItem({ ...lessons[itemIndex], key: itemIndex }));
   return (
     <div className="container-flex learning-path-items">
       {items}
@@ -46,7 +46,7 @@ const LearningPath = ({ lessons, detailedLesson }) => {
 
 learningPathItem.propTypes = {
   category: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired,
+  key: PropTypes.number.isRequired,
   type: PropTypes.string.isRequired,
   subject: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -64,7 +64,9 @@ detailedPathItem.propTypes = {
 }; */
 
 LearningPath.propTypes = {
-  lessons: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  lessons: PropTypes.oneOfType(
+    [PropTypes.arrayOf(PropTypes.shape), PropTypes.objectOf(PropTypes.shape)],
+  ).isRequired,
 };
 
 export default LearningPath;

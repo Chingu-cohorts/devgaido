@@ -46,7 +46,7 @@ const App = ({ serverMatch, dispatch, user, curriculum, uiState }) => {
   // TODO: Re-add sticky footer - position sticky or flexbox? (Check caniuse.com)
   return (
     <div className="App">
-      <Header />
+      <Header dispatch={dispatch} uiState={uiState} />
       <main>
         <div className="main">
           <Switch>

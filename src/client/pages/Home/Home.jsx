@@ -1,11 +1,8 @@
 import React from 'react';
-
-const handleShowMeClick = () => {
-  console.log('CLICK BABY');
-};
+import { NavLink } from 'react-router-dom';
 
 const Home = () => (
-  <div>
+  <div className="lostContainer">
     <div className="content">
       <h1>DevGaido...</h1>
       <h2>Your guided path to Web Development Expertise</h2>
@@ -23,7 +20,7 @@ const Home = () => (
   React, and Vue.</p>
       <h2>Want to See More?</h2>
       <div className="centeredContent">
-        <button className="inline button-continue" type="button" onClick={handleShowMeClick} ><i />&nbsp;&nbsp;Show Me the Courses!</button>
+        <NavLink to="/paths"><button className="inline button-continue"><i />&nbsp;&nbsp;Show Me the Paths!</button></NavLink>
       </div>
     </div>
   </div>

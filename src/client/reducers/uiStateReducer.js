@@ -1,6 +1,9 @@
 import Paths from '../pages/Paths/PathsReducer';
 
 const uiState = (state = {
+  global: {
+    navMenuOpen: false,
+  },
   Pages: {
     Paths: {
       pathStates: [],
@@ -8,6 +11,15 @@ const uiState = (state = {
   },
 }, action) => {
   switch (action.type) {
+    case 'TOGGLE_NAV_MENU': {
+      return {
+        ...state,
+        global: {
+          ...state.global,
+          navMenuOpen: !state.global.navMenuOpen,
+        },
+      };
+    }
     case 'TOGGLE_PATH': {
       return {
         ...state,
