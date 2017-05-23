@@ -29,7 +29,8 @@ const Profile = ({ user }) => (
               <input type="text" name="city" placeholder="City" />
             </label>
             <div className="form-action">
-              <button className="inline button-continue"><i />&nbsp;&nbsp;Save &amp; continue</button>
+              <button className="inline button-continue">
+                <i />&nbsp;&nbsp;Save &amp; continue</button>
               <span className="form-links"><a href="/">Cancel</a></span>
             </div>*/}
           </form>

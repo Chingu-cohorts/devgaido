@@ -8,9 +8,9 @@ import Dashboard from './pages/Dashboard/Dashboard';
 
 /**
  * Client route definitions
- * 
+ *
  * - path: path to the directory containing the component
- * - exact: 
+ * - exact:
  * - component: component name. For example 'Home' for the 'Home.jsx' component.
  * - passdown: array of state names defining the state data to be passed to the
  *   component. Items named in passdown are defined in /server/reactRoutes.jsx.

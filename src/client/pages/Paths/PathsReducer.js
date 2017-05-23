@@ -15,7 +15,8 @@ const Paths = (state = {
   switch (action.type) {
     case 'TOGGLE_PATH': {
       const pathStatesCopy = state.pathStates.slice(0);
-      const newPathStates = pathStatesCopy.map(el => ((el.id !== action.id) ? el : pathState(el, action)));
+      const newPathStates = pathStatesCopy.map(
+        el => ((el.id !== action.id) ? el : pathState(el, action)));
       return {
         ...state,
         pathStates: newPathStates,

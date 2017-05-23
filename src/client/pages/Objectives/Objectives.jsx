@@ -5,7 +5,7 @@ const handleShowMeClick = () => {
 };
 
 const Objectives = () => (
-<div>                       
+<div>                  
   <div className="content">
     <div className="form-container form-container-large">
       <div className="form form-wide">
