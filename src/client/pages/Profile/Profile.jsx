@@ -5,10 +5,23 @@ const Profile = ({ user }) => (
   <div>
     <div className="content">
       <div className="form-container">
+        {/* <div className="progress-bar-container">
+          <div className="progress-bar">
+            <div className="progress-bar-element completed">
+              <i className="fa fa-check" aria-hidden="true" />
+              <span>User information</span>
+            </div>
+            <div className="progress-bar-element"><span>Learning times</span></div>
+            <div className="progress-bar-element"><span>Learning objectives</span></div>
+            <div className="progress-bar-element"><span>Self assessment</span></div>
+          </div>
+        </div>*/}
         <div className="form">
           <div className="profile-picture">
             <div>
-              <a href="/" className="edit-image"><i className="fa fa-plus" aria-hidden="true" /> </a>
+              {/* <a href="/" className="edit-image">
+                <i className="fa fa-plus" aria-hidden="true" />
+                </a>*/}
             </div>
           </div>
           <div className="form-explanation">
@@ -34,14 +47,6 @@ const Profile = ({ user }) => (
               <span className="form-links"><a href="/">Cancel</a></span>
             </div>*/}
           </form>
-        </div>
-        <div className="progress-bar-container">
-          <div className="progress-bar">
-            <div className="progress-bar-element completed"><i className="fa fa-check" aria-hidden="true" /><span>User information</span></div>
-            <div className="progress-bar-element"><span>Learning times</span></div>
-            <div className="progress-bar-element"><span>Learning objectives</span></div>
-            <div className="progress-bar-element"><span>Self assessment</span></div>
-          </div>
         </div>
       </div>
     </div>

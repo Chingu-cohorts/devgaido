@@ -115,8 +115,9 @@ p {
  
 .side-panel {
     background-color: colorTextInverse;
-    box-shadow: -15px 0 40px rgba(30, 33, 94, 0.15);
-    height: 100vh;
+    //box-shadow: 5px 25px 20px rgba(30, 33, 94, 0.15);
+    box-shadow: 2px 5px 10px rgba(30, 33, 94, 0.15);
+    //height: 100vh;
     padding: 0;
     position: absolute;
     right: 0;
@@ -149,7 +150,7 @@ p {
 
 .side-panel ul {
     list-style-type: none;
-    margin-bottom: 4rem;
+    // margin-bottom: 4rem;
     padding: 0;
 }
 
@@ -229,7 +230,8 @@ p {
  }
 
 .panel-menu {
-    padding: 2rem 0 3rem 0;
+    //padding: 2rem 0 3rem 0;
+    padding-top 2rem
 }
 
 
@@ -413,7 +415,8 @@ header {
     background-size: 24px;
     height: 3rem;
     line-height: 3rem;
-    margin: 1rem;
+    //margin: 1rem;
+    margin-top 1rem
     text-align: center;
     width: 3rem;
 }
@@ -628,7 +631,7 @@ header {
 /*--------------------------------------------------------------
 # Radio buttons
 --------------------------------------------------------------*/
-
+  
 .objectives td {
     position: relative;
 }
@@ -1282,18 +1285,18 @@ textarea {
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: #e7eaf6;
+    color colorPrimaryLight;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-     color: #e7eaf6;
+     color: colorPrimaryLight;
      opacity: 1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-     color: #e7eaf6;
+     color: colorPrimaryLight;
      opacity: 1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-     color: #e7eaf6;
+     color: colorPrimaryLight;
 }
 
 
@@ -1632,11 +1635,29 @@ a
     box-shadow: 15px 0 40px rgba(30, 33, 94, 0.15);
 
 .linkActive
-    color colorSecondary
+    li
+        color colorSecondary !important
     font-weight: bold
 
 .side-panel li:hover
         background colorSecondaryLight
+
+placeholderColor = #afb9bb
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color placeholderColor;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color: placeholderColor;
+     opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color: placeholderColor;
+     opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color: placeholderColor;
+}
 
 @media only screen and (max-width: 800px)
     .lostGridColumn
