@@ -1,5 +1,23 @@
 import Paths from '../pages/Paths/PathsReducer';
 
+/**
+ * UI State. 'global' defines state items that are available across all pages
+ * in the client, while 'Pages' contains state that is specific to a given
+ * page. 
+ * 
+ * To add a new page simply add the page name within 'Pages' followed by its
+ * state definition:
+ * 
+ *  Pages: {
+ *    NewPageName: {
+ *      stateItem: ...
+ *    }
+ *  }
+ *
+ * @param {*} state -
+ * @param {*} action - 
+ * @returns {state} state - UI data maintained in state
+ */
 const uiState = (state = {
   global: {
     navMenuOpen: false,

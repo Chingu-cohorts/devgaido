@@ -13,7 +13,8 @@ import { togglePath } from './PathsActions';
  * Retrieve all lessons in a given course.
  *
  * @param {Object} course - An course object
- * @param {Object} curriculum - An object containing all elements of the curriculum (paths, courses, and lessons)
+ * @param {Object} curriculum - An object containing all elements of the
+ * curriculum (paths, courses, and lessons)
  * @returns {Object[]} curriculum - An array of lesson objects
  */
 const getAllCourseLessons = (course, curriculum) => {
@@ -62,9 +63,11 @@ const Path = ({ id, name, description, curriculum, dispatch, opened, key, course
 /**
  * Construct the Paths HTML to be displayed.
  *
- * @param {Object} curriculum - An object containing all elements of the curriculum (paths, courses, and lessons)
+ * @callback actionDispatcher
+ * @param {Object} curriculum - An object containing all elements of the
+ curriculum (paths, courses, and lessons)
  * @param {Object} uiState - UI State managed by Redux
- * @param {} dispatch - 
+ * @param {actionDispatcher} dispatch - Redux action dispatch function
  * @returns {HTMLElement} - A /div containing the path cards
  */
 const Paths = ({ curriculum, uiState, dispatch }) => {

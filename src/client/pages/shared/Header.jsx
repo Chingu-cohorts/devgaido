@@ -58,7 +58,7 @@ const Header = ({ uiState, dispatch }) => (
     <div className="constrained">
       <div className={uiState.global.navMenuOpen ? 'side-panel is-visible' : 'side-panel'}>
         <div className="panel-menu">
-          <h1>Welcome back Erik!</h1>
+          <h1>Welcome back USERNAME</h1>
           <ul>
             <li><NavLink to="/" activeClassName="linkActive" exact onClick={() => toggleMenuAfterNav(dispatch)} ><i className="fa fa-graduation-cap" aria-hidden="true" />Home</NavLink></li>
             <li><NavLink to="/paths" activeClassName="linkActive" onClick={() => toggleMenuAfterNav(dispatch)}><i className="fa fa-graduation-cap" aria-hidden="true" />Paths</NavLink></li>
