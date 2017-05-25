@@ -20,6 +20,10 @@ goal as well as a means of tracking progress tracking.
  - **Predefined Learning Paths** Predefined learning paths guide the user in
  a journal to acquire or strengthen understanding of a particular topic in
  the web development ecosystem.
+ - **Tracking & Monitoring** devGaido tracks the users's progress on the 
+ Dashboard screen in the form of 
+ [burndown charts](https://en.wikipedia.org/wiki/Burn_down_chart) 
+ and progress metrics that are straightforward and simple to understand.
  - **Security:** Authentication is provided through integration with Auth0 to 
  provide the user with the option of specifying application-specific 
  credentials or integration with either GitHub or Google for authentication.
@@ -56,7 +60,23 @@ Stay tuned
 
 ## Configuration
 
-Stay tuned
+The devGaido project folder is organized in the following manner:
+
+```
+/devgaido - Application root folder containing global configuration
+            and settings files.
+  /src - Application source files
+    /client - Frontend application source
+      /actions - Redux global app action handlers
+      /assets - Client asset files
+      /pages - One subdirectory for each page containing .jsx files including 
+               page-specific actions and reducers.
+      /reducers - Redux global app reducer handlers
+      /stylus - Style sheet files
+    /server - Backend application source
+      /models - Data model files
+      /services - Microservices
+```
 
 ## Authors
 
