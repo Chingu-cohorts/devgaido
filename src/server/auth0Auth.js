@@ -49,7 +49,6 @@ const auth0Auth = (app) => {
     passport.authenticate('auth0', { failureRedirect: '/url-if-something-fails' }),
     (req, res) => {
       res.redirect(req.session.returnTo || '/');
-      console.log('user', req.user);
     });
 };
 

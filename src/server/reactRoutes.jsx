@@ -62,9 +62,23 @@ export default (req, res, next) => {
   if (!match) {
     next();
   } else {
-     // TODO: Add subjects list to initial store at this point.
-    const user = req.user ? { name: req.user.nickname, authenticated: true, email: req.user._json.email }
-                          : { name: '', authenticated: false, email: '' };
+    const auth0 = {
+      domain: process.env.AUTH0_DOMAIN,
+      clientID: process.env.AUTH0_CLIENT_ID,
+      callbackURL: process.env.AUTH0_CALLBACK_URL || 'http://localhost:8080/callback',
+    };
+
+    const user = req.user ?
+    {
+      name: req.user.nickname,
+      authenticated: true,
+      email: req.user._json.email } :
+    {
+      name: '',
+      authenticated: false,
+      email: '',
+    };
+
     const curriculum = {
       subjects: getAllSubjects(),
       paths: getAllPaths(),
@@ -90,7 +104,7 @@ export default (req, res, next) => {
         opened: false,
       });
     }
-    const state = { user, curriculum, uiState };
+    const state = { user, curriculum, uiState, auth0 };
     const store = createStore(reducers, state);
 
     res.set('Content-Type', 'text/html')

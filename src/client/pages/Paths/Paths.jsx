@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import LearningPath from '../shared/LearningPath';
 import { togglePath } from './PathsActions';
 
+import ExternalLesson from './ExternalLesson';
+
 /**
  * An HTML element, such as a '/div' to be used by React.
  * @typedef {object} HTMLElement
@@ -88,6 +90,7 @@ const Paths = ({ curriculum, uiState, dispatch }) => {
 
   return (
     <div className="lostContainer">
+      <ExternalLesson url={'http://gitimmersion.com/'} />
       {pathsArr}
     </div>
   );

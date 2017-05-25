@@ -43,6 +43,7 @@ const routes = [
     exact: true,
     component: Profile,
     passdown: ['user'],
+    reqAuth: true,
   },
   {
     path: '/times',
