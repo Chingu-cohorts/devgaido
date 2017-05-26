@@ -1,5 +1,4 @@
-# devGaido
-[![devGaido version][devgaido-image]][devgaido-url]
+# [![devGaido version][devgaido-image]][devgaido-url] devGaido
 
 [![build status][travis-image]][travis-url]
 [![Downloads][downloads-image]][downloads-url]
@@ -47,12 +46,9 @@ $ yarn
 | yarn dev:client   | Start development server          |
 | yarn analyzesize  | Analyze bundle sizes              |
 
-
-
 ### Examples
 
 Stay tuned
-
 
 ### Options
 
