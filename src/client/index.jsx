@@ -14,9 +14,9 @@ import App from './App';
 import './stylus/style.styl';
 
 /**
- * Get the initial application state which is either an empty object or the 
+ * Get the initial application state which is either an empty object or the
  * state previously stored in window.__INITIAL_STATE__.
- * 
+ *
  * @returns {Object} initialStore - The initial app state
  */
 const getInitialState = () => {
@@ -40,8 +40,9 @@ if (store.getState().user.name !== '') {
 
 /**
  * Build the template for all pages in the application
- * 
+ *
  * @param {any} Component - React Component containing on the page
+ * @returns {null} -
  */
 const render = (Component) => {
   ReactDOM.render(

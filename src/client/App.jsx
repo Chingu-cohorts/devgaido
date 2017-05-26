@@ -10,6 +10,7 @@ import Header from './pages/shared/Header';
 import Footer from './pages/shared/Footer';
 
 import routesArr from './routes';
+
 // TODO: Add documentation for all the "Super Route and reducer magic"
 const App = ({ serverMatch, dispatch, user, curriculum, uiState, auth0 }) => {
 // If <App /> is rendered on the server we need to provide the serverMatch prop
