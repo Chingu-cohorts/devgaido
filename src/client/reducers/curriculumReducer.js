@@ -3,7 +3,7 @@
  * In addition this includes subjects which categorize all three fo the above.
  *
  * @param {*} state -
- * @param {*} action - 
+ * @param {*} action -
  * @returns {state} state - The curriculum data maintained in state
  */
 const curriculum = (state = {
