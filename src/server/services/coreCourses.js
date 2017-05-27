@@ -4,7 +4,8 @@ import CoreCourses from '../models/corecourses.json';
  * Extract a specific course and its details from the Core Courses
  *
  * @param {String} courseId - Unique course identifier
- * @returns {String[]} - JSON object containing attributes of the course
+ * @returns {String[]} - JSON object containing attributes of the course or
+ * undefined if no match found
  */
 const getCourse = courseId => CoreCourses[courseId];
 
