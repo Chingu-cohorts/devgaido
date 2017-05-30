@@ -1,5 +1,5 @@
 import Paths from '../pages/Paths/PathsReducer';
-
+import Dashboard from '../pages/Dashboard/DashboardReducer';
 /**
  * UI State. 'global' defines state items that are available across all pages
  * in the client, while 'Pages' contains state that is specific to a given
@@ -26,9 +26,21 @@ const uiState = (state = {
     Paths: {
       pathStates: [],
     },
+    Dashboard: {
+      currentTab: 0,
+    },
   },
 }, action) => {
   switch (action.type) {
+    case 'SET_CURRENT_DASHBOARD_TAB': {
+      return {
+        ...state,
+        Pages: {
+          ...state.Pages,
+          Dashboard: Dashboard(state.Pages.Dashboard, action),
+        },
+      };
+    }
     case 'TOGGLE_NAV_MENU': {
       return {
         ...state,
@@ -38,6 +50,7 @@ const uiState = (state = {
         },
       };
     }
+    case 'INIT_PATHS' :
     case 'TOGGLE_PATH': {
       return {
         ...state,

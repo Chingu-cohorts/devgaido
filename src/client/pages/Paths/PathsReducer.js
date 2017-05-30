@@ -13,6 +13,16 @@ const Paths = (state = {
   pathStates: [],
 }, action) => {
   switch (action.type) {
+    case 'INIT_PATHS': {
+      const newPathStates = [];
+      for (let i = 0; i < action.n; i += 1) {
+        newPathStates.push({
+          id: i,
+          opened: false,
+        });
+      }
+      return { ...state, pathStates: newPathStates };
+    }
     case 'TOGGLE_PATH': {
       const pathStatesCopy = state.pathStates.slice(0);
       const newPathStates = pathStatesCopy.map(

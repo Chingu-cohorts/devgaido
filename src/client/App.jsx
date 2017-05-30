@@ -16,7 +16,6 @@ const App = ({ serverMatch, dispatch, user, curriculum, uiState, auth0 }) => {
 // If <App /> is rendered on the server we need to provide the serverMatch prop
 // since StaticRouter can only render a single Route (Switch only works on client side).
 // On the client though, just return all routes and let Switch do the work.
-
   const passdownProps = {
     dispatch, user, curriculum, uiState, auth0,
   };

@@ -31,6 +31,7 @@ const routes = [
     path: '/dashboard',
     exact: true,
     component: Dashboard,
+    passdown: ['dispatch', 'user', 'curriculum', 'uiState'],
   },
   {
     path: '/courses',

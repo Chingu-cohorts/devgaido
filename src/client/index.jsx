@@ -10,7 +10,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import reducers from './reducers';
 import App from './App';
-
+import { initPaths } from './pages/Paths/PathsActions';
 import './stylus/style.styl';
 
 /**
@@ -32,11 +32,15 @@ const getInitialState = () => {
 const middleware = [thunk];
 if (process.env.NODE_ENV !== 'production') middleware.push(logger);
 
-const store = createStore(reducers, getInitialState(), applyMiddleware(...middleware));
+const initialState = getInitialState();
+
+const store = createStore(reducers, initialState, applyMiddleware(...middleware));
+
+store.dispatch(initPaths(initialState.curriculum.paths.length));
+
 if (store.getState().user.name !== '') {
   console.log('Hello', store.getState().user.name);
 }
-
 
 /**
  * Build the template for all pages in the application

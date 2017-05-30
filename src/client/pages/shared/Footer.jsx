@@ -1,5 +1,7 @@
 import React from 'react';
 
+const year = new Date().getFullYear();
+
 const Footer = () =>
   (
     <footer>
@@ -9,7 +11,7 @@ const Footer = () =>
             href="https://chingu-cohorts.github.io/chingu-directory/"
             target="_blank" rel="noopener noreferrer"
           >
-            &copy; Chingu Cohorts, 2017</a>
+            &copy; Chingu Cohorts, {year}</a>
         </h5>
       </div>
     </footer>

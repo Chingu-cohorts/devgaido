@@ -1613,6 +1613,7 @@ a
     lost-center: widthMax;
     display: flex
     position: relative
+    flex-direction: column
 
 .putRight
     flex 1
@@ -1638,13 +1639,94 @@ a
     li
         color colorSecondary !important   
     font-weight: bold
+
 .panel-menu
     li
         i
             color white !important         
 .side-panel li:hover
         background colorSecondaryLight
+        
+.marginTop
+    margin-top 6em
 
+.displayFlex
+    display flex
+
+/* ----------------------- */
+.colQuarter
+    lost-column: 1/4 4
+
+.tabButton
+    outline: 0 !important
+    background: #eff9fb
+    color colorPrimary
+    border-radius: 20px
+    margin 15px
+    padding 5px
+    border none
+    height: 35px
+    line-height: 5px
+    //min-width: 100px
+    //width: 25%
+    //width 33%
+    //flex 1
+    box-shadow: none
+
+.activeTabCaption
+    background colorSecondary
+    color white
+
+.dashboardPathList
+    margin-top 20px
+    lost-center: widthMax
+/* ----------------------- */
+.card
+    background colorTextInverse
+    border-radius 6px
+    box-shadow: 5px 5px 10px rgba(30, 33, 94, 0.15)
+    display: flex
+    flex-direction: column
+    padding: 4rem 2rem 2rem 2rem
+    position relative
+
+.cardHeader
+    background-color: colorSecondaryLight
+    border-radius: 6px 6px 0 0
+    width: 100%
+    height: 50px
+    position: absolute
+    left: 0
+    top: 0
+
+.cardSmallCaption
+    font-size: 0.8rem
+    font-weight: bold
+    color: #afb9bb
+
+.cardBigCaption
+    font-size: 1.1rem
+    font-weight: bold
+    margin: 0
+
+.cardText
+    margin-top 10px
+    color colorPrimary
+    flex 1
+
+.cardButton
+    background: colorPrimaryLight
+    border-radius: 20px
+    color: colorPrimary
+    font-size: 0.8rem
+    font-weight: bold
+    height: 35px
+    line-height: 5px
+    min-width: 100px
+    width: 25%
+    box-shadow: none
+
+/* ----------------------- */
 placeholderColor = #afb9bb
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */

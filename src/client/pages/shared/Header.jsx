@@ -44,6 +44,7 @@ const Header = ({ user, uiState, dispatch, auth0 }) => (
           <ul>
             <NavLink to="/paths" activeClassName="linkActive"><li>Paths</li></NavLink>
             <NavLink to="/courses" activeClassName="linkActive"><li>Courses</li></NavLink>
+            <NavLink to="/dashboard" activeClassName="linkActive"><li>Dashboard</li></NavLink>
           </ul>
         </nav>
         <div className="menu putRight">
