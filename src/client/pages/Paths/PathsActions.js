@@ -11,4 +11,10 @@ export function togglePath(id) {
   };
 }
 
-export default { togglePath };
+export function initPaths(n) {
+  return {
+    type: 'INIT_PATHS',
+    n,
+  };
+}
+export default { togglePath, initPaths };

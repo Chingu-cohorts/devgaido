@@ -86,25 +86,7 @@ export default (req, res, next) => {
       lessons: getAllLessons(),
     };
 
-    const uiState = {
-      global: {
-        navMenuOpen: false,
-      },
-      Pages: {
-        Paths: {
-          pathStates: [],
-        },
-      },
-    };
-
-    const nPaths = curriculum.paths.length;
-    for (let i = 0; i < nPaths; i += 1) {
-      uiState.Pages.Paths.pathStates.push({
-        id: i,
-        opened: false,
-      });
-    }
-    const state = { user, curriculum, uiState, auth0 };
+    const state = { user, curriculum, auth0 };
     const store = createStore(reducers, state);
 
     res.set('Content-Type', 'text/html')
