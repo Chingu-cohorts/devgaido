@@ -38,18 +38,16 @@ const toggleMenuAfterNav = (dispatch) => {
 const Header = ({ user, uiState, dispatch, auth0 }) => (
   <div>
     <header>
-      <div className="header-content lostContainerHeader">
-        <NavLink to="/" className="headerLogo" />
-        <nav>
-          <ul>
-            <NavLink to="/paths" activeClassName="linkActive"><li>Paths</li></NavLink>
-            <NavLink to="/courses" activeClassName="linkActive"><li>Courses</li></NavLink>
+      <div className="header-content">
+        <NavLink to="/" className="header-logo" />
+        <nav className="main-navigation">
+          <ul className="menu">
+            <li><NavLink to="/paths" activeClassName="link-active">Paths</NavLink></li>
+            <li><NavLink to="/courses" activeClassName="link-active">Courses</NavLink></li>
+            {user.authenticated ? <li><a className={uiState.global.navMenuOpen ? 'menu-btn profile menu-btn-close' : 'menu-btn profile'} href="/" onClick={e => toggleMenu(e, dispatch)} title="Menu">‌‌ Menu</a></li> : null}
+            {!user.authenticated ? <li><a className="menu-btn login" href="/" onClick={e => handleLoginClick(e, auth0)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a></li> : null}
           </ul>
         </nav>
-        <div className="menu putRight">
-          {user.authenticated ? <a className={uiState.global.navMenuOpen ? 'menu-btn menu-btn-close' : 'menu-btn'} href="/" onClick={e => toggleMenu(e, dispatch)} title="Menu">‌‌ </a> : null}
-          {!user.authenticated ? <a className="loginButton" href="/" onClick={e => handleLoginClick(e, auth0)} title="Login"><i className="fa fa-sign-in" aria-hidden="true" />‌‌ ‌‌L‌‌o‌‌g‌‌i‌‌n‌</a> : null}
-        </div>
         <div className={uiState.global.navMenuOpen ? 'side-panel is-visible' : 'side-panel'}>
           <div className="panel-menu">
             <h1>Welcome back, {user.name}</h1>
@@ -66,7 +64,7 @@ const Header = ({ user, uiState, dispatch, auth0 }) => (
         </div>*/}
       </div>
     </header>
-    <div className="constrained" />
+    {/*<div className="container" />*/}
   </div>
 );
 
