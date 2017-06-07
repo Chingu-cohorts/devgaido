@@ -4,5 +4,9 @@ export function setCurrentDashboardTab(currentTabIndex) {
     currentTabIndex,
   };
 }
-
-export default { setCurrentDashboardTab };
+export function setCurrentDashboardPath(currentPathId) {
+  return {
+    type: 'SET_CURRENT_DASHBOARD_PATH',
+    currentPathId,
+  };
+}

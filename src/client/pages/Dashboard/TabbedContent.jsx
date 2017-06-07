@@ -7,7 +7,7 @@ const setCurrentTab = (tabIndex, dispatch) => {
 };
 
 const TabbedContent = ({ content, dispatch, uiState }) => (
-  <div>
+  <div className="tabbed-content">
     <div className="displayFlex">
       {content.map((c, index) => (
         <button

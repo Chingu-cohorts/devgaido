@@ -28,10 +28,12 @@ const uiState = (state = {
     },
     Dashboard: {
       currentTab: 0,
+      currentPath: '',
     },
   },
 }, action) => {
   switch (action.type) {
+    case 'SET_CURRENT_DASHBOARD_PATH':
     case 'SET_CURRENT_DASHBOARD_TAB': {
       return {
         ...state,

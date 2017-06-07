@@ -1657,6 +1657,10 @@ a
 .colQuarter
     lost-column: 1/4 4
 
+.colFull
+    width 100%
+    margin-bottom: 20px
+
 .tabButton
     outline: 0 !important
     background: #eff9fb
@@ -1667,10 +1671,6 @@ a
     border none
     height: 35px
     line-height: 5px
-    //min-width: 100px
-    //width: 25%
-    //width 33%
-    //flex 1
     box-shadow: none
 
 .activeTabCaption
@@ -1725,6 +1725,23 @@ a
     min-width: 100px
     width: 25%
     box-shadow: none
+.tabbed-content,
+.metrics
+    background colorTextInverse
+    border-radius 6px
+    box-shadow: 5px 5px 10px rgba(30, 33, 94, 0.15)
+    display: flex
+    flex-direction: column
+    padding: 2rem 2rem 2rem 2rem
+    position relative
+    margin-bottom: 40px
+
+.tabbed-content
+    background #ddd
+.card
+    cursor pointer
+.selected
+    background red
 
 /* ----------------------- */
 placeholderColor = #afb9bb

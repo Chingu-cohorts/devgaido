@@ -5,6 +5,7 @@ import { StaticRouter, matchPath } from 'react-router';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../client/reducers';
+import userReducer from '../client/reducers/userReducer';
 
 import { getAllPaths } from './services/corePaths';
 import { getAllCourses } from './services/coreCourses';
@@ -72,8 +73,8 @@ export default (req, res, next) => {
     {
       name: req.user.nickname,
       authenticated: true,
-      email: req.user._json.email } :
-    {
+      email: req.user._json.email,
+    } : {
       name: '',
       authenticated: false,
       email: '',
@@ -85,8 +86,23 @@ export default (req, res, next) => {
       courses: getAllCourses(),
       lessons: getAllLessons(),
     };
-
-    const state = { user, curriculum, auth0 };
+    // TODO: Set currentPath to user.curPath
+    const uiState = {
+      global: {
+        navMenuOpen: false,
+      },
+      Pages: {
+        Paths: {
+          pathStates: [],
+        },
+        Dashboard: {
+          currentTab: 0,
+          currentPath: '10010',
+        },
+      },
+    };
+    // TODO: Think of an elegant way to do this here and apply it to ALL parts of the store
+    const state = { user: { ...userReducer(undefined, { type: null }), ...user }, curriculum, auth0, uiState };
     const store = createStore(reducers, state);
 
     res.set('Content-Type', 'text/html')
