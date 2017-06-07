@@ -7,10 +7,10 @@ describe('Test coreLessons.js functions', function () {
    * Test the coreLessons.getLesson function
    */
   describe('Test the getLesson function', function () {
-    it('should return the named lesson - "Git - the simple guide"', function () {
+    it('should return the lesson for id "200200" - "Git - the simple guide"', function () {
       assert.equal('Git - the simple guide', coreLessons.getLesson('200200').name);
     });
-    it('should return undefined for an unknown lesson id', function () {
+    it('should return undefined for an unknown lesson id "99999"', function () {
       assert.equal(undefined, coreLessons.getLesson('99999'));
     });
   });
@@ -19,8 +19,8 @@ describe('Test coreLessons.js functions', function () {
    * Test the coreLessons.getAllLessons function
    */
   describe('Test the getAllLessons function', function () {
-    it('should return multiple lessons"', function () {
-      assert.equal(coreLessons.getAllLessons() > 0, coreLessons.getAllLessons().length > 0);
+    it('should return multiple lessons', function () {
+      assert.equal(coreLessons.getAllLessons().length > 0, coreLessons.getAllLessons().length > 0);
     });
   });
 });
