@@ -22,7 +22,7 @@ const routes = [
     component: Home,
   },
   {
-    path: '/paths/:name',
+    path: '/paths/:id',
     exact: true,
     component: Path,
     passdown: ['dispatch', 'curriculum', 'uiState'],

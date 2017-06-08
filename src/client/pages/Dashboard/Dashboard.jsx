@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import { Link } from 'react-router-dom';
+
 import TabbedContent from './TabbedContent';
-import { setCurrentDashboardPath } from './DashboardActions';
+
+// import { setCurrentDashboardPath } from './DashboardActions';
 
 // TODO: Add custom date formatting to make client and server side string match up
 const Metrics = ({ name, streak, lastVisited }) => (
@@ -12,7 +16,7 @@ const Metrics = ({ name, streak, lastVisited }) => (
   </div>
 );
 
-const DetailedCard = ({ caption, subcaption, text, icons }) => (
+/* const DetailedCard = ({ caption, subcaption, text, icons }) => (
   <div className="card colFull">
     <div className="cardHeader" style={{ background: '#e13a7e' }}>
       <i />
@@ -23,11 +27,11 @@ const DetailedCard = ({ caption, subcaption, text, icons }) => (
     <p className="cardText">{text}</p>
     <button className="cardButton" type="button">View</button>
   </div>
-);
+);*/
 
 // TODO: Find a neat way of changing a cards color (dynamically add css class vs style tag?)
-const Card = ({ caption, subcaption, text, selected, icons, onClick }) => (
-  <div className={`card colQuarter${selected ? ' selected' : ''}`} onClick={onClick}>
+const Card = ({ caption, subcaption, text, selected, icons, to, onClick }) => (
+  <Link className={`card colQuarter${selected ? ' selected' : ''}`} to={to}>
     <div className="cardHeader" style={{ background: '#ffea7e' }}>
       <i />
       <i />
@@ -35,31 +39,33 @@ const Card = ({ caption, subcaption, text, selected, icons, onClick }) => (
     <span className="cardSmallCaption">{subcaption}</span>
     <span className="cardBigCaption">{caption}</span>
     <p className="cardText">{text}</p>
-    <button className="cardButton" type="button">View</button>
-  </div>
+    {/* <button className="cardButton" type="button">View</button> */}
+  </Link>
 );
+/*
 const handlePathCardClick = (dispatch, id) => {
   dispatch(setCurrentDashboardPath(id));
-};
+};*/
 
 const PathCard = ({ selected, name, description, id, dispatch }) => (
   <Card
-    selected={selected}
+    // selected={selected}
     caption={name}
     subcaption="Path"
     text={description}
     key={id}
-    onClick={() => handlePathCardClick(dispatch, id)}
+    to={`/paths/${id}`}
+    // onClick={() => handlePathCardClick(dispatch, id)}
   />
 );
 
 const PathList = ({ curPathId, paths, dispatch }) => (
   <div>
-    <DetailedCard
+    {/* <DetailedCard
       caption="Caption"
       subcaption="Path"
       text="PATH TEXT"
-    />
+    />*/}
     <div className="dashboardPathList">
       {paths.map(p => (
         curPathId === p.id ?
@@ -112,7 +118,7 @@ Metrics.propTypes = {
   lastVisited: PropTypes.number.isRequired,
 };
 
-DetailedCard.propTypes = {
+/* DetailedCard.propTypes = {
   caption: PropTypes.string.isRequired,
   subcaption: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
@@ -124,7 +130,7 @@ DetailedCard.defaultProps = {
   subcaption: '',
   text: '',
   icons: [],
-};
+};*/
 
 Card.propTypes = {
   selected: PropTypes.bool,

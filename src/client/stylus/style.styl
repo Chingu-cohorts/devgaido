@@ -1690,8 +1690,11 @@ a
     padding: 4rem 2rem 2rem 2rem
     position relative
 
+.card--image
+    padding: 470px 2rem 2rem 2rem
+
 .cardHeader
-    background-color: colorSecondaryLight
+    background: colorSecondaryLight
     border-radius: 6px 6px 0 0
     width: 100%
     height: 50px
@@ -1699,6 +1702,26 @@ a
     left: 0
     top: 0
 
+.cardHeader--image
+    background: url("http://lorempixel.com/1900/1200/technics/")
+    background-size: cover
+    height: 450px
+
+.cardHeader--image--color
+    background alpha(colorPrimary, 0.75)
+    height: 450px
+    text-align: center
+    display: flex
+    align-items: center
+    justify-content: center
+
+.cardHeader--pathName
+    font-size 200%
+    color white
+.backLink
+    padding 10px
+    font-weight: bold
+    font-size: 120%
 .cardSmallCaption
     font-size: 0.8rem
     font-weight: bold
@@ -1725,7 +1748,8 @@ a
     min-width: 100px
     width: 25%
     box-shadow: none
-.tabbed-content,
+
+//.tabbed-content,
 .metrics
     background colorTextInverse
     border-radius 6px
@@ -1736,12 +1760,13 @@ a
     position relative
     margin-bottom: 40px
 
-.tabbed-content
-    background #ddd
-.card
-    cursor pointer
-.selected
-    background red
+//.tabbed-content
+//    background #ddd
+
+//.card
+//    cursor pointer
+//.selected
+//    background red
 
 /* ----------------------- */
 placeholderColor = #afb9bb
