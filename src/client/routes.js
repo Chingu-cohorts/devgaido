@@ -1,5 +1,5 @@
 import Home from './pages/Home/Home';
-import Paths from './pages/Paths/Paths';
+import Path from './pages/Path/Path';
 import Profile from './pages/Profile/Profile';
 import Times from './pages/Times/Times';
 import Objectives from './pages/Objectives/Objectives';
@@ -22,9 +22,9 @@ const routes = [
     component: Home,
   },
   {
-    path: '/paths',
+    path: '/paths/:name',
     exact: true,
-    component: Paths,
+    component: Path,
     passdown: ['dispatch', 'curriculum', 'uiState'],
   },
   {

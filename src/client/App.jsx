@@ -1,10 +1,10 @@
-import React, { createElement } from 'react';
+import React from 'react';
 import { Switch, withRouter } from 'react-router';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import SuperRoute from './pages/shared/SuperRoute';
+import PropsRoute from './pages/shared/PropsRoute';
 
 import Header from './pages/shared/Header';
 import Footer from './pages/shared/Footer';
@@ -22,25 +22,25 @@ const App = ({ serverMatch, dispatch, user, curriculum, uiState, auth0 }) => {
 
   const routes = [];
   if (serverMatch) {
+    // console.log('server route:', serverMatch)
     routes.push(
-      <SuperRoute
+      <PropsRoute
         {...serverMatch}
         key={0}
         passdownProps={passdownProps}
-      >
-        {createElement(serverMatch.component)}
-      </SuperRoute>);
+        component={serverMatch.component}
+      />);
   } else {
     let key = 0;
     routesArr.forEach((route) => {
+      // console.log('client route:', route)
       routes.push(
-        <SuperRoute
+        <PropsRoute
           {...route}
           key={key += 1}
           passdownProps={passdownProps}
-        >
-          {createElement(route.component)}
-        </SuperRoute>);
+          component={route.component}
+        />);
     });
   }
   // TODO: Re-add sticky footer - position sticky or flexbox? (Check caniuse.com)

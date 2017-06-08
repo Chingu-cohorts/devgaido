@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import TabbedContent from './TabbedContent';
 import { setCurrentDashboardPath } from './DashboardActions';
 
+// TODO: Add custom date formatting to make client and server side string match up
 const Metrics = ({ name, streak, lastVisited }) => (
   <div className="metrics">
     <h1>Welcome back, {name}!</h1>
@@ -25,8 +26,8 @@ const DetailedCard = ({ caption, subcaption, text, icons }) => (
 );
 
 // TODO: Find a neat way of changing a cards color (dynamically add css class vs style tag?)
-const Card = ({ caption, subcaption, text, selected, key, icons, onClick }) => (
-  <div className={`card colQuarter${selected ? ' selected' : ''}`} onClick={onClick} key={key}>
+const Card = ({ caption, subcaption, text, selected, icons, onClick }) => (
+  <div className={`card colQuarter${selected ? ' selected' : ''}`} onClick={onClick}>
     <div className="cardHeader" style={{ background: '#ffea7e' }}>
       <i />
       <i />
@@ -41,7 +42,7 @@ const handlePathCardClick = (dispatch, id) => {
   dispatch(setCurrentDashboardPath(id));
 };
 
-const PathCard = ({selected, name, description, id, key, dispatch}) => (
+const PathCard = ({ selected, name, description, id, dispatch }) => (
   <Card
     selected={selected}
     caption={name}
@@ -62,8 +63,8 @@ const PathList = ({ curPathId, paths, dispatch }) => (
     <div className="dashboardPathList">
       {paths.map(p => (
         curPathId === p.id ?
-          <PathCard selected name={p.name} description={p.description} id={p.id} dispatch={dispatch} /> :
-          <PathCard name={p.name} description={p.description} id={p.id} dispatch={dispatch} />
+          <PathCard selected name={p.name} description={p.description} id={p.id} dispatch={dispatch} key={p.id} /> :
+          <PathCard selected={false} name={p.name} description={p.description} id={p.id} dispatch={dispatch} key={p.id} />
       ))}
     </div>
   </div>
@@ -104,28 +105,57 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
     />
   </div>
 );
+
 Metrics.propTypes = {
   name: PropTypes.string.isRequired,
   streak: PropTypes.number.isRequired,
   lastVisited: PropTypes.number.isRequired,
 };
 
-Card.propTypes = {
-  caption: PropTypes.string,
-  subcaption: PropTypes.string,
-  text: PropTypes.string,
+DetailedCard.propTypes = {
+  caption: PropTypes.string.isRequired,
+  subcaption: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
   icons: PropTypes.arrayOf(PropTypes.string),
 };
 
-Card.defaultProps = {
+DetailedCard.defaultProps = {
   caption: '',
   subcaption: '',
   text: '',
   icons: [],
 };
 
+Card.propTypes = {
+  selected: PropTypes.bool,
+  caption: PropTypes.string,
+  subcaption: PropTypes.string,
+  text: PropTypes.string,
+  icons: PropTypes.arrayOf(PropTypes.string),
+  onClick: PropTypes.func,
+};
+
+Card.defaultProps = {
+  selected: false,
+  caption: '',
+  subcaption: '',
+  text: '',
+  icons: [],
+  onClick: null,
+};
+
+PathCard.propTypes = {
+  selected: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  dispatch: PropTypes.func.isRequired,
+};
+
 PathList.propTypes = {
+  curPathId: PropTypes.string.isRequired,
   paths: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 Dashboard.propTypes = {

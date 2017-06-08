@@ -45,7 +45,7 @@ const renderPage = (reactHTML, initialState) => `
 // and can only render a single route with StaticRouter (Switch is not working like on client side)
 const initialView = (req, match, store) => renderToString(
   <Provider store={store}>
-    <StaticRouter context={{}} location={match.path}>
+    <StaticRouter context={{}} location={match.url}>
       <App serverMatch={match} />
     </StaticRouter>
   </Provider>,
@@ -86,7 +86,7 @@ export default (req, res, next) => {
       courses: getAllCourses(),
       lessons: getAllLessons(),
     };
-    // TODO: Set currentPath to user.curPath
+    // TODO: Default Dashboard.currentPath to user.curPath
     const uiState = {
       global: {
         navMenuOpen: false,
