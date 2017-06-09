@@ -19,8 +19,9 @@ To allow passing down props from <App /> to the Route's component
 we use Route's "render" prop instead of "component".
 (When using the "component" prop, we cannot pass down additional props.)
 Just putting the component as a child of Route and then adding props would allow passing down props
-as well, but then we cannot access the routeProps which are passed down to the component
+as well, but then we cannot access the routeProps because those are only accessible
 when using the component or render prop instead. So using "render" is the only way here.
+We need the routeProps to be able to correctly handle routes with params like "/paths/:id".
 */
 
 const PropsRoute = ({ component, passdown, passdownProps, ...props }) => (

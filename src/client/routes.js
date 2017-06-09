@@ -9,11 +9,14 @@ import Dashboard from './pages/Dashboard/Dashboard';
 /**
  * Client route definitions
  *
- * - path: path to the directory containing the component
- * - exact:
- * - component: component name. For example 'Home' for the 'Home.jsx' component.
- * - passdown: array of state names defining the state data to be passed to the
- *   component. Items named in passdown are defined in /server/reactRoutes.jsx.
+ * - path:      Path to the directory containing the component
+ * - exact:     If true, only exact routes are matched.
+ *              ("/" would match EVERY route without it for example)
+ * - component: Component name. For example 'Home' for the 'Home.jsx' component.
+ * - passdown:  Array of property names to be passed to the component.
+ *              (Those names are defined in /server/reactRoutes.jsx)
+ * - reqAuth:   If set, that route can only be accessed
+ *              when authenticated, otherwise it redirects to "/".
  */
 const routes = [
   {
