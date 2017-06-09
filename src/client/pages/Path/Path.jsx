@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Link } from 'react-router-dom';
+import Card from '../shared/Card';
 
-import LearningPath from '../shared/LearningPath';
+const lessonTypeIcons = {
+  Reading: 'fa fa-book',
+  Project: 'fa fa-tasks',
+  'Supplemental Course': '',
+};
 
 const getPath = (id, paths) => {
   let retPath = null;
@@ -23,39 +27,67 @@ const getAllCourseLessons = (course, curriculum) => {
   return lessons;
 };
 
-const Path = ({ match, curriculum }) => {
+const LessonCard = ({ name, description, id, type }) => (
+  <Card
+    caption={name}
+    subcaption="LESSON"
+    text={description}
+    to={`/lessons/${id}`}
+    content={null}
+    icons={[lessonTypeIcons[type], 'fa fa-graduation-cap']}
+  />
+);
+
+const Path = ({ match, /* history,*/ curriculum }) => {
   const path = getPath(match.params.id, curriculum.paths);
   const courses = path.courseIds.map((courseId, index) => (
-    <div key={index}>
-      <div className="courseInfo">
+    <div className="courseCard" key={index}>
+      <div className="courseCardHeader">
+        <span className="courseCardCaption">COURSE</span>
         <h1>{curriculum.courses[courseId].name}</h1>
-        <p className="courseDescription">{curriculum.courses[courseId].description}</p>
       </div>
-      <LearningPath
-        lessons={getAllCourseLessons(curriculum.courses[courseId], curriculum)}
-        detailedLesson={null}
-      />
+
+      <p className="courseDescription">{curriculum.courses[courseId].description}</p>
+      <div className="lessonList">
+        {getAllCourseLessons(curriculum.courses[courseId], curriculum).map(lesson => (
+          <LessonCard
+            name={lesson.name}
+            description={lesson.description}
+            id={lesson.id}
+            type={lesson.type}
+            key={lesson.id}
+          />
+        ))}
+      </div>
     </div>
   ));
   return (
     <div className="lostContainer">
-      <Link className="backLink" to="/dashboard">&larr; Back</Link>
+      {/* <a className="backLink" href="#" onClick={() => history.goBack()}>&larr; Back</a>*/}
       <div className="card card--image colFull">
         <div className="cardHeader cardHeader--image" />
         <div className="cardHeader cardHeader--image--color">
           <h1 className="cardHeader--pathName">{path.name}</h1>
         </div>
-        <span className="cardSmallCaption">PATH</span>
-        <span className="cardBigCaption">{path.name}</span>
+        <span className="cardBigCaption">About this Path:</span>
         <p className="cardText">{path.description}</p>
+        <p className="cardText">Courses in this path: {courses.length}</p>
         {courses}
-        <button className="cardButton" type="button">View</button>
       </div>
     </div>
   );
 };
 
+LessonCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+};
+
+
 Path.propTypes = {
+  // history: PropTypes.objectOf(PropTypes.shape).isRequired,
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
