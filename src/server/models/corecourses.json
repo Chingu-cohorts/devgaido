@@ -193,5 +193,102 @@
       "208100",
       "208200"
     ]
+  },
+  "10200": {
+    "id": "10200",
+    "name": "HTML Basics",
+    "description": "Learn the basics of HTML - the standard used to define webpages",
+    "lessonIds": [
+      "300000",
+      "300005",
+      "300007"
+    ]
+  },
+  "10210": {
+    "id": "10210",
+    "name": "CSS Basics",
+    "description": "Learn the basics of CSS - the standard used to style webpages",
+    "lessonIds": [
+      "300010",
+      "300015",
+      "300017"
+     ]
+  },
+  "10220": {
+    "id": "10220",
+    "name": "Marrying HTML & CSS",
+    "description": "Learn how to combine HTML and CSS to create a professional webpage",
+    "lessonIds": [
+      "300020",
+      "300025"
+    ]
+  },
+  "10230": {
+    "id": "10230",
+    "name": "Intermediate HTML",
+    "description": "Improve your HTML knowledge with additional HTML programming techniques",
+    "lessonIds": [
+      "300030"
+    ]
+  },
+  "10240": {
+    "id": "10240",
+    "name": "Intermediate CSS",
+    "description": "Improve your CSS knowledge with additional CSS programming techniques",
+    "lessonIds": [
+      "300040"
+    ]
+  },
+  "10250": {
+    "id": "10250",
+    "name": "Advanced HTML & CSS",
+    "description": "Polish your HTML and CSS knowledge and skills with advanced techniques",
+    "lessonIds": [
+      "300050",
+      "300060",
+      "300070"
+    ]
+  },
+  "10270": {
+    "id": "10270",
+    "name": "Introduction to Bootstrap",
+    "description": "Learn how to use the Bootstrap Library for styling",
+    "lessonIds": [
+      "300080",
+      "300085",
+      "300086"
+    ]
+  },
+  "10280": {
+    "id": "10280",
+    "name": "Introduction to Foundation",
+    "description": "Learn how to use the Foundation Library for styling",
+    "lessonIds": [
+      "300090"
+    ]
+  },
+  "10290": {
+    "id": "10290",
+    "name": "Introduction to Sass",
+    "description": "Learn how to use the Sass Library for styling",
+    "lessonIds": [
+      "300100"
+    ]
+  },
+  "10300": {
+    "id": "10300",
+    "name": "Introduction to Less",
+    "description": "Learn how to use the Less Library for styling",
+    "lessonIds": [
+      "300110"
+    ]
+  },
+  "10310": {
+    "id": "10310",
+    "name": "Introduction to Stylus",
+    "description": "Learn how to use the Stylus Library for styling",
+    "lessonIds": [
+      "300120"
+    ]
   }
 }
