@@ -5,6 +5,7 @@ import { StaticRouter, matchPath } from 'react-router';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../client/reducers';
+import userReducer from '../client/reducers/userReducer';
 
 import { getAllPaths } from './services/corePaths';
 import { getAllCourses } from './services/coreCourses';
@@ -44,7 +45,7 @@ const renderPage = (reactHTML, initialState) => `
 // and can only render a single route with StaticRouter (Switch is not working like on client side)
 const initialView = (req, match, store) => renderToString(
   <Provider store={store}>
-    <StaticRouter context={{}} location={match.path}>
+    <StaticRouter context={{}} location={match.url}>
       <App serverMatch={match} />
     </StaticRouter>
   </Provider>,
@@ -72,8 +73,8 @@ export default (req, res, next) => {
     {
       name: req.user.nickname,
       authenticated: true,
-      email: req.user._json.email } :
-    {
+      email: req.user._json.email,
+    } : {
       name: '',
       authenticated: false,
       email: '',
@@ -85,7 +86,7 @@ export default (req, res, next) => {
       courses: getAllCourses(),
       lessons: getAllLessons(),
     };
-
+    // TODO: Default Dashboard.currentPath to user.curPath
     const uiState = {
       global: {
         navMenuOpen: false,
@@ -94,17 +95,14 @@ export default (req, res, next) => {
         Paths: {
           pathStates: [],
         },
+        Dashboard: {
+          currentTab: 0,
+          currentPath: '10010',
+        },
       },
     };
-
-    const nPaths = curriculum.paths.length;
-    for (let i = 0; i < nPaths; i += 1) {
-      uiState.Pages.Paths.pathStates.push({
-        id: i,
-        opened: false,
-      });
-    }
-    const state = { user, curriculum, uiState, auth0 };
+    // TODO: Think of an elegant way to do this here and apply it to ALL parts of the store
+    const state = { user: { ...userReducer(undefined, { type: null }), ...user }, curriculum, auth0, uiState };
     const store = createStore(reducers, state);
 
     res.set('Content-Type', 'text/html')

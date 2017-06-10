@@ -34,15 +34,16 @@ const toggleMenu = (e, dispatch) => {
 const toggleMenuAfterNav = (dispatch) => {
   dispatch(toggleNavMenu());
 };
+
 // TODO: Change nav bar to be hidden on scroll down and visible on scroll up instead of just "fixed"
-const Header = ({ user, uiState, dispatch, auth0 }) => (
+const Header = ({ user, uiState, dispatch, auth0, history }) => (
   <div>
     <header>
       <div className="header-content">
         <NavLink to="/" className="header-logo" />
         <nav className="main-navigation">
           <ul className="menu">
-            <li><NavLink to="/paths" activeClassName="link-active">Paths</NavLink></li>
+            <li><NavLink to="/dashboard" activeClassName="link-active">Dashboard</NavLink></li>
             <li><NavLink to="/courses" activeClassName="link-active">Courses</NavLink></li>
             {user.authenticated ? <li><a className={uiState.global.navMenuOpen ? 'menu-btn profile menu-btn-close' : 'menu-btn profile'} href="/" onClick={e => toggleMenu(e, dispatch)} title="Menu">‌‌ Menu</a></li> : null}
             {!user.authenticated ? <li><a className="menu-btn login" href="/" onClick={e => handleLoginClick(e, auth0)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a></li> : null}
@@ -57,11 +58,9 @@ const Header = ({ user, uiState, dispatch, auth0 }) => (
             </ul>
           </div>
         </div>
-        {/* <div className="search-header">
-          <label className="search" htmlFor="search">
-            <input type="text" name="search" placeholder="Search" />
-          </label>
-        </div>*/}
+        <div className="backLinkDiv">
+          <button className="backLink" href="#" onClick={() => history.goBack()}>&larr; Back</button>
+        </div>
       </div>
     </header>
     {/*<div className="container" />*/}
@@ -73,6 +72,7 @@ Header.propTypes = {
   dispatch: PropTypes.func,
   user: PropTypes.objectOf(PropTypes.shape),
   auth0: PropTypes.objectOf(PropTypes.shape),
+  history: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 Header.defaultProps = {

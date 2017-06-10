@@ -9,6 +9,11 @@ const user = (state = {
   name: '',
   authenticated: false,
   email: '',
+  dayLastVisited: Date.now(),
+  streak: 0,
+  bookmarkedPaths: [],
+  lessonsCompleted: [],
+  curPathId: '10010',
 }, action) => {
   switch (action.type) {
     case 'TEST_LOGIN':

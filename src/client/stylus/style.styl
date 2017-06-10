@@ -377,7 +377,7 @@ header {
     background-repeat: no-repeat;
     background-size: 200px;
     color: colorTextInverse;
-    height: 5rem;
+    height: 6rem;
     position: fixed;
     top: 0;
     width:100%;
@@ -1672,7 +1672,7 @@ a i.fa-envelope {
  MESSY JIM/KIM STUFF
 
 ---------------------------------------------------------------*/
-/*
+
 i.path-icon::before
         content "\f02d"
 a
@@ -1690,7 +1690,7 @@ a
     margin-bottom 10px
 
 .lostContainer
-    margin-top: 6rem
+    margin-top: 7rem
     lost-center: widthMax;
     display: flex
 
@@ -1704,6 +1704,7 @@ a
     lost-center: widthMax;
     display: flex
     position: relative
+    flex-direction: column
 
 .putRight
     flex 1
@@ -1713,26 +1714,232 @@ a
 
 
 
-.courseDescription
-    font-size 80%
-    color colorPrimary
-    margin-bottom: 10px
-    padding 10px
-    
-.courseInfo
-    box-shadow: 15px 0 40px rgba(30, 33, 94, 0.15);
-
 .linkActive
     li
         color colorSecondary !important   
     font-weight: bold
+
 .panel-menu
     li
         i
             color white !important         
 .side-panel li:hover
         background colorSecondaryLight
+        
+.marginTop
+    margin-top 7em
 
+.displayFlex
+    display flex
+
+/* ----------------------- */
+.colQuarter
+    lost-column: 1/4 4
+
+.colFull
+    width 100%
+    margin-bottom: 20px
+
+.tabButton
+    outline: 0 !important
+    background: #eff9fb
+    color colorPrimary
+    border-radius: 20px
+    margin 15px
+    padding 5px
+    border none
+    height: 35px
+    line-height: 5px
+    box-shadow: none
+
+.activeTabCaption
+    background colorTertiary
+    color white
+
+.dashboardPathList
+    margin-top 20px
+    lost-center: widthMax
+/* ----------------------- */
+.card
+    background colorTextInverse
+    border-radius 6px
+    box-shadow: 5px 5px 10px rgba(30, 33, 94, 0.15)
+    display: flex
+    flex-direction: column
+    padding: 4rem 2rem 2rem 2rem
+    position relative
+    margin-bottom: 20px
+
+.card--image
+    padding: 470px 2rem 2rem 2rem
+
+.cardHeader
+    background: colorSecondary
+    border-radius: 6px 6px 0 0
+    width: 100%
+    height: 50px
+    position: absolute
+    left: 0
+    top: 0
+
+.cardHeader--image
+    background: url("http://lorempixel.com/1900/1200/technics/")
+    background-size: cover
+    height: 450px
+
+.cardHeader--image--color,
+.cardHeader--image--color2
+    background alpha(darkslateblue, 0.75)
+    height: 450px
+    text-align: center
+    display: flex
+    align-items: center
+    justify-content: center
+
+.cardHeader--image--color2
+    background alpha(colorSecondary, 0.75)
+
+.cardHeader--pathName
+    font-size 200%
+    color white
+
+.backLinkDiv
+    position: absolute
+    top 50px
+    left 0
+    width: 100
+
+.backLink
+    color colorPrimary
+    padding 0px
+    margin: 0px
+    font-weight: bold
+    font-size: 120%
+    background none
+    box-shadow: none
+    min-width: 0
+    outline: 0
+    &:hover
+        box-shadow: none
+
+.cardSmallCaption
+    font-size: 0.8rem
+    font-weight: bold
+    color: #afb9bb
+
+.cardBigCaption
+    font-size: 1.1rem
+    font-weight: bold
+    margin: 0
+
+.cardText
+    margin-top 10px
+    color colorPrimary
+    flex 1
+
+.cardIcon
+    color: colorTextInverse
+    float: right
+    margin-top 10px
+    margin-right: 10px
+    display:block;
+    font-family: FontAwesome;
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-style: normal;
+    height: 50px;
+    text-decoration:none;
+    width: auto;
+    &:last-child
+        margin-left 10px
+        margin-right: 20px
+        float left
+
+
+.cardButton
+    background: colorPrimaryLight
+    border-radius: 20px
+    color: colorPrimary
+    font-size: 0.8rem
+    font-weight: bold
+    height: 35px
+    line-height: 5px
+    min-width: 100px
+    width: 25%
+    box-shadow: none
+
+//.tabbed-content,
+.metrics
+    background colorTextInverse
+    border-radius 6px
+    box-shadow: 5px 5px 10px rgba(30, 33, 94, 0.15)
+    display: flex
+    flex-direction: column
+    padding: 2rem 2rem 2rem 2rem
+    position relative
+    margin-bottom: 40px
+
+.courseCard
+    background: #eee
+    border-radius 6px
+    box-shadow: 5px 5px 10px rgba(30, 33, 94, 0.15)
+    padding: 2rem 2rem 2rem 2rem
+    margin-top 40px
+    margin-bottom: 40px
+    position: relative
+    &:after
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -85px;
+        left: 50%;
+        margin-left: -5px;
+        width: 10px;
+        height: 83px;
+        background: colorSecondaryLight
+        border-radius: 5px;
+    &:last-child:after
+        height 0px
+    h1
+        color white
+        font-size: 135%
+
+.courseCardHeader
+    background: darken(colorTertiary, 20)
+    padding: 2rem 2rem 2rem 2rem
+    border-radius: 6px 6px 0 0
+    width: 100%
+    height: 120px
+    position: absolute
+    left: 0
+    top: 0
+    
+.courseCardCaption
+    font-size: 0.8rem
+    font-weight: bold
+    color: rgba(255,255,255,0.8)
+
+.courseDescription
+    //font-size 80%
+    font-size: 110%
+    color rgba(0,0,0,0.7)
+    margin-top 110px
+    padding 10px
+    
+.lessonList
+    margin-top 30px
+    margin-bottom 20px
+    lost-center: widthMax
+
+//.tabbed-content
+//    background #ddd
+
+//.card
+//    cursor pointer
+//.selected
+//    background red
+
+/* ----------------------- */
 placeholderColor = #afb9bb
 
 
