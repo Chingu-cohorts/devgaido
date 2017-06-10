@@ -9,6 +9,12 @@ const lessonTypeIcons = {
   'Supplemental Course': '',
 };
 
+const lessonTypeColors = {
+  Reading: '#ffea7e',
+  Project: 'deepskyblue',
+  'Supplemental Course': '',
+};
+
 const getPath = (id, paths) => {
   let retPath = null;
   paths.forEach((path) => {
@@ -35,6 +41,7 @@ const LessonCard = ({ name, description, id, type }) => (
     to={`/lessons/${id}`}
     content={null}
     icons={[lessonTypeIcons[type], 'fa fa-graduation-cap']}
+    color={lessonTypeColors[type]}
   />
 );
 
