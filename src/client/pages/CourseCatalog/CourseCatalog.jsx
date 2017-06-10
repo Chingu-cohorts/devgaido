@@ -32,7 +32,7 @@ const CourseCatalog = props => (
       </div>
     </div>
 
-    <div className="lostContainer">
+    <div className="content container-wide">
       {<LearningPath lessons={props.curriculum.lessons} />}
     </div>
   </div>

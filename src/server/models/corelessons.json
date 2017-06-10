@@ -7,7 +7,7 @@
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "https://try.github.io"
-    }, 
+  },
   "200200": {
     "source": "P1XT",
     "id": "200200",
@@ -16,7 +16,7 @@
     "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "http://git.huit.harvard.edu/guide/"
-  }, 
+  },
   "200300": {
     "source": "P1XT",
     "id": "200300",
@@ -25,7 +25,7 @@
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "https://guides.github.com/"
-  }, 
+  },
   "200400": {
     "source": "P1XT",
     "id": "200400",
@@ -34,7 +34,7 @@
     "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "https://guides.github.com/activities/hello-world/"
-  }, 
+  },
   "200500": {
     "source": "P1XT",
     "id": "200500",
@@ -43,7 +43,7 @@
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "http://gitimmersion.com/"
-  }, 
+  },
   "200600": {
     "source": "P1XT",
     "id": "200600",
@@ -52,7 +52,7 @@
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": ""
-  }, 
+  },
   "200700": {
     "source": "P1XT",
     "id": "200700",
@@ -61,7 +61,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going"
-  }, 
+  },
   "200800": {
     "source": "P1XT",
     "id": "200800",
@@ -70,7 +70,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures"
-  }, 
+  },
   "200900": {
     "source": "P1XT",
     "id": "200900",
@@ -79,7 +79,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes"
-  }, 
+  },
   "200950": {
     "source": "P1XT",
     "id": "200950",
@@ -88,7 +88,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x"
-  }, 
+  },
   "201000": {
     "source": "P1XT",
     "id": "201000",
@@ -97,7 +97,7 @@
     "type": "Supplemental Course",
     "subject": "HTML/CSS",
     "externalSource": "http://learn.shayhowe.com/html-css/"
-  }, 
+  },
   "201100": {
     "source": "P1XT",
     "id": "201100",
@@ -106,7 +106,7 @@
     "type": "Project",
     "subject": "HTML/CSS",
     "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2"
-  }, 
+  },
   "201050": {
     "source": "P1XT",
     "id": "201050",
@@ -115,7 +115,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&%20grammar/README.md#you-dont-know-js-types--grammar"
-  }, 
+  },
   "201150": {
     "source": "P1XT",
     "id": "201150",
@@ -124,7 +124,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/README.md#you-dont-know-js-async--performance"
-  }, 
+  },
   "201250": {
     "source": "P1XT",
     "id": "201250",
@@ -133,7 +133,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond"
-  }, 
+  },
   "201350": {
     "source": "P1XT",
     "id": "201350",
@@ -142,7 +142,7 @@
     "type": "Course",
     "subject": "HTML/CSS",
     "externalSource": "http://learn.shayhowe.com/advanced-html-css/"
-  }, 
+  },
   "201450": {
     "source": "P1XT",
     "id": "201450",
@@ -151,7 +151,7 @@
     "type": "Project",
     "subject": "HTML/CSS",
     "externalSource": ""
-  }, 
+  },
   "201550": {
     "source": "P1XT",
     "id": "201550",
@@ -160,7 +160,7 @@
     "type": "Reading",
     "subject": "Project Management",
     "externalSource": "http://www.pixelearth.net/pages/project-specification"
-  }, 
+  },
   "201650": {
     "source": "P1XT",
     "id": "201650",
@@ -169,7 +169,7 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://www.edx.org/course/effective-thinking-through-mathematics-utaustinx-ut-9-01x-0"
-  }, 
+  },
   "201750": {
     "source": "P1XT",
     "id": "201750",
@@ -178,7 +178,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://leanpub.com/setting-up-es6/read"
-  }, 
+  },
   "201850": {
     "source": "P1XT",
     "id": "201850",
@@ -187,7 +187,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://leanpub.com/javascriptallongesix"
-  }, 
+  },
   "201950": {
     "source": "P1XT",
     "id": "201950",
@@ -196,7 +196,7 @@
     "type": "Supplemental Course",
     "subject": "HTML/CSS",
     "externalSource": "http://www.sassshop.com/"
-  }, 
+  },
   "202050": {
     "source": "P1XT",
     "id": "202050",
@@ -205,7 +205,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": ""
-  }, 
+  },
   "202100": {
     "source": "P1XT",
     "id": "202100",
@@ -214,7 +214,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "http://www.free-css.com/free-css-templates"
-  }, 
+  },
   "202150": {
     "source": "P1XT",
     "id": "202150",
@@ -223,7 +223,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd1x"
-  }, 
+  },
   "202250": {
     "source": "P1XT",
     "id": "202250",
@@ -232,7 +232,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd2x"
-  }, 
+  },
   "202350": {
     "source": "P1XT",
     "id": "202350",
@@ -241,7 +241,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd3x"
-  }, 
+  },
   "202450": {
     "source": "P1XT",
     "id": "202450",
@@ -250,7 +250,7 @@
     "type": "Reading",
     "subject": "HTML/CSS",
     "externalSource": "http://domenlightenment.com/"
-  }, 
+  },
   "202550": {
     "source": "P1XT",
     "id": "202550",
@@ -259,7 +259,7 @@
     "type": "Project",
     "subject": "Gulp",
     "externalSource": "http://gulpjs.com/"
-  }, 
+  },
   "202650": {
     "source": "P1XT",
     "id": "202650",
@@ -268,7 +268,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": ""
-  }, 
+  },
   "202850": {
     "source": "P1XT",
     "id": "202850",
@@ -277,7 +277,7 @@
     "type": "Supplemental Course",
     "subject": "Database",
     "externalSource": "https://www.edx.org/course/introduction-mongodb-using-mean-stack-mongodbx-m101x-0"
-  }, 
+  },
   "202950": {
     "source": "P1XT",
     "id": "202950",
@@ -286,7 +286,7 @@
     "type": "",
     "subject": "Backend",
     "externalSource": ""
-  }, 
+  },
   "203050": {
     "source": "P1XT",
     "id": "203050",
@@ -295,7 +295,7 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://www.coursera.org/learn/calculus1"
-  }, 
+  },
   "203150": {
     "source": "P1XT",
     "id": "203150",
@@ -304,7 +304,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://addyosmani.com/resources/essentialjsdesignpatterns/book/"
-  }, 
+  },
   "203250": {
     "source": "P1XT",
     "id": "203250",
@@ -313,7 +313,7 @@
     "type": "Project",
     "subject": "Frontend",
     "externalSource": "https://blackrockdigital.github.io/startbootstrap-creative/"
-  }, 
+  },
   "203350": {
     "source": "P1XT",
     "id": "203350",
@@ -322,7 +322,7 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm"
-  }, 
+  },
   "203450": {
     "source": "P1XT",
     "id": "203450",
@@ -331,7 +331,7 @@
     "type": "Reading",
     "subject": "Computer Science",
     "externalSource": "http://www.academia.edu/7857144/ALGORITHMS_AND_FLOWCHARTS"
-  }, 
+  },
   "203550": {
     "source": "P1XT",
     "id": "203550",
@@ -340,7 +340,7 @@
     "type": "Reading",
     "subject": "Computer Science",
     "externalSource": "http://pencil.evolus.vn/"
-  }, 
+  },
   "203650": {
     "source": "P1XT",
     "id": "203650",
@@ -349,7 +349,7 @@
     "type": "Project",
     "subject": "Frontend",
     "externalSource": "http://rubix410.sketchpixy.com/ltr/dashboard"
-  }, 
+  },
   "203750": {
     "source": "P1XT",
     "id": "203750",
@@ -358,7 +358,7 @@
     "type": "Reading",
     "subject": "Computer Science",
     "externalSource": ""
-  }, 
+  },
   "202750": {
     "source": "P1XT",
     "id": "202750",
@@ -367,7 +367,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "https://www.codingame.com/"
-  }, 
+  },
   "202800": {
     "source": "P1XT",
     "id": "202800",
@@ -376,7 +376,7 @@
     "type": "Reading",
     "subject": "Computer Science",
     "externalSource": "http://www.aupress.ca/books/120226/ebook/99Z_Morin_2013-Open_Data_Structures.pdf"
-  }, 
+  },
   "202900": {
     "source": "P1XT",
     "id": "202900",
@@ -385,7 +385,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.coursera.org/learn/introduction-to-algorithms"
-  }, 
+  },
   "203000": {
     "source": "P1XT",
     "id": "203000",
@@ -394,7 +394,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.coursera.org/learn/java-data-structures-algorithms-2"
-  }, 
+  },
   "203100": {
     "source": "P1XT",
     "id": "203100",
@@ -403,7 +403,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "https://code.google.com/codejam/contest/6224486/dashboard"
-  }, 
+  },
   "203200": {
     "source": "P1XT",
     "id": "203200",
@@ -412,7 +412,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "https://urbanarmorgear.com/"
-  }, 
+  },
   "203300": {
     "source": "P1XT",
     "id": "203300",
@@ -421,7 +421,7 @@
     "type": "Supplemental Course",
     "subject": "UX/UI",
     "externalSource": ""
-  }, 
+  },
   "203400": {
     "source": "P1XT",
     "id": "203400",
@@ -430,7 +430,7 @@
     "type": "Supplemental Course",
     "subject": "Android",
     "externalSource": ""
-  }, 
+  },
   "203500": {
     "source": "P1XT",
     "id": "203500",
@@ -439,7 +439,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": ""
-  }, 
+  },
   "203600": {
     "source": "P1XT",
     "id": "203600",
@@ -448,7 +448,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://www.gitbook.com/book/drboolean/mostly-adequate-guide/details"
-  }, 
+  },
   "203700": {
     "source": "P1XT",
     "id": "203700",
@@ -457,7 +457,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.udacity.com/course/software-testing--cs258"
-  }, 
+  },
   "203800": {
     "source": "P1XT",
     "id": "203800",
@@ -466,7 +466,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.udacity.com/course/software-debugging--cs259"
-  }, 
+  },
   "203900": {
     "source": "P1XT",
     "id": "203900",
@@ -475,7 +475,7 @@
     "type": "Project",
     "subject": "Frontend",
     "externalSource": ""
-  }, 
+  },
   "204000": {
     "source": "P1XT",
     "id": "204000",
@@ -484,7 +484,7 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://www.coursera.org/learn/advanced-calculus"
-  }, 
+  },
   "204100": {
     "source": "P1XT",
     "id": "204100",
@@ -493,7 +493,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": ""
-  }, 
+  },
   "204200": {
     "source": "P1XT",
     "id": "204200",
@@ -502,7 +502,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.udacity.com/course/software-architecture-design--ud821"
-  }, 
+  },
   "204300": {
     "source": "P1XT",
     "id": "204300",
@@ -511,7 +511,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": ""
-  }, 
+  },
   "204400": {
     "source": "P1XT",
     "id": "204400",
@@ -520,7 +520,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://leanpub.com/javascript-spessore/read"
-  }, 
+  },
   "204500": {
     "source": "P1XT",
     "id": "204500",
@@ -529,7 +529,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "https://blackrockdigital.github.io/startbootstrap-clean-blog/"
-  }, 
+  },
   "204600": {
     "source": "P1XT",
     "id": "204600",
@@ -538,7 +538,7 @@
     "type": "Supplemental Course",
     "subject": "Database",
     "externalSource": ""
-  }, 
+  },
   "204700": {
     "source": "P1XT",
     "id": "204700",
@@ -547,7 +547,7 @@
     "type": "Supplemental Course",
     "subject": "Project Management",
     "externalSource": "https://www.edx.org/course/agile-software-development-ethx-asd-1x"
-  }, 
+  },
   "204800": {
     "source": "P1XT",
     "id": "204800",
@@ -556,7 +556,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "http://es6katas.org/"
-  }, 
+  },
   "204900": {
     "source": "P1XT",
     "id": "204900",
@@ -565,7 +565,7 @@
     "type": "Supplemental Course",
     "subject": "Backend",
     "externalSource": ""
-  }, 
+  },
   "205000": {
     "source": "P1XT",
     "id": "205000",
@@ -574,7 +574,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": ""
-  }, 
+  },
   "205100": {
     "source": "P1XT",
     "id": "205100",
@@ -583,7 +583,7 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": "http://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project"
-  }, 
+  },
   "205200": {
     "source": "P1XT",
     "id": "205200",
@@ -592,7 +592,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": ""
-  }, 
+  },
   "205300": {
     "source": "P1XT",
     "id": "205300",
@@ -601,7 +601,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": ""
-  }, 
+  },
   "205400": {
     "source": "P1XT",
     "id": "205400",
@@ -610,7 +610,7 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": ""
-  }, 
+  },
   "205500": {
     "source": "P1XT",
     "id": "205500",
@@ -619,7 +619,7 @@
     "type": "Project",
     "subject": "CSS",
     "externalSource": "http://960.gs/"
-  }, 
+  },
   "205600": {
     "source": "P1XT",
     "id": "205600",
@@ -628,7 +628,7 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://www.edx.org/course/linear-algebra-foundations-frontiers-utaustinx-ut-5-05x#!"
-  }, 
+  },
   "205700": {
     "source": "P1XT",
     "id": "205700",
@@ -637,7 +637,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": ""
-  }, 
+  },
   "205800": {
     "source": "P1XT",
     "id": "205800",
@@ -655,7 +655,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": ""
-  }, 
+  },
   "206000": {
     "source": "P1XT",
     "id": "206000",
@@ -664,7 +664,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": ""
-  }, 
+  },
   "206100": {
     "source": "P1XT",
     "id": "206100",
@@ -673,7 +673,7 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": ""
-  }, 
+  },
   "206200": {
     "source": "P1XT",
     "id": "206200",
@@ -682,7 +682,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": ""
-  }, 
+  },
   "206300": {
     "source": "P1XT",
     "id": "206300",
@@ -691,7 +691,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": ""
-  }, 
+  },
   "206400": {
     "source": "P1XT",
     "id": "206400",
@@ -700,7 +700,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": ""
-  }, 
+  },
   "206500": {
     "source": "P1XT",
     "id": "206500",
@@ -709,7 +709,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": ""
-  }, 
+  },
   "206600": {
     "source": "P1XT",
     "id": "206600",
@@ -718,7 +718,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/computer-graphics-uc-san-diegox-cse167x-1"
-  }, 
+  },
   "206700": {
     "source": "P1XT",
     "id": "206700",
@@ -727,7 +727,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/artificial-intelligence-ai-columbiax-csmm-101x#!"
-  }, 
+  },
   "206800": {
     "source": "P1XT",
     "id": "206800",
@@ -736,7 +736,7 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": ""
-  }, 
+  },
   "206900": {
     "source": "P1XT",
     "id": "206900",
@@ -745,7 +745,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.coursera.org/learn/machine-learning"
-  }, 
+  },
   "207000": {
     "source": "P1XT",
     "id": "207000",
@@ -754,7 +754,7 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": ""
-  }, 
+  },
   "207100": {
     "source": "P1XT",
     "id": "207100",
@@ -763,7 +763,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": ""
-  }, 
+  },
   "207200": {
     "source": "P1XT",
     "id": "207200",
@@ -781,7 +781,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": ""
-  }, 
+  },
   "207400": {
     "source": "P1XT",
     "id": "207400",
@@ -790,7 +790,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": ""
-  }, 
+  },
   "207500": {
     "source": "P1XT",
     "id": "207500",
@@ -799,7 +799,7 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": "http://learnharmony.org/#/?_k=0okjs7"
-  }, 
+  },
   "207600": {
     "source": "P1XT",
     "id": "207600",
@@ -808,7 +808,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": ""
-  }, 
+  },
   "207700": {
     "source": "P1XT",
     "id": "207700",
@@ -817,7 +817,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": ""
-  }, 
+  },
   "207800": {
     "source": "P1XT",
     "id": "207800",
@@ -826,7 +826,7 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": ""
-  }, 
+  },
   "207900": {
     "source": "P1XT",
     "id": "207900",
@@ -835,7 +835,7 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": ""
-  }, 
+  },
   "208000": {
     "source": "P1XT",
     "id": "208000",
@@ -844,7 +844,7 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": ""
-  }, 
+  },
   "208100": {
     "source": "P1XT",
     "id": "208100",
@@ -853,7 +853,7 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": ""
-  }, 
+  },
   "208200": {
     "source": "P1XT",
     "id": "208200",
@@ -861,6 +861,186 @@
     "description": "Project: Extend your CSS grid framework to include the CSS and JavaScript required to implement 5 to 10 material design components",
     "type": "Project",
     "subject": "CSS",
+    "externalSource": ""
+  },
+  "300000": {
+    "source": "Khan Academy",
+    "id": "300000",
+    "name": "Intro to HTML",
+    "description": "Introduction to HTML",
+    "type": "Video",
+    "subject": "HTML",
+    "externalSource": "https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-html"
+  },
+  "300005": {
+    "source": "HtmlDog",
+    "id": "300005",
+    "name": "HTML Beginner Guide",
+    "description": "HTML Beginner Guide",
+    "type": "Reading",
+    "subject": "HTML",
+    "externalSource": "http://www.htmldog.com/guides/html/beginner/"
+  },
+  "300007": {
+    "source": "CodePen",
+    "id": "300007",
+    "name": "Clone this Webpage",
+    "description": "Clone this Webpage",
+    "type": "Project",
+    "subject": "HTML",
+    "externalSource": "https://codepen.io/freeCodeCamp/full/zNqgVx"
+  },
+  "300010": {
+    "source": "Khan Academy",
+    "id": "300010",
+    "name": "Intro to CSS",
+    "description": "Introduction to CSS",
+    "type": "Video",
+    "subject": "CSS",
+    "externalSource": "https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-css"
+  },
+  "300015": {
+    "source": "HtmlDog",
+    "id": "300015",
+    "name": "CSS Beginner Guide",
+    "description": "CSS Beginner Guide",
+    "type": "Reading",
+    "subject": "CSS",
+    "externalSource": "http://htmldog.com/guides/css/beginner/"
+  },
+  "300017": {
+    "source": "CodePen",
+    "id": "300017",
+    "name": "Clone this Tribute Page",
+    "description": "Clone this Tribute Page with your own topic",
+    "type": "Project",
+    "subject": "CSS",
+    "externalSource": "http://codepen.io/freeCodeCamp/full/zNqgVx"
+  },
+  "300020": {
+    "source": "Shay Howe",
+    "id": "300020",
+    "name": "Learn to Code HTML & CSS",
+    "description": "Learn to Code HTML& CSS",
+    "type": "Lesson",
+    "subject": "HTML, CSS",
+    "externalSource": "http://learn.shayhowe.com/html-css/"
+  },
+  "300025": {
+    "source": "Creative Market",
+    "id": "300025",
+    "name": "Clone this Online Resume",
+    "description": "Clone this Online Resume template",
+    "type": "Project",
+    "subject": "HTML, CSS",
+    "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot1"
+  },
+  "300030": {
+    "source": "HtmlDog",
+    "id": "300030",
+    "name": "Intermediate HTML",
+    "description": "Intermediate HTML",
+    "type": "Lesson",
+    "subject": "HTML",
+    "externalSource": "http://htmldog.com/guides/html/intermediate"
+  },
+  "300040": {
+    "source": "HtmlDog",
+    "id": "300040",
+    "name": "Intermediate CSS",
+    "description": "Intermediate CSS",
+    "type": "Lesson",
+    "subject": "CSS",
+    "externalSource": "http://htmldog.com/guides/css/intermediate"
+  },
+  "300050": {
+    "source": "HtmlDog",
+    "id": "300050",
+    "name": "Advanced HTML",
+    "description": "Advanced HTML",
+    "type": "Lesson",
+    "subject": "HTML",
+    "externalSource": "http://htmldog.com/guides/html/advanced"
+  },
+  "300060": {
+    "source": "HtmlDog",
+    "id": "300060",
+    "name": "Advanced CSS",
+    "description": "Advanced CSS",
+    "type": "Lesson",
+    "subject": "CSS",
+    "externalSource": "http://htmldog.com/guides/css/advanced"
+  },
+  "300070": {
+    "source": "N/a",
+    "id": "300070",
+    "name": "Build a Personal Portfolio",
+    "description": "Build a Personal Portfolio webpage",
+    "type": "Project",
+    "subject": "HTML, CSS",
+    "externalSource": ""
+  },
+  "300080": {
+    "source": "Edx",
+    "id": "300080",
+    "name": "Introduction to Bootstrap",
+    "description": "Learn how to use the Bootstrap Library for styling your webpages",
+    "type": "Video",
+    "subject": "CSS, Bootstrap",
+    "externalSource": "https://www.edx.org/course/introduction-bootstrap-tutorial-microsoft-dev203x-2"
+  },
+  "300085": {
+    "source": "YouTube",
+    "id": "300085",
+    "name": "Quentin Watt Bootstrap Video Series",
+    "description": "Get a deeper understanding of Bootstrap's capabilities and usage",
+    "type": "Video",
+    "subject": "CSS, Bootstrap",
+    "externalSource": "https://www.youtube.com/playlist?list=PL41lfR-6DnOovY0t3nBg8Zb6aqm_H70mR"
+  },
+  "300086": {
+    "source": "N/a",
+    "id": "300086",
+    "name": "Bootstrap-ify your Tribute Page",
+    "description": "Modify your tribute page to use Bootstrap instead of native CSS",
+    "type": "Project",
+    "subject": "CSS, Bootstrap",
+    "externalSource": ""
+  },
+  "300090": {
+    "source": "YouTube",
+    "id": "300090",
+    "name": "Foundation Framework Crash Course",
+    "description": "Learn the basics of the Framework library for styling your webpages",
+    "type": "Video",
+    "subject": "CSS, Framework",
+    "externalSource": "https://www.youtube.com/watch?v=DEu5xYEZx18"
+  },
+  "300100": {
+    "source": "Callmenick",
+    "id": "300100",
+    "name": "Introduction to Sass",
+    "description": "Learn the basics of the Sass library for styling your webpages",
+    "type": "Lesson",
+    "subject": "CSS, Sass",
+    "externalSource": "http://callmenick.com/post/an-introduction-to-sass-scss"
+  },
+  "300110": {
+    "source": "N/a",
+    "id": "300110",
+    "name": "Introduction to Less",
+    "description": "Learn the basics of the Less library for styling your webpages",
+    "type": "Lesson",
+    "subject": "CSS, Less",
+    "externalSource": ""
+  },
+  "300120": {
+    "source": "N/a",
+    "id": "300120",
+    "name": "Introduction to Stylus",
+    "description": "Learn the basics of the Stylus library for styling your webpages",
+    "type": "Lesson",
+    "subject": "CSS, Stylus",
     "externalSource": ""
   }
 }
