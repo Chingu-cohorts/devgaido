@@ -3,11 +3,11 @@ import CoreCourses from '../models/corecourses.json';
 /**
  * Extract a specific course and its details from the Core Courses
  *
- * @param {String} courseName - Unique course identifier
- * @returns {String[]} - JSON object containing attributes of the course
+ * @param {String} courseId - Unique course identifier
+ * @returns {String[]} - JSON object containing attributes of the course or
+ * undefined if no match found
  */
-const getCourse = courseName => JSON.stringify(CoreCourses.find(
-  currentCourse => currentCourse.name === courseName));
+const getCourse = courseId => CoreCourses[courseId];
 
 /**
  * Retrieve all courses and their details
