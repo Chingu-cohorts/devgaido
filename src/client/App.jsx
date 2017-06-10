@@ -1,52 +1,48 @@
-import React, { createElement } from 'react';
+import React from 'react';
 import { Switch, withRouter } from 'react-router';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import SuperRoute from './pages/shared/SuperRoute';
+import PropsRoute from './pages/shared/PropsRoute';
 
 import Header from './pages/shared/Header';
 import Footer from './pages/shared/Footer';
 
 import routesArr from './routes';
 
-// TODO: Add documentation for all the "Super Route and reducer magic"
-const App = ({ serverMatch, dispatch, user, curriculum, uiState, auth0 }) => {
+const App = ({ history, serverMatch, dispatch, user, curriculum, uiState, auth0 }) => {
 // If <App /> is rendered on the server we need to provide the serverMatch prop
 // since StaticRouter can only render a single Route (Switch only works on client side).
 // On the client though, just return all routes and let Switch do the work.
   const passdownProps = {
     dispatch, user, curriculum, uiState, auth0,
   };
-
   const routes = [];
   if (serverMatch) {
     routes.push(
-      <SuperRoute
+      <PropsRoute
         {...serverMatch}
         key={0}
         passdownProps={passdownProps}
-      >
-        {createElement(serverMatch.component)}
-      </SuperRoute>);
+        component={serverMatch.component}
+      />);
   } else {
     let key = 0;
     routesArr.forEach((route) => {
       routes.push(
-        <SuperRoute
+        <PropsRoute
           {...route}
           key={key += 1}
           passdownProps={passdownProps}
-        >
-          {createElement(route.component)}
-        </SuperRoute>);
+          component={route.component}
+        />);
     });
   }
   // TODO: Re-add sticky footer - position sticky or flexbox? (Check caniuse.com)
   return (
     <div className="App">
-      <Header dispatch={dispatch} uiState={uiState} user={user} auth0={auth0} />
+      <Header dispatch={dispatch} uiState={uiState} user={user} auth0={auth0} history={history} />
       <main>
         <div className="main">
           <Switch>
@@ -59,6 +55,7 @@ const App = ({ serverMatch, dispatch, user, curriculum, uiState, auth0 }) => {
 };
 
 App.propTypes = {
+  history: PropTypes.objectOf(PropTypes.shape).isRequired,
   serverMatch: PropTypes.objectOf(PropTypes.shape),
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape),

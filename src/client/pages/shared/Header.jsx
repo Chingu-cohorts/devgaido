@@ -35,14 +35,13 @@ const toggleMenuAfterNav = (dispatch) => {
   dispatch(toggleNavMenu());
 };
 // TODO: Change nav bar to be hidden on scroll down and visible on scroll up instead of just "fixed"
-const Header = ({ user, uiState, dispatch, auth0 }) => (
+const Header = ({ user, uiState, dispatch, auth0, history }) => (
   <div>
     <header>
       <div className="header-content lostContainerHeader">
         <NavLink to="/" className="headerLogo" />
         <nav>
           <ul>
-            <NavLink to="/paths" activeClassName="linkActive"><li>Paths</li></NavLink>
             <NavLink to="/courses" activeClassName="linkActive"><li>Courses</li></NavLink>
             <NavLink to="/dashboard" activeClassName="linkActive"><li>Dashboard</li></NavLink>
           </ul>
@@ -60,11 +59,9 @@ const Header = ({ user, uiState, dispatch, auth0 }) => (
             </ul>
           </div>
         </div>
-        {/* <div className="search-header">
-          <label className="search" htmlFor="search">
-            <input type="text" name="search" placeholder="Search" />
-          </label>
-        </div>*/}
+      </div>
+      <div className="backLinkDiv">
+        <button className="backLink" href="#" onClick={() => history.goBack()}>&larr; Back</button>
       </div>
     </header>
     <div className="constrained" />
@@ -76,6 +73,7 @@ Header.propTypes = {
   dispatch: PropTypes.func,
   user: PropTypes.objectOf(PropTypes.shape),
   auth0: PropTypes.objectOf(PropTypes.shape),
+  history: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 Header.defaultProps = {

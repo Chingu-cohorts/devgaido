@@ -1,46 +1,72 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import Card from '../shared/Card';
+
 import TabbedContent from './TabbedContent';
 
-const Card = ({ caption, subcaption, text, icons }) => (
-  <div className="card colQuarter">
-    <div className="cardHeader">
-      <i />
-      <i />
-    </div>
-    <span className="cardSmallCaption">{subcaption}</span>
-    <span className="cardBigCaption">{caption}</span>
-    <p className="cardText">{text}</p>
-    <button className="cardButton" type="button">View</button>
+// TODO: Add custom date formatting to make client and server side string match up
+const Metrics = ({ name, streak, lastVisited }) => (
+  <div className="metrics">
+    <h1>Welcome back, {name}!</h1>
+    <h1>streak: {streak}</h1>
+    <h1>lastVisited: {new Date(lastVisited).toLocaleString()}</h1>
   </div>
 );
 
-const PathList = ({ paths }) => (
-  <div className="dashboardPathList">
-    {paths.map(p => (
-      <Card caption={p.name} subcaption="Path" text={p.description} key={p.id} />
-    ))}
+const PathCard = ({ name, description, id }) => (
+  <Card
+    caption={name}
+    subcaption="Path"
+    text={description}
+    to={`/paths/${id}`}
+    content={null}
+    icons={['fa fa-road']}
+    color={'darkslateblue'}
+  />
+);
+
+const PathList = ({ curPathId, paths, dispatch }) => (
+  <div>
+    <div className="dashboardPathList">
+      {paths.map(p => (
+        curPathId === p.id ?
+          <PathCard selected name={p.name} description={p.description} id={p.id} dispatch={dispatch} key={p.id} /> :
+          <PathCard selected={false} name={p.name} description={p.description} id={p.id} dispatch={dispatch} key={p.id} />
+      ))}
+    </div>
   </div>
 );
 
 const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
   <div className="constrained marginTop">
-    <h1>Welcome back, {user.name}!</h1>
-    <h2>Recent</h2>
+    <Metrics
+      name={user.name}
+      lastVisited={user.dayLastVisited}
+      streak={user.streak}
+    />
     <TabbedContent
       content={[{
         caption: 'My Paths',
         content: <PathList
+          curPathId={uiState.Pages.Dashboard.currentPath}
           paths={curriculum.paths.filter(path => path.id === '10010')}
+          dispatch={dispatch}
         />,
       }, {
         caption: 'Completed',
         content: <PathList
+          curPathId={uiState.Pages.Dashboard.currentPath}
           paths={curriculum.paths.filter(path => path.id !== '10020')}
+          dispatch={dispatch}
         />,
       }, {
         caption: 'All Paths',
-        content: <PathList paths={curriculum.paths} />,
+        content: <PathList
+          curPathId={uiState.Pages.Dashboard.currentPath}
+          paths={curriculum.paths}
+          dispatch={dispatch}
+        />,
       }]}
       dispatch={dispatch}
       uiState={uiState}
@@ -48,22 +74,22 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
   </div>
 );
 
-Card.propTypes = {
-  caption: PropTypes.string,
-  subcaption: PropTypes.string,
-  text: PropTypes.string,
-  icons: PropTypes.arrayOf(PropTypes.string),
+Metrics.propTypes = {
+  name: PropTypes.string.isRequired,
+  streak: PropTypes.number.isRequired,
+  lastVisited: PropTypes.number.isRequired,
 };
 
-Card.defaultProps = {
-  caption: '',
-  subcaption: '',
-  text: '',
-  icons: [],
+PathCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 PathList.propTypes = {
+  curPathId: PropTypes.string.isRequired,
   paths: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 Dashboard.propTypes = {
