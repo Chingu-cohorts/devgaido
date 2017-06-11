@@ -60,7 +60,6 @@ const Header = ({ user, uiState, dispatch, auth0 }) => (
         </div>
       </div>
     </header>
-    {/*<div className="container" />*/}
   </div>
 );
 

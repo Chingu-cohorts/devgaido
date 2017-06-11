@@ -1,4 +1,5 @@
 /* eslint-disable func-names prefer-arrow-callback */
+require('./registerBabel');
 const coreLessons = require('../src/server/services/coreLessons');
 const assert = require('assert');
 
@@ -7,8 +8,8 @@ describe('Test coreLessons.js functions', function () {
    * Test the coreLessons.getLesson function
    */
   describe('Test the getLesson function', function () {
-    it('should return the lesson for id "200200" - "Git - the simple guide"', function () {
-      assert.equal('Git - the simple guide', coreLessons.getLesson('200200').name);
+    it('should return the lesson for id "gitsimpleguide" - "Git - the simple guide"', function () {
+      assert.equal('Git - the simple guide', coreLessons.getLesson('gitsimpleguide').name);
     });
     it('should return undefined for an unknown lesson id "99999"', function () {
       assert.equal(undefined, coreLessons.getLesson('99999'));

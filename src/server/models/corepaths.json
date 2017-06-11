@@ -1,5 +1,5 @@
-[
-  {
+{
+  "srcctrl" : {
     "id": "srcctrl",
     "name": "Source Code Control Systems",
     "description": "Learn the tools and techniques needed to effectively and efficiently manage your projects source code.",
@@ -9,7 +9,7 @@
       "advancedgit"
     ]
   },
-  {
+  "webpagedc" : {
     "id": "webpagedc",
     "name": "Webpage Design & Construction",
     "description": "Learn the technologies necessary to build simple webpages.",
@@ -17,7 +17,7 @@
       "buildwebpages"
     ]
   },
-  {
+  "javascript" : {
     "id": "javascript",
     "name": "Javascript",
     "description": "Learn Javascript so you can be the next Kim Kwanka",
@@ -27,7 +27,7 @@
       "advancedjs"
     ]
   },
-  {
+  "p1xt" : {
     "id": "p1xt",
     "name": "The P1XT Guide",
     "description": "Follow the P1XT Guide to master the Javascript Ecosystem",
@@ -39,7 +39,7 @@
       "p1xttier4"
     ]
   },
-  {
+  "buildawebsite" : {
     "id": "buildawebsite",
     "name": "Build A Website",
     "description": "Learn how to build a website",
@@ -57,4 +57,4 @@
       "introstylus"
     ]
   }
-]
+}

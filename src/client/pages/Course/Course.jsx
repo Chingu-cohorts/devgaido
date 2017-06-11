@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import BreadCrumbs from '../shared/BreadCrumbs';
+
 const Course = ({ match, curriculum }) => {
   const course = curriculum.courses[match.params.id];
   return (
     <div className="lostContainer">
+      <BreadCrumbs curriculum={curriculum} pathId={match.params.pid} courseId={match.params.id} />
       <div className="card card--image colFull">
         <div className="cardHeader cardHeader--image" />
         <div className="cardHeader cardHeader--image--color2">
