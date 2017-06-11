@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
-import Card from '../shared/Card';
+/* import Card from '../shared/Card';
 
 const lessonTypeIcons = {
   Reading: 'fa fa-book',
@@ -37,7 +37,7 @@ const LessonCard = ({ name, description, id, type }) => (
     color={lessonTypeColors[type]}
   />
 );
-
+*/
 const CourseCard = ({ curriculum, pathId, courseId }) => (
   <Link className="courseCard" to={`/paths/${pathId}/${courseId}`}>
     <div className="courseCardHeader">
@@ -62,7 +62,12 @@ const CourseCard = ({ curriculum, pathId, courseId }) => (
 const Path = ({ match, curriculum }) => {
   const path = curriculum.paths[match.params.id];
   const courses = path.courseIds.map(courseId => (
-    <CourseCard curriculum={curriculum} pathId={match.params.id} courseId={courseId} key={courseId} />
+    <CourseCard
+      curriculum={curriculum}
+      pathId={match.params.id}
+      courseId={courseId}
+      key={courseId}
+    />
   ));
   return (
     <div className="lostContainer">
@@ -80,14 +85,18 @@ const Path = ({ match, curriculum }) => {
     </div>
   );
 };
-
+/*
 LessonCard.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+};*/
+CourseCard.propTypes = {
+  pathId: PropTypes.objectOf(PropTypes.shape).isRequired,
+  courseId: PropTypes.objectOf(PropTypes.shape).isRequired,
+  curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
-
 
 Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
