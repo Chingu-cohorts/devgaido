@@ -50,14 +50,14 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
         caption: 'My Paths',
         content: <PathList
           curPathId={uiState.Pages.Dashboard.currentPath}
-          paths={curriculum.paths.filter(path => path.id === '10010')}
+          paths={curriculum.paths.filter(path => path.id === 'srcctrl')}
           dispatch={dispatch}
         />,
       }, {
         caption: 'Completed',
         content: <PathList
           curPathId={uiState.Pages.Dashboard.currentPath}
-          paths={curriculum.paths.filter(path => path.id !== '10020')}
+          paths={curriculum.paths.filter(path => path.id !== 'buildawebsite')}
           dispatch={dispatch}
         />,
       }, {

@@ -1,60 +1,60 @@
 [
   {
-    "id": "10000",
+    "id": "srcctrl",
     "name": "Source Code Control Systems",
     "description": "Learn the tools and techniques needed to effectively and efficiently manage your projects source code.",
     "courseIds": [
-      "10000",
-      "10010",
-      "10020"
+      "git",
+      "github",
+      "advancedgit"
     ]
   },
   {
-    "id": "10010",
+    "id": "webpagedc",
     "name": "Webpage Design & Construction",
     "description": "Learn the technologies necessary to build simple webpages.",
     "courseIds": [
-      "10030"
+      "buildwebpages"
     ]
   },
   {
-    "id": "10020",
+    "id": "javascript",
     "name": "Javascript",
     "description": "Learn Javascript so you can be the next Kim Kwanka",
     "courseIds": [
-      "10040",
-      "10050",
-      "10060"
+      "beginnerjs",
+      "intermediatejs",
+      "advancedjs"
     ]
   },
   {
-    "id": "10030",
+    "id": "p1xt",
     "name": "The P1XT Guide",
     "description": "Follow the P1XT Guide to master the Javascript Ecosystem",
     "courseIds": [
-      "10070",
-      "10080",
-      "10090",
-      "10100",
-      "10110"
+      "p1xtprereqs",
+      "p1xttier1",
+      "p1xttier2",
+      "p1xttier3",
+      "p1xttier4"
     ]
   },
   {
-    "id": "10040",
+    "id": "buildawebsite",
     "name": "Build A Website",
     "description": "Learn how to build a website",
     "courseIds": [
-      "10200",
-      "10210",
-      "10220",
-      "10230",
-      "10240",
-      "10250",
-      "10270",
-      "10280",
-      "10290",
-      "10300",
-      "10310"
+      "htmlbasics",
+      "cssbasics",
+      "marryhtmlcss",
+      "intermediatehtml",
+      "intermediatecss",
+      "advancedhtml",
+      "introbootstrap",
+      "introfoundation",
+      "introsass",
+      "introless",
+      "introstylus"
     ]
   }
 ]
