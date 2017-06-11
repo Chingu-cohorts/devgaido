@@ -39,24 +39,22 @@ const LessonCard = ({ name, description, id, type }) => (
 );
 
 const CourseCard = ({ curriculum, pathId, courseId }) => (
-  <Link to={`/paths/${pathId}/${courseId}`}>
-    <div className="courseCard">
-      <div className="courseCardHeader">
-        <span className="courseCardCaption">COURSE</span>
-        <h1>{curriculum.courses[courseId].name}</h1>
-      </div>
-      <p className="courseDescription">{curriculum.courses[courseId].description}</p>
-      <div className="lessonList">
-        {/* getAllCourseLessons(curriculum.courses[id], curriculum).map(lesson => (
-          <LessonCard
-            name={lesson.name}
-            description={lesson.description}
-            id={lesson.id}
-            type={lesson.type}
-            key={lesson.id}
-          />
-        ))*/}
-      </div>
+  <Link className="courseCard" to={`/paths/${pathId}/${courseId}`}>
+    <div className="courseCardHeader">
+      <span className="courseCardCaption">COURSE</span>
+      <h1>{curriculum.courses[courseId].name}</h1>
+    </div>
+    <p className="courseDescription">{curriculum.courses[courseId].description}</p>
+    <div className="lessonList">
+      {/* getAllCourseLessons(curriculum.courses[id], curriculum).map(lesson => (
+        <LessonCard
+          name={lesson.name}
+          description={lesson.description}
+          id={lesson.id}
+          type={lesson.type}
+          key={lesson.id}
+        />
+      ))*/}
     </div>
   </Link>
 );
