@@ -31,7 +31,7 @@ const toggleItem = (e, id, dispatch) => {
   dispatch(togglePath(id));
 };
 
-const openedClass = opened => (opened ? ' opened lostFullWidth' : ' lostGridColumn');
+const openedClass = opened => (opened ? ' opened grid-full' : ' grid-quarter ');
 
 const Path = ({ id, name, description, curriculum, dispatch, opened, key, courseIds }) => (
   <div className={`learning-path-item${openedClass(opened)}`} onClick={e => toggleItem(e, id, dispatch)} key={key}>
@@ -46,9 +46,9 @@ const Path = ({ id, name, description, curriculum, dispatch, opened, key, course
     </ul>
     {opened ? courseIds.map((courseId, index) => (
       <div key={index}>
-        <div className="courseInfo">
+        <div className="course-info">
           <h1>{curriculum.courses[courseId].name}</h1>
-          <p className="courseDescription">{curriculum.courses[courseId].description}</p>
+          <p className="course-description">{curriculum.courses[courseId].description}</p>
         </div>
         <LearningPath
           lessons={getAllCourseLessons(curriculum.courses[courseId], curriculum)}
@@ -89,8 +89,8 @@ const Paths = ({ curriculum, uiState, dispatch }) => {
   });
 
   return (
-    <div className="lostContainer">
-      <ExternalLesson url={'http://gitimmersion.com/'} />
+    <div className="container">
+      {/*<ExternalLesson url={'http://gitimmersion.com/'} />*/}
       {pathsArr}
     </div>
   );

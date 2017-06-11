@@ -29,7 +29,7 @@ colorQuarternary = #ffea7e
 
 colorTextInverse = white
 
-widthMax = 1280px
+widthMax = 1380px
 
 spaceSmall = 10px
 spaceMedium = 20px 
@@ -107,6 +107,7 @@ p {
     font-size: 0.8rem;
     margin: 0;
 }
+
 
 
 /*--------------------------------------------------------------
@@ -294,8 +295,10 @@ a:visited {
 .container {
     margin: 0 auto;
     max-width: widthMax;
+    padding-top:100px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .container-flex {
@@ -317,6 +320,7 @@ a:visited {
     max-width: 600px;
     position: relative;
     text-align: center;
+    justify-content: space-between;
 }
 
 .content {
@@ -331,6 +335,7 @@ section {
 
 .grid-full {
     width:100%;
+    margin-bottom: 20px;
 }
 
 .grid-half {
@@ -379,10 +384,23 @@ header {
     z-index: 999;
 }
 
+a.header-logo {
+    background-image: url('/assets/img/devgaida.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 220px;
+    display: block;
+    float: left;
+    width: 220px;
+    height: 80px;
+}
+   
+   
+
+
 .header-content {
-    // margin: 0 auto;
-    // max-width: widthMax;
-    
+    margin: 0 auto;
+    max-width: widthMax;
 }
 
 .sub-header {
@@ -395,18 +413,65 @@ header {
     width:100%;
     z-index: 100;
 }
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+.main-navigation {
+    float:right;
+    padding: 1rem 0;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        display: inline-block;
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding: 0 1rem;
+        text-transform: uppercase;
+    }
+}
+
+
+
+
+
 .menu {
     // margin-right:1rem;
 }
 .menu a {
     float: right;
-    height: 5rem;
+    line-height: 3rem;
+    text-decoration: none;
     width: auto;
 }
-.menu a:before {
+
+.menu a.menu-btn {
+    border-radius: 1.5rem;
+    height: 3rem;
+    line-height: 3rem;
+    padding-left: 3.5rem;
+    padding-right: 1rem;
+    
+}
+
+.menu a.login {
+    background-color: colorSecondary;
+    color: colorTextInverse;
+}
+
+.menu a.profile {
+    background-color: colorPrimary;
+    color: colorTextInverse;
+}
+
+
+.menu a.menu-btn:before {
     border-radius: 50%;
     color: colorTextInverse;
-    float: right;
+    float: left;
     font-family: FontAwesome;
     font-size: 1.3rem;
     font-weight: normal;
@@ -415,16 +480,14 @@ header {
     background-size: 24px;
     height: 3rem;
     line-height: 3rem;
-    //margin: 1rem;
-    margin-top 1rem
+    margin-left:-3.5rem;
     text-align: center;
     width: 3rem;
 }
 
 .menu a.menu-btn:before {
-    background-color: colorPrimary;
+    background-color: colorPrimaryDark;
     content:"\f2c0"
-    margin-left: 0.3rem;
 }
 
 .menu a.menu-btn-close:before {
@@ -433,9 +496,9 @@ header {
 
 
 .menu a.login:before {
-    background-color: colorSecondary;
+    background-color: colorSecondaryDark;
+    color: colorTextInverse;
     content:"\f090";
-    margin-right: 0.3rem;
 }
 
 .search-header {
@@ -564,6 +627,18 @@ header {
     }
 }
 
+.learning-path-item .learning-path-item {
+    //border: 1px solid colorPrimaryLight;
+    box-shadow: none;
+}
+
+.learning-path-item .learning-path-items {
+    margin-bottom:20px;
+    padding: 20px 20px 0 20px;
+    background-color:colorPrimaryLight;
+    //border: 1px solid colorPrimaryLight;
+}
+
 .learning-path-item.Reading {
     // border-left: 10px solid colorSecondaryLight;
     .learning-path-item-header {
@@ -626,6 +701,22 @@ header {
         content: "\f2c5";
     }
 }
+
+.course-info {
+    background-color: colorPrimaryLight;
+    //border: 1px solid colorPrimaryLight;
+    color: colorPrimary;
+    margin: 20px 0 0 0;
+    padding:10px 20px;
+    p {
+        color: colorPrimary;
+    }
+}
+.course-description {
+    margin: 0;
+}
+    
+
 
 
 /*--------------------------------------------------------------
@@ -1621,10 +1712,7 @@ a
 .lostFullWidth
     lost-column: 1;
 
-.headerLogo
-   background-image: url('/assets/img/devgaida.svg');
-   width 250px
-   height 50px
+
 
 .linkActive
     li
@@ -1718,7 +1806,7 @@ a
 .backLinkDiv
     position: absolute
     top 50px
-    left 10px
+    left 0
     width: 100
 
 .backLink
@@ -1729,6 +1817,7 @@ a
     font-size: 120%
     background none
     box-shadow: none
+    min-width: 0
     outline: 0
     &:hover
         box-shadow: none
@@ -1852,6 +1941,9 @@ a
 
 /* ----------------------- */
 placeholderColor = #afb9bb
+
+
+*/
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color placeholderColor;

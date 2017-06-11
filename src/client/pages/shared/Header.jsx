@@ -34,22 +34,21 @@ const toggleMenu = (e, dispatch) => {
 const toggleMenuAfterNav = (dispatch) => {
   dispatch(toggleNavMenu());
 };
+
 // TODO: Change nav bar to be hidden on scroll down and visible on scroll up instead of just "fixed"
-const Header = ({ user, uiState, dispatch, auth0, history }) => (
+const Header = ({ user, uiState, dispatch, auth0 }) => (
   <div>
     <header>
-      <div className="header-content lostContainerHeader">
-        <NavLink to="/" className="headerLogo" />
-        <nav>
-          <ul>
-            <NavLink to="/courses" activeClassName="linkActive"><li>Courses</li></NavLink>
-            <NavLink to="/dashboard" activeClassName="linkActive"><li>Dashboard</li></NavLink>
+      <div className="header-content">
+        <NavLink to="/" className="header-logo" />
+        <nav className="main-navigation">
+          <ul className="menu">
+            <li><NavLink to="/dashboard" activeClassName="link-active">Dashboard</NavLink></li>
+            <li><NavLink to="/courses" activeClassName="link-active">Courses</NavLink></li>
+            {user.authenticated ? <li><a className={uiState.global.navMenuOpen ? 'menu-btn profile menu-btn-close' : 'menu-btn profile'} href="/" onClick={e => toggleMenu(e, dispatch)} title="Menu">‌‌ Menu</a></li> : null}
+            {!user.authenticated ? <li><a className="menu-btn login" href="/" onClick={e => handleLoginClick(e, auth0)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a></li> : null}
           </ul>
         </nav>
-        <div className="menu putRight">
-          {user.authenticated ? <a className={uiState.global.navMenuOpen ? 'menu-btn menu-btn-close' : 'menu-btn'} href="/" onClick={e => toggleMenu(e, dispatch)} title="Menu">‌‌ </a> : null}
-          {!user.authenticated ? <a className="loginButton" href="/" onClick={e => handleLoginClick(e, auth0)} title="Login"><i className="fa fa-sign-in" aria-hidden="true" />‌‌ ‌‌L‌‌o‌‌g‌‌i‌‌n‌</a> : null}
-        </div>
         <div className={uiState.global.navMenuOpen ? 'side-panel is-visible' : 'side-panel'}>
           <div className="panel-menu">
             <h1>Welcome back, {user.name}</h1>
@@ -60,11 +59,8 @@ const Header = ({ user, uiState, dispatch, auth0, history }) => (
           </div>
         </div>
       </div>
-      <div className="backLinkDiv">
-        <button className="backLink" href="#" onClick={() => history.goBack()}>&larr; Back</button>
-      </div>
     </header>
-    <div className="constrained" />
+    {/*<div className="container" />*/}
   </div>
 );
 
@@ -73,7 +69,6 @@ Header.propTypes = {
   dispatch: PropTypes.func,
   user: PropTypes.objectOf(PropTypes.shape),
   auth0: PropTypes.objectOf(PropTypes.shape),
-  history: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 Header.defaultProps = {
