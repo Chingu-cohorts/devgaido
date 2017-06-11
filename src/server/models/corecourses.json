@@ -289,5 +289,23 @@
     "lessonIds": [
       "introstylus"
     ]
+  },
+  "howwebworks": {
+    "id": "howwebworks",
+    "name": "Learn How the Web Works",
+    "description": "Learn How the Internet and World Wide Web Work",
+    "lessonIds": [
+      "howinternetworks",
+      "howwebworks"
+    ]
+  },
+  "getstartedweb": {
+    "id": "getstartedweb",
+    "name": "Getting Started with the Web",
+    "description": "Learn how to set up a web project folder and file system for you projects",
+    "lessonIds": [
+      "getstartedweb",
+      "setupwwwfolder"
+    ]
   }
 }
