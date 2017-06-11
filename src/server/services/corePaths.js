@@ -6,8 +6,7 @@ import CorePaths from '../models/corepaths.json';
  * @param {String} pathName - Unique path identifier
  * @returns {String[]} - JSON object containing attributes of the path
  */
-const getPath = pathName =>
-  CorePaths.find(currentPath => currentPath.name === pathName);
+const getPath = pathName => CorePaths[pathName];
 
 /**
  * Retrieve all paths from the Core Paths

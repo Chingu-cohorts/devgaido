@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 
-import Card from '../shared/Card';
+import BreadCrumbs from '../shared/BreadCrumbs';
+/* import Card from '../shared/Card';
 
 const lessonTypeIcons = {
   Reading: 'fa fa-book',
@@ -15,16 +16,6 @@ const lessonTypeColors = {
   Reading: '#ffea7e',
   Project: 'deepskyblue',
   'Supplemental Course': '',
-};
-
-const getPath = (id, paths) => {
-  let retPath = null;
-  paths.forEach((path) => {
-    if (path.id === id) {
-      retPath = path;
-    }
-  });
-  return retPath;
 };
 
 const getAllCourseLessons = (course, curriculum) => {
@@ -46,37 +37,41 @@ const LessonCard = ({ name, description, id, type }) => (
     color={lessonTypeColors[type]}
   />
 );
-
-const CourseCard = ({ curriculum, id }) => (
-  <Link to={`/courses/${id}`}>
-    <div className="courseCard">
-      <div className="courseCardHeader">
-        <span className="courseCardCaption">COURSE</span>
-        <h1>{curriculum.courses[id].name}</h1>
-      </div>
-      <p className="courseDescription">{curriculum.courses[id].description}</p>
-      <div className="lessonList">
-        {/* getAllCourseLessons(curriculum.courses[id], curriculum).map(lesson => (
-          <LessonCard
-            name={lesson.name}
-            description={lesson.description}
-            id={lesson.id}
-            type={lesson.type}
-            key={lesson.id}
-          />
-        ))*/}
-      </div>
+*/
+const CourseCard = ({ curriculum, pathId, courseId }) => (
+  <Link className="courseCard" to={`/paths/${pathId}/${courseId}`}>
+    <div className="courseCardHeader">
+      <span className="courseCardCaption">COURSE</span>
+      <h1>{curriculum.courses[courseId].name}</h1>
+    </div>
+    <p className="courseDescription">{curriculum.courses[courseId].description}</p>
+    <div className="lessonList">
+      {/* getAllCourseLessons(curriculum.courses[id], curriculum).map(lesson => (
+        <LessonCard
+          name={lesson.name}
+          description={lesson.description}
+          id={lesson.id}
+          type={lesson.type}
+          key={lesson.id}
+        />
+      ))*/}
     </div>
   </Link>
 );
 
 const Path = ({ match, curriculum }) => {
-  const path = getPath(match.params.id, curriculum.paths);
+  const path = curriculum.paths[match.params.id];
   const courses = path.courseIds.map(courseId => (
-    <CourseCard curriculum={curriculum} id={courseId} key={courseId} />
+    <CourseCard
+      curriculum={curriculum}
+      pathId={match.params.id}
+      courseId={courseId}
+      key={courseId}
+    />
   ));
   return (
     <div className="lostContainer">
+      <BreadCrumbs curriculum={curriculum} pathId={match.params.id} />
       <div className="card card--image colFull">
         <div className="cardHeader cardHeader--image" />
         <div className="cardHeader cardHeader--image--color">
@@ -90,14 +85,18 @@ const Path = ({ match, curriculum }) => {
     </div>
   );
 };
-
+/*
 LessonCard.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+};*/
+CourseCard.propTypes = {
+  pathId: PropTypes.objectOf(PropTypes.shape).isRequired,
+  courseId: PropTypes.objectOf(PropTypes.shape).isRequired,
+  curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
-
 
 Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,

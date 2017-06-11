@@ -26,13 +26,11 @@ const PathCard = ({ name, description, id }) => (
   />
 );
 
-const PathList = ({ curPathId, paths, dispatch }) => (
-  <div>
+const PathList = ({ paths }) => (
+  <div>{console.log(paths)}
     <div className="dashboardPathList">
       {paths.map(p => (
-        curPathId === p.id ?
-          <PathCard selected name={p.name} description={p.description} id={p.id} dispatch={dispatch} key={p.id} /> :
-          <PathCard selected={false} name={p.name} description={p.description} id={p.id} dispatch={dispatch} key={p.id} />
+        <PathCard name={p.name} description={p.description} id={p.id} key={p.id} />
       ))}
     </div>
   </div>
@@ -49,23 +47,23 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
       content={[{
         caption: 'My Paths',
         content: <PathList
-          curPathId={uiState.Pages.Dashboard.currentPath}
-          paths={curriculum.paths.filter(path => path.id === 'srcctrl')}
-          dispatch={dispatch}
+          paths={Object.keys(curriculum.paths).filter(pathId => pathId === 'srcctrl').map(
+            pathId => curriculum.paths[pathId],
+          )}
         />,
       }, {
         caption: 'Completed',
         content: <PathList
-          curPathId={uiState.Pages.Dashboard.currentPath}
-          paths={curriculum.paths.filter(path => path.id !== 'buildawebsite')}
-          dispatch={dispatch}
+          paths={Object.keys(curriculum.paths).filter(pathId => pathId !== 'buildawebsite').map(
+            pathId => curriculum.paths[pathId],
+          )}
         />,
       }, {
         caption: 'All Paths',
         content: <PathList
-          curPathId={uiState.Pages.Dashboard.currentPath}
-          paths={curriculum.paths}
-          dispatch={dispatch}
+          paths={Object.keys(curriculum.paths).map(
+            pathId => curriculum.paths[pathId],
+          )}
         />,
       }]}
       dispatch={dispatch}
@@ -87,9 +85,7 @@ PathCard.propTypes = {
 };
 
 PathList.propTypes = {
-  curPathId: PropTypes.string.isRequired,
   paths: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  dispatch: PropTypes.func.isRequired,
 };
 
 Dashboard.propTypes = {

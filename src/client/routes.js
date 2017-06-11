@@ -27,24 +27,6 @@ const routes = [
     component: Home,
   },
   {
-    path: '/paths/:id',
-    exact: true,
-    component: Path,
-    passdown: ['curriculum'],
-  },
-  {
-    path: '/courses/:id',
-    exact: true,
-    component: Course,
-    passdown: ['curriculum'],
-  },
-  {
-    path: '/lessons/:id',
-    exact: true,
-    component: Lesson,
-    passdown: ['curriculum'],
-  },
-  {
     path: '/dashboard',
     exact: true,
     component: Dashboard,
@@ -72,6 +54,24 @@ const routes = [
     path: '/objectives',
     exact: true,
     component: Objectives,
+  },
+  {
+    path: '/paths/:id',
+    exact: true,
+    component: Path,
+    passdown: ['curriculum'],
+  },
+  {
+    path: '/paths/:pid/:id',
+    exact: true,
+    component: Course,
+    passdown: ['curriculum'],
+  },
+  {
+    path: '/paths/:pid/:cid/:id',
+    exact: true,
+    component: Lesson,
+    passdown: ['curriculum'],
   },
 ];
 
