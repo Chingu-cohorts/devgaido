@@ -104,5 +104,12 @@
     "Description": "User Experience/User Interface",
     "Release No.": "",
     "Authority URL": ""
+  }, {
+    "Type": "Concept",
+    "Focus Area": "Frontend",
+    "Name": "Web Basics",
+    "Description": "Technology that makes the World Wide Web Work",
+    "Release No.": "",
+    "Authority URL": ""
   }
 ]

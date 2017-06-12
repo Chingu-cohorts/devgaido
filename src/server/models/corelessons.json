@@ -1042,5 +1042,41 @@
     "type": "Lesson",
     "subject": "CSS, Stylus",
     "externalSource": ""
+  },
+  "howinternetworks": {
+    "source": "Khan Academy",
+    "id": "howinternetworks",
+    "name": "How the Internet Works",
+    "description": "Gain insight into the hardware and software that are the backbone of the Internet.",
+    "type": "Video",
+    "subject": "Web Basics",
+    "External Source": "https://www.khanacademy.org/partner-content/code-org/internet-works"
+  },
+  "howwebworks": {
+    "source": "Mozilla",
+    "id": "howwebworks",
+    "name": "How the Web Works",
+    "description": "Gain insight into the software and protocols that make up the how the World Wide Web (www).",
+    "type": "Reading",
+    "subject": "Web Basics",
+    "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works"
+  },
+  "getstartedweb": {
+    "source": "Mozilla",
+    "id": "getstartedweb",
+    "name": "Getting Started with the Web",
+    "description": "Getting started with the Web is a concise series introducing you to the practicalities of web development. You'll set up the tools you need to construct a simple webpage and publish your own simple code.",
+    "type": "Reading",
+    "subject": "Web Basics",
+    "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web"
+  },
+  "setupwwwfolder": {
+    "source": "Mozilla",
+    "id": "setupwwwfolder",
+    "name": "Setup your project folder",
+    "description": "Learn what you should be aware of when setting up your project so you can set up a sensible file structure for your website. (Note: please skip the Javascript portion of this walkthrough for now).",
+    "type": "Project",
+    "subject": "Web Basics",
+    "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Dealing_with_files"
   }
 }
