@@ -38,10 +38,6 @@ const store = createStore(reducers, initialState, applyMiddleware(...middleware)
 
 store.dispatch(initPaths(initialState.curriculum.paths.length));
 
-if (store.getState().user.name !== '') {
-  console.log('Hello', store.getState().user.name);
-}
-
 /**
  * Build the template for all pages in the application
  *

@@ -93,8 +93,8 @@ LessonCard.propTypes = {
   type: PropTypes.string.isRequired,
 };*/
 CourseCard.propTypes = {
-  pathId: PropTypes.objectOf(PropTypes.shape).isRequired,
-  courseId: PropTypes.objectOf(PropTypes.shape).isRequired,
+  pathId: PropTypes.string.isRequired,
+  courseId: PropTypes.string.isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
