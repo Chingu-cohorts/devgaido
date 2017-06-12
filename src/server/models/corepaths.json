@@ -56,5 +56,14 @@
       "introless",
       "introstylus"
     ]
+  },
+  "learnhowwebworks" : {
+    "id": "learnhowwebworks",
+    "name": "Learn How the Web Works",
+    "description": "Learn how the Internet and the World Wide Web work",
+    "courseIds": [
+      "howwebworks",
+      "getstartedweb"
+    ]
   }
 }
