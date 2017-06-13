@@ -14,6 +14,60 @@ const Metrics = ({ name, streak, lastVisited }) => (
   </div>
 );
 
+const CourseCardMini = ({ name, description, id }) => (
+  <div className="card colQuarter" >
+    <div className="cardHeader" style={{ background: 'deepskyblue' }}>
+      <i className="cardIcon fa fa-line-chart" />
+    </div>
+    <span className="cardSmallCaption">COURSE</span>
+    <span className="cardBigCaption">{name}</span>
+    <p className="cardText">{description}</p>
+  </div>
+);
+
+const CurrentPathCard = ({ name, description, id }) => (
+  <div className="courseCard currentPath">
+    <div className="courseCardHeader" style={{ background: 'darkslateblue' }}>
+      <span className="courseCardCaption">CURRENT PATH</span>
+      <h1>{name}</h1>
+      <button className="currentPathViewButton">VIEW PATH</button>
+    </div>
+    <p className="courseDescription">{description}</p>
+    <div className="lessonList">
+      <CourseCardMini
+        name="Sample Course Name"
+        description="This is where the course description would be"
+        id="sampleid"
+      />
+      <CourseCardMini
+        name="Sample Course Name"
+        description="This is where the course description would be"
+        id="sampleid"
+      />
+      <CourseCardMini
+        name="Sample Course Name"
+        description="This is where the course description would be"
+        id="sampleid"
+      />
+      <CourseCardMini
+        name="Sample Course Name"
+        description="This is where the course description would be"
+        id="sampleid"
+      />
+      {/* getAllCourseLessons(curriculum.courses[id], curriculum).map(lesson => (
+        <LessonCard
+          name={lesson.name}
+          description={lesson.description}
+          id={lesson.id}
+          type={lesson.type}
+          key={lesson.id}
+        />
+      ))*/}
+      <button className="inline button-continue currentPathContinueButton"><i />&nbsp;&nbsp; CONTINUE</button>
+    </div>
+  </div>
+);
+
 const PathCard = ({ name, description, id }) => (
   <Card
     caption={name}
@@ -27,7 +81,7 @@ const PathCard = ({ name, description, id }) => (
 );
 
 const PathList = ({ paths }) => (
-  <div>{console.log(paths)}
+  <div>
     <div className="dashboardPathList">
       {paths.map(p => (
         <PathCard name={p.name} description={p.description} id={p.id} key={p.id} />
@@ -42,6 +96,11 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
       name={user.name}
       lastVisited={user.dayLastVisited}
       streak={user.streak}
+    />
+    <CurrentPathCard
+      name={curriculum.paths.buildawebsite.name}
+      description={curriculum.paths.buildawebsite.description}
+      id={curriculum.paths.buildawebsite.id}
     />
     <TabbedContent
       content={[{

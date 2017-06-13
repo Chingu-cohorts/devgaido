@@ -1904,6 +1904,32 @@ a
         color white
         font-size: 135%
 
+.courseCard.currentPath
+    margin-top 0
+    &:after
+        height 0px
+    padding-bottom: 5em
+
+.currentPathViewButton
+    border none
+    min-width: 0
+    position: absolute    
+    top 24px
+    right 20px
+    background: none
+    box-shadow: none
+    border 2px solid white
+    width 120px
+
+.currentPathContinueButton
+    position: absolute
+    background: colorSecondary
+    i
+        background-color: darken(colorSecondary, 20)
+    width 150px
+    bottom 1em
+    left 2em
+
 .courseCardHeader
     background: darken(colorTertiary, 20)
     padding: 2rem 2rem 2rem 2rem
