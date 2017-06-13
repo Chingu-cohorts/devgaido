@@ -7,7 +7,7 @@ import TabbedContent from './TabbedContent';
 
 // TODO: Add custom date formatting to make client and server side string match up
 const Metrics = ({ name, streak, lastVisited }) => (
-  <div className="metrics">
+  <div className="grid-full metrics">
     <h1>Welcome back, {name}!</h1>
     <h1>streak: {streak}</h1>
     <h1>lastVisited: {new Date(lastVisited).toLocaleString()}</h1>
@@ -27,50 +27,50 @@ const PathCard = ({ name, description, id }) => (
 );
 
 const PathList = ({ curPathId, paths, dispatch }) => (
-  <div>
-    <div className="dashboardPathList">
+    <div className="dashboard-path-list">
       {paths.map(p => (
         curPathId === p.id ?
           <PathCard selected name={p.name} description={p.description} id={p.id} dispatch={dispatch} key={p.id} /> :
           <PathCard selected={false} name={p.name} description={p.description} id={p.id} dispatch={dispatch} key={p.id} />
       ))}
     </div>
-  </div>
 );
 
 const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
-  <div className="constrained marginTop">
-    <Metrics
-      name={user.name}
-      lastVisited={user.dayLastVisited}
-      streak={user.streak}
-    />
-    <TabbedContent
-      content={[{
-        caption: 'My Paths',
-        content: <PathList
-          curPathId={uiState.Pages.Dashboard.currentPath}
-          paths={curriculum.paths.filter(path => path.id === '10010')}
-          dispatch={dispatch}
-        />,
-      }, {
-        caption: 'Completed',
-        content: <PathList
-          curPathId={uiState.Pages.Dashboard.currentPath}
-          paths={curriculum.paths.filter(path => path.id !== '10020')}
-          dispatch={dispatch}
-        />,
-      }, {
-        caption: 'All Paths',
-        content: <PathList
-          curPathId={uiState.Pages.Dashboard.currentPath}
-          paths={curriculum.paths}
-          dispatch={dispatch}
-        />,
-      }]}
-      dispatch={dispatch}
-      uiState={uiState}
-    />
+  <div className="container">
+    <div className="container-dashboard">
+      <Metrics
+        name={user.name}
+        lastVisited={user.dayLastVisited}
+        streak={user.streak}
+      />
+      <TabbedContent
+        content={[{
+          caption: 'My Paths',
+          content: <PathList
+            curPathId={uiState.Pages.Dashboard.currentPath}
+            paths={curriculum.paths.filter(path => path.id === '10010')}
+            dispatch={dispatch}
+          />,
+        }, {
+          caption: 'Completed',
+          content: <PathList
+            curPathId={uiState.Pages.Dashboard.currentPath}
+            paths={curriculum.paths.filter(path => path.id !== '10020')}
+            dispatch={dispatch}
+          />,
+        }, {
+          caption: 'All Paths',
+          content: <PathList
+            curPathId={uiState.Pages.Dashboard.currentPath}
+            paths={curriculum.paths}
+            dispatch={dispatch}
+          />,
+        }]}
+        dispatch={dispatch}
+        uiState={uiState}
+      />
+    </div>
   </div>
 );
 

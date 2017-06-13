@@ -1,0 +1,256 @@
+.card {
+    // align-items: stretch;
+    background-color: colorTextInverse;
+    border-radius: 6px;
+    box-shadow: 5px 5px 10px rgba(30, 33, 94, 0.15);
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 2rem 2rem 2rem;
+    position:relative;
+    
+    .learning-path-category {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #afb9bb;
+    }
+    h3 {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        margin-bottom: 1rem;
+        padding: 0;
+    }
+    li {
+        border-bottom: 1px solid whitesmoke;
+        display: block;
+        font-size: 0.8rem;
+        padding:0.5rem 0 ;
+    }
+    a.view-item {
+        background: colorPrimaryLight;
+        border-radius: 20px;
+        color: colorPrimary;
+        display: inline-block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        height:35px;
+        line-height: 35px;
+        text-align:center;
+        text-decoration: none;
+        margin-top: auto;
+        min-width: 100px;
+        width:25%;
+    }
+}
+
+.card-header {
+    background-color: colorQuarternary;
+    background-position: center;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    border-radius: 6px 6px 0 0;
+    display:block;
+    font-size: 0.8rem;
+    height: 50px;
+    line-height: 50px;
+    padding:0 2rem;
+    position: absolute;
+    left: 0;
+    text-transform:uppercase;
+    top: 0;
+    width:100%;
+    i {
+        margin-right: 10px;
+    }
+    i::before {
+        color: colorTextInverse;
+        display:block;
+        float: left;
+        font-family: FontAwesome;
+        font-size: 1.5rem;
+        font-weight: normal;
+        font-style: normal;
+        height: 50px;
+        text-align:center;
+        text-decoration:none;
+        width: auto;
+    }
+    i:last-child {
+        float: right;
+        margin-right:0;
+    }
+    i.Reading::before {
+        content:"\f02d";
+    }
+    i.Project::before {
+        content:"\f121";
+    }
+    i.Course::before {
+        content: "\f19d";
+    }
+    i.Prerequisite::before {
+        font-size: 0.9rem;
+        content: "\f192";
+        line-height: 52px;
+    }
+    i.Started::before {
+        font-size: 0.9rem;
+        content: "\f005";
+        line-height: 52px;
+    }
+    i.Expertise::before {
+        font-size: 0.9rem;
+        content: "\f005 \f005";
+        line-height: 52px;
+    }
+    i.Rigor::before {
+        font-size: 0.9rem;
+        content: "\f005 \f005 \f005";
+        line-height: 52px;
+    }
+    
+}
+.dashboard-path-list .card,
+.card .card {
+    //border: 1px solid colorPrimaryLight;
+    box-shadow: none;
+}
+
+.card .cards {
+    margin-bottom:20px;
+    padding: 20px 20px 0 20px;
+    background-color:colorPrimaryLight;
+    //border: 1px solid colorPrimaryLight;
+}
+
+.card.Reading {
+    // border-left: 10px solid colorSecondaryLight;
+    .card-header {
+        background-color: colorSecondary;
+        // background-image: url('/assets/img/icon_book.svg');
+        color: colorTextInverse;
+    }
+}
+
+.card.Course {
+    .card-header {
+        background-color: colorPrimary;
+        color: colorTextInverse;
+        // background-image: url('/assets/img/icon_book.svg');
+    }
+}
+
+.card.Project {
+    .card-header {
+        background-color: colorTertiary;
+        color: colorTextInverse;
+        // background-image: url('/assets/img/icon_book.svg');
+    }
+}
+
+.card-footer {
+    margin-top: auto;
+    i::before {
+        background-color: colorPrimaryLight;
+        border-radius:50%;
+        color: colorPrimary;
+        display:block;
+        float: right;
+        font-family: FontAwesome;
+        font-size: 1.1rem;
+        font-weight: normal;
+        font-style: normal;
+        height: 35px;
+        line-height: 35px;
+        width: 35px;
+        text-align:center;
+        text-decoration:none;
+    }
+    i.Git::before {
+        content: "\f1d3"
+    }
+    i.GitHub::before {
+        content: "\f09b";
+    }
+    i.HTML::before {
+        content: "\f13b";
+    }
+    i.Science::before {
+        content: "\f0c3";
+    }
+    i.Calculus::before {
+        content: "\f12b";
+    }
+    i.FCC::before {
+        content: "\f2c5";
+    }
+}
+
+.course-info {
+    background-color: colorPrimaryLight;
+    //border: 1px solid colorPrimaryLight;
+    color: colorPrimary;
+    margin: 20px 0 0 0;
+    padding:10px 20px;
+    p {
+        color: colorPrimary;
+    }
+}
+.course-description {
+    margin: 0;
+}
+
+
+.card-caption-small {
+    font-size: 0.8rem
+    font-weight: bold
+    color: #afb9bb
+}
+
+.card-caption-big {
+    font-size: 1.1rem
+    font-weight: bold
+    margin: 0
+}
+
+.card-text {
+    margin-top 10px
+    color colorPrimary
+    flex 1
+}
+
+.card-icon {
+    color: colorTextInverse
+    float: right
+    margin-top 10px
+    margin-right: 10px
+    display:block;
+    font-family: FontAwesome;
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-style: normal;
+    height: 50px;
+    text-decoration:none;
+    width: auto;
+    &:last-child {
+        margin-left 10px
+        margin-right: 20px  
+        float left
+    }
+}
+
+.card-button {
+    background: colorPrimaryLight
+    border-radius: 20px
+    color: colorPrimary
+    font-size: 0.8rem
+    font-weight: bold
+    height: 35px
+    line-height: 5px
+    min-width: 100px
+    width: 25%
+    box-shadow: none
+}

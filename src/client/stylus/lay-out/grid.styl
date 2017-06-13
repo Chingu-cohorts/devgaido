@@ -1,0 +1,42 @@
+
+[class|=grid] {
+    margin: 10px;
+}
+
+
+.grid-full {
+    width:100%;
+    margin:0;
+    margin-bottom: 20px;
+}
+
+.grid-half {
+    // margin: 0 spaceMedium spaceMedium 0;
+    width:calc(100% / 2 - spaceMedium / 2 );
+    flex: 1 calc(98% / 2);
+}
+
+.grid-third {
+
+}
+
+.grid-quarter {
+    // margin: 10px;
+    max-width: 320px;
+    min-width: 250px;
+    width:calc(100% / 4);
+    flex: 1;
+}
+
+.grid-third {
+    // margin: 0 spaceMedium spaceMedium 0;
+    max-width: 450px;
+    min-width: 250px;
+    width:calc(100% / 3);
+    flex: 1 calc(100% / 3);
+}
+
+// .grid-half:nth-of-type(2n+2),
+// .grid-quarter:nth-of-type(4n+4) {
+//     margin-right:0;
+// }

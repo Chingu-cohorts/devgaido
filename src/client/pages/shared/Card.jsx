@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 
 // TODO: Find a neat way of changing a cards color (dynamically add css class vs style tag?)
 const Card = ({ caption, subcaption, text, selected, content, icons, to, color }) => (
-  <Link className={`card colQuarter${selected ? ' selected' : ''}`} to={to} >
-    <div className="cardHeader" style={color ? { background: color } : {}}>
-      {icons.map((icon, index) => (<i className={`cardIcon ${icon}`} key={`${icon}${index}`} />))}
+  <Link className={`grid-quarter card${selected ? ' selected' : ''}`} to={to} >
+    <div className="card-header" style={color ? { background: color } : {}}>
+      {icons.map((icon, index) => (<i className={`card-icon ${icon}`} key={`${icon}${index}`} />))}
     </div>
-    <span className="cardSmallCaption">{subcaption}</span>
-    <span className="cardBigCaption">{caption}</span>
-    <p className="cardText">{text}</p>
+    <span className="card-caption-small">{subcaption}</span>
+    <span className="card-caption-big">{caption}</span>
+    <p className="card-text">{text}</p>
     {content}
   </Link>
 );

@@ -48,14 +48,14 @@ const LessonCard = ({ name, description, id, type }) => (
 const Path = ({ match, /* history,*/ curriculum }) => {
   const path = getPath(match.params.id, curriculum.paths);
   const courses = path.courseIds.map((courseId, index) => (
-    <div className="courseCard" key={index}>
-      <div className="courseCardHeader">
-        <span className="courseCardCaption">COURSE</span>
+    <div className="course-card" key={index}>
+      <div className="course-card-header">
+        <span className="course-card-caption">Course</span>
         <h1>{curriculum.courses[courseId].name}</h1>
       </div>
 
-      <p className="courseDescription">{curriculum.courses[courseId].description}</p>
-      <div className="lessonList">
+      <p className="course-description">{curriculum.courses[courseId].description}</p>
+      <div className="lesson-list">
         {getAllCourseLessons(curriculum.courses[courseId], curriculum).map(lesson => (
           <LessonCard
             name={lesson.name}
@@ -69,16 +69,16 @@ const Path = ({ match, /* history,*/ curriculum }) => {
     </div>
   ));
   return (
-    <div className="lostContainer">
+    <div className="container">
       {/* <a className="backLink" href="#" onClick={() => history.goBack()}>&larr; Back</a>*/}
-      <div className="card card--image colFull">
-        <div className="cardHeader cardHeader--image" />
-        <div className="cardHeader cardHeader--image--color">
-          <h1 className="cardHeader--pathName">{path.name}</h1>
+      <div className="card card-image grid-full">
+        <div className="card-header card-header-image" />
+        <div className="card-header card-header-image-color">
+          <h1 className="card-header-path-name">{path.name}</h1>
         </div>
-        <span className="cardBigCaption">About this Path:</span>
-        <p className="cardText">{path.description}</p>
-        <p className="cardText">Courses in this path: {courses.length}</p>
+        <span className="card-caption-big">About this Path:</span>
+        <p className="card-text">{path.description}</p>
+        <p className="card-text">Courses in this path: {courses.length}</p>
         {courses}
       </div>
     </div>

@@ -58,9 +58,9 @@ const Header = ({ user, uiState, dispatch, auth0, history }) => (
             </ul>
           </div>
         </div>
-        <div className="backLinkDiv">
+        {/*<div className="backLinkDiv">
           <button className="backLink" href="#" onClick={() => history.goBack()}>&larr; Back</button>
-        </div>
+        </div>*/}
       </div>
     </header>
     {/*<div className="container" />*/}

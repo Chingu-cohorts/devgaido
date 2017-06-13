@@ -1,0 +1,50 @@
+/*--------------------------------------------------------------
+# Media queuries
+--------------------------------------------------------------*/
+
+@media only screen and (max-width: 600px) {
+    .grid-half {
+        width: 100%;
+    }
+    .header-image {
+        max-height: 8.4rem;
+        overflow: hidden;
+    }
+    .title {
+        align-self: center;
+        padding: 1rem 0;
+        text-align: center;
+    }
+    .download-button {
+        display: inline-block;
+        margin: 0 auto;
+        width: 139px;
+    }
+    #commands {
+        margin-top: 3rem;
+    }
+    .footer {
+        margin-top: 1rem;
+    }
+    .contact {
+        background: colorPrimary //#264880;
+        padding: 1rem 2rem 4rem 2rem;
+        text-align: center;
+    }
+    .contact a,     
+    a i.fa {
+        color: colorTextInverse;
+    }
+    a.support {
+        bottom: -4.5rem;
+    }
+}
+
+
+@media only screen and (max-width: 800px)
+    .lostGridColumn
+        lost-column: 1/2 2;
+
+@media only screen and (max-width: 600px)
+    .lostGridColumn
+        lost-column: 1/1 1;
