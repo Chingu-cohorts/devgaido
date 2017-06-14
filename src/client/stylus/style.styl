@@ -1712,8 +1712,6 @@ a
 .lostFullWidth
     lost-column: 1;
 
-
-
 .linkActive
     li
         color colorSecondary !important   
@@ -1731,6 +1729,8 @@ a
 
 .displayFlex
     display flex
+    flex-direction: row
+    flex-wrap: wrap
 
 /* ----------------------- */
 .colQuarter
@@ -1751,6 +1751,7 @@ a
     height: 35px
     line-height: 5px
     box-shadow: none
+    lost-column 1/4 4
 
 .activeTabCaption
     background colorTertiary
@@ -1759,6 +1760,7 @@ a
 .dashboardPathList
     margin-top 20px
     lost-center: widthMax
+    justify-content: center
 /* ----------------------- */
 .card
     background colorTextInverse
@@ -1928,7 +1930,8 @@ a
         background-color: darken(colorSecondary, 20)
     width 150px
     bottom 1em
-    left 2em
+    left 50%
+    transform: translateX(-50%)
 
 .courseCardHeader
     background: darken(colorTertiary, 20)
@@ -1956,9 +1959,35 @@ a
     margin-top 30px
     margin-bottom 20px
     display: flex
+    flex-wrap: wrap
     
 .breadcrumb
     padding 10px
+
+@media only screen and (max-width: 1105px)
+    .card.colQuarter
+        lost-column 1/3 3
+    .tabButton
+        lost-column 1/2 2 5px
+        margin 4px
+
+@media only screen and (max-width: 800px)
+    .card.colQuarter
+        lost-column 1/2 2
+    .tabButton
+        lost-column 1/2 2 5px
+        margin 4px
+
+@media only screen and (max-width: 600px)
+    .courseCard.currentPath
+        padding-left 0
+        padding-right 0
+    .card.colQuarter
+        lost-column 1/1 1 0px
+        margin 1px
+    .tabButton
+        lost-column 1/1 1 0px
+        margin 1px
 //.tabbed-content
 //    background #ddd
 
