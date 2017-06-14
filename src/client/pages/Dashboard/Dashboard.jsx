@@ -97,23 +97,34 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
       lastVisited={user.dayLastVisited}
       streak={user.streak}
     />
-    <CurrentPathCard
-      name={curriculum.paths.buildawebsite.name}
-      description={curriculum.paths.buildawebsite.description}
-      id={curriculum.paths.buildawebsite.id}
-    />
     <TabbedContent
       content={[{
-        caption: 'My Paths',
+        caption: 'In Progress',
+        content: (
+          <div>
+            <CurrentPathCard
+              name={curriculum.paths.buildawebsite.name}
+              description={curriculum.paths.buildawebsite.description}
+              id={curriculum.paths.buildawebsite.id}
+            />
+            <h1>In Progress:</h1>
+            <PathList
+              paths={Object.keys(curriculum.paths).filter(pathId => pathId === 'srcctrl').map(
+                pathId => curriculum.paths[pathId],
+              )}
+            />
+          </div>),
+      }, {
+        caption: 'Bookmarked',
         content: <PathList
-          paths={Object.keys(curriculum.paths).filter(pathId => pathId === 'srcctrl').map(
+          paths={Object.keys(curriculum.paths).filter(pathId => pathId !== 'buildawebsite').map(
             pathId => curriculum.paths[pathId],
           )}
         />,
       }, {
         caption: 'Completed',
         content: <PathList
-          paths={Object.keys(curriculum.paths).filter(pathId => pathId !== 'buildawebsite').map(
+          paths={Object.keys(curriculum.paths).filter(pathId => pathId !== 'srcctrl').map(
             pathId => curriculum.paths[pathId],
           )}
         />,
