@@ -25,7 +25,6 @@ const App = ({ serverMatch, dispatch, user, curriculum, uiState, auth0 }) => {
         {...serverMatch}
         key={0}
         passdownProps={passdownProps}
-        component={serverMatch.component}
       />);
   } else {
     let key = 0;
@@ -35,7 +34,6 @@ const App = ({ serverMatch, dispatch, user, curriculum, uiState, auth0 }) => {
           {...route}
           key={key += 1}
           passdownProps={passdownProps}
-          component={route.component}
         />);
     });
   }
