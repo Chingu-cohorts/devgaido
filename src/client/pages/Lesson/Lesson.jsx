@@ -1,11 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Lesson = ({ match, /* history,*/ curriculum }) => {
+import BreadCrumbs from '../shared/BreadCrumbs';
+
+const Lesson = ({ match, curriculum }) => {
   const lesson = curriculum.lessons[match.params.id];
   return (
     <div className="lostContainer">
-      {/* <a className="backLink" href="#" onClick={() => history.goBack()}>&larr; Back</a>*/}
+      <BreadCrumbs
+        curriculum={curriculum}
+        pathId={match.params.pid}
+        courseId={match.params.cid}
+        lessonId={match.params.id}
+      />
       <div className="card card--image colFull">
         <div className="cardHeader cardHeader--image" />
         <div className="cardHeader cardHeader--image--color2">
@@ -20,7 +27,6 @@ const Lesson = ({ match, /* history,*/ curriculum }) => {
 };
 
 Lesson.propTypes = {
-  // history: PropTypes.objectOf(PropTypes.shape).isRequired,
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };

@@ -16,7 +16,7 @@
     "dev:client": "webpack-dev-server",
     "copyassets": "rimraf ./dist && mkdirp ./dist/public && ncp ./src/client/assets/ ./dist/public/assets",
     "analyzesize": "webpack -p --config webpack.config.js --json | webpack-bundle-size-analyzer",
-    "test": "mocha --require ./test/helper.js '+(test)/**/*Spec.js'"
+    "test": "mocha --require ./test/helper.js '+(test|validate)/**/*Spec.js'"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

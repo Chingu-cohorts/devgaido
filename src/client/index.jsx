@@ -49,12 +49,11 @@ if (store.getState().user.name !== '') {
  * @returns {null} -
  */
 const render = (Component) => {
-  const history = createBrowserHistory();
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
-        <BrowserRouter history={history}>
-          <Component history={history} />
+        <BrowserRouter history={createBrowserHistory()}>
+          <Component />
         </BrowserRouter>
       </Provider>
     </AppContainer>,
