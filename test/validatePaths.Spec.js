@@ -14,7 +14,7 @@ describe('Validate corepaths.json', function () {
     let invalidPathIds = [];
     afterEach(function() {
       invalidPathIds.forEach((id) => {
-        console.log(`         Path id ${id} > 16 characters`);
+        console.log(`${' '.repeat(9)}Path id ${id} > 16 characters`);
       });
       invalidPathIds = [];
     });
@@ -31,7 +31,7 @@ describe('Validate corepaths.json', function () {
     let invalidPathIds = [];
     afterEach(function() {
       invalidPathIds.forEach((id) => {
-        console.log(`         Path id ${id} contains invalid characters`);
+        console.log(`${' '.repeat(9)}Path id ${id} contains invalid characters`);
       });
       invalidPathIds = [];
     });
@@ -48,7 +48,7 @@ describe('Validate corepaths.json', function () {
     let invalidIds = [];
     afterEach(function() {
       invalidIds.forEach((id) => {
-        console.log(`         Path id ${id[0]} contains unknown course id ${id[1]}`);
+        console.log(`${' '.repeat(9)}Path id ${id[0]} contains unknown course id ${id[1]}`);
       });
       invalidIds = [];
     });
