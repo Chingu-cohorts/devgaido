@@ -42,10 +42,10 @@ const validateIdLength = (jsonData) => {
 const validateRelationship = (childAttrNm, childJSON, parentAttrNm, parentJSON) => {
   const invalidIds = [];
 
-  Object.values(childJSON).forEach((currentPath) => {
-    currentPath[childAttrNm].forEach((itemId) => {
+  Object.values(childJSON).forEach((childElement) => {
+    childElement[childAttrNm].forEach((itemId) => {
       if (parentJSON[itemId] === undefined) {
-        invalidIds.push([currentPath[parentAttrNm], itemId]);
+        invalidIds.push([childElement[parentAttrNm], itemId]);
       }
     });
   });
