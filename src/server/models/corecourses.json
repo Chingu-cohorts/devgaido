@@ -307,5 +307,14 @@
       "getstartedweb",
       "setupwwwfolder"
     ]
+  },
+  "E2345678901234567": {
+    "id": "getstartedweb",
+    "name": "Error test",
+    "description": "Course id exceeds 16 characters and contains uppercase letter",
+    "lessonIds": [
+      "error1",
+      "error2"
+     ]
   }
 }
