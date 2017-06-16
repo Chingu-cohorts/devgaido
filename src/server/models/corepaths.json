@@ -65,5 +65,14 @@
       "howwebworks",
       "getstartedweb"
     ]
+  },
+  "E2345678901234567" : {
+    "id": "E2345678901234567",
+    "name": "Error test",
+    "description": "Path id exceeds 16 characters",
+    "courseIds": [
+      "error1",
+      "error2"
+    ]
   }
 }
