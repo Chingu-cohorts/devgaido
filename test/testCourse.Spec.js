@@ -1,4 +1,3 @@
-/* eslint-disable func-names prefer-arrow-callback */
 require('./registerBabel');
 const coreCourses = require('../src/server/services/coreCourses');
 const assert = require('assert');

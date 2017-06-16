@@ -1,4 +1,3 @@
-/* eslint-disable func-names prefer-arrow-callback no-console */
 require('./registerBabel');
 
 import { validateIdComposition, validateIdLength, validateRelationship } from './commonValidations';
