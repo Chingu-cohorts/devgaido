@@ -16,7 +16,7 @@ const Metrics = ({ name, streak, lastVisited }) => (
 
 const CourseCardMini = ({ name, description, id }) => (
   <div className="card colQuarter" >
-    <div className="cardHeader" style={{ background: 'deepskyblue' }}>
+    <div className="cardHeader" style={{ background: '#007399' }}>
       <i className="cardIcon fa fa-line-chart" />
     </div>
     <span className="cardSmallCaption">COURSE</span>
@@ -68,6 +68,19 @@ const CurrentPathCard = ({ name, description, id }) => (
   </div>
 );
 
+const SectionCard = ({ title, subtitle, color, children }) => (
+  <div className="courseCard currentPath">
+    <div className="courseCardHeader" style={{ background: color ? color : 'darkslateblue' }}>
+      <span className="courseCardCaption">{subtitle}</span>
+      <h1>{title}</h1>
+      <button className="currentPathViewButton">VIEW ALL</button>
+    </div>
+    <div className="section-card-content">
+      {children}
+    </div>
+  </div>
+);
+
 const PathCard = ({ name, description, id }) => (
   <Card
     caption={name}
@@ -76,7 +89,7 @@ const PathCard = ({ name, description, id }) => (
     to={`/paths/${id}`}
     content={null}
     icons={['fa fa-road']}
-    color={'darkslateblue'}
+    color={'#007399'}
   />
 );
 
@@ -107,34 +120,44 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
               description={curriculum.paths.buildawebsite.description}
               id={curriculum.paths.buildawebsite.id}
             />
-            <h1>In Progress:</h1>
-            <PathList
-              paths={Object.keys(curriculum.paths).filter(pathId => pathId === 'srcctrl').map(
-                pathId => curriculum.paths[pathId],
-              )}
-            />
+            <SectionCard title="In Progress" subtitle="PATHS">
+              <PathList
+                paths={Object.keys(curriculum.paths).filter(pathId => pathId === 'srcctrl').map(
+                  pathId => curriculum.paths[pathId],
+                )}
+              />
+            </SectionCard>
           </div>),
       }, {
         caption: 'Bookmarked',
-        content: <PathList
-          paths={Object.keys(curriculum.paths).filter(pathId => pathId !== 'buildawebsite').map(
-            pathId => curriculum.paths[pathId],
-          )}
-        />,
+        content: (
+          <SectionCard title="Bookmarked" subtitle="PATHS">
+            <PathList
+              paths={Object.keys(curriculum.paths).filter(pathId => pathId !== 'buildawebsite').map(
+                pathId => curriculum.paths[pathId],
+              )}
+            />
+          </SectionCard>),
       }, {
         caption: 'Completed',
-        content: <PathList
-          paths={Object.keys(curriculum.paths).filter(pathId => pathId !== 'srcctrl').map(
-            pathId => curriculum.paths[pathId],
-          )}
-        />,
+        content: (
+          <SectionCard title="Completed" subtitle="PATHS">
+            <PathList
+              paths={Object.keys(curriculum.paths).filter(pathId => pathId !== 'srcctrl').map(
+                pathId => curriculum.paths[pathId],
+              )}
+            />
+          </SectionCard>),
       }, {
         caption: 'All Paths',
-        content: <PathList
-          paths={Object.keys(curriculum.paths).map(
-            pathId => curriculum.paths[pathId],
-          )}
-        />,
+        content: (
+          <SectionCard title="All" subtitle="PATHS">
+            <PathList
+              paths={Object.keys(curriculum.paths).map(
+                pathId => curriculum.paths[pathId],
+              )}
+            />
+          </SectionCard>),
       }]}
       dispatch={dispatch}
       uiState={uiState}
