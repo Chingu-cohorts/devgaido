@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 require('./registerBabel');
 const corePaths = require('../src/server/services/corePaths');
 const assert = require('assert');
