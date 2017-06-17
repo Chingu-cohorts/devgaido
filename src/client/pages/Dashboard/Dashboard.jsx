@@ -7,7 +7,7 @@ import TabbedContent from './TabbedContent';
 
 // TODO: Add custom date formatting to make client and server side string match up
 const Metrics = ({ name, streak, lastVisited }) => (
-  <div className="metrics">
+  <div className="grid-full metrics">
     <h1>Welcome back, {name}!</h1>
     <h1>streak: {streak}</h1>
     <h1>lastVisited: {new Date(lastVisited).toLocaleString()}</h1>
@@ -15,13 +15,13 @@ const Metrics = ({ name, streak, lastVisited }) => (
 );
 
 const CourseCardMini = ({ name, description, id }) => (
-  <div className="card colQuarter" >
-    <div className="cardHeader" style={{ background: '#007399' }}>
-      <i className="cardIcon fa fa-line-chart" />
+  <div className="grid-quarter card" >
+    <div className="card-header" style={{ background: '#007399' }}>
+      <i className="card-icon fa fa-line-chart" />
     </div>
-    <span className="cardSmallCaption">COURSE</span>
-    <span className="cardBigCaption">{name}</span>
-    <p className="cardText">{description}</p>
+    <span className="card-caption-small">COURSE</span>
+    <span className="card-caption-big">{name}</span>
+    <p className="card-text">{description}</p>
   </div>
 );
 
@@ -94,17 +94,17 @@ const PathCard = ({ name, description, id }) => (
 );
 
 const PathList = ({ paths }) => (
-  <div>
-    <div className="dashboardPathList">
+    <div className="dashboard-path-list">
       {paths.map(p => (
         <PathCard name={p.name} description={p.description} id={p.id} key={p.id} />
       ))}
     </div>
-  </div>
 );
 
 const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
   <div className="constrained marginTop">
+    {/*<div className="container">
+    <div className="container-dashboard">*/}
     <Metrics
       name={user.name}
       lastVisited={user.dayLastVisited}

@@ -1,0 +1,90 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body {
+    color: colorPrimaryDark;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+body {
+    background-color: colorPrimaryLight;
+    background-image: url('/assets/img/background.svg');
+    background-position: cover;
+    background-repeat: repeat-y;
+    background-size: 80%; 
+    height: 100vh;
+    margin: 0;
+    padding-top:100px;
+}
+
+.body:before {
+    display: block;
+    height: 10rem;
+}
+
+html.full-height {
+    background: linear-gradient(to bottom, #f5faff 10%, rgba(255, 255, 255, 0) 100%);
+}
+
+
+/*--------------------------------------------------------------
+# Containers + grid 
+--------------------------------------------------------------*/
+
+.row {
+    float: left;
+    width: 100%;
+    padding: 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: widthMax;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container-flex {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-wide {
+    // margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    float:right;
+    width: calc(100% - 350px);
+}
+
+.container-small {
+    margin: 0 auto;
+    max-width: 600px;
+    position: relative;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.content {
+    // margin-top:100px;
+}
+
+section {
+    float: left;
+    padding: 1rem 2rem;
+    width: 50%;
+}
+
+.container-dashboard {
+    background: colorBackgroundBase;
+    box-shadow: boxShadowBase;
+    width:100%;
+}

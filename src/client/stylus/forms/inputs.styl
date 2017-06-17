@@ -1,0 +1,297 @@
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+.form-container {
+    background: white;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 40px rgba(30, 33, 94, 0.15);
+    content: "";
+    display: table;
+    margin: 50px auto;
+    margin-top: 50px;
+    min-width: 700px;
+    position: relative;
+    width: 40%;
+}
+
+.form-container-large {
+    width: 40%;
+}
+
+.notation-toggle {
+    position: absolute;
+    height: 24px;
+    right: 32px;
+    top: 32px;
+    width: auto;
+}
+
+.notation-toggle span {
+    color: textColorSubdued;
+    display: inline-block;
+    float: left;
+    font-size: 0.8rem;
+    font-weight: 600;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 0.5rem;
+}
+
+.form-explanation {
+    float: left;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
+.form-container:before {
+    background: white;
+    border-radius: 40px;
+    content: "";
+    display: block;
+    height: 80px;
+    left: -50px;
+    position: absolute;
+    top: 20px;
+    width: 100px;
+    z-index: 0;
+}
+
+.form-container:after {
+    background: white;
+    border-radius: 25px;
+    content: "";
+    display: block;
+    height: 50px;
+    right: -50px;
+    position: absolute;
+    bottom: 20px;
+    width: 100px;
+    z-index: 0;
+}
+
+.form {
+    border: none;
+    margin: 0 auto;
+    padding: 25px;
+    width: 50%;
+    content: "";
+    display: table;
+    z-index: 10;
+}
+
+.form-wide {
+    width: 90%;
+}
+
+.profile-picture {
+    float: left;
+    width: 100%;
+}
+
+.profile-picture > div,
+.schedule > div,
+.target > div {
+    background-image: url('/assets/img/profile2.svg');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: colorTextInverse;
+    display: block;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+    width: 200px;
+}
+
+.schedule > div {
+    background-image: url('/assets/img/schedule2.svg');
+}
+
+.target > div {
+    background-image: url('/assets/img/target2.svg');
+}
+
+a.edit-image {
+    background-color: colorPrimary;
+    border-radius: 50%;
+    color: colorTextInverse;
+    display: flex;
+    height: 3rem;
+    position: absolute;
+    right: -1.5rem;
+    text-align: center;
+    text-decoration: none;
+    top: 70px;
+    width: 3rem;
+}
+
+a.edit-image:hover {
+    box-shadow: 0 0 10px rgba(30, 33, 94, 0.15);
+}
+
+a.edit-image i {
+    align-self: center;
+    margin: 0 auto;
+}
+#form {
+    margin: 0 auto;
+    max-width: 600px;
+    margin-top: 4rem;
+    position: relative;
+}
+
+.form-icon-links {
+    display: block;
+    float: right;
+    margin: 0 0 0.5rem 0;
+    margin-top: -2.2rem;
+    padding-right: 0.7rem;
+    text-align: right;
+}
+
+.form-icon-links a {
+    color: #f6f8f8;
+    font-size: 1rem;
+}
+
+.form-links {
+    display: block;
+    float: left;
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.form-links a {
+    color: #999;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+
+input[type="email"],
+input[type="text"],
+input[type="password"],
+button,
+input[type="submit"], 
+textarea {
+    background-color: colorTextInverse;
+    background-image: none;
+    border: none;
+    border: 1px solid colorPrimaryLight;
+    border-radius: 0;
+    float: left;
+    font-size: 0.9rem;
+    height: 3rem;
+    margin: 0.7rem 0 0 0;
+    padding: 0.9rem;
+    width: calc(100% - 3rem);
+}
+
+input[type="radio"] {
+
+}
+
+select,
+.chosen-container-single .chosen-single {
+    background-color: colorTextInverse;
+    background-image: none;
+    border: none;
+    border: 1px solid #f6f8f8;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.9rem;
+    height: 3rem;
+    margin: 0.7rem 0 0 0;
+    padding: 0.9rem;
+    //width: 100%;
+}
+
+.chosen-container .chosen-drop {
+    box-shadow: 0 0 10px rgba(30, 33, 94, 0.15);
+    border-radius: 0;
+    border: none;
+    padding: 0.5rem;
+}
+
+.chosen-container-single .chosen-search input[type="text"] {
+    background: whitesmoke;
+    border: none;
+    margin-bottom: 0.8rem;
+    padding: 0.5rem;
+}
+
+label:before {
+    background-color: colorTextInverse;
+    color: colorPrimaryLight;
+    border: 1px solid colorPrimaryLight;
+    border-right: none;
+    display: block;
+    float: left;
+    font-family: FontAwesome;
+    font-size: 1.3rem;
+    height: 3rem;
+    margin: 0.7rem 0 0 0;
+    padding-top: 0.4rem;
+    text-align: center;
+    vertical-align: -50%;
+    width: 3rem;
+}
+
+label.username:before {
+    content: "\f2c0";
+}
+
+label.password:before {
+    content: "\f084";
+}
+
+label.email:before {
+    content: "\f003";
+}
+
+label.city:before {
+    content: "\f041";
+}
+
+label.country:before {
+    content: "\f0ac";
+}
+
+label.search:before {
+    content: "\f002";
+}
+
+
+.form-action {
+    float: left;
+    width: 100%;
+}
+
+
+
+textarea {
+
+}
+.error {
+    color: red;
+    display: none;
+    font-size: 0.8rem;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color colorPrimaryLight;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color: colorPrimaryLight;
+     opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color: colorPrimaryLight;
+     opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color: colorPrimaryLight;
+}
