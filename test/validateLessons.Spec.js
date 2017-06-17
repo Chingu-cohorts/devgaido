@@ -1,7 +1,7 @@
 /* eslint-disable func-names no-console */
 require('./registerBabel');
 
-import { validateIdComposition, validateIdLength } from './commonValidations';
+import { logInvalidIds, validateIdComposition, validateIdLength } from './commonValidations';
 import coreLessons from '../src/server/models/corelessons.json';
 import coreSubjects from '../src/server/models/coresubjects.json';
 
@@ -14,10 +14,7 @@ describe('Validate corelessons.json', () => {
   describe('Validate lesson id length', () => {
     let invalidLessonIds = [];
     afterEach(() => {
-      invalidLessonIds.forEach((id) => {
-        console.log(`${' '.repeat(9)}Lesson id ${id} > 16 characters`);
-      });
-      invalidLessonIds = [];
+      invalidLessonIds = logInvalidIds(invalidLessonIds, 'Lesson id > 16 characters');
     });
     it('should verify that lesson ids are <= 16 characters', () => {
       invalidLessonIds = validateIdLength(coreLessons);
@@ -27,10 +24,7 @@ describe('Validate corelessons.json', () => {
   describe('Validate lesson id composition', () => {
     let invalidLessonIds = [];
     afterEach(() => {
-      invalidLessonIds.forEach((id) => {
-        console.log(`${' '.repeat(9)}Lesson id ${id} contains invalid characters`);
-      });
-      invalidLessonIds = [];
+      invalidLessonIds = logInvalidIds(invalidLessonIds, 'Lesson id contains invalid characters');
     });
     it('should verify that lesson ids contain only lowercase letters and digits', () => {
       invalidLessonIds = validateIdComposition(coreLessons);

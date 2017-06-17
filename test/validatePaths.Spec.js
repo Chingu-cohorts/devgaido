@@ -1,7 +1,7 @@
 /* eslint-disable func-names no-console */
 require('./registerBabel');
 
-import { validateIdComposition, validateIdLength, validateRelationship } from './commonValidations';
+import { logInvalidIds, validateIdComposition, validateIdLength, validateRelationship } from './commonValidations';
 import corePaths from '../src/server/models/corepaths.json';
 import coreCourses from '../src/server/models/corecourses.json';
 
@@ -14,10 +14,7 @@ describe('Validate corepaths.json', () => {
   describe('Validate path id length', () => {
     let invalidPathIds = [];
     afterEach(() => {
-      invalidPathIds.forEach((id) => {
-        console.log(`${' '.repeat(9)}Path id ${id} > 16 characters`);
-      });
-      invalidPathIds = [];
+      invalidPathIds = logInvalidIds(invalidPathIds, 'Path id > 16 characters');
     });
     it('should verify that path ids are <= 16 characters', () => {
       invalidPathIds = validateIdLength(corePaths);
@@ -27,10 +24,7 @@ describe('Validate corepaths.json', () => {
   describe('Validate path id composition', () => {
     let invalidPathIds = [];
     afterEach(() => {
-      invalidPathIds.forEach((id) => {
-        console.log(`${' '.repeat(9)}Path id ${id} contains invalid characters`);
-      });
-      invalidPathIds = [];
+      invalidPathIds = logInvalidIds(invalidPathIds, 'Path id contains invalid characters');
     });
     it('should verify that path ids contain only lowercase letters and digits', () => {
       invalidPathIds = validateIdComposition(corePaths);

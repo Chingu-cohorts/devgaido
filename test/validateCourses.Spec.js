@@ -1,7 +1,7 @@
 /* eslint-disable func-names no-console */
 require('./registerBabel');
 
-import { validateIdComposition, validateIdLength, validateRelationship } from './commonValidations';
+import { logInvalidIds, validateIdComposition, validateIdLength, validateRelationship } from './commonValidations';
 import coreCourses from '../src/server/models/corecourses.json';
 import coreLessons from '../src/server/models/corelessons.json';
 
@@ -14,10 +14,7 @@ describe('Validate corecourses.json', () => {
   describe('Validate course id length', () => {
     let invalidCourseIds = [];
     afterEach(() => {
-      invalidCourseIds.forEach((id) => {
-        console.log(`${' '.repeat(9)}Course id ${id} > 16 characters`);
-      });
-      invalidCourseIds = [];
+      invalidCourseIds = logInvalidIds(invalidCourseIds, 'Course id > 16 characters');
     });
     it('should verify that course ids are <= 16 characters', () => {
       invalidCourseIds = validateIdLength(coreCourses);
@@ -27,10 +24,7 @@ describe('Validate corecourses.json', () => {
   describe('Validate course id composition', () => {
     let invalidCourseIds = [];
     afterEach(() => {
-      invalidCourseIds.forEach((id) => {
-        console.log(`${' '.repeat(9)}Course id ${id} contains invalid characters`);
-      });
-      invalidCourseIds = [];
+      invalidCourseIds = logInvalidIds(invalidCourseIds, 'Course id contains invalid characters');
     });
     it('should verify that course ids contain only lowercase letters and digits', () => {
       invalidCourseIds = validateIdLength(coreCourses);
