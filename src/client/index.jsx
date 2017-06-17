@@ -38,10 +38,6 @@ const store = createStore(reducers, initialState, applyMiddleware(...middleware)
 
 store.dispatch(initPaths(initialState.curriculum.paths.length));
 
-if (store.getState().user.name !== '') {
-  console.log('Hello', store.getState().user.name);
-}
-
 /**
  * Build the template for all pages in the application
  *
@@ -49,12 +45,11 @@ if (store.getState().user.name !== '') {
  * @returns {null} -
  */
 const render = (Component) => {
-  const history = createBrowserHistory();
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
-        <BrowserRouter history={history}>
-          <Component history={history} />
+        <BrowserRouter history={createBrowserHistory()}>
+          <Component />
         </BrowserRouter>
       </Provider>
     </AppContainer>,

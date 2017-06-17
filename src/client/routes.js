@@ -1,5 +1,6 @@
 import Home from './pages/Home/Home';
 import Path from './pages/Path/Path';
+import Course from './pages/Course/Course';
 import Lesson from './pages/Lesson/Lesson';
 import Profile from './pages/Profile/Profile';
 import Times from './pages/Times/Times';
@@ -24,18 +25,6 @@ const routes = [
     path: '/',
     exact: true,
     component: Home,
-  },
-  {
-    path: '/paths/:id',
-    exact: true,
-    component: Path,
-    passdown: ['curriculum'],
-  },
-  {
-    path: '/lessons/:id',
-    exact: true,
-    component: Lesson,
-    passdown: ['curriculum'],
   },
   {
     path: '/dashboard',
@@ -65,6 +54,24 @@ const routes = [
     path: '/objectives',
     exact: true,
     component: Objectives,
+  },
+  {
+    path: '/paths/:id',
+    exact: true,
+    component: Path,
+    passdown: ['curriculum'],
+  },
+  {
+    path: '/paths/:pid/:id',
+    exact: true,
+    component: Course,
+    passdown: ['curriculum'],
+  },
+  {
+    path: '/paths/:pid/:cid/:id',
+    exact: true,
+    component: Lesson,
+    passdown: ['curriculum'],
   },
 ];
 

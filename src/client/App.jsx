@@ -11,7 +11,7 @@ import Footer from './pages/shared/Footer';
 
 import routesArr from './routes';
 
-const App = ({ history, serverMatch, dispatch, user, curriculum, uiState, auth0 }) => {
+const App = ({ serverMatch, dispatch, user, curriculum, uiState, auth0 }) => {
 // If <App /> is rendered on the server we need to provide the serverMatch prop
 // since StaticRouter can only render a single Route (Switch only works on client side).
 // On the client though, just return all routes and let Switch do the work.
@@ -25,7 +25,6 @@ const App = ({ history, serverMatch, dispatch, user, curriculum, uiState, auth0 
         {...serverMatch}
         key={0}
         passdownProps={passdownProps}
-        component={serverMatch.component}
       />);
   } else {
     let key = 0;
@@ -35,14 +34,13 @@ const App = ({ history, serverMatch, dispatch, user, curriculum, uiState, auth0 
           {...route}
           key={key += 1}
           passdownProps={passdownProps}
-          component={route.component}
         />);
     });
   }
   // TODO: Re-add sticky footer - position sticky or flexbox? (Check caniuse.com)
   return (
     <div className="App">
-      <Header dispatch={dispatch} uiState={uiState} user={user} auth0={auth0} history={history} />
+      <Header dispatch={dispatch} uiState={uiState} user={user} auth0={auth0} />
       <main>
         <div className="main">
           <Switch>
@@ -55,7 +53,6 @@ const App = ({ history, serverMatch, dispatch, user, curriculum, uiState, auth0 
 };
 
 App.propTypes = {
-  history: PropTypes.objectOf(PropTypes.shape).isRequired,
   serverMatch: PropTypes.objectOf(PropTypes.shape),
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape),
