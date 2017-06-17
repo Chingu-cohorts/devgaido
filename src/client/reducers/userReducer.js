@@ -13,7 +13,7 @@ const user = (state = {
   streak: 0,
   bookmarkedPaths: [],
   lessonsCompleted: [],
-  curPathId: '10010',
+  curPathId: 'srcctrl',
 }, action) => {
   switch (action.type) {
     case 'TEST_LOGIN':

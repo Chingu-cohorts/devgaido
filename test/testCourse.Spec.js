@@ -1,4 +1,5 @@
-/* eslint-disable func-names prefer-arrow-callback */
+/* eslint-disable func-names */
+require('./registerBabel');
 const coreCourses = require('../src/server/services/coreCourses');
 const assert = require('assert');
 
@@ -7,8 +8,8 @@ describe('Test coreCourses.js functions', function () {
    * Test the coreCourses.getCourse function
    */
   describe('Test the getCourse function', function () {
-    it('should return the course for id "10000" - "Understanding & Working with Git"', function () {
-      assert.equal('Understanding & Working with Git', coreCourses.getCourse('10000').name);
+    it('should return the course for id "git" - "Understanding & Working with Git"', function () {
+      assert.equal('Understanding & Working with Git', coreCourses.getCourse('git').name);
     });
     it('should return undefined for an unknown course id "99999"', function () {
       assert.equal(undefined, coreCourses.getCourse('99999'));

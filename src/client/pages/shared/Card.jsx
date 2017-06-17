@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 // TODO: Find a neat way of changing a cards color (dynamically add css class vs style tag?)
-const Card = ({ caption, subcaption, text, selected, content, icons, to, color }) => (
-  <Link className={`grid-quarter card${selected ? ' selected' : ''}`} to={to} >
+const Card = ({ caption, subcaption, text, content, icons, to, color }) => (
+  <Link className="grid-quarter card" to={to} >
     <div className="card-header" style={color ? { background: color } : {}}>
       {icons.map((icon, index) => (<i className={`card-icon ${icon}`} key={`${icon}${index}`} />))}
     </div>
@@ -17,7 +17,6 @@ const Card = ({ caption, subcaption, text, selected, content, icons, to, color }
 );
 
 Card.propTypes = {
-  selected: PropTypes.bool,
   caption: PropTypes.string,
   subcaption: PropTypes.string,
   text: PropTypes.string,
@@ -28,7 +27,6 @@ Card.propTypes = {
 };
 
 Card.defaultProps = {
-  selected: false,
   caption: '',
   subcaption: '',
   text: '',
