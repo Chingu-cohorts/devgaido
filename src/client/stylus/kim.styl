@@ -72,38 +72,53 @@ a
 //     width 100%
 //     margin-bottom: 20px
 
+// .tabButton
+//     outline: 0 !important
+//     background: #eff9fb
+//     color colorPrimary
+//     border-radius: 20px
+//     margin 0 10px
+//     padding 10px
+//     border none
+//     height: 35px
+//     line-height: 5px
+//     box-shadow: none
+
 .tabButton
+    background: colorPrimary
+    border-radius:0;
     outline: 0 !important
-    background: #eff9fb
-    color colorPrimary
-    border-radius: 20px
-    margin 0 10px
-    padding 10px
+    color: colorTextInverse
+    margin-right:5px
+    padding 15px
     border none
-    height: 35px
     line-height: 5px
     box-shadow: none
 
+.tabButton:last-of-type {
+    margin-right:0;
+}
 .activeTabCaption
-    background colorTertiary
-    color white
+    background colorPrimaryLight
+    color: colorPrimary;
 
-.dashboard-path-list {
+.dashboard-path-list,
+.lesson-list {
     background-color:colorPrimaryLight;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    // justify-content: space-between;
     margin-bottom:20px;
     padding: spaceMedium;
 }
-    // margin-top 20px
-    // lost-center: widthMax
+
 
 
 
 
 /* ------------ */
-.lesson
+.lesson,
+.path
     background colorTextInverse
     border-radius 6px
     box-shadow: 5px 5px 10px rgba(30, 33, 94, 0.15)
@@ -113,10 +128,12 @@ a
     position relative
     margin-bottom: 20px
 
-.lesson-image
+.lesson-image,
+.path-image
     padding: 470px 2rem 2rem 2rem
 
-.lesson-header
+.lesson-header,
+.path-header
     background: colorSecondary
     border-radius: 6px 6px 0 0
     width: 100%
@@ -125,13 +142,15 @@ a
     left: 0
     top: 0
 
-.lesson-header-image
+.lesson-header-image,
+.path-header-image
     background: url("http://lorempixel.com/1900/1200/technics/")
     background-size: cover
     height: 450px
 
 .lesson-header-image-color,
-.lesson-header-image-color2
+.lesson-header-image-color2,
+.path-header-image-color
     background alpha(darkslateblue, 0.75)
     height: 450px
     text-align: center
@@ -139,10 +158,12 @@ a
     align-items: center
     justify-content: center
 
-.lesson-header-image-color2
+.lesson-header-image-color2,
+.path-header-image-color2
     background alpha(colorSecondary, 0.75)
 
-.lesson-header-pathName
+.lesson-header-path-name,
+.path-header-path-name
     font-size 200%
     color white
 
@@ -230,62 +251,13 @@ a
     position relative
     margin-bottom: 40px
 
-.course-lesson
-    background: #eee
-    border-radius 6px
-    box-shadow: 5px 5px 10px rgba(30, 33, 94, 0.15)
-    padding: 2rem 2rem 2rem 2rem
-    margin-top 40px
-    margin-bottom: 40px
-    position: relative
-    &:after
-        content: "";
-        position: absolute;
-        display: block;
-        bottom: -85px;
-        left: 50%;
-        margin-left: -5px;
-        width: 10px;
-        height: 83px;
-        background: colorSecondaryLight
-        border-radius: 5px;
-    &:last-child:after
-        height 0px
-    h1
-        color white
-        font-size: 135%
 
-.course-lesson-header
-    background: darken(colorTertiary, 20)
-    padding: 2rem 2rem 2rem 2rem
-    border-radius: 6px 6px 0 0
-    width: 100%
-    height: 120px
-    position: absolute
-    left: 0
-    top: 0
+
+// .course-description
+//     //font-size 80%
     
-.course-lesson-caption
-    font-size: 0.8rem
-    font-weight: bold
-    color: rgba(255,255,255,0.8)
-
-.course-description
-    //font-size 80%
-    font-size: 110%
-    color rgba(0,0,0,0.7)
-    margin-top 110px
-    padding 10px
     
-.lesson-list
-    margin-top 30px
-    margin-bottom 20px
-    lost-center: widthMax
-
-//.tabbed-content
-//    background #ddd
-
-//.lesson
-//    cursor pointer
-//.selected
-//    background red
+// .lesson-list
+//     margin-top 30px
+//     margin-bottom 20px
+//     lost-center: widthMax

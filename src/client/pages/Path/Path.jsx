@@ -53,8 +53,8 @@ const Path = ({ match, /* history,*/ curriculum }) => {
         <span className="course-card-caption">Course</span>
         <h1>{curriculum.courses[courseId].name}</h1>
       </div>
-
       <p className="course-description">{curriculum.courses[courseId].description}</p>
+      
       <div className="lesson-list">
         {getAllCourseLessons(curriculum.courses[courseId], curriculum).map(lesson => (
           <LessonCard
@@ -71,14 +71,16 @@ const Path = ({ match, /* history,*/ curriculum }) => {
   return (
     <div className="container">
       {/* <a className="backLink" href="#" onClick={() => history.goBack()}>&larr; Back</a>*/}
-      <div className="card card-image grid-full">
-        <div className="card-header card-header-image" />
-        <div className="card-header card-header-image-color">
-          <h1 className="card-header-path-name">{path.name}</h1>
+      <div className="grid-full path path-image ">
+        <div className="path-header path-header-image" />
+        <div className="path-header path-header-image-color">
+          <h1 className="path-header-path-name">{path.name}</h1>
         </div>
-        <span className="card-caption-big">About this Path:</span>
-        <p className="card-text">{path.description}</p>
-        <p className="card-text">Courses in this path: {courses.length}</p>
+        <div className= "path-info">
+          <span className="path-caption-big">About this Path:</span>
+          <p className="path-text">{path.description}</p>
+          <p className="path-text">Courses in this path: {courses.length}</p>
+        </div>
         {courses}
       </div>
     </div>

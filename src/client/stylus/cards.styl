@@ -113,7 +113,9 @@
     }
     
 }
+
 .dashboard-path-list .card,
+.course-card .card
 .card .card {
     //border: 1px solid colorPrimaryLight;
     box-shadow: none;
@@ -189,21 +191,6 @@
     }
 }
 
-.course-info {
-    background-color: colorPrimaryLight;
-    //border: 1px solid colorPrimaryLight;
-    color: colorPrimary;
-    margin: 20px 0 0 0;
-    padding:10px 20px;
-    p {
-        color: colorPrimary;
-    }
-}
-.course-description {
-    margin: 0;
-}
-
-
 .card-caption-small {
     font-size: 0.8rem
     font-weight: bold
@@ -254,3 +241,149 @@
     width: 25%
     box-shadow: none
 }
+
+
+.course-card {
+    background: none;
+    margin-top:20px;
+    position: relative;
+}
+
+
+
+.course-card-header {
+    background-color: colorPrimaryDark;
+    background-position: center;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    border-radius: 6px 6px 0 0;
+    display:block;
+    font-size: 0.8rem;
+    // height: 50px;
+    line-height: 50px;
+    padding:0 2rem;
+    position: absolute;
+    left: 0;
+    text-transform:uppercase;
+    top: 0;
+    width:100%;
+    h1 {
+        color: colorTextInverse
+        display: inline-block;
+    }
+    // i {
+    //     margin-right: 10px;
+    // }
+    // i::before {
+    //     color: colorTextInverse;
+    //     display:block;
+    //     float: left;
+    //     font-family: FontAwesome;
+    //     font-size: 1.5rem;
+    //     font-weight: normal;
+    //     font-style: normal;
+    //     height: 50px;
+    //     text-align:center;
+    //     text-decoration:none;
+    //     width: auto;
+    // }
+    // i:last-child {
+    //     float: right;
+    //     margin-right:0;
+    // }
+    // i.Reading::before {
+    //     content:"\f02d";
+    // }
+    // i.Project::before {
+    //     content:"\f121";
+    // }
+    // i.Course::before {
+    //     content: "\f19d";
+    // }
+    // i.Prerequisite::before {
+    //     font-size: 0.9rem;
+    //     content: "\f192";
+    //     line-height: 52px;
+    // }
+    // i.Started::before {
+    //     font-size: 0.9rem;
+    //     content: "\f005";
+    //     line-height: 52px;
+    // }
+    // i.Expertise::before {
+    //     font-size: 0.9rem;
+    //     content: "\f005 \f005";
+    //     line-height: 52px;
+    // }
+    // i.Rigor::before {
+    //     font-size: 0.9rem;
+    //     content: "\f005 \f005 \f005";
+    //     line-height: 52px;
+    // }
+    
+}
+
+.course-card-caption {
+    display: inline-block;
+    color: colorTextInverse
+    font-weight: 600;
+    float: right;
+    margin-right:10px;
+}
+
+.course-info {
+    background-color: colorPrimaryLight;
+    //border: 1px solid colorPrimaryLight;
+    color: colorPrimary;
+    margin: 20px 0 0 0;
+    padding:10px 20px;
+    p {
+        color: colorPrimary;
+    }
+}
+.course-description {
+    margin: 0;
+    font-size: 110%
+    color rgba(0,0,0,0.7)
+    padding 10px
+}
+
+.course-lesson
+    background: #eee
+    border-radius 6px
+    box-shadow: 5px 5px 10px rgba(30, 33, 94, 0.15)
+    padding: 2rem 2rem 2rem 2rem
+    margin-top 40px
+    margin-bottom: 40px
+    position: relative
+    &:after
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -85px;
+        left: 50%;
+        margin-left: -5px;
+        width: 10px;
+        height: 83px;
+        background: colorSecondaryLight
+        border-radius: 5px;
+    &:last-child:after
+        height 0px
+    h1
+        color white
+        font-size: 135%
+
+.course-lesson-header
+    background: darken(colorTertiary, 20)
+    padding: 2rem 2rem 2rem 2rem
+    border-radius: 6px 6px 0 0
+    width: 100%
+    height: 120px
+    position: absolute
+    left: 0
+    top: 0
+    
+.course-lesson-caption
+    font-size: 0.8rem
+    font-weight: bold
+    color: rgba(255,255,255,0.8)
