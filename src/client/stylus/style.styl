@@ -1712,8 +1712,6 @@ a
 .lostFullWidth
     lost-column: 1;
 
-
-
 .linkActive
     li
         color colorSecondary !important   
@@ -1731,7 +1729,9 @@ a
 
 .displayFlex
     display flex
-
+    flex-direction: row
+    flex-wrap: wrap
+    margin-bottom 20px
 /* ----------------------- */
 .colQuarter
     lost-column: 1/4 4
@@ -1751,14 +1751,16 @@ a
     height: 35px
     line-height: 5px
     box-shadow: none
+    lost-column 1/4 4
 
 .activeTabCaption
-    background colorTertiary
+    background  #007399 //colorTertiary
     color white
 
 .dashboardPathList
     margin-top 20px
     lost-center: widthMax
+    // justify-content: center
 /* ----------------------- */
 .card
     background colorTextInverse
@@ -1904,6 +1906,34 @@ a
         color white
         font-size: 135%
 
+.courseCard.currentPath
+    margin-top 0
+    &:after
+        height 0px
+    padding-bottom: 5em
+
+
+.currentPathViewButton
+    border none
+    min-width: 0
+    position: absolute    
+    top 24px
+    right 20px
+    background: none
+    box-shadow: none
+    border 2px solid white
+    width 120px
+
+.currentPathContinueButton
+    position: absolute
+    background: colorSecondary
+    i
+        background-color: darken(colorSecondary, 20)
+    width 150px
+    bottom 1em
+    left 50%
+    transform: translateX(-50%)
+
 .courseCardHeader
     background: darken(colorTertiary, 20)
     padding: 2rem 2rem 2rem 2rem
@@ -1930,9 +1960,35 @@ a
     margin-top 30px
     margin-bottom 20px
     display: flex
+    flex-wrap: wrap
     
 .breadcrumb
     padding 10px
+
+@media only screen and (max-width: 1105px)
+    .card.colQuarter
+        lost-column 1/3 3
+    .tabButton
+        lost-column 1/2 2 5px
+        margin 4px
+
+@media only screen and (max-width: 800px)
+    .card.colQuarter
+        lost-column 1/2 2
+    .tabButton
+        lost-column 1/2 2 5px
+        margin 4px
+
+@media only screen and (max-width: 600px)
+    .courseCard.currentPath
+        padding-left 0
+        padding-right 0
+    .card.colQuarter
+        lost-column 1/1 1 0px
+        margin 1px
+    .tabButton
+        lost-column 1/1 1 0px
+        margin 1px
 //.tabbed-content
 //    background #ddd
 
@@ -1940,6 +1996,10 @@ a
 //    cursor pointer
 //.selected
 //    background red
+
+.section-card-content
+    margin-top 7em
+    //display: flex
 
 /* ----------------------- */
 placeholderColor = #afb9bb
