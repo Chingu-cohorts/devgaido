@@ -1,17 +1,18 @@
 const maxIdLength = 16;
 const validIdPattern = /^[0-9a-z]+$/;
+const indentErrMsg = ' '.repeat(9);
 
 /**
- * Write incorrectly formatted curriculum ids in paths, course, and lessons 
+ * Write incorrectly formatted curriculum ids in paths, course, and lessons
  * to the console.log.
- * 
+ *
  * @param {String[]} invalidIds - Array of erroneous ids
  * @param {string} errMessage - Custom error message describing the situation
  * @returns {[]} - empty array
  */
 const logInvalidIds = (invalidIds, errMessage) => {
   invalidIds.forEach((id) => {
-    console.log(`${' '.repeat(9)}${errMessage} for ${id}`);
+    console.log(`${indentErrMsg}${errMessage} for ${id}`);
   });
   return [];
 };
@@ -41,6 +42,11 @@ const validateIdLength = jsonData => Object.keys(jsonData).reduce((invalidIds, i
   }
   return invalidIds;
 }, []);
+
+// TODO: Clean this up JIM!!!!
+ Object.values = x =>
+        Object.keys(x).reduce((y, z) =>
+            y.push(x[z]) && y, []);
 
 /**
  * Validate a relationship between two data elements.
