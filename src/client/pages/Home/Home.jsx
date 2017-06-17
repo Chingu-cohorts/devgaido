@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Home = ({match}) => (
+const Home = () => (
   <div className="lostContainer">
     <div className="content">
-      <h1>DevGaido...{console.log(match)}</h1>
+      <h1>DevGaido...</h1>
       <h2>Your guided path to Web Development Expertise</h2>
       <p>Learning web development from scratch or merely adding to existing web development
   skills can be a difficult and confusing task. Where do you start?</p>
