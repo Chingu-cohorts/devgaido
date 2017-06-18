@@ -1,7 +1,8 @@
 /* eslint-disable func-names no-console */
 require('./registerBabel');
 
-import { logInvalidIds, logInvalidRelations, validateIdComposition, validateIdLength } from './commonValidations';
+import { logInvalidIds, logInvalidRelations,
+  validateIdComposition, validateIdLength, validateIdMatch } from './commonValidations';
 import coreLessons from '../src/server/models/corelessons.json';
 import coreSubjects from '../src/server/models/coresubjects.json';
 
@@ -28,6 +29,16 @@ describe('Validate corelessons.json', () => {
     });
     it('should verify that lesson ids contain only lowercase letters and digits', () => {
       invalidLessonIds = validateIdComposition(coreLessons);
+      assert.equal(invalidLessonIds.length, 0);
+    });
+  });
+  describe('Validate block key matches internal "id" value', () => {
+    let invalidLessonIds = [];
+    afterEach(() => {
+      invalidLessonIds = logInvalidIds(invalidLessonIds, 'Lesson id does not match "id" value');
+    });
+    it('should verify that block key and "id" value match', () => {
+      invalidLessonIds = validateIdMatch(coreLessons);
       assert.equal(invalidLessonIds.length, 0);
     });
   });
