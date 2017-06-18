@@ -55,18 +55,18 @@ describe('Validate corecourses.json', () => {
   });
   describe('Vaidate that there are no orphaned lessons', () => {
     let orphanedCourseIds = [];
-    const allPathCourses = Object.values(corePaths).reduce((courseReferences, path) => {
-      path.courseIds.forEach((courseId) => {
-        if (courseReferences.indexOf(courseId) === -1) {
-          courseReferences.push(courseId);
-        }
-      });
-      return courseReferences;
-    }, []);
     afterEach(() => {
       orphanedCourseIds = logInvalidIds(orphanedCourseIds, 'Course id not referenced by any path');
     });
     it('should verify that each course id is referenced by at least one path', () => {
+      const allPathCourses = Object.values(corePaths).reduce((courseReferences, path) => {
+        path.courseIds.forEach((courseId) => {
+          if (courseReferences.indexOf(courseId) === -1) {
+            courseReferences.push(courseId);
+          }
+        });
+        return courseReferences;
+      }, []);
       Object.values(coreCourses).forEach((currentCourse) => {
         if (allPathCourses.indexOf(currentCourse.id) === -1) {
           orphanedCourseIds.push(currentCourse.id);
