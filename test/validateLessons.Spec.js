@@ -1,7 +1,7 @@
 /* eslint-disable func-names no-console */
 require('./registerBabel');
 
-import { logInvalidIds, validateIdComposition, validateIdLength } from './commonValidations';
+import { logInvalidIds, logInvalidRelations, validateIdComposition, validateIdLength } from './commonValidations';
 import coreLessons from '../src/server/models/corelessons.json';
 import coreSubjects from '../src/server/models/coresubjects.json';
 
@@ -34,10 +34,7 @@ describe('Validate corelessons.json', () => {
   describe('Validate lesson ids in the course exists', () => {
     let invalidIds = [];
     afterEach(() => {
-      invalidIds.forEach((id) => {
-        console.log(`${' '.repeat(9)}Lesson id ${id[0]} contains unknown subject id ${id[1]}`);
-      });
-      invalidIds = [];
+      invalidIds = logInvalidRelations('Lesson', 'Subject', invalidIds);
     });
     it('should verify that subject ids exist', () => {
       Object.values(coreLessons).forEach((currentLesson) => {

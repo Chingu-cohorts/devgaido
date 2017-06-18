@@ -1,7 +1,7 @@
 /* eslint-disable func-names no-console */
 require('./registerBabel');
 
-import { logInvalidIds, validateIdComposition, validateIdLength, validateRelationship } from './commonValidations';
+import { logInvalidIds, logInvalidRelations, validateIdComposition, validateIdLength, validateRelationship } from './commonValidations';
 import coreCourses from '../src/server/models/corecourses.json';
 import coreLessons from '../src/server/models/corelessons.json';
 
@@ -27,17 +27,14 @@ describe('Validate corecourses.json', () => {
       invalidCourseIds = logInvalidIds(invalidCourseIds, 'Course id contains invalid characters');
     });
     it('should verify that course ids contain only lowercase letters and digits', () => {
-      invalidCourseIds = validateIdLength(coreCourses);
+      invalidCourseIds = validateIdComposition(coreCourses);
       assert.equal(invalidCourseIds.length, 0);
     });
   });
   describe('Validate lesson ids in the course exists', () => {
     let invalidIds = [];
     afterEach(() => {
-      invalidIds.forEach((id) => {
-        console.log(`${' '.repeat(9)}Course id ${id[0]} contains unknown lesson id ${id[1]}`);
-      });
-      invalidIds = [];
+      invalidIds = logInvalidRelations('Course', 'Lesson', invalidIds);
     });
     it('should verify that lesson ids exist', () => {
       invalidIds = validateRelationship('lessonIds', coreCourses, 'lessonId', coreLessons);
