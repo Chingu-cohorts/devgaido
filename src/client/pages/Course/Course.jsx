@@ -16,6 +16,16 @@ const lessonTypeColors = {
   'Supplemental Course': '',
 };
 
+const getLessonsCompletedNumber = (user, course) => {
+  let nCompleted = 0;
+  course.lessonIds.forEach((lessonId) => {
+    if (user.completionStatus.completedLessons.indexOf(lessonId) !== -1) {
+      nCompleted += 1;
+    }
+  });
+  return nCompleted;
+};
+
 const getAllCourseLessons = (course, curriculum) => {
   const lessons = [];
   course.lessonIds.forEach((lessonId) => {
@@ -36,7 +46,7 @@ const LessonCard = ({ name, description, to, type }) => (
   />
 );
 
-const Course = ({ match, curriculum }) => {
+const Course = ({ match, user, curriculum }) => {
   const course = curriculum.courses[match.params.id];
   return (
     <div className="container">
@@ -45,6 +55,7 @@ const Course = ({ match, curriculum }) => {
         <div className="path-header path-header-image" />
         <div className="path-header path-header-image-color">
           <h1 className="path-header-path-name">{course.name}</h1>
+          <h1 className="completion-text-big">{getLessonsCompletedNumber(user, course)}/{course.lessonIds.length}</h1>
         </div>
         <p className="card-text">{course.description}</p>
         <div className="lesson-list">

@@ -5,7 +5,27 @@ import { Link } from 'react-router-dom';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
 
-const CourseCard = ({ curriculum, pathId, courseId }) => (
+const getCoursesCompletedNumber = (user, path) => {
+  let nCompleted = 0;
+  path.courseIds.forEach((courseId) => {
+    if (user.completionStatus.completedCourses.indexOf(courseId) !== -1) {
+      nCompleted += 1;
+    }
+  });
+  return nCompleted;
+};
+
+const getLessonsCompletedNumber = (user, course) => {
+  let nCompleted = 0;
+  course.lessonIds.forEach((lessonId) => {
+    if (user.completionStatus.completedLessons.indexOf(lessonId) !== -1) {
+      nCompleted += 1;
+    }
+  });
+  return nCompleted;
+};
+
+const CourseCard = ({ curriculum, nCompletedLessons, nTotalLessons, pathId, courseId }) => (
   <Link className="course-card connected" to={`/paths/${pathId}/${courseId}`}>
     <div className="course-card-header">
       <span className="course-card-caption">COURSE</span>
@@ -22,18 +42,23 @@ const CourseCard = ({ curriculum, pathId, courseId }) => (
           key={lesson.id}
         />
       ))*/}
+      <h1 className="completion-text">{nCompletedLessons}/{nTotalLessons}</h1>
     </div>
+
   </Link>
 );
 
-const Path = ({ match, curriculum }) => {
+const Path = ({ match, user, curriculum }) => {
   const path = curriculum.paths[match.params.id];
   const courses = path.courseIds.map(courseId => (
     <CourseCard
       curriculum={curriculum}
+      user={user}
       pathId={match.params.id}
       courseId={courseId}
       key={courseId}
+      nTotalLessons={curriculum.courses[courseId].lessonIds.length}
+      nCompletedLessons={getLessonsCompletedNumber(user, curriculum.courses[courseId])}
     />
   ));
   return (
@@ -43,6 +68,7 @@ const Path = ({ match, curriculum }) => {
         <div className="path-header path-header-image" />
         <div className="path-header path-header-image-color">
           <h1 className="path-header-path-name">{path.name}</h1>
+          <h1 className="completion-text-big">{getCoursesCompletedNumber(user, path)}/{path.courseIds.length}</h1>
         </div>
         {courses}
       </div>
