@@ -57,7 +57,7 @@ describe('Validate corelessons.json', () => {
       assert.equal(invalidIds.length, 0);
     });
   });
-  describe('Identify orphaned lessons', () => {
+  describe('Validate that there are no orphaned lessons', () => {
     let orphanedLessonIds = [];
     const allCourseLessons = Object.values(coreCourses).reduce((lessonReferences, course) => {
       course.lessonIds.forEach((lessonId) => {
@@ -68,9 +68,9 @@ describe('Validate corelessons.json', () => {
       return lessonReferences;
     }, []);
     afterEach(() => {
-      orphanedLessonIds = logInvalidIds(orphanedLessonIds, 'Lesson id not referenced in any course');
+      orphanedLessonIds = logInvalidIds(orphanedLessonIds, 'Lesson id not referenced by any course');
     });
-    it('should verify that each lesson id is referenced in at least one course', () => {
+    it('should verify that each lesson id is referenced by at least one course', () => {
       Object.values(coreLessons).forEach((currentLesson) => {
         if (allCourseLessons.indexOf(currentLesson.id) === -1) {
           orphanedLessonIds.push(currentLesson.id);
