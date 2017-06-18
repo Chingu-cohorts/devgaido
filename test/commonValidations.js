@@ -51,6 +51,22 @@ const validateIdComposition = jsonData => Object.keys(jsonData).reduce((invalidI
 }, []);
 
 /**
+ * Verify that the key of JSON element matches the value of the 'id'
+ * attribute inside the element block.
+ *
+ * @param {Object} jsonData - JSON object containing the data elements. This
+ * must be formatted as {"<id>": {...id: "<id>"...}...}.
+ * @returns {String[]} invalidIds - Array of invalid id's. Those that don't
+ * match the key of the element block.
+ */
+const validateIdMatch = jsonData => Object.keys(jsonData).reduce((invalidIds, itemId) => {
+  if (itemId !== jsonData[itemId].id) {
+    invalidIds.push(itemId);
+  }
+  return invalidIds;
+}, []);
+
+/**
  * Validate the length of a path, course, lesson identifier
  *
  * @param {Object} jsonData - JSON object containing the data elements. This
@@ -96,4 +112,4 @@ const validateRelationship = (childAttrNm, childJSON, parentAttrNm, parentJSON) 
     }, []);
 
 export { logInvalidIds, logInvalidRelations,
-  validateIdComposition, validateIdLength, validateRelationship };
+  validateIdComposition, validateIdLength, validateIdMatch, validateRelationship };

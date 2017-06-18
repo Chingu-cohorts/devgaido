@@ -1,7 +1,8 @@
 /* eslint-disable func-names no-console */
 require('./registerBabel');
 
-import { logInvalidIds, logInvalidRelations, validateIdComposition, validateIdLength, validateRelationship } from './commonValidations';
+import { logInvalidIds, logInvalidRelations,
+  validateIdComposition, validateIdLength, validateIdMatch, validateRelationship } from './commonValidations';
 import corePaths from '../src/server/models/corepaths.json';
 import coreCourses from '../src/server/models/corecourses.json';
 
@@ -28,6 +29,16 @@ describe('Validate corepaths.json', () => {
     });
     it('should verify that path ids contain only lowercase letters and digits', () => {
       invalidPathIds = validateIdComposition(corePaths);
+      assert.equal(invalidPathIds.length, 0);
+    });
+  });
+  describe('Validate block key matches internal "id" value', () => {
+    let invalidPathIds = [];
+    afterEach(() => {
+      invalidPathIds = logInvalidIds(invalidPathIds, 'Path id does not match "id" value');
+    });
+    it('should verify that block key and "id" value match', () => {
+      invalidPathIds = validateIdMatch(corePaths);
       assert.equal(invalidPathIds.length, 0);
     });
   });

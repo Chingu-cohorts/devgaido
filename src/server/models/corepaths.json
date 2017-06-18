@@ -67,7 +67,7 @@
     ]
   },
   "E2345678901234567" : {
-    "id": "E2345678901234567",
+    "id": "E23456789012345678",
     "name": "Error test",
     "description": "Path id exceeds 16 characters",
     "courseIds": [
