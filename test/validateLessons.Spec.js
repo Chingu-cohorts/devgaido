@@ -5,6 +5,7 @@ import { logInvalidIds, logInvalidRelations,
   validateIdComposition, validateIdLength, validateIdMatch } from './commonValidations';
 import coreLessons from '../src/server/models/corelessons.json';
 import coreSubjects from '../src/server/models/coresubjects.json';
+import coreCourses from '../src/server/models/corecourses.json';
 
 const assert = require('assert');
 
@@ -54,6 +55,28 @@ describe('Validate corelessons.json', () => {
         }
       });
       assert.equal(invalidIds.length, 0);
+    });
+  });
+  describe('Identify orphaned lessons', () => {
+    let orphanedLessonIds = [];
+    const allCourseLessons = Object.values(coreCourses).reduce((lessonReferences, course) => {
+      course.lessonIds.forEach((lessonId) => {
+        if (lessonReferences.indexOf(lessonId) === -1) {
+          lessonReferences.push(lessonId);
+        }
+      });
+      return lessonReferences;
+    }, []);
+    afterEach(() => {
+      orphanedLessonIds = logInvalidIds(orphanedLessonIds, 'Lesson id not referenced in any course');
+    });
+    it('should verify that each lesson id is referenced in at least one course', () => {
+      Object.values(coreLessons).forEach((currentLesson) => {
+        if (allCourseLessons.indexOf(currentLesson.id) === -1) {
+          orphanedLessonIds.push(currentLesson.id);
+        }
+      });
+      assert.equal(orphanedLessonIds.length, 0);
     });
   });
 });
