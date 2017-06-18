@@ -9,7 +9,7 @@ import coreSubjects from '../src/server/models/coresubjects.json';
 const assert = require('assert');
 
 /**
- * Check the validity of the corecourses.json file
+ * Check the validity of the corelessons.json file
  */
 describe('Validate corelessons.json', () => {
   describe('Validate lesson id length', () => {
