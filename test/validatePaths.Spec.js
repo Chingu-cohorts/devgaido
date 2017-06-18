@@ -1,7 +1,7 @@
 /* eslint-disable func-names no-console */
 require('./registerBabel');
 
-import { logInvalidIds, validateIdComposition, validateIdLength, validateRelationship } from './commonValidations';
+import { logInvalidIds, logInvalidRelations, validateIdComposition, validateIdLength, validateRelationship } from './commonValidations';
 import corePaths from '../src/server/models/corepaths.json';
 import coreCourses from '../src/server/models/corecourses.json';
 
@@ -34,10 +34,7 @@ describe('Validate corepaths.json', () => {
   describe('Validate course ids in the path exists', () => {
     let invalidIds = [];
     afterEach(() => {
-      invalidIds.forEach((id) => {
-        console.log(`${' '.repeat(9)}Path id ${id[0]} contains unknown course id ${id[1]}`);
-      });
-      invalidIds = [];
+      invalidIds = logInvalidRelations('Path', 'Course', invalidIds);
     });
     it('should verify that course ids exist', () => {
       invalidIds = validateRelationship('courseIds', corePaths, 'courseId', coreCourses);
