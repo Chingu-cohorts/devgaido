@@ -4,47 +4,92 @@
  MESSY JIM/KIM STUFF
 
 --------------------------------*/
+@lost flexbox flex;
 
-i.path-icon::before
-        content "\f02d"
 a
     text-decoration: none
     
-.learning-path-item
-    cursor pointer
-//.learning-path-item.opened
-//    background red
+.breadcrumb
+    padding 10px
 
-// @lost flexbox flex;
+.section-card
+    background: colorPrimaryLight;
+    border-radius 6px
+    box-shadow: 5px 5px 10px rgba(30, 33, 94, 0.15)
+    padding: 1rem 1rem 1rem 1rem
+    margin-bottom: 40px
+    position: relative
+    h1
+        color white
+        font-size: 135%
 
-// .lostGridColumn
-//     lost-column: 1/3 3;
-//     margin-bottom 10px
+    &.current-path
+        padding-bottom: 90px
 
-// .lostContainer
-//     margin-top: 7rem
-//     lost-center: widthMax;
-//     display: flex
+.section-card-header
+    background: darken(colorTertiary, 20)
+    padding: 2rem 2rem 2rem 2rem
+    border-radius: 6px 6px 0 0
+    width: 100%
+    height: 120px
+    position: absolute
+    left: 0
+    top: 0
 
-// .lostContainerHeader
-//     lost-center: widthMax;
-//     display: flex
-//     align-items: center
-//     position: relative
+.section-card-caption
+    font-size: 0.8rem
+    font-weight: bold
+    color: rgba(255,255,255,0.8)
 
-// .constrained
-//     lost-center: widthMax;
-//     display: flex
-//     position: relative
-//     flex-direction: column
+.section-card-button
+    border none
+    min-width: 0
+    position: absolute    
+    top 24px
+    right 20px
+    background: none
+    box-shadow: none
+    border 2px solid white
+    width 120px
 
-// .putRight
-//     flex 1
+.section-card-content
+    margin-top 7em
 
-// .lostFullWidth
-//     lost-column: 1;
+.current-path-view-button
+    border none
+    min-width: 0
+    position: absolute    
+    top 24px
+    right 20px
+    background: none
+    box-shadow: none
+    border 2px solid white
+    width 120px
 
+.current-path-continue-button
+    position: absolute
+    background: colorSecondary
+    i
+        background-color: darken(colorSecondary, 20)
+    width 150px
+    bottom 1em
+    left 50%
+    transform: translateX(-50%)
 
+.course-card.connected
+    &:after
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -60px;
+        left: 50%;
+        margin-left: -5px;
+        width: 10px;
+        height: 83px;
+        background: colorSecondaryLight
+        border-radius: 5px;
+    &:last-child:after
+        height 0px
 
 .linkActive
     li
@@ -57,38 +102,12 @@ a
             color white !important         
 .side-panel li:hover
         background colorSecondaryLight
-        
-// .marginTop
-//     margin-top 7em
-
-.displayFlex
-    display flex
-
-/* ------------ */
-// .colQuarter
-//     lost-column: 1/4 4
-
-// .colFull
-//     width 100%
-//     margin-bottom: 20px
-
-// .tabButton
-//     outline: 0 !important
-//     background: #eff9fb
-//     color colorPrimary
-//     border-radius: 20px
-//     margin 0 10px
-//     padding 10px
-//     border none
-//     height: 35px
-//     line-height: 5px
-//     box-shadow: none
 
 .tabButton
-    background: colorPrimaryDark
+    background: colorPrimaryLight
     border-radius:6px 6px 0 0;
     outline: 0 !important
-    color: colorTextInverse
+    color: colorPrimaryDark// colorTextInverse
     margin-right:5px
     padding 15px
     border none
@@ -99,8 +118,8 @@ a
     margin-right:0;
 }
 .activeTabCaption
-    background colorPrimaryLight
-    color: colorPrimary;
+    background darkslateblue
+    color: colorTextInverse;
 
 .dashboard-path-list,
 .lesson-list {
@@ -108,7 +127,7 @@ a
     border-radius: 0 0 6px 6px;
     display: flex;
     flex-wrap: wrap;
-    // justify-content: space-between;
+    //justify-content: space-between;
     margin-bottom:20px;
     padding: spaceMedium;
 }

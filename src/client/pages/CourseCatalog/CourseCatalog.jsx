@@ -6,19 +6,21 @@ const handleRegisterClick = () => {
   // console.log('CLICKED ON REGISTER');
 };
 
-const CourseCatalog = props => (
+const CourseCatalog = ({ curriculum }) => (
   <div>
     <div className="side-panel side-panel-catalog is-visible">
       <h1>Course Catalog</h1>
       <div className="panel-menu">
         <h2>Select topic</h2>
         <div className="catalog">
-          {props.curriculum.subjects.map(subject =>
-            <label htmlFor={subject.Name} key={subject.Name}>
-              <input type="checkbox" name={subject.Name} value={subject.Name} />
-              <div className="checkmark" />{subject.Name}
-            </label>,
-        )}
+          {Object.keys(curriculum.subjects).map(
+              subjectId => curriculum.subjects[subjectId],
+            ).map(subject =>
+              <label htmlFor={subject.Name} key={subject.Name}>
+                <input type="checkbox" name={subject.Name} value={subject.Name} />
+                <div className="checkmark" />{subject.Name}
+              </label>,
+          )}
         </div>
         <h2>Select skill level</h2>
         <div className="catalog">
@@ -33,7 +35,7 @@ const CourseCatalog = props => (
     </div>
 
     <div className="content container-wide">
-      {<LearningPath lessons={props.curriculum.lessons} />}
+      {<LearningPath lessons={curriculum.lessons} />}
     </div>
   </div>
 );

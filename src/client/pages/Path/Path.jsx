@@ -4,42 +4,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
-/* import Card from '../shared/Card';
 
-const lessonTypeIcons = {
-  Reading: 'fa fa-book',
-  Project: 'fa fa-tasks',
-  'Supplemental Course': '',
-};
-
-const lessonTypeColors = {
-  Reading: '#ffea7e',
-  Project: 'deepskyblue',
-  'Supplemental Course': '',
-};
-
-const getAllCourseLessons = (course, curriculum) => {
-  const lessons = [];
-  course.lessonIds.forEach((lessonId) => {
-    lessons.push(curriculum.lessons[lessonId]);
-  });
-  return lessons;
-};
-
-const LessonCard = ({ name, description, id, type }) => (
-  <Card
-    caption={name}
-    subcaption="LESSON"
-    text={description}
-    to={`/lessons/${id}`}
-    content={null}
-    icons={[lessonTypeIcons[type], 'fa fa-graduation-cap']}
-    color={lessonTypeColors[type]}
-  />
-);
-*/
 const CourseCard = ({ curriculum, pathId, courseId }) => (
-  <Link className="course-card" to={`/paths/${pathId}/${courseId}`}>
+  <Link className="course-card connected" to={`/paths/${pathId}/${courseId}`}>
     <div className="course-card-header">
       <span className="course-card-caption">COURSE</span>
       <h1>{curriculum.courses[courseId].name}</h1>

@@ -26,54 +26,47 @@ const CourseCardMini = ({ name, description, id }) => (
 );
 
 const CurrentPathCard = ({ name, description, id }) => (
-  <div className="courseCard currentPath">
-    <div className="courseCardHeader" style={{ background: 'darkslateblue' }}>
-      <span className="courseCardCaption">CURRENT PATH</span>
-      <h1>{name}</h1>
-      <button className="currentPathViewButton">VIEW PATH</button>
+  <div className="section-card current-path">
+    <div className="section-card-header" style={{ background: 'darkslateblue' }}>
+      <span className="section-card-caption">CURRENT PATH</span>
+      <h1 className="section-card-title">{name}</h1>
+      <button className="current-path-view-button">VIEW PATH</button>
     </div>
-    <p className="courseDescription">{description}</p>
-    <div className="lessonList">
-      <CourseCardMini
-        name="Sample Course Name"
-        description="This is where the course description would be"
-        id="sampleid"
-      />
-      <CourseCardMini
-        name="Sample Course Name"
-        description="This is where the course description would be"
-        id="sampleid"
-      />
-      <CourseCardMini
-        name="Sample Course Name"
-        description="This is where the course description would be"
-        id="sampleid"
-      />
-      <CourseCardMini
-        name="Sample Course Name"
-        description="This is where the course description would be"
-        id="sampleid"
-      />
-      {/* getAllCourseLessons(curriculum.courses[id], curriculum).map(lesson => (
-        <LessonCard
-          name={lesson.name}
-          description={lesson.description}
-          id={lesson.id}
-          type={lesson.type}
-          key={lesson.id}
+    <div className="section-card-content">
+      <p className="course-description">{description}</p>
+      <div className="lesson-list">
+        <CourseCardMini
+          name="Sample Course Name"
+          description="This is where the course description would be"
+          id="sampleid"
         />
-      ))*/}
-      <button className="inline button-continue currentPathContinueButton"><i />&nbsp;&nbsp; CONTINUE</button>
+        <CourseCardMini
+          name="Sample Course Name"
+          description="This is where the course description would be"
+          id="sampleid"
+        />
+        <CourseCardMini
+          name="Sample Course Name"
+          description="This is where the course description would be"
+          id="sampleid"
+        />
+        <CourseCardMini
+          name="Sample Course Name"
+          description="This is where the course description would be"
+          id="sampleid"
+        />
+        <button className="inline button-continue current-path-continue-button"><i />&nbsp;&nbsp; CONTINUE</button>
+      </div>
     </div>
   </div>
 );
 
 const SectionCard = ({ title, subtitle, color, children }) => (
-  <div className="courseCard currentPath">
-    <div className="courseCardHeader" style={{ background: color ? color : 'darkslateblue' }}>
-      <span className="courseCardCaption">{subtitle}</span>
-      <h1>{title}</h1>
-      <button className="currentPathViewButton">VIEW ALL</button>
+  <div className="section-card">
+    <div className="section-card-header" style={{ background: color ? color : 'darkslateblue' }}>
+      <span className="section-card-caption">{subtitle}</span>
+      <h1 className="section-card-title">{title}</h1>
+      <button className="section-card-button">VIEW ALL</button>
     </div>
     <div className="section-card-content">
       {children}
@@ -102,7 +95,8 @@ const PathList = ({ paths }) => (
 );
 
 const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
-  <div className="constrained marginTop">
+  <div className="container">
+  <div className="container-dashboard">
     {/*<div className="container">
     <div className="container-dashboard">*/}
     <Metrics
@@ -162,6 +156,7 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
       dispatch={dispatch}
       uiState={uiState}
     />
+  </div>
   </div>
 );
 

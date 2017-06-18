@@ -39,17 +39,15 @@ const LessonCard = ({ name, description, to, type }) => (
 const Course = ({ match, curriculum }) => {
   const course = curriculum.courses[match.params.id];
   return (
-    <div className="lostContainer">
+    <div className="container">
       <BreadCrumbs curriculum={curriculum} pathId={match.params.pid} courseId={match.params.id} />
-      <div className="card card--image colFull">
-        <div className="cardHeader cardHeader--image" />
-        <div className="cardHeader cardHeader--image--color2">
-          <h1 className="cardHeader--pathName">{course.name}</h1>
+      <div className="grid-full path path-image">
+        <div className="path-header path-header-image" />
+        <div className="path-header path-header-image-color">
+          <h1 className="path-header-path-name">{course.name}</h1>
         </div>
-        <span className="cardSmallCaption">COURSE</span>
-        <span className="cardBigCaption">{course.name}</span>
-        <p className="cardText">{course.description}</p>
-        <div className="lessonList">
+        <p className="card-text">{course.description}</p>
+        <div className="lesson-list">
           {getAllCourseLessons(curriculum.courses[match.params.id], curriculum).map(lesson => (
             <LessonCard
               name={lesson.name}
