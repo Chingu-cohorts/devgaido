@@ -6,29 +6,41 @@ import Card from '../shared/Card';
 import TabbedContent from './TabbedContent';
 
 // TODO: Add custom date formatting to make client and server side string match up
-const Metrics = ({ name, nCompletedPaths, nCompletedCourses, nCompletedLessons, streak, lastVisited }) => (
+const Metrics = ({ user, curriculum }) => (
   <div className="grid-full metrics">
-    <h1>Welcome back, {name}!</h1>
-    <h1>Completed Paths: {nCompletedPaths}</h1>
-    <h1>Completed Courses: {nCompletedCourses}</h1>
-    <h1>Completed Lessons: {nCompletedLessons}</h1>
-    <h1>streak: {streak}</h1>
-    <h1>lastVisited: {new Date(lastVisited).toLocaleString()}</h1>
+    <h1>Welcome back, {user.name}!</h1>
+    <h1>Completed Paths: {
+      Object.keys(curriculum.paths).filter(
+          pathId => curriculum.paths[pathId].completed,
+      ).length}
+    </h1>
+    <h1>Completed Courses: {
+      Object.keys(curriculum.courses).filter(
+          courseId => curriculum.courses[courseId].completed,
+      ).length}
+    </h1>
+    <h1>Completed Lessons: {
+      Object.keys(curriculum.lessons).filter(
+          lessonId => curriculum.lessons[lessonId].completed,
+      ).length}
+    </h1>
+    <h1>streak: {user.streak}</h1>
+    <h1>lastVisited: {new Date(user.dayLastVisited).toLocaleString()}</h1>
   </div>
 );
 
-const CourseCardMini = ({ name, description, id }) => (
+const CourseCardMini = ({ course }) => (
   <div className="grid-quarter card" >
     <div className="card-header" style={{ background: '#007399' }}>
       <i className="card-icon fa fa-line-chart" />
     </div>
     <span className="card-caption-small">COURSE</span>
-    <span className="card-caption-big">{name}</span>
-    <p className="card-text">{description}</p>
+    <span className="card-caption-big">{course.name}</span>
+    <p className="card-text">{course.description}</p>
   </div>
 );
 
-const CurrentPathCard = ({ curPath }) => (
+const CurrentPathCard = ({ curPath, curriculum }) => (
   <div className="section-card current-path">
     <div className="section-card-header" style={{ background: 'darkslateblue' }}>
       <span className="section-card-caption">CURRENT PATH</span>
@@ -38,26 +50,9 @@ const CurrentPathCard = ({ curPath }) => (
     <div className="section-card-content">
       <p className="course-description">{curPath.description}</p>
       <div className="lesson-list">
-        <CourseCardMini
-          name="Sample Course Name"
-          description="This is where the course description would be"
-          id="sampleid"
-        />
-        <CourseCardMini
-          name="Sample Course Name"
-          description="This is where the course description would be"
-          id="sampleid"
-        />
-        <CourseCardMini
-          name="Sample Course Name"
-          description="This is where the course description would be"
-          id="sampleid"
-        />
-        <CourseCardMini
-          name="Sample Course Name"
-          description="This is where the course description would be"
-          id="sampleid"
-        />
+        {curPath.courseIds.map(courseId => (
+          <CourseCardMini course={curriculum.courses[courseId]} key={courseId} />
+        ))}
         <button className="inline button-continue current-path-continue-button"><i />&nbsp;&nbsp; CONTINUE</button>
       </div>
     </div>
@@ -66,7 +61,7 @@ const CurrentPathCard = ({ curPath }) => (
 
 const SectionCard = ({ title, subtitle, color, children }) => (
   <div className="section-card">
-    <div className="section-card-header" style={{ background: color ? color : 'darkslateblue' }}>
+    <div className="section-card-header" style={{ background: color || 'darkslateblue' }}>
       <span className="section-card-caption">{subtitle}</span>
       <h1 className="section-card-title">{title}</h1>
       <button className="section-card-button">VIEW ALL</button>
@@ -77,15 +72,15 @@ const SectionCard = ({ title, subtitle, color, children }) => (
   </div>
 );
 
-const PathCard = ({ name, description, id, nTotalCourses, nCompletedCourses }) => (
+const PathCard = ({ path, pathId }) => (
   <Card
-    caption={name}
+    caption={path.name}
     subcaption="Path"
-    text={description}
-    to={`/paths/${id}`}
+    text={path.description}
+    linkTo={`/paths/${pathId}`}
     icons={['fa fa-road']}
     color={'#007399'}
-    content={<h1 className="completion-text">{nCompletedCourses}/{nTotalCourses}</h1>}
+    content={<h1 className="completion-text">{path.nCompleted}/{path.nTotal}</h1>}
     nCompleted={0}
     nTotal={8}
   />
@@ -99,7 +94,7 @@ const isInProgress = (user, curriculum, pathId) => {
     const course = curriculum.courses[courseId];
     if (course) {
       course.lessonIds.forEach((lessonId) => {
-        if (user.completionStatus.completedLessons.indexOf(lessonId) !== -1) {
+        if (curriculum.lessons[lessonId].completed) {
           inProgress = true;
         }
       });
@@ -108,47 +103,34 @@ const isInProgress = (user, curriculum, pathId) => {
   return inProgress;
 };
 
-const getCoursesCompletedNumber = (user, path) => {
-  let nCompleted = 0;
-  path.courseIds.forEach((courseId) => {
-    if (user.completionStatus.completedCourses.indexOf(courseId) !== -1) {
-      nCompleted += 1;
-    }
-  });
-  return nCompleted;
-};
-
-const PathList = ({ user, paths }) => (
+const PathList = ({ pathIds, curriculum }) => (
   <div className="dashboard-path-list">
-    {paths.map(p => (
-      <PathCard name={p.name} description={p.description} id={p.id} key={p.id} nTotalCourses={p.courseIds.length} nCompletedCourses={getCoursesCompletedNumber(user, p)}/>
-    ))}
+    {pathIds.map((pathId) => {
+      const path = curriculum.paths[pathId];
+      return (
+        <PathCard path={path} pathId={pathId} key={pathId} />
+      );
+    })}
   </div>
 );
 
 const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
   <div className="container">
     <div className="container-dashboard">
-      <Metrics
-        name={user.name}
-        lastVisited={user.dayLastVisited}
-        streak={user.streak}
-        nCompletedPaths={user.completionStatus.completedPaths.length}
-        nCompletedCourses={user.completionStatus.completedCourses.length}
-        nCompletedLessons={user.completionStatus.completedLessons.length}
-      />
+      <Metrics user={user} curriculum={curriculum} />
       <TabbedContent
         content={[{
           caption: 'In Progress',
           content: (
             <div>
-              <CurrentPathCard curPath={curriculum.paths[user.curPathId]} />
+              <CurrentPathCard curPath={curriculum.paths[user.curPathId]} curriculum={curriculum} />
               <SectionCard title="In Progress" subtitle="PATHS">
                 <PathList
-                  user={user}
-                  paths={Object.keys(curriculum.paths).filter(pathId => isInProgress(user, curriculum, pathId)).map(
-                    pathId => curriculum.paths[pathId],
+                  pathIds={Object.keys(curriculum.paths).filter(
+                    pathId => !curriculum.paths[pathId].completed
+                              && isInProgress(user, curriculum, pathId),
                   )}
+                  curriculum={curriculum}
                 />
               </SectionCard>
             </div>),
@@ -157,10 +139,10 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
           content: (
             <SectionCard title="Bookmarked" subtitle="PATHS">
               <PathList
-                user={user}
-                paths={Object.keys(curriculum.paths).filter(pathId => user.bookmarkedPaths.indexOf(pathId) !== -1).map(
-                  pathId => curriculum.paths[pathId],
+                pathIds={Object.keys(curriculum.paths).filter(
+                  pathId => user.bookmarkedPaths.indexOf(pathId) !== -1,
                 )}
+                curriculum={curriculum}
               />
             </SectionCard>),
         }, {
@@ -168,10 +150,10 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
           content: (
             <SectionCard title="Completed" subtitle="PATHS">
               <PathList
-                user={user}
-                paths={Object.keys(curriculum.paths).filter(pathId => user.completionStatus.completedPaths.indexOf(pathId) !== -1).map(
-                  pathId => curriculum.paths[pathId],
+                pathIds={Object.keys(curriculum.paths).filter(
+                  pathId => curriculum.paths[pathId].completed,
                 )}
+                curriculum={curriculum}
               />
             </SectionCard>),
         }, {
@@ -179,10 +161,8 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
           content: (
             <SectionCard title="All" subtitle="PATHS">
               <PathList
-                user={user}
-                paths={Object.keys(curriculum.paths).map(
-                  pathId => curriculum.paths[pathId],
-                )}
+                pathIds={Object.keys(curriculum.paths)}
+                curriculum={curriculum}
               />
             </SectionCard>),
         }]}
@@ -193,20 +173,40 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
   </div>
 );
 
+SectionCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  color: PropTypes.string,
+  children: PropTypes.objectOf(PropTypes.shape),
+};
+
+SectionCard.defaultProps = {
+  color: null,
+  children: null,
+};
+
+CourseCardMini.propTypes = {
+  course: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
 Metrics.propTypes = {
-  name: PropTypes.string.isRequired,
-  streak: PropTypes.number.isRequired,
-  lastVisited: PropTypes.number.isRequired,
+  user: PropTypes.objectOf(PropTypes.shape).isRequired,
+  curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
+CurrentPathCard.propTypes = {
+  curPath: PropTypes.objectOf(PropTypes.shape).isRequired,
+  curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 PathCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  pathId: PropTypes.string.isRequired,
+  path: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 PathList.propTypes = {
-  paths: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  pathIds: PropTypes.arrayOf(PropTypes.string).isRequired,
+  curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 Dashboard.propTypes = {

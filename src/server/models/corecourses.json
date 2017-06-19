@@ -1,6 +1,5 @@
 {
   "git": {
-    "id": "git",
     "name": "Understanding & Working with Git",
     "description": "Learn what Git is and how developers use it to manage source code in a highly distributed manner.",
     "lessonIds": [
@@ -10,7 +9,6 @@
     "version": "1.0.0"
   },
   "github": {
-    "id": "github",
     "name": "Understanding & Working with GitHub",
     "description": "Learn the value of GitHub and how it is used not only to manage your team's source code, but also how it can help improve project management.",
     "lessonIds": [
@@ -21,7 +19,6 @@
     "version": "1.0.0"
   },
   "advancedgit": {
-    "id": "advancedgit",
     "name": "Advanced Git",
     "description": "Learn the workflows and techniques senior webdevs use to be more productive with Git and to solve everyday source code management problems.",
     "lessonIds": [
@@ -30,7 +27,6 @@
     "version": "1.0.0"
   },
   "buildwebpages": {
-    "id": "buildwebpages",
     "name": "Building Webpages",
     "description": "Learn how to build simple webpages using HTML and CSS",
     "lessonIds": [
@@ -40,7 +36,6 @@
     "version": "1.0.0"
   },
   "beginnerjs": {
-    "id": "beginnerjs",
     "name": "Beginning Javascript",
     "description": "Learn the basics of the Javascript language",
     "lessonIds": [
@@ -50,7 +45,6 @@
     "version": "1.0.0"
   },
   "intermediatejs": {
-    "id": "intermediatejs",
     "name": "Intermediate Javascript",
     "description": "Gain insight into how Javascript handles datatypes and objects",
     "lessonIds": [
@@ -60,7 +54,6 @@
     "version": "1.0.0"
   },
   "advancedjs": {
-    "id": "advancedjs",
     "name": "Advanced Javascript",
     "description": "Acquire and indepth understanding of asynchronous operations and modern ES6 Javascript",
     "lessonIds": [
@@ -70,7 +63,6 @@
     "version": "1.0.0"
   },
   "p1xtprereqs": {
-    "id": "p1xtprereqs",
     "name": "P1XT Guide: Prerequisites",
     "description": "Prerequisite knowledge you will need before starting the courses that make up the four tiers of the P1XT Guide",
     "lessonIds": [
@@ -84,7 +76,6 @@
     "version": "1.0.0"
   },
   "p1xttier1": {
-    "id": "p1xttier1",
     "name": "P1XT Guide: Tier 1 - Getting Started",
     "description": "Prerequisite knowledge you will need before starting the courses that make up the four tiers of the P1XT Guide",
     "lessonIds": [
@@ -110,7 +101,6 @@
     "version": "1.0.0"
   },
   "p1xttier2": {
-    "id": "p1xttier2",
     "name": "P1XT Guide: Tier 2 - Develop More Expertise",
     "description": "Establish a solid foundational understanding of Javascript, HTML, and CSS",
     "lessonIds": [
@@ -143,7 +133,6 @@
     "version": "1.0.0"
   },
   "p1xttier3": {
-    "id": "p1xttier3",
     "name": "P1XT Guide: Tier 3 - Add More Rigor",
     "description": "Increase your knowledge by learning functional programming and webdev technologies and techniques.",
     "lessonIds": [
@@ -177,7 +166,6 @@
     "version": "1.0.0"
   },
   "p1xttier4": {
-    "id": "p1xttier4",
     "name": "P1XT Guide: Tier 4 - Polish the Rough Edges",
     "description": "Round out your knowledge by increasing your knowledge of advanced subjects like Artificial Intelligence, and put your knowledge to the test by completing advanced projects.",
     "lessonIds": [
@@ -206,7 +194,6 @@
     "version": "1.0.0"
   },
   "htmlbasics": {
-    "id": "htmlbasics",
     "name": "HTML Basics",
     "description": "Learn the basics of HTML - the standard used to define webpages",
     "lessonIds": [
@@ -217,7 +204,6 @@
     "version": "1.0.0"
   },
   "cssbasics": {
-    "id": "cssbasics",
     "name": "CSS Basics",
     "description": "Learn the basics of CSS - the standard used to style webpages",
     "lessonIds": [
@@ -228,7 +214,6 @@
     "version": "1.0.0"
   },
   "marryhtmlcss": {
-    "id": "marryhtmlcss",
     "name": "Marrying HTML & CSS",
     "description": "Learn how to combine HTML and CSS to create a professional webpage",
     "lessonIds": [
@@ -238,7 +223,6 @@
     "version": "1.0.0"
   },
   "intermediatehtml": {
-    "id": "intermediatehtml",
     "name": "Intermediate HTML",
     "description": "Improve your HTML knowledge with additional HTML programming techniques",
     "lessonIds": [
@@ -247,7 +231,6 @@
     "version": "1.0.0"
   },
   "intermediatecss": {
-    "id": "intermediatecss",
     "name": "Intermediate CSS",
     "description": "Improve your CSS knowledge with additional CSS programming techniques",
     "lessonIds": [
@@ -256,7 +239,6 @@
     "version": "1.0.0"
   },
   "advancedhtmlcss": {
-    "id": "advancedhtmlcss",
     "name": "Advanced HTML & CSS",
     "description": "Polish your HTML and CSS knowledge and skills with advanced techniques",
     "lessonIds": [
@@ -267,7 +249,6 @@
     "version": "1.0.0"
   },
   "introbootstrap": {
-    "id": "introbootstrap",
     "name": "Introduction to Bootstrap",
     "description": "Learn how to use the Bootstrap Library for styling",
     "lessonIds": [
@@ -278,7 +259,6 @@
     "version": "1.0.0"
   },
   "introfoundation": {
-    "id": "introfoundation",
     "name": "Introduction to Foundation",
     "description": "Learn how to use the Foundation Library for styling",
     "lessonIds": [
@@ -287,7 +267,6 @@
     "version": "1.0.0"
   },
   "introsass": {
-    "id": "introsass",
     "name": "Introduction to Sass",
     "description": "Learn how to use the Sass Library for styling",
     "lessonIds": [
@@ -296,7 +275,6 @@
     "version": "1.0.0"
   },
   "introless": {
-    "id": "introless",
     "name": "Introduction to Less",
     "description": "Learn how to use the Less Library for styling",
     "lessonIds": [
@@ -305,7 +283,6 @@
     "version": "1.0.0"
   },
   "introstylus": {
-    "id": "introstylus",
     "name": "Introduction to Stylus",
     "description": "Learn how to use the Stylus Library for styling",
     "lessonIds": [
@@ -314,7 +291,6 @@
     "version": "1.0.0"
   },
   "howwebworks": {
-    "id": "howwebworks",
     "name": "Learn How the Web Works",
     "description": "Learn How the Internet and World Wide Web Work",
     "lessonIds": [
@@ -324,7 +300,6 @@
     "version": "1.0.0"
   },
   "getstartedweb": {
-    "id": "getstartedweb",
     "name": "Getting Started with the Web",
     "description": "Learn how to set up a web project folder and file system for you projects",
     "lessonIds": [
@@ -334,7 +309,6 @@
     "version": "1.0.0"
   },
   "E2345678901234567": {
-    "id": "getstartedweb",
     "name": "Error test",
     "description": "Course id exceeds 16 characters and contains uppercase letter",
     "lessonIds": [

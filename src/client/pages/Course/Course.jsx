@@ -16,37 +16,19 @@ const lessonTypeColors = {
   'Supplemental Course': '',
 };
 
-const getLessonsCompletedNumber = (user, course) => {
-  let nCompleted = 0;
-  course.lessonIds.forEach((lessonId) => {
-    if (user.completionStatus.completedLessons.indexOf(lessonId) !== -1) {
-      nCompleted += 1;
-    }
-  });
-  return nCompleted;
-};
-
-const getAllCourseLessons = (course, curriculum) => {
-  const lessons = [];
-  course.lessonIds.forEach((lessonId) => {
-    lessons.push(curriculum.lessons[lessonId]);
-  });
-  return lessons;
-};
-
-const LessonCard = ({ name, description, to, type }) => (
+const LessonCard = ({ name, description, linkTo, type }) => (
   <Card
     caption={name}
     subcaption="LESSON"
     text={description}
-    to={to}
+    linkTo={linkTo}
     content={null}
     icons={[lessonTypeIcons[type], 'fa fa-graduation-cap']}
     color={lessonTypeColors[type]}
   />
 );
 
-const Course = ({ match, user, curriculum }) => {
+const Course = ({ match, curriculum }) => {
   const course = curriculum.courses[match.params.id];
   return (
     <div className="container">
@@ -55,20 +37,22 @@ const Course = ({ match, user, curriculum }) => {
         <div className="path-header path-header-image" />
         <div className="path-header path-header-image-color">
           <h1 className="path-header-path-name">{course.name}</h1>
-          <h1 className="completion-text-big">{getLessonsCompletedNumber(user, course)}/{course.lessonIds.length}</h1>
+          <h1 className="completion-text-big">{course.nCompleted}/{course.nTotal}</h1>
         </div>
         <p className="card-text">{course.description}</p>
         <div className="lesson-list">
-          {getAllCourseLessons(curriculum.courses[match.params.id], curriculum).map(lesson => (
-            <LessonCard
-              name={lesson.name}
-              description={lesson.description}
-              id={lesson.id}
-              type={lesson.type}
-              key={lesson.id}
-              to={`/paths/${match.params.pid}/${match.params.id}/${lesson.id}`}
-            />
-          ))}
+          { course.lessonIds.map((lessonId) => {
+            const lesson = curriculum.lessons[lessonId];
+            return (
+              <LessonCard
+                name={lesson.name}
+                description={lesson.description}
+                type={lesson.type}
+                key={lessonId}
+                linkTo={`/paths/${match.params.pid}/${match.params.id}/${lessonId}`}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
@@ -78,7 +62,7 @@ const Course = ({ match, user, curriculum }) => {
 LessonCard.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  to: PropTypes.string.isRequired,
+  linkTo: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
 };
 

@@ -1,17 +1,14 @@
 /* eslint-disable import/prefer-default-export */
 
-export function completeLesson(lessonId, curriculum) {
+export function completeLesson(lessonId) {
   return {
     type: 'COMPLETE_LESSON',
     lessonId,
-    curriculum,
   };
 }
-
-export function unCompleteLesson(lessonId, curriculum) {
+export function unCompleteLesson(lessonId) {
   return {
     type: 'UNCOMPLETE_LESSON',
     lessonId,
-    curriculum,
   };
 }

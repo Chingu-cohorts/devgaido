@@ -1,6 +1,5 @@
 {
   "srcctrl" : {
-    "id": "srcctrl",
     "name": "Source Code Control Systems",
     "description": "Learn the tools and techniques needed to effectively and efficiently manage your projects source code.",
     "courseIds": [
@@ -11,7 +10,6 @@
     "version": "1.0.0"
   },
   "webpagedc" : {
-    "id": "webpagedc",
     "name": "Webpage Design & Construction",
     "description": "Learn the technologies necessary to build simple webpages.",
     "courseIds": [
@@ -20,7 +18,6 @@
     "version": "1.0.0"
   },
   "javascript" : {
-    "id": "javascript",
     "name": "Javascript",
     "description": "Learn Javascript so you can be the next Kim Kwanka",
     "courseIds": [
@@ -31,7 +28,6 @@
     "version": "1.0.0"
   },
   "p1xt" : {
-    "id": "p1xt",
     "name": "The P1XT Guide",
     "description": "Follow the P1XT Guide to master the Javascript Ecosystem",
     "courseIds": [
@@ -44,7 +40,6 @@
     "version": "1.0.0"
   },
   "buildawebsite" : {
-    "id": "buildawebsite",
     "name": "Build A Website",
     "description": "Learn how to build a website",
     "courseIds": [
@@ -63,7 +58,6 @@
     "version": "1.0.0"
   },
   "learnhowwebworks" : {
-    "id": "learnhowwebworks",
     "name": "Learn How the Web Works",
     "description": "Learn how the Internet and the World Wide Web work",
     "courseIds": [
@@ -73,7 +67,6 @@
     "version": "1.0.0"
   },
   "E2345678901234567" : {
-    "id": "E2345678901234567",
     "name": "Error test",
     "description": "Path id exceeds 16 characters",
     "courseIds": [
