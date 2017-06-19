@@ -7,7 +7,8 @@
       "git",
       "github",
       "advancedgit"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "webpagedc" : {
     "id": "webpagedc",
@@ -15,7 +16,8 @@
     "description": "Learn the technologies necessary to build simple webpages.",
     "courseIds": [
       "buildwebpages"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "javascript" : {
     "id": "javascript",
@@ -25,7 +27,8 @@
       "beginnerjs",
       "intermediatejs",
       "advancedjs"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "p1xt" : {
     "id": "p1xt",
@@ -37,7 +40,8 @@
       "p1xttier2",
       "p1xttier3",
       "p1xttier4"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "buildawebsite" : {
     "id": "buildawebsite",
@@ -55,7 +59,8 @@
       "introsass",
       "introless",
       "introstylus"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "learnhowwebworks" : {
     "id": "learnhowwebworks",
@@ -64,7 +69,8 @@
     "courseIds": [
       "howwebworks",
       "getstartedweb"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "E2345678901234567" : {
     "id": "E2345678901234567",
@@ -73,6 +79,7 @@
     "courseIds": [
       "error1",
       "error2"
-    ]
+    ],
+		"version": "1.0.0"
   }
 }

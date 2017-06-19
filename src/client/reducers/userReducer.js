@@ -70,6 +70,15 @@ const user = (state = {
   switch (action.type) {
     case 'INIT_COMPLETION_STATUS':
       return { ...state, completionStatus: getCompletionStatus(action.user, action.curriculum) };
+    case 'COMPLETE_LESSON': {
+      const newState = { ...state, lessonsCompleted: state.lessonsCompleted.indexOf(action.lessonId) === -1 ? state.lessonsCompleted.concat(action.lessonId) : state.lessonsCompleted };
+      return { ...newState, completionStatus: getCompletionStatus(newState, action.curriculum) };
+    }
+    case 'UNCOMPLETE_LESSON': {
+      const newState = { ...state };
+      newState.lessonsCompleted.splice(newState.lessonsCompleted.indexOf(action.lessonId), 1);
+      return { ...newState, completionStatus: getCompletionStatus(newState, action.curriculum) };
+    }
     default:
       return state;
   }

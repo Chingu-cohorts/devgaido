@@ -71,7 +71,7 @@ const routes = [
     path: '/paths/:pid/:cid/:id',
     exact: true,
     component: Lesson,
-    passdown: ['curriculum', 'user'],
+    passdown: ['curriculum', 'user', 'dispatch'],
   },
 ];
 

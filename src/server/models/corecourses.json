@@ -6,7 +6,8 @@
     "lessonIds": [
       "trygit",
       "gitsimpleguide"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "github": {
     "id": "github",
@@ -16,7 +17,8 @@
       "howtogitngithub",
       "githubhelloworld",
       "githubtraining"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "advancedgit": {
     "id": "advancedgit",
@@ -24,7 +26,8 @@
     "description": "Learn the workflows and techniques senior webdevs use to be more productive with Git and to solve everyday source code management problems.",
     "lessonIds": [
       "gitimmersion"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "buildwebpages": {
     "id": "buildwebpages",
@@ -33,7 +36,8 @@
     "lessonIds": [
       "learnhtmlcss",
       "onlineresume"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "beginnerjs": {
     "id": "beginnerjs",
@@ -42,7 +46,8 @@
     "lessonIds": [
       "ydkjsupngoing",
       "ydkjsscope"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "intermediatejs": {
     "id": "intermediatejs",
@@ -51,7 +56,8 @@
     "lessonIds": [
       "ydkjsthis",
       "ydkjstypes"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "advancedjs": {
     "id": "advancedjs",
@@ -60,7 +66,8 @@
     "lessonIds": [
       "ydkjsasync",
       "ydkjses6"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "p1xtprereqs": {
     "id": "p1xtprereqs",
@@ -73,7 +80,8 @@
       "githubhelloworld",
       "gitimmersion",
       "howtogitngithub"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "p1xttier1": {
     "id": "p1xttier1",
@@ -98,7 +106,8 @@
       "getsassy",
       "towersofhanoi",
       "createcsstemplate"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "p1xttier2": {
     "id": "p1xttier2",
@@ -130,7 +139,8 @@
       "mobileuxdesign", 
       "androiddev",
       "fccpomodoro"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "p1xttier3": {
     "id": "p1xttier3",
@@ -163,7 +173,8 @@
       "codejam15r2",
       "crypto2", 
       "clonetwitter"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "p1xttier4": {
     "id": "p1xttier4",
@@ -191,7 +202,8 @@
       "bootstrapfullstack",
       "codejam16",
       "materialdesign"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "htmlbasics": {
     "id": "htmlbasics",
@@ -201,7 +213,8 @@
       "introhtml",
       "beginnerhtml",
       "clonewebpage"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "cssbasics": {
     "id": "cssbasics",
@@ -211,7 +224,8 @@
       "introcss",
       "beginnercss",
       "clonetributepage"
-     ]
+     ],
+		"version": "1.0.0"
   },
   "marryhtmlcss": {
     "id": "marryhtmlcss",
@@ -220,7 +234,8 @@
     "lessonIds": [
       "learnhtmlcss",
       "cloneresume"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "intermediatehtml": {
     "id": "intermediatehtml",
@@ -228,7 +243,8 @@
     "description": "Improve your HTML knowledge with additional HTML programming techniques",
     "lessonIds": [
       "intermediatehtml"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "intermediatecss": {
     "id": "intermediatecss",
@@ -236,7 +252,8 @@
     "description": "Improve your CSS knowledge with additional CSS programming techniques",
     "lessonIds": [
       "intermediatecss"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "advancedhtmlcss": {
     "id": "advancedhtmlcss",
@@ -246,7 +263,8 @@
       "advancedhtml",
       "advancedcss",
       "buildportfolio"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "introbootstrap": {
     "id": "introbootstrap",
@@ -256,7 +274,8 @@
       "introbootstrap",
       "qwbootstrap",
       "bootstraptribute"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "introfoundation": {
     "id": "introfoundation",
@@ -264,7 +283,8 @@
     "description": "Learn how to use the Foundation Library for styling",
     "lessonIds": [
       "foundationcrashcourse"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "introsass": {
     "id": "introsass",
@@ -272,7 +292,8 @@
     "description": "Learn how to use the Sass Library for styling",
     "lessonIds": [
       "introsass"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "introless": {
     "id": "introless",
@@ -280,7 +301,8 @@
     "description": "Learn how to use the Less Library for styling",
     "lessonIds": [
       "introless"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "introstylus": {
     "id": "introstylus",
@@ -288,7 +310,8 @@
     "description": "Learn how to use the Stylus Library for styling",
     "lessonIds": [
       "introstylus"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "howwebworks": {
     "id": "howwebworks",
@@ -297,7 +320,8 @@
     "lessonIds": [
       "howinternetworks",
       "howwebworks"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "getstartedweb": {
     "id": "getstartedweb",
@@ -306,7 +330,8 @@
     "lessonIds": [
       "getstartedweb",
       "setupwwwfolder"
-    ]
+    ],
+		"version": "1.0.0"
   },
   "E2345678901234567": {
     "id": "getstartedweb",
@@ -315,6 +340,7 @@
     "lessonIds": [
       "error1",
       "error2"
-     ]
+     ],
+		"version": "1.0.0"
   }
 }

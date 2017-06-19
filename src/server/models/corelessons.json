@@ -6,8 +6,9 @@
     "description": "A short interactive introduction to Git",
     "type": "Supplemental Course",
     "subject": "Source Code Control",
-    "externalSource": "https://try.github.io"
-  },
+    "externalSource": "https://try.github.io",
+		"version": "1.0.0"
+	},
   "gitsimpleguide": {
     "source": "P1XT",
     "id": "gitsimpleguide",
@@ -15,8 +16,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Source Code Control",
-    "externalSource": "http://git.huit.harvard.edu/guide/"
-  },
+    "externalSource": "http://git.huit.harvard.edu/guide/",
+		"version": "1.0.0"
+	},
   "githubtraining": {
     "source": "P1XT",
     "id": "githubtraining",
@@ -24,8 +26,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Source Code Control",
-    "externalSource": "https://guides.github.com/"
-  },
+    "externalSource": "https://guides.github.com/",
+		"version": "1.0.0"
+	},
   "githubhelloworld": {
     "source": "P1XT",
     "id": "githubhelloworld",
@@ -33,8 +36,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Source Code Control",
-    "externalSource": "https://guides.github.com/activities/hello-world/"
-  },
+    "externalSource": "https://guides.github.com/activities/hello-world/",
+		"version": "1.0.0"
+	},
   "gitimmersion": {
     "source": "P1XT",
     "id": "gitimmersion",
@@ -42,8 +46,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Source Code Control",
-    "externalSource": "http://gitimmersion.com/"
-  },
+    "externalSource": "http://gitimmersion.com/",
+		"version": "1.0.0"
+	},
   "howtogitngithub": {
     "source": "P1XT",
     "id": "howtogitngithub",
@@ -51,8 +56,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Source Code Control",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "ydkjsupngoing": {
     "source": "P1XT",
     "id": "ydkjsupngoing",
@@ -60,8 +66,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Javascript",
-    "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going"
-  },
+    "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going",
+		"version": "1.0.0"
+	},
   "ydkjsscope": {
     "source": "P1XT",
     "id": "ydkjsscope",
@@ -69,8 +76,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Javascript",
-    "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures"
-  },
+    "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures",
+		"version": "1.0.0"
+	},
   "ydkjsthis": {
     "source": "P1XT",
     "id": "ydkjsthis",
@@ -78,8 +86,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Javascript",
-    "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes"
-  },
+    "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes",
+		"version": "1.0.0"
+	},
   "cs50x": {
     "source": "P1XT",
     "id": "cs50x",
@@ -87,8 +96,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x"
-  },
+    "externalSource": "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x",
+		"version": "1.0.0"
+	},
   "learnhtmlcss": {
     "source": "P1XT",
     "id": "learnhtmlcss",
@@ -96,8 +106,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "HTML/CSS",
-    "externalSource": "http://learn.shayhowe.com/html-css/"
-  },
+    "externalSource": "http://learn.shayhowe.com/html-css/",
+		"version": "1.0.0"
+	},
   "onlineresume": {
     "source": "P1XT",
     "id": "onlineresume",
@@ -105,8 +116,9 @@
     "description": "",
     "type": "Project",
     "subject": "HTML/CSS",
-    "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2"
-  },
+    "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2",
+		"version": "1.0.0"
+	},
   "ydkjstypes": {
     "source": "P1XT",
     "id": "ydkjstypes",
@@ -114,8 +126,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Javascript",
-    "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&%20grammar/README.md#you-dont-know-js-types--grammar"
-  },
+    "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&%20grammar/README.md#you-dont-know-js-types--grammar",
+		"version": "1.0.0"
+	},
   "ydkjsasync": {
     "source": "P1XT",
     "id": "ydkjsasync",
@@ -123,8 +136,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Javascript",
-    "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/README.md#you-dont-know-js-async--performance"
-  },
+    "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/README.md#you-dont-know-js-async--performance",
+		"version": "1.0.0"
+	},
   "ydkjses6": {
     "source": "P1XT",
     "id": "ydkjses6",
@@ -132,8 +146,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Javascript",
-    "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond"
-  },
+    "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond",
+		"version": "1.0.0"
+	},
   "advhtmlcss": {
     "source": "P1XT",
     "id": "advhtmlcss",
@@ -141,8 +156,9 @@
     "description": "",
     "type": "Course",
     "subject": "HTML/CSS",
-    "externalSource": "http://learn.shayhowe.com/advanced-html-css/"
-  },
+    "externalSource": "http://learn.shayhowe.com/advanced-html-css/",
+		"version": "1.0.0"
+	},
   "fccportfolio": {
     "source": "P1XT",
     "id": "fccportfolio",
@@ -150,8 +166,9 @@
     "description": "",
     "type": "Project",
     "subject": "HTML/CSS",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "projectspecdocs": {
     "source": "P1XT",
     "id": "projectspecdocs",
@@ -159,8 +176,9 @@
     "description": "Article: Read Project Specification Documents and get in the habit of including every bit of information it details that makes sense for a project in the README.md or other supporting documentation for your projects",
     "type": "Reading",
     "subject": "Project Management",
-    "externalSource": "http://www.pixelearth.net/pages/project-specification"
-  },
+    "externalSource": "http://www.pixelearth.net/pages/project-specification",
+		"version": "1.0.0"
+	},
   "ettmath": {
     "source": "P1XT",
     "id": "ettmath",
@@ -168,8 +186,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Mathematics",
-    "externalSource": "https://www.edx.org/course/effective-thinking-through-mathematics-utaustinx-ut-9-01x-0"
-  },
+    "externalSource": "https://www.edx.org/course/effective-thinking-through-mathematics-utaustinx-ut-9-01x-0",
+		"version": "1.0.0"
+	},
   "setupes6": {
     "source": "P1XT",
     "id": "setupes6",
@@ -177,8 +196,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Javascript",
-    "externalSource": "https://leanpub.com/setting-up-es6/read"
-  },
+    "externalSource": "https://leanpub.com/setting-up-es6/read",
+		"version": "1.0.0"
+	},
   "jsallonge6": {
     "source": "P1XT",
     "id": "jsallonge6",
@@ -186,8 +206,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Javascript",
-    "externalSource": "https://leanpub.com/javascriptallongesix"
-  },
+    "externalSource": "https://leanpub.com/javascriptallongesix",
+		"version": "1.0.0"
+	},
   "getsassy": {
     "source": "P1XT",
     "id": "getsassy",
@@ -195,8 +216,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "HTML/CSS",
-    "externalSource": "http://www.sassshop.com/"
-  },
+    "externalSource": "http://www.sassshop.com/",
+		"version": "1.0.0"
+	},
   "towersofhanoi": {
     "source": "P1XT",
     "id": "towersofhanoi",
@@ -204,8 +226,9 @@
     "description": "Project: Build an online Towers of Hanoi solver that accepts a tower height between 5 and 10, and then displays a graphical (animated) solution, iteratively moving each piece until the puzzle is solved",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "createcsstemplate": {
     "source": "P1XT",
     "id": "createcsstemplate",
@@ -213,8 +236,9 @@
     "description": "Project: Pick a template from here and create a new template with it as your inspiration (do not use it's assets)",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": "http://www.free-css.com/free-css-templates"
-  },
+    "externalSource": "http://www.free-css.com/free-css-templates",
+		"version": "1.0.0"
+	},
   "systematicpd1": {
     "source": "P1XT",
     "id": "systematicpd1",
@@ -222,8 +246,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd1x"
-  },
+    "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd1x",
+		"version": "1.0.0"
+	},
   "systematicpd2": {
     "source": "P1XT",
     "id": "systematicpd2",
@@ -231,8 +256,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd2x"
-  },
+    "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd2x",
+		"version": "1.0.0"
+	},
   "systematicpd3": {
     "source": "P1XT",
     "id": "systematicpd3",
@@ -240,8 +266,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd3x"
-  },
+    "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd3x",
+		"version": "1.0.0"
+	},
   "domenlightment": {
     "source": "P1XT",
     "id": "domenlightment",
@@ -249,8 +276,9 @@
     "description": "",
     "type": "Reading",
     "subject": "HTML/CSS",
-    "externalSource": "http://domenlightenment.com/"
-  },
+    "externalSource": "http://domenlightenment.com/",
+		"version": "1.0.0"
+	},
   "gulp": {
     "source": "P1XT",
     "id": "gulp",
@@ -258,8 +286,9 @@
     "description": "Project: Read up on Gulp - try to incorporate it into your workflow if you aren't using it regularly already",
     "type": "Project",
     "subject": "Gulp",
-    "externalSource": "http://gulpjs.com/"
-  },
+    "externalSource": "http://gulpjs.com/",
+		"version": "1.0.0"
+	},
   "fccsimon": {
     "source": "P1XT",
     "id": "fccsimon",
@@ -267,8 +296,9 @@
     "description": "Project: Simon Game from the frontend section of FCC",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "intromongodb": {
     "source": "P1XT",
     "id": "intromongodb",
@@ -276,8 +306,9 @@
     "description": "Course: Introduction to MongoDB using the MEAN Stack on edX",
     "type": "Supplemental Course",
     "subject": "Database",
-    "externalSource": "https://www.edx.org/course/introduction-mongodb-using-mean-stack-mongodbx-m101x-0"
-  },
+    "externalSource": "https://www.edx.org/course/introduction-mongodb-using-mean-stack-mongodbx-m101x-0",
+		"version": "1.0.0"
+	},
   "fccbackend": {
     "source": "P1XT",
     "id": "fccbackend",
@@ -285,8 +316,9 @@
     "description": "The FCC Backend Certification - all projects, ignore the tutorials and just read the official docs if you want.",
     "type": "",
     "subject": "Backend",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "calculus1": {
     "source": "P1XT",
     "id": "calculus1",
@@ -294,8 +326,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Mathematics",
-    "externalSource": "https://www.coursera.org/learn/calculus1"
-  },
+    "externalSource": "https://www.coursera.org/learn/calculus1",
+		"version": "1.0.0"
+	},
   "jsdesignpatterns": {
     "source": "P1XT",
     "id": "jsdesignpatterns",
@@ -303,8 +336,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Javascript",
-    "externalSource": "https://addyosmani.com/resources/essentialjsdesignpatterns/book/"
-  },
+    "externalSource": "https://addyosmani.com/resources/essentialjsdesignpatterns/book/",
+		"version": "1.0.0"
+	},
   "clonelandingpage": {
     "source": "P1XT",
     "id": "clonelandingpage",
@@ -312,8 +346,9 @@
     "description": "",
     "type": "Project",
     "subject": "Frontend",
-    "externalSource": "https://blackrockdigital.github.io/startbootstrap-creative/"
-  },
+    "externalSource": "https://blackrockdigital.github.io/startbootstrap-creative/",
+		"version": "1.0.0"
+	},
   "csmaths": {
     "source": "P1XT",
     "id": "csmaths",
@@ -321,8 +356,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Mathematics",
-    "externalSource": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm"
-  },
+    "externalSource": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm",
+		"version": "1.0.0"
+	},
   "algnflowcharts": {
     "source": "P1XT",
     "id": "algnflowcharts",
@@ -330,8 +366,9 @@
     "description": "Article: Read Algorithms and Flowcharts",
     "type": "Reading",
     "subject": "Computer Science",
-    "externalSource": "http://www.academia.edu/7857144/ALGORITHMS_AND_FLOWCHARTS"
-  },
+    "externalSource": "http://www.academia.edu/7857144/ALGORITHMS_AND_FLOWCHARTS",
+		"version": "1.0.0"
+	},
   "intropencil": {
     "source": "P1XT",
     "id": "intropencil",
@@ -339,8 +376,9 @@
     "description": "Familiarize yourself with Pencil ... start flowcharting complex portions of your code logic as part of your documentation",
     "type": "Reading",
     "subject": "Computer Science",
-    "externalSource": "http://pencil.evolus.vn/"
-  },
+    "externalSource": "http://pencil.evolus.vn/",
+		"version": "1.0.0"
+	},
   "cloneadmintemplate": {
     "source": "P1XT",
     "id": "cloneadmintemplate",
@@ -348,8 +386,9 @@
     "description": "",
     "type": "Project",
     "subject": "Frontend",
-    "externalSource": "http://rubix410.sketchpixy.com/ltr/dashboard"
-  },
+    "externalSource": "http://rubix410.sketchpixy.com/ltr/dashboard",
+		"version": "1.0.0"
+	},
   "thinkjava": {
     "source": "P1XT",
     "id": "thinkjava",
@@ -357,8 +396,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Computer Science",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "classicpuzzles": {
     "source": "P1XT",
     "id": "classicpuzzles",
@@ -366,8 +406,9 @@
     "description": "Project: Complete all Classic Puzzles - Easy on CodinGame in JavaScript",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": "https://www.codingame.com/"
-  },
+    "externalSource": "https://www.codingame.com/",
+		"version": "1.0.0"
+	},
   "opendatastructs": {
     "source": "P1XT",
     "id": "opendatastructs",
@@ -375,8 +416,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Computer Science",
-    "externalSource": "http://www.aupress.ca/books/120226/ebook/99Z_Morin_2013-Open_Data_Structures.pdf"
-  },
+    "externalSource": "http://www.aupress.ca/books/120226/ebook/99Z_Morin_2013-Open_Data_Structures.pdf",
+		"version": "1.0.0"
+	},
   "algorithms1": {
     "source": "P1XT",
     "id": "algorithms1",
@@ -384,8 +426,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": "https://www.coursera.org/learn/introduction-to-algorithms"
-  },
+    "externalSource": "https://www.coursera.org/learn/introduction-to-algorithms",
+		"version": "1.0.0"
+	},
   "algorithms2": {
     "source": "P1XT",
     "id": "algorithms2",
@@ -393,8 +436,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": "https://www.coursera.org/learn/java-data-structures-algorithms-2"
-  },
+    "externalSource": "https://www.coursera.org/learn/java-data-structures-algorithms-2",
+		"version": "1.0.0"
+	},
   "codejam15q2": {
     "source": "P1XT",
     "id": "codejam15q2",
@@ -402,8 +446,9 @@
     "description": "Project: Complete all challenges from the Code Jam Qualification Round 2",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": "https://code.google.com/codejam/contest/6224486/dashboard"
-  },
+    "externalSource": "https://code.google.com/codejam/contest/6224486/dashboard",
+		"version": "1.0.0"
+	},
   "clonefrontpage": {
     "source": "P1XT",
     "id": "clonefrontpage",
@@ -411,8 +456,9 @@
     "description": "Project: Clone the front page of this website modifying it to highlight a different product or industry. Make special note of the secondary navigation bar at the top. Implementing that is the highlight of this project.",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": "https://urbanarmorgear.com/"
-  },
+    "externalSource": "https://urbanarmorgear.com/",
+		"version": "1.0.0"
+	},
   "mobileuxdesign": {
     "source": "P1XT",
     "id": "mobileuxdesign",
@@ -420,8 +466,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "UX/UI",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "androiddev": {
     "source": "P1XT",
     "id": "androiddev",
@@ -429,8 +476,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Android",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "fccpomodoro": {
     "source": "P1XT",
     "id": "fccpomodoro",
@@ -438,8 +486,9 @@
     "description": "Project: Build the Pomodoro project from the FCC frontend curriculum - as an android app",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "frisbys": {
     "source": "P1XT",
     "id": "frisbys",
@@ -447,8 +496,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Javascript",
-    "externalSource": "https://www.gitbook.com/book/drboolean/mostly-adequate-guide/details"
-  },
+    "externalSource": "https://www.gitbook.com/book/drboolean/mostly-adequate-guide/details",
+		"version": "1.0.0"
+	},
   "testing": {
     "source": "P1XT",
     "id": "testing",
@@ -456,8 +506,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": "https://www.udacity.com/course/software-testing--cs258"
-  },
+    "externalSource": "https://www.udacity.com/course/software-testing--cs258",
+		"version": "1.0.0"
+	},
   "debugging": {
     "source": "P1XT",
     "id": "debugging",
@@ -465,8 +516,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": "https://www.udacity.com/course/software-debugging--cs259"
-  },
+    "externalSource": "https://www.udacity.com/course/software-debugging--cs259",
+		"version": "1.0.0"
+	},
   "clonenetflix": {
     "source": "P1XT",
     "id": "clonenetflix",
@@ -474,8 +526,9 @@
     "description": "Project: Clone the Netflix interface using React, Angular, or Vue - pulling data from the Movie DB API or an API in a backend you create yourself.",
     "type": "Project",
     "subject": "Frontend",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "calculus2": {
     "source": "P1XT",
     "id": "calculus2",
@@ -483,8 +536,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Mathematics",
-    "externalSource": "https://www.coursera.org/learn/advanced-calculus"
-  },
+    "externalSource": "https://www.coursera.org/learn/advanced-calculus",
+		"version": "1.0.0"
+	},
   "classicpuzzles2": {
     "source": "P1XT",
     "id": "classicpuzzles2",
@@ -492,8 +546,9 @@
     "description": "",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "softwarearchitecture": {
     "source": "P1XT",
     "id": "softwarearchitecture",
@@ -501,8 +556,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": "https://www.udacity.com/course/software-architecture-design--ud821"
-  },
+    "externalSource": "https://www.udacity.com/course/software-architecture-design--ud821",
+		"version": "1.0.0"
+	},
   "codejam15r1a": {
     "source": "P1XT",
     "id": "codejam15r1a",
@@ -510,8 +566,9 @@
     "description": "",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "jsspessore": {
     "source": "P1XT",
     "id": "jsspessore",
@@ -519,8 +576,9 @@
     "description": "",
     "type": "Reading",
     "subject": "Javascript",
-    "externalSource": "https://leanpub.com/javascript-spessore/read"
-  },
+    "externalSource": "https://leanpub.com/javascript-spessore/read",
+		"version": "1.0.0"
+	},
   "cloneblog": {
     "source": "P1XT",
     "id": "cloneblog",
@@ -528,8 +586,9 @@
     "description": "Project: Clone this blog template - note that there are multiple pages",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": "https://blackrockdigital.github.io/startbootstrap-clean-blog/"
-  },
+    "externalSource": "https://blackrockdigital.github.io/startbootstrap-clean-blog/",
+		"version": "1.0.0"
+	},
   "databases": {
     "source": "P1XT",
     "id": "databases",
@@ -537,8 +596,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Database",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "agile": {
     "source": "P1XT",
     "id": "agile",
@@ -546,8 +606,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Project Management",
-    "externalSource": "https://www.edx.org/course/agile-software-development-ethx-asd-1x"
-  },
+    "externalSource": "https://www.edx.org/course/agile-software-development-ethx-asd-1x",
+		"version": "1.0.0"
+	},
   "es6katas": {
     "source": "P1XT",
     "id": "es6katas",
@@ -555,8 +616,9 @@
     "description": "",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": "http://es6katas.org/"
-  },
+    "externalSource": "http://es6katas.org/",
+		"version": "1.0.0"
+	},
   "cloudcomputing": {
     "source": "P1XT",
     "id": "cloudcomputing",
@@ -564,8 +626,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Backend",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "codejam15r1b": {
     "source": "P1XT",
     "id": "codejam15r1b",
@@ -573,8 +636,9 @@
     "description": "",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "buildfacebook": {
     "source": "P1XT",
     "id": "buildfacebook",
@@ -582,8 +646,9 @@
     "description": "Project: Build FaceBook: yes, all the functionality. See here for a list of requirements you should fullfill.",
     "type": "Project",
     "subject": "Fullstack",
-    "externalSource": "http://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project"
-  },
+    "externalSource": "http://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project",
+		"version": "1.0.0"
+	},
   "theoreticalcs": {
     "source": "P1XT",
     "id": "theoreticalcs",
@@ -591,8 +656,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "codejam15r1c": {
     "source": "P1XT",
     "id": "codejam15r1c",
@@ -600,8 +666,9 @@
     "description": "",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "probability": {
     "source": "P1XT",
     "id": "probability",
@@ -609,8 +676,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Mathematics",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "12colgrid": {
     "source": "P1XT",
     "id": "12colgrid",
@@ -618,8 +686,9 @@
     "description": "Project: Write the CSS Necessary to create your own 12 column based grid layout - see here for an example",
     "type": "Project",
     "subject": "CSS",
-    "externalSource": "http://960.gs/"
-  },
+    "externalSource": "http://960.gs/",
+		"version": "1.0.0"
+	},
   "linearalgebra": {
     "source": "P1XT",
     "id": "linearalgebra",
@@ -627,8 +696,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Mathematics",
-    "externalSource": "https://www.edx.org/course/linear-algebra-foundations-frontiers-utaustinx-ut-5-05x#!"
-  },
+    "externalSource": "https://www.edx.org/course/linear-algebra-foundations-frontiers-utaustinx-ut-5-05x#!",
+		"version": "1.0.0"
+	},
   "classicpuzzles3": {
     "source": "P1XT",
     "id": "classicpuzzles3",
@@ -636,8 +706,9 @@
     "description": "",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "crypto1": {
     "source": "P1XT",
     "id": "crypto1",
@@ -645,8 +716,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "codejam15r2": {
     "source": "P1XT",
     "id": "codejam15r2",
@@ -654,8 +726,9 @@
     "description": "",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "crypto2": {
     "source": "P1XT",
     "id": "crypto2",
@@ -663,8 +736,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "clonetwitter": {
     "source": "P1XT",
     "id": "clonetwitter",
@@ -672,8 +746,9 @@
     "description": "",
     "type": "Project",
     "subject": "Fullstack",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "computerarchitecture": {
     "source": "P1XT",
     "id": "computerarchitecture",
@@ -681,8 +756,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "codejam15r3": {
     "source": "P1XT",
     "id": "codejam15r3",
@@ -690,8 +766,9 @@
     "description": "",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "cybersecurity": {
     "source": "P1XT",
     "id": "cybersecurity",
@@ -699,8 +776,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "classicpuzzles4": {
     "source": "P1XT",
     "id": "classicpuzzles4",
@@ -708,8 +786,9 @@
     "description": "",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "computergfx": {
     "source": "P1XT",
     "id": "computergfx",
@@ -717,8 +796,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": "https://www.edx.org/course/computer-graphics-uc-san-diegox-cse167x-1"
-  },
+    "externalSource": "https://www.edx.org/course/computer-graphics-uc-san-diegox-cse167x-1",
+		"version": "1.0.0"
+	},
   "ai": {
     "source": "P1XT",
     "id": "ai",
@@ -726,8 +806,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": "https://www.edx.org/course/artificial-intelligence-ai-columbiax-csmm-101x#!"
-  },
+    "externalSource": "https://www.edx.org/course/artificial-intelligence-ai-columbiax-csmm-101x#!",
+		"version": "1.0.0"
+	},
   "codejam15f": {
     "source": "P1XT",
     "id": "codejam15f",
@@ -735,8 +816,9 @@
     "description": "",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "machinelearning": {
     "source": "P1XT",
     "id": "machinelearning",
@@ -744,8 +826,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": "https://www.coursera.org/learn/machine-learning"
-  },
+    "externalSource": "https://www.coursera.org/learn/machine-learning",
+		"version": "1.0.0"
+	},
   "webgame": {
     "source": "P1XT",
     "id": "webgame",
@@ -753,8 +836,9 @@
     "description": "Project: Design, implement, test, and deploy a game that is playable on the web, using the technologies of your choice. The only criteria are that it be playable online, and that it inculde a substantial AI component.",
     "type": "Project",
     "subject": "Fullstack",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "operatingsystems": {
     "source": "P1XT",
     "id": "operatingsystems",
@@ -762,8 +846,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "mdconversion": {
     "source": "P1XT",
     "id": "mdconversion",
@@ -771,8 +856,9 @@
     "description": "Project: Create a node module that will convert markdown to properly formatted html",
     "type": "Project",
     "subject": "Javascript",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "compilers": {
     "source": "P1XT",
     "id": "compilers",
@@ -780,8 +866,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "nlp": {
     "source": "P1XT",
     "id": "nlp",
@@ -789,8 +876,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "clonelearnharmony": {
     "source": "P1XT",
     "id": "clonelearnharmony",
@@ -798,8 +886,9 @@
     "description": "",
     "type": "Project",
     "subject": "Fullstack",
-    "externalSource": "http://learnharmony.org/#/?_k=0okjs7"
-  },
+    "externalSource": "http://learnharmony.org/#/?_k=0okjs7",
+		"version": "1.0.0"
+	},
   "networks": {
     "source": "P1XT",
     "id": "networks",
@@ -807,8 +896,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "parallel": {
     "source": "P1XT",
     "id": "parallel",
@@ -816,8 +906,9 @@
     "description": "",
     "type": "Supplemental Course",
     "subject": "Computer Science",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "codejam15dist": {
     "source": "P1XT",
     "id": "codejam15dist",
@@ -825,8 +916,9 @@
     "description": "Project: Complete all problems from all rounds of the Distributed Google Code Jam 2015 - scroll down to the appropriate section",
     "type": "Project",
     "subject": "Fullstack",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "cloneslack": {
     "source": "P1XT",
     "id": "cloneslack",
@@ -834,8 +926,9 @@
     "description": "Project: Clone Slack - the functionality should be complete to the point that one user can create a room, invite other users, and all users of that room can real-time chat. The room should be secure and inaccessible to anyone but those invited.",
     "type": "Project",
     "subject": "Fullstack",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "bootstrapfullstack": {
     "source": "P1XT",
     "id": "bootstrapfullstack",
@@ -843,8 +936,9 @@
     "description": "Project: Create an npm module that bootstraps a fullstack application, with Node.js on the backend, and the SPA library/framework of your choice on the frontend. Include a full test suite and comprehensive build processes. Publish it to NPM.",
     "type": "Project",
     "subject": "Fullstack",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "codejam16": {
     "source": "P1XT",
     "id": "codejam16",
@@ -852,8 +946,9 @@
     "description": "Project: Complete all problems from all rounds of the Google Code Jam 2016 - scroll down to the appropriate section",
     "type": "Project",
     "subject": "Fullstack",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "materialdesign": {
     "source": "P1XT",
     "id": "materialdesign",
@@ -861,8 +956,9 @@
     "description": "Project: Extend your CSS grid framework to include the CSS and JavaScript required to implement 5 to 10 material design components",
     "type": "Project",
     "subject": "CSS",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "introhtml": {
     "source": "Khan Academy",
     "id": "introhtml",
@@ -870,8 +966,9 @@
     "description": "Introduction to HTML",
     "type": "Video",
     "subject": "HTML",
-    "externalSource": "https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-html"
-  },
+    "externalSource": "https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-html",
+		"version": "1.0.0"
+	},
   "beginnerhtml": {
     "source": "HtmlDog",
     "id": "beginnerhtml",
@@ -879,8 +976,9 @@
     "description": "HTML Beginner Guide",
     "type": "Reading",
     "subject": "HTML",
-    "externalSource": "http://www.htmldog.com/guides/html/beginner/"
-  },
+    "externalSource": "http://www.htmldog.com/guides/html/beginner/",
+		"version": "1.0.0"
+	},
   "clonewebpage": {
     "source": "CodePen",
     "id": "clonewebpage",
@@ -888,8 +986,9 @@
     "description": "Clone this Webpage",
     "type": "Project",
     "subject": "HTML",
-    "externalSource": "https://codepen.io/freeCodeCamp/full/zNqgVx"
-  },
+    "externalSource": "https://codepen.io/freeCodeCamp/full/zNqgVx",
+		"version": "1.0.0"
+	},
   "introcss": {
     "source": "Khan Academy",
     "id": "introcss",
@@ -897,8 +996,9 @@
     "description": "Introduction to CSS",
     "type": "Video",
     "subject": "CSS",
-    "externalSource": "https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-css"
-  },
+    "externalSource": "https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-css",
+		"version": "1.0.0"
+	},
   "beginnercss": {
     "source": "HtmlDog",
     "id": "beginnercss",
@@ -906,8 +1006,9 @@
     "description": "CSS Beginner Guide",
     "type": "Reading",
     "subject": "CSS",
-    "externalSource": "http://htmldog.com/guides/css/beginner/"
-  },
+    "externalSource": "http://htmldog.com/guides/css/beginner/",
+		"version": "1.0.0"
+	},
   "clonetributepage": {
     "source": "CodePen",
     "id": "clonetributepage",
@@ -915,8 +1016,9 @@
     "description": "Clone this Tribute Page with your own topic",
     "type": "Project",
     "subject": "CSS",
-    "externalSource": "http://codepen.io/freeCodeCamp/full/zNqgVx"
-  },
+    "externalSource": "http://codepen.io/freeCodeCamp/full/zNqgVx",
+		"version": "1.0.0"
+	},
   "duplicate": {
     "source": "Shay Howe",
     "id": "duplicate",
@@ -924,8 +1026,9 @@
     "description": "Learn to Code HTML& CSS",
     "type": "Lesson",
     "subject": "HTML, CSS",
-    "externalSource": "http://learn.shayhowe.com/html-css/"
-  },
+    "externalSource": "http://learn.shayhowe.com/html-css/",
+		"version": "1.0.0"
+	},
   "cloneresume": {
     "source": "Creative Market",
     "id": "cloneresume",
@@ -933,8 +1036,9 @@
     "description": "Clone this Online Resume template",
     "type": "Project",
     "subject": "HTML, CSS",
-    "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot1"
-  },
+    "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot1",
+		"version": "1.0.0"
+	},
   "intermediatehtml": {
     "source": "HtmlDog",
     "id": "intermediatehtml",
@@ -942,8 +1046,9 @@
     "description": "Intermediate HTML",
     "type": "Lesson",
     "subject": "HTML",
-    "externalSource": "http://htmldog.com/guides/html/intermediate"
-  },
+    "externalSource": "http://htmldog.com/guides/html/intermediate",
+		"version": "1.0.0"
+	},
   "intermediatecss": {
     "source": "HtmlDog",
     "id": "intermediatecss",
@@ -951,8 +1056,9 @@
     "description": "Intermediate CSS",
     "type": "Lesson",
     "subject": "CSS",
-    "externalSource": "http://htmldog.com/guides/css/intermediate"
-  },
+    "externalSource": "http://htmldog.com/guides/css/intermediate",
+		"version": "1.0.0"
+	},
   "advancedhtml": {
     "source": "HtmlDog",
     "id": "advancedhtml",
@@ -960,8 +1066,9 @@
     "description": "Advanced HTML",
     "type": "Lesson",
     "subject": "HTML",
-    "externalSource": "http://htmldog.com/guides/html/advanced"
-  },
+    "externalSource": "http://htmldog.com/guides/html/advanced",
+		"version": "1.0.0"
+	},
   "advancedcss": {
     "source": "HtmlDog",
     "id": "advancedcss",
@@ -969,8 +1076,9 @@
     "description": "Advanced CSS",
     "type": "Lesson",
     "subject": "CSS",
-    "externalSource": "http://htmldog.com/guides/css/advanced"
-  },
+    "externalSource": "http://htmldog.com/guides/css/advanced",
+		"version": "1.0.0"
+	},
   "buildportfolio": {
     "source": "N/a",
     "id": "buildportfolio",
@@ -978,8 +1086,9 @@
     "description": "Build a Personal Portfolio webpage",
     "type": "Project",
     "subject": "HTML, CSS",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "introbootstrap": {
     "source": "Edx",
     "id": "introbootstrap",
@@ -987,8 +1096,9 @@
     "description": "Learn how to use the Bootstrap Library for styling your webpages",
     "type": "Video",
     "subject": "CSS, Bootstrap",
-    "externalSource": "https://www.edx.org/course/introduction-bootstrap-tutorial-microsoft-dev203x-2"
-  },
+    "externalSource": "https://www.edx.org/course/introduction-bootstrap-tutorial-microsoft-dev203x-2",
+		"version": "1.0.0"
+	},
   "qwbootstrap": {
     "source": "YouTube",
     "id": "qwbootstrap",
@@ -996,8 +1106,9 @@
     "description": "Get a deeper understanding of Bootstrap's capabilities and usage",
     "type": "Video",
     "subject": "CSS, Bootstrap",
-    "externalSource": "https://www.youtube.com/playlist?list=PL41lfR-6DnOovY0t3nBg8Zb6aqm_H70mR"
-  },
+    "externalSource": "https://www.youtube.com/playlist?list=PL41lfR-6DnOovY0t3nBg8Zb6aqm_H70mR",
+		"version": "1.0.0"
+	},
   "bootstraptribute": {
     "source": "N/a",
     "id": "bootstraptribute",
@@ -1005,8 +1116,9 @@
     "description": "Modify your tribute page to use Bootstrap instead of native CSS",
     "type": "Project",
     "subject": "CSS, Bootstrap",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "foundationcrashcourse": {
     "source": "YouTube",
     "id": "foundationcrashcourse",
@@ -1014,8 +1126,9 @@
     "description": "Learn the basics of the Framework library for styling your webpages",
     "type": "Video",
     "subject": "CSS, Framework",
-    "externalSource": "https://www.youtube.com/watch?v=DEu5xYEZx18"
-  },
+    "externalSource": "https://www.youtube.com/watch?v=DEu5xYEZx18",
+		"version": "1.0.0"
+	},
   "introsass": {
     "source": "Callmenick",
     "id": "introsass",
@@ -1023,8 +1136,9 @@
     "description": "Learn the basics of the Sass library for styling your webpages",
     "type": "Lesson",
     "subject": "CSS, Sass",
-    "externalSource": "http://callmenick.com/post/an-introduction-to-sass-scss"
-  },
+    "externalSource": "http://callmenick.com/post/an-introduction-to-sass-scss",
+		"version": "1.0.0"
+	},
   "introless": {
     "source": "N/a",
     "id": "introless",
@@ -1032,8 +1146,9 @@
     "description": "Learn the basics of the Less library for styling your webpages",
     "type": "Lesson",
     "subject": "CSS, Less",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "introstylus": {
     "source": "N/a",
     "id": "introstylus",
@@ -1041,8 +1156,9 @@
     "description": "Learn the basics of the Stylus library for styling your webpages",
     "type": "Lesson",
     "subject": "CSS, Stylus",
-    "externalSource": ""
-  },
+    "externalSource": "",
+		"version": "1.0.0"
+	},
   "howinternetworks": {
     "source": "Khan Academy",
     "id": "howinternetworks",
@@ -1050,8 +1166,9 @@
     "description": "Gain insight into the hardware and software that are the backbone of the Internet.",
     "type": "Video",
     "subject": "Web Basics",
-    "External Source": "https://www.khanacademy.org/partner-content/code-org/internet-works"
-  },
+    "External Source": "https://www.khanacademy.org/partner-content/code-org/internet-works",
+		"version": "1.0.0"
+	},
   "howwebworks": {
     "source": "Mozilla",
     "id": "howwebworks",
@@ -1059,8 +1176,9 @@
     "description": "Gain insight into the software and protocols that make up the how the World Wide Web (www).",
     "type": "Reading",
     "subject": "Web Basics",
-    "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works"
-  },
+    "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works",
+		"version": "1.0.0"
+	},
   "getstartedweb": {
     "source": "Mozilla",
     "id": "getstartedweb",
@@ -1068,8 +1186,9 @@
     "description": "Getting started with the Web is a concise series introducing you to the practicalities of web development. You'll set up the tools you need to construct a simple webpage and publish your own simple code.",
     "type": "Reading",
     "subject": "Web Basics",
-    "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web"
-  },
+    "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web",
+		"version": "1.0.0"
+	},
   "setupwwwfolder": {
     "source": "Mozilla",
     "id": "setupwwwfolder",
@@ -1077,8 +1196,9 @@
     "description": "Learn what you should be aware of when setting up your project so you can set up a sensible file structure for your website. (Note: please skip the Javascript portion of this walkthrough for now).",
     "type": "Project",
     "subject": "Web Basics",
-    "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Dealing_with_files"
-  },
+    "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Dealing_with_files",
+		"version": "1.0.0"
+	},
   "E12345678901234567": {
     "source": "Error",
     "id": "E12345678901234567",
@@ -1086,6 +1206,7 @@
     "description": "Error",
     "type": "Error",
     "subject": "Error",
-    "External Source": ""
+    "External Source": "",
+    "version": "1.0.0"
   }
 }
