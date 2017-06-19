@@ -7,7 +7,7 @@
       "trygit",
       "gitsimpleguide"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "github": {
     "id": "github",
@@ -18,7 +18,7 @@
       "githubhelloworld",
       "githubtraining"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "advancedgit": {
     "id": "advancedgit",
@@ -27,7 +27,7 @@
     "lessonIds": [
       "gitimmersion"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "buildwebpages": {
     "id": "buildwebpages",
@@ -37,7 +37,7 @@
       "learnhtmlcss",
       "onlineresume"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "beginnerjs": {
     "id": "beginnerjs",
@@ -47,7 +47,7 @@
       "ydkjsupngoing",
       "ydkjsscope"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "intermediatejs": {
     "id": "intermediatejs",
@@ -57,7 +57,7 @@
       "ydkjsthis",
       "ydkjstypes"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "advancedjs": {
     "id": "advancedjs",
@@ -67,7 +67,7 @@
       "ydkjsasync",
       "ydkjses6"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "p1xtprereqs": {
     "id": "p1xtprereqs",
@@ -81,7 +81,7 @@
       "gitimmersion",
       "howtogitngithub"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "p1xttier1": {
     "id": "p1xttier1",
@@ -107,7 +107,7 @@
       "towersofhanoi",
       "createcsstemplate"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "p1xttier2": {
     "id": "p1xttier2",
@@ -140,7 +140,7 @@
       "androiddev",
       "fccpomodoro"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "p1xttier3": {
     "id": "p1xttier3",
@@ -174,7 +174,7 @@
       "crypto2", 
       "clonetwitter"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "p1xttier4": {
     "id": "p1xttier4",
@@ -203,7 +203,7 @@
       "codejam16",
       "materialdesign"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "htmlbasics": {
     "id": "htmlbasics",
@@ -214,7 +214,7 @@
       "beginnerhtml",
       "clonewebpage"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "cssbasics": {
     "id": "cssbasics",
@@ -225,7 +225,7 @@
       "beginnercss",
       "clonetributepage"
      ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "marryhtmlcss": {
     "id": "marryhtmlcss",
@@ -235,7 +235,7 @@
       "learnhtmlcss",
       "cloneresume"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "intermediatehtml": {
     "id": "intermediatehtml",
@@ -244,7 +244,7 @@
     "lessonIds": [
       "intermediatehtml"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "intermediatecss": {
     "id": "intermediatecss",
@@ -253,7 +253,7 @@
     "lessonIds": [
       "intermediatecss"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "advancedhtmlcss": {
     "id": "advancedhtmlcss",
@@ -264,7 +264,7 @@
       "advancedcss",
       "buildportfolio"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "introbootstrap": {
     "id": "introbootstrap",
@@ -275,7 +275,7 @@
       "qwbootstrap",
       "bootstraptribute"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "introfoundation": {
     "id": "introfoundation",
@@ -284,7 +284,7 @@
     "lessonIds": [
       "foundationcrashcourse"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "introsass": {
     "id": "introsass",
@@ -293,7 +293,7 @@
     "lessonIds": [
       "introsass"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "introless": {
     "id": "introless",
@@ -302,7 +302,7 @@
     "lessonIds": [
       "introless"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "introstylus": {
     "id": "introstylus",
@@ -311,7 +311,7 @@
     "lessonIds": [
       "introstylus"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "howwebworks": {
     "id": "howwebworks",
@@ -321,7 +321,7 @@
       "howinternetworks",
       "howwebworks"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "getstartedweb": {
     "id": "getstartedweb",
@@ -331,7 +331,7 @@
       "getstartedweb",
       "setupwwwfolder"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "E2345678901234567": {
     "id": "getstartedweb",
@@ -341,6 +341,6 @@
       "error1",
       "error2"
      ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   }
 }

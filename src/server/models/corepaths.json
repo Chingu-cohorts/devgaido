@@ -8,7 +8,7 @@
       "github",
       "advancedgit"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "webpagedc" : {
     "id": "webpagedc",
@@ -17,7 +17,7 @@
     "courseIds": [
       "buildwebpages"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "javascript" : {
     "id": "javascript",
@@ -28,7 +28,7 @@
       "intermediatejs",
       "advancedjs"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "p1xt" : {
     "id": "p1xt",
@@ -41,7 +41,7 @@
       "p1xttier3",
       "p1xttier4"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "buildawebsite" : {
     "id": "buildawebsite",
@@ -60,7 +60,7 @@
       "introless",
       "introstylus"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "learnhowwebworks" : {
     "id": "learnhowwebworks",
@@ -70,7 +70,7 @@
       "howwebworks",
       "getstartedweb"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   },
   "E2345678901234567" : {
     "id": "E2345678901234567",
@@ -80,6 +80,6 @@
       "error1",
       "error2"
     ],
-		"version": "1.0.0"
+    "version": "1.0.0"
   }
 }

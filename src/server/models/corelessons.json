@@ -7,8 +7,8 @@
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "https://try.github.io",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "gitsimpleguide": {
     "source": "P1XT",
     "id": "gitsimpleguide",
@@ -17,8 +17,8 @@
     "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "http://git.huit.harvard.edu/guide/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "githubtraining": {
     "source": "P1XT",
     "id": "githubtraining",
@@ -27,8 +27,8 @@
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "https://guides.github.com/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "githubhelloworld": {
     "source": "P1XT",
     "id": "githubhelloworld",
@@ -37,8 +37,8 @@
     "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "https://guides.github.com/activities/hello-world/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "gitimmersion": {
     "source": "P1XT",
     "id": "gitimmersion",
@@ -47,8 +47,8 @@
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "http://gitimmersion.com/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "howtogitngithub": {
     "source": "P1XT",
     "id": "howtogitngithub",
@@ -57,8 +57,8 @@
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "ydkjsupngoing": {
     "source": "P1XT",
     "id": "ydkjsupngoing",
@@ -67,8 +67,8 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "ydkjsscope": {
     "source": "P1XT",
     "id": "ydkjsscope",
@@ -77,8 +77,8 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "ydkjsthis": {
     "source": "P1XT",
     "id": "ydkjsthis",
@@ -87,8 +87,8 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "cs50x": {
     "source": "P1XT",
     "id": "cs50x",
@@ -97,8 +97,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "learnhtmlcss": {
     "source": "P1XT",
     "id": "learnhtmlcss",
@@ -107,8 +107,8 @@
     "type": "Supplemental Course",
     "subject": "HTML/CSS",
     "externalSource": "http://learn.shayhowe.com/html-css/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "onlineresume": {
     "source": "P1XT",
     "id": "onlineresume",
@@ -117,8 +117,8 @@
     "type": "Project",
     "subject": "HTML/CSS",
     "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "ydkjstypes": {
     "source": "P1XT",
     "id": "ydkjstypes",
@@ -127,8 +127,8 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&%20grammar/README.md#you-dont-know-js-types--grammar",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "ydkjsasync": {
     "source": "P1XT",
     "id": "ydkjsasync",
@@ -137,8 +137,8 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/README.md#you-dont-know-js-async--performance",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "ydkjses6": {
     "source": "P1XT",
     "id": "ydkjses6",
@@ -147,8 +147,8 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "advhtmlcss": {
     "source": "P1XT",
     "id": "advhtmlcss",
@@ -157,8 +157,8 @@
     "type": "Course",
     "subject": "HTML/CSS",
     "externalSource": "http://learn.shayhowe.com/advanced-html-css/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "fccportfolio": {
     "source": "P1XT",
     "id": "fccportfolio",
@@ -167,8 +167,8 @@
     "type": "Project",
     "subject": "HTML/CSS",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "projectspecdocs": {
     "source": "P1XT",
     "id": "projectspecdocs",
@@ -177,8 +177,8 @@
     "type": "Reading",
     "subject": "Project Management",
     "externalSource": "http://www.pixelearth.net/pages/project-specification",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "ettmath": {
     "source": "P1XT",
     "id": "ettmath",
@@ -187,8 +187,8 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://www.edx.org/course/effective-thinking-through-mathematics-utaustinx-ut-9-01x-0",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "setupes6": {
     "source": "P1XT",
     "id": "setupes6",
@@ -197,8 +197,8 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://leanpub.com/setting-up-es6/read",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "jsallonge6": {
     "source": "P1XT",
     "id": "jsallonge6",
@@ -207,8 +207,8 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://leanpub.com/javascriptallongesix",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "getsassy": {
     "source": "P1XT",
     "id": "getsassy",
@@ -217,8 +217,8 @@
     "type": "Supplemental Course",
     "subject": "HTML/CSS",
     "externalSource": "http://www.sassshop.com/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "towersofhanoi": {
     "source": "P1XT",
     "id": "towersofhanoi",
@@ -227,8 +227,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "createcsstemplate": {
     "source": "P1XT",
     "id": "createcsstemplate",
@@ -237,8 +237,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "http://www.free-css.com/free-css-templates",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "systematicpd1": {
     "source": "P1XT",
     "id": "systematicpd1",
@@ -247,8 +247,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd1x",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "systematicpd2": {
     "source": "P1XT",
     "id": "systematicpd2",
@@ -257,8 +257,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd2x",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "systematicpd3": {
     "source": "P1XT",
     "id": "systematicpd3",
@@ -267,8 +267,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd3x",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "domenlightment": {
     "source": "P1XT",
     "id": "domenlightment",
@@ -277,8 +277,8 @@
     "type": "Reading",
     "subject": "HTML/CSS",
     "externalSource": "http://domenlightenment.com/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "gulp": {
     "source": "P1XT",
     "id": "gulp",
@@ -287,8 +287,8 @@
     "type": "Project",
     "subject": "Gulp",
     "externalSource": "http://gulpjs.com/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "fccsimon": {
     "source": "P1XT",
     "id": "fccsimon",
@@ -297,8 +297,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "intromongodb": {
     "source": "P1XT",
     "id": "intromongodb",
@@ -307,8 +307,8 @@
     "type": "Supplemental Course",
     "subject": "Database",
     "externalSource": "https://www.edx.org/course/introduction-mongodb-using-mean-stack-mongodbx-m101x-0",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "fccbackend": {
     "source": "P1XT",
     "id": "fccbackend",
@@ -317,8 +317,8 @@
     "type": "",
     "subject": "Backend",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "calculus1": {
     "source": "P1XT",
     "id": "calculus1",
@@ -327,8 +327,8 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://www.coursera.org/learn/calculus1",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "jsdesignpatterns": {
     "source": "P1XT",
     "id": "jsdesignpatterns",
@@ -337,8 +337,8 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://addyosmani.com/resources/essentialjsdesignpatterns/book/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "clonelandingpage": {
     "source": "P1XT",
     "id": "clonelandingpage",
@@ -347,8 +347,8 @@
     "type": "Project",
     "subject": "Frontend",
     "externalSource": "https://blackrockdigital.github.io/startbootstrap-creative/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "csmaths": {
     "source": "P1XT",
     "id": "csmaths",
@@ -357,8 +357,8 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "algnflowcharts": {
     "source": "P1XT",
     "id": "algnflowcharts",
@@ -367,8 +367,8 @@
     "type": "Reading",
     "subject": "Computer Science",
     "externalSource": "http://www.academia.edu/7857144/ALGORITHMS_AND_FLOWCHARTS",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "intropencil": {
     "source": "P1XT",
     "id": "intropencil",
@@ -377,8 +377,8 @@
     "type": "Reading",
     "subject": "Computer Science",
     "externalSource": "http://pencil.evolus.vn/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "cloneadmintemplate": {
     "source": "P1XT",
     "id": "cloneadmintemplate",
@@ -387,8 +387,8 @@
     "type": "Project",
     "subject": "Frontend",
     "externalSource": "http://rubix410.sketchpixy.com/ltr/dashboard",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "thinkjava": {
     "source": "P1XT",
     "id": "thinkjava",
@@ -397,8 +397,8 @@
     "type": "Reading",
     "subject": "Computer Science",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "classicpuzzles": {
     "source": "P1XT",
     "id": "classicpuzzles",
@@ -407,8 +407,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "https://www.codingame.com/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "opendatastructs": {
     "source": "P1XT",
     "id": "opendatastructs",
@@ -417,8 +417,8 @@
     "type": "Reading",
     "subject": "Computer Science",
     "externalSource": "http://www.aupress.ca/books/120226/ebook/99Z_Morin_2013-Open_Data_Structures.pdf",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "algorithms1": {
     "source": "P1XT",
     "id": "algorithms1",
@@ -427,8 +427,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.coursera.org/learn/introduction-to-algorithms",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "algorithms2": {
     "source": "P1XT",
     "id": "algorithms2",
@@ -437,8 +437,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.coursera.org/learn/java-data-structures-algorithms-2",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "codejam15q2": {
     "source": "P1XT",
     "id": "codejam15q2",
@@ -447,8 +447,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "https://code.google.com/codejam/contest/6224486/dashboard",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "clonefrontpage": {
     "source": "P1XT",
     "id": "clonefrontpage",
@@ -457,8 +457,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "https://urbanarmorgear.com/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "mobileuxdesign": {
     "source": "P1XT",
     "id": "mobileuxdesign",
@@ -467,8 +467,8 @@
     "type": "Supplemental Course",
     "subject": "UX/UI",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "androiddev": {
     "source": "P1XT",
     "id": "androiddev",
@@ -477,8 +477,8 @@
     "type": "Supplemental Course",
     "subject": "Android",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "fccpomodoro": {
     "source": "P1XT",
     "id": "fccpomodoro",
@@ -487,8 +487,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "frisbys": {
     "source": "P1XT",
     "id": "frisbys",
@@ -497,8 +497,8 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://www.gitbook.com/book/drboolean/mostly-adequate-guide/details",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "testing": {
     "source": "P1XT",
     "id": "testing",
@@ -507,8 +507,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.udacity.com/course/software-testing--cs258",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "debugging": {
     "source": "P1XT",
     "id": "debugging",
@@ -517,8 +517,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.udacity.com/course/software-debugging--cs259",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "clonenetflix": {
     "source": "P1XT",
     "id": "clonenetflix",
@@ -527,8 +527,8 @@
     "type": "Project",
     "subject": "Frontend",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "calculus2": {
     "source": "P1XT",
     "id": "calculus2",
@@ -537,8 +537,8 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://www.coursera.org/learn/advanced-calculus",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "classicpuzzles2": {
     "source": "P1XT",
     "id": "classicpuzzles2",
@@ -547,8 +547,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "softwarearchitecture": {
     "source": "P1XT",
     "id": "softwarearchitecture",
@@ -557,8 +557,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.udacity.com/course/software-architecture-design--ud821",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "codejam15r1a": {
     "source": "P1XT",
     "id": "codejam15r1a",
@@ -567,8 +567,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "jsspessore": {
     "source": "P1XT",
     "id": "jsspessore",
@@ -577,8 +577,8 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://leanpub.com/javascript-spessore/read",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "cloneblog": {
     "source": "P1XT",
     "id": "cloneblog",
@@ -587,8 +587,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "https://blackrockdigital.github.io/startbootstrap-clean-blog/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "databases": {
     "source": "P1XT",
     "id": "databases",
@@ -597,8 +597,8 @@
     "type": "Supplemental Course",
     "subject": "Database",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "agile": {
     "source": "P1XT",
     "id": "agile",
@@ -607,8 +607,8 @@
     "type": "Supplemental Course",
     "subject": "Project Management",
     "externalSource": "https://www.edx.org/course/agile-software-development-ethx-asd-1x",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "es6katas": {
     "source": "P1XT",
     "id": "es6katas",
@@ -617,8 +617,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "http://es6katas.org/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "cloudcomputing": {
     "source": "P1XT",
     "id": "cloudcomputing",
@@ -627,8 +627,8 @@
     "type": "Supplemental Course",
     "subject": "Backend",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "codejam15r1b": {
     "source": "P1XT",
     "id": "codejam15r1b",
@@ -637,8 +637,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "buildfacebook": {
     "source": "P1XT",
     "id": "buildfacebook",
@@ -647,8 +647,8 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": "http://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "theoreticalcs": {
     "source": "P1XT",
     "id": "theoreticalcs",
@@ -657,8 +657,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "codejam15r1c": {
     "source": "P1XT",
     "id": "codejam15r1c",
@@ -667,8 +667,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "probability": {
     "source": "P1XT",
     "id": "probability",
@@ -677,8 +677,8 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "12colgrid": {
     "source": "P1XT",
     "id": "12colgrid",
@@ -687,8 +687,8 @@
     "type": "Project",
     "subject": "CSS",
     "externalSource": "http://960.gs/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "linearalgebra": {
     "source": "P1XT",
     "id": "linearalgebra",
@@ -697,8 +697,8 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://www.edx.org/course/linear-algebra-foundations-frontiers-utaustinx-ut-5-05x#!",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "classicpuzzles3": {
     "source": "P1XT",
     "id": "classicpuzzles3",
@@ -707,8 +707,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "crypto1": {
     "source": "P1XT",
     "id": "crypto1",
@@ -717,8 +717,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "codejam15r2": {
     "source": "P1XT",
     "id": "codejam15r2",
@@ -727,8 +727,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "crypto2": {
     "source": "P1XT",
     "id": "crypto2",
@@ -737,8 +737,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "clonetwitter": {
     "source": "P1XT",
     "id": "clonetwitter",
@@ -747,8 +747,8 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "computerarchitecture": {
     "source": "P1XT",
     "id": "computerarchitecture",
@@ -757,8 +757,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "codejam15r3": {
     "source": "P1XT",
     "id": "codejam15r3",
@@ -767,8 +767,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "cybersecurity": {
     "source": "P1XT",
     "id": "cybersecurity",
@@ -777,8 +777,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "classicpuzzles4": {
     "source": "P1XT",
     "id": "classicpuzzles4",
@@ -787,8 +787,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "computergfx": {
     "source": "P1XT",
     "id": "computergfx",
@@ -797,8 +797,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/computer-graphics-uc-san-diegox-cse167x-1",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "ai": {
     "source": "P1XT",
     "id": "ai",
@@ -807,8 +807,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/artificial-intelligence-ai-columbiax-csmm-101x#!",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "codejam15f": {
     "source": "P1XT",
     "id": "codejam15f",
@@ -817,8 +817,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "machinelearning": {
     "source": "P1XT",
     "id": "machinelearning",
@@ -827,8 +827,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.coursera.org/learn/machine-learning",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "webgame": {
     "source": "P1XT",
     "id": "webgame",
@@ -837,8 +837,8 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "operatingsystems": {
     "source": "P1XT",
     "id": "operatingsystems",
@@ -847,8 +847,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "mdconversion": {
     "source": "P1XT",
     "id": "mdconversion",
@@ -857,8 +857,8 @@
     "type": "Project",
     "subject": "Javascript",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "compilers": {
     "source": "P1XT",
     "id": "compilers",
@@ -867,8 +867,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "nlp": {
     "source": "P1XT",
     "id": "nlp",
@@ -877,8 +877,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "clonelearnharmony": {
     "source": "P1XT",
     "id": "clonelearnharmony",
@@ -887,8 +887,8 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": "http://learnharmony.org/#/?_k=0okjs7",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "networks": {
     "source": "P1XT",
     "id": "networks",
@@ -897,8 +897,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "parallel": {
     "source": "P1XT",
     "id": "parallel",
@@ -907,8 +907,8 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "codejam15dist": {
     "source": "P1XT",
     "id": "codejam15dist",
@@ -917,8 +917,8 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "cloneslack": {
     "source": "P1XT",
     "id": "cloneslack",
@@ -927,8 +927,8 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "bootstrapfullstack": {
     "source": "P1XT",
     "id": "bootstrapfullstack",
@@ -937,8 +937,8 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "codejam16": {
     "source": "P1XT",
     "id": "codejam16",
@@ -947,8 +947,8 @@
     "type": "Project",
     "subject": "Fullstack",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "materialdesign": {
     "source": "P1XT",
     "id": "materialdesign",
@@ -957,8 +957,8 @@
     "type": "Project",
     "subject": "CSS",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "introhtml": {
     "source": "Khan Academy",
     "id": "introhtml",
@@ -967,8 +967,8 @@
     "type": "Video",
     "subject": "HTML",
     "externalSource": "https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-html",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "beginnerhtml": {
     "source": "HtmlDog",
     "id": "beginnerhtml",
@@ -977,8 +977,8 @@
     "type": "Reading",
     "subject": "HTML",
     "externalSource": "http://www.htmldog.com/guides/html/beginner/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "clonewebpage": {
     "source": "CodePen",
     "id": "clonewebpage",
@@ -987,8 +987,8 @@
     "type": "Project",
     "subject": "HTML",
     "externalSource": "https://codepen.io/freeCodeCamp/full/zNqgVx",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "introcss": {
     "source": "Khan Academy",
     "id": "introcss",
@@ -997,8 +997,8 @@
     "type": "Video",
     "subject": "CSS",
     "externalSource": "https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-css",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "beginnercss": {
     "source": "HtmlDog",
     "id": "beginnercss",
@@ -1007,8 +1007,8 @@
     "type": "Reading",
     "subject": "CSS",
     "externalSource": "http://htmldog.com/guides/css/beginner/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "clonetributepage": {
     "source": "CodePen",
     "id": "clonetributepage",
@@ -1017,8 +1017,8 @@
     "type": "Project",
     "subject": "CSS",
     "externalSource": "http://codepen.io/freeCodeCamp/full/zNqgVx",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "duplicate": {
     "source": "Shay Howe",
     "id": "duplicate",
@@ -1027,8 +1027,8 @@
     "type": "Lesson",
     "subject": "HTML, CSS",
     "externalSource": "http://learn.shayhowe.com/html-css/",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "cloneresume": {
     "source": "Creative Market",
     "id": "cloneresume",
@@ -1037,8 +1037,8 @@
     "type": "Project",
     "subject": "HTML, CSS",
     "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot1",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "intermediatehtml": {
     "source": "HtmlDog",
     "id": "intermediatehtml",
@@ -1047,8 +1047,8 @@
     "type": "Lesson",
     "subject": "HTML",
     "externalSource": "http://htmldog.com/guides/html/intermediate",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "intermediatecss": {
     "source": "HtmlDog",
     "id": "intermediatecss",
@@ -1057,8 +1057,8 @@
     "type": "Lesson",
     "subject": "CSS",
     "externalSource": "http://htmldog.com/guides/css/intermediate",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "advancedhtml": {
     "source": "HtmlDog",
     "id": "advancedhtml",
@@ -1067,8 +1067,8 @@
     "type": "Lesson",
     "subject": "HTML",
     "externalSource": "http://htmldog.com/guides/html/advanced",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "advancedcss": {
     "source": "HtmlDog",
     "id": "advancedcss",
@@ -1077,8 +1077,8 @@
     "type": "Lesson",
     "subject": "CSS",
     "externalSource": "http://htmldog.com/guides/css/advanced",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "buildportfolio": {
     "source": "N/a",
     "id": "buildportfolio",
@@ -1087,8 +1087,8 @@
     "type": "Project",
     "subject": "HTML, CSS",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "introbootstrap": {
     "source": "Edx",
     "id": "introbootstrap",
@@ -1097,8 +1097,8 @@
     "type": "Video",
     "subject": "CSS, Bootstrap",
     "externalSource": "https://www.edx.org/course/introduction-bootstrap-tutorial-microsoft-dev203x-2",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "qwbootstrap": {
     "source": "YouTube",
     "id": "qwbootstrap",
@@ -1107,8 +1107,8 @@
     "type": "Video",
     "subject": "CSS, Bootstrap",
     "externalSource": "https://www.youtube.com/playlist?list=PL41lfR-6DnOovY0t3nBg8Zb6aqm_H70mR",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "bootstraptribute": {
     "source": "N/a",
     "id": "bootstraptribute",
@@ -1117,8 +1117,8 @@
     "type": "Project",
     "subject": "CSS, Bootstrap",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "foundationcrashcourse": {
     "source": "YouTube",
     "id": "foundationcrashcourse",
@@ -1127,8 +1127,8 @@
     "type": "Video",
     "subject": "CSS, Framework",
     "externalSource": "https://www.youtube.com/watch?v=DEu5xYEZx18",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "introsass": {
     "source": "Callmenick",
     "id": "introsass",
@@ -1137,8 +1137,8 @@
     "type": "Lesson",
     "subject": "CSS, Sass",
     "externalSource": "http://callmenick.com/post/an-introduction-to-sass-scss",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "introless": {
     "source": "N/a",
     "id": "introless",
@@ -1147,8 +1147,8 @@
     "type": "Lesson",
     "subject": "CSS, Less",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "introstylus": {
     "source": "N/a",
     "id": "introstylus",
@@ -1157,8 +1157,8 @@
     "type": "Lesson",
     "subject": "CSS, Stylus",
     "externalSource": "",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "howinternetworks": {
     "source": "Khan Academy",
     "id": "howinternetworks",
@@ -1167,8 +1167,8 @@
     "type": "Video",
     "subject": "Web Basics",
     "External Source": "https://www.khanacademy.org/partner-content/code-org/internet-works",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "howwebworks": {
     "source": "Mozilla",
     "id": "howwebworks",
@@ -1177,8 +1177,8 @@
     "type": "Reading",
     "subject": "Web Basics",
     "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "getstartedweb": {
     "source": "Mozilla",
     "id": "getstartedweb",
@@ -1187,8 +1187,8 @@
     "type": "Reading",
     "subject": "Web Basics",
     "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "setupwwwfolder": {
     "source": "Mozilla",
     "id": "setupwwwfolder",
@@ -1197,8 +1197,8 @@
     "type": "Project",
     "subject": "Web Basics",
     "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Dealing_with_files",
-		"version": "1.0.0"
-	},
+    "version": "1.0.0"
+  },
   "E12345678901234567": {
     "source": "Error",
     "id": "E12345678901234567",
