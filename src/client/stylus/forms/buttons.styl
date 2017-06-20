@@ -1,0 +1,64 @@
+input[type="submit"], 
+button,
+a.button {
+    background: colorPrimary;
+    border: none;
+    border-radius: 1.5rem;
+    box-shadow: 6px 6px 12px rgba(30, 33, 94, 0.15);
+    color: colorTextInverse;
+    display: inline-block;
+    font-weight: 600;
+    min-width: 250px;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+input[type="submit"]:hover, 
+button:hover {
+    // box-shadow: 0 3px 6px rgba(30, 33, 94, 0.25);
+    cursor: pointer;
+}
+
+input[type="submit"].inline, 
+button.inline {
+    width:250px;
+    clear: both;
+    display: block;
+    float: none;
+    margin: 1rem auto;
+    margin-top: 2rem;
+    padding-left: 2rem;
+
+}
+
+button i {
+    background-color: colorPrimaryDark;
+    background-image: url('/assets/img/arrow-right.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border-radius: 50% 0 0 50%;
+    display: block;
+    height: 3rem;
+    left: 0;
+    padding: 0.8rem 0 0 0.2rem;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    vertical-align: -50%;
+    width: 3rem;
+}
+
+button i:before {
+    font-size: 1.2rem;
+}
+
+
+.button-continue {
+    background-color: #00e676;
+    background-color: colorPrimary;
+    background-color: colorPrimary;
+}

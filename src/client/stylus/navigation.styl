@@ -1,0 +1,89 @@
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+.main-navigation {
+    float:right;
+    padding: 1rem 0;
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        display: inline-block;
+        font-size: 0.9rem;
+        font-weight: 600;
+        padding: 0 1rem;
+        text-transform: uppercase;
+    }
+}
+
+.menu {
+    // margin-right:1rem;
+}
+.menu a {
+    float: right;
+    line-height: 3rem;
+    text-decoration: none;
+    width: auto;
+}
+
+.menu a.menu-btn {
+    border-radius: 1.5rem;
+    height: 3rem;
+    line-height: 3rem;
+    padding-left: 3.5rem;
+    padding-right: 1rem;
+    
+}
+
+.menu a.login {
+    background-color: colorSecondary;
+    color: colorTextInverse;
+}
+
+.menu a.profile {
+    background-color: colorPrimary;
+    color: colorTextInverse;
+}
+
+
+.menu a.menu-btn:before {
+    border-radius: 50%;
+    color: colorTextInverse;
+    float: left;
+    font-family: FontAwesome;
+    font-size: 1.3rem;
+    font-weight: normal;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    height: 3rem;
+    line-height: 3rem;
+    margin-left:-3.5rem;
+    text-align: center;
+    width: 3rem;
+}
+
+.menu a.menu-btn:before {
+    background-color: colorPrimaryDark;
+    content:"\f2c0"
+}
+
+.menu a.menu-btn-close:before {
+    content:"\f00d"
+}
+
+
+.menu a.login:before {
+    background-color: colorSecondaryDark;
+    color: colorTextInverse;
+    content:"\f090";
+}
+
+.search-header {
+    float: left;
+    padding: 0.3rem 2rem 0 2rem;
+    width: 300px;
+}
+    

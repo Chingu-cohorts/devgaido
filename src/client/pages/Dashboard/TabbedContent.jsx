@@ -8,7 +8,7 @@ const setCurrentTab = (tabIndex, dispatch) => {
 
 const TabbedContent = ({ content, dispatch, uiState }) => (
   <div className="tabbed-content">
-    <div className="displayFlex">
+    <div className="tabs">
       {content.map((c, index) => (
         <button
           className={index === uiState.Pages.Dashboard.currentTab ? 'tabButton activeTabCaption' : 'tabButton inactiveTabCaption'}

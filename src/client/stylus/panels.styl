@@ -1,0 +1,148 @@
+
+/*--------------------------------------------------------------
+# Panels
+--------------------------------------------------------------*/
+ 
+.side-panel {
+    background-color: colorTextInverse;
+    //box-shadow: 5px 25px 20px rgba(30, 33, 94, 0.15);
+    box-shadow: 2px 5px 10px rgba(30, 33, 94, 0.15);
+    //height: 100vh;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    transition: visibility 0s 0s;
+    visibility: hidden;
+    width: 300px;
+    z-index: 100;
+}
+
+.side-panel.is-visible {
+    visibility: visible;
+    transition: visibility 0s 0s;
+}
+
+.search-container {
+    float: left;
+    padding: 2rem;
+}
+.side-panel h1,
+.side-panel h2 {
+    clear: both;
+    padding-left: 2rem;
+    text-transform: uppercase;
+}
+
+.side-panel h1 {
+    margin-bottom: 2rem;
+}
+
+.side-panel ul {
+    list-style-type: none;
+    // margin-bottom: 4rem;
+    padding: 0;
+}
+
+.side-panel ul li {
+    border-bottom: 1px solid #f6f7fb;
+    color: colorPrimaryDark;
+    font-size: 0.8rem;
+    line-height: 2rem;
+    padding: 1rem 2rem;
+}
+
+.side-panel ul li.active {
+    font-weight: 600;
+}
+
+.side-panel ul li i {
+    background-color: colorPrimary;
+    border-radius: 50%;
+    color: colorTextInverse;
+    font-size: 1rem;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    margin-right: 1rem;
+    text-align: center;
+    width: 2.2rem;
+}
+
+.side-panel ul li.information i {
+    /* background-color: colorPrimary; */
+    color: #00e676;
+}
+
+.side-panel ul li.times i {
+    /* background-color: #fcc247; */
+}
+
+.side-panel ul li.goals i {
+    /* background-color: #144486; */
+}
+
+.side-panel ul li.assessment i {
+    /* background-color: #5f98fd; */
+}
+
+/* .side-panel ul li:before {
+    background-color: tertiaryColor;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    float: left;
+    height: 2rem;
+    margin-right: 1rem;
+    width: 2rem;
+}
+
+.side-panel ul li.active:before {
+    background-color: #86edbb;
+    border: 5px solid #138ac5;
+    box-shadow: 2px 2px 6px rgba(30, 33, 94, 0.15); 
+    font-weight: 600;
+} */
+
+.panel-links {
+    /* background-color: colorPrimary; */
+    height: 5rem;
+}
+
+.side-panel-close {
+    /* background-image: url('/assets/img/close.svg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    float: right;
+    height: 5rem;
+    text-indent: -9999px;
+    width: 5rem;
+ }
+
+.panel-menu {
+    //padding: 2rem 0 3rem 0;
+    padding-top 2rem
+}
+
+
+.side-panel-catalog {
+    box-shadow: 5px 0 10px rgba(30,33,94,0.15);
+    left: 0;
+    h1 {
+        background-color: colorPrimary;
+        color: colorTextInverse;
+        font-size:1.1rem;
+        margin:0;
+        padding:1rem;
+    }
+    .panel-menu {
+        padding: 0;
+    }
+    h2 {
+        background-color: colorPrimaryLight;
+        padding: 1rem 2rem;
+    }
+}
+
+
+

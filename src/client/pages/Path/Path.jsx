@@ -4,48 +4,15 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
-/* import Card from '../shared/Card';
 
-const lessonTypeIcons = {
-  Reading: 'fa fa-book',
-  Project: 'fa fa-tasks',
-  'Supplemental Course': '',
-};
-
-const lessonTypeColors = {
-  Reading: '#ffea7e',
-  Project: 'deepskyblue',
-  'Supplemental Course': '',
-};
-
-const getAllCourseLessons = (course, curriculum) => {
-  const lessons = [];
-  course.lessonIds.forEach((lessonId) => {
-    lessons.push(curriculum.lessons[lessonId]);
-  });
-  return lessons;
-};
-
-const LessonCard = ({ name, description, id, type }) => (
-  <Card
-    caption={name}
-    subcaption="LESSON"
-    text={description}
-    to={`/lessons/${id}`}
-    content={null}
-    icons={[lessonTypeIcons[type], 'fa fa-graduation-cap']}
-    color={lessonTypeColors[type]}
-  />
-);
-*/
 const CourseCard = ({ curriculum, pathId, courseId }) => (
-  <Link className="courseCard" to={`/paths/${pathId}/${courseId}`}>
-    <div className="courseCardHeader">
-      <span className="courseCardCaption">COURSE</span>
+  <Link className="course-card connected" to={`/paths/${pathId}/${courseId}`}>
+    <div className="course-card-header">
+      <span className="course-card-caption">COURSE</span>
       <h1>{curriculum.courses[courseId].name}</h1>
     </div>
-    <p className="courseDescription">{curriculum.courses[courseId].description}</p>
-    <div className="lessonList">
+    <p className="course-description">{curriculum.courses[courseId].description}</p>
+    <div className="lesson-list">
       {/* getAllCourseLessons(curriculum.courses[id], curriculum).map(lesson => (
         <LessonCard
           name={lesson.name}
@@ -70,16 +37,13 @@ const Path = ({ match, curriculum }) => {
     />
   ));
   return (
-    <div className="lostContainer">
+    <div className="container">
       <BreadCrumbs curriculum={curriculum} pathId={match.params.id} />
-      <div className="card card--image colFull">
-        <div className="cardHeader cardHeader--image" />
-        <div className="cardHeader cardHeader--image--color">
-          <h1 className="cardHeader--pathName">{path.name}</h1>
+      <div className="grid-full path path-image">
+        <div className="path-header path-header-image" />
+        <div className="path-header path-header-image-color">
+          <h1 className="path-header-path-name">{path.name}</h1>
         </div>
-        <span className="cardBigCaption">About this Path:</span>
-        <p className="cardText">{path.description}</p>
-        <p className="cardText">Courses in this path: {courses.length}</p>
         {courses}
       </div>
     </div>
