@@ -8,6 +8,7 @@ import BreadCrumbs from '../shared/BreadCrumbs';
 const Lesson = ({ match, dispatch, curriculum }) => {
   const lessonId = match.params.id;
   const lesson = curriculum.lessons[lessonId];
+  const subject = curriculum.subjects[lesson.subject];
 
   return (
     <div className="container">
@@ -25,7 +26,11 @@ const Lesson = ({ match, dispatch, curriculum }) => {
         </div>
         <span className="lesson-caption-small">Lesson</span>
         <span className="lesson-caption-small">{lesson.name}</span>
+        <span className="lesson-caption-small">Subject</span>
+        <span className="lesson-caption-small">{subject.name}</span>
+        <span className="lesson-caption-small">{subject.description}</span>
         <p className="lesson-text">{lesson.description}</p>
+        <a className="button" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">START LESSON</a>
         <button onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
         <button onClick={() => dispatch(unCompleteLesson(lessonId))}>UNCOMPLETE LESSON</button>
       </div>
