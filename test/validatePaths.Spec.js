@@ -32,7 +32,7 @@ describe('Validate corepaths.json', () => {
       assert.equal(invalidPathIds.length, 0);
     });
   });
-  describe('Validate block key matches internal "id" value', () => {
+  /* describe('Validate block key matches internal "id" value', () => {
     let invalidPathIds = [];
     afterEach(() => {
       invalidPathIds = logInvalidIds(invalidPathIds, 'Path id does not match "id" value');
@@ -41,7 +41,7 @@ describe('Validate corepaths.json', () => {
       invalidPathIds = validateIdMatch(corePaths);
       assert.equal(invalidPathIds.length, 0);
     });
-  });
+  });*/
   describe('Validate course ids in the path exists', () => {
     let invalidIds = [];
     afterEach(() => {
