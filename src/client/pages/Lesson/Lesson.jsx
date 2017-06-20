@@ -19,7 +19,13 @@ const Lesson = ({ match, dispatch, curriculum }) => {
         lessonId={match.params.id}
       />
       <div className="grid-full lesson lesson-image">
-        <div className="lesson-header lesson-header-image" />
+        <div
+          className="lesson-header lesson-header-image"
+          style={lesson.externalSource !== '' ? {
+            background: `url(/assets/screenshots/${lessonId}.jpeg)`,
+            backgroundSize: 'cover',
+          } : {}}
+        />
         <div className="lesson-header lesson-header-image-color2">
           <h1 className="lesson-header-path-name">{lesson.name}</h1>
           <h1 className="">{lesson.completed ? 'Completed' : 'Incomplete'}</h1>
