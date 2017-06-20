@@ -206,7 +206,7 @@
     "externalSource": "",
     "version": "1.0.0"
   },
-  "createcsstemplate": {
+  "createcsstemp": {
     "source": "P1XT",
     "name": "Project: Create a new template",
     "description": "Project: Pick a template from here and create a new template with it as your inspiration (do not use it's assets)",
@@ -341,7 +341,7 @@
     "externalSource": "http://pencil.evolus.vn/",
     "version": "1.0.0"
   },
-  "cloneadmintemplate": {
+  "cloneadmintemp": {
     "source": "P1XT",
     "name": "Project: Clone this Admin template using React, Angular, or Vue",
     "description": "",
@@ -494,7 +494,7 @@
     "externalSource": "",
     "version": "1.0.0"
   },
-  "softwarearchitecture": {
+  "softwarearch": {
     "source": "P1XT",
     "name": "Course: Software Architecture & Design",
     "description": "",
@@ -674,7 +674,7 @@
     "externalSource": "",
     "version": "1.0.0"
   },
-  "computerarchitecture": {
+  "computerarch": {
     "source": "P1XT",
     "name": "Course: Computer Architecture",
     "description": "",
@@ -791,7 +791,7 @@
     "externalSource": "",
     "version": "1.0.0"
   },
-  "clonelearnharmony": {
+  "cloneharmony": {
     "source": "P1XT",
     "name": "Project: Clone Learn Harmony",
     "description": "",
@@ -836,7 +836,7 @@
     "externalSource": "",
     "version": "1.0.0"
   },
-  "bootstrapfullstack": {
+  "bootstrapfull": {
     "source": "P1XT",
     "name": "Project: Create an npm module that bootstraps a fullstack application",
     "description": "Project: Create an npm module that bootstraps a fullstack application, with Node.js on the backend, and the SPA library/framework of your choice on the frontend. Include a full test suite and comprehensive build processes. Publish it to NPM.",
@@ -917,21 +917,12 @@
     "externalSource": "http://codepen.io/freeCodeCamp/full/zNqgVx",
     "version": "1.0.0"
   },
-  "duplicate": {
-    "source": "Shay Howe",
-    "name": "Learn to Code HTML & CSS",
-    "description": "Learn to Code HTML& CSS",
-    "type": "Lesson",
-    "subject": "HTML, CSS",
-    "externalSource": "http://learn.shayhowe.com/html-css/",
-    "version": "1.0.0"
-  },
   "cloneresume": {
     "source": "Creative Market",
     "name": "Clone this Online Resume",
     "description": "Clone this Online Resume template",
     "type": "Project",
-    "subject": "HTML, CSS",
+    "subject": "HTML/CSS",
     "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot1",
     "version": "1.0.0"
   },
@@ -976,7 +967,7 @@
     "name": "Build a Personal Portfolio",
     "description": "Build a Personal Portfolio webpage",
     "type": "Project",
-    "subject": "HTML, CSS",
+    "subject": "HTML/CSS",
     "externalSource": "",
     "version": "1.0.0"
   },
@@ -985,7 +976,7 @@
     "name": "Introduction to Bootstrap",
     "description": "Learn how to use the Bootstrap Library for styling your webpages",
     "type": "Video",
-    "subject": "CSS, Bootstrap",
+    "subject": "CSS/Bootstrap",
     "externalSource": "https://www.edx.org/course/introduction-bootstrap-tutorial-microsoft-dev203x-2",
     "version": "1.0.0"
   },
@@ -994,7 +985,7 @@
     "name": "Quentin Watt Bootstrap Video Series",
     "description": "Get a deeper understanding of Bootstrap's capabilities and usage",
     "type": "Video",
-    "subject": "CSS, Bootstrap",
+    "subject": "CSS/Bootstrap",
     "externalSource": "https://www.youtube.com/playlist?list=PL41lfR-6DnOovY0t3nBg8Zb6aqm_H70mR",
     "version": "1.0.0"
   },
@@ -1003,16 +994,16 @@
     "name": "Bootstrap-ify your Tribute Page",
     "description": "Modify your tribute page to use Bootstrap instead of native CSS",
     "type": "Project",
-    "subject": "CSS, Bootstrap",
+    "subject": "CSS/Bootstrap",
     "externalSource": "",
     "version": "1.0.0"
   },
-  "foundationcrashcourse": {
+  "foundationcrash": {
     "source": "YouTube",
     "name": "Foundation Framework Crash Course",
     "description": "Learn the basics of the Framework library for styling your webpages",
     "type": "Video",
-    "subject": "CSS, Framework",
+    "subject": "CSS/Foundation",
     "externalSource": "https://www.youtube.com/watch?v=DEu5xYEZx18",
     "version": "1.0.0"
   },
@@ -1021,7 +1012,7 @@
     "name": "Introduction to Sass",
     "description": "Learn the basics of the Sass library for styling your webpages",
     "type": "Lesson",
-    "subject": "CSS, Sass",
+    "subject": "CSS/Sass",
     "externalSource": "http://callmenick.com/post/an-introduction-to-sass-scss",
     "version": "1.0.0"
   },
@@ -1030,7 +1021,7 @@
     "name": "Introduction to Less",
     "description": "Learn the basics of the Less library for styling your webpages",
     "type": "Lesson",
-    "subject": "CSS, Less",
+    "subject": "CSS/Less",
     "externalSource": "",
     "version": "1.0.0"
   },
@@ -1039,7 +1030,7 @@
     "name": "Introduction to Stylus",
     "description": "Learn the basics of the Stylus library for styling your webpages",
     "type": "Lesson",
-    "subject": "CSS, Stylus",
+    "subject": "CSS/Stylus",
     "externalSource": "",
     "version": "1.0.0"
   },
@@ -1049,7 +1040,7 @@
     "description": "Gain insight into the hardware and software that are the backbone of the Internet.",
     "type": "Video",
     "subject": "Web Basics",
-    "External Source": "https://www.khanacademy.org/partner-content/code-org/internet-works",
+    "externalSource": "https://www.khanacademy.org/partner-content/code-org/internet-works",
     "version": "1.0.0"
   },
   "howwebworks": {
@@ -1058,7 +1049,7 @@
     "description": "Gain insight into the software and protocols that make up the how the World Wide Web (www).",
     "type": "Reading",
     "subject": "Web Basics",
-    "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works",
+    "externalSource": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works",
     "version": "1.0.0"
   },
   "getstartedweb": {
@@ -1067,7 +1058,7 @@
     "description": "Getting started with the Web is a concise series introducing you to the practicalities of web development. You'll set up the tools you need to construct a simple webpage and publish your own simple code.",
     "type": "Reading",
     "subject": "Web Basics",
-    "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web",
+    "externalSource": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web",
     "version": "1.0.0"
   },
   "setupwwwfolder": {
@@ -1076,7 +1067,7 @@
     "description": "Learn what you should be aware of when setting up your project so you can set up a sensible file structure for your website. (Note: please skip the Javascript portion of this walkthrough for now).",
     "type": "Project",
     "subject": "Web Basics",
-    "External Source": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Dealing_with_files",
+    "externalSource": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Dealing_with_files",
     "version": "1.0.0"
   },
   "E12345678901234567": {
@@ -1085,7 +1076,7 @@
     "description": "Error",
     "type": "Error",
     "subject": "Error",
-    "External Source": "",
+    "externalSource": "",
     "version": "1.0.0"
   },
   "orphanlesson": {
@@ -1094,7 +1085,7 @@
     "description": "Error",
     "type": "Error",
     "subject": "Error",
-    "External Source": "",
+    "externalSource": "",
     "version": "1.0.0"
   }
 }

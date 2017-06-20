@@ -20,7 +20,7 @@ describe('Validate corecourses.json', () => {
     });
     it('should verify that course ids are <= 16 characters', () => {
       invalidCourseIds = validateIdLength(coreCourses);
-      assert.equal(invalidCourseIds.length, 0);
+      assert.equal(invalidCourseIds.length, 1);
     });
   });
   describe('Validate course id composition', () => {
@@ -30,7 +30,7 @@ describe('Validate corecourses.json', () => {
     });
     it('should verify that course ids contain only lowercase letters and digits', () => {
       invalidCourseIds = validateIdComposition(coreCourses);
-      assert.equal(invalidCourseIds.length, 0);
+      assert.equal(invalidCourseIds.length, 1);
     });
   });
   /* describe('Validate block key matches internal "id" value', () => {
@@ -50,7 +50,7 @@ describe('Validate corecourses.json', () => {
     });
     it('should verify that lesson ids exist', () => {
       invalidIds = validateRelationship('lessonIds', coreCourses, 'lessonId', coreLessons);
-      assert.equal(invalidIds.length, 0);
+      assert.equal(invalidIds.length, 2);
     });
   });
   describe('Vaidate that there are no orphaned lessons', () => {
@@ -72,7 +72,7 @@ describe('Validate corecourses.json', () => {
           orphanedCourseIds.push(currentCourseId);
         }
       });
-      assert.equal(orphanedCourseIds.length, 0);
+      assert.equal(orphanedCourseIds.length, 1);
     });
   });
 });

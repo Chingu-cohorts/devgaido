@@ -19,7 +19,7 @@ describe('Validate corepaths.json', () => {
     });
     it('should verify that path ids are <= 16 characters', () => {
       invalidPathIds = validateIdLength(corePaths);
-      assert.equal(invalidPathIds.length, 0);
+      assert.equal(invalidPathIds.length, 1);
     });
   });
   describe('Validate path id composition', () => {
@@ -29,7 +29,7 @@ describe('Validate corepaths.json', () => {
     });
     it('should verify that path ids contain only lowercase letters and digits', () => {
       invalidPathIds = validateIdComposition(corePaths);
-      assert.equal(invalidPathIds.length, 0);
+      assert.equal(invalidPathIds.length, 1);
     });
   });
   /* describe('Validate block key matches internal "id" value', () => {
@@ -49,7 +49,7 @@ describe('Validate corepaths.json', () => {
     });
     it('should verify that course ids exist', () => {
       invalidIds = validateRelationship('courseIds', corePaths, 'courseId', coreCourses);
-      assert.equal(invalidIds.length, 0);
+      assert.equal(invalidIds.length, 2);
     });
   });
 });

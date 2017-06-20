@@ -25,7 +25,52 @@
     "Release No.": "",
     "Authority URL": "https://developer.mozilla.org/en-US/docs/Web/CSS",
     "version": "1.0.0"
-  }, 
+  },
+  "CSS/Bootstrap": {
+    "Type": "Framework",
+    "Focus Area": "Frontend",
+    "Name": "CSS/Bootstrap",
+    "Description": "Bootstrap CSS Framework",
+    "Release No.": "",
+    "Authority URL": "http://getbootstrap.com/",
+    "version": "1.0.0"
+  },
+  "CSS/Foundation": {
+    "Type": "Framework",
+    "Focus Area": "Frontend",
+    "Name": "CSS/Foundation",
+    "Description": "Foundation CSS Framework",
+    "Release No.": "",
+    "Authority URL": "http://foundation.zurb.com/",
+    "version": "1.0.0"
+  },
+  "CSS/Sass": {
+    "Type": "Preprocessor",
+    "Focus Area": "Frontend",
+    "Name": "CSS/Sass",
+    "Description": "Sass CSS Preprocessor",
+    "Release No.": "",
+    "Authority URL": "http://sass-lang.com/",
+    "version": "1.0.0"
+  },
+  "CSS/Less": {
+    "Type": "Preprocessor",
+    "Focus Area": "Frontend",
+    "Name": "CSS/Less",
+    "Description": "Less CSS Preprocessor",
+    "Release No.": "",
+    "Authority URL": "http://lesscss.org/",
+    "version": "1.0.0"
+  },
+  "CSS/Stylus": {
+    "Type": "Preprocessor",
+    "Focus Area": "Frontend",
+    "Name": "CSS/Stylus",
+    "Description": "Stylus CSS Preprocessor",
+    "Release No.": "",
+    "Authority URL": "http://stylus-lang.com/",
+    "version": "1.0.0"
+  },           
   "Computer Science": {
     "Type": "Concept",
     "Focus Area": "Foundation",
@@ -79,7 +124,16 @@
     "Release No.": "5",
     "Authority URL": "https://developer.mozilla.org/en-US/docs/Web/HTML",
     "version": "1.0.0"
-  }, 
+  },
+  "HTML/CSS": {
+    "Type": "Library",
+    "Focus Area": "Frontend",
+    "Name": "HTML & CSS",
+    "Description": "Hypertext Markup Language & Cascading Style Sheets",
+    "Release No.": "",
+    "Authority URL": "",
+    "version": "1.0.0"
+  },  
   "Javascript": {
     "Type": "Language",
     "Focus Area": "Javascript",

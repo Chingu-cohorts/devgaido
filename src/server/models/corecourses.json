@@ -96,7 +96,7 @@
       "jsallonge6",
       "getsassy",
       "towersofhanoi",
-      "createcsstemplate"
+      "createcsstemp"
     ],
     "version": "1.0.0"
   },
@@ -118,7 +118,7 @@
       "csmaths",
       "algnflowcharts", 
       "intropencil",
-      "cloneadmintemplate",
+      "cloneadmintemp",
       "thinkjava",
       "classicpuzzles", 
       "opendatastructs",
@@ -142,7 +142,7 @@
       "clonenetflix", 
       "calculus2",
       "classicpuzzles2", 
-      "softwarearchitecture",
+      "softwarearch",
       "codejam15r1a",
       "jsspessore",
       "cloneblog",
@@ -169,7 +169,7 @@
     "name": "P1XT Guide: Tier 4 - Polish the Rough Edges",
     "description": "Round out your knowledge by increasing your knowledge of advanced subjects like Artificial Intelligence, and put your knowledge to the test by completing advanced projects.",
     "lessonIds": [
-      "computerarchitecture",
+      "computerarch",
       "codejam15r3",
       "cybersecurity",
       "classicpuzzles4",
@@ -182,12 +182,12 @@
       "mdconversion",
       "compilers",
       "nlp",
-      "clonelearnharmony",
+      "cloneharmony",
       "networks", 
       "parallel", 
       "codejam15dist",
       "cloneslack",
-      "bootstrapfullstack",
+      "bootstrapfull",
       "codejam16",
       "materialdesign"
     ],
@@ -262,7 +262,7 @@
     "name": "Introduction to Foundation",
     "description": "Learn how to use the Foundation Library for styling",
     "lessonIds": [
-      "foundationcrashcourse"
+      "foundationcrash"
     ],
     "version": "1.0.0"
   },

@@ -20,7 +20,7 @@ describe('Validate corelessons.json', () => {
     });
     it('should verify that lesson ids are <= 16 characters', () => {
       invalidLessonIds = validateIdLength(coreLessons);
-      assert.equal(invalidLessonIds.length, 0);
+      assert.equal(invalidLessonIds.length, 1);
     });
   });
   describe('Validate lesson id composition', () => {
@@ -30,7 +30,7 @@ describe('Validate corelessons.json', () => {
     });
     it('should verify that lesson ids contain only lowercase letters and digits', () => {
       invalidLessonIds = validateIdComposition(coreLessons);
-      assert.equal(invalidLessonIds.length, 0);
+      assert.equal(invalidLessonIds.length, 1);
     });
   });
   /* describe('Validate block key matches internal "id" value', () => {
@@ -54,7 +54,7 @@ describe('Validate corelessons.json', () => {
           invalidIds.push([currentLesson.id, currentLesson.subject]);
         }
       });
-      assert.equal(invalidIds.length, 0);
+      assert.equal(invalidIds.length, 2);
     });
   });
   describe('Validate that there are no orphaned lessons', () => {
@@ -76,7 +76,7 @@ describe('Validate corelessons.json', () => {
           orphanedLessonIds.push(currentLessonId);
         }
       });
-      assert.equal(orphanedLessonIds.length, 0);
+      assert.equal(orphanedLessonIds.length, 2);
     });
   });
 });
