@@ -16,6 +16,7 @@
     "dev:client": "webpack-dev-server",
     "copyassets": "rimraf ./dist && mkdirp ./dist/public && ncp ./src/client/assets/ ./dist/public/assets",
     "analyzesize": "webpack -p --config webpack.config.js --json | webpack-bundle-size-analyzer",
+    "screenshots": "node ./src/server/screenshots",
     "test": "mocha --require ./test/helper.js '+(test|validate)/**/*Spec.js'"
   },
   "devDependencies": {
@@ -75,6 +76,7 @@
     "rimraf": "^2.6.1",
     "session-file-store": "^1.0.0",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1"
+    "stylus-loader": "^3.0.1",
+    "webshot": "^0.18.0"
   }
 }
