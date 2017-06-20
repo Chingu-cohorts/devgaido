@@ -16,20 +16,12 @@ const lessonTypeColors = {
   'Supplemental Course': '',
 };
 
-const getAllCourseLessons = (course, curriculum) => {
-  const lessons = [];
-  course.lessonIds.forEach((lessonId) => {
-    lessons.push(curriculum.lessons[lessonId]);
-  });
-  return lessons;
-};
-
-const LessonCard = ({ name, description, to, type }) => (
+const LessonCard = ({ name, description, linkTo, type }) => (
   <Card
     caption={name}
     subcaption="LESSON"
     text={description}
-    to={to}
+    linkTo={linkTo}
     content={null}
     icons={[lessonTypeIcons[type], 'fa fa-graduation-cap']}
     color={lessonTypeColors[type]}
@@ -45,19 +37,22 @@ const Course = ({ match, curriculum }) => {
         <div className="path-header path-header-image" />
         <div className="path-header path-header-image-color">
           <h1 className="path-header-path-name">{course.name}</h1>
+          <h1 className="completion-text-big">{course.nCompleted}/{course.nTotal}</h1>
         </div>
         <p className="card-text">{course.description}</p>
         <div className="lesson-list">
-          {getAllCourseLessons(curriculum.courses[match.params.id], curriculum).map(lesson => (
-            <LessonCard
-              name={lesson.name}
-              description={lesson.description}
-              id={lesson.id}
-              type={lesson.type}
-              key={lesson.id}
-              to={`/paths/${match.params.pid}/${match.params.id}/${lesson.id}`}
-            />
-          ))}
+          { course.lessonIds.map((lessonId) => {
+            const lesson = curriculum.lessons[lessonId];
+            return (
+              <LessonCard
+                name={lesson.name}
+                description={lesson.description}
+                type={lesson.type}
+                key={lessonId}
+                linkTo={`/paths/${match.params.pid}/${match.params.id}/${lessonId}`}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
@@ -67,7 +62,7 @@ const Course = ({ match, curriculum }) => {
 LessonCard.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  to: PropTypes.string.isRequired,
+  linkTo: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
 };
 

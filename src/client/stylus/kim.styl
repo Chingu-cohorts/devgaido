@@ -9,6 +9,8 @@
 a
     text-decoration: none
     
+
+
 .breadcrumb
     padding 10px
 
@@ -19,12 +21,25 @@ a
     padding: 1rem 1rem 1rem 1rem
     margin-bottom: 40px
     position: relative
-    h1
+    &-title
         color white
         font-size: 135%
 
     &.current-path
         padding-bottom: 90px
+
+.completion-text
+    text-align: right
+    color darken(colorTertiary, 20)
+    font-size: 120%
+    margin-top 1em
+
+.completion-text-big
+    position: absolute
+    font-size 250%
+    color white
+    top 20px
+    right 20px
 
 .section-card-header
     background: darken(colorTertiary, 20)

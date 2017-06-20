@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { completeLesson, unCompleteLesson } from './LessonActions';
+
 import BreadCrumbs from '../shared/BreadCrumbs';
 
-const Lesson = ({ match, curriculum }) => {
-  const lesson = curriculum.lessons[match.params.id];
+const Lesson = ({ match, dispatch, curriculum }) => {
+  const lessonId = match.params.id;
+  const lesson = curriculum.lessons[lessonId];
+
   return (
     <div className="container">
       <BreadCrumbs
@@ -13,16 +17,17 @@ const Lesson = ({ match, curriculum }) => {
         courseId={match.params.cid}
         lessonId={match.params.id}
       />
-      {/* <a className="backLink" href="#" onClick={() => history.goBack()}>&larr; Back</a>*/}
       <div className="grid-full lesson lesson-image">
         <div className="lesson-header lesson-header-image" />
         <div className="lesson-header lesson-header-image-color2">
           <h1 className="lesson-header-path-name">{lesson.name}</h1>
-
+          <h1 className="">{lesson.completed ? 'Completed' : 'Incomplete'}</h1>
         </div>
         <span className="lesson-caption-small">Lesson</span>
         <span className="lesson-caption-small">{lesson.name}</span>
         <p className="lesson-text">{lesson.description}</p>
+        <button onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
+        <button onClick={() => dispatch(unCompleteLesson(lessonId))}>UNCOMPLETE LESSON</button>
       </div>
     </div>
   );
@@ -31,6 +36,7 @@ const Lesson = ({ match, curriculum }) => {
 Lesson.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default Lesson;

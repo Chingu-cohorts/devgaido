@@ -33,7 +33,7 @@ describe('Validate corelessons.json', () => {
       assert.equal(invalidLessonIds.length, 0);
     });
   });
-  describe('Validate block key matches internal "id" value', () => {
+  /* describe('Validate block key matches internal "id" value', () => {
     let invalidLessonIds = [];
     afterEach(() => {
       invalidLessonIds = logInvalidIds(invalidLessonIds, 'Lesson id does not match "id" value');
@@ -42,7 +42,7 @@ describe('Validate corelessons.json', () => {
       invalidLessonIds = validateIdMatch(coreLessons);
       assert.equal(invalidLessonIds.length, 0);
     });
-  });
+  });*/
   describe('Validate lesson ids in the course exists', () => {
     let invalidIds = [];
     afterEach(() => {
@@ -71,9 +71,9 @@ describe('Validate corelessons.json', () => {
         });
         return lessonReferences;
       }, []);
-      Object.values(coreLessons).forEach((currentLesson) => {
-        if (allCourseLessons.indexOf(currentLesson.id) === -1) {
-          orphanedLessonIds.push(currentLesson.id);
+      Object.keys(coreLessons).forEach((currentLessonId) => {
+        if (allCourseLessons.indexOf(currentLessonId) === -1) {
+          orphanedLessonIds.push(currentLessonId);
         }
       });
       assert.equal(orphanedLessonIds.length, 0);

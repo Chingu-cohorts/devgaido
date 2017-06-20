@@ -10,7 +10,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import reducers from './reducers';
 import App from './App';
-import { initPaths } from './pages/Paths/PathsActions';
+import { initCurriculum } from './actions/curriculumActions';
+
 import './stylus/style.styl';
 
 /**
@@ -36,8 +37,7 @@ const initialState = getInitialState();
 
 const store = createStore(reducers, initialState, applyMiddleware(...middleware));
 
-store.dispatch(initPaths(initialState.curriculum.paths.length));
-
+store.dispatch(initCurriculum());
 /**
  * Build the template for all pages in the application
  *

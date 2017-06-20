@@ -1,34 +1,33 @@
 {
   "srcctrl" : {
-    "id": "srcctrl",
     "name": "Source Code Control Systems",
     "description": "Learn the tools and techniques needed to effectively and efficiently manage your projects source code.",
     "courseIds": [
       "git",
       "github",
       "advancedgit"
-    ]
+    ],
+    "version": "1.0.0"
   },
   "webpagedc" : {
-    "id": "webpagedc",
     "name": "Webpage Design & Construction",
     "description": "Learn the technologies necessary to build simple webpages.",
     "courseIds": [
       "buildwebpages"
-    ]
+    ],
+    "version": "1.0.0"
   },
   "javascript" : {
-    "id": "javascript",
     "name": "Javascript",
     "description": "Learn Javascript so you can be the next Kim Kwanka",
     "courseIds": [
       "beginnerjs",
       "intermediatejs",
       "advancedjs"
-    ]
+    ],
+    "version": "1.0.0"
   },
   "p1xt" : {
-    "id": "p1xt",
     "name": "The P1XT Guide",
     "description": "Follow the P1XT Guide to master the Javascript Ecosystem",
     "courseIds": [
@@ -37,10 +36,10 @@
       "p1xttier2",
       "p1xttier3",
       "p1xttier4"
-    ]
+    ],
+    "version": "1.0.0"
   },
   "buildawebsite" : {
-    "id": "buildawebsite",
     "name": "Build A Website",
     "description": "Learn how to build a website",
     "courseIds": [
@@ -55,24 +54,25 @@
       "introsass",
       "introless",
       "introstylus"
-    ]
+    ],
+    "version": "1.0.0"
   },
   "learnhowwebworks" : {
-    "id": "learnhowwebworks",
     "name": "Learn How the Web Works",
     "description": "Learn how the Internet and the World Wide Web work",
     "courseIds": [
       "howwebworks",
       "getstartedweb"
-    ]
+    ],
+    "version": "1.0.0"
   },
   "E2345678901234567" : {
-    "id": "E23456789012345678",
     "name": "Error test",
     "description": "Path id exceeds 16 characters",
     "courseIds": [
       "error1",
       "error2"
-    ]
+    ],
+    "version": "1.0.0"
   }
 }

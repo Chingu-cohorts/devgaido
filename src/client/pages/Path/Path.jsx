@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
 
-const CourseCard = ({ curriculum, pathId, courseId }) => (
-  <Link className="course-card connected" to={`/paths/${pathId}/${courseId}`}>
+const CourseCard = ({ course, linkTo }) => (
+  <Link className="course-card connected" to={linkTo}>
     <div className="course-card-header">
       <span className="course-card-caption">COURSE</span>
-      <h1>{curriculum.courses[courseId].name}</h1>
+      <h1>{course.name}</h1>
     </div>
-    <p className="course-description">{curriculum.courses[courseId].description}</p>
+    <p className="course-description">{course.description}</p>
     <div className="lesson-list">
       {/* getAllCourseLessons(curriculum.courses[id], curriculum).map(lesson => (
         <LessonCard
@@ -22,20 +22,19 @@ const CourseCard = ({ curriculum, pathId, courseId }) => (
           key={lesson.id}
         />
       ))*/}
+      <h1 className="completion-text">{course.nCompleted}/{course.nTotal}</h1>
     </div>
   </Link>
 );
 
 const Path = ({ match, curriculum }) => {
+  const pathId = match.params.id;
   const path = curriculum.paths[match.params.id];
-  const courses = path.courseIds.map(courseId => (
-    <CourseCard
-      curriculum={curriculum}
-      pathId={match.params.id}
-      courseId={courseId}
-      key={courseId}
-    />
-  ));
+
+  const courses = path.courseIds.map((courseId) => {
+    const course = curriculum.courses[courseId];
+    return <CourseCard linkTo={`/paths/${pathId}/${courseId}`} course={course} key={courseId} />;
+  });
   return (
     <div className="container">
       <BreadCrumbs curriculum={curriculum} pathId={match.params.id} />
@@ -43,23 +42,17 @@ const Path = ({ match, curriculum }) => {
         <div className="path-header path-header-image" />
         <div className="path-header path-header-image-color">
           <h1 className="path-header-path-name">{path.name}</h1>
+          <h1 className="completion-text-big">{path.nCompleted}/{path.nTotal}</h1>
         </div>
         {courses}
       </div>
     </div>
   );
 };
-/*
-LessonCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-};*/
+
 CourseCard.propTypes = {
-  pathId: PropTypes.string.isRequired,
-  courseId: PropTypes.string.isRequired,
-  curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
+  course: PropTypes.objectOf(PropTypes.shape).isRequired,
+  linkTo: PropTypes.string.isRequired,
 };
 
 Path.propTypes = {

@@ -5,7 +5,8 @@
     "Name": "Android",
     "Description": "Android mobile development",
     "Release No.": "",
-    "Authority URL": "https://www.android.com/"
+    "Authority URL": "https://www.android.com/",
+    "version": "1.0.0"
   }, 
   "Backend": {
     "Type": "Concept",
@@ -13,7 +14,8 @@
     "Name": "Backend",
     "Description": "Server-side application development",
     "Release No.": "",
-    "Authority URL": ""
+    "Authority URL": "",
+    "version": "1.0.0"
   }, 
   "CSS": {
     "Type": "Technology",
@@ -21,7 +23,8 @@
     "Name": "CSS",
     "Description": "Cascading Stype Sheets",
     "Release No.": "",
-    "Authority URL": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+    "Authority URL": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    "version": "1.0.0"
   }, 
   "Computer Science": {
     "Type": "Concept",
@@ -29,7 +32,8 @@
     "Name": "Computer Science",
     "Description": "Computer Science ",
     "Release No.": "",
-    "Authority URL": ""
+    "Authority URL": "",
+    "version": "1.0.0"
   }, 
   "Database": {
     "Type": "Technology",
@@ -37,7 +41,8 @@
     "Name": "Database",
     "Description": "Database Management Systems",
     "Release No.": "",
-    "Authority URL": ""
+    "Authority URL": "",
+    "version": "1.0.0"
   }, 
   "Frontend": {
     "Type": "Concept",
@@ -45,7 +50,8 @@
     "Name": "Frontend",
     "Description": "Client-side application development",
     "Release No.": "",
-    "Authority URL": ""
+    "Authority URL": "",
+    "version": "1.0.0"
   }, 
   "Fullstack": {
     "Type": "Concept",
@@ -53,7 +59,8 @@
     "Name": "Fullstack",
     "Description": "Client-side + Server-side application development",
     "Release No.": "",
-    "Authority URL": ""
+    "Authority URL": "",
+    "version": "1.0.0"
   }, 
   "Gulp": {
     "Type": "Library",
@@ -61,7 +68,8 @@
     "Name": "Gulp",
     "Description": "Application development automation",
     "Release No.": "",
-    "Authority URL": ""
+    "Authority URL": "",
+    "version": "1.0.0"
   }, 
   "HTML": {
     "Type": "Library",
@@ -69,7 +77,8 @@
     "Name": "HTML",
     "Description": "Hypertext Markup Language",
     "Release No.": "5",
-    "Authority URL": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+    "Authority URL": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    "version": "1.0.0"
   }, 
   "Javascript": {
     "Type": "Language",
@@ -77,7 +86,8 @@
     "Name": "Javascript",
     "Description": "Javascript ES5",
     "Release No.": "ES5",
-    "Authority URL": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    "Authority URL": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    "version": "1.0.0"
   }, 
   "Javascript ES6": {
     "Type": "Language",
@@ -85,7 +95,8 @@
     "Name": "Javascript ES6",
     "Description": "Javascript ES6",
     "Release No.": "ES6",
-    "Authority URL": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    "Authority URL": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    "version": "1.0.0"
   }, 
   "Mathematics": {
     "Type": "Concept",
@@ -93,7 +104,8 @@
     "Name": "Mathematics",
     "Description": "Mathematics",
     "Release No.": "",
-    "Authority URL": ""
+    "Authority URL": "",
+    "version": "1.0.0"
   }, 
   "Project Management": {
     "Type": "Concept",
@@ -101,7 +113,8 @@
     "Name": "Project Management",
     "Description": "Agile Project Management",
     "Release No.": "",
-    "Authority URL": ""
+    "Authority URL": "",
+    "version": "1.0.0"
   }, 
   "Source Code Control": {
     "Type": "Concept",
@@ -109,7 +122,8 @@
     "Name": "Source Code Control",
     "Description": "Source Code Management",
     "Release No.": "",
-    "Authority URL": ""
+    "Authority URL": "",
+    "version": "1.0.0"
   }, 
   "UX/UI": {
     "Type": "Concept",
@@ -117,7 +131,8 @@
     "Name": "UX/UI",
     "Description": "User Experience/User Interface",
     "Release No.": "",
-    "Authority URL": ""
+    "Authority URL": "",
+    "version": "1.0.0"
   }, 
   "Web Basics": {
     "Type": "Concept",
@@ -125,6 +140,7 @@
     "Name": "Web Basics",
     "Description": "Technology that makes the World Wide Web Work",
     "Release No.": "",
-    "Authority URL": ""
+    "Authority URL": "",
+    "version": "1.0.0"
   }
 }

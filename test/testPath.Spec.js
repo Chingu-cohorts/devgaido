@@ -8,8 +8,8 @@ describe('Test corePaths.js functions', function () {
    * Test the corePaths.getPath function
    */
   describe('Test the getPath function', function () {
-    it('should return id "webpagedc" for the named path"', function () {
-      assert.equal('webpagedc', corePaths.getPath('webpagedc').id);
+    it('should return name "Webpage Design & Construction" for the named path"', function () {
+      assert.equal('Webpage Design & Construction', corePaths.getPath('webpagedc').name);
     });
     it('should return undefined for an unknown path name "99999"', function () {
       assert.equal(undefined, corePaths.getPath('99999'));

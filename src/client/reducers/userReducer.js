@@ -11,13 +11,11 @@ const user = (state = {
   email: '',
   dayLastVisited: Date.now(),
   streak: 0,
-  bookmarkedPaths: [],
-  lessonsCompleted: [],
+  bookmarkedPaths: ['webpagedc', 'javascript'],
+  lessonsCompleted: ['learnhtmlcss', 'onlineresume', 'advancedhtml', 'intermediatecss', 'advancedcss'],
   curPathId: 'srcctrl',
 }, action) => {
   switch (action.type) {
-    case 'TEST_LOGIN':
-      return action.user;
     default:
       return state;
   }

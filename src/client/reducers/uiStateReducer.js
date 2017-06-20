@@ -1,4 +1,3 @@
-import Paths from '../pages/Paths/PathsReducer';
 import Dashboard from '../pages/Dashboard/DashboardReducer';
 /**
  * UI State. 'global' defines state items that are available across all pages
@@ -49,16 +48,6 @@ const uiState = (state = {
         global: {
           ...state.global,
           navMenuOpen: !state.global.navMenuOpen,
-        },
-      };
-    }
-    case 'INIT_PATHS' :
-    case 'TOGGLE_PATH': {
-      return {
-        ...state,
-        Pages: {
-          ...state.Pages,
-          Paths: Paths(state.Pages.Paths, action),
         },
       };
     }
