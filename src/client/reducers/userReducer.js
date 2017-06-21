@@ -11,9 +11,9 @@ const user = (state = {
   email: '',
   dayLastVisited: Date.now(),
   streak: 0,
-  bookmarkedPaths: ['webpagedc', 'javascript'],
+  bookmarkedPaths: [], // ['webpagedc', 'javascript'],
   lessonsCompleted: ['learnhtmlcss', 'onlineresume', 'advancedhtml', 'intermediatecss', 'advancedcss'],
-  curPathId: 'srcctrl',
+  curPathId: '', // 'srcctrl'
 }, action) => {
   switch (action.type) {
     default:

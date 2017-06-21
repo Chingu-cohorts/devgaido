@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import Card from '../shared/Card';
 
@@ -114,6 +115,13 @@ const PathList = ({ pathIds, curriculum }) => (
   </div>
 );
 
+const NoPaths = ({text, showPathButton}) => (
+  <div className="no-paths">
+    <h1 className="no-paths-text">{text}</h1>
+    {showPathButton ? <Link className="no-paths-button" to="/paths">Browse Paths</Link> : null}
+  </div>
+);
+
 const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
   <div className="container">
     <div className="container-dashboard">
@@ -123,47 +131,48 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
           caption: 'In Progress',
           content: (
             <div>
-              <CurrentPathCard curPath={curriculum.paths[user.curPathId]} curriculum={curriculum} />
-              <SectionCard title="In Progress" subtitle="PATHS">
-                <PathList
-                  pathIds={Object.keys(curriculum.paths).filter(
-                    pathId => !curriculum.paths[pathId].completed
-                              && isInProgress(user, curriculum, pathId),
-                  )}
-                  curriculum={curriculum}
-                />
-              </SectionCard>
+              {user.curPathId !== '' ?
+                <CurrentPathCard curPath={curriculum.paths[user.curPathId]} curriculum={curriculum} /> :
+                <SectionCard title="In Progress" subtitle="PATHS">
+                  <NoPaths text="You haven't started any paths yet." showPathButton />
+                </SectionCard>
+                }
+              {user.curPathId !== '' ?
+                <SectionCard title="In Progress" subtitle="PATHS">
+                  <PathList
+                    pathIds={Object.keys(curriculum.paths).filter(
+                      pathId => !curriculum.paths[pathId].completed
+                                && isInProgress(user, curriculum, pathId),
+                    )}
+                    curriculum={curriculum}
+                  />
+                </SectionCard> : null}
             </div>),
         }, {
           caption: 'Bookmarked',
           content: (
             <SectionCard title="Bookmarked" subtitle="PATHS">
-              <PathList
-                pathIds={Object.keys(curriculum.paths).filter(
-                  pathId => user.bookmarkedPaths.indexOf(pathId) !== -1,
-                )}
-                curriculum={curriculum}
-              />
+              {user.bookmarkedPaths.length !== 0 ?
+                <PathList
+                  pathIds={Object.keys(curriculum.paths).filter(
+                    pathId => user.bookmarkedPaths.indexOf(pathId) !== -1,
+                  )}
+                  curriculum={curriculum}
+                /> :
+                <NoPaths text="You haven't bookmarked any paths yet." showPathButton />}
             </SectionCard>),
         }, {
           caption: 'Completed',
           content: (
-            <SectionCard title="Completed" subtitle="PATHS">
-              <PathList
-                pathIds={Object.keys(curriculum.paths).filter(
-                  pathId => curriculum.paths[pathId].completed,
-                )}
-                curriculum={curriculum}
-              />
-            </SectionCard>),
-        }, {
-          caption: 'All Paths',
-          content: (
-            <SectionCard title="All" subtitle="PATHS">
-              <PathList
-                pathIds={Object.keys(curriculum.paths)}
-                curriculum={curriculum}
-              />
+            <SectionCard title="Completed" subtitle="PATHS">           
+              {Object.keys(curriculum.paths).filter(pathId => curriculum.paths[pathId].completed).length !== 0 ?
+                <PathList
+                  pathIds={Object.keys(curriculum.paths).filter(
+                    pathId => curriculum.paths[pathId].completed,
+                  )}
+                  curriculum={curriculum}
+                /> :
+                <NoPaths text="You haven't completed any paths yet." />}
             </SectionCard>),
         }]}
         dispatch={dispatch}

@@ -2,6 +2,7 @@ import Home from './pages/Home/Home';
 import Path from './pages/Path/Path';
 import Course from './pages/Course/Course';
 import Lesson from './pages/Lesson/Lesson';
+import PathCatalog from './pages/PathCatalog/PathCatalog';
 import Profile from './pages/Profile/Profile';
 import Times from './pages/Times/Times';
 import Objectives from './pages/Objectives/Objectives';
@@ -72,6 +73,12 @@ const routes = [
     exact: true,
     component: Lesson,
     passdown: ['curriculum', 'user', 'dispatch'],
+  },
+  {
+    path: '/paths',
+    exact: true,
+    component: PathCatalog,
+    passdown: [],
   },
 ];
 
