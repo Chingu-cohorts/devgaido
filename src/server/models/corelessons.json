@@ -103,6 +103,7 @@
     "name": "Project: Clone this online resume template",
     "description": "",
     "type": "Project",
+    "instructions": "Using only HTML and CSS create a static webpage that is functionally equivalent to this online resume template.",
     "subject": "HTML/CSS",
     "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2",
     "version": "1.0.0"
@@ -148,6 +149,7 @@
     "name": "Project: Portfolio from the frontend section of FCC",
     "description": "",
     "type": "Project",
+    "instructions": "Complete the Portfolio project from the Frontend Certificate program on Freecodecamp.",
     "subject": "HTML/CSS",
     "externalSource": "",
     "version": "1.0.0"
@@ -209,8 +211,9 @@
   "createcsstemp": {
     "source": "P1XT",
     "name": "Project: Create a new template",
-    "description": "Project: Pick a template from here and create a new template with it as your inspiration (do not use it's assets)",
+    "description": "Project: Create a Webpage Template",
     "type": "Project",
+    "instructions": "Pick a template from here and create a new template with it as your inspiration (do not use it's assets)",
     "subject": "Javascript",
     "externalSource": "http://www.free-css.com/free-css-templates",
     "version": "1.0.0"
@@ -254,8 +257,9 @@
   "gulp": {
     "source": "P1XT",
     "name": "Project: Read up on Gulp",
-    "description": "Project: Read up on Gulp - try to incorporate it into your workflow if you aren't using it regularly already",
+    "description": "Project: Gulp Workflow Automation",
     "type": "Project",
+    "instructions": "Read up on Gulp - try to incorporate it into your workflow if you aren't using it regularly already",
     "subject": "Gulp",
     "externalSource": "http://gulpjs.com/",
     "version": "1.0.0"
@@ -263,8 +267,9 @@
   "fccsimon": {
     "source": "P1XT",
     "name": "Project: Simon Game",
-    "description": "Project: Simon Game from the frontend section of FCC",
+    "description": "Project: Simon Game",
     "type": "Project",
+    "instructions": "Implement the Simon game from the Frontend Certificate program at Freecodecamp.",
     "subject": "Javascript",
     "externalSource": "",
     "version": "1.0.0"
@@ -307,9 +312,10 @@
   },
   "clonelandingpage": {
     "source": "P1XT",
-    "name": "Project: Clone this landing page",
+    "name": "Project: Clone Landing Page",
     "description": "",
     "type": "Project",
+    "instructions": "Create a clone of this landing page. Be sure to create your own code ant assets",
     "subject": "Frontend",
     "externalSource": "https://blackrockdigital.github.io/startbootstrap-creative/",
     "version": "1.0.0"
@@ -343,9 +349,10 @@
   },
   "cloneadmintemp": {
     "source": "P1XT",
-    "name": "Project: Clone this Admin template using React, Angular, or Vue",
+    "name": "Project: Clone this Admin Template",
     "description": "",
     "type": "Project",
+    "instructions": "Recreate this Admin template using React, Angular, or Vue",
     "subject": "Frontend",
     "externalSource": "http://rubix410.sketchpixy.com/ltr/dashboard",
     "version": "1.0.0"
@@ -362,8 +369,9 @@
   "classicpuzzles": {
     "source": "P1XT",
     "name": "Project: Complete all Classic Puzzles",
-    "description": "Project: Complete all Classic Puzzles - Easy on CodinGame in JavaScript",
+    "description": "Project: Complete all Classic Puzzles",
     "type": "Project",
+    "instructions": "Solve all the easy-level puzzles on CodinGame using JavaScript",
     "subject": "Javascript",
     "externalSource": "https://www.codingame.com/",
     "version": "1.0.0"
@@ -400,15 +408,17 @@
     "name": "Project: Complete Code Jam Qualification Round 2",
     "description": "Project: Complete all challenges from the Code Jam Qualification Round 2",
     "type": "Project",
+    "instructions": "Using Javascript complete qualification round 2 of Google's Code Jam",
     "subject": "Javascript",
     "externalSource": "https://code.google.com/codejam/contest/6224486/dashboard",
     "version": "1.0.0"
   },
   "clonefrontpage": {
     "source": "P1XT",
-    "name": "Project: Clone the front page of this website",
-    "description": "Project: Clone the front page of this website modifying it to highlight a different product or industry. Make special note of the secondary navigation bar at the top. Implementing that is the highlight of this project.",
+    "name": "Project: Clone Website Front Page",
+    "description": "Project: Recreate the front page of this website",
     "type": "Project",
+    "instructions": "Using your own original code and assets recreate this websites front page, modifying it to highlight a different product or industry. Make special note of the secondary navigation bar at the top. Implementing that is the highlight of this project.",
     "subject": "Javascript",
     "externalSource": "https://urbanarmorgear.com/",
     "version": "1.0.0"
@@ -436,6 +446,7 @@
     "name": "Project: Build a Pomodoro",
     "description": "Project: Build the Pomodoro project from the FCC frontend curriculum - as an android app",
     "type": "Project",
+    "instructions": "",
     "subject": "Javascript",
     "externalSource": "",
     "version": "1.0.0"
@@ -472,6 +483,7 @@
     "name": "Project: Clone the Netflix interface",
     "description": "Project: Clone the Netflix interface using React, Angular, or Vue - pulling data from the Movie DB API or an API in a backend you create yourself.",
     "type": "Project",
+    "instructions": "",
     "subject": "Frontend",
     "externalSource": "",
     "version": "1.0.0"
@@ -490,6 +502,7 @@
     "name": "Project: Complete all Classic Puzzles - Medium on CodinGame in JavaScript",
     "description": "",
     "type": "Project",
+    "instructions": "",
     "subject": "Javascript",
     "externalSource": "",
     "version": "1.0.0"
@@ -508,6 +521,7 @@
     "name": "Project: Complete all challenges from the Code Jam Round 1A 2015",
     "description": "",
     "type": "Project",
+    "instructions": "",
     "subject": "Javascript",
     "externalSource": "",
     "version": "1.0.0"
@@ -526,6 +540,7 @@
     "name": "Project: Clone this blog template",
     "description": "Project: Clone this blog template - note that there are multiple pages",
     "type": "Project",
+    "instructions": "",
     "subject": "Javascript",
     "externalSource": "https://blackrockdigital.github.io/startbootstrap-clean-blog/",
     "version": "1.0.0"
@@ -553,6 +568,7 @@
     "name": "Project: Complete all ES6 Katas here",
     "description": "",
     "type": "Project",
+    "instructions": "",
     "subject": "Javascript",
     "externalSource": "http://es6katas.org/",
     "version": "1.0.0"
@@ -571,6 +587,7 @@
     "name": "Project: Complete all challenges from the Code Jam Round 1B 2015",
     "description": "",
     "type": "Project",
+    "instructions": "",
     "subject": "Javascript",
     "externalSource": "",
     "version": "1.0.0"
@@ -580,6 +597,7 @@
     "name": "Project: Build FaceBook",
     "description": "Project: Build FaceBook: yes, all the functionality. See here for a list of requirements you should fullfill.",
     "type": "Project",
+    "instructions": "",
     "subject": "Fullstack",
     "externalSource": "http://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project",
     "version": "1.0.0"
@@ -598,6 +616,7 @@
     "name": "Project: Complete all challenges from the Code Jam Round 1C 2015",
     "description": "",
     "type": "Project",
+    "instructions": "",
     "subject": "Javascript",
     "externalSource": "",
     "version": "1.0.0"
@@ -616,6 +635,7 @@
     "name": "Project: Write the CSS Necessary to create your own 12 column grid",
     "description": "Project: Write the CSS Necessary to create your own 12 column based grid layout - see here for an example",
     "type": "Project",
+    "instructions": "",
     "subject": "CSS",
     "externalSource": "http://960.gs/",
     "version": "1.0.0"
@@ -634,6 +654,7 @@
     "name": "Project: Complete all Classic Puzzles - Hard on CodinGame in JavaScript",
     "description": "",
     "type": "Project",
+    "instructions": "",
     "subject": "Javascript",
     "externalSource": "",
     "version": "1.0.0"
@@ -652,6 +673,7 @@
     "name": "Project: Complete all challenges from the Code Jam Round 2 2015",
     "description": "",
     "type": "Project",
+    "instructions": "",
     "subject": "Javascript",
     "externalSource": "",
     "version": "1.0.0"
@@ -670,6 +692,7 @@
     "name": "Project: Clone Twitter - yes, all the functionality",
     "description": "",
     "type": "Project",
+    "instructions": "",
     "subject": "Fullstack",
     "externalSource": "",
     "version": "1.0.0"
@@ -688,6 +711,7 @@
     "name": "Project: Complete all challenges from the Code Jam Round 3 2015",
     "description": "",
     "type": "Project",
+    "instructions": "",
     "subject": "Javascript",
     "externalSource": "",
     "version": "1.0.0"
@@ -706,6 +730,7 @@
     "name": "Project: Complete all Classic Puzzles - Very Hard on CodinGame in JavaScript",
     "description": "",
     "type": "Project",
+    "instructions": "",
     "subject": "Javascript",
     "externalSource": "",
     "version": "1.0.0"
@@ -733,6 +758,7 @@
     "name": "Project: Complete all challenges from the Code Jam World Finals 2015",
     "description": "",
     "type": "Project",
+    "instructions": "",
     "subject": "Javascript",
     "externalSource": "",
     "version": "1.0.0"
@@ -751,6 +777,7 @@
     "name": "Project: Design, implement, test, and deploy a web-based game",
     "description": "Project: Design, implement, test, and deploy a game that is playable on the web, using the technologies of your choice. The only criteria are that it be playable online, and that it inculde a substantial AI component.",
     "type": "Project",
+    "instructions": "",
     "subject": "Fullstack",
     "externalSource": "",
     "version": "1.0.0"
@@ -769,6 +796,7 @@
     "name": "Project: Create a node module for MD conversion",
     "description": "Project: Create a node module that will convert markdown to properly formatted html",
     "type": "Project",
+    "instructions": "",
     "subject": "Javascript",
     "externalSource": "",
     "version": "1.0.0"
@@ -796,6 +824,7 @@
     "name": "Project: Clone Learn Harmony",
     "description": "",
     "type": "Project",
+    "instructions": "",
     "subject": "Fullstack",
     "externalSource": "http://learnharmony.org/#/?_k=0okjs7",
     "version": "1.0.0"
@@ -823,6 +852,7 @@
     "name": "Project: Complete all problems from Distributed Google Code Jam 2015 ",
     "description": "Project: Complete all problems from all rounds of the Distributed Google Code Jam 2015 - scroll down to the appropriate section",
     "type": "Project",
+    "instructions": "",
     "subject": "Fullstack",
     "externalSource": "",
     "version": "1.0.0"
@@ -832,6 +862,7 @@
     "name": "Project: Clone Slack ",
     "description": "Project: Clone Slack - the functionality should be complete to the point that one user can create a room, invite other users, and all users of that room can real-time chat. The room should be secure and inaccessible to anyone but those invited.",
     "type": "Project",
+    "instructions": "",
     "subject": "Fullstack",
     "externalSource": "",
     "version": "1.0.0"
@@ -841,6 +872,7 @@
     "name": "Project: Create an npm module that bootstraps a fullstack application",
     "description": "Project: Create an npm module that bootstraps a fullstack application, with Node.js on the backend, and the SPA library/framework of your choice on the frontend. Include a full test suite and comprehensive build processes. Publish it to NPM.",
     "type": "Project",
+    "instructions": "",
     "subject": "Fullstack",
     "externalSource": "",
     "version": "1.0.0"
@@ -850,6 +882,7 @@
     "name": "Project: Complete all problems from Google Code Jam 2016",
     "description": "Project: Complete all problems from all rounds of the Google Code Jam 2016 - scroll down to the appropriate section",
     "type": "Project",
+    "instructions": "",
     "subject": "Fullstack",
     "externalSource": "",
     "version": "1.0.0"
@@ -859,6 +892,7 @@
     "name": "Project: Extend your CSS grid framework to implement material design components",
     "description": "Project: Extend your CSS grid framework to include the CSS and JavaScript required to implement 5 to 10 material design components",
     "type": "Project",
+    "instructions": "",
     "subject": "CSS",
     "externalSource": "",
     "version": "1.0.0"
@@ -886,6 +920,7 @@
     "name": "Clone this Webpage",
     "description": "Clone this Webpage",
     "type": "Project",
+    "instructions": "",
     "subject": "HTML",
     "externalSource": "https://codepen.io/freeCodeCamp/full/zNqgVx",
     "version": "1.0.0"
@@ -913,6 +948,7 @@
     "name": "Clone this Tribute Page",
     "description": "Clone this Tribute Page with your own topic",
     "type": "Project",
+    "instructions": "",
     "subject": "CSS",
     "externalSource": "http://codepen.io/freeCodeCamp/full/zNqgVx",
     "version": "1.0.0"
@@ -922,6 +958,7 @@
     "name": "Clone this Online Resume",
     "description": "Clone this Online Resume template",
     "type": "Project",
+    "instructions": "",
     "subject": "HTML/CSS",
     "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot1",
     "version": "1.0.0"
@@ -967,7 +1004,8 @@
     "name": "Build a Personal Portfolio",
     "description": "Build a Personal Portfolio webpage",
     "type": "Project",
-    "subject": "HTML/CSS",
+     "instructions": "",
+   "subject": "HTML/CSS",
     "externalSource": "",
     "version": "1.0.0"
   },
@@ -994,6 +1032,7 @@
     "name": "Bootstrap-ify your Tribute Page",
     "description": "Modify your tribute page to use Bootstrap instead of native CSS",
     "type": "Project",
+    "instructions": "",
     "subject": "CSS/Bootstrap",
     "externalSource": "",
     "version": "1.0.0"
@@ -1066,6 +1105,7 @@
     "name": "Setup your project folder",
     "description": "Learn what you should be aware of when setting up your project so you can set up a sensible file structure for your website. (Note: please skip the Javascript portion of this walkthrough for now).",
     "type": "Project",
+    "instructions": "",
     "subject": "Web Basics",
     "externalSource": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Dealing_with_files",
     "version": "1.0.0"
