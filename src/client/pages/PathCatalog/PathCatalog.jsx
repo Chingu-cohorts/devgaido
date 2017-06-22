@@ -46,7 +46,7 @@ const PathCatalog = ({ curriculum }) => (
     <label className="search">
       <input type="text" name="search" placeholder="Search" />
     </label>
-    <SectionCard title="Completed" subtitle="PATHS">
+    <SectionCard title="All" subtitle="PATHS">
       <PathList
         pathIds={Object.keys(curriculum.paths)}
         curriculum={curriculum}
