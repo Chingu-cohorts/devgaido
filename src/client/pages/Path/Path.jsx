@@ -11,18 +11,20 @@ const CourseCard = ({ course, linkTo }) => (
       <span className="course-card-caption">COURSE</span>
       <h1>{course.name}</h1>
     </div>
-    <p className="course-description">{course.description}</p>
-    <div className="lesson-list">
-      {/* getAllCourseLessons(curriculum.courses[id], curriculum).map(lesson => (
-        <LessonCard
-          name={lesson.name}
-          description={lesson.description}
-          id={lesson.id}
-          type={lesson.type}
-          key={lesson.id}
-        />
-      ))*/}
-      <h1 className="completion-text">{course.nCompleted}/{course.nTotal}</h1>
+    <div className="course-card-content">
+      <p className="course-description">{course.description}</p>
+      <div className="lesson-list">
+        {/* getAllCourseLessons(curriculum.courses[id], curriculum).map(lesson => (
+          <LessonCard
+            name={lesson.name}
+            description={lesson.description}
+            id={lesson.id}
+            type={lesson.type}
+            key={lesson.id}
+          />
+        ))*/}
+        <h1 className="completion-text">{course.nCompleted}/{course.nTotal}</h1>
+      </div>
     </div>
   </Link>
 );
@@ -44,6 +46,7 @@ const Path = ({ match, curriculum }) => {
           <h1 className="path-header-path-name">{path.name}</h1>
           <h1 className="completion-text-big">{path.nCompleted}/{path.nTotal}</h1>
         </div>
+        <h1>{path.description}</h1>
         {courses}
       </div>
     </div>
