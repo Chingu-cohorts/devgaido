@@ -1,7 +1,13 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const Home = () => (
+const handleStartNowClick = (e, lock) => {
+  e.preventDefault();
+  lock.show();
+};
+
+const Home = ({ lock }) => (
   <div>
     <div className="home-hero">
       <div className="home-content">
@@ -13,12 +19,20 @@ const Home = () => (
           <h2>Never worry about learning the wrong stuff from subpar resources ever again!</h2>
         </div>
         <div className="hero-cta-div">
-          <NavLink className="hero-cta-primary" to="/paths"><i />&nbsp;&nbsp;START NOW</NavLink>
-          <NavLink className="hero-cta-secondary" to="/paths">&nbsp;&nbsp;EXPLORE PATHS</NavLink>
+          <Link className="hero-cta-primary" to="/paths" onClick={e => handleStartNowClick(e, lock)}><i />&nbsp;&nbsp;START NOW</Link>
+          <Link className="hero-cta-secondary" to="/paths">&nbsp;&nbsp;EXPLORE PATHS</Link>
         </div>
       </div>
     </div>
   </div>
 );
+
+Home.propTypes = {
+  lock: PropTypes.objectOf(PropTypes.shape),
+};
+
+Home.defaultProps = {
+  lock: null,
+};
 
 export default Home;

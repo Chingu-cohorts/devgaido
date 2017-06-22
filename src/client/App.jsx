@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import PropsRoute from './pages/shared/PropsRoute';
+import Auth0LockWidget from './pages/shared/Auth0LockWidget';
 
 import Header from './pages/shared/Header';
 import Footer from './pages/shared/Footer';
@@ -15,8 +16,9 @@ const App = ({ serverMatch, dispatch, user, curriculum, uiState, auth0 }) => {
 // If <App /> is rendered on the server we need to provide the serverMatch prop
 // since StaticRouter can only render a single Route (Switch only works on client side).
 // On the client though, just return all routes and let Switch do the work.
+  const lock = Auth0LockWidget(auth0);
   const passdownProps = {
-    dispatch, user, curriculum, uiState, auth0,
+    dispatch, user, curriculum, uiState, auth0, lock,
   };
   const routes = [];
   if (serverMatch) {
@@ -40,7 +42,7 @@ const App = ({ serverMatch, dispatch, user, curriculum, uiState, auth0 }) => {
   // TODO: Re-add sticky footer - position sticky or flexbox? (Check caniuse.com)
   return (
     <div className="App">
-      <Header dispatch={dispatch} uiState={uiState} user={user} auth0={auth0} />
+      <Header dispatch={dispatch} uiState={uiState} user={user} lock={lock} auth0={auth0} />
       <main>
         <div className="main">
           <Switch>
