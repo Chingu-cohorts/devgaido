@@ -78,7 +78,7 @@ const routes = [
     path: '/paths',
     exact: true,
     component: PathCatalog,
-    passdown: [],
+    passdown: ['curriculum', 'dispatch'],
   },
 ];
 

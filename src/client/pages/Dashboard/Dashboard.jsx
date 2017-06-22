@@ -115,7 +115,7 @@ const PathList = ({ pathIds, curriculum }) => (
   </div>
 );
 
-const NoPaths = ({text, showPathButton}) => (
+const NoPaths = ({ text, showPathButton }) => (
   <div className="no-paths">
     <h1 className="no-paths-text">{text}</h1>
     {showPathButton ? <Link className="no-paths-button" to="/paths">Browse Paths</Link> : null}
@@ -132,7 +132,10 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
           content: (
             <div>
               {user.curPathId !== '' ?
-                <CurrentPathCard curPath={curriculum.paths[user.curPathId]} curriculum={curriculum} /> :
+                <CurrentPathCard
+                  curPath={curriculum.paths[user.curPathId]}
+                  curriculum={curriculum}
+                /> :
                 <SectionCard title="In Progress" subtitle="PATHS">
                   <NoPaths text="You haven't started any paths yet." showPathButton />
                 </SectionCard>
@@ -164,15 +167,17 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
         }, {
           caption: 'Completed',
           content: (
-            <SectionCard title="Completed" subtitle="PATHS">           
-              {Object.keys(curriculum.paths).filter(pathId => curriculum.paths[pathId].completed).length !== 0 ?
-                <PathList
-                  pathIds={Object.keys(curriculum.paths).filter(
-                    pathId => curriculum.paths[pathId].completed,
-                  )}
-                  curriculum={curriculum}
-                /> :
-                <NoPaths text="You haven't completed any paths yet." />}
+            <SectionCard title="Completed" subtitle="PATHS">
+              {Object.keys(curriculum.paths).filter(
+                  pathId => curriculum.paths[pathId].completed,
+                ).length !== 0 ?
+                  <PathList
+                    pathIds={Object.keys(curriculum.paths).filter(
+                      pathId => curriculum.paths[pathId].completed,
+                    )}
+                    curriculum={curriculum}
+                  /> :
+                  <NoPaths text="You haven't completed any paths yet." />}
             </SectionCard>),
         }]}
         dispatch={dispatch}
@@ -196,6 +201,15 @@ SectionCard.defaultProps = {
 
 CourseCardMini.propTypes = {
   course: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
+NoPaths.propTypes = {
+  text: PropTypes.string.isRequired,
+  showPathButton: PropTypes.bool,
+};
+
+NoPaths.defaultProps = {
+  showPathButton: false,
 };
 
 Metrics.propTypes = {
