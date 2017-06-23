@@ -29,6 +29,7 @@ const Lesson = ({ match, dispatch, curriculum }) => {
             lessonId={match.params.id}
           />
           <h1 className="path-header-path-name">{lesson.name}</h1>
+          <h1 className="completion-text-big">{lesson.completed ? <i className="lesson-status-icon fa fa-check-circle" /> : null}</h1>
         </div>
         <span className="lesson-caption-small">Lesson</span>
         <span className="lesson-caption-small">{lesson.name}</span>
@@ -36,9 +37,10 @@ const Lesson = ({ match, dispatch, curriculum }) => {
         <span className="lesson-caption-small">{subject.name}</span>
         <span className="lesson-caption-small">{subject.description}</span>
         <p className="lesson-text">{lesson.description}</p>
-        <a className="button" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPathId(match.params.pid))}>START LESSON</a>
-        <button onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
-        <button onClick={() => dispatch(unCompleteLesson(lessonId))}>UNCOMPLETE LESSON</button>
+        <div className="lesson-button-container">
+          <a className="lesson-link-button" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPathId(match.params.pid))}>START LESSON</a>
+          <button className="lesson-button" onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
+        </div>
       </div>
     </div>
   );

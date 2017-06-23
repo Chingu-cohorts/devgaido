@@ -33,7 +33,7 @@ const Course = ({ match, curriculum }) => {
   return (
     <div className="container">
       <div className="grid-full path path-image">
-        <div className="path-header path-header-image" />
+        <div className="path-header lesson-header-image" />
         <div className="path-header path-header-image-color">
           <BreadCrumbs curriculum={curriculum} pathId={match.params.pid} courseId={match.params.id} />
           <h1 className="path-header-path-name">{course.name}</h1>
