@@ -26,7 +26,7 @@ const routes = [
     path: '/',
     exact: true,
     component: Home,
-    passdown: ['lock'],
+    passdown: ['lock', 'user'],
   },
   {
     path: '/dashboard',
@@ -61,7 +61,7 @@ const routes = [
     path: '/paths/:id',
     exact: true,
     component: Path,
-    passdown: ['curriculum', 'user'],
+    passdown: ['curriculum', 'user', 'dispatch'],
   },
   {
     path: '/paths/:pid/:id',

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { setCurrentPathId } from '../../actions/userActions';
 import { completeLesson, unCompleteLesson } from './LessonActions';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
@@ -36,7 +37,7 @@ const Lesson = ({ match, dispatch, curriculum }) => {
         <span className="lesson-caption-small">{subject.name}</span>
         <span className="lesson-caption-small">{subject.description}</span>
         <p className="lesson-text">{lesson.description}</p>
-        <a className="button" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">START LESSON</a>
+        <a className="button" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPathId(match.params.pid))}>START LESSON</a>
         <button onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
         <button onClick={() => dispatch(unCompleteLesson(lessonId))}>UNCOMPLETE LESSON</button>
       </div>

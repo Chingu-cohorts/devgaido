@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const BreadCrumbs = ({ curriculum, pathId, courseId, lessonId }) => (
   <div>
-    <Link className="breadcrumb" to={'/dashboard'}>Dashboard</Link>
+    <Link className="breadcrumb" to={'/paths'}>Paths</Link>
     {pathId ? <span className="breadcrumb">&gt;&gt;</span> : null}
     {pathId ? <Link className="breadcrumb" to={`/paths/${pathId}`}>{curriculum.paths[pathId].name}</Link> : null}
     {courseId ? <span className="breadcrumb">&gt;&gt;</span> : null}

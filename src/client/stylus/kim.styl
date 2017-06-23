@@ -8,7 +8,40 @@
 
 a
     text-decoration: none
+
+.path-bookmark-button
+    border none
+    padding 5px
+    min-width: 0
+    position: absolute    
+    top 24px
+    right 20px
+    background: none
+    box-shadow: none
+    border 2px solid white
+    width 140px
+
+.path-container
+    display flex
+    flex-wrap: wrap
+    justify-content: space-between
+    width 100%
+
+.grid-half
+    lost-column: 1/2 2;
+
+@media only screen and (max-width: 1010px)
+    .grid-half
+        lost-column: 1/1 1;
     
+
+.path-info-container
+    margin-top 10px
+    padding 20px
+    padding left 5px
+    background: colorPrimaryLight
+    box-shadow: 5px 5px 10px rgba(30, 33, 94, 0.15)
+
 .no-paths
     display: flex
     flex-wrap: wrap
@@ -110,13 +143,14 @@ a
     text-align: right
     color darken(colorTertiary, 20)
     font-size: 120%
+    width 100%
     margin-top 1em
 
 .completion-text-big
     position: absolute
     font-size 250%
     color white
-    top 20px
+    bottom 20px
     right 20px
 
 .section-card-header
@@ -178,8 +212,8 @@ a
         left: 50%;
         margin-left: -5px;
         width: 10px;
-        height: 83px;
-        background: colorSecondaryLight
+        height: 63px;
+        background: colorPrimaryLight
         border-radius: 5px;
     &:last-child:after
         height 0px
@@ -236,8 +270,8 @@ a
     background colorTextInverse
     border-radius 6px
     box-shadow: 5px 5px 10px rgba(30, 33, 94, 0.15)
-    display: flex
-    flex-direction: column
+    // display: flex
+    //flex-direction: column
     padding: 4rem 2rem 2rem 2rem
     position relative
     margin-bottom: 20px

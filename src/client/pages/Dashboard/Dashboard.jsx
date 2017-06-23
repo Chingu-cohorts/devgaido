@@ -140,16 +140,19 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
                   <NoPaths text="You haven't started any paths yet." showPathButton />
                 </SectionCard>
                 }
-              {user.curPathId !== '' ?
-                <SectionCard title="In Progress" subtitle="PATHS">
-                  <PathList
-                    pathIds={Object.keys(curriculum.paths).filter(
+              {user.curPathId !== '' && Object.keys(curriculum.paths).filter(
                       pathId => !curriculum.paths[pathId].completed
                                 && isInProgress(user, curriculum, pathId),
-                    )}
-                    curriculum={curriculum}
-                  />
-                </SectionCard> : null}
+                    ).length !== 0 ?
+                      <SectionCard title="In Progress" subtitle="PATHS">
+                        <PathList
+                          pathIds={Object.keys(curriculum.paths).filter(
+                            pathId => !curriculum.paths[pathId].completed
+                                      && isInProgress(user, curriculum, pathId),
+                          )}
+                          curriculum={curriculum}
+                        />
+                      </SectionCard> : null}
             </div>),
         }, {
           caption: 'Bookmarked',

@@ -7,6 +7,25 @@ const handleStartNowClick = (e, lock) => {
   lock.show();
 };
 
+const HomeContainer = (Component) => {
+  class _HomeContainer extends React.Component {
+    componentWillMount() {
+      if (this.props.user.authenticated) {
+        this.props.history.push('/dashboard');
+      }
+    }
+    render() {
+      return <Component {...this.props} />;
+    }
+  }
+  _HomeContainer.propTypes = {
+    user: PropTypes.objectOf(PropTypes.shape).isRequired,
+    history: PropTypes.objectOf(PropTypes.shape).isRequired,
+  };
+  return _HomeContainer;
+};
+
+
 const Home = ({ lock }) => (
   <div>
     <div className="home-hero">
@@ -19,7 +38,7 @@ const Home = ({ lock }) => (
           <h2>Never worry about learning the wrong stuff from subpar resources ever again!</h2>
         </div>
         <div className="hero-cta-div">
-          <Link className="hero-cta-primary" to="/paths" onClick={e => handleStartNowClick(e, lock)}><i />&nbsp;&nbsp;START NOW</Link>
+          <Link className="hero-cta-primary" to="/paths" onClick={e => handleStartNowClick(e, lock)}><i />&nbsp;&nbsp;SIGN UP NOW</Link>
           <Link className="hero-cta-secondary" to="/paths">&nbsp;&nbsp;EXPLORE PATHS</Link>
         </div>
       </div>
@@ -28,11 +47,11 @@ const Home = ({ lock }) => (
 );
 
 Home.propTypes = {
-  lock: PropTypes.objectOf(PropTypes.shape),
+  lock: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 Home.defaultProps = {
   lock: null,
 };
 
-export default Home;
+export default HomeContainer(Home);
