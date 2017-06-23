@@ -82,13 +82,14 @@ const validateIdLength = jsonData => Object.keys(jsonData).reduce((invalidIds, i
 
 /**
  * Polyfill to insulate the app from the fact that Object.values is an
- * experimental feature not found in all browsers.
+ * experimental feature not found in all browsers. This solution was
+ * copied from https://stackoverflow.com/questions/35090153/babel-support-for-object-entries
  *
  * @param {Object} x - The object values are to be extracted from.
  * @returns {Array} - An array of object values
  */
-Object.values = x =>
-  Object.keys(x).reduce((y, z) => y.push(x[z]) && y, []);
+Object.values = anObject =>
+  Object.keys(anObject).map(key => anObject[key]);
 
 /**
  * Validate a relationship between two data elements.
