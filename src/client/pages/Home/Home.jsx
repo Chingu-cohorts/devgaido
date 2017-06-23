@@ -50,7 +50,7 @@ const Home = ({ lock }) => (
 );
 
 Home.propTypes = {
-  lock: PropTypes.objectOf(PropTypes.shape).isRequired,
+  lock: PropTypes.objectOf(PropTypes.shape),
 };
 
 Home.defaultProps = {
