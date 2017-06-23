@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { setCurrentPathId } from '../../actions/userActions';
-import { completeLesson, unCompleteLesson } from './LessonActions';
+import { completeLesson } from './LessonActions';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
 
