@@ -32,10 +32,10 @@ const Course = ({ match, curriculum }) => {
   const course = curriculum.courses[match.params.id];
   return (
     <div className="container">
-      <BreadCrumbs curriculum={curriculum} pathId={match.params.pid} courseId={match.params.id} />
       <div className="grid-full path path-image">
         <div className="path-header path-header-image" />
         <div className="path-header path-header-image-color">
+          <BreadCrumbs curriculum={curriculum} pathId={match.params.pid} courseId={match.params.id} />
           <h1 className="path-header-path-name">{course.name}</h1>
           <h1 className="completion-text-big">{course.nCompleted}/{course.nTotal}</h1>
         </div>

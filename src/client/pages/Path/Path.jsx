@@ -14,18 +14,7 @@ const CourseCard = ({ course, linkTo }) => (
     </div>
     <div className="course-card-content">
       <p className="course-description">{course.description}</p>
-      <div className="lesson-list">
-        {/* getAllCourseLessons(curriculum.courses[id], curriculum).map(lesson => (
-          <LessonCard
-            name={lesson.name}
-            description={lesson.description}
-            id={lesson.id}
-            type={lesson.type}
-            key={lesson.id}
-          />
-        ))*/}
-        <h1 className="completion-text">{course.nCompleted}/{course.nTotal}</h1>
-      </div>
+      <h1 className="completion-text">{course.nCompleted}/{course.nTotal}</h1>
     </div>
   </Link>
 );
@@ -52,10 +41,10 @@ const Path = ({ match, curriculum, user, dispatch }) => {
   });
   return (
     <div className="container">
-      <BreadCrumbs curriculum={curriculum} pathId={match.params.id} />
       <div className="path-container path path-image">
         <div className="path-header path-header-image" />
         <div className="path-header path-header-image-color">
+          <BreadCrumbs curriculum={curriculum} pathId={match.params.id} />
           <h1 className="path-header-path-name">{path.name}</h1>
           <h1 className="completion-text-big">{path.nCompleted}/{path.nTotal}</h1>
           {user.bookmarkedPaths.indexOf(pathId) === -1 ?

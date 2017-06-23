@@ -13,12 +13,6 @@ const Lesson = ({ match, dispatch, curriculum }) => {
 
   return (
     <div className="container">
-      <BreadCrumbs
-        curriculum={curriculum}
-        pathId={match.params.pid}
-        courseId={match.params.cid}
-        lessonId={match.params.id}
-      />
       <div className="grid-full lesson lesson-image">
         <div
           className="lesson-header lesson-header-image"
@@ -28,8 +22,13 @@ const Lesson = ({ match, dispatch, curriculum }) => {
           } : {}}
         />
         <div className="lesson-header lesson-header-image-color2">
-          <h1 className="lesson-header-path-name">{lesson.name}</h1>
-          <h1 className="">{lesson.completed ? 'Completed' : 'Incomplete'}</h1>
+          <BreadCrumbs
+            curriculum={curriculum}
+            pathId={match.params.pid}
+            courseId={match.params.cid}
+            lessonId={match.params.id}
+          />
+          <h1 className="path-header-path-name">{lesson.name}</h1>
         </div>
         <span className="lesson-caption-small">Lesson</span>
         <span className="lesson-caption-small">{lesson.name}</span>

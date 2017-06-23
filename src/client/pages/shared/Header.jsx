@@ -22,7 +22,7 @@ const Header = ({ user, uiState, dispatch, lock }) => (
   <div>
     <header>
       <div className="header-content">
-        <NavLink to="/" className="header-logo" />
+        <NavLink to="/" className="header-logo-text">devgaido.</NavLink>
         <nav className="main-navigation">
           <ul className="menu">
             <li><NavLink to="/dashboard" activeClassName="link-active">Dashboard</NavLink></li>
