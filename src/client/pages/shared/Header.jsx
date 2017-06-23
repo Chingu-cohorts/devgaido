@@ -5,11 +5,7 @@ import { toggleNavMenu } from '../../actions/globalActions';
 
 const handleLoginClick = (e, lock) => {
   e.preventDefault();
-  console.log(lock)
-  var options = {
-  initialScreen: 'signUp'
-};
-  lock.show(options);
+  lock.show();
 };
 
 const toggleMenu = (e, dispatch) => {

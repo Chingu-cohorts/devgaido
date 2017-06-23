@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 
 const handleStartNowClick = (e, lock) => {
   e.preventDefault();
-  lock.show();
+  const options = {
+    initialScreen: 'signUp',
+  };
+  lock.show(options);
 };
 
 const HomeContainer = (Component) => {
