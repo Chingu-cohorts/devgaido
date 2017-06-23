@@ -30,6 +30,18 @@ const CourseCard = ({ course, linkTo }) => (
   </Link>
 );
 
+const PathInfoCard = ({ path }) => (
+  <div className="course-card connected">
+    <div className="course-card-header" style={{ background: '#007399' }}>
+      <i className="card-icon path-info-icon fa fa-info" />
+      <h1>{path.name}</h1>
+    </div>
+    <div className="course-card-content">
+      <p className="course-description">{path.description}</p>
+    </div>
+  </div>
+);
+
 const Path = ({ match, curriculum, user, dispatch }) => {
   const pathId = match.params.id;
   const path = curriculum.paths[match.params.id];
@@ -51,10 +63,7 @@ const Path = ({ match, curriculum, user, dispatch }) => {
             <button className="path-bookmark-button" onClick={() => dispatch(removeBookmark(pathId))}>Remove Bookmark</button>}
         </div>
         <div className="grid-half">
-          <div className="path-info-container">
-            <h1>About this path</h1>
-            <h1>{path.description}</h1>
-          </div>
+          <PathInfoCard path={path} />
         </div>
         <div className="grid-half">
           {courses}
@@ -67,6 +76,10 @@ const Path = ({ match, curriculum, user, dispatch }) => {
 CourseCard.propTypes = {
   course: PropTypes.objectOf(PropTypes.shape).isRequired,
   linkTo: PropTypes.string.isRequired,
+};
+
+PathInfoCard.propTypes = {
+  path: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 Path.propTypes = {
