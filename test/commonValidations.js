@@ -165,7 +165,7 @@ const validateRequiredAttributes =
  * something other than lowercase letters and digits.
  */
 const validateUnknownAttributes =
-  (jsonData, expectedAttributes) => Object.keys(jsonData).reduce((invalidIds, itemId) => {
+  (jsonData, expectedAttributes) => Object.keys(jsonData).reduce((invalidElements, itemId) => {
     Object.keys(jsonData[itemId]).forEach((itemAttribute) => {
       let matchingAttributeFound = false;
       expectedAttributes.forEach((expectedAttribute) => {
@@ -174,10 +174,10 @@ const validateUnknownAttributes =
         }
       });
       if (!matchingAttributeFound) {
-          invalidIds.push(`${itemId} contains unknown attribute:${itemAttribute}`);
+        invalidElements.push(`${itemId} contains unknown attribute:${itemAttribute}`);
       }
     });
-    return invalidIds;
+    return invalidElements;
   }, []);
 
 export { logErrors, logInvalidIds, logInvalidRelations,
