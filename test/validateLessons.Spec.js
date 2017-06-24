@@ -1,8 +1,9 @@
 /* eslint-disable func-names no-console */
 require('./registerBabel');
 
-import { logInvalidIds, logInvalidRelations,
-  validateIdComposition, validateIdLength } from './commonValidations';
+import { logErrors, logInvalidIds, logInvalidRelations,
+  validateIdComposition, validateIdLength,
+  validateRequiredAttributes, validateUnknownAttributes } from './commonValidations';
 import coreLessons from '../src/server/models/corelessons.json';
 import coreSubjects from '../src/server/models/coresubjects.json';
 import coreCourses from '../src/server/models/corecourses.json';
@@ -13,6 +14,31 @@ const assert = require('assert');
  * Check the validity of the corelessons.json file
  */
 describe('Validate corelessons.json', () => {
+  describe('Validate attributes', () => {
+    let invalidLessons = [];
+    const expectedAttributes = [
+      ['source', 'required'],
+      ['name', 'required'],
+      ['description', 'required'],
+      ['type', 'required'],
+      ['instructions', 'optional'],
+      ['resources', 'optional'],
+      ['subject', 'required'],
+      ['externalSource', 'required'],
+      ['version', 'required'],
+    ];
+    afterEach(() => {
+      invalidLessons = logErrors(invalidLessons);
+    });
+    it('should verify that the lesson contains all required attributes', () => {
+      invalidLessons = validateRequiredAttributes(coreLessons, expectedAttributes);
+      assert.equal(invalidLessons, 0);
+    });
+    it('should verify that there are no unknown attributes', () => {
+      invalidLessons = validateUnknownAttributes(coreLessons, expectedAttributes);
+      assert.equal(invalidLessons, 0);
+    });
+  });
   describe('Validate lesson id length', () => {
     let invalidLessonIds = [];
     afterEach(() => {

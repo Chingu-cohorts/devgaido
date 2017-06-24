@@ -25,7 +25,7 @@ describe('Validate corecourses.json', () => {
     afterEach(() => {
       invalidCourses = logErrors(invalidCourses);
     });
-    it('should verify that the path contains all required attributes', () => {
+    it('should verify that the course contains all required attributes', () => {
       invalidCourses = validateRequiredAttributes(coreCourses, expectedAttributes);
       assert.equal(invalidCourses, 0);
     });

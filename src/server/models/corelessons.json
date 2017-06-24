@@ -218,7 +218,7 @@
     "description": "Create a Webpage Template",
     "type": "Project",
     "instructions": "Pick a template from here and create a new template with it as your inspiration (do not use it's assets)",
-    "resouces": [["Template examples", "http://www.free-css.com/free-css-templates"]],
+    "resources": [["Template examples", "http://www.free-css.com/free-css-templates"]],
     "subject": "Javascript",
     "externalSource": "",
     "version": "1.0.0"
@@ -617,7 +617,7 @@
     "description": "Demonstrate your fullstack webdev capabilities by creating a Facebook clone.",
     "type": "Project",
     "instructions": "Build FaceBook: yes, all the functionality. See here for a list of requirements you should fullfill.",
-    "resource": [["Requirements", "http://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project"]],
+    "resources": [["Requirements", "http://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project"]],
     "subject": "Fullstack",
     "externalSource": "",
     "version": "1.0.0"
@@ -717,7 +717,7 @@
     "description": "Demonstrate your fullstack webdev capabilities by creating a Twitter clone.",
     "type": "Project",
     "instructions": "Build Twitter: yes, all the functionality. See here for a list of requirements you should fullfill.",
-    "resource": [["Twitter", "http://twitter.com"]],
+    "resources": [["Twitter", "http://twitter.com"]],
     "subject": "Fullstack",
     "externalSource": "",
     "version": "1.0.0"
@@ -855,7 +855,7 @@
     "description": "Demonstrate your fullstack webdev capabilities by creating a Learn Harmony clone.",
     "type": "Project",
     "instructions": "Build a Learn Harmony clone with all the functionality.",
-    "resource": [["Learn Harmony", "http://learnharmony.org/#/?_k=0okjs7"]],
+    "resources": [["Learn Harmony", "http://learnharmony.org/#/?_k=0okjs7"]],
     "subject": "Fullstack",
     "externalSource": "",
     "version": "1.0.0"
@@ -895,7 +895,7 @@
     "description": "Demonstrate your fullstack webdev capabilities by creating a Slack clone.",
     "type": "Project",
     "instructions": "Build a Slack clone the functionality should be complete to the point that one user can create a room, invite other users, and all users of that room can real-time chat. The room should be secure and inaccessible to anyone but those invited..",
-    "resource": [["Learn Harmony", "http://learnharmony.org/#/?_k=0okjs7"]],
+    "resources": [["Learn Harmony", "http://learnharmony.org/#/?_k=0okjs7"]],
     "subject": "Fullstack",
     "externalSource": "",
     "version": "1.0.0"
