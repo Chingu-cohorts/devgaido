@@ -1,8 +1,10 @@
 /* eslint-disable func-names no-console */
 require('./registerBabel');
 
-import { logInvalidIds, logInvalidRelations,
-  validateIdComposition, validateIdLength, validateIdMatch, validateRelationship } from './commonValidations';
+import { logErrors, logInvalidAttrs, logInvalidIds, logInvalidRelations,
+  validateIdComposition, validateIdLength,
+  validateRelationship, validateRequiredAttributes, validateUnknownAttributes }
+  from './commonValidations';
 import corePaths from '../src/server/models/corepaths.json';
 import coreCourses from '../src/server/models/corecourses.json';
 
@@ -12,6 +14,26 @@ const assert = require('assert');
  * Check the validity of the corepaths.json file
  */
 describe('Validate corepaths.json', () => {
+  describe('Validate attributes', () => {
+    let invalidPathIds = [];
+    const expectedAttributes = [
+      ['name', 'required'],
+      ['description', 'required'],
+      ['courseIds', 'required'],
+      ['version', 'required'],
+    ];
+    afterEach(() => {
+      invalidPathIds = logErrors(invalidPathIds);
+    });
+    it('should verify that the path contains all required attributes', () => {
+      invalidPathIds = validateRequiredAttributes(corePaths, expectedAttributes);
+      assert.equal(invalidPathIds, 0);
+    });
+    it('should verify that there are no unknown attributes', () => {
+      invalidPathIds = validateUnknownAttributes(corePaths, expectedAttributes);
+      assert.equal(invalidPathIds, 0);
+    });
+  });
   describe('Validate path id length', () => {
     let invalidPathIds = [];
     afterEach(() => {

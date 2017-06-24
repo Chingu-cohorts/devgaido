@@ -5,6 +5,35 @@ const validIdPattern = /^[0-9a-z]+$/;
 const indentErrMsg = ' '.repeat(9);
 
 /**
+ * Write an error messages to the console log.
+ *
+ * @param {String[]} errorMessages - Array of element id's and error message
+ * reporting a problem in it. This is expected to be formatted as:
+ * [[element-id, error-message],...]
+ * @returns {[]} - empty array
+ */
+const logErrors = (errorMessages) => {
+  errorMessages.forEach((error) => {
+    console.log(`${indentErrMsg}${error}`);
+  });
+  return [];
+};
+
+/**
+ * Write path ids missing expected attributes to the console.log.
+ *
+ * @param {String[]} invalidIds - Array of erroneous ids
+ * @param {string} errMessage - Custom error message describing the situation
+ * @returns {[]} - empty array
+ */
+const logInvalidAttrs = (invalidIds, errMessage) => {
+  invalidIds.forEach((id) => {
+    console.log(`${indentErrMsg}${errMessage} for ${id}`);
+  });
+  return [];
+};
+
+/**
  * Write incorrectly formatted curriculum ids in paths, course, and lessons
  * to the console.log.
  *
@@ -112,5 +141,52 @@ const validateRelationship = (childAttrNm, childJSON, parentAttrNm, parentJSON) 
       return invalidIds;
     }, []);
 
-export { logInvalidIds, logInvalidRelations,
-  validateIdComposition, validateIdLength, validateIdMatch, validateRelationship };
+/**
+ * Validate that all required attributes have been specified
+ *
+ * @param {Object} jsonData - JSON object containing the data elements. This
+ * must be formatted as {"<id>": {..."attr": "value"...}...}
+ * @param {String[]} expectedAttributes - Array of attribute names and type
+ * indicators (e.g. [['attr-name', 'type'], ...]). Type may be either 'required'
+ * or 'optional'.
+ * @returns {String[]} invalidIds - Array of invalid id's. Those containing
+ * something other than lowercase letters and digits.
+ */
+const validateRequiredAttributes =
+  (jsonData, expectedAttributes) => Object.keys(jsonData).reduce((invalidIds, itemId) => {
+    expectedAttributes.forEach((attribute) => {
+      if (attribute[1] === 'required' && !Object.keys(jsonData[itemId]).includes(attribute[0])) {
+        invalidIds.push(`${itemId} missing required attribute:${attribute[0]}`);
+      }
+    });
+    return invalidIds;
+  }, []);
+
+/**
+ * Validate that there are no unknown attributes in the JSON object
+ *
+ * @param {Object} jsonData - JSON object containing the data elements. This
+ * must be formatted as {"<id>": {..."attr": "value"...}...}
+ * @param {String[]} expectedAttributes - Expected attribute names
+ * @returns {String[]} invalidIds - Array of invalid id's. Those containing
+ * something other than lowercase letters and digits.
+ */
+const validateUnknownAttributes =
+  (jsonData, expectedAttributes) => Object.keys(jsonData).reduce((invalidIds, itemId) => {
+    let attributeMatch = false;
+    let expectedAttrName;
+    Object.keys(itemId).forEach((attrName) => {
+      expectedAttrName = attrName;
+      if (Object.keys(expectedAttributes).includes(attrName)) {
+        attributeMatch = true;
+      }
+    });
+    if (!attributeMatch) {
+      invalidIds.push(expectedAttrName);
+    }
+    return invalidIds;
+  }, []);
+
+export { logErrors, logInvalidIds, logInvalidRelations, logInvalidAttrs,
+  validateIdComposition, validateIdLength, validateIdMatch, validateRelationship,
+  validateRequiredAttributes, validateUnknownAttributes };

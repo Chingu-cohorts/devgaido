@@ -2,7 +2,7 @@
 require('./registerBabel');
 
 import { logInvalidIds, logInvalidRelations,
-  validateIdComposition, validateIdLength, validateIdMatch } from './commonValidations';
+  validateIdComposition, validateIdLength } from './commonValidations';
 import coreLessons from '../src/server/models/corelessons.json';
 import coreSubjects from '../src/server/models/coresubjects.json';
 import coreCourses from '../src/server/models/corecourses.json';
