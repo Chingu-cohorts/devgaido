@@ -1,7 +1,7 @@
 /* eslint-disable func-names no-console */
 require('./registerBabel');
 
-import { logErrors, logInvalidIds, logInvalidRelations,
+import { logErrors, logInvalidRelations,
   validateIdComposition, validateIdLength, validateRelationship,
   validateRequiredAttributes, validateUnknownAttributes } from './commonValidations';
 import corePaths from '../src/server/models/corepaths.json';
@@ -36,7 +36,7 @@ describe('Validate corepaths.json', () => {
   describe('Validate path id length', () => {
     let invalidPathIds = [];
     afterEach(() => {
-      invalidPathIds = logInvalidIds(invalidPathIds, 'Path id > 16 characters');
+      invalidPathIds = logErrors(invalidPathIds);
     });
     it('should verify that path ids are <= 16 characters', () => {
       invalidPathIds = validateIdLength(corePaths);
@@ -46,7 +46,7 @@ describe('Validate corepaths.json', () => {
   describe('Validate path id composition', () => {
     let invalidPathIds = [];
     afterEach(() => {
-      invalidPathIds = logInvalidIds(invalidPathIds, 'Path id contains invalid characters');
+      invalidPathIds = logErrors(invalidPathIds);
     });
     it('should verify that path ids contain only lowercase letters and digits', () => {
       invalidPathIds = validateIdComposition(corePaths);

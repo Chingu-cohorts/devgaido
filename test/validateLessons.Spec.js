@@ -1,7 +1,7 @@
 /* eslint-disable func-names no-console */
 require('./registerBabel');
 
-import { logErrors, logInvalidIds, logInvalidRelations,
+import { logErrors, logInvalidRelations,
   validateIdComposition, validateIdLength,
   validateRequiredAttributes, validateUnknownAttributes } from './commonValidations';
 import coreLessons from '../src/server/models/corelessons.json';
@@ -42,7 +42,7 @@ describe('Validate corelessons.json', () => {
   describe('Validate lesson id length', () => {
     let invalidLessonIds = [];
     afterEach(() => {
-      invalidLessonIds = logInvalidIds(invalidLessonIds, 'Lesson id > 16 characters');
+      invalidLessonIds = logErrors(invalidLessonIds);
     });
     it('should verify that lesson ids are <= 16 characters', () => {
       invalidLessonIds = validateIdLength(coreLessons);
@@ -52,7 +52,7 @@ describe('Validate corelessons.json', () => {
   describe('Validate lesson id composition', () => {
     let invalidLessonIds = [];
     afterEach(() => {
-      invalidLessonIds = logInvalidIds(invalidLessonIds, 'Lesson id contains invalid characters');
+      invalidLessonIds = logErrors(invalidLessonIds);
     });
     it('should verify that lesson ids contain only lowercase letters and digits', () => {
       invalidLessonIds = validateIdComposition(coreLessons);
@@ -76,7 +76,7 @@ describe('Validate corelessons.json', () => {
   describe('Validate that there are no orphaned lessons', () => {
     let orphanedLessonIds = [];
     afterEach(() => {
-      orphanedLessonIds = logInvalidIds(orphanedLessonIds, 'Lesson id not referenced by any course');
+      orphanedLessonIds = logErrors(orphanedLessonIds);
     });
     it('should verify that each lesson id is referenced by at least one course', () => {
       const allCourseLessons = Object.values(coreCourses).reduce((lessonReferences, course) => {
@@ -89,7 +89,7 @@ describe('Validate corelessons.json', () => {
       }, []);
       Object.keys(coreLessons).forEach((currentLessonId) => {
         if (allCourseLessons.indexOf(currentLessonId) === -1) {
-          orphanedLessonIds.push(currentLessonId);
+          orphanedLessonIds.push(`ID:${currentLessonId} not referenced by any course`);
         }
       });
       assert.equal(orphanedLessonIds.length, 2);

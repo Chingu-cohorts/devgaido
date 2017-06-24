@@ -24,21 +24,6 @@ const logErrors = (errorMessages) => {
 };
 
 /**
- * Write incorrectly formatted curriculum ids in paths, course, and lessons
- * to the console.log.
- *
- * @param {String[]} invalidIds - Array of erroneous ids
- * @param {string} errMessage - Custom error message describing the situation
- * @returns {[]} - empty array
- */
-const logInvalidIds = (invalidIds, errMessage) => {
-  invalidIds.forEach((id) => {
-    console.log(`${indentErrMsg}${errMessage} for ${id}`);
-  });
-  return [];
-};
-
-/**
  * Write curriculum ids in paths, course, and lessons which have invalid
  * relationship connections to the console.log.
  *
@@ -64,7 +49,7 @@ const logInvalidRelations = (fromElementNm, toElementNm, invalidIds) => {
  */
 const validateIdComposition = jsonData => Object.keys(jsonData).reduce((invalidIds, itemId) => {
   if (!itemId.match(validIdPattern)) {
-    invalidIds.push(itemId);
+    invalidIds.push(`${itemId} id contains invalid characters`);
   }
   return invalidIds;
 }, []);
@@ -94,7 +79,7 @@ const validateIdMatch = jsonData => Object.keys(jsonData).reduce((invalidIds, it
  */
 const validateIdLength = jsonData => Object.keys(jsonData).reduce((invalidIds, itemId) => {
   if (itemId.length > maxIdLength) {
-    invalidIds.push(itemId);
+    invalidIds.push(`${itemId}: greater than ${maxIdLength} characters`);
   }
   return invalidIds;
 }, []);
@@ -180,6 +165,6 @@ const validateUnknownAttributes =
     return invalidElements;
   }, []);
 
-export { logErrors, logInvalidIds, logInvalidRelations,
+export { logErrors, logInvalidRelations,
   validateIdComposition, validateIdLength, validateIdMatch, validateRelationship,
   validateRequiredAttributes, validateUnknownAttributes };

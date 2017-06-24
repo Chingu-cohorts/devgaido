@@ -1,7 +1,7 @@
 /* eslint-disable func-names no-console */
 require('./registerBabel');
 
-import { logErrors, logInvalidIds, logInvalidRelations,
+import { logErrors, logInvalidRelations,
   validateIdComposition, validateIdLength, validateRelationship,
   validateRequiredAttributes, validateUnknownAttributes } from './commonValidations';
 import coreCourses from '../src/server/models/corecourses.json';
@@ -37,7 +37,7 @@ describe('Validate corecourses.json', () => {
   describe('Validate course id length', () => {
     let invalidCourseIds = [];
     afterEach(() => {
-      invalidCourseIds = logInvalidIds(invalidCourseIds, 'Course id > 16 characters');
+      invalidCourseIds = logErrors(invalidCourseIds);
     });
     it('should verify that course ids are <= 16 characters', () => {
       invalidCourseIds = validateIdLength(coreCourses);
@@ -47,7 +47,7 @@ describe('Validate corecourses.json', () => {
   describe('Validate course id composition', () => {
     let invalidCourseIds = [];
     afterEach(() => {
-      invalidCourseIds = logInvalidIds(invalidCourseIds, 'Course id contains invalid characters');
+      invalidCourseIds = logErrors(invalidCourseIds);
     });
     it('should verify that course ids contain only lowercase letters and digits', () => {
       invalidCourseIds = validateIdComposition(coreCourses);
@@ -67,7 +67,7 @@ describe('Validate corecourses.json', () => {
   describe('Vaidate that there are no orphaned lessons', () => {
     let orphanedCourseIds = [];
     afterEach(() => {
-      orphanedCourseIds = logInvalidIds(orphanedCourseIds, 'Course id not referenced by any path');
+      orphanedCourseIds = logErrors(orphanedCourseIds);
     });
     it('should verify that each course id is referenced by at least one path', () => {
       const allPathCourses = Object.values(corePaths).reduce((courseReferences, path) => {
@@ -80,7 +80,7 @@ describe('Validate corecourses.json', () => {
       }, []);
       Object.keys(coreCourses).forEach((currentCourseId) => {
         if (allPathCourses.indexOf(currentCourseId) === -1) {
-          orphanedCourseIds.push(currentCourseId);
+          orphanedCourseIds.push(`ID:${currentCourseId} not referenced by any path`);
         }
       });
       assert.equal(orphanedCourseIds.length, 1);
