@@ -1,10 +1,9 @@
 /* eslint-disable func-names no-console */
 require('./registerBabel');
 
-import { logErrors, logInvalidAttrs, logInvalidIds, logInvalidRelations,
-  validateIdComposition, validateIdLength,
-  validateRelationship, validateRequiredAttributes, validateUnknownAttributes }
-  from './commonValidations';
+import { logErrors, logInvalidIds, logInvalidRelations,
+  validateIdComposition, validateIdLength, validateRelationship,
+  validateRequiredAttributes, validateUnknownAttributes } from './commonValidations';
 import corePaths from '../src/server/models/corepaths.json';
 import coreCourses from '../src/server/models/corecourses.json';
 

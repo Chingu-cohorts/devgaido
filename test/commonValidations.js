@@ -5,7 +5,11 @@ const validIdPattern = /^[0-9a-z]+$/;
 const indentErrMsg = ' '.repeat(9);
 
 /**
- * Write an error messages to the console log.
+ * Write an error messages to the console log. Validation routines are
+ * expected to add a message to the errorMessages array defining the type
+ * of JSON element (e.g. path, course, lesson, etc.) the error was detected in,
+ * the unique identifier of that element, and a description of the exact
+ * error enountered.
  *
  * @param {String[]} errorMessages - Array of element id's and error message
  * reporting a problem in it. This is expected to be formatted as:
@@ -15,20 +19,6 @@ const indentErrMsg = ' '.repeat(9);
 const logErrors = (errorMessages) => {
   errorMessages.forEach((error) => {
     console.log(`${indentErrMsg}${error}`);
-  });
-  return [];
-};
-
-/**
- * Write path ids missing expected attributes to the console.log.
- *
- * @param {String[]} invalidIds - Array of erroneous ids
- * @param {string} errMessage - Custom error message describing the situation
- * @returns {[]} - empty array
- */
-const logInvalidAttrs = (invalidIds, errMessage) => {
-  invalidIds.forEach((id) => {
-    console.log(`${indentErrMsg}${errMessage} for ${id}`);
   });
   return [];
 };
@@ -163,30 +153,33 @@ const validateRequiredAttributes =
   }, []);
 
 /**
- * Validate that there are no unknown attributes in the JSON object
+ * Validate that there are no unknown attributes in the JSON object by comparing
+ * its attribute keys against an array containing valid attribute names.
  *
  * @param {Object} jsonData - JSON object containing the data elements. This
  * must be formatted as {"<id>": {..."attr": "value"...}...}
- * @param {String[]} expectedAttributes - Expected attribute names
+ * @param {String[]} expectedAttributes - Array of attribute names and type
+ * indicators (e.g. [['attr-name', 'type'], ...]). Type may be either 'required'
+ * or 'optional'.
  * @returns {String[]} invalidIds - Array of invalid id's. Those containing
  * something other than lowercase letters and digits.
  */
 const validateUnknownAttributes =
   (jsonData, expectedAttributes) => Object.keys(jsonData).reduce((invalidIds, itemId) => {
-    let attributeMatch = false;
-    let expectedAttrName;
-    Object.keys(itemId).forEach((attrName) => {
-      expectedAttrName = attrName;
-      if (Object.keys(expectedAttributes).includes(attrName)) {
-        attributeMatch = true;
+    Object.keys(jsonData[itemId]).forEach((itemAttribute) => {
+      let matchingAttributeFound = false;
+      expectedAttributes.forEach((expectedAttribute) => {
+        if (expectedAttribute[0] === itemAttribute) {
+          matchingAttributeFound = true;
+        }
+      });
+      if (!matchingAttributeFound) {
+          invalidIds.push(`${itemId} contains unknown attribute:${itemAttribute}`);
       }
     });
-    if (!attributeMatch) {
-      invalidIds.push(expectedAttrName);
-    }
     return invalidIds;
   }, []);
 
-export { logErrors, logInvalidIds, logInvalidRelations, logInvalidAttrs,
+export { logErrors, logInvalidIds, logInvalidRelations,
   validateIdComposition, validateIdLength, validateIdMatch, validateRelationship,
   validateRequiredAttributes, validateUnknownAttributes };
