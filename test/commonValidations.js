@@ -85,7 +85,7 @@ const validateIdLength = jsonData => Object.keys(jsonData).reduce((invalidIds, i
  * experimental feature not found in all browsers. This solution was
  * copied from https://stackoverflow.com/questions/35090153/babel-support-for-object-entries
  *
- * @param {Object} x - The object values are to be extracted from.
+ * @param {Object} anObject - The object values are to be extracted from.
  * @returns {Array} - An array of object values
  */
 Object.values = anObject =>

@@ -1,6 +1,36 @@
 import CoreSubjects from '../models/coresubjects.json';
 
 /**
+ * 
+ * Core Subject Model
+ *
+ * This module contains functions implementing model layer functionality
+ * for the application. The JSON file referenced by this module has the
+ * following structure:
+ *
+ * {
+ *  "subject-identifier" : { <-- Unique subject identifier. Max of 16 chars.
+ *    "type": "...",         <-- Subject type which categorizes the associated
+ *                               subject material (e.g. CSS, HTML, Javascript, etc.)
+ *    "focusArea": "...",    <-- Subject focus area based on a specific webdev
+ *                               role (e.g. Frontend, Backend, Fullstack, etc.)
+ *    "name": "...",         <-- Short subject name
+ *    "description": "...",  <-- Subject description describing the associated
+ *                               subject material and how it relates to the
+ *                               webdev role.
+ *    "releaseNo": "...",    <-- Defines the release number for the associated
+ *                               technology the subject may be based on (e.g.
+ *                               Angular2 vs. Angular4)
+ *    "authorityURL": "...", <-- For specific technologies the subject is based
+ *                               on this notes the URL of the authorative
+ *                               source. For example, for Google's Material 
+ *                               Design this would be www.materialdesign.io.
+ *    "version": "1.0.0"     <-- Semantic version to track changes
+ *  },
+ * } 
+ */
+
+/**
  * Extract a specific subject and its details from the Subjects
  *
  * @param {String} subjectId - Unique subject identifier

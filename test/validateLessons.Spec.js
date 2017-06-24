@@ -33,16 +33,6 @@ describe('Validate corelessons.json', () => {
       assert.equal(invalidLessonIds.length, 1);
     });
   });
-  /* describe('Validate block key matches internal "id" value', () => {
-    let invalidLessonIds = [];
-    afterEach(() => {
-      invalidLessonIds = logInvalidIds(invalidLessonIds, 'Lesson id does not match "id" value');
-    });
-    it('should verify that block key and "id" value match', () => {
-      invalidLessonIds = validateIdMatch(coreLessons);
-      assert.equal(invalidLessonIds.length, 0);
-    });
-  });*/
   describe('Validate lesson ids in the course exists', () => {
     let invalidIds = [];
     afterEach(() => {
