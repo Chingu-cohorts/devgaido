@@ -6,11 +6,17 @@ import { logErrors, logInvalidRelations,
   validateRequiredAttributes, validateUnknownAttributes } from './commonValidations';
 import { getExpectedAttributes } from '../src/server/services/coreCourses';
 import coreCourses from '../src/server/models/corecourses.json';
+import testCourses from './testdata/testcourses.json';
 import coreLessons from '../src/server/models/corelessons.json';
 import corePaths from '../src/server/models/corepaths.json';
 
 const assert = require('assert');
 
+/* Test data is kept in a separate file so production data is not contaminated */
+const allCourses = {
+  ...coreCourses,
+  ...testCourses,
+};
 /**
  * Check the validity of the corecourses.json file
  */
@@ -21,11 +27,11 @@ describe('Validate corecourses.json', () => {
       invalidCourses = logErrors(invalidCourses);
     });
     it('should verify that the course contains all required attributes', () => {
-      invalidCourses = validateRequiredAttributes(coreCourses, getExpectedAttributes());
+      invalidCourses = validateRequiredAttributes(allCourses, getExpectedAttributes());
       assert.equal(invalidCourses, 0);
     });
     it('should verify that there are no unknown attributes', () => {
-      invalidCourses = validateUnknownAttributes(coreCourses, getExpectedAttributes());
+      invalidCourses = validateUnknownAttributes(allCourses, getExpectedAttributes());
       assert.equal(invalidCourses, 0);
     });
   });
@@ -35,7 +41,7 @@ describe('Validate corecourses.json', () => {
       invalidCourseIds = logErrors(invalidCourseIds);
     });
     it('should verify that course ids are <= 16 characters', () => {
-      invalidCourseIds = validateIdLength(coreCourses);
+      invalidCourseIds = validateIdLength(allCourses);
       assert.equal(invalidCourseIds.length, 1);
     });
   });
@@ -45,7 +51,7 @@ describe('Validate corecourses.json', () => {
       invalidCourseIds = logErrors(invalidCourseIds);
     });
     it('should verify that course ids contain only lowercase letters and digits', () => {
-      invalidCourseIds = validateIdComposition(coreCourses);
+      invalidCourseIds = validateIdComposition(allCourses);
       assert.equal(invalidCourseIds.length, 1);
     });
   });
@@ -55,7 +61,7 @@ describe('Validate corecourses.json', () => {
       invalidIds = logInvalidRelations('Course', 'Lesson', invalidIds);
     });
     it('should verify that lesson ids exist', () => {
-      invalidIds = validateRelationship('lessonIds', coreCourses, 'lessonId', coreLessons);
+      invalidIds = validateRelationship('lessonIds', allCourses, 'lessonId', coreLessons);
       assert.equal(invalidIds.length, 2);
     });
   });
@@ -73,7 +79,7 @@ describe('Validate corecourses.json', () => {
         });
         return courseReferences;
       }, []);
-      Object.keys(coreCourses).forEach((currentCourseId) => {
+      Object.keys(allCourses).forEach((currentCourseId) => {
         if (allPathCourses.indexOf(currentCourseId) === -1) {
           orphanedCourseIds.push(`ID:${currentCourseId} not referenced by any path`);
         }

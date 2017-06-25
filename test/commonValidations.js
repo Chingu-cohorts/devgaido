@@ -5,11 +5,12 @@ const validIdPattern = /^[0-9a-z]+$/;
 const indentErrMsg = ' '.repeat(9);
 
 /**
- * Write an error messages to the console log. Validation routines are
- * expected to add a message to the errorMessages array defining the type
- * of JSON element (e.g. path, course, lesson, etc.) the error was detected in,
- * the unique identifier of that element, and a description of the exact
- * error enountered.
+ * Write an error messages to the console log.
+ *
+ * Validation routines are expected to add a message to the errorMessages
+ * array defining the type of JSON element (e.g. path, course, lesson, etc.)
+ * the error was detected in, the unique identifier of that element, and a
+ * description of the exact error enountered.
  *
  * @param {String[]} errorMessages - Array of element id's and error message
  * reporting a problem in it. This is expected to be formatted as:

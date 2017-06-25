@@ -65,14 +65,5 @@
       "getstartedweb"
     ],
     "version": "1.0.0"
-  },
-  "E2345678901234567" : {
-    "name": "Error test",
-    "description": "Path id exceeds 16 characters",
-    "courseIds": [
-      "error1",
-      "error2"
-    ],
-    "version": "1.0.0"
   }
 }
