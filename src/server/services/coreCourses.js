@@ -21,6 +21,24 @@ import CoreCourses from '../models/corecourses.json';
  * }
  */
 
+/*
+ * Attribute directory defines all attribute names expected in the JSON object
+ * and whether they are required or optional.
+ */
+const courseAttributes = [
+  ['name', 'required'],
+  ['description', 'required'],
+  ['lessonIds', 'required'],
+  ['version', 'required'],
+];
+
+/**
+ * Retrieve the array of attribute names and types.
+ *
+ * @returns {String[]} courseAttributes - Array of expected attribute names and types
+ */
+const getExpectedAttributes = () => courseAttributes;
+
 /**
  * Extract a specific course and its details from the Core Courses
  *
@@ -37,4 +55,4 @@ const getCourse = courseId => CoreCourses[courseId];
  */
 const getAllCourses = () => CoreCourses;
 
-export { getCourse, getAllCourses };
+export { getExpectedAttributes, getCourse, getAllCourses };

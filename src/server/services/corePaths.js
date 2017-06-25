@@ -22,6 +22,24 @@ import CorePaths from '../models/corepaths.json';
  * }
  */
 
+/*
+ * Attribute directory defines all attribute names expected in the JSON object
+ * and whether they are required or optional.
+ */
+const pathAttributes = [
+  ['name', 'required'],
+  ['description', 'required'],
+  ['courseIds', 'required'],
+  ['version', 'required'],
+];
+
+/**
+ * Retrieve the array of attribute names and types.
+ *
+ * @returns {String[]} pathAttributes - Array of expected attribute names and types
+ */
+const getExpectedAttributes = () => pathAttributes;
+
 /**
  * Extract a specific path and its details from the Core Paths
  *
@@ -37,4 +55,4 @@ const getPath = pathName => CorePaths[pathName];
  */
 const getAllPaths = () => CorePaths;
 
-export { getPath, getAllPaths };
+export { getExpectedAttributes, getPath, getAllPaths };

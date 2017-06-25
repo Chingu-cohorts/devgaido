@@ -1,9 +1,10 @@
-/* eslint-disable func-names no-console */
+/* eslint-disable import/first func-names no-console */
 require('./registerBabel');
 
 import { logErrors, logInvalidRelations,
   validateIdComposition, validateIdLength, validateRelationship,
   validateRequiredAttributes, validateUnknownAttributes } from './commonValidations';
+import { getExpectedAttributes } from '../src/server/services/coreCourses';
 import coreCourses from '../src/server/models/corecourses.json';
 import coreLessons from '../src/server/models/corelessons.json';
 import corePaths from '../src/server/models/corepaths.json';
@@ -16,21 +17,15 @@ const assert = require('assert');
 describe('Validate corecourses.json', () => {
   describe('Validate attributes', () => {
     let invalidCourses = [];
-    const expectedAttributes = [
-      ['name', 'required'],
-      ['description', 'required'],
-      ['lessonIds', 'required'],
-      ['version', 'required'],
-    ];
     afterEach(() => {
       invalidCourses = logErrors(invalidCourses);
     });
     it('should verify that the course contains all required attributes', () => {
-      invalidCourses = validateRequiredAttributes(coreCourses, expectedAttributes);
+      invalidCourses = validateRequiredAttributes(coreCourses, getExpectedAttributes());
       assert.equal(invalidCourses, 0);
     });
     it('should verify that there are no unknown attributes', () => {
-      invalidCourses = validateUnknownAttributes(coreCourses, expectedAttributes);
+      invalidCourses = validateUnknownAttributes(coreCourses, getExpectedAttributes());
       assert.equal(invalidCourses, 0);
     });
   });

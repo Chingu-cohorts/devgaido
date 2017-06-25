@@ -28,6 +28,29 @@ import CoreLessons from '../models/corelessons.json';
  * }
  */
 
+/*
+ * Attribute directory defines all attribute names expected in the JSON object
+ * and whether they are required or optional.
+ */
+const lessonAttributes = [
+  ['source', 'required'],
+  ['name', 'required'],
+  ['description', 'required'],
+  ['type', 'required'],
+  ['instructions', 'optional'],
+  ['resources', 'optional'],
+  ['subject', 'required'],
+  ['externalSource', 'required'],
+  ['version', 'required'],
+];
+
+/**
+ * Retrieve the array of attribute names and types.
+ *
+ * @returns {String[]} lessonAttributes - Array of expected attribute names and types
+ */
+const getExpectedAttributes = () => lessonAttributes;
+
 /**
  * Extract a specific lesson and its details from the Core Lessons
  *
@@ -43,4 +66,4 @@ const getLesson = lessonId => CoreLessons[lessonId];
  */
 const getAllLessons = () => CoreLessons;
 
-export { getLesson, getAllLessons };
+export { getExpectedAttributes, getLesson, getAllLessons };
