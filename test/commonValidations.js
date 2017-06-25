@@ -127,6 +127,7 @@ const validateRelationship = (childAttrNm, childJSON, parentAttrNm, parentJSON) 
  * @returns {String[]} invalidIds - Array of invalid id's. Those containing
  * something other than lowercase letters and digits.
  */
+// TODO: Re-examine this code to see if it can be optimized. The function chaining seems clumsy
 const validateRequiredAttributes =
   (jsonData, expectedAttributes) => Object.keys(jsonData).reduce((invalidIds, itemId) => {
     expectedAttributes.forEach((attribute) => {
@@ -149,6 +150,7 @@ const validateRequiredAttributes =
  * @returns {String[]} invalidIds - Array of invalid id's. Those containing
  * something other than lowercase letters and digits.
  */
+// TODO: Re-examine this code to see if it can be optimized. The function chaining seems clumsy
 const validateUnknownAttributes =
   (jsonData, expectedAttributes) => Object.keys(jsonData).reduce((invalidElements, itemId) => {
     Object.keys(jsonData[itemId]).forEach((itemAttribute) => {
