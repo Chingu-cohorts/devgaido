@@ -3,7 +3,8 @@ require('./registerBabel');
 
 import { logErrors, logInvalidRelations,
   validateIdComposition, validateIdLength,
-  validateRequiredAttributes, validateUnknownAttributes } from './commonValidations';
+  validateRequiredAttributes, validateUnknownAttributes,
+  validateURL } from './commonValidations';
 import { getExpectedAttributes } from '../src/server/services/coreLessons';
 import coreLessons from '../src/server/models/corelessons.json';
 import testLessons from './testdata/testlessons.json';
@@ -53,6 +54,22 @@ describe('Validate corelessons.json', () => {
     it('should verify that lesson ids contain only lowercase letters and digits', () => {
       invalidLessonIds = validateIdComposition(allLessons);
       assert.equal(invalidLessonIds.length, 1);
+    });
+  });
+  describe('Validate lessons external source', () => {
+    let invalidLessonIds = [];
+    afterEach(() => {
+      invalidLessonIds = logErrors(invalidLessonIds);
+    });
+    it('should verify that the link to the external source is not broken', () => {
+      const status = validateURL('google.com');
+      if (status !== 200) {
+        invalidLessonIds.push('Broken URL: google.com');
+      }
+      /*
+      invalidLessonIds = validateIdComposition(allLessons);
+      assert.equal(invalidLessonIds.length, 1);
+      */
     });
   });
   describe('Validate lesson ids in the course exists', () => {

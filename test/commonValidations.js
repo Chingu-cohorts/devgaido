@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+const request = require('request');
 
 const maxIdLength = 16;
 const validIdPattern = /^[0-9a-z]+$/;
@@ -168,6 +169,16 @@ const validateUnknownAttributes =
     return invalidElements;
   }, []);
 
+const validateURL = (siteURL) => {
+  request(siteURL, (error, response, body) => {
+    // if (!error && response.statusCode == 200) {
+    console.log(`validateURL - response: ${response}`);
+    console.log(`validateURL - response.statusCode: ${response.statusCode}`);
+  });
+  return 200;
+};
+
 export { logErrors, logInvalidRelations,
   validateIdComposition, validateIdLength, validateIdMatch, validateRelationship,
-  validateRequiredAttributes, validateUnknownAttributes };
+  validateRequiredAttributes, validateUnknownAttributes,
+  validateURL };
