@@ -31,7 +31,7 @@ const LessonCard = ({ name, description, linkTo, type }) => (
 );
 
 const CourseCard = ({ course, linkTo }) => (
-  <Link className="connected" to={linkTo}>
+  <Link className="connected connected-course" to={linkTo}>
     <div className="card-big">
       <div className="card-big-header card-big-header-lesson">
         <h5 className="card-big-header-text">{course.name}</h5>
@@ -39,7 +39,7 @@ const CourseCard = ({ course, linkTo }) => (
       </div>
       <div className="card-big-content">
         <p>{course.description}</p>
-        <h2 className="completion-text">incomplete</h2>
+        <h4 className="completion-text">incomplete</h4>
       </div>
     </div>
   </Link>
@@ -71,7 +71,7 @@ const Course = ({ match, curriculum }) => {
       <div className="page-hero">
         <div className="page-hero-color-overlay page-hero-color-overlay-course" />
         <div className="page-hero-container">
-          <BreadCrumbs curriculum={curriculum} pathId={match.params.pid} courseId={match.params.id} />
+          <BreadCrumbs curriculum={curriculum} pathId={pathId} courseId={courseId} />
           <h1 className="page-hero-name">{course.name}</h1>
           <h1 className="completion-text-big completion-text-big-left">COURSE</h1>
           <h1 className="completion-text-big">{course.nCompleted}/{course.nTotal}</h1>

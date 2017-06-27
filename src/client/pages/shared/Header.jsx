@@ -22,14 +22,14 @@ const Header = ({ user, uiState, dispatch, lock }) => (
   <div>
     <header>
       <div className="header-content">
-        <NavLink to="/" className="header-logo-text">devgaido.</NavLink>
+        <NavLink to="/" className="header-logo-text"><span>dev</span><span>Gaido</span></NavLink>
         <nav className="main-navigation">
           <ul className="menu">
             <li><NavLink to="/styleguide" activeClassName="link-active">Styleguide</NavLink></li>
             <li><NavLink to="/dashboard" activeClassName="link-active">Dashboard</NavLink></li>
             <li><NavLink to="/paths" activeClassName="link-active">Browse Paths</NavLink></li>
             {user.authenticated ? <li><a className={uiState.global.navMenuOpen ? 'menu-btn profile menu-btn-close' : 'menu-btn profile'} href="/" onClick={e => toggleMenu(e, dispatch)} title="Menu">‌‌ Menu</a></li> : null}
-            {!user.authenticated ? <li><a className="menu-btn login" href="/" onClick={e => handleLoginClick(e, lock)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a></li> : null}
+            {!user.authenticated ? <li><a className="button button-pill button-login" href="/" onClick={e => handleLoginClick(e, lock)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a></li> : null}
           </ul>
         </nav>
         <div className={uiState.global.navMenuOpen ? 'side-panel is-visible' : 'side-panel'}>

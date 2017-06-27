@@ -1,13 +1,13 @@
 /* Colors */
 
 colorBackgroundBase = white
-colorPrimary = darkslateblue
+colorPrimary = #007399//darkslateblue
 colorPrimaryLight = #e7eaf6
 colorPrimaryDark = #372e6b
-colorSecondary = #3cc788
+colorSecondary = #DB684E
 colorSecondaryLight = #c9f0db
 colorSecondaryDark = #00bc67
-colorTertiary = deepskyblue
+colorTertiary = #5D35AC
 colorQuarternary = #ffea7e
 colorTextInverse = white
 colorPlaceholder = #afb9bb
@@ -20,20 +20,22 @@ boxShadowMinimal = 0px -2px 5px rgba(30, 33, 94, 0.15)
 
 $color-background = #fff
 // $color-initial = #f00
-$color-primary = darkslateblue
+$color-primary = colorPrimary//darkslateblue
 // $color-text = rgba(0,0,0,0.74)
 // $color-secondary = #606c76
 // $color-tertiary = #f4f5f6
 // $color-quaternary = #d1d1d1
 // $color-quinary = #e1e1e1
 $widthMax = 1380px
-
+$font = 'Fira Sans'
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700')
 @import './sutairu'
 
 @lost flexbox flex;
 
 .header-content
   lost-center $widthMax
+
 .footer-content
   lost-center $widthMax
   h5
@@ -42,10 +44,31 @@ $widthMax = 1380px
 // Needed to for Font Awesome
 i::before
     font-family: 'FontAwesome'
+
+.App
+  display flex
+  min-height: 100vh;
+  flex-direction: column;
+
+.page-content
+  background: #e7eaf6
+  flex 1
+
+/*#root, 
+  flex 1
+*/
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+a.link-active
+  box-shadow 0px 1px colorSecondary
 
+.button-login
+  //background colorSecondary
+  border-color colorPrimary
+  color colorPrimary
+  margin 0
+  //font-weight: bold
 
 .main-navigation
   margin-top 10px
@@ -56,22 +79,28 @@ i::before
   li
     display: inline-block
     padding 0 1rem
+    margin 0
+    //font-weight bold
+    text-transform: uppercase
 
 .header-logo-text
-  color #E8E9F7 !important
   font-size: 35px
-  letter-spacing: 5px
-  font-weight: bold
+  //letter-spacing: 5px
+  //font-weight: bold
   margin 0
   padding 0
-  flex 2
-    
+  flex 1
+  span:first-child
+    color colorPrimary
+  span
+    color colorSecondary
+
 .menu {
     // margin-right:1rem;
 }
 .menu a {
     float: right;
-    line-height: 3rem;
+    line-height: 3.7rem;
     text-decoration: none;
     width: auto;
 }
@@ -320,21 +349,21 @@ i::before
 
 .hero-cta-primary,
 .hero-cta-secondary
-  flex 1 100%
+  width 27%
   margin 5px
   text-align: center
   border-radius: 999px
   padding 10px
-  font-size: 25px
-
+  font-size: 20px
+  
 .hero-cta-secondary
-  color white !important
+  color white
   border 2px solid white
   background: rgba(0,0,0,0.3)
 
 .hero-cta-primary
-  background colorSecondary !important
-  color white !important
+  background colorSecondary
+  color white
 
 /*++++++++++++++++++++++++ BreadCrumb +++++++++++++++++++++++++++*/
 .breadcrumb
@@ -373,7 +402,7 @@ i::before
   right 0
 
 .page-hero-color-overlay-path
-  background alpha(#007399, 0.75)
+  background alpha(colorTertiary, 0.75)
 
 .page-hero-color-overlay-course
   background alpha(colorPrimary, 0.75)
@@ -405,7 +434,7 @@ i::before
   color white
   bottom 20px
   right 0
-
+  font-weight: bold
 .completion-text-big-left
   margin 0
   position: absolute
@@ -428,7 +457,7 @@ i::before
   padding 10px
 
 .card-big
-  background colorPrimaryLight //$color-quaternary
+  background white //colorPrimaryLight //$color-quaternary
   border-radius: 6px
   margin-bottom 20px
 
@@ -444,20 +473,23 @@ i::before
     margin-left: -5px;
     width: 11px;
     height: 25px;
-    background: alpha(#007399, 0.5)
+    background: alpha(colorTertiary, 0.5)
     border-radius: 2px;
   &:last-child:after
     height 0px
+
+.connected-course:after
+    background: alpha(colorPrimary, 0.5)
 
 .card-big-header
   background: #007399
   display flex
   flex-direction: row
   border-radius: 6px 6px 0 0;
-  padding 10px
+  padding 10px 15px
 
 .card-big-header-path
-  background #007399
+  background colorTertiary//#007399
 
 .card-big-header-course
   background colorPrimary
@@ -467,7 +499,7 @@ i::before
 
 .card-big-header-text
   text-transform: uppercase
-  font-weight: bold
+  //font-weight: bold
   color white
   margin 0
   flex 1
@@ -476,6 +508,7 @@ i::before
   color white
   padding 0 15px
   text-transform: uppercase
+  font-weight: bold
 
 .card-big-header-icon
   font-size: 2.2rem
@@ -484,10 +517,11 @@ i::before
   margin-right 10px
 
 .card-big-content
-  padding 10px
+  padding 5px 15px
 
 .completion-text
   margin 0
   text-align: right
-
+  font-weight bold
+  color #007399
 /*++++++++++++++++++++++++ LESSON +++++++++++++++++++++++++++*/

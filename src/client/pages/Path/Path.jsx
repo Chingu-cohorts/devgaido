@@ -15,7 +15,7 @@ const CourseCard = ({ course, linkTo }) => (
       </div>
       <div className="card-big-content">
         <p>{course.description}</p>
-        <h2 className="completion-text">{course.nCompleted}/{course.nTotal}</h2>
+        <h4 className="completion-text">{course.nCompleted}/{course.nTotal}</h4>
       </div>
     </div>
   </Link>

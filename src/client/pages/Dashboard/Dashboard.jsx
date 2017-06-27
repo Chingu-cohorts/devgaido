@@ -10,23 +10,23 @@ import TabbedContent from './TabbedContent';
 const Metrics = ({ user, curriculum }) => (
   <div className="grid-full metrics">
     <h1>Welcome back, {user.name}!</h1>
-    <h1>Completed Paths: {
+    <h2>Completed Paths: {
       Object.keys(curriculum.paths).filter(
           pathId => curriculum.paths[pathId].completed,
       ).length}
-    </h1>
-    <h1>Completed Courses: {
+    </h2>
+    <h2>Completed Courses: {
       Object.keys(curriculum.courses).filter(
           courseId => curriculum.courses[courseId].completed,
       ).length}
-    </h1>
-    <h1>Completed Lessons: {
+    </h2>
+    <h2>Completed Lessons: {
       Object.keys(curriculum.lessons).filter(
           lessonId => curriculum.lessons[lessonId].completed,
       ).length}
-    </h1>
-    <h1>streak: {user.streak}</h1>
-    <h1>lastVisited: {new Date(user.dayLastVisited).toLocaleString()}</h1>
+    </h2>
+    <h3>streak: {user.streak}</h3>
+    <h3>lastVisited: {new Date(user.dayLastVisited).toLocaleString()}</h3>
   </div>
 );
 
@@ -43,7 +43,7 @@ const CourseCardMini = ({ course }) => (
 
 const CurrentPathCard = ({ curPath, curriculum }) => (
   <div className="section-card current-path">
-    <div className="section-card-header" style={{ background: 'darkslateblue' }}>
+    <div className="section-card-header">
       <span className="section-card-caption">CURRENT PATH</span>
       <h1 className="section-card-title">{curPath.name}</h1>
       <button className="current-path-view-button">VIEW PATH</button>
@@ -62,7 +62,7 @@ const CurrentPathCard = ({ curPath, curriculum }) => (
 
 const SectionCard = ({ title, subtitle, color, children }) => (
   <div className="section-card">
-    <div className="section-card-header" style={{ background: color || 'darkslateblue' }}>
+    <div className="section-card-header">
       <span className="section-card-caption">{subtitle}</span>
       <h1 className="section-card-title">{title}</h1>
       <button className="section-card-button">VIEW ALL</button>
@@ -118,7 +118,7 @@ const PathList = ({ pathIds, curriculum }) => (
 const NoPaths = ({ text, showPathButton }) => (
   <div className="no-paths">
     <h1 className="no-paths-text">{text}</h1>
-    {showPathButton ? <Link className="no-paths-button" to="/paths">Browse Paths</Link> : null}
+    {showPathButton ? <Link className="button" to="/paths">Browse Paths</Link> : null}
   </div>
 );
 

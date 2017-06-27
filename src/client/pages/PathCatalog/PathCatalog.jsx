@@ -5,7 +5,7 @@ import Card from '../shared/Card';
 
 const SectionCard = ({ title, subtitle, color, children }) => (
   <div className="section-card">
-    <div className="section-card-header" style={{ background: color || 'darkslateblue' }}>
+    <div className="section-card-header">
       <span className="section-card-caption">{subtitle}</span>
       <h1 className="section-card-title">{title}</h1>
       <button className="section-card-button">VIEW ALL</button>
