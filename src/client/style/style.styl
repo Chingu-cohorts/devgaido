@@ -1,0 +1,493 @@
+/* Colors */
+
+colorBackgroundBase = white
+colorPrimary = darkslateblue
+colorPrimaryLight = #e7eaf6
+colorPrimaryDark = #372e6b
+colorSecondary = #3cc788
+colorSecondaryLight = #c9f0db
+colorSecondaryDark = #00bc67
+colorTertiary = deepskyblue
+colorQuarternary = #ffea7e
+colorTextInverse = white
+colorPlaceholder = #afb9bb
+
+colorLink = colorPrimary
+colorLinkHover = colorSecondary
+
+boxShadowBase = 5px 5px 10px rgba(30, 33, 94, 0.15)
+boxShadowMinimal = 0px -2px 5px rgba(30, 33, 94, 0.15)
+
+$color-background = #fff
+// $color-initial = #f00
+$color-primary = darkslateblue
+// $color-text = rgba(0,0,0,0.74)
+// $color-secondary = #606c76
+// $color-tertiary = #f4f5f6
+// $color-quaternary = #d1d1d1
+// $color-quinary = #e1e1e1
+$widthMax = 1380px
+
+@import './sutairu'
+
+@lost flexbox flex;
+
+.header-content
+  lost-center $widthMax
+.footer-content
+  lost-center $widthMax
+  h5
+    text-align: center
+    width 100%
+// Needed to for Font Awesome
+i::before
+    font-family: 'FontAwesome'
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+
+.main-navigation
+  margin-top 10px
+  ul
+    list-style: none
+    margin 0
+    padding 0
+  li
+    display: inline-block
+    padding 0 1rem
+
+.header-logo-text
+  color #E8E9F7 !important
+  font-size: 35px
+  letter-spacing: 5px
+  font-weight: bold
+  margin 0
+  padding 0
+  flex 2
+    
+.menu {
+    // margin-right:1rem;
+}
+.menu a {
+    float: right;
+    line-height: 3rem;
+    text-decoration: none;
+    width: auto;
+}
+
+.menu a.menu-btn {
+    border-radius: 1.5rem;
+    height: 3rem;
+    line-height: 3rem;
+    padding-left: 3.5rem;
+    padding-right: 1rem;
+    
+}
+
+.menu a.login {
+    background-color: colorSecondary;
+    color: colorTextInverse;
+}
+
+.menu a.profile {
+    background-color: colorPrimary;
+    color: colorTextInverse;
+}
+
+
+.menu a.menu-btn:before {
+    border-radius: 50%;
+    color: colorTextInverse;
+    font-family: 'FontAwesome'
+    float: left;
+    font-size: 1.3rem;
+    font-weight: normal;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    height: 3rem;
+    line-height: 3rem;
+    margin-left:-3.5rem;
+    text-align: center;
+    width: 3rem;
+}
+
+.menu a.menu-btn:before {
+    background-color: colorPrimaryDark;
+    content:"\f2c0"
+}
+
+.menu a.menu-btn-close:before {
+    content:"\f00d"
+}
+
+
+.menu a.login:before {
+    background-color: colorSecondaryDark;
+    color: colorTextInverse;
+    content:"\f090";
+}
+
+.search-header {
+    float: left;
+    padding: 0.3rem 2rem 0 2rem;
+    width: 300px;
+}
+    
+
+/*--------------------------------------------------------------
+# Panels
+--------------------------------------------------------------*/
+ 
+.side-panel {
+    background-color: colorTextInverse;
+    //box-shadow: 5px 25px 20px rgba(30, 33, 94, 0.15);
+    box-shadow: 2px 5px 10px rgba(30, 33, 94, 0.15);
+    //height: 100vh;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    transition: visibility 0s 0s;
+    visibility: hidden;
+    width: 300px;
+    z-index: 100;
+}
+
+.side-panel.is-visible {
+    visibility: visible;
+    transition: visibility 0s 0s;
+}
+
+.search-container {
+    float: left;
+    padding: 2rem;
+}
+.side-panel h1,
+.side-panel h2 {
+    clear: both;
+    padding-left: 2rem;
+    text-transform: uppercase;
+}
+
+.side-panel h1 {
+    margin-bottom: 2rem;
+}
+
+.side-panel ul {
+    list-style-type: none;
+    // margin-bottom: 4rem;
+    padding: 0;
+}
+
+.side-panel ul li {
+    border-bottom: 1px solid #f6f7fb;
+    color: colorPrimaryDark;
+    font-size: 0.8rem;
+    line-height: 2rem;
+    padding: 1rem 2rem;
+}
+
+.side-panel ul li.active {
+    font-weight: 600;
+}
+
+.side-panel ul li i {
+    background-color: colorPrimary;
+    border-radius: 50%;
+    color: colorTextInverse;
+    font-size: 1rem;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    margin-right: 1rem;
+    text-align: center;
+    width: 2.2rem;
+}
+
+.side-panel ul li.information i {
+    /* background-color: colorPrimary; */
+    color: #00e676;
+}
+
+.side-panel ul li.times i {
+    /* background-color: #fcc247; */
+}
+
+.side-panel ul li.goals i {
+    /* background-color: #144486; */
+}
+
+.side-panel ul li.assessment i {
+    /* background-color: #5f98fd; */
+}
+
+/* .side-panel ul li:before {
+    background-color: tertiaryColor;
+    border-radius: 50%;
+    content: "";
+    display: block;
+    float: left;
+    height: 2rem;
+    margin-right: 1rem;
+    width: 2rem;
+}
+
+.side-panel ul li.active:before {
+    background-color: #86edbb;
+    border: 5px solid #138ac5;
+    box-shadow: 2px 2px 6px rgba(30, 33, 94, 0.15); 
+    font-weight: 600;
+} */
+
+.panel-links {
+    /* background-color: colorPrimary; */
+    height: 5rem;
+}
+
+.side-panel-close {
+    /* background-image: url('/assets/img/close.svg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    float: right;
+    height: 5rem;
+    text-indent: -9999px;
+    width: 5rem;
+ }
+
+.panel-menu {
+    //padding: 2rem 0 3rem 0;
+    padding-top 2rem
+}
+
+
+.side-panel-catalog {
+    box-shadow: 5px 0 10px rgba(30,33,94,0.15);
+    left: 0;
+    h1 {
+        background-color: colorPrimary;
+        color: colorTextInverse;
+        font-size:1.1rem;
+        margin:0;
+        padding:1rem;
+    }
+    .panel-menu {
+        padding: 0;
+    }
+    h2 {
+        background-color: colorPrimaryLight;
+        padding: 1rem 2rem;
+    }
+}
+
+
+/*++++++++++++++++++++++++ HOME +++++++++++++++++++++++++++*/
+.home-hero
+  background: url('/assets/img/hero.jpg')
+  background-size: cover
+  background-position-y: 20%
+  height 600px
+  width 100%
+  display flex
+  align-items: center
+  justify-content: center
+
+.home-content
+  display flex
+  flex-wrap: wrap
+  width 50%
+
+.hero-tagline
+  color white
+  font-weight: bold
+  width 100%
+
+.hero-tagline-colored
+  color colorSecondary
+
+.hero-details
+  margin-top 20px
+  margin-bottom: 20px
+  p
+    color rgba(255,255,255,1)
+    margin-bottom: 10px
+
+        
+.hero-cta-div
+  width 100%
+  display flex
+
+.hero-cta-primary,
+.hero-cta-secondary
+  flex 1 100%
+  margin 5px
+  text-align: center
+  border-radius: 999px
+  padding 10px
+  font-size: 25px
+
+.hero-cta-secondary
+  color white !important
+  border 2px solid white
+  background: rgba(0,0,0,0.3)
+
+.hero-cta-primary
+  background colorSecondary !important
+  color white !important
+
+/*++++++++++++++++++++++++ BreadCrumb +++++++++++++++++++++++++++*/
+.breadcrumb
+  padding-right 10px
+
+.breadcrumb-icon
+  color colorTertiary
+  font-style: normal
+  padding-right 10px
+    
+.breadcrumbs-container
+  position absolute
+  top 20px
+  left 0
+  color white
+  font-weight: bold
+  font-size: 18px
+  text-shadow 1px 1px black
+  a 
+    color white
+
+/*++++++++++++++++++++++++ PATH & COURSE +++++++++++++++++++++++++++*/
+
+.page-hero
+  background: url("http://lorempixel.com/1900/1200/technics/")
+  background-size: cover
+  position relative
+  height 400px
+
+.page-hero-color-overlay
+  position absolute
+  background alpha($color-primary, 0.75)
+  top 0
+  bottom 0
+  left 0
+  right 0
+
+.page-hero-color-overlay-path
+  background alpha(#007399, 0.75)
+
+.page-hero-color-overlay-course
+  background alpha(colorPrimary, 0.75)
+
+.page-hero-color-overlay-lesson
+  background alpha(colorSecondary, 0.75)
+
+.page-hero-container
+  margin: 0 auto
+  max-width: $widthMax
+  position: relative
+  width: 100%
+  height 100%
+
+.page-hero-name
+  text-transform: uppercase
+  font-weight: bold
+  text-align: center
+  vertical-align: middle
+  color white
+  position absolute
+  top 50%
+  left 50%
+  transform: translate(-50%, -50%)
+
+.completion-text-big
+  margin 0
+  position: absolute
+  color white
+  bottom 20px
+  right 0
+
+.completion-text-big-left
+  margin 0
+  position: absolute
+  color white
+  bottom 20px
+  left 0
+
+.bookmark-button
+  position: absolute    
+  top 20px
+  right 0
+  border 2px solid white
+  color white
+  font-size 14px
+  padding-bottom 37px
+
+.grid-half
+  width 50%
+  flex 1 50%
+  padding 10px
+
+.card-big
+  background colorPrimaryLight //$color-quaternary
+  border-radius: 6px
+  margin-bottom 20px
+
+.connected
+  position relative
+  width 100%
+  &:after
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -4px;
+    left: "calc(%s / 4)" % $widthMax
+    margin-left: -5px;
+    width: 11px;
+    height: 25px;
+    background: alpha(#007399, 0.5)
+    border-radius: 2px;
+  &:last-child:after
+    height 0px
+
+.card-big-header
+  background: #007399
+  display flex
+  flex-direction: row
+  border-radius: 6px 6px 0 0;
+  padding 10px
+
+.card-big-header-path
+  background #007399
+
+.card-big-header-course
+  background colorPrimary
+
+.card-big-header-lesson
+  background colorSecondary
+
+.card-big-header-text
+  text-transform: uppercase
+  font-weight: bold
+  color white
+  margin 0
+  flex 1
+
+.card-big-header-text-extra
+  color white
+  padding 0 15px
+  text-transform: uppercase
+
+.card-big-header-icon
+  font-size: 2.2rem
+  color white
+  margin-top 3px
+  margin-right 10px
+
+.card-big-content
+  padding 10px
+
+.completion-text
+  margin 0
+  text-align: right
+
+/*++++++++++++++++++++++++ LESSON +++++++++++++++++++++++++++*/

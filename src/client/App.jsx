@@ -43,13 +43,9 @@ const App = ({ serverMatch, dispatch, user, curriculum, uiState, auth0 }) => {
   return (
     <div className="App">
       <Header dispatch={dispatch} uiState={uiState} user={user} lock={lock} auth0={auth0} />
-      <main>
-        <div className="main">
-          <Switch>
-            {routes}
-          </Switch>
-        </div>
-      </main>
+      <Switch>
+        {routes}
+      </Switch>
       <Footer />
     </div>);
 };

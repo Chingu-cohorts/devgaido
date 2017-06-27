@@ -8,7 +8,7 @@ import Times from './pages/Times/Times';
 import Objectives from './pages/Objectives/Objectives';
 import CourseCatalog from './pages/CourseCatalog/CourseCatalog';
 import Dashboard from './pages/Dashboard/Dashboard';
-
+import Styleguide from './pages/Styleguide/Styleguide';
 /**
  * Client route definitions
  *
@@ -27,6 +27,11 @@ const routes = [
     exact: true,
     component: Home,
     passdown: ['lock', 'user'],
+  },
+  {
+    path: '/styleguide',
+    exact: true,
+    component: Styleguide,
   },
   {
     path: '/dashboard',

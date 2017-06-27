@@ -25,6 +25,7 @@ const Header = ({ user, uiState, dispatch, lock }) => (
         <NavLink to="/" className="header-logo-text">devgaido.</NavLink>
         <nav className="main-navigation">
           <ul className="menu">
+            <li><NavLink to="/styleguide" activeClassName="link-active">Styleguide</NavLink></li>
             <li><NavLink to="/dashboard" activeClassName="link-active">Dashboard</NavLink></li>
             <li><NavLink to="/paths" activeClassName="link-active">Browse Paths</NavLink></li>
             {user.authenticated ? <li><a className={uiState.global.navMenuOpen ? 'menu-btn profile menu-btn-close' : 'menu-btn profile'} href="/" onClick={e => toggleMenu(e, dispatch)} title="Menu">‌‌ Menu</a></li> : null}
