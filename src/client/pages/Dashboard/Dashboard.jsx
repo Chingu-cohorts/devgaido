@@ -123,69 +123,79 @@ const NoPaths = ({ text, showPathButton }) => (
 );
 
 const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
-  <div className="container">
-    <div className="container-dashboard">
-      <Metrics user={user} curriculum={curriculum} />
-      <TabbedContent
-        content={[{
-          caption: 'In Progress',
-          content: (
-            <div>
-              {user.curPathId !== '' ?
-                <CurrentPathCard
-                  curPath={curriculum.paths[user.curPathId]}
-                  curriculum={curriculum}
-                /> :
-                <SectionCard title="In Progress" subtitle="PATHS">
-                  <NoPaths text="You haven't started any paths yet." showPathButton />
-                </SectionCard>
-                }
-              {user.curPathId !== '' && Object.keys(curriculum.paths).filter(
-                      pathId => !curriculum.paths[pathId].completed
-                                && isInProgress(user, curriculum, pathId),
-                    ).length !== 0 ?
-                      <SectionCard title="In Progress" subtitle="PATHS">
-                        <PathList
-                          pathIds={Object.keys(curriculum.paths).filter(
-                            pathId => !curriculum.paths[pathId].completed
-                                      && isInProgress(user, curriculum, pathId),
-                          )}
-                          curriculum={curriculum}
-                        />
-                      </SectionCard> : null}
-            </div>),
-        }, {
-          caption: 'Bookmarked',
-          content: (
-            <SectionCard title="Bookmarked" subtitle="PATHS">
-              {user.bookmarkedPaths.length !== 0 ?
-                <PathList
-                  pathIds={Object.keys(curriculum.paths).filter(
-                    pathId => user.bookmarkedPaths.indexOf(pathId) !== -1,
-                  )}
-                  curriculum={curriculum}
-                /> :
-                <NoPaths text="You haven't bookmarked any paths yet." showPathButton />}
-            </SectionCard>),
-        }, {
-          caption: 'Completed',
-          content: (
-            <SectionCard title="Completed" subtitle="PATHS">
-              {Object.keys(curriculum.paths).filter(
-                  pathId => curriculum.paths[pathId].completed,
-                ).length !== 0 ?
+  <div>
+    <div className="page-hero page-hero-compass">
+      <div className="page-hero-color-overlay page-hero-color-overlay-path-catalog" />
+      <div className="page-hero-container">
+        <h1 className="page-hero-name">DASHBOARD</h1>
+        <h2 className="completion-text-big completion-text-big-left">Welcome back, {user.name}!</h2>
+        <h2 className="completion-text-big">Something</h2>
+      </div>
+    </div>
+    <div className="container">
+      <div className="container-dashboard">
+        <Metrics user={user} curriculum={curriculum} />
+        <TabbedContent
+          content={[{
+            caption: 'In Progress',
+            content: (
+              <div>
+                {user.curPathId !== '' ?
+                  <CurrentPathCard
+                    curPath={curriculum.paths[user.curPathId]}
+                    curriculum={curriculum}
+                  /> :
+                  <SectionCard title="In Progress" subtitle="PATHS">
+                    <NoPaths text="You haven't started any paths yet." showPathButton />
+                  </SectionCard>
+                  }
+                {user.curPathId !== '' && Object.keys(curriculum.paths).filter(
+                        pathId => !curriculum.paths[pathId].completed
+                                  && isInProgress(user, curriculum, pathId),
+                      ).length !== 0 ?
+                        <SectionCard title="In Progress" subtitle="PATHS">
+                          <PathList
+                            pathIds={Object.keys(curriculum.paths).filter(
+                              pathId => !curriculum.paths[pathId].completed
+                                        && isInProgress(user, curriculum, pathId),
+                            )}
+                            curriculum={curriculum}
+                          />
+                        </SectionCard> : null}
+              </div>),
+          }, {
+            caption: 'Bookmarked',
+            content: (
+              <SectionCard title="Bookmarked" subtitle="PATHS">
+                {user.bookmarkedPaths.length !== 0 ?
                   <PathList
                     pathIds={Object.keys(curriculum.paths).filter(
-                      pathId => curriculum.paths[pathId].completed,
+                      pathId => user.bookmarkedPaths.indexOf(pathId) !== -1,
                     )}
                     curriculum={curriculum}
                   /> :
-                  <NoPaths text="You haven't completed any paths yet." />}
-            </SectionCard>),
-        }]}
-        dispatch={dispatch}
-        uiState={uiState}
-      />
+                  <NoPaths text="You haven't bookmarked any paths yet." showPathButton />}
+              </SectionCard>),
+          }, {
+            caption: 'Completed',
+            content: (
+              <SectionCard title="Completed" subtitle="PATHS">
+                {Object.keys(curriculum.paths).filter(
+                    pathId => curriculum.paths[pathId].completed,
+                  ).length !== 0 ?
+                    <PathList
+                      pathIds={Object.keys(curriculum.paths).filter(
+                        pathId => curriculum.paths[pathId].completed,
+                      )}
+                      curriculum={curriculum}
+                    /> :
+                    <NoPaths text="You haven't completed any paths yet." />}
+              </SectionCard>),
+          }]}
+          dispatch={dispatch}
+          uiState={uiState}
+        />
+      </div>
     </div>
   </div>
 );
