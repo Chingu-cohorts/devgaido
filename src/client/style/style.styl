@@ -395,6 +395,12 @@ a.link-active
   position relative
   height 400px
 
+.page-hero-compass
+  background: url('/assets/img/hero.jpg')
+  background-size: cover
+  background-position-y: 50%
+  height 270px
+
 .page-hero-color-overlay
   position absolute
   background alpha($color-primary, 0.75)
@@ -411,6 +417,9 @@ a.link-active
 
 .page-hero-color-overlay-lesson
   background alpha(colorPrimary, 0.75)
+
+.page-hero-color-overlay-path-catalog
+  background alpha(colorPrimary, 0.55)
 
 .page-hero-container
   margin: 0 auto
@@ -542,5 +551,68 @@ a.link-active
   margin-bottom 20px
 
 .path-list
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top 25px
+
+.search-bar
+  background: white
+
+.search-bar-content
+  display: flex
+  align-items: center
+
+.path-search-container
+  flex:  1
+  padding 10px 0
+  display flex
+
+.path-search-icon
+  color colorPrimary
+  padding-top 5px
+  padding-right 10px
+  font-size 1.6em
+
+#path-search
+  margin 0
+  font-size 1.2em
+  font-weight: 300
+  border-color: colorPrimaryLight
+  &:focus
+    border-color: colorPrimary
+
+#path-topics
+  position: relative
+  margin 0
+  font-size 1.2em
+  font-weight: 300
+  border-color: colorPrimaryLight
+  &:focus
+    border-color: colorPrimary
+
+.path-topics-dropdown
+  position: relative
+
+.path-topics-dropdown:before
+  pointer-events:none
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent
+  border-right: 10px solid transparent
+  border-top: 10px solid colorPrimary
+
+.path-topics-dropdown:after
+  pointer-events:none
+  content: ""
+  position: absolute
+  right: 10px
+  top: 12px
+  width: 0
+  height: 0
+  border-left: 10px solid transparent
+  border-right: 10px solid transparent
+  border-top: 10px solid white

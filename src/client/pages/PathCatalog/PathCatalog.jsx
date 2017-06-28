@@ -3,21 +3,6 @@ import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 
-import Card from '../shared/Card';
-
-const SectionCard = ({ title, subtitle, color, children }) => (
-  <div className="section-card">
-    <div className="section-card-header">
-      <span className="section-card-caption">{subtitle}</span>
-      <h1 className="section-card-title">{title}</h1>
-      <button className="section-card-button">VIEW ALL</button>
-    </div>
-    <div className="section-card-content">
-      {children}
-    </div>
-  </div>
-);
-
 const PathCard = ({ path, pathId }) => (
   <Link className="col-quarter" to={`/paths/${pathId}`} >
     <div className="card-big card-big-catalog">
@@ -45,30 +30,39 @@ const PathList = ({ pathIds, curriculum }) => (
 );
 
 const PathCatalog = ({ curriculum }) => (
-  <div className="container">
-    <label className="search">
-      <input type="text" name="search" placeholder="Search" />
-    </label>
-    <SectionCard title="All" subtitle="PATHS">
+  <div>
+    <div className="page-hero page-hero-compass">
+      <div className="page-hero-color-overlay page-hero-color-overlay-path-catalog" />
+      <div className="page-hero-container">
+        <h1 className="page-hero-name">BROWSE PATHS</h1>
+      </div>
+    </div>
+    <div className="search-bar">
+      <div className="container">
+        <div className="search-bar-content">
+          <div className="path-search-container">
+            <i className="path-search-icon fa fa-search" />
+            <input id="path-search" type="text" name="pathSearch" placeholder="Search" />
+          </div>
+          <div className="path-topics-dropdown">
+            <select id="path-topics">
+              <option value="AllTopics" key="AllTopics">All Topics</option>
+              {Object.keys(curriculum.subjects).map(
+                subjectId => <option value={subjectId} key={subjectId}>{subjectId}</option>,
+              )}
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="container">
       <PathList
         pathIds={Object.keys(curriculum.paths)}
         curriculum={curriculum}
       />
-    </SectionCard>
+    </div>
   </div>
 );
-
-SectionCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  color: PropTypes.string,
-  children: PropTypes.objectOf(PropTypes.shape),
-};
-
-SectionCard.defaultProps = {
-  color: null,
-  children: null,
-};
 
 PathCard.propTypes = {
   pathId: PropTypes.string.isRequired,
