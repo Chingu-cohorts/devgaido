@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
+
 import Card from '../shared/Card';
 
 const SectionCard = ({ title, subtitle, color, children }) => (
@@ -17,21 +19,22 @@ const SectionCard = ({ title, subtitle, color, children }) => (
 );
 
 const PathCard = ({ path, pathId }) => (
-  <Card
-    caption={path.name}
-    subcaption="Path"
-    text={path.description}
-    linkTo={`/paths/${pathId}`}
-    icons={['fa fa-road']}
-    color={'#007399'}
-    content={<h1 className="completion-text">{path.nCompleted}/{path.nTotal}</h1>}
-    nCompleted={0}
-    nTotal={8}
-  />
+  <Link className="col-quarter" to={`/paths/${pathId}`} >
+    <div className="card-big card-big-catalog">
+      <div className="card-big-header card-big-header-path">
+        <h5 className="card-big-header-text">{path.name}</h5>
+        <i className="card-big-header-icon fa fa-road" />
+      </div>
+      <div className="card-big-content">
+        <p>{path.description}</p>
+        <h4 className="completion-text">{path.nCompleted}/{path.nTotal}</h4>
+      </div>
+    </div>
+  </Link>
 );
 
 const PathList = ({ pathIds, curriculum }) => (
-  <div className="dashboard-path-list">
+  <div className="path-list">
     {pathIds.map((pathId) => {
       const path = curriculum.paths[pathId];
       return (

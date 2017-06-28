@@ -27,8 +27,7 @@ $color-primary = colorPrimary//darkslateblue
 // $color-quaternary = #d1d1d1
 // $color-quinary = #e1e1e1
 $widthMax = 1380px
-$font = 'Fira Sans'
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700')
+
 @import './sutairu'
 
 @lost flexbox flex;
@@ -446,7 +445,7 @@ a.link-active
   position: absolute    
   top 20px
   right 0
-  border 2px solid white
+  border 1px solid white
   color white
   font-size 14px
   padding-bottom 37px
@@ -460,6 +459,13 @@ a.link-active
   background white //colorPrimaryLight //$color-quaternary
   border-radius: 6px
   margin-bottom 20px
+
+
+.card-big-catalog
+  margin 0
+  height 100%
+  display flex
+  flex-direction: column
 
 .connected
   position relative
@@ -518,10 +524,20 @@ a.link-active
 
 .card-big-content
   padding 5px 15px
-
+  display flex
+  flex-direction: column
+  justify-content: space-between
+  flex 1
 .completion-text
   margin 0
   text-align: right
   font-weight bold
   color #007399
-/*++++++++++++++++++++++++ LESSON +++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++ PATHCATALOG +++++++++++++++++++++++++++*/
+.col-quarter
+  lost-column 1/3 3
+  margin-bottom 20px
+
+.path-list
+    display: flex;
+    flex-wrap: wrap;
