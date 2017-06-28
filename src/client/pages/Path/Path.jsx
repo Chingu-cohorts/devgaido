@@ -48,8 +48,8 @@ const Path = ({ match, curriculum, user, dispatch }) => {
         <div className="page-hero-container">
           <BreadCrumbs curriculum={curriculum} pathId={match.params.id} />
           <h1 className="page-hero-name">{path.name}</h1>
-          <h1 className="completion-text-big completion-text-big-left">PATH</h1>
-          <h1 className="completion-text-big">{path.nCompleted}/{path.nTotal}</h1>
+          <h2 className="completion-text-big completion-text-big-left">PATH</h2>
+          <h2 className="completion-text-big">{path.nCompleted}/{path.nTotal}</h2>
           {user.bookmarkedPaths.indexOf(pathId) === -1 ?
             <button className="bookmark-button button-pill" onClick={() => dispatch(addBookmark(pathId))}>Add Bookmark</button> :
             <button className="bookmark-button button-pill" onClick={() => dispatch(removeBookmark(pathId))}>Remove Bookmark</button>}

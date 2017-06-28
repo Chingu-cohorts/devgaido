@@ -369,17 +369,20 @@ a.link-active
   padding-right 10px
 
 .breadcrumb-icon
-  color colorTertiary
+  color colorSecondary
   font-style: normal
   padding-right 10px
-    
+
+.breadcrum-icon-inverted
+  color colorPrimary
+
 .breadcrumbs-container
   position absolute
   top 20px
   left 0
   color white
-  font-weight: bold
-  font-size: 18px
+  //font-weight: bold
+  font-size: 20px
   text-shadow 1px 1px black
   a 
     color white
@@ -401,13 +404,13 @@ a.link-active
   right 0
 
 .page-hero-color-overlay-path
-  background alpha(colorTertiary, 0.75)
-
-.page-hero-color-overlay-course
   background alpha(colorPrimary, 0.75)
 
+.page-hero-color-overlay-course
+  background alpha(darken(colorSecondary,30%), 0.75)
+
 .page-hero-color-overlay-lesson
-  background alpha(colorSecondary, 0.75)
+  background alpha(colorPrimary, 0.75)
 
 .page-hero-container
   margin: 0 auto
@@ -433,7 +436,7 @@ a.link-active
   color white
   bottom 20px
   right 0
-  font-weight: bold
+  //font-weight: bold
 .completion-text-big-left
   margin 0
   position: absolute
@@ -495,13 +498,13 @@ a.link-active
   padding 10px 15px
 
 .card-big-header-path
-  background colorTertiary//#007399
+  background colorPrimary//#007399
 
 .card-big-header-course
-  background colorPrimary
+  background colorSecondary
 
 .card-big-header-lesson
-  background colorSecondary
+  background colorPrimary
 
 .card-big-header-text
   text-transform: uppercase

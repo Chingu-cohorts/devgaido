@@ -71,10 +71,10 @@ const Course = ({ match, curriculum }) => {
       <div className="page-hero">
         <div className="page-hero-color-overlay page-hero-color-overlay-course" />
         <div className="page-hero-container">
-          <BreadCrumbs curriculum={curriculum} pathId={pathId} courseId={courseId} />
+          <BreadCrumbs curriculum={curriculum} pathId={pathId} courseId={courseId} invertIconColors />
           <h1 className="page-hero-name">{course.name}</h1>
-          <h1 className="completion-text-big completion-text-big-left">COURSE</h1>
-          <h1 className="completion-text-big">{course.nCompleted}/{course.nTotal}</h1>
+          <h2 className="completion-text-big completion-text-big-left">COURSE</h2>
+          <h2 className="completion-text-big">{course.nCompleted}/{course.nTotal}</h2>
         </div>
       </div>
       <div className="container">
