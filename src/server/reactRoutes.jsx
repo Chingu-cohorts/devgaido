@@ -92,8 +92,9 @@ export default (req, res, next) => {
         navMenuOpen: false,
       },
       Pages: {
-        Paths: {
-          pathStates: [],
+        PathCatalog: {
+          topic: 'All Topics',
+          searchTerm: '',
         },
         Dashboard: {
           currentTab: 0,

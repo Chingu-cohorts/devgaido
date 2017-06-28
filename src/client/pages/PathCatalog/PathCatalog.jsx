@@ -1,7 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { Link } from 'react-router-dom';
+
+import { setCatalogTopic, setCatalogSearchTerm } from './PathCatalogActions';
+
+const onSearchChange = (e, dispatch) => {
+  dispatch(setCatalogSearchTerm(e.target.value));
+};
+const onTopicChange = (e, dispatch) => {
+  dispatch(setCatalogTopic(e.target.value));
+};
 
 const PathCard = ({ path, pathId }) => (
   <Link className="col-quarter" to={`/paths/${pathId}`} >
@@ -29,7 +37,7 @@ const PathList = ({ pathIds, curriculum }) => (
   </div>
 );
 
-const PathCatalog = ({ curriculum }) => (
+const PathCatalog = ({ curriculum, uiState, dispatch }) => (
   <div>
     <div className="page-hero page-hero-compass">
       <div className="page-hero-color-overlay page-hero-color-overlay-path-catalog" />
@@ -42,11 +50,11 @@ const PathCatalog = ({ curriculum }) => (
         <div className="search-bar-content">
           <div className="path-search-container">
             <i className="path-search-icon fa fa-search" />
-            <input id="path-search" type="text" name="pathSearch" placeholder="Search" />
+            <input id="path-search" type="text" name="pathSearch" placeholder="Search" onChange={e => onSearchChange(e, dispatch)} />
           </div>
           <div className="path-topics-dropdown">
-            <select id="path-topics">
-              <option value="AllTopics" key="AllTopics">All Topics</option>
+            <select id="path-topics" onChange={e => onTopicChange(e, dispatch)} >
+              <option value="All Topics" key="AllTopics">All Topics</option>
               {Object.keys(curriculum.subjects).map(
                 subjectId => <option value={subjectId} key={subjectId}>{subjectId}</option>,
               )}
@@ -56,8 +64,35 @@ const PathCatalog = ({ curriculum }) => (
       </div>
     </div>
     <div className="container">
-      <PathList
-        pathIds={Object.keys(curriculum.paths)}
+      <PathList // TODO: Save subjects in path so we don't have traverse all courses and lessons
+        pathIds={Object.keys(curriculum.paths).filter((pathId) => {
+          let retVal = false;
+          let filterTopic = false;
+          let filterSearchTerm = false;
+          if (uiState.Pages.PathCatalog.topic !== 'All Topics') {
+            filterTopic = true;
+            curriculum.paths[pathId].courseIds.forEach((courseId) => {
+              if (curriculum.courses[courseId]) {
+                curriculum.courses[courseId].lessonIds.forEach((lessonId) => {
+                  if (curriculum.lessons[lessonId].subject === uiState.Pages.PathCatalog.topic) {
+                    // console.log(pathId, courseId, lessonId);
+                    retVal = true;
+                  }
+                });
+              }
+            });
+          }
+          if (uiState.Pages.PathCatalog.searchTerm !== '') {
+            // TODO: Extend search to courses and lessons?
+            filterSearchTerm = true;
+            retVal &= curriculum.paths[pathId].name.toLowerCase().includes(uiState.Pages.PathCatalog.searchTerm.toLowerCase()) ||
+                  curriculum.paths[pathId].description.toLowerCase().includes(uiState.Pages.PathCatalog.searchTerm.toLowerCase());
+          }
+          if (filterTopic || filterSearchTerm) {
+            return retVal;
+          }
+          return true;
+        })}
         curriculum={curriculum}
       />
     </div>
@@ -76,12 +111,14 @@ PathList.propTypes = {
 
 PathCatalog.propTypes = {
   curriculum: PropTypes.objectOf(PropTypes.shape),
-  // dispatch: PropTypes.func,
+  dispatch: PropTypes.func,
+  uiState: PropTypes.objectOf(PropTypes.shape),
 };
 
 PathCatalog.defaultProps = {
   curriculum: null,
   dispatch: null,
+  uiState: null,
 };
 
 export default PathCatalog;
