@@ -66,7 +66,8 @@ const PathCatalog = ({ curriculum, uiState, dispatch }) => (
     <div className="container">
       <PathList // TODO: Save subjects in path so we don't have traverse all courses and lessons
         pathIds={Object.keys(curriculum.paths).filter((pathId) => {
-          let retVal = false;
+          let retValTopic = false;
+          let retValSearchTerm = false;
           let filterTopic = false;
           let filterSearchTerm = false;
           if (uiState.Pages.PathCatalog.topic !== 'All Topics') {
@@ -75,8 +76,7 @@ const PathCatalog = ({ curriculum, uiState, dispatch }) => (
               if (curriculum.courses[courseId]) {
                 curriculum.courses[courseId].lessonIds.forEach((lessonId) => {
                   if (curriculum.lessons[lessonId].subject === uiState.Pages.PathCatalog.topic) {
-                    // console.log(pathId, courseId, lessonId);
-                    retVal = true;
+                    retValTopic = true;
                   }
                 });
               }
@@ -85,15 +85,25 @@ const PathCatalog = ({ curriculum, uiState, dispatch }) => (
           if (uiState.Pages.PathCatalog.searchTerm !== '') {
             // TODO: Extend search to courses and lessons?
             filterSearchTerm = true;
-            retVal &= curriculum.paths[pathId].name.toLowerCase().includes(uiState.Pages.PathCatalog.searchTerm.toLowerCase()) ||
+            retValSearchTerm = curriculum.paths[pathId].name.toLowerCase().includes(uiState.Pages.PathCatalog.searchTerm.toLowerCase()) ||
                   curriculum.paths[pathId].description.toLowerCase().includes(uiState.Pages.PathCatalog.searchTerm.toLowerCase());
           }
           if (filterTopic || filterSearchTerm) {
-            return retVal;
+            if (filterTopic && filterSearchTerm) {
+              return retValTopic && retValSearchTerm;
+            }
+            if (filterTopic) {
+              return retValTopic;
+            }
+            return retValSearchTerm;
           }
           return true;
         })}
-        curriculum={curriculum}
+        curriculum={curriculum} // ST : T   R
+                                // -    -   T
+                                // V    -   V
+                                // -    V   V
+                                // V    V   V&V
       />
     </div>
   </div>
