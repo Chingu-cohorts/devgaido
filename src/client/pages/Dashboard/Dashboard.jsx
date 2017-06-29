@@ -95,7 +95,11 @@ const getCurrentCourses = (courseIds, curriculum) => {
 };
 
 const CurrentPathCard = ({ curPath, curriculum, onViewClick, onContinueClick }) => {
-  const { courseMinis: currentCourses, curCourseId } = getCurrentCourses(curPath.courseIds, curriculum);
+  const {
+    courseMinis: currentCourses,
+    curCourseId,
+ } = getCurrentCourses(curPath.courseIds, curriculum);
+
   return (
     <div className="section">
       <div className="section-header">
@@ -105,7 +109,7 @@ const CurrentPathCard = ({ curPath, curriculum, onViewClick, onContinueClick }) 
       </div>
       <div className="section-content">
         <p className="course-description">{curPath.description}</p>
-        <div className="path-list first-third-transparent">
+        <div className="path-list course-minis">
           {currentCourses}
           <div className="center-button-container">
             <button className="button button-pill button-primary" onClick={() => onContinueClick(curCourseId)} ><i />CONTINUE PATH</button>
