@@ -33,48 +33,88 @@ const Metrics = ({ user, curriculum }) => (
   </div>
 );
 
-const CourseCardMini = ({ course }) => (
-  <div className="grid-quarter card" >
-    <div className="card-header" style={{ background: '#007399' }}>
-      <i className="card-icon fa fa-line-chart" />
-    </div>
-    <span className="card-caption-small">COURSE</span>
-    <span className="card-caption-big">{course.name}</span>
-    <p className="card-text">{course.description}</p>
-  </div>
-);
-
-const CurrentPathCard = ({ curPath, curriculum }) => (
-  <div className="section-card current-path">
-    <div className="section-card-header">
-      <span className="section-card-caption">CURRENT PATH</span>
-      <h1 className="section-card-title">{curPath.name}</h1>
-      <button className="current-path-view-button">VIEW PATH</button>
-    </div>
-    <div className="section-card-content">
-      <p className="course-description">{curPath.description}</p>
-      <div className="lesson-list">
-        {curPath.courseIds.map(courseId => (
-          <CourseCardMini course={curriculum.courses[courseId]} key={courseId} />
-        ))}
-        <button className="inline button-continue current-path-continue-button"><i />&nbsp;&nbsp; CONTINUE</button>
+const CourseCardMini = ({ course, transparent, offset, first, last }) => (
+  <div className={`col-quarter connected-horizontal ${last ? ' mini-last' : ''} ${first ? ' mini-first' : ''} ${transparent ? ' mini-transparent' : ''} ${offset ? ' mini-offset' : ''}`}>
+    <div className="card-big card-big-catalog">
+      <div className="card-big-header card-big-header-course">
+        <h5 className="card-big-header-text">{course.name}</h5>
+        <i className="card-big-header-icon fa fa-book" />
+      </div>
+      <div className="card-big-content">
+        <p>{course.description}</p>
+        <h4 className="completion-text">{course.nCompleted}/{course.nTotal}</h4>
       </div>
     </div>
   </div>
 );
+const getCurrentCourses = (courseIds, curriculum) => {
+  let lastCompleted = -1;
+  const currentCourseIds = [];
 
-const SectionCard = ({ title, subtitle, color, children }) => (
-  <div className="section-card">
-    <div className="section-card-header">
-      <span className="section-card-caption">{subtitle}</span>
-      <h1 className="section-card-title">{title}</h1>
-      <button className="section-card-button">VIEW ALL</button>
+  for (let i = 0; i < courseIds.length; i += 1) {
+    if (curriculum.courses[courseIds[i]].completed) {
+      lastCompleted = i;
+    } else {
+      break;
+    }
+  }
+
+  lastCompleted -= 1;
+  if (lastCompleted < 0) {
+    lastCompleted = 0;
+  }
+
+  for (let j = 0; j < 3; j += 1) {
+    if (lastCompleted + j >= courseIds.length) {
+      break;
+    }
+    currentCourseIds.push(courseIds[lastCompleted + j]);
+  }
+  const firstCourse = lastCompleted === 0;
+  const lastCourse = lastCompleted + 4 > courseIds.length;
+  const isSmallerThan3 = currentCourseIds.length !== 3;
+
+  if (!isSmallerThan3 && firstCourse) {
+    currentCourseIds.pop();
+  }
+
+  return {
+    courseMinis: currentCourseIds.map(
+      (courseId, index, arr) => (
+        <CourseCardMini
+          course={curriculum.courses[courseId]}
+          key={courseId}
+          offset={isSmallerThan3 || firstCourse}
+          transparent={isSmallerThan3 ? (index + 1) % 2 === 0 : index % 2 === 0}
+          first={firstCourse && index === 0}
+          last={lastCourse && index === arr.length - 1}
+        />
+      )),
+    curCourseId: courseIds[lastCompleted],
+  };
+};
+
+const CurrentPathCard = ({ curPath, curriculum, onViewClick, onContinueClick }) => {
+  const { courseMinis: currentCourses, curCourseId } = getCurrentCourses(curPath.courseIds, curriculum);
+  return (
+    <div className="section">
+      <div className="section-header">
+        <span>CURRENT PATH</span>
+        <h1>{curPath.name}</h1>
+        <button className="button button-pill section-action-button" onClick={() => onViewClick()}>VIEW FULL PATH</button>
+      </div>
+      <div className="section-content">
+        <p className="course-description">{curPath.description}</p>
+        <div className="path-list first-third-transparent">
+          {currentCourses}
+          <div className="center-button-container">
+            <button className="button button-pill button-primary" onClick={() => onContinueClick(curCourseId)} ><i />CONTINUE PATH</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div className="section-card-content">
-      {children}
-    </div>
-  </div>
-);
+  );
+};
 
 const PathCard = ({ path, pathId }) => (
   <Link className="col-quarter" to={`/paths/${pathId}`} >
@@ -125,7 +165,7 @@ const NoPaths = ({ text, showPathButton }) => (
   </div>
 );
 
-const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
+const Dashboard = ({ dispatch, user, curriculum, uiState, history }) => (
   <div>
     <div className="page-hero page-hero-compass">
       <div className="page-hero-color-overlay page-hero-color-overlay-path-catalog" />
@@ -144,24 +184,39 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
               <CurrentPathCard
                 curPath={curriculum.paths[user.curPathId]}
                 curriculum={curriculum}
-              /> : <NoPaths text="You haven't started any paths yet." showPathButton />
+                onViewClick={() => history.push(`/paths/${user.curPathId}`)}
+                onContinueClick={courseId => history.push(`/paths/${user.curPathId}/${courseId}`)}
+              /> : <div className="section">
+                <div className="section-header">
+                  <span>PATHS</span>
+                  <h1>In Progress</h1>
+                </div><NoPaths text="You haven't started any paths yet." showPathButton /></div>
               }
             {user.curPathId !== '' && Object.keys(curriculum.paths).filter(
                     pathId => !curriculum.paths[pathId].completed
                               && isInProgress(user, curriculum, pathId),
                   ).length !== 0 ?
-                    <PathList
-                      pathIds={Object.keys(curriculum.paths).filter(
-                        pathId => !curriculum.paths[pathId].completed
-                                  && isInProgress(user, curriculum, pathId),
-                      )}
-                      curriculum={curriculum}
-                    /> : null}
+                    <div className="section">
+                      <hr />
+                      <div className="section-header">
+                        <span>PATHS</span>
+                        <h1>In Progress</h1>
+                      </div><PathList
+                        pathIds={Object.keys(curriculum.paths).filter(
+                          pathId => !curriculum.paths[pathId].completed
+                                    && isInProgress(user, curriculum, pathId),
+                        )}
+                        curriculum={curriculum}
+                      /></div> : null}
           </div>),
       }, {
         caption: 'Bookmarked',
         content: (
-          <div>
+          <div className="section">
+            <div className="section-header">
+              <span>PATHS</span>
+              <h1>Bookmarked</h1>
+            </div>
             {user.bookmarkedPaths.length !== 0 ?
               <PathList
                 pathIds={Object.keys(curriculum.paths).filter(
@@ -173,7 +228,11 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
       }, {
         caption: 'Completed',
         content: (
-          <div>
+          <div className="section">
+            <div className="section-header">
+              <span>PATHS</span>
+              <h1>Completed</h1>
+            </div>
             {Object.keys(curriculum.paths).filter(
                 pathId => curriculum.paths[pathId].completed,
               ).length !== 0 ?
@@ -192,20 +251,19 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
   </div>
 );
 
-SectionCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  color: PropTypes.string,
-  children: PropTypes.objectOf(PropTypes.shape),
-};
-
-SectionCard.defaultProps = {
-  color: null,
-  children: null,
-};
-
 CourseCardMini.propTypes = {
   course: PropTypes.objectOf(PropTypes.shape).isRequired,
+  transparent: PropTypes.bool,
+  first: PropTypes.bool,
+  last: PropTypes.bool,
+  offset: PropTypes.bool,
+};
+
+CourseCardMini.defaultProps = {
+  transparent: false,
+  first: false,
+  last: false,
+  offset: false,
 };
 
 NoPaths.propTypes = {
@@ -225,6 +283,8 @@ Metrics.propTypes = {
 CurrentPathCard.propTypes = {
   curPath: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
+  onViewClick: PropTypes.func.isRequired,
+  onContinueClick: PropTypes.func.isRequired,
 };
 
 PathCard.propTypes = {
@@ -242,6 +302,7 @@ Dashboard.propTypes = {
   curriculum: PropTypes.objectOf(PropTypes.shape),
   user: PropTypes.objectOf(PropTypes.shape),
   dispatch: PropTypes.func,
+  history: PropTypes.objectOf(PropTypes.shape),
 };
 
 Dashboard.defaultProps = {
@@ -249,6 +310,7 @@ Dashboard.defaultProps = {
   curriculum: null,
   dispatch: null,
   user: null,
+  history: null,
 };
 
 export default Dashboard;

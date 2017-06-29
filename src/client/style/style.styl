@@ -679,3 +679,69 @@ a
   color white
   background: colorPrimary
   border-color: colorPrimary
+
+/*++++++++++++++++++++++++ DASHBOARD-SECTION +++++++++++++++++++++++++++*/
+.section-header
+  position relative
+  color black
+
+.section-action-button
+  position: absolute
+  top 0
+  right 0
+
+.first-third-transparent
+  margin-top 50px
+  padding-left 20px
+  //.col-quarter:first-child
+  //  opacity: 0.6
+    //.completion-text
+    //  display none
+  //.col-quarter:nth-child(3)
+  //  opacity: 0.6
+    //.completion-text
+    //  display none
+
+.connected-horizontal
+  position relative
+  width 100%
+  &:after
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: -30px
+    width: 30px;
+    height: 11px;
+    background: alpha(colorPrimary, 0.5)
+    border-radius: 2px;
+  &:before
+    content: "";
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: -30px
+    width: 30px;
+    height: 11px;
+    background: alpha(colorPrimary, 0.3)
+    border-radius: 2px;
+
+.center-button-container
+  margin-top 30px
+  width 100%
+  text-align: center
+
+.mini-offset
+  transform translateX(100%)
+  cursor pointer
+
+.mini-transparent
+  opacity 0.6
+
+.mini-first
+  &:before
+    width 0
+
+.mini-last
+  &:after
+    width 0
