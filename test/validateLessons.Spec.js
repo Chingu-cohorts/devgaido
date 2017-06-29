@@ -4,7 +4,7 @@ require('./registerBabel');
 import { logErrors, logInvalidRelations,
   validateIdComposition, validateIdLength,
   validateRequiredAttributes, validateUnknownAttributes,
-  validateURL } from './commonValidations';
+  urlIsValid } from './commonValidations';
 import { getExpectedAttributes } from '../src/server/services/coreLessons';
 import coreLessons from '../src/server/models/corelessons.json';
 import testLessons from './testdata/testlessons.json';
@@ -62,14 +62,12 @@ describe('Validate corelessons.json', () => {
       invalidLessonIds = logErrors(invalidLessonIds);
     });
     it('should verify that the link to the external source is not broken', () => {
-      const status = validateURL('google.com');
-      if (status !== 200) {
-        invalidLessonIds.push('Broken URL: google.com');
+      const siteUrl = 'www.freecodecamp.com';
+      if (!urlIsValid(siteUrl)) {
+        invalidLessonIds.push(`Broken URL: ${siteUrl}`);
       }
-      /*
-      invalidLessonIds = validateIdComposition(allLessons);
-      assert.equal(invalidLessonIds.length, 1);
-      */
+      // invalidLessonIds = validateIdComposition(allLessons);
+      assert.equal(invalidLessonIds.length, 0);
     });
   });
   describe('Validate lesson ids in the course exists', () => {
