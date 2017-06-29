@@ -60,8 +60,8 @@ const Lesson = ({ match, dispatch, curriculum }) => {
             
             <p className="lesson-text">{lesson.description}</p>
             <div className="lesson-button-container">
-              <a className="button" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPathId(match.params.pid))}>COMPLETE LESSON</a>
-              <button className="button" onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
+              <a className="button button-pill button-secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPathId(match.params.pid))}>START LESSON</a>
+              <button className="button button-pill button-primary" onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
             </div>
           </div>
         </div>

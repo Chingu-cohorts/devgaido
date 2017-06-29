@@ -8,25 +8,28 @@ import TabbedContent from './TabbedContent';
 
 // TODO: Add custom date formatting to make client and server side string match up
 const Metrics = ({ user, curriculum }) => (
-  <div className="grid-full metrics">
-    <h1>Welcome back, {user.name}!</h1>
-    <h2>Completed Paths: {
-      Object.keys(curriculum.paths).filter(
+  <div className="metrics">
+    <div className="metric">
+      <h6 className="metric-text">Completed:</h6>
+    </div>
+    <div className="metric">
+      <h1 className="metric-number">{Object.keys(curriculum.paths).filter(
           pathId => curriculum.paths[pathId].completed,
-      ).length}
-    </h2>
-    <h2>Completed Courses: {
-      Object.keys(curriculum.courses).filter(
+      ).length}</h1>
+      <h6 className="metric-text metric-text-bold">Paths</h6>
+    </div>
+    <div className="metric">
+      <h1 className="metric-number">{Object.keys(curriculum.courses).filter(
           courseId => curriculum.courses[courseId].completed,
-      ).length}
-    </h2>
-    <h2>Completed Lessons: {
-      Object.keys(curriculum.lessons).filter(
+      ).length}</h1>
+      <h6 className="metric-text metric-text-bold">Courses</h6>
+    </div>
+    <div className="metric">
+      <h1 className="metric-number">{Object.keys(curriculum.lessons).filter(
           lessonId => curriculum.lessons[lessonId].completed,
-      ).length}
-    </h2>
-    <h3>streak: {user.streak}</h3>
-    <h3>lastVisited: {new Date(user.dayLastVisited).toLocaleString()}</h3>
+      ).length}</h1>
+      <h6 className="metric-text metric-text-bold">Lessons</h6>
+    </div>
   </div>
 );
 
@@ -74,17 +77,18 @@ const SectionCard = ({ title, subtitle, color, children }) => (
 );
 
 const PathCard = ({ path, pathId }) => (
-  <Card
-    caption={path.name}
-    subcaption="Path"
-    text={path.description}
-    linkTo={`/paths/${pathId}`}
-    icons={['fa fa-road']}
-    color={'#007399'}
-    content={<h1 className="completion-text">{path.nCompleted}/{path.nTotal}</h1>}
-    nCompleted={0}
-    nTotal={8}
-  />
+  <Link className="col-quarter" to={`/paths/${pathId}`} >
+    <div className="card-big card-big-catalog">
+      <div className="card-big-header card-big-header-path">
+        <h5 className="card-big-header-text">{path.name}</h5>
+        <i className="card-big-header-icon fa fa-road" />
+      </div>
+      <div className="card-big-content">
+        <p>{path.description}</p>
+        <h4 className="completion-text">{path.nCompleted}/{path.nTotal}</h4>
+      </div>
+    </div>
+  </Link>
 );
 
 const isInProgress = (user, curriculum, pathId) => {
@@ -105,7 +109,7 @@ const isInProgress = (user, curriculum, pathId) => {
 };
 
 const PathList = ({ pathIds, curriculum }) => (
-  <div className="dashboard-path-list">
+  <div className="path-list">
     {pathIds.map((pathId) => {
       const path = curriculum.paths[pathId];
       return (
@@ -114,11 +118,10 @@ const PathList = ({ pathIds, curriculum }) => (
     })}
   </div>
 );
-
 const NoPaths = ({ text, showPathButton }) => (
   <div className="no-paths">
-    <h1 className="no-paths-text">{text}</h1>
-    {showPathButton ? <Link className="button" to="/paths">Browse Paths</Link> : null}
+    <h3>{text}</h3>
+    {showPathButton ? <Link className="button button-pill no-paths-button" to="/paths">BROWSE PATHS</Link> : null}
   </div>
 );
 
@@ -128,75 +131,64 @@ const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
       <div className="page-hero-color-overlay page-hero-color-overlay-path-catalog" />
       <div className="page-hero-container">
         <h1 className="page-hero-name">DASHBOARD</h1>
-        <h2 className="completion-text-big completion-text-big-left">Welcome back, {user.name}!</h2>
-        <h2 className="completion-text-big">Something</h2>
+        <h2 className="completion-text-big completion-text-big-topleft">Welcome back, {user.name}!</h2>
+        <Metrics user={user} curriculum={curriculum} />
       </div>
     </div>
-    <div className="container">
-      <div className="container-dashboard">
-        <Metrics user={user} curriculum={curriculum} />
-        <TabbedContent
-          content={[{
-            caption: 'In Progress',
-            content: (
-              <div>
-                {user.curPathId !== '' ?
-                  <CurrentPathCard
-                    curPath={curriculum.paths[user.curPathId]}
-                    curriculum={curriculum}
-                  /> :
-                  <SectionCard title="In Progress" subtitle="PATHS">
-                    <NoPaths text="You haven't started any paths yet." showPathButton />
-                  </SectionCard>
-                  }
-                {user.curPathId !== '' && Object.keys(curriculum.paths).filter(
-                        pathId => !curriculum.paths[pathId].completed
-                                  && isInProgress(user, curriculum, pathId),
-                      ).length !== 0 ?
-                        <SectionCard title="In Progress" subtitle="PATHS">
-                          <PathList
-                            pathIds={Object.keys(curriculum.paths).filter(
-                              pathId => !curriculum.paths[pathId].completed
-                                        && isInProgress(user, curriculum, pathId),
-                            )}
-                            curriculum={curriculum}
-                          />
-                        </SectionCard> : null}
-              </div>),
-          }, {
-            caption: 'Bookmarked',
-            content: (
-              <SectionCard title="Bookmarked" subtitle="PATHS">
-                {user.bookmarkedPaths.length !== 0 ?
-                  <PathList
-                    pathIds={Object.keys(curriculum.paths).filter(
-                      pathId => user.bookmarkedPaths.indexOf(pathId) !== -1,
-                    )}
-                    curriculum={curriculum}
-                  /> :
-                  <NoPaths text="You haven't bookmarked any paths yet." showPathButton />}
-              </SectionCard>),
-          }, {
-            caption: 'Completed',
-            content: (
-              <SectionCard title="Completed" subtitle="PATHS">
-                {Object.keys(curriculum.paths).filter(
-                    pathId => curriculum.paths[pathId].completed,
+    <TabbedContent
+      content={[{
+        caption: 'In Progress',
+        content: (
+          <div>
+            {user.curPathId !== '' ?
+              <CurrentPathCard
+                curPath={curriculum.paths[user.curPathId]}
+                curriculum={curriculum}
+              /> : <NoPaths text="You haven't started any paths yet." showPathButton />
+              }
+            {user.curPathId !== '' && Object.keys(curriculum.paths).filter(
+                    pathId => !curriculum.paths[pathId].completed
+                              && isInProgress(user, curriculum, pathId),
                   ).length !== 0 ?
                     <PathList
                       pathIds={Object.keys(curriculum.paths).filter(
-                        pathId => curriculum.paths[pathId].completed,
+                        pathId => !curriculum.paths[pathId].completed
+                                  && isInProgress(user, curriculum, pathId),
                       )}
                       curriculum={curriculum}
-                    /> :
-                    <NoPaths text="You haven't completed any paths yet." />}
-              </SectionCard>),
-          }]}
-          dispatch={dispatch}
-          uiState={uiState}
-        />
-      </div>
-    </div>
+                    /> : null}
+          </div>),
+      }, {
+        caption: 'Bookmarked',
+        content: (
+          <div>
+            {user.bookmarkedPaths.length !== 0 ?
+              <PathList
+                pathIds={Object.keys(curriculum.paths).filter(
+                  pathId => user.bookmarkedPaths.indexOf(pathId) !== -1,
+                )}
+                curriculum={curriculum}
+              /> : <NoPaths text="You haven't bookmarked any paths yet." showPathButton />}
+          </div>),
+      }, {
+        caption: 'Completed',
+        content: (
+          <div>
+            {Object.keys(curriculum.paths).filter(
+                pathId => curriculum.paths[pathId].completed,
+              ).length !== 0 ?
+                <PathList
+                  pathIds={Object.keys(curriculum.paths).filter(
+                    pathId => curriculum.paths[pathId].completed,
+                  )}
+                  curriculum={curriculum}
+                /> :
+                <NoPaths text="You haven't completed any paths yet." />}
+          </div>),
+      }]}
+      dispatch={dispatch}
+      uiState={uiState}
+    />
   </div>
 );
 

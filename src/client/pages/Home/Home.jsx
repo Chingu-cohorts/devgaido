@@ -41,8 +41,8 @@ const Home = ({ lock }) => (
           <p>Never worry about learning the wrong stuff from subpar resources ever again!</p>
         </div>
         <div className="hero-cta-div">
-          <Link className="hero-cta-primary" to="/paths" onClick={e => handleStartNowClick(e, lock)}><i />&nbsp;&nbsp;SIGN UP NOW</Link>
-          <Link className="hero-cta-secondary" to="/paths">&nbsp;&nbsp;EXPLORE PATHS</Link>
+          <Link className="button button-pill button-secondary hero-cta" to="/paths" onClick={e => handleStartNowClick(e, lock)}><i />&nbsp;&nbsp;SIGN UP NOW</Link>
+          <Link className="button button-pill button-almost-clear hero-cta" to="/paths">&nbsp;&nbsp;EXPLORE PATHS</Link>
         </div>
       </div>
     </div>

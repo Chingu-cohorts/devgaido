@@ -340,30 +340,23 @@ a.link-active
   p
     color rgba(255,255,255,1)
     margin-bottom: 10px
-
         
 .hero-cta-div
   width 100%
   display flex
 
-.hero-cta-primary,
-.hero-cta-secondary
-  width 27%
-  margin 5px
-  text-align: center
-  border-radius: 999px
-  padding 10px
-  font-size: 20px
-  
-.hero-cta-secondary
+.button-almost-clear
   color white
   border 2px solid white
   background: rgba(0,0,0,0.3)
 
-.hero-cta-primary
+.button-secondary
   background colorSecondary
+  border-color colorSecondary
   color white
 
+.hero-cta
+  margin-right 10px
 /*++++++++++++++++++++++++ BreadCrumb +++++++++++++++++++++++++++*/
 .breadcrumb
   padding-right 10px
@@ -468,10 +461,14 @@ a.link-active
   padding 10px
 
 .card-big
-  background white //colorPrimaryLight //$color-quaternary
+  background white
   border-radius: 6px
   margin-bottom 20px
 
+// Needed because we wrap the cards in <Link> components which overwrites text with link colors
+a
+  .card-big
+    color $color-text
 
 .card-big-catalog
   margin 0
@@ -540,6 +537,7 @@ a.link-active
   flex-direction: column
   justify-content: space-between
   flex 1
+
 .completion-text
   margin 0
   text-align: right
@@ -617,4 +615,67 @@ a.link-active
   border-right: 10px solid transparent
   border-top: 10px solid white
 
-/*++++++++++++++++++++++++ PATHCATALOG +++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++ DASHBOARD +++++++++++++++++++++++++++*/
+.completion-text-big-topleft
+  top 20px
+  left 0
+
+.metrics
+  position: absolute
+  right 0
+  bottom 20px
+  color white
+  display flex
+  align-items: flex-end
+
+.metric
+  margin-left 10px
+
+.metric-number
+  margin 0
+  text-align: center
+  font-weight: bold
+
+.metric-text
+  margin 0
+  text-align: center
+
+.metric-text-bold
+  font-weight: bold
+
+/*++++++++++++++++++++++++ DASHBOARD-TABBED-CONTENT +++++++++++++++++++++++++++*/
+.tabbed-content-container
+  flex 1
+  height 100%
+
+.tabs
+  background: white
+  display: flex
+  justify-content: center
+  padding 10px 0
+  
+
+.tabButton
+  text-transform: uppercase
+  margin 0
+  margin-right 10px
+
+.activeTabCaption
+  background: colorSecondary
+  border-color: colorSecondary
+  color white
+
+.tabbed-content
+  background: transparent
+  margin-top 20px
+
+.no-paths
+  lost-column 1/3 3
+  lost-offset: 1/3
+  text-align: center
+  margin-top 40px
+
+.no-paths-button
+  color white
+  background: colorPrimary
+  border-color: colorPrimary
