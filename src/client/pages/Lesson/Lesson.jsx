@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactDisqusThread from 'react-disqus-thread';
 
 import { setCurrentPathId } from '../../actions/userActions';
 import { completeLesson } from './LessonActions';
@@ -57,7 +58,6 @@ const Lesson = ({ match, dispatch, curriculum }) => {
               <h5>{subject.name}</h5>
               <p>{subject.description}</p>
             </div>
-            
             <p className="lesson-text">{lesson.description}</p>
             <div className="lesson-button-container">
               <a className="button button-pill button-secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPathId(match.params.pid))}>START LESSON</a>
@@ -65,6 +65,14 @@ const Lesson = ({ match, dispatch, curriculum }) => {
             </div>
           </div>
         </div>
+        <ReactDisqusThread
+          shortname="devgaido"
+          identifier={`/lesson-${lessonId}`}
+          title={lesson.name}
+          url={undefined}
+          category_id={undefined}
+          onNewComment={null}
+        />
       </div>
     </div>
   );
