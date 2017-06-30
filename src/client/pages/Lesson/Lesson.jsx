@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDisqusThread from 'react-disqus-thread';
 
-import { setCurrentPathId } from '../../actions/userActions';
+import { setCurrentPath } from '../../actions/userActions';
 import { completeLesson } from './LessonActions';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
@@ -81,7 +81,7 @@ const Lesson = ({ match, dispatch, curriculum }) => {
           </div>
         </div>
         <div className="lesson-buttons-container">
-          <a className="button button-pill button-secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPathId(match.params.pid))}>START LESSON</a>
+          <a className="button button-pill button-secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPath(match.params.pid, match.params.cid, match.params.id))}>START LESSON</a>
           <button className="button button-pill button-primary" onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
         </div>
         <hr />

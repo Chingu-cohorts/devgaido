@@ -675,7 +675,28 @@ a
 
 .metric-text-bold
   font-weight: bold
+/*++++++++++++++++++++++++ DASHBOARD-LESSON-SLIDER +++++++++++++++++++++++++++*/
+.lesson-slider-container
+  overflow hidden
 
+.lesson-slider
+  display flex
+
+.lesson-slide
+  flex 0 0 calc(99.9% * 1/3 - (30px - 30px * 1/3))
+  opacity 0.5
+  margin-right 30px
+  transform: translateX(calc(100% + 30px))
+  transition opacity 0.5s
+  &:hover
+    opacity: 1 !important // important is needed because the dynamically created style tag cannot be overwritten otherwise
+
+.lesson-slider-buttons-container
+  margin-top 20px
+  width 100%
+  display flex
+  justify-content: space-between
+  
 /*++++++++++++++++++++++++ DASHBOARD-TABBED-CONTENT +++++++++++++++++++++++++++*/
 .tabbed-content-container
   flex 1
@@ -685,8 +706,7 @@ a
   background: white
   display: flex
   justify-content: center
-  padding 10px 0
-  
+  padding 10px 0  
 
 .tabButton
   text-transform: uppercase
@@ -737,36 +757,17 @@ a
     display: block;
     top: 50%;
     right: -30px
-    width: 30px;
+    width: 29px;
     height: 11px;
     background: alpha(colorPrimary, 0.5)
-    border-radius: 2px;
-  &:before
-    content: "";
-    position: absolute;
-    display: block;
-    top: 50%;
-    left: -30px
-    width: 30px;
-    height: 11px;
-    background: alpha(colorPrimary, 0.3)
-    border-radius: 2px;
 
 .center-button-container
   margin-top 30px
   width 100%
   text-align: center
 
-.mini-offset
-  transform translateX(calc(100% + 30px))
-  //margin-left 30px
-
 .mini-transparent
   opacity 0.6
-
-.mini-first
-  &:before
-    width 0
 
 .mini-last
   &:after

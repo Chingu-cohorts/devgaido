@@ -13,10 +13,12 @@ const user = (state = {
   streak: 0,
   bookmarkedPaths: [],
   curPathId: '',
+  curCourseId: '',
+  curLessonId: '',
 }, action) => {
   switch (action.type) {
-    case 'SET_CURRENT_PATH_ID': {
-      return { ...state, curPathId: action.pathId };
+    case 'SET_CURRENT_PATH': {
+      return { ...state, curPathId: action.pathId, curCourseId: action.courseId, curLessonId: action.lessonId };
     }
     case 'ADD_BOOKMARK': {
       const index = state.bookmarkedPaths.indexOf(action.pathId);
