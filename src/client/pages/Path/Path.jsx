@@ -43,7 +43,8 @@ const Path = ({ match, curriculum, user, dispatch }) => {
   });
   return (
     <div>
-      <div className="page-hero page-hero-path">
+      <div className="page-hero">
+        <div className="page-hero-img page-hero-img-desaturate page-hero-img-path" />
         <div className="page-hero-color-overlay page-hero-color-overlay-path" />
         <div className="page-hero-container">
           <BreadCrumbs curriculum={curriculum} pathId={match.params.id} />

@@ -39,7 +39,8 @@ const PathList = ({ pathIds, curriculum }) => (
 
 const PathCatalog = ({ curriculum, uiState, dispatch }) => (
   <div>
-    <div className="page-hero page-hero-library">
+    <div className="page-hero">
+      <div className="page-hero-img page-hero-img-desaturate page-hero-img-library" />
       <div className="page-hero-color-overlay page-hero-color-overlay-path-catalog" />
       <div className="page-hero-container">
         <h1 className="page-hero-name">BROWSE PATHS</h1>

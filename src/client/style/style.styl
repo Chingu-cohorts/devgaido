@@ -384,27 +384,37 @@ a.link-active
 /*++++++++++++++++++++++++ PATH & COURSE +++++++++++++++++++++++++++*/
 
 .page-hero
-  background: url("http://lorempixel.com/1900/1200/technics/")
-  background-size: cover
+  //background: url("http://lorempixel.com/1900/1200/technics/")
+  //background-size: cover
   position relative
   height 270px
 
-.page-hero-compass
+.page-hero-img
+  position: absolute
+  top 0
+  left 0
+  right 0
+  bottom 0
+
+.page-hero-img-desaturate
+	filter: grayscale(100%);
+
+.page-hero-img-compass
   background: url('/assets/img/hero.jpg')
   background-size: cover
   background-position-y: 50%
 
-.page-hero-library
+.page-hero-img-library
   background: url('/assets/img/library.jpg')
   background-size: cover
   background-position-y: 20%
 
-.page-hero-dashboard
+.page-hero-img-dashboard
   background: url('/assets/img/dashboard.jpg')
   background-size: cover
   background-position-y: 50%
 
-.page-hero-path
+.page-hero-img-path
   background: url('/assets/img/path.jpg')
   background-size: cover
   background-position-y: 50%
@@ -418,16 +428,16 @@ a.link-active
   right 0
 
 .page-hero-color-overlay-path
-  background alpha(darken(colorPrimary, 10), 0.75)
+  background alpha(colorPrimary, 0.75)
 
 .page-hero-color-overlay-course
-  background alpha(darken(colorSecondary,30%), 0.75)
+  background alpha(colorSecondary, 0.75)
 
 .page-hero-color-overlay-lesson
   background alpha(colorPrimary, 0.75)
 
 .page-hero-color-overlay-path-catalog
-  background alpha(colorPrimary, 0.55)
+  background alpha(colorPrimary, 0.75)
 
 .page-hero-container
   margin: 0 auto
@@ -753,7 +763,7 @@ a
 .mini-last
   &:after
     width 0
-
+/*++++++++++++++++++++++++ LESSON +++++++++++++++++++++++++++*/
 .lesson-buttons-container
   margin-bottom 50px
   width 100%
@@ -762,8 +772,21 @@ a
   button
     margin-left 30px
 
+.lesson-preview-img
+  height 400px
+  margin-top 10px
+  margin-bottom 20px
+  width 100%
+  border-radius 6px
+  border 1px solid rgba(0,0,0,0.1)
+
 .grid-half-offset
   margin-top 30px
   margin-bottom 30px
   lost-column 1/2
   lost-offset 1/4
+
+.same-height
+  //background red
+  height 100%
+ 

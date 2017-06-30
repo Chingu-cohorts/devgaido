@@ -69,6 +69,7 @@ const Course = ({ match, curriculum }) => {
   return (
     <div>
       <div className="page-hero">
+        <div className="page-hero-img page-hero-img-desaturate page-hero-img-path" />
         <div className="page-hero-color-overlay page-hero-color-overlay-course" />
         <div className="page-hero-container">
           <BreadCrumbs

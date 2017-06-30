@@ -171,7 +171,8 @@ const NoPaths = ({ text, showPathButton }) => (
 
 const Dashboard = ({ dispatch, user, curriculum, uiState, history }) => (
   <div>
-    <div className="page-hero page-hero-dashboard">
+    <div className="page-hero">
+      <div className="page-hero-img page-hero-img-desaturate page-hero-img-dashboard" />
       <div className="page-hero-color-overlay page-hero-color-overlay-path-catalog" />
       <div className="page-hero-container">
         <h1 className="page-hero-name">DASHBOARD</h1>

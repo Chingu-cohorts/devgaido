@@ -14,8 +14,26 @@ const ItemInfoCard = ({ item, extracontent }) => (
       <i className="card-big-header-icon fa fa-info" />
     </div>
     <div className="card-big-content">
-      <p>{item.description}</p>
+      <p className="lesson-text">{item.description ? item.description : 'No description given.'}</p>
       {extracontent}
+    </div>
+  </div>
+);
+
+const PreviewCard = ({ lesson, lessonId }) => (
+  <div className="card-big">
+    <div className="card-big-header card-big-header-course">
+      <h5 className="card-big-header-text">PREVIEW</h5>
+      <i className="card-big-header-icon fa fa-eye" />
+    </div>
+    <div className="card-big-content">
+      <div
+        className="lesson-preview-img"
+        style={lesson.externalSource !== '' ? {
+          background: `url(/assets/screenshots/${lessonId}.jpeg)`,
+          backgroundSize: 'cover',
+        } : {}}
+      />
     </div>
   </div>
 );
@@ -27,13 +45,8 @@ const Lesson = ({ match, dispatch, curriculum }) => {
 
   return (
     <div>
-      <div
-        className="page-hero"
-        style={lesson.externalSource !== '' ? {
-          background: `url(/assets/screenshots/${lessonId}.jpeg)`,
-          backgroundSize: 'cover',
-        } : {}}
-      >
+      <div className="page-hero">
+        <div className="page-hero-img page-hero-img-desaturate page-hero-img-path" />
         <div className="page-hero-color-overlay page-hero-color-overlay-lesson" />
         <div className="page-hero-container">
           <BreadCrumbs
@@ -49,16 +62,21 @@ const Lesson = ({ match, dispatch, curriculum }) => {
       </div>
       <div className="container">
         <div className="row">
-          <div className="grid-half-offset">
+          <div className="grid-half">
             <ItemInfoCard
               item={lesson}
               extracontent={
                 <div>
-                  <p className="lesson-text">{lesson.description ? lesson.description : 'No description given.'}</p>
                   <h5>{subject.name}</h5>
                   <p>{subject.description}</p>
                 </div>
               }
+            />
+          </div>
+          <div className="grid-half">
+            <PreviewCard
+              lesson={lesson}
+              lessonId={lessonId}
             />
           </div>
         </div>
@@ -80,11 +98,15 @@ const Lesson = ({ match, dispatch, curriculum }) => {
   );
 };
 
+PreviewCard.propTypes = {
+  lesson: PropTypes.objectOf(PropTypes.shape).isRequired,
+  lessonId: PropTypes.string.isRequired,
+};
+
 ItemInfoCard.propTypes = {
   item: PropTypes.objectOf(PropTypes.shape).isRequired,
   extracontent: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
-
 
 Lesson.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
