@@ -38,8 +38,8 @@ const CourseCard = ({ course, linkTo }) => (
         <span className="card-big-header-text-extra">LESSON</span>
       </div>
       <div className="card-big-content">
-        <p>{course.description}</p>
-        <h4 className="completion-text">incomplete</h4>
+        <p>{course.description ? course.description : 'No description given.'}</p>
+        <h4 className="completion-text">{course.completed ? 'completed' : ''}</h4>
       </div>
     </div>
   </Link>

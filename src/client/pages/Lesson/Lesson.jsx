@@ -57,7 +57,7 @@ const Lesson = ({ match, dispatch, curriculum }) => {
           />
           <h1 className="page-hero-name">{lesson.name}</h1>
           <h1 className="completion-text-big completion-text-big-left">LESSON</h1>
-          <h1 className="completion-text-big">incomplete</h1>
+          <h1 className="completion-text-big">{lesson.completed ? 'completed' : ''}</h1>
         </div>
       </div>
       <div className="container">
