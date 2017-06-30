@@ -7,7 +7,7 @@ import { completeLesson } from './LessonActions';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
 
-const ItemInfoCard = ({ item }) => (
+const ItemInfoCard = ({ item, extracontent }) => (
   <div className="card-big">
     <div className="card-big-header card-big-header-lesson">
       <h5 className="card-big-header-text">{item.name}</h5>
@@ -15,6 +15,7 @@ const ItemInfoCard = ({ item }) => (
     </div>
     <div className="card-big-content">
       <p>{item.description}</p>
+      {extracontent}
     </div>
   </div>
 );
@@ -48,22 +49,22 @@ const Lesson = ({ match, dispatch, curriculum }) => {
       </div>
       <div className="container">
         <div className="row">
-          <div className="grid-half">
-            <ItemInfoCard item={lesson} />
+          <div className="grid-half-offset">
+            <ItemInfoCard
+              item={lesson}
+              extracontent={
+                <div>
+                  <p className="lesson-text">{lesson.description ? lesson.description : 'No description given.'}</p>
+                  <h5>{subject.name}</h5>
+                  <p>{subject.description}</p>
+                </div>
+              }
+            />
           </div>
-          <div className="grid-half">
-            <div>
-              <h5>{lesson.name}</h5>
-              <h5>Subject</h5>
-              <h5>{subject.name}</h5>
-              <p>{subject.description}</p>
-            </div>
-            <p className="lesson-text">{lesson.description}</p>
-            <div className="lesson-button-container">
-              <a className="button button-pill button-secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPathId(match.params.pid))}>START LESSON</a>
-              <button className="button button-pill button-primary" onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
-            </div>
-          </div>
+        </div>
+        <div className="lesson-buttons-container">
+          <a className="button button-pill button-secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPathId(match.params.pid))}>START LESSON</a>
+          <button className="button button-pill button-primary" onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
         </div>
         <ReactDisqusThread
           shortname="devgaido"
@@ -80,6 +81,7 @@ const Lesson = ({ match, dispatch, curriculum }) => {
 
 ItemInfoCard.propTypes = {
   item: PropTypes.objectOf(PropTypes.shape).isRequired,
+  extracontent: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 
