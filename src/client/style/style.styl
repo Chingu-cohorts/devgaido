@@ -83,10 +83,17 @@ a.link-active
     //font-weight bold
     text-transform: uppercase
 
+.logo-compass
+  width 21px
+  height 21px
+  position: absolute
+  bottom 8px
+
+.logo-compass-span
+  position relative
+
 .header-logo-text
   font-size: 35px
-  //letter-spacing: 5px
-  //font-weight: bold
   margin 0
   padding 0
   flex 1
@@ -751,7 +758,8 @@ a
   text-align: center
 
 .mini-offset
-  transform translateX(100%)
+  transform translateX(calc(100% + 30px))
+  //margin-left 30px
 
 .mini-transparent
   opacity 0.6
