@@ -14,7 +14,7 @@ const onTopicChange = (e, dispatch) => {
 const PathCard = ({ path, pathId }) => (
   <Link className="col-quarter" to={`/paths/${pathId}`} >
     <div className="card-big card-big-catalog">
-      <div className="card-big-header card-big-header-path">
+      <div className="card-big-header card-big-header-course">
         <h5 className="card-big-header-text">{path.name}</h5>
         <i className="card-big-header-icon fa fa-road" />
       </div>
@@ -39,7 +39,7 @@ const PathList = ({ pathIds, curriculum }) => (
 
 const PathCatalog = ({ curriculum, uiState, dispatch }) => (
   <div>
-    <div className="page-hero page-hero-compass">
+    <div className="page-hero page-hero-library">
       <div className="page-hero-color-overlay page-hero-color-overlay-path-catalog" />
       <div className="page-hero-container">
         <h1 className="page-hero-name">BROWSE PATHS</h1>

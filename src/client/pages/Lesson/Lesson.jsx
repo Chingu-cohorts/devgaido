@@ -66,6 +66,7 @@ const Lesson = ({ match, dispatch, curriculum }) => {
           <a className="button button-pill button-secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPathId(match.params.pid))}>START LESSON</a>
           <button className="button button-pill button-primary" onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
         </div>
+        <hr />
         <ReactDisqusThread
           shortname="devgaido"
           identifier={`/lesson-${lessonId}`}

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import ReactDisqusThread from 'react-disqus-thread';
 import { Link } from 'react-router-dom';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
@@ -43,7 +43,7 @@ const Path = ({ match, curriculum, user, dispatch }) => {
   });
   return (
     <div>
-      <div className="page-hero">
+      <div className="page-hero page-hero-path">
         <div className="page-hero-color-overlay page-hero-color-overlay-path" />
         <div className="page-hero-container">
           <BreadCrumbs curriculum={curriculum} pathId={match.params.id} />
@@ -64,6 +64,15 @@ const Path = ({ match, curriculum, user, dispatch }) => {
             {courses}
           </div>
         </div>
+        <hr />
+        <ReactDisqusThread
+          shortname="devgaido"
+          identifier={`/path-${pathId}`}
+          title={path.name}
+          url={undefined}
+          category_id={undefined}
+          onNewComment={null}
+        />
       </div>
     </div>
   );

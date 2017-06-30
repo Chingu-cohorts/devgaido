@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import ReactDisqusThread from 'react-disqus-thread';
 import { Link } from 'react-router-dom';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
@@ -91,6 +91,15 @@ const Course = ({ match, curriculum }) => {
             {lessons}
           </div>
         </div>
+        <hr />
+        <ReactDisqusThread
+          shortname="devgaido"
+          identifier={`/course-${courseId}`}
+          title={course.name}
+          url={undefined}
+          category_id={undefined}
+          onNewComment={null}
+        />
       </div>
     </div>
   );

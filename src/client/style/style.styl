@@ -36,6 +36,7 @@ $widthMax = 1380px
   lost-center $widthMax
 
 .footer-content
+  padding-top 20px
   lost-center $widthMax
   h5
     text-align: center
@@ -386,13 +387,27 @@ a.link-active
   background: url("http://lorempixel.com/1900/1200/technics/")
   background-size: cover
   position relative
-  height 400px
+  height 270px
 
 .page-hero-compass
   background: url('/assets/img/hero.jpg')
   background-size: cover
   background-position-y: 50%
-  height 270px
+
+.page-hero-library
+  background: url('/assets/img/library.jpg')
+  background-size: cover
+  background-position-y: 20%
+
+.page-hero-dashboard
+  background: url('/assets/img/dashboard.jpg')
+  background-size: cover
+  background-position-y: 50%
+
+.page-hero-path
+  background: url('/assets/img/path.jpg')
+  background-size: cover
+  background-position-y: 50%
 
 .page-hero-color-overlay
   position absolute
@@ -403,7 +418,7 @@ a.link-active
   right 0
 
 .page-hero-color-overlay-path
-  background alpha(colorPrimary, 0.75)
+  background alpha(darken(colorPrimary, 10), 0.75)
 
 .page-hero-color-overlay-course
   background alpha(darken(colorSecondary,30%), 0.75)
@@ -459,6 +474,7 @@ a.link-active
   width 50%
   flex 1 50%
   padding 10px
+  margin-bottom 50px
 
 .card-big
   background white
@@ -726,7 +742,6 @@ a
 
 .mini-offset
   transform translateX(100%)
-  cursor pointer
 
 .mini-transparent
   opacity 0.6
@@ -740,7 +755,7 @@ a
     width 0
 
 .lesson-buttons-container
-  margin-bottom 30px
+  margin-bottom 50px
   width 100%
   display flex
   justify-content: center
