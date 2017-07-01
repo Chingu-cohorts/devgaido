@@ -1,22 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ItemInfoCard = ({ item }) => (
-  <div className="card-big">
-    <div className="card-big-header card-big-header-lesson">
-      <h5 className="card-big-header-text">{item.name}</h5>
-      <i className="card-big-header-icon fa fa-info" />
-    </div>
-    <div className="card-big-content">
-      <p>{item.description}</p>
-    </div>
-  </div>
-);
+import InfoCard from '../shared/InfoCard';
 
 const StyleGuide = () => (
   <div className="container">
     <div className="grid-half">
-      <ItemInfoCard item={{ name: 'InfoCard', description: 'InfoCardText' }} />
+      <InfoCard item={{ name: 'InfoCard', description: 'InfoCardText' }} />
     </div>
     <h1>H1 Heading</h1>
     <h2>H2 Heading</h2>
@@ -106,10 +96,7 @@ const StyleGuide = () => (
       yarn global add webpack
     </code></pre>
   </div>
-  );
+);
 
-ItemInfoCard.propTypes = {
-  item: PropTypes.objectOf(PropTypes.shape).isRequired,
-};
 
 export default StyleGuide;

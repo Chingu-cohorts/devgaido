@@ -4,6 +4,7 @@ import ReactDisqusThread from 'react-disqus-thread';
 import { Link } from 'react-router-dom';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
+import InfoCard from '../shared/InfoCard';
 import { addBookmark, removeBookmark } from '../../actions/userActions';
 
 const CourseCard = ({ course, linkTo }) => (
@@ -19,18 +20,6 @@ const CourseCard = ({ course, linkTo }) => (
       </div>
     </div>
   </Link>
-);
-
-const ItemInfoCard = ({ item }) => (
-  <div className="card-big">
-    <div className="card-big-header card-big-header-path">
-      <h5 className="card-big-header-text">{item.name}</h5>
-      <i className="card-big-header-icon fa fa-info" />
-    </div>
-    <div className="card-big-content">
-      <p>{item.description}</p>
-    </div>
-  </div>
 );
 
 const Path = ({ match, curriculum, user, dispatch }) => {
@@ -59,7 +48,7 @@ const Path = ({ match, curriculum, user, dispatch }) => {
       <div className="container">
         <div className="row">
           <div className="grid-half">
-            <ItemInfoCard item={path} />
+            <InfoCard item={path} type="path" />
           </div>
           <div className="grid-half">
             {courses}
@@ -82,10 +71,6 @@ const Path = ({ match, curriculum, user, dispatch }) => {
 CourseCard.propTypes = {
   course: PropTypes.objectOf(PropTypes.shape).isRequired,
   linkTo: PropTypes.string.isRequired,
-};
-
-ItemInfoCard.propTypes = {
-  item: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 Path.propTypes = {

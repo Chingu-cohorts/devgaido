@@ -6,19 +6,7 @@ import { setCurrentPath } from '../../actions/userActions';
 import { completeLesson } from './LessonActions';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
-
-const ItemInfoCard = ({ item, extracontent }) => (
-  <div className="card-big">
-    <div className="card-big-header card-big-header-lesson">
-      <h5 className="card-big-header-text">{item.name}</h5>
-      <i className="card-big-header-icon fa fa-info" />
-    </div>
-    <div className="card-big-content">
-      <p className="lesson-text">{item.description ? item.description : 'No description given.'}</p>
-      {extracontent}
-    </div>
-  </div>
-);
+import InfoCard from '../shared/InfoCard';
 
 const PreviewCard = ({ lesson, lessonId }) => (
   <div className="card-big">
@@ -63,14 +51,13 @@ const Lesson = ({ match, dispatch, curriculum }) => {
       <div className="container">
         <div className="row">
           <div className="grid-half">
-            <ItemInfoCard
+            <InfoCard
               item={lesson}
-              extracontent={
-                <div>
-                  <h5>{subject.name}</h5>
-                  <p>{subject.description}</p>
-                </div>
-              }
+              type={'lesson'}
+              extraContent={{
+                name: subject.name,
+                description: subject.description,
+              }}
             />
           </div>
           <div className="grid-half">
@@ -101,11 +88,6 @@ const Lesson = ({ match, dispatch, curriculum }) => {
 PreviewCard.propTypes = {
   lesson: PropTypes.objectOf(PropTypes.shape).isRequired,
   lessonId: PropTypes.string.isRequired,
-};
-
-ItemInfoCard.propTypes = {
-  item: PropTypes.objectOf(PropTypes.shape).isRequired,
-  extracontent: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 Lesson.propTypes = {

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
 import Card from '../shared/Card';
+import InfoCard from '../shared/InfoCard';
 
 const lessonTypeIcons = {
   Reading: 'fa fa-book',
@@ -45,18 +46,6 @@ const CourseCard = ({ course, linkTo }) => (
   </Link>
 );
 
-const ItemInfoCard = ({ item }) => (
-  <div className="card-big">
-    <div className="card-big-header card-big-header-course">
-      <h5 className="card-big-header-text">{item.name}</h5>
-      <i className="card-big-header-icon fa fa-info" />
-    </div>
-    <div className="card-big-content">
-      <p>{item.description}</p>
-    </div>
-  </div>
-);
-
 const Course = ({ match, curriculum }) => {
   const pathId = match.params.pid;
   const courseId = match.params.id;
@@ -86,7 +75,7 @@ const Course = ({ match, curriculum }) => {
       <div className="container">
         <div className="row">
           <div className="grid-half">
-            <ItemInfoCard item={course} />
+            <InfoCard item={course} type="course" />
           </div>
           <div className="grid-half">
             {lessons}
@@ -116,10 +105,6 @@ LessonCard.propTypes = {
 CourseCard.propTypes = {
   course: PropTypes.objectOf(PropTypes.shape).isRequired,
   linkTo: PropTypes.string.isRequired,
-};
-
-ItemInfoCard.propTypes = {
-  item: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 Course.propTypes = {
