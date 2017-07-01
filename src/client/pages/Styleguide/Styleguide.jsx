@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import InfoCard from '../shared/InfoCard';
 
@@ -97,6 +96,5 @@ const StyleGuide = () => (
     </code></pre>
   </div>
 );
-
 
 export default StyleGuide;
