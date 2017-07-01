@@ -56,20 +56,6 @@ describe('Validate corelessons.json', () => {
       assert.equal(invalidLessonIds.length, 1);
     });
   });
-  describe('Validate lessons external source', () => {
-    let invalidLessonIds = [];
-    afterEach(() => {
-      invalidLessonIds = logErrors(invalidLessonIds);
-    });
-    it('should verify that the link to the external source is not broken', () => {
-      const siteUrl = 'www.freecodecamp.com';
-      if (!urlIsValid(siteUrl)) {
-        invalidLessonIds.push(`Broken URL: ${siteUrl}`);
-      }
-      // invalidLessonIds = validateIdComposition(allLessons);
-      assert.equal(invalidLessonIds.length, 0);
-    });
-  });
   describe('Validate lesson ids in the course exists', () => {
     let invalidIds = [];
     afterEach(() => {

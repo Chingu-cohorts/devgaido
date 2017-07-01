@@ -1,6 +1,4 @@
 /* eslint-disable no-console */
-const request = require('request');
-
 const maxIdLength = 16;
 const validIdPattern = /^[0-9a-z]+$/;
 const indentErrMsg = ' '.repeat(9);
@@ -169,43 +167,6 @@ const validateUnknownAttributes =
     return invalidElements;
   }, []);
 
-// TODO: Add Promises to ensure proper serialization
-let urlToCheck;
-const checkUrl = new Promise(
-  (resolve, reject) => {
-    request(urlToCheck, (error, response, htmlBody) => {
-      if (error) {
-        console.log(`urlIsValid - error: ${error}`);
-        resolve(false);
-      } else {
-        console.log(`urlIsValid - htmlBody: ${htmlBody}`);
-        reject(false);
-      }
-    });
-  });
-
-/**
- * Validate a URL to ensure it isn't broken
- *
- * @param {String} siteUrl - URL to validate
- * @returns {null} - true if the URL is valid or false if it doesn't point to an active site
- */
-const urlIsValid = (siteUrl) => {
-  urlToCheck = siteUrl;
-  let resultOfCheck;
-  checkUrl
-    .then((isValid) => {
-      console.log('Valid!');
-      resultOfCheck = isValid;
-    })
-    .catch((isValid) => {
-      console.log('Inalid!');
-      resultOfCheck = isValid;
-    });
-  return resultOfCheck;
-};
-
 export { logErrors, logInvalidRelations,
   validateIdComposition, validateIdLength, validateIdMatch, validateRelationship,
-  validateRequiredAttributes, validateUnknownAttributes,
-  urlIsValid };
+  validateRequiredAttributes, validateUnknownAttributes };
