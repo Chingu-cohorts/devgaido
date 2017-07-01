@@ -56,8 +56,22 @@ const Lesson = ({ match, dispatch, curriculum }) => {
             lessonId={match.params.id}
           />
           <h1 className="page-hero-name">{lesson.name}</h1>
-          <h1 className="completion-text-big completion-text-big-left">LESSON</h1>
-          <h1 className="completion-text-big">{lesson.completed ? 'completed' : ''}</h1>
+          {lesson.completed ? <i className="page-hero-icon page-hero-icon-bottom-right fa fa-check-circle-o" /> : null}
+          <i className="page-hero-icon fa fa-graduation-cap" />
+        </div>
+      </div>
+
+      <div className="middle-header">
+        <div className="container middle-header-content">
+          <button className="button button-pill button-primary no-margin invis">Bookmark Lesson</button>
+          <div className="lesson-buttons-container">
+            <a className="button button-pill button-secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPath(match.params.pid, match.params.cid, match.params.id))}>START LESSON</a>
+            <button className="button button-pill button-primary" onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
+          </div>
+          {/* user.bookmarkedPaths.indexOf(pathId) === -1 ?
+            <button className="button button-pill button-primary no-margin" onClick={() => dispatch(addBookmark(pathId))}>Bookmark Course</button> :
+            <button className="button button-pill button-secondary no-margin" onClick={() => dispatch(removeBookmark(pathId))}>Remove Course</button>*/}
+          <button className="button button-pill button-primary no-margin">Bookmark Lesson</button>
         </div>
       </div>
       <div className="container">
@@ -79,10 +93,6 @@ const Lesson = ({ match, dispatch, curriculum }) => {
               lessonId={lessonId}
             />
           </div>
-        </div>
-        <div className="lesson-buttons-container">
-          <a className="button button-pill button-secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPath(match.params.pid, match.params.cid, match.params.id))}>START LESSON</a>
-          <button className="button button-pill button-primary" onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
         </div>
         <hr />
         <ReactDisqusThread

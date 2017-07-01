@@ -1,9 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
-import Card from '../shared/Card';
 
 import TabbedContent from './TabbedContent';
 
@@ -17,18 +14,21 @@ const Metrics = ({ user, curriculum }) => (
       <h1 className="metric-number">{Object.keys(curriculum.paths).filter(
           pathId => curriculum.paths[pathId].completed,
       ).length}</h1>
+      <i className="metric-icon fa fa-road" />
       <h6 className="metric-text metric-text-bold">Paths</h6>
     </div>
     <div className="metric">
       <h1 className="metric-number">{Object.keys(curriculum.courses).filter(
           courseId => curriculum.courses[courseId].completed,
       ).length}</h1>
+      <i className="metric-icon fa fa-tasks" />
       <h6 className="metric-text metric-text-bold">Courses</h6>
     </div>
     <div className="metric">
       <h1 className="metric-number">{Object.keys(curriculum.lessons).filter(
           lessonId => curriculum.lessons[lessonId].completed,
       ).length}</h1>
+      <i className="metric-icon fa fa-graduation-cap" />
       <h6 className="metric-text metric-text-bold">Lessons</h6>
     </div>
   </div>
@@ -51,13 +51,11 @@ const CourseCardMini = ({ course, transparent, offset, first, last }) => (
 
 const getCurrentCourses = (courseIds, user, curriculum) => {
   const lessonIds = curriculum.courses[user.curCourseId].lessonIds;
-
   const current = lessonIds.indexOf(user.curLessonId);
-  console.log('CUR LESSON', current);
 
   return {
     courseMinis: lessonIds.map(
-      (lessonId, index, arr) => (
+      (lessonId, index) => (
         <CourseCardMini
           course={curriculum.lessons[lessonId]}
           key={lessonId}
@@ -169,7 +167,7 @@ const CurrentPathCard = ({ curPath, curriculum, user, uiState, history, onViewCl
     <div className="section">
       <div className="section-header">
         <span>CURRENT PATH</span>
-        <h1>{curPath.name}</h1>
+        <h2>{curPath.name}</h2>
         <button className="button button-pill section-action-button" onClick={() => onViewClick()}>VIEW FULL PATH</button>
       </div>
       <div className="section-content">
@@ -262,7 +260,7 @@ const Dashboard = ({ dispatch, user, curriculum, uiState, history }) => (
               /> : <div className="section">
                 <div className="section-header">
                   <span>PATHS</span>
-                  <h1>In Progress</h1>
+                  <h2>In Progress</h2>
                 </div><NoPaths text="You haven't started any paths yet." showPathButton /></div>
               }
             {user.curPathId !== '' && Object.keys(curriculum.paths).filter(
@@ -273,7 +271,7 @@ const Dashboard = ({ dispatch, user, curriculum, uiState, history }) => (
                       <hr />
                       <div className="section-header">
                         <span>PATHS</span>
-                        <h1>In Progress</h1>
+                        <h2>In Progress</h2>
                       </div><PathList
                         pathIds={Object.keys(curriculum.paths).filter(
                           pathId => !curriculum.paths[pathId].completed
@@ -288,7 +286,7 @@ const Dashboard = ({ dispatch, user, curriculum, uiState, history }) => (
           <div className="section">
             <div className="section-header">
               <span>PATHS</span>
-              <h1>Bookmarked</h1>
+              <h2>Bookmarked</h2>
             </div>
             {user.bookmarkedPaths.length !== 0 ?
               <PathList
@@ -304,7 +302,7 @@ const Dashboard = ({ dispatch, user, curriculum, uiState, history }) => (
           <div className="section">
             <div className="section-header">
               <span>PATHS</span>
-              <h1>Completed</h1>
+              <h2>Completed</h2>
             </div>
             {Object.keys(curriculum.paths).filter(
                 pathId => curriculum.paths[pathId].completed,

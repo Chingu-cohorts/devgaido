@@ -14,13 +14,17 @@ const onTopicChange = (e, dispatch) => {
 const PathCard = ({ path, pathId }) => (
   <Link className="col-quarter" to={`/paths/${pathId}`} >
     <div className="card-big card-big-catalog">
-      <div className="card-big-header card-big-header-course">
+      <div className="img-test" />
+      <div className="card-big-header card-big-header-course card-big-header-noborder">
         <h5 className="card-big-header-text">{path.name}</h5>
         <i className="card-big-header-icon fa fa-road" />
       </div>
       <div className="card-big-content">
         <p>{path.description}</p>
-        <h4 className="completion-text">{path.nCompleted}/{path.nTotal}</h4>
+        <div className="card-big-footer">
+          <span className="completion-text-left">PATH</span>
+          <h4 className="completion-text">{path.nCompleted}/{path.nTotal}</h4>
+        </div>
       </div>
     </div>
   </Link>

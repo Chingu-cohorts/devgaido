@@ -39,7 +39,7 @@ const CourseCard = ({ course, linkTo }) => (
       </div>
       <div className="card-big-content">
         <p>{course.description ? course.description : 'No description given.'}</p>
-        <h4 className="completion-text">{course.completed ? 'completed' : ''}</h4>
+        {course.completed ? <i className="completion-icon fa fa-check-circle-o" /> : null}
       </div>
     </div>
   </Link>
@@ -79,8 +79,18 @@ const Course = ({ match, curriculum }) => {
             invertIconColors
           />
           <h1 className="page-hero-name">{course.name}</h1>
-          <h2 className="completion-text-big completion-text-big-left">COURSE</h2>
-          <h2 className="completion-text-big">{course.nCompleted}/{course.nTotal}</h2>
+          <i className="page-hero-icon fa fa-tasks" />
+          {course.completed ? <i className="page-hero-icon page-hero-icon-bottom-right fa fa-check-circle-o" /> : null}
+        </div>
+      </div>
+      <div className="middle-header">
+        <div className="container middle-header-content">
+          <button className="button button-pill button-primary no-margin invis">Bookmark Course</button>
+          <span className="middle-header-text">Lessons completed: {course.nCompleted}/{course.nTotal}</span>
+          {/* user.bookmarkedPaths.indexOf(pathId) === -1 ?
+            <button className="button button-pill button-primary no-margin" onClick={() => dispatch(addBookmark(pathId))}>Bookmark Course</button> :
+            <button className="button button-pill button-secondary no-margin" onClick={() => dispatch(removeBookmark(pathId))}>Remove Course</button>*/}
+          <button className="button button-pill button-primary no-margin">Bookmark Course</button>
         </div>
       </div>
       <div className="container">
