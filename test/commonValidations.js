@@ -1,20 +1,24 @@
 /* eslint-disable no-console */
-
 const maxIdLength = 16;
 const validIdPattern = /^[0-9a-z]+$/;
 const indentErrMsg = ' '.repeat(9);
 
 /**
- * Write incorrectly formatted curriculum ids in paths, course, and lessons
- * to the console.log.
+ * Write an error messages to the console log.
  *
- * @param {String[]} invalidIds - Array of erroneous ids
- * @param {string} errMessage - Custom error message describing the situation
+ * Validation routines are expected to add a message to the errorMessages
+ * array defining the type of JSON element (e.g. path, course, lesson, etc.)
+ * the error was detected in, the unique identifier of that element, and a
+ * description of the exact error enountered.
+ *
+ * @param {String[]} errorMessages - Array of element id's and error message
+ * reporting a problem in it. This is expected to be formatted as:
+ * [[element-id, error-message],...]
  * @returns {[]} - empty array
  */
-const logInvalidIds = (invalidIds, errMessage) => {
-  invalidIds.forEach((id) => {
-    console.log(`${indentErrMsg}${errMessage} for ${id}`);
+const logErrors = (errorMessages) => {
+  errorMessages.forEach((error) => {
+    console.log(`${indentErrMsg}${error}`);
   });
   return [];
 };
@@ -45,7 +49,7 @@ const logInvalidRelations = (fromElementNm, toElementNm, invalidIds) => {
  */
 const validateIdComposition = jsonData => Object.keys(jsonData).reduce((invalidIds, itemId) => {
   if (!itemId.match(validIdPattern)) {
-    invalidIds.push(itemId);
+    invalidIds.push(`${itemId} id contains invalid characters`);
   }
   return invalidIds;
 }, []);
@@ -75,20 +79,21 @@ const validateIdMatch = jsonData => Object.keys(jsonData).reduce((invalidIds, it
  */
 const validateIdLength = jsonData => Object.keys(jsonData).reduce((invalidIds, itemId) => {
   if (itemId.length > maxIdLength) {
-    invalidIds.push(itemId);
+    invalidIds.push(`${itemId}: greater than ${maxIdLength} characters`);
   }
   return invalidIds;
 }, []);
 
 /**
  * Polyfill to insulate the app from the fact that Object.values is an
- * experimental feature not found in all browsers.
+ * experimental feature not found in all browsers. This solution was
+ * copied from https://stackoverflow.com/questions/35090153/babel-support-for-object-entries
  *
- * @param {Object} x - The object values are to be extracted from.
+ * @param {Object} anObject - The object values are to be extracted from.
  * @returns {Array} - An array of object values
  */
-Object.values = x =>
-  Object.keys(x).reduce((y, z) => y.push(x[z]) && y, []);
+Object.values = anObject =>
+  Object.keys(anObject).map(key => anObject[key]);
 
 /**
  * Validate a relationship between two data elements.
@@ -111,5 +116,57 @@ const validateRelationship = (childAttrNm, childJSON, parentAttrNm, parentJSON) 
       return invalidIds;
     }, []);
 
-export { logInvalidIds, logInvalidRelations,
-  validateIdComposition, validateIdLength, validateIdMatch, validateRelationship };
+/**
+ * Validate that all required attributes have been specified
+ *
+ * @param {Object} jsonData - JSON object containing the data elements. This
+ * must be formatted as {"<id>": {..."attr": "value"...}...}
+ * @param {String[]} expectedAttributes - Array of attribute names and type
+ * indicators (e.g. [['attr-name', 'type'], ...]). Type may be either 'required'
+ * or 'optional'.
+ * @returns {String[]} invalidIds - Array of invalid id's. Those containing
+ * something other than lowercase letters and digits.
+ */
+// TODO: Re-examine this code to see if it can be optimized. The function chaining seems clumsy
+const validateRequiredAttributes =
+  (jsonData, expectedAttributes) => Object.keys(jsonData).reduce((invalidIds, itemId) => {
+    expectedAttributes.forEach((attribute) => {
+      if (attribute[1] === 'required' && !Object.keys(jsonData[itemId]).includes(attribute[0])) {
+        invalidIds.push(`${itemId} missing required attribute:${attribute[0]}`);
+      }
+    });
+    return invalidIds;
+  }, []);
+
+/**
+ * Validate that there are no unknown attributes in the JSON object by comparing
+ * its attribute keys against an array containing valid attribute names.
+ *
+ * @param {Object} jsonData - JSON object containing the data elements. This
+ * must be formatted as {"<id>": {..."attr": "value"...}...}
+ * @param {String[]} expectedAttributes - Array of attribute names and type
+ * indicators (e.g. [['attr-name', 'type'], ...]). Type may be either 'required'
+ * or 'optional'.
+ * @returns {String[]} invalidIds - Array of invalid id's. Those containing
+ * something other than lowercase letters and digits.
+ */
+// TODO: Re-examine this code to see if it can be optimized. The function chaining seems clumsy
+const validateUnknownAttributes =
+  (jsonData, expectedAttributes) => Object.keys(jsonData).reduce((invalidElements, itemId) => {
+    Object.keys(jsonData[itemId]).forEach((itemAttribute) => {
+      let matchingAttributeFound = false;
+      expectedAttributes.forEach((expectedAttribute) => {
+        if (expectedAttribute[0] === itemAttribute) {
+          matchingAttributeFound = true;
+        }
+      });
+      if (!matchingAttributeFound) {
+        invalidElements.push(`${itemId} contains unknown attribute:${itemAttribute}`);
+      }
+    });
+    return invalidElements;
+  }, []);
+
+export { logErrors, logInvalidRelations,
+  validateIdComposition, validateIdLength, validateIdMatch, validateRelationship,
+  validateRequiredAttributes, validateUnknownAttributes };
