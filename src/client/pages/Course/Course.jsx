@@ -75,7 +75,7 @@ const Course = ({ match, curriculum }) => {
       <div className="container">
         <div className="row">
           <div className="grid-half">
-            <InfoCard item={course} type="course" />
+            <InfoCard item={course} color="primary" />
           </div>
           <div className="grid-half">
             {lessons}

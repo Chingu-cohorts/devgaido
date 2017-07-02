@@ -48,7 +48,7 @@ const Path = ({ match, curriculum, user, dispatch }) => {
       <div className="container">
         <div className="row">
           <div className="grid-half">
-            <InfoCard item={path} type="path" />
+            <InfoCard item={path} />
           </div>
           <div className="grid-half">
             {courses}

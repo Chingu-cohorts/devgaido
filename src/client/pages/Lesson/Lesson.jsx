@@ -53,7 +53,6 @@ const Lesson = ({ match, dispatch, curriculum }) => {
           <div className="grid-half">
             <InfoCard
               item={lesson}
-              type={'lesson'}
               extraContent={{
                 name: subject.name,
                 description: subject.description,
