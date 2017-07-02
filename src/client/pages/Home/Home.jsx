@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import Redirect from '../shared/Redirect';
+
 const handleStartNowClick = (e, lock) => {
   e.preventDefault();
   const options = {
@@ -9,25 +11,6 @@ const handleStartNowClick = (e, lock) => {
   };
   lock.show(options);
 };
-
-const HomeContainer = (Component) => {
-  class _HomeContainer extends React.Component {
-    componentWillMount() {
-      if (this.props.user.authenticated) {
-        this.props.history.push('/dashboard');
-      }
-    }
-    render() {
-      return <Component {...this.props} />;
-    }
-  }
-  _HomeContainer.propTypes = {
-    user: PropTypes.objectOf(PropTypes.shape).isRequired,
-    history: PropTypes.objectOf(PropTypes.shape).isRequired,
-  };
-  return _HomeContainer;
-};
-
 
 const Home = ({ lock }) => (
   <div>
@@ -60,4 +43,4 @@ Home.defaultProps = {
   lock: null,
 };
 
-export default HomeContainer(Home);
+export default Redirect(Home, true, '/dashboard');
