@@ -1,6 +1,8 @@
 // style for our main card component
 .panel {
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
     border-radius: 6px;
     margin-bottom: 20px;
 
@@ -13,6 +15,14 @@
     }
 
     &__body {
-        padding: 5px 15px 50px;
+        padding: 5px 15px;
+        min-height: 125px;
+    }
+
+    &__footer {
+        align-self: flex-end;
+        padding-right: 10px;
+        font-weight: bold;
+        color: #007399;
     }
 }
