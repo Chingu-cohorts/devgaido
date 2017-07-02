@@ -34,6 +34,7 @@ $widthMax = 1380px
 
 .header-content
   lost-center $widthMax
+  padding 10px 0
 
 .footer-content
   padding-top 20px
@@ -384,7 +385,7 @@ a.link-active
   color white
   //font-weight: bold
   font-size: 20px
-  text-shadow 1px 1px black
+  //text-shadow 1px 1px black
   a 
     color white
 
@@ -477,20 +478,11 @@ a.link-active
   color white
   bottom 20px
   left 0
-
-.bookmark-button
-  position: absolute    
-  top 20px
-  right 0
-  border 1px solid white
-  color white
-  font-size 14px
-  padding-bottom 37px
-
 .grid-half
   width 50%
   flex 1 50%
   padding 10px
+  margin-top 30px
   margin-bottom 50px
 
 .card-big
@@ -534,7 +526,7 @@ a
   display flex
   flex-direction: row
   border-radius: 6px 6px 0 0;
-  padding 10px 15px
+  padding 15px 25px
 
 .card-big-header-path
   background colorPrimary//#007399
@@ -565,7 +557,7 @@ a
   margin-right 10px
 
 .card-big-content
-  padding 5px 15px
+  padding 20px 25px
   display flex
   flex-direction: column
   justify-content: space-between
@@ -575,7 +567,17 @@ a
   margin 0
   text-align: right
   font-weight bold
-  color #007399
+  color colorPrimary
+  font-size: 20px
+  span
+    font-weight 300
+    font-size: 20px
+
+.completion-icon
+  margin 0
+  text-align: right
+  color colorSecondary
+  font-size 2.6em
 /*++++++++++++++++++++++++ PATHCATALOG +++++++++++++++++++++++++++*/
 .col-quarter
   lost-column 1/3 3
@@ -592,6 +594,7 @@ a
 .search-bar-content
   display: flex
   align-items: center
+  padding 5px 0
 
 .path-search-container
   flex:  1
@@ -706,7 +709,7 @@ a
   background: white
   display: flex
   justify-content: center
-  padding 10px 0  
+  padding 15px 0
 
 .tabButton
   text-transform: uppercase
@@ -774,12 +777,15 @@ a
     width 0
 /*++++++++++++++++++++++++ LESSON +++++++++++++++++++++++++++*/
 .lesson-buttons-container
-  margin-bottom 50px
   width 100%
   display flex
   justify-content: center
+  align-items: center
   button
+    margin 0
     margin-left 30px
+  a
+    margin 0
 
 .lesson-preview-img
   height 400px
@@ -799,3 +805,56 @@ a
   //background red
   height 100%
  
+ /* ----------------------------------------------------------------------- SESSION STUFF --------------*/
+ .img-test
+  background: url('/assets/img/hero.jpg')
+  background-size: cover
+  height 200px
+  border-radius: 6px 6px 0 0;
+  opacity 0.85
+  transition opacity 0.5s ease-out
+  &:hover
+    opacity 1
+
+.card-big-header-noborder
+  border-radius 0
+
+.card-big-footer
+  display flex
+  justify-content: space-between
+
+.middle-header
+  height 68px
+  background white
+
+.middle-header-text
+  color colorPrimary
+  font-size: 2.5rem
+  font-weight: normal
+
+.middle-header-content
+  display flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  height 100%
+
+.no-margin
+  margin 0
+
+.invis
+  visibility: hidden
+
+.page-hero-icon
+  color white
+  font-size 3.6em
+  position: absolute
+  top 20px
+  right 0
+
+.page-hero-icon-bottom-right
+  bottom 20px
+  top inherit
+
+.metric-icon
+  font-size 3.6em

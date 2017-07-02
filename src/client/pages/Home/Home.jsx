@@ -46,6 +46,9 @@ const Home = ({ lock }) => (
         </div>
       </div>
     </div>
+    <div className="container">
+      <h1 style={{ textAlign: 'center', marginTop: '50px' }}>Imagine that there was content here!</h1>
+    </div>
   </div>
 );
 
