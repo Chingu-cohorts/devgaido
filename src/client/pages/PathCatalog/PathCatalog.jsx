@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import { setCatalogTopic, setCatalogSearchTerm } from './PathCatalogActions';
+import LinkCard from '../shared/LinkCard';
 
 const onSearchChange = (e, dispatch) => {
   dispatch(setCatalogSearchTerm(e.target.value));
@@ -11,27 +11,12 @@ const onTopicChange = (e, dispatch) => {
   dispatch(setCatalogTopic(e.target.value));
 };
 
-const PathCard = ({ path, pathId }) => (
-  <Link className="col-quarter" to={`/paths/${pathId}`} >
-    <div className="card-big card-big-catalog">
-      <div className="card-big-header card-big-header-course">
-        <h5 className="card-big-header-text">{path.name}</h5>
-        <i className="card-big-header-icon fa fa-road" />
-      </div>
-      <div className="card-big-content">
-        <p>{path.description}</p>
-        <h4 className="completion-text">{path.nCompleted}/{path.nTotal}</h4>
-      </div>
-    </div>
-  </Link>
-);
-
 const PathList = ({ pathIds, curriculum }) => (
   <div className="path-list">
     {pathIds.map((pathId) => {
       const path = curriculum.paths[pathId];
       return (
-        <PathCard path={path} pathId={pathId} key={pathId} />
+        <LinkCard key={pathId} item={path} path={`/paths/${pathId}`} color="primary" />
       );
     })}
   </div>
@@ -109,11 +94,6 @@ const PathCatalog = ({ curriculum, uiState, dispatch }) => (
     </div>
   </div>
 );
-
-PathCard.propTypes = {
-  pathId: PropTypes.string.isRequired,
-  path: PropTypes.objectOf(PropTypes.shape).isRequired,
-};
 
 PathList.propTypes = {
   pathIds: PropTypes.arrayOf(PropTypes.string).isRequired,
