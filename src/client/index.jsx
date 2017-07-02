@@ -12,7 +12,8 @@ import reducers from './reducers';
 import App from './App';
 import { initCurriculum } from './actions/curriculumActions';
 
-import './stylus/style.styl';
+import './style/style.styl';
+import './style/index.styl';
 
 /**
  * Get the initial application state which is either an empty object or the

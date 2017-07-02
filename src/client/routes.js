@@ -6,9 +6,8 @@ import PathCatalog from './pages/PathCatalog/PathCatalog';
 import Profile from './pages/Profile/Profile';
 import Times from './pages/Times/Times';
 import Objectives from './pages/Objectives/Objectives';
-import CourseCatalog from './pages/CourseCatalog/CourseCatalog';
 import Dashboard from './pages/Dashboard/Dashboard';
-
+import Styleguide from './pages/Styleguide/Styleguide';
 /**
  * Client route definitions
  *
@@ -29,16 +28,15 @@ const routes = [
     passdown: ['lock', 'user'],
   },
   {
+    path: '/styleguide',
+    exact: true,
+    component: Styleguide,
+  },
+  {
     path: '/dashboard',
     exact: true,
     component: Dashboard,
     passdown: ['dispatch', 'user', 'curriculum', 'uiState'],
-  },
-  {
-    path: '/courses',
-    exact: true,
-    component: CourseCatalog,
-    passdown: ['curriculum'],
   },
   {
     path: '/profile',
@@ -79,7 +77,7 @@ const routes = [
     path: '/paths',
     exact: true,
     component: PathCatalog,
-    passdown: ['curriculum', 'dispatch'],
+    passdown: ['curriculum', 'dispatch', 'uiState'],
   },
 ];
 
