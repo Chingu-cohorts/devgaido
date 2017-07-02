@@ -67,6 +67,7 @@
     "preact-compat": "^3.16.0",
     "prop-types": "^15.5.8",
     "rc-css-transition-group": "^2.1.4",
+    "react-disqus-thread": "^0.4.0",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",

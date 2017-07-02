@@ -1,32 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import ReactDisqusThread from 'react-disqus-thread';
 import { Link } from 'react-router-dom';
 
 import BreadCrumbs from '../shared/BreadCrumbs';
 import { addBookmark, removeBookmark } from '../../actions/userActions';
 
 const CourseCard = ({ course, linkTo }) => (
-  <Link className="course-card connected" to={linkTo}>
-    <div className="course-card-header">
-      <span className="course-card-caption">COURSE</span>
-      <h1>{course.name}</h1>
-    </div>
-    <div className="course-card-content">
-      <p className="course-description">{course.description}</p>
-      <h1 className="completion-text">{course.nCompleted}/{course.nTotal}</h1>
+  <Link className="connected" to={linkTo}>
+    <div className="card-big">
+      <div className="card-big-header card-big-header-course">
+        <h5 className="card-big-header-text">{course.name}</h5>
+        <span className="card-big-header-text-extra">COURSE</span>
+      </div>
+      <div className="card-big-content">
+        <p>{course.description}</p>
+        <h4 className="completion-text"><span>Lessons completed: </span>{course.nCompleted}/{course.nTotal}</h4>
+      </div>
     </div>
   </Link>
 );
 
-const PathInfoCard = ({ path }) => (
-  <div className="course-card connected">
-    <div className="course-card-header" style={{ background: '#007399' }}>
-      <i className="card-icon path-info-icon fa fa-info" />
-      <h1>{path.name}</h1>
+const ItemInfoCard = ({ item }) => (
+  <div className="card-big">
+    <div className="card-big-header card-big-header-path">
+      <h5 className="card-big-header-text">{item.name}</h5>
+      <i className="card-big-header-icon fa fa-info" />
     </div>
-    <div className="course-card-content">
-      <p className="course-description">{path.description}</p>
+    <div className="card-big-content">
+      <p>{item.description}</p>
     </div>
   </div>
 );
@@ -40,23 +42,44 @@ const Path = ({ match, curriculum, user, dispatch }) => {
     return <CourseCard linkTo={`/paths/${pathId}/${courseId}`} course={course} key={courseId} />;
   });
   return (
-    <div className="container">
-      <div className="path-container path path-image">
-        <div className="path-header path-header-image" />
-        <div className="path-header path-header-image-color">
+    <div>
+      <div className="page-hero">
+        <div className="page-hero-img page-hero-img-desaturate page-hero-img-path" />
+        <div className="page-hero-color-overlay page-hero-color-overlay-path" />
+        <div className="page-hero-container">
           <BreadCrumbs curriculum={curriculum} pathId={match.params.id} />
-          <h1 className="path-header-path-name">{path.name}</h1>
-          <h1 className="completion-text-big">{path.nCompleted}/{path.nTotal}</h1>
+          <h1 className="page-hero-name">{path.name}</h1>
+          <i className="page-hero-icon fa fa-road" />
+          {path.completed ? <i className="page-hero-icon page-hero-icon-bottom-right fa fa-check-circle-o" /> : null}
+        </div>
+      </div>
+      <div className="middle-header">
+        <div className="container middle-header-content">
+          <button className="button button-pill no-margin invis">Bookmark Path</button>
+          <span className="middle-header-text">Courses completed: {path.nCompleted}/{path.nTotal}</span>
           {user.bookmarkedPaths.indexOf(pathId) === -1 ?
-            <button className="path-bookmark-button" onClick={() => dispatch(addBookmark(pathId))}>Add Bookmark</button> :
-            <button className="path-bookmark-button" onClick={() => dispatch(removeBookmark(pathId))}>Remove Bookmark</button>}
+            <button className="button button-pill button-primary no-margin" onClick={() => dispatch(addBookmark(pathId))}>Bookmark Path</button> :
+            <button className="button button-pill button-secondary no-margin" onClick={() => dispatch(removeBookmark(pathId))}>Remove Bookmark</button>}
         </div>
-        <div className="grid-half">
-          <PathInfoCard path={path} />
+      </div>
+      <div className="container">
+        <div className="row">
+          <div className="grid-half">
+            <ItemInfoCard item={path} />
+          </div>
+          <div className="grid-half">
+            {courses}
+          </div>
         </div>
-        <div className="grid-half">
-          {courses}
-        </div>
+        <hr />
+        <ReactDisqusThread
+          shortname="devgaido"
+          identifier={`/path-${pathId}`}
+          title={path.name}
+          url={undefined}
+          category_id={undefined}
+          onNewComment={null}
+        />
       </div>
     </div>
   );
@@ -67,8 +90,8 @@ CourseCard.propTypes = {
   linkTo: PropTypes.string.isRequired,
 };
 
-PathInfoCard.propTypes = {
-  path: PropTypes.objectOf(PropTypes.shape).isRequired,
+ItemInfoCard.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 Path.propTypes = {

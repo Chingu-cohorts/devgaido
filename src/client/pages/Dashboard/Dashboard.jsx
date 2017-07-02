@@ -2,89 +2,200 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import Card from '../shared/Card';
-
 import TabbedContent from './TabbedContent';
 
 // TODO: Add custom date formatting to make client and server side string match up
 const Metrics = ({ user, curriculum }) => (
-  <div className="grid-full metrics">
-    <h1>Welcome back, {user.name}!</h1>
-    <h1>Completed Paths: {
-      Object.keys(curriculum.paths).filter(
+  <div className="metrics">
+    <div className="metric">
+      <h6 className="metric-text">Completed:</h6>
+    </div>
+    <div className="metric">
+      <h1 className="metric-number">{Object.keys(curriculum.paths).filter(
           pathId => curriculum.paths[pathId].completed,
-      ).length}
-    </h1>
-    <h1>Completed Courses: {
-      Object.keys(curriculum.courses).filter(
+      ).length}</h1>
+      <i className="metric-icon fa fa-road" />
+      <h6 className="metric-text metric-text-bold">Paths</h6>
+    </div>
+    <div className="metric">
+      <h1 className="metric-number">{Object.keys(curriculum.courses).filter(
           courseId => curriculum.courses[courseId].completed,
-      ).length}
-    </h1>
-    <h1>Completed Lessons: {
-      Object.keys(curriculum.lessons).filter(
+      ).length}</h1>
+      <i className="metric-icon fa fa-tasks" />
+      <h6 className="metric-text metric-text-bold">Courses</h6>
+    </div>
+    <div className="metric">
+      <h1 className="metric-number">{Object.keys(curriculum.lessons).filter(
           lessonId => curriculum.lessons[lessonId].completed,
-      ).length}
-    </h1>
-    <h1>streak: {user.streak}</h1>
-    <h1>lastVisited: {new Date(user.dayLastVisited).toLocaleString()}</h1>
+      ).length}</h1>
+      <i className="metric-icon fa fa-graduation-cap" />
+      <h6 className="metric-text metric-text-bold">Lessons</h6>
+    </div>
   </div>
 );
 
-const CourseCardMini = ({ course }) => (
-  <div className="grid-quarter card" >
-    <div className="card-header" style={{ background: '#007399' }}>
-      <i className="card-icon fa fa-line-chart" />
-    </div>
-    <span className="card-caption-small">COURSE</span>
-    <span className="card-caption-big">{course.name}</span>
-    <p className="card-text">{course.description}</p>
-  </div>
-);
-
-const CurrentPathCard = ({ curPath, curriculum }) => (
-  <div className="section-card current-path">
-    <div className="section-card-header" style={{ background: 'darkslateblue' }}>
-      <span className="section-card-caption">CURRENT PATH</span>
-      <h1 className="section-card-title">{curPath.name}</h1>
-      <button className="current-path-view-button">VIEW PATH</button>
-    </div>
-    <div className="section-card-content">
-      <p className="course-description">{curPath.description}</p>
-      <div className="lesson-list">
-        {curPath.courseIds.map(courseId => (
-          <CourseCardMini course={curriculum.courses[courseId]} key={courseId} />
-        ))}
-        <button className="inline button-continue current-path-continue-button"><i />&nbsp;&nbsp; CONTINUE</button>
+const CourseCardMini = ({ course, transparent, offset, first, last }) => (
+  <div className={`col-quarter connected-horizontal ${last ? ' mini-last' : ''} ${first ? ' mini-first' : ''} ${transparent ? ' mini-transparent' : ''} ${offset ? ' mini-offset' : ''}`}>
+    <div className="card-big card-big-catalog">
+      <div className="card-big-header card-big-header-course">
+        <h5 className="card-big-header-text">{course.name}</h5>
+        <i className="card-big-header-icon fa fa-book" />
+      </div>
+      <div className="card-big-content">
+        <p>{course.description}</p>
+        <h4 className="completion-text">INCOMPLETE</h4>
       </div>
     </div>
   </div>
 );
 
-const SectionCard = ({ title, subtitle, color, children }) => (
-  <div className="section-card">
-    <div className="section-card-header" style={{ background: color || 'darkslateblue' }}>
-      <span className="section-card-caption">{subtitle}</span>
-      <h1 className="section-card-title">{title}</h1>
-      <button className="section-card-button">VIEW ALL</button>
+const getCurrentCourses = (courseIds, user, curriculum) => {
+  const lessonIds = curriculum.courses[user.curCourseId].lessonIds;
+  const current = lessonIds.indexOf(user.curLessonId);
+
+  return {
+    courseMinis: lessonIds.map(
+      (lessonId, index) => (
+        <CourseCardMini
+          course={curriculum.lessons[lessonId]}
+          key={lessonId}
+          // offset={isSmallerThan3 || firstCourse}
+          // transparent={isSmallerThan3 ? (index + 1) % 2 === 0 : index % 2 === 0}
+          // first={firstCourse && index === 0}
+          // last={lastCourse && index === arr.length - 1}
+        />
+      )),
+    // curCourseId: courseIds[lastCompleted],
+  };
+};
+
+class LessonSlider extends React.Component {
+  constructor(props) {
+    super(props);
+    this.lessonIds = props.curriculum.courses[props.user.curCourseId].lessonIds;
+    const lessons = props.curriculum.lessons;
+    this.lastOffset = 0;
+    this.offset = 0;
+    this.current = 0;
+    this.last = 0;
+    this.slideRefs = [];
+    this.slides = this.lessonIds.map(
+      (lessonId, index) => (
+        <a
+          className={`lesson-slide connected-horizontal ${index + 1 === this.lessonIds.length ? ' mini-last' : ''}`}
+          key={lessonId}
+          ref={(c) => { this.slideRefs[lessonId] = c; }}
+          href={`/paths/${props.user.curPathId}/${props.user.curCourseId}/${lessonId}`}
+          onClick={(e) => {
+            e.preventDefault();
+            props.history.push(`/paths/${props.user.curPathId}/${props.user.curCourseId}/${lessonId}`);}
+          }
+        >
+          <div className="card-big card-big-catalog">
+            <div className="card-big-header card-big-header-course">
+              <h5 className="card-big-header-text">{lessons[lessonId].name}</h5>
+              <span className="card-big-header-text-extra">LESSON</span>
+              <i className="card-big-header-icon fa fa-book" />
+            </div>
+            <div className="card-big-content">
+              <p>{lessons[lessonId].description ? lessons[lessonId].description : 'No description given.'}</p>
+              <h4 className="completion-text">{lessons[lessonId].completed ? 'completed' : ''}</h4>
+            </div>
+          </div>
+        </a>
+      ));
+  }
+  componentDidMount() {
+    this.slideRefs[this.lessonIds[this.current]].style.opacity = '1';
+    this.slideRefs[this.lessonIds[this.current]].style.transition = 'opacity 0.5s';
+  }
+  componentDidUpdate() {
+    requestAnimationFrame(() => {
+      this.sliderRef.style.transform = `translateX(${-this.lastOffset}px)`;
+      this.sliderRef.style.transition = 'transform 0s';
+      this.slideRefs[this.lessonIds[this.last]].style.opacity = '0.5';
+      this.slideRefs[this.lessonIds[this.last]].style.transition = 'opacity 0.5s';
+      requestAnimationFrame(() => {
+        this.sliderRef.style.transform = `translateX(${-this.offset}px)`;
+        this.sliderRef.style.transition = 'transform 0.5s';
+        this.slideRefs[this.lessonIds[this.current]].style.opacity = '1';
+        this.slideRefs[this.lessonIds[this.current]].style.transition = 'opacity 0.5s';
+      });
+    });
+  }
+
+  handlePrevClick() {
+    if (this.current - 1 >= 0) {
+      this.last = this.current;
+      this.current -= 1;
+      this.lastOffset = this.offset;
+      this.offset = this.slideRefs[this.lessonIds[this.current]] ? this.slideRefs[this.lessonIds[this.current]].offsetLeft : 0;
+      this.forceUpdate();
+    }
+  }
+  handleNextClick() {
+    if (this.current + 1 < this.lessonIds.length) {
+      this.last = this.current;
+      this.current += 1;
+      this.lastOffset = this.offset;
+      this.offset = this.slideRefs[this.lessonIds[this.current]] ? this.slideRefs[this.lessonIds[this.current]].offsetLeft : 0;
+      this.forceUpdate();
+    }
+  }
+  render() {
+    return (
+      <div className="lesson-slider-container">
+        <div className={'lesson-slider'} ref={(c) => { this.sliderRef = c; }}>
+          {this.slides}
+        </div>
+        <div className="lesson-slider-buttons-container">
+          <button className="button button-pill" onClick={() => this.handlePrevClick()} style={this.current - 1 >= 0 ? {} : { visibility: 'hidden' }}>&larr;</button>
+          <button className="button button-pill" onClick={() => this.handleNextClick()} style={this.current + 1 < this.lessonIds.length ? {} : { visibility: 'hidden' }}>&rarr;</button>
+        </div>
+      </div>
+    );
+  }
+}
+
+const CurrentPathCard = ({ curPath, curriculum, user, uiState, history, onViewClick, onContinueClick }) => {
+  const {
+    courseMinis: currentCourses,
+    curCourseId,
+ } = getCurrentCourses(curPath.courseIds, user, curriculum);
+
+  return (
+    <div className="section">
+      <div className="section-header">
+        <span>CURRENT PATH</span>
+        <h2>{curPath.name}</h2>
+        <button className="button button-pill section-action-button" onClick={() => onViewClick()}>VIEW FULL PATH</button>
+      </div>
+      <div className="section-content">
+        <p className="course-description">{curPath.description}</p>
+        <LessonSlider user={user} curriculum={curriculum} uiState={uiState} history={history} />
+        <div className="path-list course-minis">
+          <div className="center-button-container">
+            <button className="button button-pill button-primary" onClick={() => onContinueClick(curCourseId)} ><i />CONTINUE PATH</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div className="section-card-content">
-      {children}
-    </div>
-  </div>
-);
+  );
+};
 
 const PathCard = ({ path, pathId }) => (
-  <Card
-    caption={path.name}
-    subcaption="Path"
-    text={path.description}
-    linkTo={`/paths/${pathId}`}
-    icons={['fa fa-road']}
-    color={'#007399'}
-    content={<h1 className="completion-text">{path.nCompleted}/{path.nTotal}</h1>}
-    nCompleted={0}
-    nTotal={8}
-  />
+  <Link className="col-quarter" to={`/paths/${pathId}`} >
+    <div className="card-big card-big-catalog">
+      <div className="card-big-header card-big-header-path">
+        <h5 className="card-big-header-text">{path.name}</h5>
+        <i className="card-big-header-icon fa fa-road" />
+      </div>
+      <div className="card-big-content">
+        <p>{path.description}</p>
+        <h4 className="completion-text">{path.nCompleted}/{path.nTotal}</h4>
+      </div>
+    </div>
+  </Link>
 );
 
 const isInProgress = (user, curriculum, pathId) => {
@@ -105,7 +216,7 @@ const isInProgress = (user, curriculum, pathId) => {
 };
 
 const PathList = ({ pathIds, curriculum }) => (
-  <div className="dashboard-path-list">
+  <div className="path-list">
     {pathIds.map((pathId) => {
       const path = curriculum.paths[pathId];
       return (
@@ -114,96 +225,116 @@ const PathList = ({ pathIds, curriculum }) => (
     })}
   </div>
 );
-
 const NoPaths = ({ text, showPathButton }) => (
   <div className="no-paths">
-    <h1 className="no-paths-text">{text}</h1>
-    {showPathButton ? <Link className="no-paths-button" to="/paths">Browse Paths</Link> : null}
+    <h3>{text}</h3>
+    {showPathButton ? <Link className="button button-pill no-paths-button" to="/paths">BROWSE PATHS</Link> : null}
   </div>
 );
 
-const Dashboard = ({ dispatch, user, curriculum, uiState }) => (
-  <div className="container">
-    <div className="container-dashboard">
-      <Metrics user={user} curriculum={curriculum} />
-      <TabbedContent
-        content={[{
-          caption: 'In Progress',
-          content: (
-            <div>
-              {user.curPathId !== '' ?
-                <CurrentPathCard
-                  curPath={curriculum.paths[user.curPathId]}
-                  curriculum={curriculum}
-                /> :
-                <SectionCard title="In Progress" subtitle="PATHS">
-                  <NoPaths text="You haven't started any paths yet." showPathButton />
-                </SectionCard>
-                }
-              {user.curPathId !== '' && Object.keys(curriculum.paths).filter(
-                      pathId => !curriculum.paths[pathId].completed
-                                && isInProgress(user, curriculum, pathId),
-                    ).length !== 0 ?
-                      <SectionCard title="In Progress" subtitle="PATHS">
-                        <PathList
-                          pathIds={Object.keys(curriculum.paths).filter(
-                            pathId => !curriculum.paths[pathId].completed
-                                      && isInProgress(user, curriculum, pathId),
-                          )}
-                          curriculum={curriculum}
-                        />
-                      </SectionCard> : null}
-            </div>),
-        }, {
-          caption: 'Bookmarked',
-          content: (
-            <SectionCard title="Bookmarked" subtitle="PATHS">
-              {user.bookmarkedPaths.length !== 0 ?
+const Dashboard = ({ dispatch, user, curriculum, uiState, history }) => (
+  <div>
+    <div className="page-hero">
+      <div className="page-hero-img page-hero-img-desaturate page-hero-img-dashboard" />
+      <div className="page-hero-color-overlay page-hero-color-overlay-path-catalog" />
+      <div className="page-hero-container">
+        <h1 className="page-hero-name">DASHBOARD</h1>
+        <h2 className="completion-text-big completion-text-big-topleft">Welcome back, {user.name}!</h2>
+        <Metrics user={user} curriculum={curriculum} />
+      </div>
+    </div>
+    <TabbedContent
+      content={[{
+        caption: 'In Progress',
+        content: (
+          <div>
+            {user.curPathId !== '' ?
+              <CurrentPathCard
+                curPath={curriculum.paths[user.curPathId]}
+                curriculum={curriculum}
+                user={user}
+                uiState={uiState}
+                history={history}
+                onViewClick={() => history.push(`/paths/${user.curPathId}`)}
+                onContinueClick={courseId => history.push(`/paths/${user.curPathId}/${courseId}`)}
+              /> : <div className="section">
+                <div className="section-header">
+                  <span>PATHS</span>
+                  <h2>In Progress</h2>
+                </div><NoPaths text="You haven't started any paths yet." showPathButton /></div>
+              }
+            {user.curPathId !== '' && Object.keys(curriculum.paths).filter(
+                    pathId => !curriculum.paths[pathId].completed
+                              && isInProgress(user, curriculum, pathId),
+                  ).length !== 0 ?
+                    <div className="section">
+                      <hr />
+                      <div className="section-header">
+                        <span>PATHS</span>
+                        <h2>In Progress</h2>
+                      </div><PathList
+                        pathIds={Object.keys(curriculum.paths).filter(
+                          pathId => !curriculum.paths[pathId].completed
+                                    && isInProgress(user, curriculum, pathId),
+                        )}
+                        curriculum={curriculum}
+                      /></div> : null}
+          </div>),
+      }, {
+        caption: 'Bookmarked',
+        content: (
+          <div className="section">
+            <div className="section-header">
+              <span>PATHS</span>
+              <h2>Bookmarked</h2>
+            </div>
+            {user.bookmarkedPaths.length !== 0 ?
+              <PathList
+                pathIds={Object.keys(curriculum.paths).filter(
+                  pathId => user.bookmarkedPaths.indexOf(pathId) !== -1,
+                )}
+                curriculum={curriculum}
+              /> : <NoPaths text="You haven't bookmarked any paths yet." showPathButton />}
+          </div>),
+      }, {
+        caption: 'Completed',
+        content: (
+          <div className="section">
+            <div className="section-header">
+              <span>PATHS</span>
+              <h2>Completed</h2>
+            </div>
+            {Object.keys(curriculum.paths).filter(
+                pathId => curriculum.paths[pathId].completed,
+              ).length !== 0 ?
                 <PathList
                   pathIds={Object.keys(curriculum.paths).filter(
-                    pathId => user.bookmarkedPaths.indexOf(pathId) !== -1,
+                    pathId => curriculum.paths[pathId].completed,
                   )}
                   curriculum={curriculum}
                 /> :
-                <NoPaths text="You haven't bookmarked any paths yet." showPathButton />}
-            </SectionCard>),
-        }, {
-          caption: 'Completed',
-          content: (
-            <SectionCard title="Completed" subtitle="PATHS">
-              {Object.keys(curriculum.paths).filter(
-                  pathId => curriculum.paths[pathId].completed,
-                ).length !== 0 ?
-                  <PathList
-                    pathIds={Object.keys(curriculum.paths).filter(
-                      pathId => curriculum.paths[pathId].completed,
-                    )}
-                    curriculum={curriculum}
-                  /> :
-                  <NoPaths text="You haven't completed any paths yet." />}
-            </SectionCard>),
-        }]}
-        dispatch={dispatch}
-        uiState={uiState}
-      />
-    </div>
+                <NoPaths text="You haven't completed any paths yet." />}
+          </div>),
+      }]}
+      dispatch={dispatch}
+      uiState={uiState}
+    />
   </div>
 );
 
-SectionCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  color: PropTypes.string,
-  children: PropTypes.objectOf(PropTypes.shape),
-};
-
-SectionCard.defaultProps = {
-  color: null,
-  children: null,
-};
-
 CourseCardMini.propTypes = {
   course: PropTypes.objectOf(PropTypes.shape).isRequired,
+  transparent: PropTypes.bool,
+  first: PropTypes.bool,
+  last: PropTypes.bool,
+  offset: PropTypes.bool,
+};
+
+CourseCardMini.defaultProps = {
+  transparent: false,
+  first: false,
+  last: false,
+  offset: false,
 };
 
 NoPaths.propTypes = {
@@ -223,6 +354,8 @@ Metrics.propTypes = {
 CurrentPathCard.propTypes = {
   curPath: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
+  onViewClick: PropTypes.func.isRequired,
+  onContinueClick: PropTypes.func.isRequired,
 };
 
 PathCard.propTypes = {
@@ -240,6 +373,7 @@ Dashboard.propTypes = {
   curriculum: PropTypes.objectOf(PropTypes.shape),
   user: PropTypes.objectOf(PropTypes.shape),
   dispatch: PropTypes.func,
+  history: PropTypes.objectOf(PropTypes.shape),
 };
 
 Dashboard.defaultProps = {
@@ -247,6 +381,7 @@ Dashboard.defaultProps = {
   curriculum: null,
   dispatch: null,
   user: null,
+  history: null,
 };
 
 export default Dashboard;
