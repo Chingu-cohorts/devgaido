@@ -1,50 +1,14 @@
-/* Colors */
 
-colorBackgroundBase = white
-colorPrimary = #007399//darkslateblue
-colorPrimaryLight = #e7eaf6
-colorPrimaryDark = #372e6b
-colorSecondary = #DB684E
-colorSecondaryLight = #c9f0db
-colorSecondaryDark = #00bc67
-colorTertiary = #5D35AC
-colorQuarternary = #ffea7e
-colorTextInverse = white
-colorPlaceholder = #afb9bb
-
-colorLink = colorPrimary
-colorLinkHover = colorSecondary
-
-boxShadowBase = 5px 5px 10px rgba(30, 33, 94, 0.15)
-boxShadowMinimal = 0px -2px 5px rgba(30, 33, 94, 0.15)
-
-$color-background = #fff
-// $color-initial = #f00
-$color-primary = colorPrimary//darkslateblue
-// $color-text = rgba(0,0,0,0.74)
-// $color-secondary = #606c76
-// $color-tertiary = #f4f5f6
-// $color-quaternary = #d1d1d1
-// $color-quinary = #e1e1e1
-$widthMax = 1380px
-
+@import './_variables'
 @import './sutairu'
+@import './modules'
+@import './_functional'
 
 @lost flexbox flex;
 
-.header-content
-  lost-center $widthMax
-  padding 10px 0
-
-.footer-content
-  padding-top 20px
-  lost-center $widthMax
-  h5
-    text-align: center
-    width 100%
 // Needed to for Font Awesome
 i::before
-    font-family: 'FontAwesome'
+  font-family: 'FontAwesome'
 
 .App
   display flex
@@ -54,6 +18,19 @@ i::before
 .page-content
   background: #e7eaf6
   flex 1
+
+.logo
+  font-size: 35px
+  span:first-child
+    color colorPrimary
+  span
+    color colorSecondary
+
+.logo__compass
+  width 21px
+  height 21px
+  bottom 8px
+
 
 /*#root, 
   flex 1
@@ -83,25 +60,6 @@ a.link-active
     margin 0
     //font-weight bold
     text-transform: uppercase
-
-.logo-compass
-  width 21px
-  height 21px
-  position: absolute
-  bottom 8px
-
-.logo-compass-span
-  position relative
-
-.header-logo-text
-  font-size: 35px
-  margin 0
-  padding 0
-  flex 1
-  span:first-child
-    color colorPrimary
-  span
-    color colorSecondary
 
 .menu {
     // margin-right:1rem;
@@ -321,9 +279,9 @@ a.link-active
 
 /*++++++++++++++++++++++++ HOME +++++++++++++++++++++++++++*/
 .home-hero
-  background: url('/assets/img/hero.jpg')
+  background: url('/assets/img/compass4.jpg')
   background-size: cover
-  background-position-y: 20%
+  background-position-y: 50%
   height 600px
   width 100%
   display flex
@@ -390,194 +348,12 @@ a.link-active
     color white
 
 /*++++++++++++++++++++++++ PATH & COURSE +++++++++++++++++++++++++++*/
-
-.page-hero
-  //background: url("http://lorempixel.com/1900/1200/technics/")
-  //background-size: cover
-  position relative
-  height 270px
-
-.page-hero-img
-  position: absolute
-  top 0
-  left 0
-  right 0
-  bottom 0
-
-.page-hero-img-desaturate
-	filter: grayscale(100%);
-
-.page-hero-img-compass
-  background: url('/assets/img/hero.jpg')
-  background-size: cover
-  background-position-y: 50%
-
-.page-hero-img-library
-  background: url('/assets/img/library.jpg')
-  background-size: cover
-  background-position-y: 20%
-
-.page-hero-img-dashboard
-  background: url('/assets/img/dashboard.jpg')
-  background-size: cover
-  background-position-y: 50%
-
-.page-hero-img-path
-  background: url('/assets/img/path.jpg')
-  background-size: cover
-  background-position-y: 50%
-
-.page-hero-color-overlay
-  position absolute
-  background alpha($color-primary, 0.75)
-  top 0
-  bottom 0
-  left 0
-  right 0
-
-.page-hero-color-overlay-path
-  background alpha(colorPrimary, 0.75)
-
-.page-hero-color-overlay-course
-  background alpha(colorSecondary, 0.75)
-
-.page-hero-color-overlay-lesson
-  background alpha(colorPrimary, 0.75)
-
-.page-hero-color-overlay-path-catalog
-  background alpha(colorPrimary, 0.75)
-
-.page-hero-container
-  margin: 0 auto
-  max-width: $widthMax
-  position: relative
-  width: 100%
-  height 100%
-
-.page-hero-name
-  text-transform: uppercase
-  font-weight: bold
-  text-align: center
-  vertical-align: middle
-  color white
-  position absolute
-  top 50%
-  left 50%
-  transform: translate(-50%, -50%)
-
-.completion-text-big
-  margin 0
-  position: absolute
-  color white
-  bottom 20px
-  right 0
-  //font-weight: bold
-.completion-text-big-left
-  margin 0
-  position: absolute
-  color white
-  bottom 20px
-  left 0
 .grid-half
   width 50%
   flex 1 50%
   padding 10px
   margin-top 30px
   margin-bottom 50px
-
-.card-big
-  background white
-  border-radius: 6px
-  margin-bottom 20px
-
-// Needed because we wrap the cards in <Link> components which overwrites text with link colors
-a
-  .card-big
-    color $color-text
-
-.card-big-catalog
-  margin 0
-  height 100%
-  display flex
-  flex-direction: column
-
-.connected
-  position relative
-  width 100%
-  &:after
-    content: "";
-    position: absolute;
-    display: block;
-    bottom: -4px;
-    left: "calc(%s / 4)" % $widthMax
-    margin-left: -5px;
-    width: 11px;
-    height: 25px;
-    background: alpha(colorPrimary, 0.5)
-    border-radius: 2px;
-  &:last-child:after
-    height 0px
-
-.connected-course:after
-    background: alpha(colorSecondary, 0.5)
-
-.card-big-header
-  background: #007399
-  display flex
-  flex-direction: row
-  border-radius: 6px 6px 0 0;
-  padding 15px 25px
-
-.card-big-header-path
-  background colorPrimary//#007399
-
-.card-big-header-course
-  background colorSecondary
-
-.card-big-header-lesson
-  background colorPrimary
-
-.card-big-header-text
-  text-transform: uppercase
-  //font-weight: bold
-  color white
-  margin 0
-  flex 1
-
-.card-big-header-text-extra
-  color white
-  padding 0 15px
-  text-transform: uppercase
-  font-weight: bold
-
-.card-big-header-icon
-  font-size: 2.2rem
-  color white
-  margin-top 3px
-  margin-right 10px
-
-.card-big-content
-  padding 20px 25px
-  display flex
-  flex-direction: column
-  justify-content: space-between
-  flex 1
-
-.completion-text
-  margin 0
-  text-align: right
-  font-weight bold
-  color colorPrimary
-  font-size: 20px
-  span
-    font-weight 300
-    font-size: 20px
-
-.completion-icon
-  margin 0
-  text-align: right
-  color colorSecondary
-  font-size 2.6em
 /*++++++++++++++++++++++++ PATHCATALOG +++++++++++++++++++++++++++*/
 .col-quarter
   lost-column 1/3 3
@@ -588,46 +364,7 @@ a
   flex-wrap: wrap;
   margin-top 25px
 
-.search-bar
-  background: white
-
-.search-bar-content
-  display: flex
-  align-items: center
-  padding 5px 0
-
-.path-search-container
-  flex:  1
-  padding 10px 0
-  display flex
-
-.path-search-icon
-  color colorPrimary
-  padding-top 5px
-  padding-right 10px
-  font-size 1.6em
-
-#path-search
-  margin 0
-  font-size 1.2em
-  font-weight: 300
-  border-color: colorPrimaryLight
-  &:focus
-    border-color: colorPrimary
-
-#path-topics
-  position: relative
-  margin 0
-  font-size 1.2em
-  font-weight: 300
-  border-color: colorPrimaryLight
-  &:focus
-    border-color: colorPrimary
-
-.path-topics-dropdown
-  position: relative
-
-.path-topics-dropdown:before
+.path-topics__dropdown:before
   pointer-events:none
   content: "";
   position: absolute;
@@ -639,7 +376,7 @@ a
   border-right: 10px solid transparent
   border-top: 10px solid colorPrimary
 
-.path-topics-dropdown:after
+.path-topics__dropdown:after
   pointer-events:none
   content: ""
   position: absolute
@@ -652,65 +389,11 @@ a
   border-top: 10px solid white
 
 /*++++++++++++++++++++++++ DASHBOARD +++++++++++++++++++++++++++*/
-.completion-text-big-topleft
-  top 20px
-  left 0
 
-.metrics
-  position: absolute
-  right 0
-  bottom 20px
-  color white
-  display flex
-  align-items: flex-end
-
-.metric
-  margin-left 10px
-
-.metric-number
-  margin 0
-  text-align: center
-  font-weight: bold
-
-.metric-text
-  margin 0
-  text-align: center
-
-.metric-text-bold
-  font-weight: bold
 /*++++++++++++++++++++++++ DASHBOARD-LESSON-SLIDER +++++++++++++++++++++++++++*/
-.lesson-slider-container
-  overflow hidden
 
-.lesson-slider
-  display flex
 
-.lesson-slide
-  flex 0 0 calc(99.9% * 1/3 - (30px - 30px * 1/3))
-  opacity 0.5
-  margin-right 30px
-  transform: translateX(calc(100% + 30px))
-  transition opacity 0.5s
-  &:hover
-    opacity: 1 !important // important is needed because the dynamically created style tag cannot be overwritten otherwise
-
-.lesson-slider-buttons-container
-  margin-top 20px
-  width 100%
-  display flex
-  justify-content: space-between
-  
 /*++++++++++++++++++++++++ DASHBOARD-TABBED-CONTENT +++++++++++++++++++++++++++*/
-.tabbed-content-container
-  flex 1
-  height 100%
-
-.tabs
-  background: white
-  display: flex
-  justify-content: center
-  padding 15px 0
-
 .tabButton
   text-transform: uppercase
   margin 0
@@ -721,92 +404,16 @@ a
   border-color: colorSecondary
   color white
 
-.tabbed-content
-  background: transparent
-  margin-top 20px
 
-.no-paths
-  lost-column 1/3 3
-  lost-offset: 1/3
-  text-align: center
-  margin-top 40px
-
-.no-paths-button
-  color white
-  background: colorPrimary
-  border-color: colorPrimary
-
-/*++++++++++++++++++++++++ DASHBOARD-SECTION +++++++++++++++++++++++++++*/
-.section-header
-  position relative
-  // TONE DOWN THE BLACK? (#333 or default text color?)
-  color black
-
-.section-action-button
-  position: absolute
-  top 0
-  right 0
-
-.course-minis
-  margin-top 50px
-  padding-left 20px
-
-.connected-horizontal
-  position relative
-  width 100%
-  &:after
-    content: "";
-    position: absolute;
-    display: block;
-    top: 50%;
-    right: -30px
-    width: 29px;
-    height: 11px;
-    background: alpha(colorPrimary, 0.5)
-
-.center-button-container
-  margin-top 30px
-  width 100%
-  text-align: center
-
-.mini-transparent
-  opacity 0.6
-
-.mini-last
-  &:after
-    width 0
-/*++++++++++++++++++++++++ LESSON +++++++++++++++++++++++++++*/
-.lesson-buttons-container
-  width 100%
-  display flex
-  justify-content: center
-  align-items: center
-  button
-    margin 0
-    margin-left 30px
-  a
-    margin 0
-
-.lesson-preview-img
-  height 400px
-  margin-top 10px
-  margin-bottom 20px
-  width 100%
-  border-radius 6px
-  border 1px solid rgba(0,0,0,0.1)
-
-.grid-half-offset
-  margin-top 30px
-  margin-bottom 30px
-  lost-column 1/2
-  lost-offset 1/4
-
-.same-height
-  //background red
-  height 100%
  
  /* ----------------------------------------------------------------------- SESSION STUFF --------------*/
- .img-test
+.completed-tab, 
+.bookmarked-tab,
+.inprogress-tab
+  .link-card
+    lost-column 1/3 3
+
+.img-test
   background: url('/assets/img/hero.jpg')
   background-size: cover
   height 200px
@@ -816,45 +423,3 @@ a
   &:hover
     opacity 1
 
-.card-big-header-noborder
-  border-radius 0
-
-.card-big-footer
-  display flex
-  justify-content: space-between
-
-.middle-header
-  height 68px
-  background white
-
-.middle-header-text
-  color colorPrimary
-  font-size: 2.5rem
-  font-weight: normal
-
-.middle-header-content
-  display flex
-  flex-direction: row
-  justify-content: space-between
-  align-items: center
-  height 100%
-
-.no-margin
-  margin 0
-
-.invis
-  visibility: hidden
-
-.page-hero-icon
-  color white
-  font-size 3.6em
-  position: absolute
-  top 20px
-  right 0
-
-.page-hero-icon-bottom-right
-  bottom 20px
-  top inherit
-
-.metric-icon
-  font-size 3.6em

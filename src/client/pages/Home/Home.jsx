@@ -6,10 +6,7 @@ import Redirect from '../shared/Redirect';
 
 const handleStartNowClick = (e, lock) => {
   e.preventDefault();
-  const options = {
-    initialScreen: 'signUp',
-  };
-  lock.show(options);
+  lock.show({ initialScreen: 'signUp' });
 };
 
 const Home = ({ lock }) => (
@@ -24,13 +21,40 @@ const Home = ({ lock }) => (
           <p>Never worry about learning the wrong stuff from subpar resources ever again!</p>
         </div>
         <div className="hero-cta-div">
-          <Link className="button button-pill button-secondary hero-cta" to="/paths" onClick={e => handleStartNowClick(e, lock)}><i />&nbsp;&nbsp;SIGN UP NOW</Link>
-          <Link className="button button-pill button-almost-clear hero-cta" to="/paths">&nbsp;&nbsp;EXPLORE PATHS</Link>
+          <Link className="button button-pill button-secondary hero-cta" to="/paths" onClick={e => handleStartNowClick(e, lock)}><i />SIGN UP NOW</Link>
+          <Link className="button button-pill button-almost-clear hero-cta" to="/paths">EXPLORE PATHS</Link>
         </div>
       </div>
     </div>
     <div className="container">
-      <h1 style={{ textAlign: 'center', marginTop: '50px' }}>Imagine that there was content here!</h1>
+      <div className="flex margin-top-big">
+        <img className="round-border" src="https://images.pexels.com/photos/297755/pexels-photo-297755.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" />
+        <div className="flex-1 margin-left-small margin-top-small">
+          <h1 className="c-primary bold">Discover</h1>
+          <p className="width-50">Whether you are a new Web Developer seeking to gain broader skills or an experienced developer who wants to fill a specific gap - let devGaido help you discover what you need to know.</p>
+        </div>
+      </div>
+      <div className="flex margin-top-big">
+        <div className="flex-1 margin-right-small margin-top-small right">
+          <h1 className="c-secondary bold right">Learn</h1>
+          <p className="width-50 margin-left-auto">Follow a learning path that is geared to what you want and need to know to become a better Web Developer. We've done the work of plotting a course to your goals so you can focus on learning.</p>
+        </div>
+        <img className="round-border" src="https://images.pexels.com/photos/232/apple-iphone-books-desk.jpg?h=350&auto=compress&cs=tinysrgb" alt="" />
+      </div>
+      <div className="flex margin-top-big">
+        <img className="round-border" src="https://images.pexels.com/photos/48620/pexels-photo-48620.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" />
+        <div className="flex-1 margin-left-small margin-top-small">
+          <h1 className="c-primary bold">Practice</h1>
+          <p className="width-50">Practice makes perfect! devGaido's learning paths include strategically placed exercises and quizzes so you can reinforce your newfound knowledge and understanding.</p>
+        </div>
+      </div>
+      <div className="flex margin-top-big margin-bottom-big">
+        <div className="flex-1 margin-right-small margin-top-small right">
+          <h1 className="c-secondary bold right">Build</h1>
+          <p className="width-50 margin-left-auto">Challenges and projects are included to help you achieve a deep and comprehensive understanding of how to use the languages, libraries, tools, and techniques necessary to be a Web Developer.</p>
+        </div>
+        <img className="round-border" src="https://images.pexels.com/photos/273230/pexels-photo-273230.jpeg?h=350&auto=compress&cs=tinysrgb" alt="" />
+      </div>
     </div>
   </div>
 );

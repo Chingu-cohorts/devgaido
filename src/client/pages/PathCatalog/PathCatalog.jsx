@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+
+import PageHero from '../shared/PageHero';
+import ImageLinkCard from '../shared/ImageLinkCard';
+import PageDivider from '../shared/PageDivider';
 
 import { setCatalogTopic, setCatalogSearchTerm } from './PathCatalogActions';
 
@@ -11,31 +14,12 @@ const onTopicChange = (e, dispatch) => {
   dispatch(setCatalogTopic(e.target.value));
 };
 
-const PathCard = ({ path, pathId }) => (
-  <Link className="col-quarter" to={`/paths/${pathId}`} >
-    <div className="card-big card-big-catalog">
-      <div className="img-test" />
-      <div className="card-big-header card-big-header-course card-big-header-noborder">
-        <h5 className="card-big-header-text">{path.name}</h5>
-        <i className="card-big-header-icon fa fa-road" />
-      </div>
-      <div className="card-big-content">
-        <p>{path.description}</p>
-        <div className="card-big-footer">
-          <span className="completion-text-left">PATH</span>
-          <h4 className="completion-text">{path.nCompleted}/{path.nTotal}</h4>
-        </div>
-      </div>
-    </div>
-  </Link>
-);
-
 const PathList = ({ pathIds, curriculum }) => (
   <div className="path-list">
     {pathIds.map((pathId) => {
       const path = curriculum.paths[pathId];
       return (
-        <PathCard path={path} pathId={pathId} key={pathId} />
+        <ImageLinkCard item={path} linkTo={`/paths/${pathId}`} bgColorClass="bg-secondary" bgImageClass="img-test" iconClass="fa-road" key={pathId} />
       );
     })}
   </div>
@@ -43,31 +27,21 @@ const PathList = ({ pathIds, curriculum }) => (
 
 const PathCatalog = ({ curriculum, uiState, dispatch }) => (
   <div>
-    <div className="page-hero">
-      <div className="page-hero-img page-hero-img-desaturate page-hero-img-library" />
-      <div className="page-hero-color-overlay page-hero-color-overlay-path-catalog" />
-      <div className="page-hero-container">
-        <h1 className="page-hero-name">BROWSE PATHS</h1>
+    <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__library" title="Browse Paths" />
+    <PageDivider>
+      <div className="search-bar flex flex-1">
+        <i className="fa fa-search c-primary h3 margin-right-small" />
+        <input className="no-margin margin-right-small h4 thin" type="text" name="pathSearch" placeholder="Search" onChange={e => onSearchChange(e, dispatch)} />
       </div>
-    </div>
-    <div className="search-bar">
-      <div className="container">
-        <div className="search-bar-content">
-          <div className="path-search-container">
-            <i className="path-search-icon fa fa-search" />
-            <input id="path-search" type="text" name="pathSearch" placeholder="Search" onChange={e => onSearchChange(e, dispatch)} />
-          </div>
-          <div className="path-topics-dropdown">
-            <select id="path-topics" onChange={e => onTopicChange(e, dispatch)} >
-              <option value="All Topics" key="AllTopics">All Topics</option>
-              {Object.keys(curriculum.subjects).map(
-                subjectId => <option value={subjectId} key={subjectId}>{subjectId}</option>,
-              )}
-            </select>
-          </div>
-        </div>
+      <div className="path-topics__dropdown relative">
+        <select className="no-margin h4 thin" onChange={e => onTopicChange(e, dispatch)} >
+          <option value="All Topics" key="AllTopics">All Topics</option>
+          {Object.keys(curriculum.subjects).map(
+            subjectId => <option value={subjectId} key={subjectId}>{subjectId}</option>,
+          )}
+        </select>
       </div>
-    </div>
+    </PageDivider>
     <div className="container">
       <PathList // TODO: Save subjects in path so we don't have traverse all courses and lessons
         pathIds={Object.keys(curriculum.paths).filter((pathId) => {
@@ -104,20 +78,12 @@ const PathCatalog = ({ curriculum, uiState, dispatch }) => (
           }
           return true;
         })}
-        curriculum={curriculum} // ST : T   R
-                                // -    -   T
-                                // V    -   V
-                                // -    V   V
-                                // V    V   V&V
+        curriculum={curriculum}
       />
     </div>
   </div>
 );
 
-PathCard.propTypes = {
-  pathId: PropTypes.string.isRequired,
-  path: PropTypes.objectOf(PropTypes.shape).isRequired,
-};
 
 PathList.propTypes = {
   pathIds: PropTypes.arrayOf(PropTypes.string).isRequired,

@@ -5,38 +5,10 @@ import ReactDisqusThread from 'react-disqus-thread';
 import { setCurrentPath } from '../../actions/userActions';
 import { completeLesson } from './LessonActions';
 
+import PageHero from '../shared/PageHero';
 import BreadCrumbs from '../shared/BreadCrumbs';
-
-const ItemInfoCard = ({ item, extracontent }) => (
-  <div className="card-big">
-    <div className="card-big-header card-big-header-lesson">
-      <h5 className="card-big-header-text">{item.name}</h5>
-      <i className="card-big-header-icon fa fa-info" />
-    </div>
-    <div className="card-big-content">
-      <p className="lesson-text">{item.description ? item.description : 'No description given.'}</p>
-      {extracontent}
-    </div>
-  </div>
-);
-
-const PreviewCard = ({ lesson, lessonId }) => (
-  <div className="card-big">
-    <div className="card-big-header card-big-header-course">
-      <h5 className="card-big-header-text">PREVIEW</h5>
-      <i className="card-big-header-icon fa fa-eye" />
-    </div>
-    <div className="card-big-content">
-      <div
-        className="lesson-preview-img"
-        style={lesson.externalSource !== '' ? {
-          background: `url(/assets/screenshots/${lessonId}.jpeg)`,
-          backgroundSize: 'cover',
-        } : {}}
-      />
-    </div>
-  </div>
-);
+import { InfoCard, PreviewCard } from '../shared/Cards';
+import PageDivider from '../shared/PageDivider';
 
 const Lesson = ({ match, dispatch, curriculum }) => {
   const lessonId = match.params.id;
@@ -45,53 +17,36 @@ const Lesson = ({ match, dispatch, curriculum }) => {
 
   return (
     <div>
-      <div className="page-hero">
-        <div className="page-hero-img page-hero-img-desaturate page-hero-img-path" />
-        <div className="page-hero-color-overlay page-hero-color-overlay-lesson" />
-        <div className="page-hero-container">
-          <BreadCrumbs
-            curriculum={curriculum}
-            pathId={match.params.pid}
-            courseId={match.params.cid}
-            lessonId={match.params.id}
-          />
-          <h1 className="page-hero-name">{lesson.name}</h1>
-          {lesson.completed ? <i className="page-hero-icon page-hero-icon-bottom-right fa fa-check-circle-o" /> : null}
-          <i className="page-hero-icon fa fa-graduation-cap" />
+      <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" title={lesson.name}>
+        <BreadCrumbs
+          curriculum={curriculum}
+          pathId={match.params.pid}
+          courseId={match.params.cid}
+          lessonId={match.params.id}
+        />
+        <i className="fa fa-graduation-cap c-white h0 abs-top-right" />
+        {lesson.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
+      </PageHero>
+      <PageDivider>
+        <button className="button button-pill button-primary no-margin hidden">Bookmark Lesson</button>
+        <div className="flex width-100 justify-center">
+          <a className="button button-pill button-secondary no-margin" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPath(match.params.pid, match.params.cid, match.params.id))}>START LESSON</a>
+          <button className="button button-pill button-primary no-margin margin-left-small" onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
         </div>
-      </div>
-
-      <div className="middle-header">
-        <div className="container middle-header-content">
-          <button className="button button-pill button-primary no-margin invis">Bookmark Lesson</button>
-          <div className="lesson-buttons-container">
-            <a className="button button-pill button-secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPath(match.params.pid, match.params.cid, match.params.id))}>START LESSON</a>
-            <button className="button button-pill button-primary" onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
-          </div>
-          {/* user.bookmarkedPaths.indexOf(pathId) === -1 ?
-            <button className="button button-pill button-primary no-margin" onClick={() => dispatch(addBookmark(pathId))}>Bookmark Course</button> :
-            <button className="button button-pill button-secondary no-margin" onClick={() => dispatch(removeBookmark(pathId))}>Remove Course</button>*/}
-          <button className="button button-pill button-primary no-margin">Bookmark Lesson</button>
-        </div>
-      </div>
+        <button className="button button-pill button-primary no-margin">Bookmark Lesson</button>
+      </PageDivider>
       <div className="container">
         <div className="row">
           <div className="grid-half">
-            <ItemInfoCard
-              item={lesson}
-              extracontent={
-                <div>
-                  <h5>{subject.name}</h5>
-                  <p>{subject.description}</p>
-                </div>
-              }
-            />
+            <InfoCard item={lesson} bgColorClass="bg-primary">
+              <p>{subject.name}</p>
+              <p>{subject.description}</p>
+            </InfoCard>
           </div>
           <div className="grid-half">
-            <PreviewCard
-              lesson={lesson}
-              lessonId={lessonId}
-            />
+            <PreviewCard bgColorClass="bg-secondary">
+              <img className="preview-img" src={lesson.externalSource !== '' ? `/assets/screenshots/${lessonId}.jpeg` : ''} alt={lesson.name} />
+            </PreviewCard>
           </div>
         </div>
         <hr />
@@ -106,16 +61,6 @@ const Lesson = ({ match, dispatch, curriculum }) => {
       </div>
     </div>
   );
-};
-
-PreviewCard.propTypes = {
-  lesson: PropTypes.objectOf(PropTypes.shape).isRequired,
-  lessonId: PropTypes.string.isRequired,
-};
-
-ItemInfoCard.propTypes = {
-  item: PropTypes.objectOf(PropTypes.shape).isRequired,
-  extracontent: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 Lesson.propTypes = {
