@@ -8,6 +8,7 @@
 const user = (state = {
   name: '',
   authenticated: false,
+  avatar: '',
   email: '',
   dayLastVisited: Date.now(),
   streak: 0,

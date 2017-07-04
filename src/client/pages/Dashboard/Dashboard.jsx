@@ -11,7 +11,6 @@ import CompletedTab from './CompletedTab';
 const Dashboard = ({ dispatch, user, curriculum, uiState, history }) => (
   <div>
     <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__dashboard" title="Dashboard">
-      <h2 className="c-white abs-top-left">Welcome back, {user.name}!</h2>
       <Metrics user={user} curriculum={curriculum} />
     </PageHero>
     <TabbedContent
