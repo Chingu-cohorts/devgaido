@@ -414,8 +414,35 @@ a.link-active
   height 50px
   vertical-align: middle
   margin-top -5px
-
+  margin-left 20px
+  transition transform 0.3s
+  &:hover
+    //border 5px solid colorSecondary
+    transform scale(1.2)
 .logo
   background: url('/assets/img/devGaidoLogo.svg')
   width 146px
   height 28px
+
+.sidething
+  right 0
+  top 67px
+  z-index 999
+
+  .card__header__text
+    font-weight: normal
+
+  .card
+    position: relative
+    &:before
+      pointer-events:none
+      content: "";
+      position: absolute;
+      right: 15px;
+      top: 9px;
+      width: 0; 
+      height: 0; 
+      border-left: 10px solid transparent
+      border-right: 10px solid transparent
+      border-bottom: 10px solid white
+    

@@ -15,6 +15,18 @@ const CardTemplate = ({ title, bgColorClass, iconClass, heightClass, content }) 
   </div>
 );
 
+const MenuCard = ({ children }) => (
+  CardTemplate({
+    title: 'Menu',
+    bgColorClass: 'bg-grey',
+    iconClass: '',
+    content: (
+      <div>
+        {children}
+      </div>),
+  })
+);
+
 const InfoCard = ({ item, bgColorClass, children }) => (
   CardTemplate({
     title: item.name,
@@ -121,4 +133,4 @@ LinkCard.defaultProps = {
   heightClass: '',
 };
 
-export { InfoCard, LinkCard, PreviewCard, SliderCard };
+export { InfoCard, MenuCard, LinkCard, PreviewCard, SliderCard };
