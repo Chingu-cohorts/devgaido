@@ -1,9 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import PageHero from '../shared/PageHero';
+import PageDivider from '../shared/PageDivider';
+
 const Profile = ({ user }) => (
   <div>
-    <div className="content">
+    <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" title="Profile" />
+    <PageDivider />
+    <div className="container margin-top-big">
       <div className="form-container">
         {/* <div className="progress-bar-container">
           <div className="progress-bar">

@@ -74,10 +74,12 @@ export default (req, res, next) => {
       name: req.user.nickname,
       authenticated: true,
       email: req.user._json.email,
+      avatar: req.user._json.picture,
     } : {
       name: '',
       authenticated: false,
       email: '',
+      avatar: '',
     };
 
     const curriculum = {
