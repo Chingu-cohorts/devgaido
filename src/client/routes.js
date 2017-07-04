@@ -4,8 +4,6 @@ import Course from './pages/Course/Course';
 import Lesson from './pages/Lesson/Lesson';
 import PathCatalog from './pages/PathCatalog/PathCatalog';
 import Profile from './pages/Profile/Profile';
-import Times from './pages/Times/Times';
-import Objectives from './pages/Objectives/Objectives';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Styleguide from './pages/Styleguide/Styleguide';
 /**
@@ -44,16 +42,6 @@ const routes = [
     component: Profile,
     passdown: ['user'],
     reqAuth: true,
-  },
-  {
-    path: '/times',
-    exact: true,
-    component: Times,
-  },
-  {
-    path: '/objectives',
-    exact: true,
-    component: Objectives,
   },
   {
     path: '/paths/:id',
