@@ -32,7 +32,7 @@ const getInProgressPaths = (curriculum) => {
 };
 
 const CurrentPathSection = ({ curPath, curriculum, user, history, onViewClick }) => (
-  <div className="current-path">
+  <div className="current-path margin-bottom-big">
     <span>CURRENT PATH</span>
     <h2>{curPath.name}</h2>
     <button className="button button-pill abs-top-right" onClick={onViewClick}>VIEW FULL PATH</button>
@@ -42,7 +42,7 @@ const CurrentPathSection = ({ curPath, curriculum, user, history, onViewClick })
 );
 
 const InProgressSection = ({ inProgressPaths, curriculum }) => (
-  <div className="inprogress-tab margin-top-big">
+  <div className="inprogress-tab">
     <span>PATHS</span>
     <h2>InProgress</h2>
     <PathList pathIds={inProgressPaths} curriculum={curriculum} /> :
