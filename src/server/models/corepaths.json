@@ -1,7 +1,7 @@
 {
   "srcctrl" : {
     "name": "Source Code Control Systems",
-    "description": "Learn the tools and techniques needed to effectively and efficiently manage your projects source code.",
+    "description": "Learn the tools and techniques needed to effectively and efficiently manage your projects source code. In this path you'll gain a working knowledge of Git, the source code control system GitHub is built around and one that is the industry standard used by many Open Source and commercial projects.",
     "courseIds": [
       "git",
       "github",
@@ -11,7 +11,7 @@
   },
   "webpagedc" : {
     "name": "Webpage Design & Construction",
-    "description": "Learn the technologies necessary to build simple webpages.",
+    "description": "Learn the technologies necessary to build simple webpages. In this path you'll become acquainted with CSS and HTML - the defacto standards for creating webpages.",
     "courseIds": [
       "buildwebpages"
     ],
@@ -19,7 +19,7 @@
   },
   "javascript" : {
     "name": "Javascript",
-    "description": "Learn Javascript so you can be the next Kim Kwanka",
+    "description": "Learn Javascript to start you on your way to becoming a Web Developer. Gain the skills needed to develop world-class Web Applications using the leading web development language - Javascript",
     "courseIds": [
       "beginnerjs",
       "intermediatejs",
@@ -29,7 +29,7 @@
   },
   "p1xt" : {
     "name": "The P1XT Guide",
-    "description": "Follow the P1XT Guide to master the Javascript Ecosystem",
+    "description": "Follow the P1XT Guide to master the web development using CSS, HTML, Javascript, and a variety of major libraries. ",
     "courseIds": [
       "p1xtprereqs",
       "p1xttier1",
@@ -41,7 +41,7 @@
   },
   "buildawebsite" : {
     "name": "Build A Website",
-    "description": "Learn how to build a website",
+    "description": "Learn how to build a website using HTML, CSS, and key libraries including Sass, Less, and Stylus. ",
     "courseIds": [
       "htmlbasics",
       "cssbasics",
@@ -59,7 +59,7 @@
   },
   "learnhowwebworks" : {
     "name": "Learn How the Web Works",
-    "description": "Learn how the Internet and the World Wide Web work",
+    "description": "Learn how the Internet and the World Wide Web work by mastering the fundamental technologies they are built on. Increase your knowledge of the hardware, software, and protocol that make up the Internet.",
     "courseIds": [
       "howwebworks",
       "getstartedweb"
