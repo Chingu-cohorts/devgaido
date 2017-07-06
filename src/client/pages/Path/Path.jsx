@@ -25,11 +25,11 @@ const Path = ({ match, curriculum, user, dispatch }) => {
         {path.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
       <PageDivider>
-        <button className="button button-pill no-margin hidden">Bookmark Path</button>
+        <button className="button--primary hidden">Bookmark Path</button>
         <span className="c-primary normal h3">Courses completed: {path.nCompleted}/{path.nTotal}</span>
         {user.bookmarkedPaths.indexOf(pathId) === -1 ?
-          <button className="button button-pill button-primary no-margin" onClick={() => dispatch(addBookmark(pathId))}>Bookmark Path</button> :
-          <button className="button button-pill button-secondary no-margin" onClick={() => dispatch(removeBookmark(pathId))}>Remove Bookmark</button>}
+          <button className="button--primary" onClick={() => dispatch(addBookmark(pathId))}>Bookmark Path</button> :
+          <button className="button--secondary" onClick={() => dispatch(removeBookmark(pathId))}>Remove Bookmark</button>}
       </PageDivider>
       <div className="container">
         <div className="row">

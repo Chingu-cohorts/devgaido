@@ -28,12 +28,18 @@ const StyleGuide = () => (
     <blockquote>
       <p><em>This is a blockquote</em></p>
     </blockquote>
-    <button>Default Button</button>
-    <input type="submit" value="Input Button" />
-    <a className="button" href="/">Anchor Button</a>
-    <button className="button button-pill">Pill Button</button>
-    <button className="button button-primary">Primary Button</button>
-    <button className="button button-primary button-pill">Primary Pill Button</button>
+    <div className="flex flex-wrap justify-space-between">
+      <button>Button</button>
+      <input type="submit" value="Input Button" />
+      <a className="button" href="/">Anchor Button</a>
+      <button className="button--default">button--default</button>
+      <button className="button--primary">button--primary</button>
+      <button className="button--secondary">button--secondary</button>
+      <button className="button--primary-clear">button--primary-clear</button>
+      <div className="bg-grey">
+        <button className="button--white-clear">button--white-clear</button>
+      </div>
+    </div>
     <hr />
     <ul>
       <li>Unordered list item 1</li>

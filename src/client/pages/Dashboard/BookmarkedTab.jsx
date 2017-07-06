@@ -18,9 +18,9 @@ const BookmarkedTab = ({ user, curriculum }) => {
       {
         bookmarkedPaths.length !== 0 ?
           <PathList pathIds={bookmarkedPaths} curriculum={curriculum} /> :
-          <div className="center margin-top-big">
+          <div className="center margin-top-huge">
             <h3>You haven&apos;t bookmarked any paths yet.</h3>
-            <Link className="button button-pill bg-primary c-white border-primary" to="/paths">BROWSE PATHS</Link>
+            <Link className="button button--primary" to="/paths">BROWSE PATHS</Link>
           </div>
       }
     </div>

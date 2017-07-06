@@ -28,12 +28,12 @@ const Lesson = ({ match, dispatch, curriculum }) => {
         {lesson.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
       <PageDivider>
-        <button className="button button-pill button-primary no-margin hidden">Bookmark Lesson</button>
+        <button className="button--primary hidden">Bookmark Lesson</button>
         <div className="flex width-100 justify-center">
-          <a className="button button-pill button-secondary no-margin" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPath(match.params.pid, match.params.cid, match.params.id))}>START LESSON</a>
-          <button className="button button-pill button-primary no-margin margin-left-small" onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
+          <a className="button button--secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPath(match.params.pid, match.params.cid, match.params.id))}>START LESSON</a>
+          <button className="button--primary margin-left-small" onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
         </div>
-        <button className="button button-pill button-primary no-margin">Bookmark Lesson</button>
+        <button className="button--primary">Bookmark Lesson</button>
       </PageDivider>
       <div className="container">
         <div className="row">

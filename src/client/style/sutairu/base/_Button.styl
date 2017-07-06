@@ -9,7 +9,7 @@ input[type='reset'],
 input[type='submit']
 	background-color: transparent
 	border: .1rem solid $color-default
-	border-radius: .4rem
+	border-radius: $border-radius
 	color: $color-text
 	cursor: pointer
 	display: inline-block
@@ -21,7 +21,6 @@ input[type='submit']
 	padding: 0 3.0rem
 	text-align: center
 	text-decoration: none
-	// text-transform: uppercase
 	white-space: nowrap
 
 	&:focus
@@ -36,15 +35,3 @@ input[type='submit']
 	&[disabled]
 		cursor: default
 		opacity: .5
-
-.button.button-primary
-	background-color: $color-primary
-	border-color: $color-primary
-	color: $color-initial
-
-	&:hover
-		background-color: $color-secondary
-		border-color: $color-secondary
-
-.button-pill
-	border-radius 999px

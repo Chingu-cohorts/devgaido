@@ -32,10 +32,10 @@ const getInProgressPaths = (curriculum) => {
 };
 
 const CurrentPathSection = ({ curPath, curriculum, user, history, onViewClick }) => (
-  <div className="current-path margin-bottom-big">
+  <div className="current-path margin-bottom-huge">
     <span>CURRENT PATH</span>
     <h2>{curPath.name}</h2>
-    <button className="button button-pill abs-top-right" onClick={onViewClick}>VIEW FULL PATH</button>
+    <button className="button--default abs-top-right" onClick={onViewClick}>VIEW FULL PATH</button>
     <p className="course-description">{curPath.description}</p>
     <LessonSlider user={user} curriculum={curriculum} history={history} />
   </div>
@@ -70,9 +70,9 @@ const InProgressTab = ({ user, curriculum, history }) => {
               show={user.curPathId !== '' && inProgressPaths.length !== 0}
             /> : null }
         </div> :
-        <div className="center margin-top-big">
+        <div className="center margin-top-huge">
           <h3>You haven&apos;t started any paths yet.</h3>
-          <Link className="button button-pill bg-primary c-white border-primary" to="/paths">BROWSE PATHS</Link>
+          <Link className="button button--primary" to="/paths">BROWSE PATHS</Link>
         </div>}
     </div>
   );

@@ -29,9 +29,9 @@ const Course = ({ match, curriculum }) => {
         {course.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
       <PageDivider>
-        <button className="button button-pill button-primary no-margin hidden">Bookmark Course</button>
+        <button className="button--primary hidden">Bookmark Course</button>
         <span className="c-primary normal h3">Lessons completed: {course.nCompleted}/{course.nTotal}</span>
-        <button className="button button-pill button-primary no-margin">Bookmark Course</button>
+        <button className="button--primary">Bookmark Course</button>
       </PageDivider>
       <div className="container">
         <div className="row">

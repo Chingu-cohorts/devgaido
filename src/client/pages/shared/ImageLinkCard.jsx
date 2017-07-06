@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const CardTemplate = ({ title, bgColorClass, iconClass, bgImageClass, content }) => (
-  <div className="card round-border bg-white flex-column height-100">
+  <div className="card border-round bg-white flex-column height-100">
     <div className={`${bgImageClass}`} />
     <div className={`card__header flex align-items-center ${bgColorClass}`}>
       <h5 className="card__header__text flex-1 c-white uppercase no-margin">{title}</h5>

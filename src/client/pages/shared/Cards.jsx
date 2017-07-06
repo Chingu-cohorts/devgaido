@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const CardTemplate = ({ title, bgColorClass, iconClass, heightClass, content }) => (
-  <div className={`card round-border bg-white ${heightClass}`}>
-    <div className={`card__header flex align-items-center round-border-top ${bgColorClass}`}>
+  <div className={`card border-round bg-white ${heightClass}`}>
+    <div className={`card__header flex align-items-center border-round-top ${bgColorClass}`}>
       <h5 className="card__header__text flex-1 c-white uppercase no-margin">{title}</h5>
       {iconClass ? <i className={`fa c-white h4 ${iconClass}`} /> : null}
     </div>
@@ -46,7 +46,7 @@ const PreviewCard = ({ bgColorClass, children }) => (
     bgColorClass,
     iconClass: 'fa-eye',
     content: (
-      <div className="card__preview round-border subtle-border overflow-hidden">
+      <div className="card__preview border-round subtle-border overflow-hidden">
         {children || <p>No preview available.</p>}
       </div>),
   })
@@ -76,7 +76,7 @@ const handleSliderCardClick = (e, linkTo, history) => {
   history.push(linkTo);
 };
 
-const SliderCard = ({ item, bgColorClass, iconClass, connectionSecondary, linkTo, history, refCallback }) => (
+const SliderCard = ({ item, bgColorClass, iconClass, linkTo, history, refCallback }) => (
   <a
     className="slide-card connected-horizontal relative width-100"
     href={linkTo}
@@ -127,6 +127,22 @@ LinkCard.propTypes = {
 };
 
 LinkCard.defaultProps = {
+  iconClass: '',
+  linkTo: '#',
+  connectionClass: '',
+  heightClass: '',
+};
+
+SliderCard.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
+  bgColorClass: PropTypes.string.isRequired,
+  linkTo: PropTypes.string,
+  iconClass: PropTypes.string,
+  history: PropTypes.objectOf(PropTypes.shape).isRequired,
+  refCallback: PropTypes.func.isRequired,
+};
+
+SliderCard.defaultProps = {
   iconClass: '',
   linkTo: '#',
   connectionClass: '',

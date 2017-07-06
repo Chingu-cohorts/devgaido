@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { LinkCard } from '../shared/Cards';
 
 const PathList = ({ pathIds, curriculum }) => (
-  <div className="path-list">
+  <div className="path-list flex flex-wrap">
     {pathIds.map((pathId) => {
       const path = curriculum.paths[pathId];
       return (

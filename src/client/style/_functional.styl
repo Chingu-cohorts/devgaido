@@ -22,8 +22,8 @@
 .bg-white
   background: white
 
-.bg-img__hero
-  background: url('/assets/img/compass4.jpg')
+.bg-img__compass
+  background: url('/assets/img/compass.jpg')
 
 .bg-img__library
   background: url('/assets/img/library.jpg')
@@ -42,6 +42,9 @@
 
 .border-secondary
   border-color: colorSecondary
+
+.border-white
+  border-color: white
 
 .desaturate
 	filter: grayscale(100%);
@@ -164,11 +167,14 @@
 .circle-border
   border-radius 50%
 
-.round-border
+.border-round
   border-radius: $border-radius
 
-.round-border-top
+.border-round-top
   border-radius: $border-radius $border-radius 0 0
+
+.border-pill
+  border-radius 999px
 
 .flex
   display flex
@@ -176,6 +182,9 @@
 .flex-column
   display flex
   flex-direction: column
+
+.flex-wrap
+  flex-wrap wrap
 
 .align-items-center
   align-items: center
@@ -220,13 +229,43 @@
   margin-bottom: 20px !important
 
 .margin-bottom-big
+  margin-bottom: 40px !important
+
+.margin-bottom-huge
   margin-bottom: 60px !important
 
 .margin-top-big
+  margin-top: 40px !important
+
+.margin-top-huge
   margin-top: 60px !important
 
 .margin-left-auto
   margin-left auto
+
+.margin-vertical-tiny
+  margin-top 10px
+  margin-bottom 10px
+
+.margin-horizontal-tiny
+  margin-left 10px
+  margin-right 10px
+
+.margin-vertical-small
+  margin-top 20px
+  margin-bottom 20px
+
+.margin-horizontal-small
+  margin-left 20px
+  margin-right 20px
+
+.margin-vertical-big
+  margin-top 40px
+  margin-bottom 40px
+
+.margin-horizontal-big
+  margin-left 40px
+  margin-right 40px
 
 .no-padding
   padding 0
@@ -234,9 +273,48 @@
 .padding-top-small
   padding-top 20px !important
 
-.padding-vert-tiny
+.padding-right-small
+  padding-right 20px !important
+
+.padding-right-tiny
+  padding-right 10px !important
+
+.padding-vertical-tiny
   padding-top 10px !important
   padding-bottom 10px !important
 
+.padding-vertical-small
+  padding-top 20px !important
+  padding-bottom 20px !important
+
 .list-style-none
   list-style: none
+
+.boxshadow-underline
+  box-shadow 0px 1px colorSecondary
+
+// Compounds
+.button--default
+  @extend .border-pill
+
+.button--primary
+  @extend .c-white
+  @extend .bg-primary
+  @extend .border-primary
+  @extend .border-pill
+
+.button--secondary
+  @extend .c-white
+  @extend .bg-secondary
+  @extend .border-secondary
+  @extend .border-pill
+
+.button--primary-clear
+  @extend .c-primary
+  @extend .border-primary
+  @extend .border-pill
+
+.button--white-clear
+  @extend .c-white
+  @extend .border-white
+  @extend .border-pill
