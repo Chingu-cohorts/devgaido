@@ -24,33 +24,23 @@ const Header = ({ user, uiState, dispatch, lock }) => (
   <header>
     <div className="container flex justify-space-between align-items-center padding-vert-tiny relative">
       <NavLink to="/" className="logo" />
-      <nav className="main-navigation">
-        <ul className="menu flex justify-content-center">
-          <li><NavLink to="/styleguide" activeClassName="link-active bold">Styleguide</NavLink></li>
-          <li><NavLink to="/dashboard" activeClassName="link-active bold">Dashboard</NavLink></li>
-          <li><NavLink to="/paths" activeClassName="link-active bold">Browse Paths</NavLink></li>
-          {user.authenticated ? <a className={uiState.global.navMenuOpen ? '' : ''} href="/" onClick={e => toggleMenu(e, dispatch)} title="Menu">‌<img className="avatar circle-border subtle-border" src={user.avatar} alt="avatar" /></a> : null}
-          {!user.authenticated ? <li><a className="button button-pill button-login" href="/" onClick={e => handleLoginClick(e, lock)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a></li> : null}
+      <nav className="flex align-items-center">
+        <ul className="flex align-items-center no-margin list-style-none">
+          <li className="no-margin margin-right-small"><NavLink to="/styleguide" activeClassName="link-active bold">Styleguide</NavLink></li>
+          <li className="no-margin margin-right-small"><NavLink to="/dashboard" activeClassName="link-active bold">Dashboard</NavLink></li>
+          <li className="no-margin margin-right-small"><NavLink to="/paths" activeClassName="link-active bold">Browse Paths</NavLink></li>
         </ul>
+        {user.authenticated ? <a className={uiState.global.navMenuOpen ? '' : ''} href="/" onClick={e => toggleMenu(e, dispatch)} title="Menu">‌<img className="avatar circle-border subtle-border" src={user.avatar} alt="avatar" /></a> : null}
+        {!user.authenticated ? <a className="button button-pill button-login" href="/" onClick={e => handleLoginClick(e, lock)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a> : null}
       </nav>
       <div className={uiState.global.navMenuOpen ? 'absolute sidething' : 'absolute sidething hidden'}>
         <MenuCard username={user.name}>
           <ul className="list-style-none no-margin">
             <li><NavLink to="/profile" className="uppercase left" activeClassName="bold" onClick={() => toggleMenuAfterNav(dispatch)}><i className="fa fa-user h5 c-secondary margin-right-small" aria-hidden="true" /> Profile</NavLink></li>
-            
             <li><a className="uppercase left" href="/logout"><i className="fa fa-sign-out h5 c-secondary margin-right-small" aria-hidden="true" />Logout</a></li>
           </ul>
         </MenuCard>
       </div>
-      {/*<div className={uiState.global.navMenuOpen ? 'absolute sidething bg-white' : 'absolute sidething hidden'}>
-        <div className="">
-          <h5 className="c-secondary">Welcome back, {user.name}</h5>
-          <ul>
-            <NavLink to="/profile" activeClassName="linkActive" onClick={() => toggleMenuAfterNav(dispatch)}><li className="information"><i className="fa fa-user-o" aria-hidden="true" />Your profile</li></NavLink>
-            <a href="/logout"><li className="information"><i className="fa fa-sign-out" aria-hidden="true" />Logout</li></a>
-          </ul>
-        </div>
-      </div>*/}
     </div>
   </header>
 );
