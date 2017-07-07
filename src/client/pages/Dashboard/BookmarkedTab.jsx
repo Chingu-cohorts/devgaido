@@ -26,32 +26,21 @@ const BookmarkedTab = ({ user, curriculum }) => {
 
   return (
     <div className="bookmarked-tab margin-bottom-huge">
-      <span>Resources</span>
+      <span>RESOURCES</span>
       <h2>Bookmarked</h2>
-      {
-        bookmarkedPaths.length !== 0 ?
-          <ItemList items={bookmarkedPaths} curriculum={curriculum} category="paths" /> :
-          <div className="center margin-top-huge">
-            <h3>You haven&apos;t bookmarked any paths yet.</h3>
-            <Link className="button button--primary" to="/paths">BROWSE PATHS</Link>
-          </div>
-      }
+      { bookmarkedPaths.length !== 0 ?
+        <ItemList items={bookmarkedPaths} curriculum={curriculum} category="paths" /> : null }
       {
         bookmarkedCourses.length !== 0 ?
-          <ItemList items={bookmarkedCourses} curriculum={curriculum} category="courses" /> :
-          <div className="center margin-top-huge">
-            <h3>You haven&apos;t bookmarked any paths yet.</h3>
-            <Link className="button button--primary" to="/paths">BROWSE PATHS</Link>
-          </div>
-      }
+          <ItemList items={bookmarkedCourses} curriculum={curriculum} category="courses" /> : null }
       {
         bookmarkedLessons.length !== 0 ?
-          <ItemList items={bookmarkedLessons} curriculum={curriculum} category="lessons" /> :
-          <div className="center margin-top-huge">
-            <h3>You haven&apos;t bookmarked any paths yet.</h3>
-            <Link className="button button--primary" to="/paths">BROWSE PATHS</Link>
-          </div>
-      }
+          <ItemList items={bookmarkedLessons} curriculum={curriculum} category="lessons" /> : null }
+      { bookmarkedLessons.length + bookmarkedCourses.length + bookmarkedPaths.length <= 0 ?
+        <div className="center margin-top-huge">
+          <h3>You haven&apos;t bookmarked anything yet.</h3>
+          <Link className="button button--primary" to="/paths">BROWSE PATHS</Link>
+        </div> : null }
     </div>
   );
 };

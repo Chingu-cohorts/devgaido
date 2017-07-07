@@ -23,24 +23,44 @@ const user = (state = {
 }, action) => {
   switch (action.type) {
     case 'SET_CURRENT_PATH': {
-      return { ...state, curPathId: action.pathId, curCourseId: action.courseId, curLessonId: action.lessonId };
+      return {
+        ...state,
+        curPathId: action.pathId,
+        curCourseId: action.courseId,
+        curLessonId: action.lessonId,
+      };
     }
     case 'ADD_BOOKMARK': {
       const index = state.bookmarkedItems[action.itemCategory].indexOf(action.itemId);
+
       if (index === -1) {
         const newBookmarkedItems = { ...state.bookmarkedItems };
-        newBookmarkedItems[action.itemCategory] = newBookmarkedItems[action.itemCategory].concat(action.itemId);
-        return { ...state, bookmarkedItems: newBookmarkedItems };
+
+        newBookmarkedItems[action.itemCategory] = newBookmarkedItems[action.itemCategory]
+                                                  .concat(action.itemId);
+
+        return {
+          ...state,
+          bookmarkedItems: newBookmarkedItems,
+        };
       }
+
       return state;
     }
     case 'REMOVE_BOOKMARK': {
       const index = state.bookmarkedItems[action.itemCategory].indexOf(action.itemId);
+
       if (index !== -1) {
         const newBookmarkedItems = { ...state.bookmarkedItems };
+
         newBookmarkedItems[action.itemCategory].splice(index, 1);
-        return { ...state, bookmarkedItems: newBookmarkedItems };
+
+        return {
+          ...state,
+          bookmarkedItems: newBookmarkedItems,
+        };
       }
+
       return state;
     }
     default:
