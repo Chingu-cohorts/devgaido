@@ -14,7 +14,7 @@
     "dev": "yarn run copyassets && npm-run-all --parallel dev:server dev:client",
     "dev:server": "webpack --config webpack.server.config.js --display-error-details",
     "dev:client": "webpack-dev-server",
-    "copyassets": "rimraf ./dist && mkdirp ./dist/public && ncp ./src/client/assets/ ./dist/public/assets",
+    "copyassets": "rimraf ./dist && mkdirp ./dist/public && ncp ./src/client/assets/ ./dist/public/",
     "analyzesize": "webpack -p --config webpack.config.js --json | webpack-bundle-size-analyzer",
     "screenshots": "node ./src/server/screenshots",
     "test": "mocha --require ./test/helper.js '+(test|validate)/**/*Spec.js'"
@@ -67,6 +67,7 @@
     "preact-compat": "^3.16.0",
     "prop-types": "^15.5.8",
     "rc-css-transition-group": "^2.1.4",
+    "react-disqus-thread": "^0.4.0",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.4",
     "react-router": "^4.1.1",

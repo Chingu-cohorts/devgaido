@@ -26,8 +26,14 @@ const renderPage = (reactHTML, initialState) => `
       <meta charset="utf-8">
       <meta content="IE=Edge" http-equiv="X-UA-Compatible">
       <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-      <meta name="description" content="React/Redux Front-end for DevGaido">
-      <meta name="author" content="Chingu DevGaido Team">
+      <meta name="description" content="React/Redux Front-end for devGaido">
+      <meta name="author" content="Chingu devGaido Team">
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="manifest" href="/manifest.json">
+      <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="theme-color" content="#ffffff">
       ${cssFile}
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <title>DevGaido - Chingu Learning Path</title>
@@ -74,10 +80,12 @@ export default (req, res, next) => {
       name: req.user.nickname,
       authenticated: true,
       email: req.user._json.email,
+      avatar: req.user._json.picture,
     } : {
       name: '',
       authenticated: false,
       email: '',
+      avatar: '',
     };
 
     const curriculum = {
@@ -92,8 +100,9 @@ export default (req, res, next) => {
         navMenuOpen: false,
       },
       Pages: {
-        Paths: {
-          pathStates: [],
+        PathCatalog: {
+          topic: 'All Topics',
+          searchTerm: '',
         },
         Dashboard: {
           currentTab: 0,

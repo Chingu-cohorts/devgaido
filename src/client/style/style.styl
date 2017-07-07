@@ -1,0 +1,135 @@
+
+@import './_variables'
+@import './sutairu'
+@import './modules'
+@import './_functional'
+
+@lost flexbox flex;
+
+// Needed to for Font Awesome
+i::before
+  font-family: 'FontAwesome'
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Sticky Footer & page content background color */
+
+.App
+  display flex
+  min-height: 100vh;
+  flex-direction: column;
+
+.page-content
+  background: #e7eaf6
+  flex 1
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Header */
+
+.logo
+  background: url('/img/devGaidoLogo.svg')
+  width 146px
+  height 28px
+
+.avatar
+  width 50px
+  height 50px
+  vertical-align: middle
+  transition transform 0.3s
+  &:hover
+    transform scale(1.2)
+
+.menu
+  right 0
+  top 67px
+  z-index 999
+
+  .card__header__text
+    font-weight: normal
+
+  .card
+    position: relative
+    &:before
+      pointer-events:none
+      content: "";
+      position: absolute;
+      right: 15px;
+      top: 9px;
+      width: 0; 
+      height: 0; 
+      border-left: 10px solid transparent
+      border-right: 10px solid transparent
+      border-bottom: 10px solid white
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Home (Landing Page) */
+
+.home-hero
+  background-position-y: 50%
+  height 600px
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.grid-half
+  width 50%
+  flex 1 50%
+  padding 10px
+  margin-top 30px
+  margin-bottom 50px
+
+.col-quarter
+  lost-column 1/3 3
+  margin-bottom 20px
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Dashboard: InProgressTab, BookmarkedTab, CompletedTab */
+
+.completed-tab, 
+.bookmarked-tab,
+.inprogress-tab
+  .link-card
+    lost-column 1/3 3
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* PathCatalog */
+
+// TODO: Change when implementing correct background images for ImageLinkCards
+.img-test
+  background: url('/img/compass.jpg')
+  background-size: cover
+  height 200px
+  border-radius: 6px 6px 0 0;
+  opacity 0.85
+  transition opacity 0.5s ease-out
+  &:hover
+    opacity 1
+
+.topics-dropdown:before
+  pointer-events:none
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent
+  border-right: 10px solid transparent
+  border-top: 10px solid colorPrimary
+
+.topics-dropdown:after
+  pointer-events:none
+  content: ""
+  position: absolute
+  right: 10px
+  top: 12px
+  width: 0
+  height: 0
+  border-left: 10px solid transparent
+  border-right: 10px solid transparent
+  border-top: 10px solid white
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Auth0LockWidget */
+
+.auth0-lock-header-logo
+  width 100% !important
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/

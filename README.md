@@ -1,4 +1,4 @@
-# [![devGaido version][devgaido-image]][devgaido-url] devGaido
+# [![devGaido version][devgaido-image]][devgaido-url]
 
 [![build status][travis-image]][travis-url]
 [![Downloads][downloads-image]][downloads-url]
@@ -68,7 +68,7 @@ The devGaido project folder is organized in the following manner:
       /pages - One subdirectory for each page containing .jsx files including 
                page-specific actions and reducers.
       /reducers - Redux global app reducer handlers
-      /stylus - Style sheet files
+      /style - Style sheet files
     /server - Backend application source
       /models - Data model files
       /services - Microservices
@@ -88,7 +88,7 @@ The devGaido project folder is organized in the following manner:
 
 [MIT](https://tldrlegal.com/license/mit-license)
 
-[devgaido-image]: https://github.com/Chingu-cohorts/devgaido/blob/development/src/client/assets/img/example.jpg?raw=true
+[devgaido-image]: https://cdn.rawgit.com/Chingu-cohorts/devgaido/refactor/style/src/client/assets/img/devGaidoLogo.svg
 [devgaido-url]: https://github.com/Chingu-cohorts/devgaido
 [travis-image]: https://img.shields.io/travis/yoshuawuyts/vmd/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/yoshuawuyts/vmd

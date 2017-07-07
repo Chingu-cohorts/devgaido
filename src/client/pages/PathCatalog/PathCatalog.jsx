@@ -1,90 +1,53 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Card from '../shared/Card';
+import Results from './Results';
+import PageHero from '../shared/PageHero';
+import PageDivider from '../shared/PageDivider';
 
-const SectionCard = ({ title, subtitle, color, children }) => (
-  <div className="section-card">
-    <div className="section-card-header" style={{ background: color || 'darkslateblue' }}>
-      <span className="section-card-caption">{subtitle}</span>
-      <h1 className="section-card-title">{title}</h1>
-      <button className="section-card-button">VIEW ALL</button>
+import { setCatalogTopic, setCatalogSearchTerm } from './PathCatalogActions';
+
+const onSearchChange = (e, dispatch) => {
+  dispatch(setCatalogSearchTerm(e.target.value));
+};
+
+const onTopicChange = (e, dispatch) => {
+  dispatch(setCatalogTopic(e.target.value));
+};
+
+const PathCatalog = ({ curriculum, uiState, dispatch }) => (
+  <div>
+    <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__library" title="Browse Paths" />
+    <PageDivider>
+      <div className="search-bar flex flex-1">
+        <i className="fa fa-search c-primary h3 margin-right-small" />
+        <input className="margin-right-small h5 thin" type="text" name="pathSearch" placeholder="Search" onChange={e => onSearchChange(e, dispatch)} />
+      </div>
+      <div className="topics-dropdown relative">
+        <select className="h5 thin" onChange={e => onTopicChange(e, dispatch)} >
+          <option value="All Topics" key="AllTopics">All Topics</option>
+          {Object.keys(curriculum.subjects).map(
+            subjectId => <option value={subjectId} key={subjectId}>{subjectId}</option>,
+          )}
+        </select>
+      </div>
+    </PageDivider>
+    <div className="container">
+      <Results curriculum={curriculum} uiState={uiState} />
     </div>
-    <div className="section-card-content">
-      {children}
-    </div>
   </div>
 );
-
-const PathCard = ({ path, pathId }) => (
-  <Card
-    caption={path.name}
-    subcaption="Path"
-    text={path.description}
-    linkTo={`/paths/${pathId}`}
-    icons={['fa fa-road']}
-    color={'#007399'}
-    content={<h1 className="completion-text">{path.nCompleted}/{path.nTotal}</h1>}
-    nCompleted={0}
-    nTotal={8}
-  />
-);
-
-const PathList = ({ pathIds, curriculum }) => (
-  <div className="dashboard-path-list">
-    {pathIds.map((pathId) => {
-      const path = curriculum.paths[pathId];
-      return (
-        <PathCard path={path} pathId={pathId} key={pathId} />
-      );
-    })}
-  </div>
-);
-
-const PathCatalog = ({ curriculum }) => (
-  <div className="container">
-    <label className="search">
-      <input type="text" name="search" placeholder="Search" />
-    </label>
-    <SectionCard title="All" subtitle="PATHS">
-      <PathList
-        pathIds={Object.keys(curriculum.paths)}
-        curriculum={curriculum}
-      />
-    </SectionCard>
-  </div>
-);
-
-SectionCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  color: PropTypes.string,
-  children: PropTypes.objectOf(PropTypes.shape),
-};
-
-SectionCard.defaultProps = {
-  color: null,
-  children: null,
-};
-
-PathCard.propTypes = {
-  pathId: PropTypes.string.isRequired,
-  path: PropTypes.objectOf(PropTypes.shape).isRequired,
-};
-
-PathList.propTypes = {
-  pathIds: PropTypes.arrayOf(PropTypes.string).isRequired,
-  curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
-};
 
 PathCatalog.propTypes = {
   curriculum: PropTypes.objectOf(PropTypes.shape),
-  // dispatch: PropTypes.func,
+  dispatch: PropTypes.func,
+  uiState: PropTypes.objectOf(PropTypes.shape),
 };
 
 PathCatalog.defaultProps = {
   curriculum: null,
   dispatch: null,
+  uiState: null,
 };
 
 export default PathCatalog;

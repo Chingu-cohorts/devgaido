@@ -1,69 +1,59 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactDisqusThread from 'react-disqus-thread';
 
+import PageHero from '../shared/PageHero';
 import BreadCrumbs from '../shared/BreadCrumbs';
-import Card from '../shared/Card';
-
-const lessonTypeIcons = {
-  Reading: 'fa fa-book',
-  Project: 'fa fa-tasks',
-  'Supplemental Course': '',
-};
-
-const lessonTypeColors = {
-  Reading: '#ffea7e',
-  Project: 'deepskyblue',
-  'Supplemental Course': '',
-};
-
-const LessonCard = ({ name, description, linkTo, type }) => (
-  <Card
-    caption={name}
-    subcaption="LESSON"
-    text={description}
-    linkTo={linkTo}
-    content={null}
-    icons={[lessonTypeIcons[type], 'fa fa-graduation-cap']}
-    color={lessonTypeColors[type]}
-  />
-);
+import { InfoCard, LinkCard } from '../shared/Cards';
+import PageDivider from '../shared/PageDivider';
 
 const Course = ({ match, curriculum }) => {
-  const course = curriculum.courses[match.params.id];
+  const pathId = match.params.pid;
+  const courseId = match.params.id;
+  const course = curriculum.courses[courseId];
+
+  const lessons = course.lessonIds.map((lessonId) => {
+    const lesson = curriculum.lessons[lessonId];
+    return <LinkCard item={lesson} linkTo={`/paths/${pathId}/${courseId}/${lessonId}`} bgColorClass="bg-primary" iconClass="fa-graduation-cap" key={lessonId} connectionClass="connected--secondary" />;
+  });
   return (
-    <div className="container">
-      <div className="grid-full path path-image">
-        <div className="path-header lesson-header-image" />
-        <div className="path-header path-header-image-color">
-          <BreadCrumbs curriculum={curriculum} pathId={match.params.pid} courseId={match.params.id} />
-          <h1 className="path-header-path-name">{course.name}</h1>
-          <h1 className="completion-text-big">{course.nCompleted}/{course.nTotal}</h1>
+    <div>
+      <PageHero bgColorClass="bg-secondary" bgImageClass="bg-img__path" title={course.name}>
+        <BreadCrumbs
+          curriculum={curriculum}
+          pathId={pathId}
+          courseId={courseId}
+          invertIconColors
+        />
+        <i className="fa fa-tasks c-white h0 abs-top-right" />
+        {course.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
+      </PageHero>
+      <PageDivider>
+        <button className="button--primary hidden">Bookmark Course</button>
+        <span className="c-primary normal h3">Lessons completed: {course.nCompleted}/{course.nTotal}</span>
+        <button className="button--primary">Bookmark Course</button>
+      </PageDivider>
+      <div className="container">
+        <div className="row">
+          <div className="grid-half">
+            <InfoCard item={course} bgColorClass="bg-secondary" />
+          </div>
+          <div className="grid-half">
+            {lessons}
+          </div>
         </div>
-        <p className="card-text">{course.description}</p>
-        <div className="lesson-list">
-          { course.lessonIds.map((lessonId) => {
-            const lesson = curriculum.lessons[lessonId];
-            return (
-              <LessonCard
-                name={lesson.name}
-                description={lesson.description}
-                type={lesson.type}
-                key={lessonId}
-                linkTo={`/paths/${match.params.pid}/${match.params.id}/${lessonId}`}
-              />
-            );
-          })}
-        </div>
+        <hr />
+        <ReactDisqusThread
+          shortname="devgaido"
+          identifier={`/course-${courseId}`}
+          title={course.name}
+          url={undefined}
+          category_id={undefined}
+          onNewComment={null}
+        />
       </div>
     </div>
   );
-};
-
-LessonCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  linkTo: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
 };
 
 Course.propTypes = {

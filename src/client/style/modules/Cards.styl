@@ -1,0 +1,58 @@
+.card
+  margin-bottom 20px
+
+// Needed because we wrap the cards in <Link> components which overwrites text with link colors
+a.card
+  color $color-text
+
+.connected,
+.connected--secondary
+  &:after
+    content: ""
+    position: absolute
+    display: block
+    bottom: -4px
+    left: "calc(%s / 4)" % $widthMax
+    margin-left: -5px
+    width: 11px
+    height: 25px
+    opacity 0.5
+    background: colorPrimary
+  &:last-child:after
+    height 0px
+    
+.connected--secondary
+  &:after
+    background: colorSecondary
+
+.card__header
+  padding 15px 25px
+
+.card__content,
+.card__footer
+  padding 20px 25px
+
+.card__preview
+  height 400px
+  margin-top 10px
+  margin-bottom 20px
+  img
+    width 100%
+
+.connected-horizontal
+  margin-right 30px
+  &:after
+    content: ""
+    position: absolute
+    display: block
+    top: 50%
+    right: -30px
+    width: 29px
+    height: 11px
+    opacity 0.5
+    background: colorPrimary
+
+.connected-horizontal:last-child
+  &:after
+    width 0
+

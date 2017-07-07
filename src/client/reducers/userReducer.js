@@ -8,15 +8,18 @@
 const user = (state = {
   name: '',
   authenticated: false,
+  avatar: '',
   email: '',
   dayLastVisited: Date.now(),
   streak: 0,
   bookmarkedPaths: [],
-  curPathId: '',
+  curPathId: 'p1xt',
+  curCourseId: 'p1xttier1',
+  curLessonId: 'cs50x',
 }, action) => {
   switch (action.type) {
-    case 'SET_CURRENT_PATH_ID': {
-      return { ...state, curPathId: action.pathId };
+    case 'SET_CURRENT_PATH': {
+      return { ...state, curPathId: action.pathId, curCourseId: action.courseId, curLessonId: action.lessonId };
     }
     case 'ADD_BOOKMARK': {
       const index = state.bookmarkedPaths.indexOf(action.pathId);

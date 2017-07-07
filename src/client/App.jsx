@@ -39,17 +39,14 @@ const App = ({ serverMatch, dispatch, user, curriculum, uiState, auth0 }) => {
         />);
     });
   }
-  // TODO: Re-add sticky footer - position sticky or flexbox? (Check caniuse.com)
   return (
     <div className="App">
       <Header dispatch={dispatch} uiState={uiState} user={user} lock={lock} auth0={auth0} />
-      <main>
-        <div className="main">
-          <Switch>
-            {routes}
-          </Switch>
-        </div>
-      </main>
+      <div className="page-content"> {/* For sticky footer and background color */}
+        <Switch>
+          {routes}
+        </Switch>
+      </div>
       <Footer />
     </div>);
 };

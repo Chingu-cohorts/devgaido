@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { toggleNavMenu } from '../../actions/globalActions';
 
+import { MenuCard } from '../shared/Cards';
+
 const handleLoginClick = (e, lock) => {
   e.preventDefault();
   lock.show();
@@ -19,30 +21,28 @@ const toggleMenuAfterNav = (dispatch) => {
 
 // TODO: Change nav bar to be hidden on scroll down and visible on scroll up instead of just "fixed"
 const Header = ({ user, uiState, dispatch, lock }) => (
-  <div>
-    <header>
-      <div className="header-content">
-        <NavLink to="/" className="header-logo-text">devgaido.</NavLink>
-        <nav className="main-navigation">
-          <ul className="menu">
-            <li><NavLink to="/dashboard" activeClassName="link-active">Dashboard</NavLink></li>
-            <li><NavLink to="/paths" activeClassName="link-active">Browse Paths</NavLink></li>
-            {user.authenticated ? <li><a className={uiState.global.navMenuOpen ? 'menu-btn profile menu-btn-close' : 'menu-btn profile'} href="/" onClick={e => toggleMenu(e, dispatch)} title="Menu">‌‌ Menu</a></li> : null}
-            {!user.authenticated ? <li><a className="menu-btn login" href="/" onClick={e => handleLoginClick(e, lock)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a></li> : null}
+  <header>
+    <div className="container flex justify-space-between align-items-center padding-vertical-small relative">
+      <NavLink to="/" className="logo" />
+      <nav className="flex align-items-center">
+        <ul className="flex align-items-center no-margin list-style-none uppercase">
+          <li className="margin-right-small"><NavLink to="/styleguide" activeClassName="boxshadow-underline bold">Styleguide</NavLink></li>
+          <li className="margin-right-small"><NavLink to="/dashboard" activeClassName="boxshadow-underline bold">Dashboard</NavLink></li>
+          <li className="margin-right-small"><NavLink to="/paths" activeClassName="boxshadow-underline bold">Browse Paths</NavLink></li>
+        </ul>
+        {user.authenticated ? <a className={uiState.global.navMenuOpen ? '' : ''} href="/" onClick={e => toggleMenu(e, dispatch)} title="Menu">‌<img className="avatar circle-border subtle-border" src={user.avatar} alt="avatar" /></a> : null}
+        {!user.authenticated ? <a className="button button--primary-clear uppercase" href="/" onClick={e => handleLoginClick(e, lock)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a> : null}
+      </nav>
+      <div className={uiState.global.navMenuOpen ? 'menu absolute' : 'menu absolute hidden'}>
+        <MenuCard username={user.name}>
+          <ul className="list-style-none">
+            <li><NavLink to="/profile" className="uppercase left" activeClassName="bold" onClick={() => toggleMenuAfterNav(dispatch)}><i className="fa fa-user h5 c-secondary margin-right-small" aria-hidden="true" /> Profile</NavLink></li>
+            <li><a className="uppercase left" href="/logout"><i className="fa fa-sign-out h5 c-secondary margin-right-small" aria-hidden="true" />Logout</a></li>
           </ul>
-        </nav>
-        <div className={uiState.global.navMenuOpen ? 'side-panel is-visible' : 'side-panel'}>
-          <div className="panel-menu">
-            <h1>Welcome back, {user.name}</h1>
-            <ul>
-              <NavLink to="/profile" activeClassName="linkActive" onClick={() => toggleMenuAfterNav(dispatch)}><li className="information"><i className="fa fa-user-o" aria-hidden="true" />Your profile</li></NavLink>
-              <a href="/logout"><li className="information"><i className="fa fa-sign-out" aria-hidden="true" />Logout</li></a>
-            </ul>
-          </div>
-        </div>
+        </MenuCard>
       </div>
-    </header>
-  </div>
+    </div>
+  </header>
 );
 
 Header.propTypes = {

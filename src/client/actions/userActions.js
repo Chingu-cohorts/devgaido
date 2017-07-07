@@ -1,9 +1,11 @@
 /* eslint-disable import/prefer-default-export */
 
-export function setCurrentPathId(pathId) {
+export function setCurrentPath(pathId, courseId, lessonId) {
   return {
-    type: 'SET_CURRENT_PATH_ID',
+    type: 'SET_CURRENT_PATH',
     pathId,
+    courseId,
+    lessonId,
   };
 }
 
