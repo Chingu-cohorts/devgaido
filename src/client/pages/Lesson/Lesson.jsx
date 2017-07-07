@@ -45,7 +45,7 @@ const Lesson = ({ match, dispatch, curriculum }) => {
           </div>
           <div className="grid-half">
             <PreviewCard bgColorClass="bg-secondary">
-              <img className="preview-img" src={lesson.externalSource !== '' ? `/assets/screenshots/${lessonId}.jpeg` : ''} alt={lesson.name} />
+              <img className="preview-img" src={lesson.externalSource !== '' ? `/screenshots/${lessonId}.jpeg` : ''} alt={lesson.name} />
             </PreviewCard>
           </div>
         </div>

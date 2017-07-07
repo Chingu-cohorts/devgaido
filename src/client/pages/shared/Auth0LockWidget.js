@@ -10,7 +10,7 @@ const Auth0LockWidget = (auth0) => {
       },
     },
     theme: {
-      logo: '/assets/img/devGaidoLogo.svg',
+      logo: '/img/devGaidoLogo.svg',
       primaryColor: '#DB684E',
     },
     languageDictionary: {
