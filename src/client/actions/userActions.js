@@ -9,16 +9,18 @@ export function setCurrentPath(pathId, courseId, lessonId) {
   };
 }
 
-export function addBookmark(pathId) {
+export function addBookmark(itemId, itemCategory) {
   return {
     type: 'ADD_BOOKMARK',
-    pathId,
+    itemId,
+    itemCategory,
   };
 }
 
-export function removeBookmark(pathId) {
+export function removeBookmark(itemId, itemCategory) {
   return {
     type: 'REMOVE_BOOKMARK',
-    pathId,
+    itemId,
+    itemCategory,
   };
 }

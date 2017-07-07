@@ -62,10 +62,11 @@ const LinkCard = ({ item, bgColorClass, iconClass, connectionClass, heightClass,
       content: (
         <div className="flex-column justify-space-between">
           <p>{item.description ? item.description : 'No description given.'}</p>
-          {item.nTotal ?
+          {!item.completed && item.nTotal ?
             <h4 className="c-primary no-margin right">
               Completed: <span className="bold">{item.nCompleted}/{item.nTotal}</span>
             </h4> : null}
+          {item.completed ? <i className="fa fa-check-circle-o h1 c-primary right" /> : null}
         </div>),
     })}
   </Link>

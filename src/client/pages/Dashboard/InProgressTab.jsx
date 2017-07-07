@@ -44,7 +44,7 @@ const CurrentPathSection = ({ curPath, curriculum, user, history, onViewClick })
 const InProgressSection = ({ inProgressPaths, curriculum }) => (
   <div className="inprogress-tab margin-bottom-huge">
     <span>PATHS</span>
-    <h2>InProgress</h2>
+    <h2>In Progress</h2>
     <PathList pathIds={inProgressPaths} curriculum={curriculum} /> :
   </div>
 );
@@ -70,10 +70,15 @@ const InProgressTab = ({ user, curriculum, history }) => {
               show={user.curPathId !== '' && inProgressPaths.length !== 0}
             /> : null }
         </div> :
-        <div className="center margin-top-huge">
-          <h3>You haven&apos;t started any paths yet.</h3>
-          <Link className="button button--primary" to="/paths">BROWSE PATHS</Link>
-        </div>}
+        <div className="inprogress-tab margin-bottom-huge">
+          <span>PATHS</span>
+          <h2>In Progress</h2>
+          <div className="center margin-top-huge">
+            <h3>You haven&apos;t started any paths yet.</h3>
+            <Link className="button button--primary" to="/paths">BROWSE PATHS</Link>
+          </div>
+        </div>
+      }
     </div>
   );
 };
