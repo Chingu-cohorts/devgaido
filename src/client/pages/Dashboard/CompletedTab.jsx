@@ -12,7 +12,7 @@ const CompletedTab = ({ curriculum }) => {
   const completedPaths = getCompletedPaths(curriculum.paths);
 
   return (
-    <div className="completed-tab">
+    <div className="completed-tab margin-bottom-huge">
       <span>PATHS</span>
       <h2>Completed</h2>
       {

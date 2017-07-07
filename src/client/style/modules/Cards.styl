@@ -2,9 +2,8 @@
   margin-bottom 20px
 
 // Needed because we wrap the cards in <Link> components which overwrites text with link colors
-a
-  .card
-    color $color-text
+a.card
+  color $color-text
 
 .connected,
 .connected--secondary
@@ -29,7 +28,8 @@ a
 .card__header
   padding 15px 25px
 
-.card__content
+.card__content,
+.card__footer
   padding 20px 25px
 
 .card__preview
@@ -38,15 +38,6 @@ a
   margin-bottom 20px
   img
     width 100%
-
-
-.slide-card
-  flex 0 0 calc(99.9% * 1/3 - (30px - 30px * 1/3))
-  opacity 0.5
-  transform: translateX(calc(100% + 30px))
-  transition opacity 0.5s
-  &:hover
-    opacity: 1 !important // important is needed because the dynamically created style tag can't be overwritten otherwise
 
 .connected-horizontal
   margin-right 30px

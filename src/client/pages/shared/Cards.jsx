@@ -9,7 +9,7 @@ const CardTemplate = ({ title, bgColorClass, iconClass, heightClass, content }) 
       <h5 className="card__header__text flex-1 c-white uppercase no-margin">{title}</h5>
       {iconClass ? <i className={`fa c-white h4 ${iconClass}`} /> : null}
     </div>
-    <div className="card__content flex-column flex-1">
+    <div className="card__content flex-1">
       {content}
     </div>
   </div>
@@ -71,34 +71,6 @@ const LinkCard = ({ item, bgColorClass, iconClass, connectionClass, heightClass,
   </Link>
 );
 
-const handleSliderCardClick = (e, linkTo, history) => {
-  e.preventDefault();
-  history.push(linkTo);
-};
-
-const SliderCard = ({ item, bgColorClass, iconClass, linkTo, history, refCallback }) => (
-  <a
-    className="slide-card connected-horizontal relative width-100"
-    href={linkTo}
-    onClick={e => handleSliderCardClick(e, linkTo, history)}
-    ref={domElem => refCallback(domElem)}
-  >
-    {CardTemplate({
-      title: item.name,
-      bgColorClass,
-      iconClass,
-      heightClass: 'height-100',
-      content: (
-        <div className="flex-column justify-space-between">
-          <p>{item.description ? item.description : 'No description given.'}</p>
-          {item.nTotal ?
-            <h4 className="c-primary no-margin right">
-              Completed: <span className="bold">{item.nCompleted}/{item.nTotal}</span>
-            </h4> : null}
-        </div>),
-    })}
-  </a>
-);
 
 CardTemplate.propTypes = {
   title: PropTypes.string.isRequired,
@@ -133,20 +105,4 @@ LinkCard.defaultProps = {
   heightClass: '',
 };
 
-SliderCard.propTypes = {
-  item: PropTypes.objectOf(PropTypes.shape).isRequired,
-  bgColorClass: PropTypes.string.isRequired,
-  linkTo: PropTypes.string,
-  iconClass: PropTypes.string,
-  history: PropTypes.objectOf(PropTypes.shape).isRequired,
-  refCallback: PropTypes.func.isRequired,
-};
-
-SliderCard.defaultProps = {
-  iconClass: '',
-  linkTo: '#',
-  connectionClass: '',
-  heightClass: '',
-};
-
-export { InfoCard, MenuCard, LinkCard, PreviewCard, SliderCard };
+export { InfoCard, MenuCard, LinkCard, PreviewCard };

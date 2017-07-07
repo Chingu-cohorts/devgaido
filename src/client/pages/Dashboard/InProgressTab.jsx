@@ -42,7 +42,7 @@ const CurrentPathSection = ({ curPath, curriculum, user, history, onViewClick })
 );
 
 const InProgressSection = ({ inProgressPaths, curriculum }) => (
-  <div className="inprogress-tab">
+  <div className="inprogress-tab margin-bottom-huge">
     <span>PATHS</span>
     <h2>InProgress</h2>
     <PathList pathIds={inProgressPaths} curriculum={curriculum} /> :

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { SliderCard } from '../shared/Cards';
+import SliderCard from '../shared/SliderCard';
 
 class LessonSlider extends React.Component {
   constructor(props) {

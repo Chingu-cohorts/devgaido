@@ -12,7 +12,7 @@ const BookmarkedTab = ({ user, curriculum }) => {
   const bookmarkedPaths = getBookmarkedPaths(curriculum.paths, user.bookmarkedPaths);
 
   return (
-    <div className="bookmarked-tab">
+    <div className="bookmarked-tab margin-bottom-huge">
       <span>PATHS</span>
       <h2>Bookmarked</h2>
       {
