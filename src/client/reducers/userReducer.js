@@ -12,28 +12,34 @@ const user = (state = {
   email: '',
   dayLastVisited: Date.now(),
   streak: 0,
-  bookmarkedPaths: [],
-  curPathId: 'p1xt',
-  curCourseId: 'p1xttier1',
-  curLessonId: 'cs50x',
+  bookmarkedItems: {
+    paths: [],
+    courses: [],
+    lessons: [],
+  },
+  curPathId: '',
+  curCourseId: '',
+  curLessonId: '',
 }, action) => {
   switch (action.type) {
     case 'SET_CURRENT_PATH': {
       return { ...state, curPathId: action.pathId, curCourseId: action.courseId, curLessonId: action.lessonId };
     }
     case 'ADD_BOOKMARK': {
-      const index = state.bookmarkedPaths.indexOf(action.pathId);
+      const index = state.bookmarkedItems[action.itemCategory].indexOf(action.itemId);
       if (index === -1) {
-        return { ...state, bookmarkedPaths: state.bookmarkedPaths.concat(action.pathId) };
+        const newBookmarkedItems = { ...state.bookmarkedItems };
+        newBookmarkedItems[action.itemCategory] = newBookmarkedItems[action.itemCategory].concat(action.itemId);
+        return { ...state, bookmarkedItems: newBookmarkedItems };
       }
       return state;
     }
     case 'REMOVE_BOOKMARK': {
-      const index = state.bookmarkedPaths.indexOf(action.pathId);
+      const index = state.bookmarkedItems[action.itemCategory].indexOf(action.itemId);
       if (index !== -1) {
-        const newBookmarkedPaths = state.bookmarkedPaths.slice(0);
-        newBookmarkedPaths.splice(index, 1);
-        return { ...state, bookmarkedPaths: newBookmarkedPaths };
+        const newBookmarkedItems = { ...state.bookmarkedItems };
+        newBookmarkedItems[action.itemCategory].splice(index, 1);
+        return { ...state, bookmarkedItems: newBookmarkedItems };
       }
       return state;
     }
