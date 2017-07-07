@@ -15,7 +15,7 @@ const Path = ({ match, curriculum, user, dispatch }) => {
 
   const courses = path.courseIds.map((courseId) => {
     const course = curriculum.courses[courseId];
-    return <LinkCard item={course} linkTo={`/paths/${pathId}/${courseId}`} bgColorClass="bg-secondary" iconClass="fa-tasks" key={courseId} />;
+    return <LinkCard item={course} linkTo={`/paths/${pathId}/${courseId}`} bgColorClass="bg-secondary" iconClass="fa-tasks" key={courseId} connectionClass="connected" />;
   });
   return (
     <div>

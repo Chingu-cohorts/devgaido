@@ -14,7 +14,7 @@ const Course = ({ match, curriculum }) => {
 
   const lessons = course.lessonIds.map((lessonId) => {
     const lesson = curriculum.lessons[lessonId];
-    return <LinkCard item={lesson} linkTo={`/paths/${pathId}/${courseId}/${lessonId}`} bgColorClass="bg-primary" iconClass="fa-graduation-cap" key={lessonId} connectionSecondary />;
+    return <LinkCard item={lesson} linkTo={`/paths/${pathId}/${courseId}/${lessonId}`} bgColorClass="bg-primary" iconClass="fa-graduation-cap" key={lessonId} connectionClass="connected--secondary" />;
   });
   return (
     <div>
