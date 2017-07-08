@@ -6,6 +6,7 @@
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "https://try.github.io",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "gitsimpleguide": {
@@ -15,6 +16,7 @@
     "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "http://git.huit.harvard.edu/guide/",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "githubtraining": {
@@ -24,6 +26,7 @@
     "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "https://guides.github.com/",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "githubhelloworld": {
@@ -33,6 +36,7 @@
     "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "https://guides.github.com/activities/hello-world/",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "gitimmersion": {
@@ -42,6 +46,7 @@
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "http://gitimmersion.com/",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "howtogitngithub": {
@@ -51,6 +56,7 @@
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "https://www.udacity.com/course/how-to-use-git-and-github--ud775",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "ydkjsupngoing": {
@@ -60,6 +66,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "ydkjsscope": {
@@ -69,6 +76,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "ydkjsthis": {
@@ -78,6 +86,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "cs50x": {
@@ -87,6 +96,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "learnhtmlcss": {
@@ -96,6 +106,7 @@
     "type": "Supplemental Course",
     "subject": "HTML/CSS",
     "externalSource": "http://learn.shayhowe.com/html-css/",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "onlineresume": {
@@ -107,6 +118,7 @@
     "resources": [["Online resume template", "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2"]],
     "subject": "HTML/CSS",
     "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "ydkjstypes": {
@@ -116,6 +128,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&%20grammar/README.md#you-dont-know-js-types--grammar",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "ydkjsasync": {
@@ -125,6 +138,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/README.md#you-dont-know-js-async--performance",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "ydkjses6": {
@@ -134,6 +148,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "advhtmlcss": {
@@ -143,6 +158,7 @@
     "type": "Course",
     "subject": "HTML/CSS",
     "externalSource": "http://learn.shayhowe.com/advanced-html-css/",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "fccportfolio": {
@@ -154,6 +170,7 @@
     "resources": [["FCC Personal Portfolio Webpage", "https://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage"]],
     "subject": "HTML/CSS",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "projectspecdocs": {
@@ -163,6 +180,7 @@
     "type": "Reading",
     "subject": "Project Management",
     "externalSource": "http://www.pixelearth.net/pages/project-specification",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "ettmath": {
@@ -172,6 +190,7 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://www.edx.org/course/effective-thinking-through-mathematics-utaustinx-ut-9-01x-0",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "setupes6": {
@@ -181,6 +200,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://leanpub.com/setting-up-es6/read",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "jsallonge6": {
@@ -190,6 +210,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://leanpub.com/javascriptallongesix",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "getsassy": {
@@ -199,6 +220,7 @@
     "type": "Supplemental Course",
     "subject": "HTML/CSS",
     "externalSource": "http://www.sassshop.com/",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "towersofhanoi": {
@@ -210,6 +232,7 @@
     "resources": [["Detailed game information", "https://en.wikipedia.org/wiki/Tower_of_Hanoi"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "createcsstemp": {
@@ -221,6 +244,7 @@
     "resources": [["Template examples", "http://www.free-css.com/free-css-templates"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "systematicpd1": {
@@ -230,6 +254,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd1x",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "systematicpd2": {
@@ -239,6 +264,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd2x",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "systematicpd3": {
@@ -248,6 +274,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd3x",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "domenlightment": {
@@ -257,6 +284,7 @@
     "type": "Reading",
     "subject": "HTML/CSS",
     "externalSource": "http://domenlightenment.com/",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "gulp": {
@@ -268,6 +296,7 @@
     "resources": [[]],
     "subject": "Gulp",
     "externalSource": "http://gulpjs.com/",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "fccsimon": {
@@ -279,6 +308,7 @@
     "resources": [["FCC Simon Game", "https://www.freecodecamp.com/challenges/build-a-simon-game"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "intromongodb": {
@@ -288,6 +318,7 @@
     "type": "Supplemental Course",
     "subject": "Database",
     "externalSource": "https://www.edx.org/course/introduction-mongodb-using-mean-stack-mongodbx-m101x-0",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "fccbackend": {
@@ -297,6 +328,7 @@
     "type": "",
     "subject": "Backend",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "calculus1": {
@@ -306,6 +338,7 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://www.coursera.org/learn/calculus1",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "jsdesignpatterns": {
@@ -315,6 +348,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://addyosmani.com/resources/essentialjsdesignpatterns/book/",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "clonelandingpage": {
@@ -326,6 +360,7 @@
     "resources": [["Landing page to clone", "https://blackrockdigital.github.io/startbootstrap-creative/"]],
     "subject": "Frontend",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "csmaths": {
@@ -335,6 +370,7 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "algnflowcharts": {
@@ -344,6 +380,7 @@
     "type": "Reading",
     "subject": "Computer Science",
     "externalSource": "http://www.academia.edu/7857144/ALGORITHMS_AND_FLOWCHARTS",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "intropencil": {
@@ -353,6 +390,7 @@
     "type": "Reading",
     "subject": "Computer Science",
     "externalSource": "http://pencil.evolus.vn/",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "cloneadmintemp": {
@@ -364,6 +402,7 @@
     "resources": [["Administrative dashboard", "http://rubix410.sketchpixy.com/ltr/dashboard"]],
     "subject": "Frontend",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "thinkjava": {
@@ -373,6 +412,7 @@
     "type": "Reading",
     "subject": "Computer Science",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "classicpuzzles": {
@@ -384,6 +424,7 @@
     "resources": [["Classic puzzles", "https://www.codingame.com/"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "opendatastructs": {
@@ -393,6 +434,7 @@
     "type": "Reading",
     "subject": "Computer Science",
     "externalSource": "http://www.aupress.ca/books/120226/ebook/99Z_Morin_2013-Open_Data_Structures.pdf",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "algorithms1": {
@@ -402,6 +444,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.coursera.org/learn/introduction-to-algorithms",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "algorithms2": {
@@ -411,6 +454,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.coursera.org/learn/java-data-structures-algorithms-2",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "codejam15q2": {
@@ -422,6 +466,7 @@
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "clonefrontpage": {
@@ -433,6 +478,7 @@
     "resources": [["Example front page", "https://urbanarmorgear.com/"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "mobileuxdesign": {
@@ -442,6 +488,7 @@
     "type": "Supplemental Course",
     "subject": "UX/UI",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "androiddev": {
@@ -451,6 +498,7 @@
     "type": "Supplemental Course",
     "subject": "Android",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "fccpomodoro": {
@@ -462,6 +510,7 @@
     "resources": [["FCC Pomodoro Clock", "https://www.freecodecamp.com/challenges/build-a-pomodoro-clock"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "frisbys": {
@@ -471,6 +520,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://www.gitbook.com/book/drboolean/mostly-adequate-guide/details",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "testing": {
@@ -480,6 +530,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.udacity.com/course/software-testing--cs258",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "debugging": {
@@ -489,6 +540,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.udacity.com/course/software-debugging--cs259",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "clonenetflix": {
@@ -500,6 +552,7 @@
     "resources": [["Nexflix", "http://netflix.com"]],
     "subject": "Frontend",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "calculus2": {
@@ -509,6 +562,7 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://www.coursera.org/learn/advanced-calculus",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "classicpuzzles2": {
@@ -520,6 +574,7 @@
     "resources": [[]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "softwarearch": {
@@ -529,6 +584,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.udacity.com/course/software-architecture-design--ud821",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "codejam15r1a": {
@@ -540,6 +596,7 @@
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "jsspessore": {
@@ -549,6 +606,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://leanpub.com/javascript-spessore/read",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "cloneblog": {
@@ -560,6 +618,7 @@
     "resources": [["Blog template", "https://blackrockdigital.github.io/startbootstrap-clean-blog/"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "databases": {
@@ -569,6 +628,7 @@
     "type": "Supplemental Course",
     "subject": "Database",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "agile": {
@@ -578,6 +638,7 @@
     "type": "Supplemental Course",
     "subject": "Project Management",
     "externalSource": "https://www.edx.org/course/agile-software-development-ethx-asd-1x",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "es6katas": {
@@ -589,6 +650,7 @@
     "resources": [["ES6 Katas", "http://es6katas.org/"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "cloudcomputing": {
@@ -598,6 +660,7 @@
     "type": "Supplemental Course",
     "subject": "Backend",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "codejam15r1b": {
@@ -609,6 +672,7 @@
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "buildfacebook": {
@@ -620,6 +684,7 @@
     "resources": [["Requirements", "http://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project"]],
     "subject": "Fullstack",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "theoreticalcs": {
@@ -629,6 +694,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "codejam15r1c": {
@@ -640,6 +706,7 @@
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "probability": {
@@ -649,6 +716,7 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "12colgrid": {
@@ -660,6 +728,7 @@
     "resources": [["Sample Grid Layout", "http://960.gs/"]],
     "subject": "CSS",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "linearalgebra": {
@@ -669,6 +738,7 @@
     "type": "Supplemental Course",
     "subject": "Mathematics",
     "externalSource": "https://www.edx.org/course/linear-algebra-foundations-frontiers-utaustinx-ut-5-05x#!",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "classicpuzzles3": {
@@ -680,6 +750,7 @@
     "resources": [["Classic puzzles", "https://www.codingame.com/"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "crypto1": {
@@ -689,6 +760,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "codejam15r2": {
@@ -700,6 +772,7 @@
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "crypto2": {
@@ -709,6 +782,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "clonetwitter": {
@@ -720,6 +794,7 @@
     "resources": [["Twitter", "http://twitter.com"]],
     "subject": "Fullstack",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "computerarch": {
@@ -729,6 +804,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "codejam15r3": {
@@ -740,6 +816,7 @@
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "cybersecurity": {
@@ -749,6 +826,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "classicpuzzles4": {
@@ -760,6 +838,7 @@
     "resources": [["Classic puzzles", "https://www.codingame.com/"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "computergfx": {
@@ -769,6 +848,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/computer-graphics-uc-san-diegox-cse167x-1",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "ai": {
@@ -778,6 +858,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/artificial-intelligence-ai-columbiax-csmm-101x#!",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "codejam15f": {
@@ -789,6 +870,7 @@
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "machinelearning": {
@@ -798,6 +880,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.coursera.org/learn/machine-learning",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "webgame": {
@@ -809,6 +892,7 @@
     "resources": [[]],
     "subject": "Fullstack",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "operatingsystems": {
@@ -818,6 +902,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "mdconversion": {
@@ -829,6 +914,7 @@
     "resources": [[]],
     "subject": "Javascript",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "compilers": {
@@ -838,6 +924,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "nlp": {
@@ -847,6 +934,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "cloneharmony": {
@@ -858,6 +946,7 @@
     "resources": [["Learn Harmony", "http://learnharmony.org/#/?_k=0okjs7"]],
     "subject": "Fullstack",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "networks": {
@@ -867,6 +956,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "parallel": {
@@ -876,6 +966,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "codejam15dist": {
@@ -887,6 +978,7 @@
     "resources": [["Distributed Google Code Jam", "https://code.google.com/codejam/contest/4264486/dashboard"]],
     "subject": "Fullstack",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "cloneslack": {
@@ -898,6 +990,7 @@
     "resources": [["Learn Harmony", "http://learnharmony.org/#/?_k=0okjs7"]],
     "subject": "Fullstack",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "bootstrapfull": {
@@ -909,6 +1002,7 @@
     "resources": [[]],
     "subject": "Fullstack",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "codejam16": {
@@ -920,6 +1014,7 @@
     "resources": [["Google Code Jam 2016", "https://code.google.com/codejam/past-contests"]],
     "subject": "Fullstack",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "materialdesign": {
@@ -931,6 +1026,7 @@
     "resources": [["Material Design", "https://material.io/"]],
     "subject": "CSS",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "introhtml": {
@@ -940,6 +1036,7 @@
     "type": "Video",
     "subject": "HTML",
     "externalSource": "https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-html",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "beginnerhtml": {
@@ -949,6 +1046,7 @@
     "type": "Reading",
     "subject": "HTML",
     "externalSource": "http://www.htmldog.com/guides/html/beginner/",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "clonewebpage": {
@@ -960,6 +1058,7 @@
     "resources": [["CodePen", "https://codepen.io/freeCodeCamp/full/zNqgVx"]],
     "subject": "HTML",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "introcss": {
@@ -969,6 +1068,7 @@
     "type": "Video",
     "subject": "CSS",
     "externalSource": "https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-css",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "beginnercss": {
@@ -978,6 +1078,7 @@
     "type": "Reading",
     "subject": "CSS",
     "externalSource": "http://htmldog.com/guides/css/beginner/",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "clonetributepage": {
@@ -989,6 +1090,7 @@
     "resources": [["Tribute Page", "http://codepen.io/freeCodeCamp/full/zNqgVx"]],
     "subject": "CSS",
     "externalSource": "http://codepen.io/freeCodeCamp/full/zNqgVx",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "cloneresume": {
@@ -1000,6 +1102,7 @@
     "resources": [["Online Resume Template", "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot1"]],
     "subject": "HTML/CSS",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "intermediatehtml": {
@@ -1009,6 +1112,7 @@
     "type": "Lesson",
     "subject": "HTML",
     "externalSource": "http://htmldog.com/guides/html/intermediate",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "intermediatecss": {
@@ -1018,6 +1122,7 @@
     "type": "Lesson",
     "subject": "CSS",
     "externalSource": "http://htmldog.com/guides/css/intermediate",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "advancedhtml": {
@@ -1027,6 +1132,7 @@
     "type": "Lesson",
     "subject": "HTML",
     "externalSource": "http://htmldog.com/guides/html/advanced",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "advancedcss": {
@@ -1036,6 +1142,7 @@
     "type": "Lesson",
     "subject": "CSS",
     "externalSource": "http://htmldog.com/guides/css/advanced",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "buildportfolio": {
@@ -1043,9 +1150,10 @@
     "name": "Build a Personal Portfolio",
     "description": "Build a Personal Portfolio webpage",
     "type": "Project",
-     "instructions": "",
-   "subject": "HTML/CSS",
+    "instructions": "",
+    "subject": "HTML/CSS",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "introbootstrap": {
@@ -1055,6 +1163,7 @@
     "type": "Video",
     "subject": "CSS/Bootstrap",
     "externalSource": "https://www.edx.org/course/introduction-bootstrap-tutorial-microsoft-dev203x-2",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "qwbootstrap": {
@@ -1064,6 +1173,7 @@
     "type": "Video",
     "subject": "CSS/Bootstrap",
     "externalSource": "https://www.youtube.com/playlist?list=PL41lfR-6DnOovY0t3nBg8Zb6aqm_H70mR",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "bootstraptribute": {
@@ -1075,6 +1185,7 @@
     "resources": [["Bootstrap", "http://getbootstrap.com/"]],
     "subject": "CSS/Bootstrap",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "foundationcrash": {
@@ -1084,6 +1195,7 @@
     "type": "Video",
     "subject": "CSS/Foundation",
     "externalSource": "https://www.youtube.com/watch?v=DEu5xYEZx18",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "introsass": {
@@ -1093,6 +1205,7 @@
     "type": "Lesson",
     "subject": "CSS/Sass",
     "externalSource": "http://callmenick.com/post/an-introduction-to-sass-scss",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "introless": {
@@ -1102,6 +1215,7 @@
     "type": "Lesson",
     "subject": "CSS/Less",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "introstylus": {
@@ -1111,6 +1225,7 @@
     "type": "Lesson",
     "subject": "CSS/Stylus",
     "externalSource": "",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "howinternetworks": {
@@ -1120,6 +1235,7 @@
     "type": "Video",
     "subject": "Web Basics",
     "externalSource": "https://www.khanacademy.org/partner-content/code-org/internet-works",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "howwebworks": {
@@ -1129,6 +1245,7 @@
     "type": "Reading",
     "subject": "Web Basics",
     "externalSource": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "getstartedweb": {
@@ -1138,6 +1255,7 @@
     "type": "Reading",
     "subject": "Web Basics",
     "externalSource": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "setupwwwfolder": {
@@ -1149,6 +1267,7 @@
     "resources": [[]],
     "subject": "Web Basics",
     "externalSource": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/Dealing_with_files",
+    "estimatedTime": "medium",
     "version": "1.0.0"
   }
 }
