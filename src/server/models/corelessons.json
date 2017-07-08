@@ -2,7 +2,7 @@
   "trygit": {
     "source": "GitHub",
     "name": "Try Git",
-    "description": "A short interactive introduction to Git",
+    "description": "Use this short interactive introduction to Git to learn the fundamentals of the Git source code control system.",
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "https://try.github.io",
@@ -11,7 +11,7 @@
   "gitsimpleguide": {
     "source": "P1XT",
     "name": "Git - the simple guide",
-    "description": "",
+    "description": "Learn the basics of Git including workflows you'll come to rely on in your daily web development activities.",
     "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "http://git.huit.harvard.edu/guide/",
@@ -20,8 +20,8 @@
   "githubtraining": {
     "source": "P1XT",
     "name": "GitHub Training & Guide",
-    "description": "",
-    "type": "Supplemental Course",
+    "description": "Extend your understanding of Git and GitHub by reading the series of guides developed by the staff of GitHub.",
+    "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "https://guides.github.com/",
     "version": "1.0.0"
@@ -29,7 +29,7 @@
   "githubhelloworld": {
     "source": "P1XT",
     "name": "GitHub Hello World",
-    "description": "",
+    "description": "Build on your knowledge of Git and GitHub by using them to create and manage a Hello World application.",
     "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "https://guides.github.com/activities/hello-world/",
@@ -38,7 +38,7 @@
   "gitimmersion": {
     "source": "P1XT",
     "name": "Git Immersion",
-    "description": "",
+    "description": "Reinforce what you already know about Git as well as learning new techniques and workflows by using Git in this guided tour.",
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "http://gitimmersion.com/",
@@ -47,16 +47,16 @@
   "howtogitngithub": {
     "source": "P1XT",
     "name": "How to Use Git and GitHub",
-    "description": "",
+    "description": "Gain an understanding of the basics of using source code control by learning the industrity standard tools - Git and GitHub.",
     "type": "Supplemental Course",
     "subject": "Source Code Control",
-    "externalSource": "",
+    "externalSource": "https://www.udacity.com/course/how-to-use-git-and-github--ud775",
     "version": "1.0.0"
   },
   "ydkjsupngoing": {
     "source": "P1XT",
     "name": "You Don't Know JS: Up & Going",
-    "description": "",
+    "description": "Learn the basics of the Javascript language to establish a firm foundation on your journey to becoming a Javascript developer.",
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going",
@@ -65,7 +65,7 @@
   "ydkjsscope": {
     "source": "P1XT",
     "name": "You Don't Know JS: Scope & Closures",
-    "description": "",
+    "description": "Having a thorough understanding of scopes and closures is key to being a good Javascript developer and a prerequiste before learning more advanced concepts.",
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures",
@@ -74,7 +74,7 @@
   "ydkjsthis": {
     "source": "P1XT",
     "name": "You Don't Know JS: this & Object Prototypes",
-    "description": "",
+    "description": "The concept of 'this' is one of the most confusing in Javascript. In this lesson you'll gain an understand of this and the object prototyping mechanism that make Javascript both unique and powerful.",
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes",
@@ -92,7 +92,7 @@
   "learnhtmlcss": {
     "source": "P1XT",
     "name": "Learn to Code HTML & CSS",
-    "description": "",
+    "description": "Use this guide to learn the fundamental technologies and techniques of front end design and development using HTML and CSS.",
     "type": "Supplemental Course",
     "subject": "HTML/CSS",
     "externalSource": "http://learn.shayhowe.com/html-css/",
@@ -100,19 +100,19 @@
   },
   "onlineresume": {
     "source": "P1XT",
-    "name": " Clone this online resume template",
-    "description": "",
+    "name": "Clone this online resume template",
+    "description": "Practice your HTML and CSS skills by cloning an online resume template.",
     "type": "Project",
     "instructions": "Using only HTML and CSS create a static webpage that is functionally equivalent to this online resume template.",
     "resources": [["Online resume template", "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2"]],
     "subject": "HTML/CSS",
-    "externalSource": "",
+    "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2",
     "version": "1.0.0"
   },
   "ydkjstypes": {
     "source": "P1XT",
     "name": "You Don't Know JS: Types & Grammar",
-    "description": "",
+    "description": "While Javascript is a dynamic language it is none-the-less important to understand how data is typed. In addition, it's always important to have a firm grasp of the rules, or grammar, that govern how Javascript works.",
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&%20grammar/README.md#you-dont-know-js-types--grammar",
@@ -121,7 +121,7 @@
   "ydkjsasync": {
     "source": "P1XT",
     "name": "You Don't Know JS: Async & Performance",
-    "description": "",
+    "description": "One way that modern applications achieve performance is by performing operations in parallel with one another. In this lesson you'll learn the techniques of asynchronous programming and how to benchmark and tune your applications.",
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/README.md#you-dont-know-js-async--performance",
@@ -130,7 +130,7 @@
   "ydkjses6": {
     "source": "P1XT",
     "name": "Book: You Don't Know JS: ES6 & Beyond",
-    "description": "",
+    "description": "While the history of Javascript is ECMAScript 5, it's future is ECMASCript 6. Learn how to take advantage of the benefits of ES6 in your applications.",
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond",
