@@ -2,7 +2,7 @@
   "trygit": {
     "source": "GitHub",
     "name": "Try Git",
-    "description": "A short interactive introduction to Git",
+    "description": "Use this short interactive introduction to Git to learn the fundamentals of the Git source code control system.",
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "https://try.github.io",
@@ -11,7 +11,7 @@
   "gitsimpleguide": {
     "source": "P1XT",
     "name": "Git - the simple guide",
-    "description": "",
+    "description": "Learn the basics of Git including workflows you'll come to rely on in your daily web development activities.",
     "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "http://git.huit.harvard.edu/guide/",
@@ -20,8 +20,8 @@
   "githubtraining": {
     "source": "P1XT",
     "name": "GitHub Training & Guide",
-    "description": "",
-    "type": "Supplemental Course",
+    "description": "Extend your understanding of Git and GitHub by reading the series of guides developed by the staff of GitHub.",
+    "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "https://guides.github.com/",
     "version": "1.0.0"
@@ -29,7 +29,7 @@
   "githubhelloworld": {
     "source": "P1XT",
     "name": "GitHub Hello World",
-    "description": "",
+    "description": "Build on your knowledge of Git and GitHub by using them to create and manage a Hello World application.",
     "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "https://guides.github.com/activities/hello-world/",
@@ -38,7 +38,7 @@
   "gitimmersion": {
     "source": "P1XT",
     "name": "Git Immersion",
-    "description": "",
+    "description": "Reinforce what you already know about Git as well as learning new techniques and workflows by using Git in this guided tour.",
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "http://gitimmersion.com/",
@@ -47,10 +47,10 @@
   "howtogitngithub": {
     "source": "P1XT",
     "name": "How to Use Git and GitHub",
-    "description": "",
+    "description": "Gain an understanding of the basics of using source code control by learning the industrity standard tools - Git and GitHub.",
     "type": "Supplemental Course",
     "subject": "Source Code Control",
-    "externalSource": "",
+    "externalSource": "https://www.udacity.com/course/how-to-use-git-and-github--ud775",
     "version": "1.0.0"
   },
   "ydkjsupngoing": {

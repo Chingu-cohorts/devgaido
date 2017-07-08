@@ -1,7 +1,7 @@
 {
   "git": {
     "name": "Understanding & Working with Git",
-    "description": "Learn what Git is and how developers use it to manage source code in a highly distributed manner.",
+    "description": "Git is the the source code control system used for both commercial and Open Source projects. This is your first step in understanding how Git helps developers to manage their source code and how to make it part of your daily development workflow.",
     "lessonIds": [
       "trygit",
       "gitsimpleguide"
@@ -10,7 +10,7 @@
   },
   "github": {
     "name": "Understanding & Working with GitHub",
-    "description": "Learn the value of GitHub and how it is used not only to manage your team's source code, but also how it can help improve project management.",
+    "description": "As a leader in cloud-based Git systems it's important for web developers to understand its capabilities. In this course you'll learn how it is used not only to manage your team's source code, but also how it can help improve project management.",
     "lessonIds": [
       "howtogitngithub",
       "githubhelloworld",
@@ -20,7 +20,7 @@
   },
   "advancedgit": {
     "name": "Advanced Git",
-    "description": "Learn the workflows and techniques senior webdevs use to be more productive with Git and to solve everyday source code management problems.",
+    "description": "To become a senior web developer you'll need to understand Git techniques and workflow processes that will make you an effective part of your team. As part of this you'll learn how to solve complex situations and problems using Git.",
     "lessonIds": [
       "gitimmersion"
     ],
