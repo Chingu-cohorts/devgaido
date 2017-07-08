@@ -64,7 +64,7 @@
   },
   "p1xtprereqs": {
     "name": "P1XT Guide: Prerequisites",
-    "description": "Prerequisite knowledge you will need before starting the courses that make up the four tiers of the P1XT Guide",
+    "description": "Maintaining your source code and publishing the body of work you create on an Open Source collaboration site are basic skills you'll need as a web developer. Complete this prerequisite before starting the four tiers of the P1XT Guide",
     "lessonIds": [
       "trygit",
       "gitsimpleguide",
@@ -195,7 +195,7 @@
   },
   "htmlbasics": {
     "name": "HTML Basics",
-    "description": "Learn the basics of HTML - the standard used to define webpages",
+    "description": "Learn the basics of HTML - the standard used to define webpages.",
     "lessonIds": [
       "introhtml",
       "beginnerhtml",
@@ -205,7 +205,7 @@
   },
   "cssbasics": {
     "name": "CSS Basics",
-    "description": "Learn the basics of CSS - the standard used to style webpages",
+    "description": "Learn the basics of CSS - the standard used to style webpages.",
     "lessonIds": [
       "introcss",
       "beginnercss",
