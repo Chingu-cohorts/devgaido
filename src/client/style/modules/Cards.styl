@@ -1,6 +1,6 @@
 .card
   margin-bottom 20px
-
+  
 // Needed because we wrap the cards in <Link> components which overwrites text with link colors
 a.card
   color $color-text
@@ -56,3 +56,7 @@ a.card
   &:after
     width 0
 
+// Add margin to LinkCards on Dashboard
+.item-list
+  .link-card
+    margin-bottom 30px

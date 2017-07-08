@@ -19,7 +19,7 @@ const Dashboard = ({ dispatch, user, curriculum, uiState, history }) => (
         content: <InProgressTab curriculum={curriculum} user={user} history={history} />,
       }, {
         caption: 'Bookmarked',
-        content: <BookmarkedTab curriculum={curriculum} user={user} />,
+        content: <BookmarkedTab curriculum={curriculum} />,
       }, {
         caption: 'Completed',
         content: <CompletedTab curriculum={curriculum} />,

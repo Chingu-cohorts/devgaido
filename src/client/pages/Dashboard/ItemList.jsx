@@ -15,10 +15,10 @@ const iconLookUp = {
   lessons: 'fa-graduation-cap',
 };
 
-const ItemList = ({ items, category }) => (
-  <div className="path-list flex flex-wrap margin-bottom-huge">
+const ItemList = ({ items, category, linkToMode }) => (
+  <div className="item-list flex flex-wrap margin-bottom-huge">
     {items.map(item => (
-      <LinkCard item={item} linkTo={item.linkTo} bgColorClass={bgColorLookUp[category]} iconClass={iconLookUp[category]} heightClass="height-100" key={item.name} />
+      <LinkCard item={item} linkTo={linkToMode === 'completed' ? item.completedLinkTo : item.bookmarkLinkTo} bgColorClass={bgColorLookUp[category]} iconClass={iconLookUp[category]} heightClass="height-100" key={item.name} />
     ))}
   </div>
 );
@@ -26,6 +26,7 @@ const ItemList = ({ items, category }) => (
 ItemList.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
   category: PropTypes.string.isRequired,
+  linkToMode: PropTypes.string.isRequired,
 };
 
 export default ItemList;

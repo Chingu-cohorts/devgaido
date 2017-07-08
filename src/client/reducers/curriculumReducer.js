@@ -14,8 +14,14 @@ const updatePaths = (curriculum) => {
 
     if (total !== 0 && total === completed) {
       path.completed = true;
+      path.completedLinkTo = `/paths/${pathId}`;
+      path.courseIds.forEach((courseId) => {
+        const course = curriculum.courses[courseId];
+        course.completedLinkTo = `/paths/${pathId}/${courseId}`;
+      });
     } else {
       path.completed = false;
+      path.completedLinkTo = '';
     }
   });
 };
@@ -65,6 +71,7 @@ const curriculum = (state = {
     case 'COMPLETE_LESSON': {
       const newLessons = { ...(state.lessons) };
       newLessons[action.lessonId].completed = true;
+      newLessons[action.lessonId].completedLinkTo = action.linkTo;
       const newState = {
         ...state,
         lessons: { ...newLessons },
@@ -76,12 +83,31 @@ const curriculum = (state = {
     case 'UNCOMPLETE_LESSON': {
       const newLessons = { ...(state.lessons) };
       newLessons[action.lessonId].completed = false;
+      newLessons[action.lessonId].completedLinkTo = '';
       const newState = {
         ...state,
         lessons: { ...newLessons },
       };
       updateCourses(newState);
       updatePaths(newState);
+      return newState;
+    }
+    case 'ADD_BOOKMARK': {
+      const newState = { ...state };
+      const item = newState[action.itemCategory][action.itemId];
+      console.log(item)
+      item.bookmarked = true;
+      item.bookmarkLinkTo = action.linkTo;
+
+      return newState;
+    }
+    case 'REMOVE_BOOKMARK': {
+      const newState = { ...state };
+      const item = newState[action.itemCategory][action.itemId];
+
+      item.bookmarked = false;
+      item.bookmarkLinkTo = '';
+
       return newState;
     }
     default:

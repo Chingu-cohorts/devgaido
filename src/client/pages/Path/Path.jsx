@@ -7,12 +7,12 @@ import BreadCrumbs from '../shared/BreadCrumbs';
 import { InfoCard, LinkCard } from '../shared/Cards';
 import PageDivider from '../shared/PageDivider';
 
-import { addBookmark, removeBookmark } from '../../actions/userActions';
+import { addBookmark, removeBookmark } from '../../actions/curriculumActions';
 
-const Path = ({ match, curriculum, user, dispatch }) => {
+const Path = ({ match, curriculum, dispatch }) => {
   const pathId = match.params.id;
   const path = curriculum.paths[match.params.id];
-  const bookmarkId = `/paths/${pathId}`;
+  const linkTo = `/paths/${pathId}`;
 
   const courses = path.courseIds.map((courseId) => {
     const course = curriculum.courses[courseId];
@@ -29,9 +29,9 @@ const Path = ({ match, curriculum, user, dispatch }) => {
       <PageDivider>
         <button className="button--primary hidden">Bookmark Path</button>
         <span className="c-primary normal h3">Courses completed: {path.nCompleted}/{path.nTotal}</span>
-        {user.bookmarkedItems.paths.indexOf(bookmarkId) === -1 ?
-          <button className="button--primary" onClick={() => dispatch(addBookmark(bookmarkId, 'paths'))}>Bookmark Path</button> :
-          <button className="button--secondary" onClick={() => dispatch(removeBookmark(bookmarkId, 'paths'))}>Remove Bookmark</button>}
+        {!path.bookmarked ?
+          <button className="button--primary" onClick={() => dispatch(addBookmark(pathId, 'paths', linkTo))}>Bookmark Path</button> :
+          <button className="button--secondary" onClick={() => dispatch(removeBookmark(pathId, 'paths', linkTo))}>Remove Bookmark</button>}
       </PageDivider>
       <div className="container">
         <div className="row">
@@ -58,7 +58,6 @@ const Path = ({ match, curriculum, user, dispatch }) => {
 
 Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
-  user: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   dispatch: PropTypes.func.isRequired,
 };

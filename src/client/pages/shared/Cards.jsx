@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 
-const CardTemplate = ({ title, bgColorClass, iconClass, heightClass, content }) => (
-  <div className={`card border-round bg-white ${heightClass}`}>
+const CardTemplate = ({ title, bgColorClass, iconClass, heightClass, content, footerContent }) => (
+  <div className={`card flex-column border-round bg-white ${heightClass}`}>
     <div className={`card__header flex align-items-center border-round-top ${bgColorClass}`}>
       <h5 className="card__header__text flex-1 c-white uppercase no-margin">{title}</h5>
       {iconClass ? <i className={`fa c-white h4 ${iconClass}`} /> : null}
@@ -12,6 +12,10 @@ const CardTemplate = ({ title, bgColorClass, iconClass, heightClass, content }) 
     <div className="card__content flex-1">
       {content}
     </div>
+    {footerContent ?
+      <div className="card__footer width-100 right">
+        {footerContent}
+      </div> : null}
   </div>
 );
 
@@ -59,15 +63,16 @@ const LinkCard = ({ item, bgColorClass, iconClass, connectionClass, heightClass,
       bgColorClass,
       iconClass,
       heightClass,
-      content: (
-        <div className="flex-column justify-space-between">
-          <p>{item.description ? item.description : 'No description given.'}</p>
+      content: <p>{item.description ? item.description : 'No description given.'}</p>,
+      footerContent: (
+        <div>
           {!item.completed && item.nTotal ?
             <h4 className="c-primary no-margin right">
-              Completed: <span className="bold">{item.nCompleted}/{item.nTotal}</span>
+                Completed: <span className="bold">{item.nCompleted}/{item.nTotal}</span>
             </h4> : null}
           {item.completed ? <i className="fa fa-check-circle-o h1 c-primary right" /> : null}
-        </div>),
+        </div>
+      ),
     })}
   </Link>
 );
@@ -82,12 +87,17 @@ CardTemplate.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
+  footerContent: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
 };
 
 CardTemplate.defaultProps = {
   iconClass: '',
   bgImageClass: '',
   heightClass: '',
+  footerContent: null,
 };
 
 LinkCard.propTypes = {

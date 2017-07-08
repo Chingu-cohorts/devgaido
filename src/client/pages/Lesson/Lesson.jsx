@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDisqusThread from 'react-disqus-thread';
 
-import { setCurrentPath, addBookmark, removeBookmark } from '../../actions/userActions';
+import { setCurrentPath } from '../../actions/userActions';
+import { addBookmark, removeBookmark } from '../../actions/curriculumActions';
 import { completeLesson } from './LessonActions';
 
 import PageHero from '../shared/PageHero';
@@ -10,13 +11,13 @@ import BreadCrumbs from '../shared/BreadCrumbs';
 import { InfoCard, PreviewCard } from '../shared/Cards';
 import PageDivider from '../shared/PageDivider';
 
-const Lesson = ({ match, dispatch, curriculum, user }) => {
+const Lesson = ({ match, dispatch, curriculum }) => {
   const pathId = match.params.pid;
   const courseId = match.params.cid;
   const lessonId = match.params.id;
   const lesson = curriculum.lessons[lessonId];
   const subject = curriculum.subjects[lesson.subject];
-  const bookmarkId = `/paths/${pathId}/${courseId}/${lessonId}`;
+  const linkTo = `/paths/${pathId}/${courseId}/${lessonId}`;
 
   return (
     <div>
@@ -34,11 +35,11 @@ const Lesson = ({ match, dispatch, curriculum, user }) => {
         <button className="button--primary hidden">Bookmark Lesson</button>
         <div className="flex width-100 justify-center">
           <a className="button button--secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPath(match.params.pid, match.params.cid, match.params.id))}>START LESSON</a>
-          <button className="button--primary margin-left-small" onClick={() => dispatch(completeLesson(lessonId))}>COMPLETE LESSON</button>
+          <button className="button--primary margin-left-small" onClick={() => dispatch(completeLesson(lessonId, linkTo))}>COMPLETE LESSON</button>
         </div>
-        {user.bookmarkedItems.lessons.indexOf(bookmarkId) === -1 ?
-          <button className="button--primary" onClick={() => dispatch(addBookmark(bookmarkId, 'lessons'))}>Bookmark Lesson</button> :
-          <button className="button--secondary" onClick={() => dispatch(removeBookmark(bookmarkId, 'lessons'))}>Remove Bookmark</button>}
+        {!lesson.bookmarked ?
+          <button className="button--primary" onClick={() => dispatch(addBookmark(lessonId, 'lessons', linkTo))}>Bookmark Lesson</button> :
+          <button className="button--secondary" onClick={() => dispatch(removeBookmark(lessonId, 'lessons', linkTo))}>Remove Bookmark</button>}
       </PageDivider>
       <div className="container">
         <div className="row">
@@ -71,7 +72,6 @@ const Lesson = ({ match, dispatch, curriculum, user }) => {
 Lesson.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
-  user: PropTypes.objectOf(PropTypes.shape).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 

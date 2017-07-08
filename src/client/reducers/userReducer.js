@@ -12,11 +12,6 @@ const user = (state = {
   email: '',
   dayLastVisited: Date.now(),
   streak: 0,
-  bookmarkedItems: {
-    paths: [],
-    courses: [],
-    lessons: [],
-  },
   curPathId: '',
   curCourseId: '',
   curLessonId: '',
@@ -29,39 +24,6 @@ const user = (state = {
         curCourseId: action.courseId,
         curLessonId: action.lessonId,
       };
-    }
-    case 'ADD_BOOKMARK': {
-      const index = state.bookmarkedItems[action.itemCategory].indexOf(action.itemId);
-
-      if (index === -1) {
-        const newBookmarkedItems = { ...state.bookmarkedItems };
-
-        newBookmarkedItems[action.itemCategory] = newBookmarkedItems[action.itemCategory]
-                                                  .concat(action.itemId);
-
-        return {
-          ...state,
-          bookmarkedItems: newBookmarkedItems,
-        };
-      }
-
-      return state;
-    }
-    case 'REMOVE_BOOKMARK': {
-      const index = state.bookmarkedItems[action.itemCategory].indexOf(action.itemId);
-
-      if (index !== -1) {
-        const newBookmarkedItems = { ...state.bookmarkedItems };
-
-        newBookmarkedItems[action.itemCategory].splice(index, 1);
-
-        return {
-          ...state,
-          bookmarkedItems: newBookmarkedItems,
-        };
-      }
-
-      return state;
     }
     default:
       return state;

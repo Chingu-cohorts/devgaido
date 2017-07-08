@@ -7,13 +7,13 @@ import BreadCrumbs from '../shared/BreadCrumbs';
 import { InfoCard, LinkCard } from '../shared/Cards';
 import PageDivider from '../shared/PageDivider';
 
-import { addBookmark, removeBookmark } from '../../actions/userActions';
+import { addBookmark, removeBookmark } from '../../actions/curriculumActions';
 
-const Course = ({ match, curriculum, user, dispatch }) => {
+const Course = ({ match, curriculum, dispatch }) => {
   const pathId = match.params.pid;
   const courseId = match.params.id;
   const course = curriculum.courses[courseId];
-  const bookmarkId = `/paths/${pathId}/${courseId}`;
+  const linkTo = `/paths/${pathId}/${courseId}`;
 
   const lessons = course.lessonIds.map((lessonId) => {
     const lesson = curriculum.lessons[lessonId];
@@ -35,9 +35,9 @@ const Course = ({ match, curriculum, user, dispatch }) => {
       <PageDivider>
         <button className="button--primary hidden">Bookmark Course</button>
         <span className="c-primary normal h3">Lessons completed: {course.nCompleted}/{course.nTotal}</span>
-        {user.bookmarkedItems.courses.indexOf(bookmarkId) === -1 ?
-          <button className="button--primary" onClick={() => dispatch(addBookmark(bookmarkId, 'courses'))}>Bookmark Course</button> :
-          <button className="button--secondary" onClick={() => dispatch(removeBookmark(bookmarkId, 'courses'))}>Remove Bookmark</button>}
+        {!course.bookmarked ?
+          <button className="button--primary" onClick={() => dispatch(addBookmark(courseId, 'courses', linkTo))}>Bookmark Course</button> :
+          <button className="button--secondary" onClick={() => dispatch(removeBookmark(courseId, 'courses', linkTo))}>Remove Bookmark</button>}
       </PageDivider>
       <div className="container">
         <div className="row">
@@ -65,7 +65,6 @@ const Course = ({ match, curriculum, user, dispatch }) => {
 Course.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
-  user: PropTypes.objectOf(PropTypes.shape).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 

@@ -4,38 +4,30 @@ import { Link } from 'react-router-dom';
 
 import ItemList from './ItemList';
 
-const getBookmarkedItem = (allItems, bookmarksArr) => {
-  const items = bookmarksArr.map(
-    (bookmark) => {
-      const link = bookmark;
-      const itemId = (bookmark.substr(bookmark.lastIndexOf('/') + 1));
-
-      return {
-        ...allItems[itemId],
-        linkTo: link,
-      };
-    },
+const getBookmarkedItems = (allItems) => {
+  const items = Object.keys(allItems).filter(itemId => allItems[itemId].bookmarked).map(
+    itemId => (allItems[itemId]),
   );
   return items;
 };
 
-const BookmarkedTab = ({ user, curriculum }) => {
-  const bookmarkedPaths = getBookmarkedItem(curriculum.paths, user.bookmarkedItems.paths);
-  const bookmarkedCourses = getBookmarkedItem(curriculum.courses, user.bookmarkedItems.courses);
-  const bookmarkedLessons = getBookmarkedItem(curriculum.lessons, user.bookmarkedItems.lessons);
+const BookmarkedTab = ({ curriculum }) => {
+  const bookmarkedPaths = getBookmarkedItems(curriculum.paths);
+  const bookmarkedCourses = getBookmarkedItems(curriculum.courses);
+  const bookmarkedLessons = getBookmarkedItems(curriculum.lessons);
 
   return (
     <div className="bookmarked-tab margin-bottom-huge">
       <span>RESOURCES</span>
       <h2>Bookmarked</h2>
       { bookmarkedPaths.length !== 0 ?
-        <ItemList items={bookmarkedPaths} curriculum={curriculum} category="paths" /> : null }
+        <ItemList items={bookmarkedPaths} curriculum={curriculum} category="paths" linkToMode="bookmarked" /> : null }
       {
         bookmarkedCourses.length !== 0 ?
-          <ItemList items={bookmarkedCourses} curriculum={curriculum} category="courses" /> : null }
+          <ItemList items={bookmarkedCourses} curriculum={curriculum} category="courses" linkToMode="bookmarked" /> : null }
       {
         bookmarkedLessons.length !== 0 ?
-          <ItemList items={bookmarkedLessons} curriculum={curriculum} category="lessons" /> : null }
+          <ItemList items={bookmarkedLessons} curriculum={curriculum} category="lessons" linkToMode="bookmarked" /> : null }
       { bookmarkedLessons.length + bookmarkedCourses.length + bookmarkedPaths.length <= 0 ?
         <div className="center margin-top-huge">
           <h3>You haven&apos;t bookmarked anything yet.</h3>
@@ -46,7 +38,6 @@ const BookmarkedTab = ({ user, curriculum }) => {
 };
 
 BookmarkedTab.propTypes = {
-  user: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
