@@ -29,11 +29,11 @@ describe('Validate corelessons.json', () => {
     });
     it('should verify that the lesson contains all required attributes', () => {
       invalidLessons = validateRequiredAttributes(allLessons, getExpectedAttributes());
-      assert.equal(invalidLessons, 0);
+      assert.equal(invalidLessons.length, 1);
     });
     it('should verify that there are no unknown attributes', () => {
       invalidLessons = validateUnknownAttributes(allLessons, getExpectedAttributes());
-      assert.equal(invalidLessons, 0);
+      assert.equal(invalidLessons.length, 0);
     });
   });
   describe('Validate lesson id length', () => {
