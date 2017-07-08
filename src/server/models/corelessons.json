@@ -6,7 +6,7 @@
     "type": "Supplemental Course",
     "subject": "Source Code Control",
     "externalSource": "https://try.github.io",
-    "estimatedTime": "medium",
+    "estimatedTime": "short",
     "version": "1.0.0"
   },
   "gitsimpleguide": {
@@ -16,7 +16,7 @@
     "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "http://git.huit.harvard.edu/guide/",
-    "estimatedTime": "medium",
+    "estimatedTime": "short",
     "version": "1.0.0"
   },
   "githubtraining": {
@@ -36,7 +36,7 @@
     "type": "Reading",
     "subject": "Source Code Control",
     "externalSource": "https://guides.github.com/activities/hello-world/",
-    "estimatedTime": "medium",
+    "estimatedTime": "short",
     "version": "1.0.0"
   },
   "gitimmersion": {
@@ -66,7 +66,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/up%20&%20going/README.md#you-dont-know-js-up--going",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "ydkjsscope": {
@@ -76,7 +76,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20&%20closures/README.md#you-dont-know-js-scope--closures",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "ydkjsthis": {
@@ -86,7 +86,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/this%20&%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "cs50x": {
@@ -96,7 +96,7 @@
     "type": "Supplemental Course",
     "subject": "Computer Science",
     "externalSource": "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "learnhtmlcss": {
@@ -118,7 +118,7 @@
     "resources": [["Online resume template", "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2"]],
     "subject": "HTML/CSS",
     "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "ydkjstypes": {
@@ -128,7 +128,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/types%20&%20grammar/README.md#you-dont-know-js-types--grammar",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "ydkjsasync": {
@@ -138,7 +138,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/async%20&%20performance/README.md#you-dont-know-js-async--performance",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "ydkjses6": {
@@ -148,7 +148,7 @@
     "type": "Reading",
     "subject": "Javascript",
     "externalSource": "https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/README.md#you-dont-know-js-es6--beyond",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "advhtmlcss": {
@@ -552,7 +552,7 @@
     "resources": [["Nexflix", "http://netflix.com"]],
     "subject": "Frontend",
     "externalSource": "",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "calculus2": {
@@ -596,7 +596,7 @@
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subject": "Javascript",
     "externalSource": "",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "jsspessore": {
@@ -650,7 +650,7 @@
     "resources": [["ES6 Katas", "http://es6katas.org/"]],
     "subject": "Javascript",
     "externalSource": "",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "cloudcomputing": {
@@ -672,7 +672,7 @@
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subject": "Javascript",
     "externalSource": "",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "buildfacebook": {
@@ -684,7 +684,7 @@
     "resources": [["Requirements", "http://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project"]],
     "subject": "Fullstack",
     "externalSource": "",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "theoreticalcs": {
@@ -706,7 +706,7 @@
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subject": "Javascript",
     "externalSource": "",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "probability": {
@@ -772,7 +772,7 @@
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subject": "Javascript",
     "externalSource": "",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "crypto2": {
@@ -794,7 +794,7 @@
     "resources": [["Twitter", "http://twitter.com"]],
     "subject": "Fullstack",
     "externalSource": "",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "computerarch": {
@@ -816,7 +816,7 @@
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subject": "Javascript",
     "externalSource": "",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "cybersecurity": {
@@ -838,7 +838,7 @@
     "resources": [["Classic puzzles", "https://www.codingame.com/"]],
     "subject": "Javascript",
     "externalSource": "",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "computergfx": {
@@ -870,7 +870,7 @@
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subject": "Javascript",
     "externalSource": "",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "machinelearning": {
@@ -978,7 +978,7 @@
     "resources": [["Distributed Google Code Jam", "https://code.google.com/codejam/contest/4264486/dashboard"]],
     "subject": "Fullstack",
     "externalSource": "",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "cloneslack": {
@@ -990,7 +990,7 @@
     "resources": [["Learn Harmony", "http://learnharmony.org/#/?_k=0okjs7"]],
     "subject": "Fullstack",
     "externalSource": "",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "bootstrapfull": {
@@ -1014,7 +1014,7 @@
     "resources": [["Google Code Jam 2016", "https://code.google.com/codejam/past-contests"]],
     "subject": "Fullstack",
     "externalSource": "",
-    "estimatedTime": "medium",
+    "estimatedTime": "long",
     "version": "1.0.0"
   },
   "materialdesign": {
