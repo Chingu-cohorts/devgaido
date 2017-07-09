@@ -11,18 +11,12 @@ const getFilteredResults = (curriculum, uiState) => {
       let retValSearchTerm = false;
       let filterTopic = false;
       let filterSearchTerm = false;
+
       if (uiState.Pages.PathCatalog.topic !== 'All Topics') {
         filterTopic = true;
-        curriculum.paths[pathId].courseIds.forEach((courseId) => {
-          if (curriculum.courses[courseId]) {
-            curriculum.courses[courseId].lessonIds.forEach((lessonId) => {
-              if (curriculum.lessons[lessonId].subjects.indexOf(uiState.Pages.PathCatalog.topic) !== -1) {
-                retValTopic = true;
-              }
-            });
-          }
-        });
+        retValTopic = curriculum.paths[pathId].subjects.indexOf(uiState.Pages.PathCatalog.topic) !== -1;
       }
+
       if (uiState.Pages.PathCatalog.searchTerm !== '') {
         // TODO: Extend search to courses and lessons?
         filterSearchTerm = true;
