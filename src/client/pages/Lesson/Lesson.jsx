@@ -16,7 +16,7 @@ const Lesson = ({ match, dispatch, curriculum }) => {
   const courseId = match.params.cid;
   const lessonId = match.params.id;
   const lesson = curriculum.lessons[lessonId];
-  const subject = curriculum.subjects[lesson.subject];
+  const subjects = lesson.subjects.map(subjectId => curriculum.subjects[subjectId]);
   const linkTo = `/paths/${pathId}/${courseId}/${lessonId}`;
 
   return (
@@ -45,8 +45,11 @@ const Lesson = ({ match, dispatch, curriculum }) => {
         <div className="row">
           <div className="grid-half">
             <InfoCard item={lesson} bgColorClass="bg-primary">
-              <p>{subject.name}</p>
-              <p>{subject.description}</p>
+              {subjects.map(
+                subject => <div key={subject.name}>
+                  <p>{subject.name}</p>
+                  <p>{subject.description}</p>
+                </div>)}
             </InfoCard>
           </div>
           <div className="grid-half">

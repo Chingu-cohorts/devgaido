@@ -16,7 +16,7 @@ const getFilteredResults = (curriculum, uiState) => {
         curriculum.paths[pathId].courseIds.forEach((courseId) => {
           if (curriculum.courses[courseId]) {
             curriculum.courses[courseId].lessonIds.forEach((lessonId) => {
-              if (curriculum.lessons[lessonId].subject === uiState.Pages.PathCatalog.topic) {
+              if (curriculum.lessons[lessonId].subjects.indexOf(uiState.Pages.PathCatalog.topic) !== -1) {
                 retValTopic = true;
               }
             });
