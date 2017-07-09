@@ -104,7 +104,7 @@
     "name": "Learn to Code HTML & CSS",
     "description": "Use this guide to learn the fundamental technologies and techniques of front end design and development using HTML and CSS.",
     "type": "Supplemental Course",
-    "subjects": "HTML/CSS",
+    "subjects": ["HTML/CSS"],
     "externalSource": "http://learn.shayhowe.com/html-css/",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -116,7 +116,7 @@
     "type": "Project",
     "instructions": "Using only HTML and CSS create a static webpage that is functionally equivalent to this online resume template.",
     "resources": [["Online resume template", "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2"]],
-    "subjects": "HTML/CSS",
+    "subjects": ["HTML/CSS"],
     "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2",
     "estimatedTime": "long",
     "version": "1.0.0"
@@ -156,7 +156,7 @@
     "name": "Learn to Code Advanced HTML & CSS",
     "description": "",
     "type": "Course",
-    "subjects": "HTML/CSS",
+    "subjects": ["HTML/CSS"],
     "externalSource": "http://learn.shayhowe.com/advanced-html-css/",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -168,7 +168,7 @@
     "type": "Project",
     "instructions": "Complete the Portfolio project from the Frontend Certificate program on Freecodecamp.",
     "resources": [["FCC Personal Portfolio Webpage", "https://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage"]],
-    "subjects": "HTML/CSS",
+    "subjects": ["HTML/CSS"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -218,7 +218,7 @@
     "name": "Getting Sassy with Sass",
     "description": "",
     "type": "Supplemental Course",
-    "subjects": "HTML/CSS",
+    "subjects": ["HTML/CSS"],
     "externalSource": "http://www.sassshop.com/",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -282,7 +282,7 @@
     "name": "DOM Enlightenment",
     "description": "",
     "type": "Reading",
-    "subjects": "HTML/CSS",
+    "subjects": ["HTML/CSS"],
     "externalSource": "http://domenlightenment.com/",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -486,7 +486,7 @@
     "name": "UX Design for Mobile Developers",
     "description": "",
     "type": "Supplemental Course",
-    "subjects": "UX/UI",
+    "subjects": ["UX/UI"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -1100,7 +1100,7 @@
     "type": "Project",
     "instructions": "",
     "resources": [["Online Resume Template", "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot1"]],
-    "subjects": "HTML/CSS",
+    "subjects": ["HTML/CSS"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -1151,7 +1151,7 @@
     "description": "Build a Personal Portfolio webpage",
     "type": "Project",
     "instructions": "",
-    "subjects": "HTML/CSS",
+    "subjects": ["HTML/CSS"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -1161,7 +1161,7 @@
     "name": "Introduction to Bootstrap",
     "description": "Learn how to use the Bootstrap Library for styling your webpages",
     "type": "Video",
-    "subjects": "CSS/Bootstrap",
+    "subjects": ["CSS/Bootstrap"],
     "externalSource": "https://www.edx.org/course/introduction-bootstrap-tutorial-microsoft-dev203x-2",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -1171,7 +1171,7 @@
     "name": "Quentin Watt Bootstrap Video Series",
     "description": "Get a deeper understanding of Bootstrap's capabilities and usage",
     "type": "Video",
-    "subjects": "CSS/Bootstrap",
+    "subjects": ["CSS/Bootstrap"],
     "externalSource": "https://www.youtube.com/playlist?list=PL41lfR-6DnOovY0t3nBg8Zb6aqm_H70mR",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -1183,7 +1183,7 @@
     "type": "Project",
     "instructions": "Modify your tribute page to use Bootstrap instead of native CSS",
     "resources": [["Bootstrap", "http://getbootstrap.com/"]],
-    "subjects": "CSS/Bootstrap",
+    "subjects": ["CSS/Bootstrap"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -1193,7 +1193,7 @@
     "name": "Foundation Framework Crash Course",
     "description": "Learn the basics of the Framework library for styling your webpages",
     "type": "Video",
-    "subjects": "CSS/Foundation",
+    "subjects": ["CSS/Foundation"],
     "externalSource": "https://www.youtube.com/watch?v=DEu5xYEZx18",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -1203,7 +1203,7 @@
     "name": "Introduction to Sass",
     "description": "Learn the basics of the Sass library for styling your webpages",
     "type": "Lesson",
-    "subjects": "CSS/Sass",
+    "subjects": ["CSS/Sass"],
     "externalSource": "http://callmenick.com/post/an-introduction-to-sass-scss",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -1213,7 +1213,7 @@
     "name": "Introduction to Less",
     "description": "Learn the basics of the Less library for styling your webpages",
     "type": "Lesson",
-    "subjects": "CSS/Less",
+    "subjects": ["CSS/Less"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -1223,7 +1223,7 @@
     "name": "Introduction to Stylus",
     "description": "Learn the basics of the Stylus library for styling your webpages",
     "type": "Lesson",
-    "subjects": "CSS/Stylus",
+    "subjects": ["CSS/Stylus"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"

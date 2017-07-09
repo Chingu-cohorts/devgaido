@@ -3,59 +3,55 @@ import { getAllCourses } from './coreCourses';
 import { getAllLessons } from './coreLessons';
 import { getAllSubjects } from './coreSubjects';
 
-const updatePaths = (curriculum) => {
+const initPaths = (curriculum) => {
   Object.keys(curriculum.paths).forEach((pathId) => {
-    let completed = 0;
-    let total = 0;
     const path = curriculum.paths[pathId];
-    path.courseIds.forEach((courseId) => {
-      total += 1;
-      if (curriculum.courses[courseId] && curriculum.courses[courseId].completed) {
-        completed += 1;
-      }
-    });
+    const completed = 0;
+    const total = path.courseIds.length;
+
     path.nCompleted = completed;
     path.nTotal = total;
+    path.completed = false;
+    path.subjects = [];
 
-    if (total !== 0 && total === completed) {
-      path.completed = true;
-      path.completedLinkTo = `/paths/${pathId}`;
-      path.courseIds.forEach((courseId) => {
-        const course = curriculum.courses[courseId];
-        course.completedLinkTo = `/paths/${pathId}/${courseId}`;
+    path.courseIds.forEach((courseId) => {
+      const course = curriculum.courses[courseId];
+
+      course.subjects.forEach((subject) => {
+        if (path.subjects.indexOf(subject) === -1) {
+          path.subjects.push(subject);
+        }
       });
-    } else {
-      path.completed = false;
-      path.completedLinkTo = '';
-    }
+    });
   });
 };
 
-const updateCourses = (curriculum) => {
+const initCourses = (curriculum) => {
   Object.keys(curriculum.courses).forEach((courseId) => {
-    let completed = 0;
-    let total = 0;
     const course = curriculum.courses[courseId];
-    course.lessonIds.forEach((lessonId) => {
-      total += 1;
-      if (curriculum.lessons[lessonId] && curriculum.lessons[lessonId].completed) {
-        completed += 1;
-      }
-    });
+    const completed = 0;
+    const total = course.lessonIds.length;
+
     course.nCompleted = completed;
     course.nTotal = total;
+    course.completed = false;
+    course.subjects = [];
 
-    if (total !== 0 && total === completed) {
-      course.completed = true;
-    } else {
-      course.completed = false;
-    }
+    course.lessonIds.forEach((lessonId) => {
+      const lesson = curriculum.lessons[lessonId];
+
+      lesson.subjects.forEach((subject) => {
+        if (course.subjects.indexOf(subject) === -1) {
+          course.subjects.push(subject);
+        }
+      });
+    });
   });
 };
 
-const initialize = (curriculum) => {
-  updateCourses(curriculum);
-  updatePaths(curriculum);
+const init = (curriculum) => {
+  initCourses(curriculum);
+  initPaths(curriculum);
 
   return curriculum;
 };
@@ -67,7 +63,7 @@ const getCurriculum = () => {
     courses: getAllCourses(),
     lessons: getAllLessons(),
   };
-  return initialize(curriculum);
+  return init(curriculum);
 };
 
 export default getCurriculum;
