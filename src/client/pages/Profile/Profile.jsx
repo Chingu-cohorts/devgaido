@@ -8,7 +8,7 @@ const Profile = ({ user }) => (
   <div>
     <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" title="Profile" />
     <PageDivider />
-    <div className="container margin-top-huge">
+    <div className="container margin-top-huge margin-bottom-huge">
       <h1>Basic user information</h1>
       <p>Please fill out your profile details</p>
       <form>
