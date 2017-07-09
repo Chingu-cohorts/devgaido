@@ -1,13 +1,10 @@
 # [![devGaido version][devgaido-image]][devgaido-url]
 
-[![build status][travis-image]][travis-url]
-[![Downloads][downloads-image]][downloads-url]
-[![js-standard-style][standard-image]][standard-url]
-
 devGaido provides a guided learning experience through the Web Development 
-ecosystem. This application provides supplies a progressive path towards 
-acquiring web development skills. But it also provides a motivation towards a
-goal as well as a means of tracking progress tracking.
+ecosystem by providing those new to the craft with predefined pathas to aid in
+achieving web development skills. For experienced developers it provides a 
+a means of filling in skill gaps around specific technologies, libraries, and
+languages.
 
 [Features](#features) | [Installation](#installation) | [Usage](#usage) | [Examples](#examples) | [Command-line options](#options) | [Configuration](#configuration) | [Authors](#authors) |
 [License](#license)
@@ -27,13 +24,28 @@ goal as well as a means of tracking progress tracking.
  provide the user with the option of specifying application-specific 
  credentials or integration with either GitHub or Google for authentication.
 
-## Installation
+## Developing
 
-```bash
-$ yarn
-```
+### Built With
 
-## Usage
+The main libraries used in the development of devGaido are React, React Router,
+Redux, and Stylus.
+
+### Git Branches
+
+- master: Only updated from PR's from the development branch for release. This
+branch always reflects the current production release.
+- development: Reflects the candidate code for the next release. Developers
+work in developer branches, which are then pulled into this branch. All code
+pulled into this branch must be tested and undergo peer review as part of the
+PR process.
+- developer branches: Are individual branches created by each developer when
+they are working on changes and bug fixes. There are 4 basic types of branches: 
+bug, feature, refactor and style, after the type comes the name, it should 
+specify on top of the branch type. For example feature/course-review. Consult
+the wiki for more details and examples.
+
+### Usage
 
 | Command           | Purpose                           |
 |:------------------|:----------------------------------|
@@ -45,16 +57,9 @@ $ yarn
 | yarn dev:server   | Start development client          |
 | yarn dev:client   | Start development server          |
 | yarn analyzesize  | Analyze bundle sizes              |
+| yarn test         | Initiate tests and validations    |
 
-### Examples
-
-Stay tuned
-
-### Options
-
- - `TBD`: Stay tuned.
-
-## Configuration
+### Configuration
 
 The devGaido project folder is organized in the following manner:
 
@@ -72,15 +77,15 @@ The devGaido project folder is organized in the following manner:
     /server - Backend application source
       /models - Data model files
       /services - Microservices
+    /test - Mocha tests and validations of JSON files
+      /testdata - Data files designed to exercise the tests and validations
 ```
 
 ## Authors
 
 - [Francesco Agnoletto](https://github.com/kornil)
-- [Oussama Bouguerne](https://github.com/codejunky)
 - [Erik Hos](https://github.com/mrhos)
 - [Kim Kwanka](https://github.com/kimkwanka)
-- [Matt Leonard](https://github.com/matty22)
 - [Chance McAllister](https://github.com/tropicalchancer)
 - [Jim Medlock](https://github.com/jdmedlock)
 
@@ -90,10 +95,3 @@ The devGaido project folder is organized in the following manner:
 
 [devgaido-image]: https://cdn.rawgit.com/Chingu-cohorts/devgaido/refactor/style/src/client/assets/img/devGaidoLogo.svg
 [devgaido-url]: https://github.com/Chingu-cohorts/devgaido
-[travis-image]: https://img.shields.io/travis/yoshuawuyts/vmd/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/yoshuawuyts/vmd
-[downloads-image]: https://github.com/paulrobertlloyd/socialmediaicons/blob/master/github-32x32.png?raw=true
-[downloads-url]: https://github.com/Chingu-cohorts/devgaido
-[standard-image]: https://github-media-downloads.s3.amazonaws.com/GitHub-Logos.zip
-[standard-url]: https://github.com/feross/standard
-[emoji-cheat-sheet]: http://www.emoji-cheat-sheet.com/
