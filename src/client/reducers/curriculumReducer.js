@@ -62,12 +62,6 @@ const curriculum = (state = {
   paths: {},
 }, action) => {
   switch (action.type) {
-    case 'INIT_CURRICULUM' : {
-      const newState = { ...state };
-      updateCourses(newState);
-      updatePaths(newState);
-      return newState;
-    }
     case 'COMPLETE_LESSON': {
       const newLessons = { ...(state.lessons) };
       newLessons[action.lessonId].completed = true;
@@ -95,7 +89,6 @@ const curriculum = (state = {
     case 'ADD_BOOKMARK': {
       const newState = { ...state };
       const item = newState[action.itemCategory][action.itemId];
-      console.log(item)
       item.bookmarked = true;
       item.bookmarkLinkTo = action.linkTo;
 

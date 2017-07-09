@@ -7,10 +7,7 @@ import { createStore } from 'redux';
 import reducers from '../client/reducers';
 import userReducer from '../client/reducers/userReducer';
 
-import { getAllPaths } from './services/corePaths';
-import { getAllCourses } from './services/coreCourses';
-import { getAllLessons } from './services/coreLessons';
-import { getAllSubjects } from './services/coreSubjects';
+import getCurriculum from './services/coreCurriculum';
 
 import App from '../client/App';
 
@@ -88,12 +85,8 @@ export default (req, res, next) => {
       avatar: '',
     };
 
-    const curriculum = {
-      subjects: getAllSubjects(),
-      paths: getAllPaths(),
-      courses: getAllCourses(),
-      lessons: getAllLessons(),
-    };
+    const curriculum = getCurriculum();
+
     // TODO: Default Dashboard.currentPath to user.curPath
     const uiState = {
       global: {
