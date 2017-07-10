@@ -45,15 +45,35 @@ const Results = ({ curriculum, uiState }) => {
   const filterBySearchTerm = uiState.Pages.PathCatalog.searchTerm !== '';
 
   const pathIds = getFilteredItems(curriculum.paths, uiState, filterByTopic, filterBySearchTerm);
+  const courseIds = getFilteredItems(curriculum.courses, uiState, filterByTopic, filterBySearchTerm);
+  const lessonIds = getFilteredItems(curriculum.lessons, uiState, filterByTopic, filterBySearchTerm);
 
   return (
-    <div className="results flex flex-wrap margin-vertical-big">
-      {pathIds.map((pathId) => {
-        const path = curriculum.paths[pathId];
-        return (
-          <ImageLinkCard item={path} linkTo={`/paths/${pathId}`} bgColorClass="bg-secondary" bgImageClass="img-test" iconClass="fa-road" key={pathId} />
-        );
-      })}
+    <div className="results margin-vertical-big">
+      <div className="flex flex flex-wrap margin-vertical-big">
+        {pathIds.map((pathId) => {
+          const path = curriculum.paths[pathId];
+          return (
+            <ImageLinkCard item={path} linkTo={path.url} bgColorClass="bg-secondary" bgImageClass="img-test" iconClass="fa-road" key={pathId} />
+          );
+        })}
+      </div>
+      <div className="flex flex flex-wrap margin-vertical-big">
+        {courseIds.map((courseId) => {
+          const course = curriculum.courses[courseId];
+          return (
+            <ImageLinkCard item={course} linkTo={course.url} bgColorClass="bg-primary" bgImageClass="img-test" iconClass="fa-tasks" key={courseId} />
+          );
+        })}
+      </div>
+      <div className="flex flex flex-wrap margin-vertical-big">
+        {lessonIds.map((lessonId) => {
+          const lesson = curriculum.lessons[lessonId];
+          return (
+            <ImageLinkCard item={lesson} linkTo={lesson.url} bgColorClass="bg-secondary" bgImageClass="img-test" iconClass="fa-graduation-cap" key={lessonId} />
+          );
+        })}
+      </div>
     </div>
   );
 };

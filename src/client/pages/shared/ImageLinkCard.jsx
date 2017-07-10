@@ -14,7 +14,7 @@ const ImageLinkCard = ({ item, bgColorClass, bgImageClass, iconClass, linkTo }) 
       <p>{item.description ? item.description : 'No description given.'}</p>
     </div>
     <div className="card__footer flex justify-space-between">
-      <span className="h5 bold left">PATH</span>
+      <span className="h5 bold left" />
       {item.nTotal ?
         <h4 className="c-primary no-margin right">
           Completed: <span className="bold">{item.nCompleted}/{item.nTotal}</span>
