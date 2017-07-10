@@ -104,7 +104,7 @@
     "name": "Learn to Code HTML & CSS",
     "description": "Use this guide to learn the fundamental technologies and techniques of front end design and development using HTML and CSS.",
     "type": "Supplemental Course",
-    "subjects": ["HTML/CSS"],
+    "subjects": ["HTML", "CSS"],
     "externalSource": "http://learn.shayhowe.com/html-css/",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -116,7 +116,7 @@
     "type": "Project",
     "instructions": "Using only HTML and CSS create a static webpage that is functionally equivalent to this online resume template.",
     "resources": [["Online resume template", "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2"]],
-    "subjects": ["HTML/CSS"],
+    "subjects": ["HTML", "CSS"],
     "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot2",
     "estimatedTime": "long",
     "version": "1.0.0"
@@ -156,7 +156,7 @@
     "name": "Learn to Code Advanced HTML & CSS",
     "description": "",
     "type": "Course",
-    "subjects": ["HTML/CSS"],
+    "subjects": ["HTML", "CSS"],
     "externalSource": "http://learn.shayhowe.com/advanced-html-css/",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -168,7 +168,7 @@
     "type": "Project",
     "instructions": "Complete the Portfolio project from the Frontend Certificate program on Freecodecamp.",
     "resources": [["FCC Personal Portfolio Webpage", "https://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage"]],
-    "subjects": ["HTML/CSS"],
+    "subjects": ["HTML", "CSS"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -198,7 +198,7 @@
     "name": "Setting Up ES6",
     "description": "",
     "type": "Reading",
-    "subjects": ["Javascript"],
+    "subjects": ["Javascript ES6"],
     "externalSource": "https://leanpub.com/setting-up-es6/read",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -218,7 +218,7 @@
     "name": "Getting Sassy with Sass",
     "description": "",
     "type": "Supplemental Course",
-    "subjects": ["HTML/CSS"],
+    "subjects": ["HTML", "CSS", "CSS/Sass"],
     "externalSource": "http://www.sassshop.com/",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -242,7 +242,7 @@
     "type": "Project",
     "instructions": "Pick a template from here and create a new template with it as your inspiration (do not use it's assets)",
     "resources": [["Template examples", "http://www.free-css.com/free-css-templates"]],
-    "subjects": ["Javascript"],
+    "subjects": ["HTML", "CSS", "Javascript"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -282,7 +282,7 @@
     "name": "DOM Enlightenment",
     "description": "",
     "type": "Reading",
-    "subjects": ["HTML/CSS"],
+    "subjects": ["HTML", "CSS"],
     "externalSource": "http://domenlightenment.com/",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -306,7 +306,7 @@
     "type": "Project",
     "instructions": "Implement the Simon game from the Frontend Certificate program at Freecodecamp.",
     "resources": [["FCC Simon Game", "https://www.freecodecamp.com/challenges/build-a-simon-game"]],
-    "subjects": ["Javascript"],
+    "subjects": ["HTML", "CSS", "Javascript"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -316,7 +316,7 @@
     "name": "Introduction to MongoDB",
     "description": "Learn more about MongoDB using the MEAN stack.",
     "type": "Supplemental Course",
-    "subjects": ["Database"],
+    "subjects": ["Backend", "Database"],
     "externalSource": "https://www.edx.org/course/introduction-mongodb-using-mean-stack-mongodbx-m101x-0",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -326,7 +326,7 @@
     "name": "FCC Backend Certification",
     "description": "The FCC Backend Certification - all projects, ignore the tutorials and just read the official docs if you want.",
     "type": "",
-    "subjects": ["Backend"],
+    "subjects": ["Backend", "Database"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -356,9 +356,9 @@
     "name": "Clone Landing Page",
     "description": "Exercise your frontend webdev HTML and CSS knowledge by cloning a landing page.",
     "type": "Project",
-    "instructions": "Create a clone of this landing page. Be sure to create your own code ant assets",
+    "instructions": "Create a clone of this landing page. Be sure to create your own code antand assets",
     "resources": [["Landing page to clone", "https://blackrockdigital.github.io/startbootstrap-creative/"]],
-    "subjects": ["Frontend"],
+    "subjects": ["Frontend", "HTML", "CSS"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -400,7 +400,7 @@
     "type": "Project",
     "instructions": "Recreate this administrative dashboard using React, Angular, or Vue",
     "resources": [["Administrative dashboard", "http://rubix410.sketchpixy.com/ltr/dashboard"]],
-    "subjects": ["Frontend"],
+    "subjects": ["Frontend", "HTML", "CSS", "Javascript"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -476,7 +476,7 @@
     "type": "Project",
     "instructions": "Using your own original code and assets recreate this websites front page, modifying it to highlight a different product or industry. Make special note of the secondary navigation bar at the top. Implementing that is the highlight of this project.",
     "resources": [["Example front page", "https://urbanarmorgear.com/"]],
-    "subjects": ["Javascript"],
+    "subjects": ["HTML", "CSS", "Javascript"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -508,7 +508,7 @@
     "type": "Project",
     "instructions": "Build the Pomodoro project from the FCC frontend curriculum as an android app.",
     "resources": [["FCC Pomodoro Clock", "https://www.freecodecamp.com/challenges/build-a-pomodoro-clock"]],
-    "subjects": ["Javascript"],
+    "subjects": ["HTML", "CSS", "Javascript"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -616,7 +616,7 @@
     "type": "Project",
     "instructions": "Clone all pages of this blog template",
     "resources": [["Blog template", "https://blackrockdigital.github.io/startbootstrap-clean-blog/"]],
-    "subjects": ["Javascript"],
+    "subjects": ["HTML", "CSS", "Javascript"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -626,7 +626,7 @@
     "name": "Databases",
     "description": "",
     "type": "Supplemental Course",
-    "subjects": ["Database"],
+    "subjects": ["Backend", "Database"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -648,7 +648,7 @@
     "type": "Project",
     "instructions": "Complete all coding challenges on this site using Javascript ES6.",
     "resources": [["ES6 Katas", "http://es6katas.org/"]],
-    "subjects": ["Javascript"],
+    "subjects": ["Javascript ES6"],
     "externalSource": "",
     "estimatedTime": "long",
     "version": "1.0.0"
@@ -682,7 +682,7 @@
     "type": "Project",
     "instructions": "Build FaceBook: yes, all the functionality. See here for a list of requirements you should fullfill.",
     "resources": [["Requirements", "http://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project"]],
-    "subjects": ["Fullstack"],
+    "subjects": ["Fullstack", "HTML", "CSS", "Javascript"],
     "externalSource": "",
     "estimatedTime": "long",
     "version": "1.0.0"
@@ -792,7 +792,7 @@
     "type": "Project",
     "instructions": "Build Twitter: yes, all the functionality. See here for a list of requirements you should fullfill.",
     "resources": [["Twitter", "http://twitter.com"]],
-    "subjects": ["Fullstack"],
+    "subjects": ["Fullstack", "HTML", "CSS", "Javascript", "Database"],
     "externalSource": "",
     "estimatedTime": "long",
     "version": "1.0.0"
@@ -944,7 +944,7 @@
     "type": "Project",
     "instructions": "Build a Learn Harmony clone with all the functionality.",
     "resources": [["Learn Harmony", "http://learnharmony.org/#/?_k=0okjs7"]],
-    "subjects": ["Fullstack"],
+    "subjects": ["Fullstack", "HTML", "CSS", "Javascript"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -1100,7 +1100,7 @@
     "type": "Project",
     "instructions": "",
     "resources": [["Online Resume Template", "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot1"]],
-    "subjects": ["HTML/CSS"],
+    "subjects": ["HTML", "CSS"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"
@@ -1151,7 +1151,7 @@
     "description": "Build a Personal Portfolio webpage",
     "type": "Project",
     "instructions": "",
-    "subjects": ["HTML/CSS"],
+    "subjects": ["HTML", "CSS"],
     "externalSource": "",
     "estimatedTime": "medium",
     "version": "1.0.0"

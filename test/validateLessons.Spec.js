@@ -61,11 +61,13 @@ describe('Validate corelessons.json', () => {
     afterEach(() => {
       invalidIds = logInvalidRelations('Lesson', 'Subject', invalidIds);
     });
-    it('should verify that subject ids exist', () => {
-      Object.values(allLessons).forEach((currentLesson) => {
-        if (coreSubjects[currentLesson.subject] === undefined) {
-          invalidIds.push([currentLesson.id, currentLesson.subject]);
-        }
+    it('should verify that the associated subject ids exist', () => {
+      Object.keys(allLessons).forEach((lessonId) => {
+        allLessons[lessonId].subjects.forEach((subjectName) => {
+          if (coreSubjects[subjectName] === undefined) {
+            invalidIds.push([lessonId, subjectName]);
+          }
+        });
       });
       assert.equal(invalidIds.length, 2);
     });

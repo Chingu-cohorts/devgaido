@@ -28,11 +28,11 @@ describe('Validate corepaths.json', () => {
     });
     it('should verify that the path contains all required attributes', () => {
       invalidPathIds = validateRequiredAttributes(allPaths, getExpectedAttributes());
-      assert.equal(invalidPathIds, 0);
+      assert.equal(invalidPathIds.length, 0);
     });
     it('should verify that there are no unknown attributes', () => {
       invalidPathIds = validateUnknownAttributes(allPaths, getExpectedAttributes());
-      assert.equal(invalidPathIds, 0);
+      assert.equal(invalidPathIds.length, 1);
     });
   });
   describe('Validate path id length', () => {
