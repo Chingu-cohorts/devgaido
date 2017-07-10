@@ -4,7 +4,7 @@
     "name": "Error",
     "description": "Error",
     "type": "Error",
-    "subject": "Error",
+    "subjects": ["Error"],
     "externalSource": "",
     "estimatedTime": "short",
     "version": "1.0.0"
@@ -14,7 +14,7 @@
     "name": "Error",
     "description": "Error",
     "type": "Error",
-    "subject": "Error",
+    "subjects": ["Error"],
     "externalSource": "",
     "version": "1.0.0"
   }

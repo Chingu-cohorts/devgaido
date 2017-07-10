@@ -16,19 +16,20 @@ import CoreLessons from '../models/corelessons.json';
  *                                     be provided to the user.
  *    "type": "...",               <-- Lesson type categorizes the medium used to
  *                                     transmit the information (e.g. reading, video, etc.)
- *    "Instructions": "...",       <-- For "type": "Project" this describes what
+ *    "instructions": "...",       <-- For "type": "Project" this describes what
  *                                     is expected of the user
- *    "resources":                 <-- For "type": "Project" this defines relevant
+ *    "resources":[["resource-description","resource-url"],...],
+ *                                 <-- For "type": "Project" this defines relevant
  *                                     supplemental material
- *      [["resource-description","resource-url"],...],
- *    "subject-identifier": "...", <-- Relates the lesson to a specific subject
+ *    "subjects: ["..."]..,        <-- An array of subject names this lesson is
+ *                                     associated with.
  *    "externalSource": "...",     <-- Defines the url of the lesson
  *    "estimatedTime": "short|medium|long", <-- Defines the estimated amount of
  *                                     time required to complete the lesson.
  *                                     This is only an estimate and the actual
  *                                     amount of time required will vary from
  *                                     user to user.
- *   "version": "1.0.0"            <-- Semantic version to track changes
+ *    "version": "1.0.0"           <-- Semantic version to track changes
  *  },
  * }
  */
@@ -44,7 +45,7 @@ const lessonAttributes = [
   ['type', 'required'],
   ['instructions', 'optional'],
   ['resources', 'optional'],
-  ['subject', 'required'],
+  ['subjects', 'required'],
   ['externalSource', 'required'],
   ['estimatedTime', 'required'],
   ['version', 'required'],

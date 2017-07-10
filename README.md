@@ -29,7 +29,8 @@ languages.
 ### Built With
 
 The main libraries used in the development of devGaido are React, React Router,
-Redux, and Stylus.
+Redux, and Stylus. For a complete list of libraries consult the `package.json`
+file.
 
 ### Git Branches
 

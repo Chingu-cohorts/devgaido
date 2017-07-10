@@ -106,15 +106,18 @@ Object.values = anObject =>
  * This must be formatted as {"<id>": {...id: "<id>"...}...}
  * @returns {String[]} invalidIds - Array of id's exceeding 16 characters
  */
-const validateRelationship = (childAttrNm, childJSON, parentAttrNm, parentJSON) =>
-    Object.values(childJSON).reduce((invalidIds, childElement) => {
-      childElement[childAttrNm].forEach((itemId) => {
-        if (parentJSON[itemId] === undefined) {
-          invalidIds.push([childElement.id, itemId]);
-        }
-      });
-      return invalidIds;
-    }, []);
+const validateRelationship = (childAttrNm, childJSON, parentAttrNm, parentJSON) => {
+  let invalidIds = [];
+  Object.keys(childJSON).forEach((childId) => {
+    const childElement = childJSON[childId];
+    childElement[childAttrNm].forEach((parentId) => {
+      if (parentJSON[parentId] === undefined) {
+        invalidIds.push([childId, parentId]);
+      }
+    });
+  });
+  return invalidIds;
+};
 
 /**
  * Validate that all required attributes have been specified

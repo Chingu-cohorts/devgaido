@@ -6,6 +6,7 @@
       "error1",
       "error2"
     ],
+    "badAttribute": "Error",
     "version": "1.0.0"
   }
 }
