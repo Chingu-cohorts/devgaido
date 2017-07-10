@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Legend from './Legend';
 import Results from './Results';
 import PageHero from '../shared/PageHero';
 import PageDivider from '../shared/PageDivider';
@@ -17,11 +18,14 @@ const onTopicChange = (e, dispatch) => {
 
 const PathCatalog = ({ curriculum, uiState, dispatch }) => (
   <div>
-    <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__library" title="Browse Paths" />
+    <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__library" title="Browse Paths">
+      <Legend curriculum={curriculum} />
+    </PageHero>
     <PageDivider>
       <div className="search-bar flex flex-1">
         <i className="fa fa-search c-primary h3 margin-right-small" />
         <input className="margin-right-small h5 thin" type="text" name="pathSearch" defaultValue={uiState.Pages.PathCatalog.searchTerm} placeholder="Search" onChange={e => onSearchChange(e, dispatch)} />
+
       </div>
       <div className="topics-dropdown relative">
         <select className="h5 thin" defaultValue={uiState.Pages.PathCatalog.topic} onChange={e => onTopicChange(e, dispatch)} >

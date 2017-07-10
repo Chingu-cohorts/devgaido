@@ -20,7 +20,7 @@ const Home = ({ lock }) => (
         <p className="c-white">Never worry about learning the wrong stuff from subpar resources ever again!</p>
         <div className="margin-top-small width-100">
           <Link className="button button--primary margin-right-small uppercase" to="/paths" onClick={e => handleStartNowClick(e, lock)}><i />Sign Up Now</Link>
-          <Link className="button button--white-clear uppercase" to="/paths">Explore Paths</Link>
+          <Link className="button button--white-clear uppercase" to="/paths">Explore Library</Link>
         </div>
       </div>
     </div>

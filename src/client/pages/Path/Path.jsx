@@ -8,11 +8,16 @@ import { InfoCard, LinkCard } from '../shared/Cards';
 import PageDivider from '../shared/PageDivider';
 
 import { addBookmark, removeBookmark } from '../../actions/curriculumActions';
+import { setCurrentPath } from '../../actions/userActions';
+
+const handleStartClick = (pathId, dispatch) => () => dispatch(setCurrentPath(pathId));
+
+const handleAddBookmarkClick = (pathId, dispatch) => () => dispatch(addBookmark(pathId, 'paths'));
+const handleRemoveBookmarkClick = (pathId, dispatch) => () => dispatch(removeBookmark(pathId, 'paths'));
 
 const Path = ({ match, curriculum, dispatch }) => {
   const pathId = match.params.id;
   const path = curriculum.paths[match.params.id];
-  const linkTo = `/paths/${pathId}`;
 
   const courses = path.courseIds.map((courseId) => {
     const course = curriculum.courses[courseId];
@@ -27,11 +32,11 @@ const Path = ({ match, curriculum, dispatch }) => {
         {path.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
       <PageDivider>
-        <button className="button--primary hidden">Bookmark Path</button>
         <span className="c-primary normal h3">Courses completed: {path.nCompleted}/{path.nTotal}</span>
+        <button className="button--secondary" onClick={handleStartClick(pathId, dispatch)}>Start Path</button>
         {!path.bookmarked ?
-          <button className="button--primary" onClick={() => dispatch(addBookmark(pathId, 'paths', path.url))}>Bookmark Path</button> :
-          <button className="button--secondary" onClick={() => dispatch(removeBookmark(pathId, 'paths', path.url))}>Remove Bookmark</button>}
+          <button className="button--primary" onClick={handleAddBookmarkClick(pathId, dispatch)}>Bookmark Path</button> :
+          <button className="button--secondary" onClick={handleRemoveBookmarkClick(pathId, dispatch)}>Remove Bookmark</button>}
       </PageDivider>
       <div className="container">
         <div className="row">

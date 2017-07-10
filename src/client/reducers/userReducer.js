@@ -21,7 +21,17 @@ const user = (state = {
       return {
         ...state,
         curPathId: action.pathId,
+      };
+    }
+    case 'SET_CURRENT_COURSE': {
+      return {
+        ...state,
         curCourseId: action.courseId,
+      };
+    }
+    case 'SET_CURRENT_LESSON': {
+      return {
+        ...state,
         curLessonId: action.lessonId,
       };
     }
