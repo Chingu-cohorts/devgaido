@@ -125,15 +125,6 @@
     "authorityURL": "https://developer.mozilla.org/en-US/docs/Web/HTML",
     "version": "1.0.0"
   },
-  "HTML/CSS": {
-    "type": "Library",
-    "focusArea": "Frontend",
-    "name": "HTML & CSS",
-    "description": "Hypertext Markup Language & Cascading Style Sheets",
-    "releaseNo": "",
-    "authorityURL": "",
-    "version": "1.0.0"
-  },  
   "Javascript": {
     "type": "Language",
     "focusArea": "Javascript",
