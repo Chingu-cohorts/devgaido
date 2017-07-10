@@ -21,10 +21,10 @@ const PathCatalog = ({ curriculum, uiState, dispatch }) => (
     <PageDivider>
       <div className="search-bar flex flex-1">
         <i className="fa fa-search c-primary h3 margin-right-small" />
-        <input className="margin-right-small h5 thin" type="text" name="pathSearch" placeholder="Search" onChange={e => onSearchChange(e, dispatch)} />
+        <input className="margin-right-small h5 thin" type="text" name="pathSearch" defaultValue={uiState.Pages.PathCatalog.searchTerm} placeholder="Search" onChange={e => onSearchChange(e, dispatch)} />
       </div>
       <div className="topics-dropdown relative">
-        <select className="h5 thin" onChange={e => onTopicChange(e, dispatch)} >
+        <select className="h5 thin" defaultValue={uiState.Pages.PathCatalog.topic} onChange={e => onTopicChange(e, dispatch)} >
           <option value="All Topics" key="AllTopics">All Topics</option>
           {Object.keys(curriculum.subjects).map(
             subjectId => <option value={subjectId} key={subjectId}>{subjectId}</option>,
