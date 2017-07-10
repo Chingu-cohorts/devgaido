@@ -10,6 +10,7 @@ import PageDivider from '../shared/PageDivider';
 import { addBookmark, removeBookmark } from '../../actions/curriculumActions';
 
 const Course = ({ match, curriculum, dispatch }) => {
+  const standalone = match.url.startsWith('/courses');
   const pathId = match.params.pid;
   const courseId = match.params.id;
   const course = curriculum.courses[courseId];
@@ -17,7 +18,7 @@ const Course = ({ match, curriculum, dispatch }) => {
 
   const lessons = course.lessonIds.map((lessonId) => {
     const lesson = curriculum.lessons[lessonId];
-    return <LinkCard item={lesson} linkTo={`/paths/${pathId}/${courseId}/${lessonId}`} bgColorClass="bg-primary" iconClass="fa-graduation-cap" key={lessonId} connectionClass="connected--secondary" />;
+    return <LinkCard item={lesson} linkTo={lesson.url} bgColorClass="bg-primary" iconClass="fa-graduation-cap" key={lessonId} connectionClass="connected--secondary" />;
   });
 
   return (
@@ -36,8 +37,8 @@ const Course = ({ match, curriculum, dispatch }) => {
         <button className="button--primary hidden">Bookmark Course</button>
         <span className="c-primary normal h3">Lessons completed: {course.nCompleted}/{course.nTotal}</span>
         {!course.bookmarked ?
-          <button className="button--primary" onClick={() => dispatch(addBookmark(courseId, 'courses', linkTo))}>Bookmark Course</button> :
-          <button className="button--secondary" onClick={() => dispatch(removeBookmark(courseId, 'courses', linkTo))}>Remove Bookmark</button>}
+          <button className="button--primary" onClick={() => dispatch(addBookmark(courseId, 'courses', course.url))}>Bookmark Course</button> :
+          <button className="button--secondary" onClick={() => dispatch(removeBookmark(courseId, 'courses', course.url))}>Remove Bookmark</button>}
       </PageDivider>
       <div className="container">
         <div className="row">

@@ -35,11 +35,11 @@ const Lesson = ({ match, dispatch, curriculum }) => {
         <button className="button--primary hidden">Bookmark Lesson</button>
         <div className="flex width-100 justify-center">
           <a className="button button--secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => dispatch(setCurrentPath(match.params.pid, match.params.cid, match.params.id))}>START LESSON</a>
-          <button className="button--primary margin-left-small" onClick={() => dispatch(completeLesson(lessonId, linkTo))}>COMPLETE LESSON</button>
+          <button className="button--primary margin-left-small" onClick={() => dispatch(completeLesson(lessonId, lesson.url))}>COMPLETE LESSON</button>
         </div>
         {!lesson.bookmarked ?
-          <button className="button--primary" onClick={() => dispatch(addBookmark(lessonId, 'lessons', linkTo))}>Bookmark Lesson</button> :
-          <button className="button--secondary" onClick={() => dispatch(removeBookmark(lessonId, 'lessons', linkTo))}>Remove Bookmark</button>}
+          <button className="button--primary" onClick={() => dispatch(addBookmark(lessonId, 'lessons', lesson.url))}>Bookmark Lesson</button> :
+          <button className="button--secondary" onClick={() => dispatch(removeBookmark(lessonId, 'lessons', lesson.url))}>Remove Bookmark</button>}
       </PageDivider>
       <div className="container">
         <div className="row">

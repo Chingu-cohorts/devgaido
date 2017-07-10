@@ -16,7 +16,7 @@ const Path = ({ match, curriculum, dispatch }) => {
 
   const courses = path.courseIds.map((courseId) => {
     const course = curriculum.courses[courseId];
-    return <LinkCard item={course} linkTo={`/paths/${pathId}/${courseId}`} bgColorClass="bg-secondary" iconClass="fa-tasks" key={courseId} connectionClass="connected" />;
+    return <LinkCard item={course} linkTo={course.url} bgColorClass="bg-secondary" iconClass="fa-tasks" key={courseId} connectionClass="connected" />;
   });
 
   return (
@@ -30,8 +30,8 @@ const Path = ({ match, curriculum, dispatch }) => {
         <button className="button--primary hidden">Bookmark Path</button>
         <span className="c-primary normal h3">Courses completed: {path.nCompleted}/{path.nTotal}</span>
         {!path.bookmarked ?
-          <button className="button--primary" onClick={() => dispatch(addBookmark(pathId, 'paths', linkTo))}>Bookmark Path</button> :
-          <button className="button--secondary" onClick={() => dispatch(removeBookmark(pathId, 'paths', linkTo))}>Remove Bookmark</button>}
+          <button className="button--primary" onClick={() => dispatch(addBookmark(pathId, 'paths', path.url))}>Bookmark Path</button> :
+          <button className="button--secondary" onClick={() => dispatch(removeBookmark(pathId, 'paths', path.url))}>Remove Bookmark</button>}
       </PageDivider>
       <div className="container">
         <div className="row">

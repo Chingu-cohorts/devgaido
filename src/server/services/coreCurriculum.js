@@ -23,6 +23,7 @@ const initPaths = (curriculum) => {
         }
       });
     });
+    path.url = `/paths/${pathId}`;
   });
 };
 
@@ -46,10 +47,21 @@ const initCourses = (curriculum) => {
         }
       });
     });
+    course.url = `/courses/${courseId}`;
+  });
+};
+
+const initLessons = (curriculum) => {
+  Object.keys(curriculum.lessons).forEach((lessonId) => {
+    const lesson = curriculum.lessons[lessonId];
+
+    lesson.completed = false;
+    lesson.url = `/lessons/${lessonId}`;
   });
 };
 
 const init = (curriculum) => {
+  initLessons(curriculum);
   initCourses(curriculum);
   initPaths(curriculum);
 
