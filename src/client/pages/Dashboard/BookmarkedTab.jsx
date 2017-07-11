@@ -31,7 +31,7 @@ const BookmarkedTab = ({ curriculum }) => {
       { bookmarkedLessons.length + bookmarkedCourses.length + bookmarkedPaths.length <= 0 ?
         <div className="center margin-top-huge">
           <h3>You haven&apos;t bookmarked anything yet.</h3>
-          <Link className="button button--primary" to="/paths">BROWSE PATHS</Link>
+          <Link className="button button--primary uppercase" to="/library">Browse Library</Link>
         </div> : null }
     </div>
   );

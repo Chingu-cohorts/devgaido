@@ -28,7 +28,7 @@ const Header = ({ user, uiState, dispatch, lock }) => (
         <ul className="flex align-items-center no-margin list-style-none uppercase">
           <li className="margin-right-small"><NavLink to="/styleguide" activeClassName="boxshadow-underline bold">Styleguide</NavLink></li>
           <li className="margin-right-small"><NavLink to="/dashboard" activeClassName="boxshadow-underline bold">Dashboard</NavLink></li>
-          <li className="margin-right-small"><NavLink to="/library" activeClassName="boxshadow-underline bold">Browse Library</NavLink></li>
+          <li className="margin-right-small"><NavLink to="/library" activeClassName="boxshadow-underline bold">Library</NavLink></li>
         </ul>
         {user.authenticated ? <a className={uiState.global.navMenuOpen ? '' : ''} href="/" onClick={e => toggleMenu(e, dispatch)} title="Menu">‌<img className="avatar circle-border subtle-border" src={user.avatar} alt="avatar" /></a> : null}
         {!user.authenticated ? <a className="button button--primary-clear uppercase" href="/" onClick={e => handleLoginClick(e, lock)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a> : null}
