@@ -18,7 +18,7 @@ const onTopicChange = (e, dispatch) => {
 
 const PathCatalog = ({ curriculum, uiState, dispatch }) => (
   <div>
-    <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__library" title="Browse Paths">
+    <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__library" title="Browse Library">
       <Legend curriculum={curriculum} />
     </PageHero>
     <PageDivider>

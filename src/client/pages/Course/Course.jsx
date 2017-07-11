@@ -17,8 +17,10 @@ const Course = ({ match, curriculum, user, dispatch }) => {
   const course = curriculum.courses[courseId];
 
   let pathId = null;
+  let path = null;
   if (course.parentPathIds.indexOf(user.curPathId) !== -1) {
     pathId = user.curPathId;
+    path = curriculum.paths[pathId];
   }
 
   const lessons = course.lessonIds.map((lessonId) => {
@@ -29,12 +31,9 @@ const Course = ({ match, curriculum, user, dispatch }) => {
   return (
     <div>
       <PageHero bgColorClass="bg-secondary" bgImageClass="bg-img__path" title={course.name}>
-        {pathId ? <BreadCrumbs
-          curriculum={curriculum}
-          pathId={pathId}
-          courseId={courseId}
-          invertIconColors
-        /> : null}
+        {pathId ?
+          <BreadCrumbs rootNode={{ name: 'Current Path', url: '/dashboard' }} nodes={[path, course]} invertIconColors /> :
+          <BreadCrumbs rootNode={{ name: 'Courses', url: '/library' }} nodes={[course]} invertIconColors />}
         <i className="fa fa-tasks c-white h0 abs-top-right" />
         {course.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>

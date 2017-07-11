@@ -21,12 +21,15 @@ const Lesson = ({ match, curriculum, user, dispatch }) => {
 
   let pathId = null;
   let courseId = null;
+  let path = null;
+  let course = null;
   if (lesson.parentPathIds.indexOf(user.curPathId) !== -1) {
     pathId = user.curPathId;
-    const path = curriculum.paths[pathId];
+    path = curriculum.paths[pathId];
     path.courseIds.forEach((_courseId) => {
       if (lesson.parentCourseIds.indexOf(_courseId) !== -1) {
         courseId = _courseId;
+        course = curriculum.courses[courseId];
       }
     });
   }
@@ -34,12 +37,9 @@ const Lesson = ({ match, curriculum, user, dispatch }) => {
   return (
     <div>
       <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" title={lesson.name}>
-        {pathId ? <BreadCrumbs
-          curriculum={curriculum}
-          pathId={pathId}
-          courseId={courseId}
-          lessonId={lessonId}
-        /> : null}
+        {pathId ?
+          <BreadCrumbs rootNode={{ name: 'Current Path', url: '/dashboard' }} nodes={[path, course, lesson]} /> :
+          <BreadCrumbs rootNode={{ name: 'Lessons', url: '/library' }} nodes={[lesson]} />}
         <i className="fa fa-graduation-cap c-white h0 abs-top-right" />
         {lesson.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>

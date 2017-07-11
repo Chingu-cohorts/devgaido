@@ -6,19 +6,3 @@ export function setCurrentPath(pathId) {
     pathId,
   };
 }
-
-export function setCurrentCourse(pathId) {
-  return {
-    type: 'SET_CURRENT_COURSE',
-    pathId,
-  };
-}
-
-export function setCurrentLesson(pathId) {
-  return {
-    type: 'SET_CURRENT_LESSON',
-    pathId,
-  };
-}
-
-

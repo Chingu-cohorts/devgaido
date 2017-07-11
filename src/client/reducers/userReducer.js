@@ -13,26 +13,12 @@ const user = (state = {
   dayLastVisited: Date.now(),
   streak: 0,
   curPathId: '',
-  curCourseId: '',
-  curLessonId: '',
 }, action) => {
   switch (action.type) {
     case 'SET_CURRENT_PATH': {
       return {
         ...state,
         curPathId: action.pathId,
-      };
-    }
-    case 'SET_CURRENT_COURSE': {
-      return {
-        ...state,
-        curCourseId: action.courseId,
-      };
-    }
-    case 'SET_CURRENT_LESSON': {
-      return {
-        ...state,
-        curLessonId: action.lessonId,
       };
     }
     default:

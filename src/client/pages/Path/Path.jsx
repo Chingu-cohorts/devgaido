@@ -15,7 +15,7 @@ const handleStartClick = (pathId, dispatch) => () => dispatch(setCurrentPath(pat
 const handleAddBookmarkClick = (pathId, dispatch) => () => dispatch(addBookmark(pathId, 'paths'));
 const handleRemoveBookmarkClick = (pathId, dispatch) => () => dispatch(removeBookmark(pathId, 'paths'));
 
-const Path = ({ match, curriculum, dispatch }) => {
+const Path = ({ match, curriculum, user, dispatch }) => {
   const pathId = match.params.id;
   const path = curriculum.paths[match.params.id];
 
@@ -27,13 +27,15 @@ const Path = ({ match, curriculum, dispatch }) => {
   return (
     <div>
       <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" title={path.name}>
-        <BreadCrumbs curriculum={curriculum} pathId={match.params.id} />
+        {pathId === user.curPathId ?
+          <BreadCrumbs rootNode={{ name: 'Current Path', url: '/dashboard' }} nodes={[path]} /> :
+          <BreadCrumbs rootNode={{ name: 'Paths', url: '/library' }} nodes={[path]} />}
         <i className="fa fa-road c-white h0 abs-top-right" />
         {path.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
       <PageDivider>
-        <span className="c-primary normal h3">Courses completed: {path.nCompleted}/{path.nTotal}</span>
         <button className="button--secondary" onClick={handleStartClick(pathId, dispatch)}>Start Path</button>
+        <span className="c-primary normal h3">Courses completed: {path.nCompleted}/{path.nTotal}</span>
         {!path.bookmarked ?
           <button className="button--primary" onClick={handleAddBookmarkClick(pathId, dispatch)}>Bookmark Path</button> :
           <button className="button--secondary" onClick={handleRemoveBookmarkClick(pathId, dispatch)}>Remove Bookmark</button>}
@@ -64,6 +66,7 @@ const Path = ({ match, curriculum, dispatch }) => {
 Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
+  user: PropTypes.objectOf(PropTypes.shape).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 
