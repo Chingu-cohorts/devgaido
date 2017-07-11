@@ -54,15 +54,17 @@ const Results = ({ curriculum, uiState }) => {
         {pathIds.map((pathId) => {
           const path = curriculum.paths[pathId];
           return (
-            <ImageLinkCard item={path} linkTo={path.url} bgColorClass="bg-secondary" bgImageClass="img-test" iconClass="fa-road" key={pathId} />
+            <ImageLinkCard item={path} linkTo={path.url} bgColorClass="bg-primary" imgSrc={`/paths/${pathId}.jpg`} iconClass="fa-road" key={pathId} />
           );
         })}
       </div>
       <div className="flex flex flex-wrap margin-vertical-big">
         {courseIds.map((courseId) => {
           const course = curriculum.courses[courseId];
+          const parentPath = curriculum.paths[course.parentPathIds[0]];
+          const sliceNumber = parentPath.courseIds.indexOf(courseId);
           return (
-            <ImageLinkCard item={course} linkTo={course.url} bgColorClass="bg-primary" bgImageClass="img-test" iconClass="fa-tasks" key={courseId} />
+            <ImageLinkCard item={course} linkTo={course.url} bgColorClass="bg-secondary" sliceNumber={sliceNumber} imgSrc={`/paths/${course.parentPathIds[0]}.jpg`} iconClass="fa-tasks" key={courseId} />
           );
         })}
       </div>
@@ -70,7 +72,7 @@ const Results = ({ curriculum, uiState }) => {
         {lessonIds.map((lessonId) => {
           const lesson = curriculum.lessons[lessonId];
           return (
-            <ImageLinkCard item={lesson} linkTo={lesson.url} bgColorClass="bg-secondary" bgImageClass="img-test" iconClass="fa-graduation-cap" key={lessonId} />
+            <ImageLinkCard item={lesson} linkTo={lesson.url} bgColorClass="bg-primary" imgSrc={`/screenshots/${lessonId}.jpeg`} iconClass="fa-graduation-cap" key={lessonId} />
           );
         })}
       </div>
