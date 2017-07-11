@@ -23,7 +23,7 @@ const PathCatalog = ({ curriculum, uiState, dispatch }) => (
     </PageHero>
     <PageDivider>
       <div className="search-bar flex flex-1">
-        <i className="fa fa-search c-primary h3 margin-right-small" />
+        <i className="fa fa-search c-secondary h3 margin-right-small" />
         <input className="margin-right-small h5 thin" type="text" name="pathSearch" defaultValue={uiState.Pages.PathCatalog.searchTerm} placeholder="Search" onChange={e => onSearchChange(e, dispatch)} />
 
       </div>
