@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import LessonSlider from './LessonSlider';
-import PathList from './PathList';
+import ItemList from './ItemList';
 
 const isInProgress = (path, courses, lessons) => {
   let inProgress = false;
@@ -27,7 +27,7 @@ const getInProgressPaths = (curriculum) => {
   return (
     Object.keys(paths).filter(
         pathId => !paths[pathId].completed && isInProgress(paths[pathId], courses, lessons),
-    )
+    ).map(pathId => paths[pathId])
   );
 };
 
@@ -45,7 +45,7 @@ const InProgressSection = ({ inProgressPaths, curriculum }) => (
   <div className="inprogress-tab margin-bottom-huge">
     <span>PATHS</span>
     <h2>In Progress</h2>
-    <PathList pathIds={inProgressPaths} curriculum={curriculum} /> :
+    <ItemList items={inProgressPaths} curriculum={curriculum} category="paths" /> :
   </div>
 );
 
@@ -92,7 +92,7 @@ CurrentPathSection.propTypes = {
 };
 
 InProgressSection.propTypes = {
-  inProgressPaths: PropTypes.arrayOf(PropTypes.string).isRequired,
+  inProgressPaths: PropTypes.arrayOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 

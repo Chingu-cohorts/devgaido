@@ -9,26 +9,31 @@ import PageDivider from '../shared/PageDivider';
 
 import { addBookmark, removeBookmark } from '../../actions/curriculumActions';
 
-const Course = ({ match, curriculum, dispatch }) => {
-  const pathId = match.params.pid;
+const handleAddBookmarkClick = (courseId, dispatch) => () => dispatch(addBookmark(courseId, 'courses'));
+const handleRemoveBookmarkClick = (courseId, dispatch) => () => dispatch(removeBookmark(courseId, 'courses'));
+
+const Course = ({ match, curriculum, user, dispatch }) => {
   const courseId = match.params.id;
   const course = curriculum.courses[courseId];
-  const linkTo = `/paths/${pathId}/${courseId}`;
+
+  let pathId = null;
+  let path = null;
+  if (course.parentPathIds.indexOf(user.curPathId) !== -1) {
+    pathId = user.curPathId;
+    path = curriculum.paths[pathId];
+  }
 
   const lessons = course.lessonIds.map((lessonId) => {
     const lesson = curriculum.lessons[lessonId];
-    return <LinkCard item={lesson} linkTo={`/paths/${pathId}/${courseId}/${lessonId}`} bgColorClass="bg-primary" iconClass="fa-graduation-cap" key={lessonId} connectionClass="connected--secondary" />;
+    return <LinkCard item={lesson} linkTo={lesson.url} bgColorClass="bg-primary" iconClass="fa-graduation-cap" key={lessonId} connectionClass="connected--secondary" />;
   });
 
   return (
     <div>
       <PageHero bgColorClass="bg-secondary" bgImageClass="bg-img__path" title={course.name}>
-        <BreadCrumbs
-          curriculum={curriculum}
-          pathId={pathId}
-          courseId={courseId}
-          invertIconColors
-        />
+        {pathId ?
+          <BreadCrumbs rootNode={{ name: 'Current Path', url: '/dashboard' }} nodes={[path, course]} invertIconColors /> :
+          <BreadCrumbs rootNode={{ name: 'Courses', url: '/library' }} nodes={[course]} invertIconColors />}
         <i className="fa fa-tasks c-white h0 abs-top-right" />
         {course.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
@@ -36,8 +41,8 @@ const Course = ({ match, curriculum, dispatch }) => {
         <button className="button--primary hidden">Bookmark Course</button>
         <span className="c-primary normal h3">Lessons completed: {course.nCompleted}/{course.nTotal}</span>
         {!course.bookmarked ?
-          <button className="button--primary" onClick={() => dispatch(addBookmark(courseId, 'courses', linkTo))}>Bookmark Course</button> :
-          <button className="button--secondary" onClick={() => dispatch(removeBookmark(courseId, 'courses', linkTo))}>Remove Bookmark</button>}
+          <button className="button--primary" onClick={handleAddBookmarkClick(courseId, dispatch)}>Bookmark Course</button> :
+          <button className="button--secondary" onClick={handleRemoveBookmarkClick(courseId, dispatch)}>Remove Bookmark</button>}
       </PageDivider>
       <div className="container">
         <div className="row">
@@ -65,6 +70,7 @@ const Course = ({ match, curriculum, dispatch }) => {
 Course.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
+  user: PropTypes.objectOf(PropTypes.shape).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 

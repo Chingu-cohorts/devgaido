@@ -21,13 +21,13 @@ const CompletedTab = ({ curriculum }) => {
       <span>RESOURCES</span>
       <h2>Completed</h2>
       { completedPaths.length !== 0 ?
-        <ItemList items={completedPaths} linkToMode="completed" curriculum={curriculum} category="paths" /> : null }
+        <ItemList items={completedPaths} curriculum={curriculum} category="paths" /> : null }
       {
         completedCourses.length !== 0 ?
-          <ItemList items={completedCourses} linkToMode="completed" curriculum={curriculum} category="courses" /> : null }
+          <ItemList items={completedCourses} curriculum={curriculum} category="courses" /> : null }
       {
         completedLessons.length !== 0 ?
-          <ItemList items={completedLessons} linkToMode="completed" curriculum={curriculum} category="lessons" /> : null }
+          <ItemList items={completedLessons} curriculum={curriculum} category="lessons" /> : null }
       { completedLessons.length + completedCourses.length + completedPaths.length <= 0 ?
         <div className="center margin-top-huge">
           <h3>You haven&apos;t completed anything yet.</h3>

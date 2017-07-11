@@ -21,13 +21,13 @@ const BookmarkedTab = ({ curriculum }) => {
       <span>RESOURCES</span>
       <h2>Bookmarked</h2>
       { bookmarkedPaths.length !== 0 ?
-        <ItemList items={bookmarkedPaths} curriculum={curriculum} category="paths" linkToMode="bookmarked" /> : null }
+        <ItemList items={bookmarkedPaths} curriculum={curriculum} category="paths" /> : null }
       {
         bookmarkedCourses.length !== 0 ?
-          <ItemList items={bookmarkedCourses} curriculum={curriculum} category="courses" linkToMode="bookmarked" /> : null }
+          <ItemList items={bookmarkedCourses} curriculum={curriculum} category="courses" /> : null }
       {
         bookmarkedLessons.length !== 0 ?
-          <ItemList items={bookmarkedLessons} curriculum={curriculum} category="lessons" linkToMode="bookmarked" /> : null }
+          <ItemList items={bookmarkedLessons} curriculum={curriculum} category="lessons" /> : null }
       { bookmarkedLessons.length + bookmarkedCourses.length + bookmarkedPaths.length <= 0 ?
         <div className="center margin-top-huge">
           <h3>You haven&apos;t bookmarked anything yet.</h3>

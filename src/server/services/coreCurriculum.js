@@ -16,13 +16,21 @@ const initPaths = (curriculum) => {
 
     path.courseIds.forEach((courseId) => {
       const course = curriculum.courses[courseId];
-
+      course.parentPathIds.push(pathId);
       course.subjects.forEach((subject) => {
         if (path.subjects.indexOf(subject) === -1) {
           path.subjects.push(subject);
         }
       });
+      course.lessonIds.forEach((lessonId) => {
+        const lesson = curriculum.lessons[lessonId];
+
+        if (lesson.parentPathIds.indexOf(pathId) === -1) {
+          lesson.parentPathIds.push(pathId);
+        }
+      });
     });
+    path.url = `/paths/${pathId}`;
   });
 };
 
@@ -36,20 +44,32 @@ const initCourses = (curriculum) => {
     course.nTotal = total;
     course.completed = false;
     course.subjects = [];
-
+    course.parentPathIds = [];
     course.lessonIds.forEach((lessonId) => {
       const lesson = curriculum.lessons[lessonId];
-
+      lesson.parentCourseIds.push(courseId);
       lesson.subjects.forEach((subject) => {
         if (course.subjects.indexOf(subject) === -1) {
           course.subjects.push(subject);
         }
       });
     });
+    course.url = `/courses/${courseId}`;
+  });
+};
+
+const initLessons = (curriculum) => {
+  Object.keys(curriculum.lessons).forEach((lessonId) => {
+    const lesson = curriculum.lessons[lessonId];
+    lesson.parentCourseIds = [];
+    lesson.parentPathIds = [];
+    lesson.completed = false;
+    lesson.url = `/lessons/${lessonId}`;
   });
 };
 
 const init = (curriculum) => {
+  initLessons(curriculum);
   initCourses(curriculum);
   initPaths(curriculum);
 

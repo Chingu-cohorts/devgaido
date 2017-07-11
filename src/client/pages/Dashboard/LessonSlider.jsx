@@ -6,7 +6,9 @@ import SliderCard from '../shared/SliderCard';
 class LessonSlider extends React.Component {
   constructor(props) {
     super(props);
-    this.lessonIds = props.curriculum.courses[props.user.curCourseId].lessonIds;
+    const currentPath = props.curriculum.paths[props.user.curPathId];
+    const currentCourse = props.curriculum.courses[currentPath.courseIds[0]];
+    this.lessonIds = currentCourse.lessonIds;
     const lessons = props.curriculum.lessons;
     this.lastOffset = 0;
     this.offset = 0;
@@ -17,7 +19,7 @@ class LessonSlider extends React.Component {
       lessonId => (
         <SliderCard
           item={lessons[lessonId]}
-          linkTo={`/paths/${props.user.curPathId}/${props.user.curCourseId}/${lessonId}`}
+          linkTo={lessons[lessonId].url}
           bgColorClass="bg-secondary"
           iconClass="fa-graduation-cap margin-left-small"
           history={props.history}
