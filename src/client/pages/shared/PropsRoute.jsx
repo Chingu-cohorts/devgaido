@@ -24,10 +24,12 @@ when using the component or render prop instead. So using "render" is the only w
 We need the routeProps to be able to correctly handle routes with params like "/paths/:id".
 */
 
-const PropsRoute = ({ component, passdown, passdownProps, ...props }) => (
+const PropsRoute = ({ component, passdown, passdownProps, location, ...props }) => (
   <Route
     path={props.path}
     exact={props.exact}
+    location={location}
+    key={location.key}
     render={
       routeProps => (renderWithProps(component, routeProps, passdownProps, passdown))
     }
@@ -39,6 +41,7 @@ PropsRoute.propTypes = {
   exact: PropTypes.bool,
   passdown: PropTypes.arrayOf(PropTypes.string),
   passdownProps: PropTypes.objectOf(PropTypes.shape),
+  location: PropTypes.objectOf(PropTypes.shape).isRequired,
   component: PropTypes.func.isRequired,
   children: PropTypes.node,
 };
