@@ -2,8 +2,9 @@
   margin-bottom 20px
   
 // Needed because we wrap the cards in <Link> components which overwrites text with link colors
-a.card
-  color $color-text
+a.card,
+a > .card
+    color $color-text
 
 .connected,
 .connected--secondary

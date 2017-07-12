@@ -37,13 +37,17 @@ const Course = ({ match, curriculum, user, dispatch }) => {
         <i className="fa fa-tasks c-white h0 abs-top-right" />
         {course.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
-      <PageDivider>
-        <button className="button--primary hidden">Bookmark Course</button>
-        <span className="c-primary normal h3">Lessons completed: {course.nCompleted}/{course.nTotal}</span>
-        {!course.bookmarked ?
-          <button className="button--primary" onClick={handleAddBookmarkClick(courseId, dispatch)}>Bookmark Course</button> :
-          <button className="button--secondary" onClick={handleRemoveBookmarkClick(courseId, dispatch)}>Remove Bookmark</button>}
-      </PageDivider>
+      {user.authenticated ?
+        <PageDivider>
+          <button className="button--primary hidden">Bookmark Course</button>
+          <span className="normal h3">
+            <i className="fa fa-graduation-cap h3 c-primary margin-right-tiny" />{course.nCompleted}/{course.nTotal}
+          </span>
+          {!course.bookmarked ?
+            <button className="button--primary" onClick={handleAddBookmarkClick(courseId, dispatch)}>Bookmark Course</button> :
+            <button className="button--secondary" onClick={handleRemoveBookmarkClick(courseId, dispatch)}>Remove Bookmark</button>}
+        </PageDivider> :
+        <PageDivider />}
       <div className="container">
         <div className="row">
           <div className="grid-half">
@@ -53,15 +57,16 @@ const Course = ({ match, curriculum, user, dispatch }) => {
             {lessons}
           </div>
         </div>
-        <hr />
-        <ReactDisqusThread
-          shortname="devgaido"
-          identifier={`/course-${courseId}`}
-          title={course.name}
-          url={undefined}
-          category_id={undefined}
-          onNewComment={null}
-        />
+        {user.authenticated ? <hr /> : null}
+        {user.authenticated ?
+          <ReactDisqusThread
+            shortname="devgaido"
+            identifier={`/course-${courseId}`}
+            title={course.name}
+            url={undefined}
+            category_id={undefined}
+            onNewComment={null}
+          /> : null}
       </div>
     </div>
   );

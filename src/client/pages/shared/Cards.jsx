@@ -56,7 +56,7 @@ const PreviewCard = ({ bgColorClass, children }) => (
   })
 );
 
-const LinkCard = ({ item, bgColorClass, iconClass, connectionClass, heightClass, linkTo }) => (
+const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, connectionClass, heightClass, linkTo }) => (
   <Link className={`link-card ${connectionClass} relative width-100`} to={linkTo}>
     {CardTemplate({
       title: item.name,
@@ -67,8 +67,8 @@ const LinkCard = ({ item, bgColorClass, iconClass, connectionClass, heightClass,
       footerContent: (
         <div>
           {!item.completed && item.nTotal ?
-            <h4 className="c-primary no-margin right">
-                Completed: <span className="bold">{item.nCompleted}/{item.nTotal}</span>
+            <h4 className="no-margin right">
+              <i className={`fa ${childIconClass} h4 right margin-right-tiny`} /><span className="bold">{item.nCompleted}/{item.nTotal}</span>
             </h4> : null}
           {item.completed ? <i className="fa fa-check-circle-o h1 c-primary right" /> : null}
         </div>
@@ -105,12 +105,14 @@ LinkCard.propTypes = {
   bgColorClass: PropTypes.string.isRequired,
   linkTo: PropTypes.string,
   iconClass: PropTypes.string,
+  childIconClass: PropTypes.string,
   connectionClass: PropTypes.string,
   heightClass: PropTypes.string,
 };
 
 LinkCard.defaultProps = {
   iconClass: '',
+  childIconClass: '',
   linkTo: '#',
   connectionClass: '',
   heightClass: '',

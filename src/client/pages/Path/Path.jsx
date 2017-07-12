@@ -33,13 +33,17 @@ const Path = ({ match, curriculum, user, dispatch }) => {
         <i className="fa fa-road c-white h0 abs-top-right" />
         {path.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
-      <PageDivider>
-        <button className="button--secondary" onClick={handleStartClick(pathId, dispatch)}>Start Path</button>
-        <span className="c-primary normal h3">Courses completed: {path.nCompleted}/{path.nTotal}</span>
-        {!path.bookmarked ?
-          <button className="button--primary" onClick={handleAddBookmarkClick(pathId, dispatch)}>Bookmark Path</button> :
-          <button className="button--secondary" onClick={handleRemoveBookmarkClick(pathId, dispatch)}>Remove Bookmark</button>}
-      </PageDivider>
+      {user.authenticated ?
+        <PageDivider>
+          <button className="button--secondary" onClick={handleStartClick(pathId, dispatch)}>Start Path</button>
+          <span className="normal h3">
+            <i className="fa fa-tasks h3 c-secondary margin-right-tiny" />{path.nCompleted}/{path.nTotal}
+          </span>
+          {!path.bookmarked ?
+            <button className="button--primary" onClick={handleAddBookmarkClick(pathId, dispatch)}>Bookmark Path</button> :
+            <button className="button--secondary" onClick={handleRemoveBookmarkClick(pathId, dispatch)}>Remove Bookmark</button>}
+        </PageDivider> :
+        <PageDivider />}
       <div className="container">
         <div className="row">
           <div className="grid-half">
@@ -49,15 +53,16 @@ const Path = ({ match, curriculum, user, dispatch }) => {
             {courses}
           </div>
         </div>
-        <hr />
-        <ReactDisqusThread
-          shortname="devgaido"
-          identifier={`/path-${pathId}`}
-          title={path.name}
-          url={undefined}
-          category_id={undefined}
-          onNewComment={null}
-        />
+        {user.authenticated ? <hr /> : null}
+        {user.authenticated ?
+          <ReactDisqusThread
+            shortname="devgaido"
+            identifier={`/path-${pathId}`}
+            title={path.name}
+            url={undefined}
+            category_id={undefined}
+            onNewComment={null}
+          /> : null}
       </div>
     </div>
   );

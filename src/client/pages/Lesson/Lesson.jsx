@@ -43,16 +43,18 @@ const Lesson = ({ match, curriculum, user, dispatch }) => {
         <i className="fa fa-graduation-cap c-white h0 abs-top-right" />
         {lesson.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
-      <PageDivider>
-        <button className="button--primary hidden">Bookmark Lesson</button>
-        <div className="flex width-100 justify-center">
-          <a className="button button--secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">START LESSON</a>
-          <button className="button--primary margin-left-small" onClick={handleCompleteClick(lessonId, dispatch)}>COMPLETE LESSON</button>
-        </div>
-        {!lesson.bookmarked ?
-          <button className="button--primary" onClick={handleAddBookmarkClick(lessonId, dispatch)}>Bookmark Lesson</button> :
-          <button className="button--secondary" onClick={handleRemoveBookmarkClick(lessonId, dispatch)}>Remove Bookmark</button>}
-      </PageDivider>
+      {user.authenticated ?
+        <PageDivider>
+          <button className="button--primary hidden">Bookmark Lesson</button>
+          <div className="flex width-100 justify-center">
+            <a className="button button--secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">START LESSON</a>
+            <button className="button--primary margin-left-small" onClick={handleCompleteClick(lessonId, dispatch)}>COMPLETE LESSON</button>
+          </div>
+          {!lesson.bookmarked ?
+            <button className="button--primary" onClick={handleAddBookmarkClick(lessonId, dispatch)}>Bookmark Lesson</button> :
+            <button className="button--secondary" onClick={handleRemoveBookmarkClick(lessonId, dispatch)}>Remove Bookmark</button>}
+        </PageDivider> :
+        <PageDivider />}
       <div className="container">
         <div className="row">
           <div className="grid-half">
@@ -70,15 +72,16 @@ const Lesson = ({ match, curriculum, user, dispatch }) => {
             </PreviewCard>
           </div>
         </div>
-        <hr />
-        <ReactDisqusThread
-          shortname="devgaido"
-          identifier={`/lesson-${lessonId}`}
-          title={lesson.name}
-          url={undefined}
-          category_id={undefined}
-          onNewComment={null}
-        />
+        {user.authenticated ? <hr /> : null}
+        {user.authenticated ?
+          <ReactDisqusThread
+            shortname="devgaido"
+            identifier={`/lesson-${lessonId}`}
+            title={lesson.name}
+            url={undefined}
+            category_id={undefined}
+            onNewComment={null}
+          /> : null}
       </div>
     </div>
   );

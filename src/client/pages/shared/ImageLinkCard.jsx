@@ -15,18 +15,20 @@ const bgPositions = [
   `${-sliceWidth * 6}px 0`,
 ];
 
-const ImageLinkCard = ({ item, bgColorClass, imgSrc, sliceNumber, iconClass, linkTo }) => {
-  const backgroundStyle = {
+const ImageLinkCard = ({ item, bgColorClass, imgBorderClass, imgSrc, sliceNumber, iconClass, childIconClass, linkTo }) => {
+  const imageStyle = {
     background: `url(${imgSrc})`,
     backgroundSize: 'cover',
   };
+
   if (sliceNumber > -1) {
-    backgroundStyle.backgroundSize = '400%';
-    backgroundStyle.backgroundPosition = bgPositions[sliceNumber % bgPositions.length];
+    imageStyle.backgroundSize = '400%';
+    imageStyle.backgroundPosition = bgPositions[sliceNumber % bgPositions.length];
   }
+
   return (
     <Link className="card col-quarter border-round bg-white flex-column" to={linkTo}>
-      <div className="image-link-card__image" style={backgroundStyle} />
+      <div className={`image-link-card__image ${imgBorderClass}`} style={imageStyle} />
       <div className={`card__header flex align-items-center ${bgColorClass}`}>
         <h5 className="card__header__text flex-1 c-white uppercase no-margin">{item.name}</h5>
         {iconClass ? <i className={`fa c-white h4 ${iconClass}`} /> : null}
@@ -37,8 +39,8 @@ const ImageLinkCard = ({ item, bgColorClass, imgSrc, sliceNumber, iconClass, lin
       <div className="card__footer flex justify-space-between">
         <span className="h5 bold left" />
         {item.nTotal ?
-          <h4 className="c-primary no-margin right">
-            Completed: <span className="bold">{item.nCompleted}/{item.nTotal}</span>
+          <h4 className="no-margin right">
+            <i className={`fa ${childIconClass} h4 right margin-right-tiny`} /><span className="bold">{item.nCompleted}/{item.nTotal}</span>
           </h4> : null}
       </div>
     </Link>
@@ -52,10 +54,14 @@ ImageLinkCard.propTypes = {
   sliceNumber: PropTypes.number,
   linkTo: PropTypes.string,
   iconClass: PropTypes.string,
+  childIconClass: PropTypes.string,
+  imgBorderClass: PropTypes.string,
 };
 
 ImageLinkCard.defaultProps = {
   iconClass: '',
+  childIconClass: '',
+  imgBorderClass: '',
   linkTo: '#',
   sliceNumber: -1,
 };

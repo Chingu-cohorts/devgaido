@@ -35,6 +35,7 @@ const routes = [
     exact: true,
     component: Dashboard,
     passdown: ['dispatch', 'user', 'curriculum', 'uiState'],
+    reqAuth: true,
   },
   {
     path: '/profile',

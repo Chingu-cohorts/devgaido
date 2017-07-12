@@ -15,10 +15,24 @@ const iconLookUp = {
   lessons: 'fa-graduation-cap',
 };
 
+const childIconLookUp = {
+  paths: 'fa-tasks c-secondary',
+  courses: 'fa-graduation-cap c-primary',
+  lessons: '',
+};
+
 const ItemList = ({ items, category }) => (
   <div className="item-list flex flex-wrap margin-bottom-huge">
     {items.map(item => (
-      <LinkCard item={item} linkTo={item.url} bgColorClass={bgColorLookUp[category]} iconClass={iconLookUp[category]} heightClass="height-100" key={item.name} />
+      <LinkCard
+        item={item}
+        linkTo={item.url}
+        bgColorClass={bgColorLookUp[category]}
+        iconClass={iconLookUp[category]}
+        childIconClass={childIconLookUp[category]}
+        heightClass="height-100"
+        key={item.name}
+      />
     ))}
   </div>
 );
