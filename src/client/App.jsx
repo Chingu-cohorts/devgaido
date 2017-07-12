@@ -50,7 +50,7 @@ const App = ({ serverMatch, dispatch, location, user, curriculum, uiState, auth0
           transitionLeaveTimeout={200}
           transitionName="page-transition"
         >
-          <Switch key={location.key} location={location}>
+          <Switch key={location.pathname} location={location}>
             {routes}
           </Switch>
         </CSSTransitionGroup>
