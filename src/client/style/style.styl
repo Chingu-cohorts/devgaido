@@ -134,3 +134,21 @@ i::before
   width 100% !important
 
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* App.jsx page-transition */
+.page-transition-enter
+  transform: translateX(100%)
+
+.page-transition-enter.page-transition-enter-active
+  transform: translateX(0%)
+  transition: transform 200ms
+
+.page-transition-leave
+  position absolute
+  width 100%
+  top 0
+  transform: translateX(0)
+
+.page-transition-leave.page-transition-leave-active
+  transform: translateX(-100%)
+  transition: transform 200ms
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
