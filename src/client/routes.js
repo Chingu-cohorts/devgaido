@@ -5,6 +5,7 @@ import Lesson from './pages/Lesson/Lesson';
 import PathCatalog from './pages/PathCatalog/PathCatalog';
 import Profile from './pages/Profile/Profile';
 import Dashboard from './pages/Dashboard/Dashboard';
+import Disclaimer from './pages/Disclaimer/Disclaimer';
 import Styleguide from './pages/Styleguide/Styleguide';
 /**
  * Client route definitions
@@ -29,6 +30,12 @@ const routes = [
     path: '/styleguide',
     exact: true,
     component: Styleguide,
+  },
+  {
+    path: '/disclaimer',
+    exact: true,
+    component: Disclaimer,
+    passdown: ['lock'],
   },
   {
     path: '/dashboard',
