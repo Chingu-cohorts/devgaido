@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LazyLoad from 'react-lazyload';
 
 import { Link } from 'react-router-dom';
 
@@ -14,6 +15,9 @@ const bgPositions = [
   `${-sliceWidth * 5}px 0`,
   `${-sliceWidth * 6}px 0`,
 ];
+const LoadingPlaceholder = () => (
+  <div className="image-link-card__loading-spinner" />
+);
 
 const ImageLinkCard = ({ item, bgColorClass, imgBorderClass, imgSrc, sliceNumber, iconClass, childIconClass, linkTo }) => {
   const imageStyle = {
@@ -28,7 +32,9 @@ const ImageLinkCard = ({ item, bgColorClass, imgBorderClass, imgSrc, sliceNumber
 
   return (
     <Link className="card col-quarter border-round bg-white flex-column" to={linkTo}>
-      <div className={`image-link-card__image ${imgBorderClass}`} style={imageStyle} />
+      <LazyLoad height={200} once placeholder={<LoadingPlaceholder />}>
+        <div className={`image-link-card__image ${imgBorderClass}`} style={imageStyle} />
+      </LazyLoad>
       <div className={`card__header flex align-items-center ${bgColorClass}`}>
         <h5 className="card__header__text flex-1 c-white uppercase no-margin">{item.name}</h5>
         {iconClass ? <i className={`fa c-white h4 ${iconClass}`} /> : null}

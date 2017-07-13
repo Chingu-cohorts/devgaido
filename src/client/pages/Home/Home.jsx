@@ -2,8 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Helmet from 'react-helmet';
+import LazyLoad from 'react-lazyload';
 
 import Redirect from '../shared/Redirect';
+
+const LoadingPlaceholder = () => (
+  <div className="home-img__loading-spinner border-round" />
+);
 
 const handleStartNowClick = (e, lock) => {
   e.preventDefault();
@@ -28,7 +33,9 @@ const Home = ({ lock }) => (
     </div>
     <div className="container">
       <section className="flex margin-top-huge">
-        <img className="border-round" src="/img/discover.jpg" alt="" />
+        <LazyLoad height={200} once placeholder={<LoadingPlaceholder />}>
+          <img className="border-round" src="/img/discover.jpg" alt="" />
+        </LazyLoad>
         <div className="flex-1 margin-left-small margin-top-small">
           <h1 className="c-secondary bold">Discover</h1>
           <p className="width-50">Whether you are a new Web Developer seeking to gain broader skills or an experienced developer who wants to fill a specific gap - let devGaido help you discover what you need to know.</p>
@@ -39,10 +46,14 @@ const Home = ({ lock }) => (
           <h1 className="c-primary bold right">Learn</h1>
           <p className="width-50 margin-left-auto">Follow a learning path that is geared to what you want and need to know to become a better Web Developer. We&#039;ve done the work of plotting a course to your goals so you can focus on learning.</p>
         </div>
-        <img className="border-round" src="/img/learn.jpg" alt="" />
+        <LazyLoad height={200} once placeholder={<LoadingPlaceholder />}>
+          <img className="border-round" src="/img/learn.jpg" alt="" />
+        </LazyLoad>
       </section>
       <section className="flex margin-top-huge">
-        <img className="border-round" src="/img/practise.jpg" alt="" />
+        <LazyLoad height={200} once placeholder={<LoadingPlaceholder />}>
+          <img className="border-round" src="/img/practise.jpg" alt="" />
+        </LazyLoad>
         <div className="flex-1 margin-left-small margin-top-small">
           <h1 className="c-secondary bold">Practice</h1>
           <p className="width-50">Practice makes perfect! devGaido&#039;s learning paths include strategically placed exercises and quizzes so you can reinforce your newfound knowledge and understanding.</p>
@@ -53,7 +64,9 @@ const Home = ({ lock }) => (
           <h1 className="c-primary bold right">Build</h1>
           <p className="width-50 margin-left-auto">Challenges and projects are included to help you achieve a deep and comprehensive understanding of how to use the languages, libraries, tools, and techniques necessary to be a Web Developer.</p>
         </div>
-        <img className="border-round" src="/img/build.jpg" alt="" />
+        <LazyLoad height={200} once placeholder={<LoadingPlaceholder />}>
+          <img className="border-round" src="/img/build.jpg" alt="" />
+        </LazyLoad>
       </section>
     </div>
   </div>

@@ -74,6 +74,14 @@ i::before
   background-position-y: 50%
   height 600px
 
+.home-img__loading-spinner
+  width 536px
+  height 350px
+  border-radius: 6px
+  background: url('/img/spinner.gif')
+  background-repeat: no-repeat
+  background-position: 50% 50%
+
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 .grid-half
   width 50%
@@ -98,7 +106,6 @@ i::before
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* PathCatalog */
 
-// TODO: Change when implementing correct background images for ImageLinkCards
 .image-link-card__image
   background-size: cover
   height 200px
@@ -107,6 +114,14 @@ i::before
   transition opacity 0.5s ease-out
   &:hover
     opacity 1
+
+.image-link-card__loading-spinner
+  height 200px
+  border-radius: 6px 6px 0 0;
+  background: url('/img/spinner.gif')
+  background-repeat: no-repeat
+  background-position: 50% 50%
+  width 100%
 
 .topics-dropdown:before
   pointer-events:none
