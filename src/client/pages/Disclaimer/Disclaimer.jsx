@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
 import { InfoCard } from '../shared/Cards';
 
@@ -7,6 +8,7 @@ import PageDivider from '../shared/PageDivider';
 
 const Disclaimer = () => (
   <div>
+    <Helmet title="Disclaimer" />
     <PageHero bgColorClass="bg-secondary" bgImageClass="bg-img__dashboard" title="Disclaimer" />
     <PageDivider />
     <div className="container margin-vertical-big">

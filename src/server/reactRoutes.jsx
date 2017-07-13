@@ -4,6 +4,8 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter, matchPath } from 'react-router';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import { Helmet } from 'react-helmet';
+
 import reducers from '../client/reducers';
 import userReducer from '../client/reducers/userReducer';
 
@@ -16,15 +18,16 @@ import routes from '../client/routes';
 const webRoot = (process.env.NODE_ENV !== 'production') ? 'http://localhost:8081' : '';
 const cssFile = (process.env.NODE_ENV !== 'production') ? '' : `<link rel="stylesheet" href="${webRoot}/style.css">`;
 
-const renderPage = (reactHTML, initialState) => `
+const renderPage = (reactMarkup, initialState, helmet) => `
   <!DOCTYPE html>
-  <html lang="en_US">
+  <html ${helmet.htmlAttributes.toString()}>
     <head>
       <meta charset="utf-8">
       <meta content="IE=Edge" http-equiv="X-UA-Compatible">
       <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
-      <meta name="description" content="React/Redux Front-end for devGaido">
-      <meta name="author" content="Chingu devGaido Team">
+      ${helmet.title.toString()}
+      ${helmet.meta.toString()}
+      ${helmet.link.toString()}
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -33,10 +36,9 @@ const renderPage = (reactHTML, initialState) => `
       <meta name="theme-color" content="#ffffff">
       ${cssFile}
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <title>DevGaido - Chingu Learning Path</title>
     </head>
     <body>
-      <div id="root">${reactHTML}</div>
+      <div id="root">${reactMarkup}</div>
       <script>window.__INITIAL_STATE__ = ${JSON.stringify(initialState).replace(/</g, '\\u003c')};</script>
       <script src="${webRoot}/vendor.bundle.js"></script>
       <script src="${webRoot}/client.bundle.js"></script>
@@ -46,13 +48,6 @@ const renderPage = (reactHTML, initialState) => `
 
 // We need to provide the serverMatch prop to <App /> since we are on the server side
 // and can only render a single route with StaticRouter (Switch is not working like on client side)
-const initialView = (req, match, store) => renderToString(
-  <Provider store={store}>
-    <StaticRouter context={{}} location={match.url}>
-      <App serverMatch={match} />
-    </StaticRouter>
-  </Provider>,
-  );
 
 export default (req, res, next) => {
   let match = null;
@@ -107,8 +102,18 @@ export default (req, res, next) => {
     const state = { user: { ...userReducer(undefined, { type: null }), ...user }, curriculum, auth0, uiState };
     const store = createStore(reducers, state);
 
+    const initialView = renderToString(
+      <Provider store={store}>
+        <StaticRouter context={{}} location={match.url}>
+          <App serverMatch={match} />
+        </StaticRouter>
+      </Provider>,
+      );
+
+    const helmet = Helmet.renderStatic();
+
     res.set('Content-Type', 'text/html')
     .status(200)
-    .end(renderPage(initialView(req, match, store), state));
+    .end(renderPage(initialView, state, helmet));
   }
 };

@@ -1,10 +1,12 @@
 import React from 'react';
 import { Switch, withRouter } from 'react-router';
+import Helmet from 'react-helmet';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { CSSTransitionGroup } from 'react-transition-group';
+
 
 import PropsRoute from './pages/shared/PropsRoute';
 import Auth0LockWidget from './pages/shared/Auth0LockWidget';
@@ -43,6 +45,14 @@ const App = ({ serverMatch, dispatch, location, user, curriculum, uiState, auth0
   }
   return (
     <div className="App">
+      <Helmet
+        htmlAttributes={{ lang: 'en', amp: undefined }} // amp takes no value
+        titleTemplate="devGaido | %s"
+        titleAttributes={{ itemprop: 'name', lang: 'en' }}
+        meta={[
+          { name: 'description', content: 'devGaido provides easy to follow learning paths that help you become a web developer without the hassle.' },
+        ]}
+      />
       <Header dispatch={dispatch} uiState={uiState} user={user} lock={lock} auth0={auth0} />
       <div className="page-content relative overflow-hidden"> {/* For sticky footer and background color */}
         <CSSTransitionGroup

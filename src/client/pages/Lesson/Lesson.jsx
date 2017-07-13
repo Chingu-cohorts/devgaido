@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 import ReactDisqusThread from 'react-disqus-thread';
 
 import PageHero from '../shared/PageHero';
@@ -36,6 +37,12 @@ const Lesson = ({ match, curriculum, user, dispatch }) => {
 
   return (
     <div>
+      <Helmet
+        title={`Lesson: ${lesson.name}`}
+        meta={[
+          { name: 'description', content: lesson.description },
+        ]}
+      />
       <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" title={lesson.name}>
         {pathId ?
           <BreadCrumbs rootNode={{ name: 'Current Path', url: '/dashboard' }} nodes={[path, course, lesson]} /> :

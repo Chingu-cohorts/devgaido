@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Helmet from 'react-helmet';
 
 import Redirect from '../shared/Redirect';
 
@@ -11,6 +12,7 @@ const handleStartNowClick = (e, lock) => {
 
 const Home = ({ lock }) => (
   <div>
+    <Helmet title="Home" />
     <div className="home-hero flex align-items-center justify-center bg-img__compass bg-cover">
       <div className="flex flex-wrap width-50">
         <h1 className="c-white bold width-100">LEARN WEB DEVELOPMENT</h1>

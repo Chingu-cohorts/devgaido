@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
 import Legend from './Legend';
 import Results from './Results';
@@ -18,6 +19,7 @@ const onTopicChange = (e, dispatch) => {
 
 const PathCatalog = ({ curriculum, uiState, dispatch }) => (
   <div>
+    <Helmet title="Library" />
     <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__library" title="Library">
       <Legend curriculum={curriculum} />
     </PageHero>

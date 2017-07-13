@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
 import PageHero from '../shared/PageHero';
 import PageDivider from '../shared/PageDivider';
 
 const Profile = ({ user }) => (
   <div>
+    <Helmet title="Profile" />
     <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" title="Profile" />
     <PageDivider />
     <div className="container margin-top-huge margin-bottom-huge">
