@@ -2,7 +2,7 @@ import Home from './pages/Home/Home';
 import Path from './pages/Path/Path';
 import Course from './pages/Course/Course';
 import Lesson from './pages/Lesson/Lesson';
-import PathCatalog from './pages/PathCatalog/PathCatalog';
+import Library from './pages/Library/Library';
 import Profile from './pages/Profile/Profile';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Disclaimer from './pages/Disclaimer/Disclaimer';
@@ -72,7 +72,7 @@ const routes = [
   {
     path: '/library',
     exact: true,
-    component: PathCatalog,
+    component: Library,
     passdown: ['curriculum', 'dispatch', 'uiState'],
   },
 ];

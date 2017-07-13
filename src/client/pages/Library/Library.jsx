@@ -7,17 +7,17 @@ import Results from './Results';
 import PageHero from '../shared/PageHero';
 import PageDivider from '../shared/PageDivider';
 
-import { setCatalogTopic, setCatalogSearchTerm } from './PathCatalogActions';
+import { setLibraryTopic, setLibrarySearchTerm } from './LibraryActions';
 
 const onSearchChange = (e, dispatch) => {
-  dispatch(setCatalogSearchTerm(e.target.value));
+  dispatch(setLibrarySearchTerm(e.target.value));
 };
 
 const onTopicChange = (e, dispatch) => {
-  dispatch(setCatalogTopic(e.target.value));
+  dispatch(setLibraryTopic(e.target.value));
 };
 
-const PathCatalog = ({ curriculum, uiState, dispatch }) => (
+const Library = ({ curriculum, uiState, dispatch }) => (
   <div>
     <Helmet title="Library" />
     <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__library" title="Library">
@@ -26,11 +26,11 @@ const PathCatalog = ({ curriculum, uiState, dispatch }) => (
     <PageDivider>
       <div className="search-bar flex flex-1">
         <i className="fa fa-search c-secondary h3 margin-right-small" />
-        <input className="margin-right-small h5 thin" type="text" name="pathSearch" defaultValue={uiState.Pages.PathCatalog.searchTerm} placeholder="Search" onChange={e => onSearchChange(e, dispatch)} />
+        <input className="margin-right-small h5 thin" type="text" name="pathSearch" defaultValue={uiState.Pages.Library.searchTerm} placeholder="Search" onChange={e => onSearchChange(e, dispatch)} />
 
       </div>
       <div className="topics-dropdown relative">
-        <select className="h5 thin" defaultValue={uiState.Pages.PathCatalog.topic} onChange={e => onTopicChange(e, dispatch)} >
+        <select className="h5 thin" defaultValue={uiState.Pages.Library.topic} onChange={e => onTopicChange(e, dispatch)} >
           <option value="All Topics" key="AllTopics">All Topics</option>
           {Object.keys(curriculum.subjects).map(
             subjectId => <option value={subjectId} key={subjectId}>{subjectId}</option>,
@@ -44,16 +44,16 @@ const PathCatalog = ({ curriculum, uiState, dispatch }) => (
   </div>
 );
 
-PathCatalog.propTypes = {
+Library.propTypes = {
   curriculum: PropTypes.objectOf(PropTypes.shape),
   dispatch: PropTypes.func,
   uiState: PropTypes.objectOf(PropTypes.shape),
 };
 
-PathCatalog.defaultProps = {
+Library.defaultProps = {
   curriculum: null,
   dispatch: null,
   uiState: null,
 };
 
-export default PathCatalog;
+export default Library;

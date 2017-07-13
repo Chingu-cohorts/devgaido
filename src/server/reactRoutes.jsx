@@ -88,13 +88,12 @@ export default (req, res, next) => {
         navMenuOpen: false,
       },
       Pages: {
-        PathCatalog: {
+        Library: {
           topic: 'All Topics',
           searchTerm: '',
         },
         Dashboard: {
           currentTab: 0,
-          currentPath: '10010',
         },
       },
     };

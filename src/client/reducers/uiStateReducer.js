@@ -1,5 +1,5 @@
 import Dashboard from '../pages/Dashboard/DashboardReducer';
-import PathCatalog from '../pages/PathCatalog/PathCatalogReducer';
+import Library from '../pages/Library/LibraryReducer';
 /**
  * UI State. 'global' defines state items that are available across all pages
  * in the client, while 'Pages' contains state that is specific to a given
@@ -23,13 +23,12 @@ const uiState = (state = {
     navMenuOpen: false,
   },
   Pages: {
-    PathCatalog: {
+    Library: {
       topic: 'All Topics',
       searchTerm: '',
     },
     Dashboard: {
       currentTab: 0,
-      currentPath: '',
     },
   },
 }, action) => {
@@ -44,13 +43,13 @@ const uiState = (state = {
         },
       };
     }
-    case 'SET_CATALOG_TOPIC':
-    case 'SET_CATALOG_SEARCH_TERM': {
+    case 'SET_LIBRARY_TOPIC':
+    case 'SET_LIBRARY_SEARCH_TERM': {
       return {
         ...state,
         Pages: {
           ...state.Pages,
-          PathCatalog: PathCatalog(state.Pages.PathCatalog, action),
+          Library: Library(state.Pages.Library, action),
         },
       };
     }

@@ -33,11 +33,12 @@ const App = ({ serverMatch, dispatch, location, user, curriculum, uiState, auth0
         location={location}
       />);
   } else {
+    let key = 0;
     routesArr.forEach((route) => {
       routes.push(
         <PropsRoute
           {...route}
-          key={location.key}
+          key={key += 1}
           passdownProps={passdownProps}
           location={location}
         />);

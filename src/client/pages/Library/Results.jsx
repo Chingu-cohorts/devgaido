@@ -8,16 +8,16 @@ const filterItem = (item, uiState, filterByTopic, filterBySearchTerm) => {
   let retValSearchTerm = false;
 
   if (filterByTopic) {
-    retValTopic = item.subjects.indexOf(uiState.Pages.PathCatalog.topic) !== -1;
+    retValTopic = item.subjects.indexOf(uiState.Pages.Library.topic) !== -1;
   }
 
   if (filterBySearchTerm) {
     retValSearchTerm = item.name
                       .toLowerCase()
-                      .includes(uiState.Pages.PathCatalog.searchTerm.toLowerCase()) ||
+                      .includes(uiState.Pages.Library.searchTerm.toLowerCase()) ||
                     item.description
                       .toLowerCase()
-                      .includes(uiState.Pages.PathCatalog.searchTerm.toLowerCase());
+                      .includes(uiState.Pages.Library.searchTerm.toLowerCase());
   }
 
   if (filterByTopic || filterBySearchTerm) {
@@ -41,8 +41,8 @@ const getFilteredItems = (allItems, uiState, filterByTopic, filterBySearchTerm) 
 };
 
 const Results = ({ curriculum, uiState }) => {
-  const filterByTopic = uiState.Pages.PathCatalog.topic !== 'All Topics';
-  const filterBySearchTerm = uiState.Pages.PathCatalog.searchTerm !== '';
+  const filterByTopic = uiState.Pages.Library.topic !== 'All Topics';
+  const filterBySearchTerm = uiState.Pages.Library.searchTerm !== '';
 
   const filteredPathIds = getFilteredItems(
     curriculum.paths, uiState, filterByTopic, filterBySearchTerm,
