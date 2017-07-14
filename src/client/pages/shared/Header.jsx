@@ -23,7 +23,7 @@ const toggleMenuAfterNav = (dispatch) => {
 const Header = ({ user, uiState, dispatch, lock }) => (
   <header>
     <div className="container flex justify-space-between align-items-center padding-vertical-small relative">
-      <NavLink to="/" className="logo" />
+      <NavLink to={user.authenticated ? '/dashboard' : '/'} className="logo" />
       <nav className="flex align-items-center">
         <ul className="flex align-items-center no-margin list-style-none uppercase">
           <li className="margin-right-small"><NavLink to="/library" activeClassName="boxshadow-underline bold">Library</NavLink></li>
