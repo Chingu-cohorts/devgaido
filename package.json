@@ -80,6 +80,7 @@
     "redux-thunk": "^2.2.0",
     "rimraf": "^2.6.1",
     "session-file-store": "^1.0.0",
+    "source-map-support": "^0.4.15",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "webshot": "^0.18.0"
