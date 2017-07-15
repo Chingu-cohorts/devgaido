@@ -7,13 +7,13 @@ import { Link } from 'react-router-dom';
 const sliceWidth = 400;
 
 const bgPositions = [
-  `${-sliceWidth * 0}px 0`,
-  `${-sliceWidth * 1}px 0`,
-  `${-sliceWidth * 2}px 0`,
-  `${-sliceWidth * 3}px 0`,
-  `${-sliceWidth * 4}px 0`,
-  `${-sliceWidth * 5}px 0`,
-  `${-sliceWidth * 6}px 0`,
+  `${-sliceWidth * 0}px ${-sliceWidth * 1}px`,
+  `${-sliceWidth * 1}px ${-sliceWidth * 1}px`,
+  `${-sliceWidth * 2}px ${-sliceWidth * 1}px`,
+  `${-sliceWidth * 3}px ${-sliceWidth * 1}px`,
+  `${-sliceWidth * 4}px ${-sliceWidth * 1}px`,
+  `${-sliceWidth * 5}px ${-sliceWidth * 1}px`,
+  `${-sliceWidth * 6}px ${-sliceWidth * 1}px`,
 ];
 const LoadingPlaceholder = () => (
   <div className="image-link-card__loading-spinner" />
