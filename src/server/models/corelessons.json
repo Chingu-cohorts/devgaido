@@ -164,12 +164,12 @@
   "fccportfolio": {
     "source": "P1XT",
     "name": "Build FCC Personal Portfolio Webpage",
-    "description": "",
+    "description": "Build a personal porfolio to showcase your achievements.",
     "type": "Project",
     "instructions": "Complete the Portfolio project from the Frontend Certificate program on Freecodecamp.",
     "resources": [["FCC Personal Portfolio Webpage", "https://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage"]],
     "subjects": ["HTML", "CSS"],
-    "externalSource": "",
+    "externalSource": "https://www.freecodecamp.com/challenges/build-a-personal-portfolio-webpage",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -231,7 +231,7 @@
     "instructions": "Your solution should accept a tower height between 5 and 10, and then display a graphical (animated) solution, iteratively moving each piece until the puzzle is solved",
     "resources": [["Detailed game information", "https://en.wikipedia.org/wiki/Tower_of_Hanoi"]],
     "subjects": ["Javascript"],
-    "externalSource": "",
+    "externalSource": "https://en.wikipedia.org/wiki/Tower_of_Hanoi",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -243,7 +243,7 @@
     "instructions": "Pick a template from here and create a new template with it as your inspiration (do not use it's assets)",
     "resources": [["Template examples", "http://www.free-css.com/free-css-templates"]],
     "subjects": ["HTML", "CSS", "Javascript"],
-    "externalSource": "",
+    "externalSource": "http://www.free-css.com/free-css-templates",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -307,7 +307,7 @@
     "instructions": "Implement the Simon game from the Frontend Certificate program at Freecodecamp.",
     "resources": [["FCC Simon Game", "https://www.freecodecamp.com/challenges/build-a-simon-game"]],
     "subjects": ["HTML", "CSS", "Javascript"],
-    "externalSource": "",
+    "externalSource": "https://www.freecodecamp.com/challenges/build-a-simon-game",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -327,7 +327,7 @@
     "description": "The FCC Backend Certification - all projects, ignore the tutorials and just read the official docs if you want.",
     "type": "",
     "subjects": ["Backend", "Database"],
-    "externalSource": "",
+    "externalSource": "http://www.freecodecamp.com",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -359,7 +359,7 @@
     "instructions": "Create a clone of this landing page. Be sure to create your own code antand assets",
     "resources": [["Landing page to clone", "https://blackrockdigital.github.io/startbootstrap-creative/"]],
     "subjects": ["Frontend", "HTML", "CSS"],
-    "externalSource": "",
+    "externalSource": "https://blackrockdigital.github.io/startbootstrap-creative/",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -401,17 +401,17 @@
     "instructions": "Recreate this administrative dashboard using React, Angular, or Vue",
     "resources": [["Administrative dashboard", "http://rubix410.sketchpixy.com/ltr/dashboard"]],
     "subjects": ["Frontend", "HTML", "CSS", "Javascript"],
-    "externalSource": "",
+    "externalSource": "http://rubix410.sketchpixy.com/ltr/dashboard",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "thinkjava": {
     "source": "P1XT",
     "name": "Think Java - How to Think Like a Computer Scientist",
-    "description": "",
+    "description": "Learn the basic concepts computer scientists understand and utilize to solve computing problems.",
     "type": "Reading",
     "subjects": ["Computer Science"],
-    "externalSource": "",
+    "externalSource": "http://greenteapress.com/wp/think-java/",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -423,7 +423,7 @@
     "instructions": "Solve all the easy-level puzzles on CodinGame using JavaScript",
     "resources": [["Classic puzzles", "https://www.codingame.com/"]],
     "subjects": ["Javascript"],
-    "externalSource": "",
+    "externalSource": "https://www.codingame.com/",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -477,27 +477,27 @@
     "instructions": "Using your own original code and assets recreate this websites front page, modifying it to highlight a different product or industry. Make special note of the secondary navigation bar at the top. Implementing that is the highlight of this project.",
     "resources": [["Example front page", "https://urbanarmorgear.com/"]],
     "subjects": ["HTML", "CSS", "Javascript"],
-    "externalSource": "",
+    "externalSource": "https://urbanarmorgear.com/",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "mobileuxdesign": {
     "source": "P1XT",
     "name": "UX Design for Mobile Developers",
-    "description": "",
+    "description": "The smaller form factor of many mobile devices make them unique and sometimes challenging to develop for. Use this resource to learn how to effectively exploit the user experience of your apps for these devices.",
     "type": "Supplemental Course",
     "subjects": ["UX/UI"],
-    "externalSource": "",
+    "externalSource": "https://www.udacity.com/course/ux-design-for-mobile-developers--ud849",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "androiddev": {
     "source": "P1XT",
     "name": "Android Development for Beginners",
-    "description": "",
+    "description": "Learn the basics of Android development.",
     "type": "Supplemental Course",
     "subjects": ["Android"],
-    "externalSource": "",
+    "externalSource": "https://www.udacity.com/course/android-basics-user-interface--ud834",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -509,7 +509,7 @@
     "instructions": "Build the Pomodoro project from the FCC frontend curriculum as an android app.",
     "resources": [["FCC Pomodoro Clock", "https://www.freecodecamp.com/challenges/build-a-pomodoro-clock"]],
     "subjects": ["HTML", "CSS", "Javascript"],
-    "externalSource": "",
+    "externalSource": "https://www.freecodecamp.com/challenges/build-a-pomodoro-clock",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -551,7 +551,7 @@
     "instructions": "Clone the Netflix interface using React, Angular, or Vue - pulling data from the Movie DB API or an API in a backend you create yourself.",
     "resources": [["Nexflix", "http://netflix.com"]],
     "subjects": ["Frontend"],
-    "externalSource": "",
+    "externalSource": "http://netflix.com",
     "estimatedTime": "long",
     "version": "1.0.0"
   },
@@ -573,7 +573,7 @@
     "instructions": "",
     "resources": [[]],
     "subjects": ["Javascript"],
-    "externalSource": "",
+    "externalSource": "https://www.codingame.com/start",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -595,7 +595,7 @@
     "instructions": "Complete all challenges from the Code Jam Round 1A 2015",
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subjects": ["Javascript"],
-    "externalSource": "",
+    "externalSource": "https://code.google.com/codejam/contest/6224486/dashboard",
     "estimatedTime": "long",
     "version": "1.0.0"
   },
@@ -624,10 +624,10 @@
   "databases": {
     "source": "P1XT",
     "name": "Databases",
-    "description": "",
+    "description": "This set of mini-courses provides an understanding of fundamental database technologies including Relational, Structured Query Language (SQL), and semi-structure data structures such as XML and JSON.",
     "type": "Supplemental Course",
     "subjects": ["Backend", "Database"],
-    "externalSource": "",
+    "externalSource": "https://lagunita.stanford.edu/courses/DB/2014/SelfPaced/about",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -649,7 +649,7 @@
     "instructions": "Complete all coding challenges on this site using Javascript ES6.",
     "resources": [["ES6 Katas", "http://es6katas.org/"]],
     "subjects": ["Javascript ES6"],
-    "externalSource": "",
+    "externalSource": "http://es6katas.org/",
     "estimatedTime": "long",
     "version": "1.0.0"
   },
@@ -659,7 +659,7 @@
     "description": "",
     "type": "Supplemental Course",
     "subjects": ["Backend"],
-    "externalSource": "",
+    "externalSource": "https://www.edx.org/course/introduction-cloud-infrastructure-linuxfoundationx-lfs151-x",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -671,7 +671,7 @@
     "instructions": "",
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subjects": ["Javascript"],
-    "externalSource": "",
+    "externalSource": "https://code.google.com/codejam/contest/6224486/dashboard",
     "estimatedTime": "long",
     "version": "1.0.0"
   },
@@ -683,17 +683,17 @@
     "instructions": "Build FaceBook: yes, all the functionality. See here for a list of requirements you should fullfill.",
     "resources": [["Requirements", "http://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project"]],
     "subjects": ["Fullstack", "HTML", "CSS", "Javascript"],
-    "externalSource": "",
+    "externalSource": "http://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project",
     "estimatedTime": "long",
     "version": "1.0.0"
   },
   "theoreticalcs": {
     "source": "P1XT",
     "name": "Intro to Theoretical Computer Science",
-    "description": "",
+    "description": "In this course you'll learn about advanced computer science techniques and algorithms such as NP-completeness. These are the tools you can use in your apps to solve the hard problems.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
-    "externalSource": "",
+    "externalSource": "https://www.udacity.com/course/intro-to-theoretical-computer-science--cs313",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -705,17 +705,17 @@
     "instructions": "",
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subjects": ["Javascript"],
-    "externalSource": "",
+    "externalSource": "https://code.google.com/codejam/contest/6224486/dashboard",
     "estimatedTime": "long",
     "version": "1.0.0"
   },
   "probability": {
     "source": "P1XT",
     "name": "Introduction to Probability - The Science of Uncertainty",
-    "description": "",
+    "description": "Understanding probability is integral to many problems you'll be asked to solve as an application developer. In this course you'll gain an understanding of probability and its application to real world problems.",
     "type": "Supplemental Course",
     "subjects": ["Mathematics"],
-    "externalSource": "",
+    "externalSource": "https://www.edx.org/course/introduction-probability-science-mitx-6-041x-2",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -727,7 +727,7 @@
     "instructions": "Write the CSS Necessary to create your own 12 column based grid layout - see here for an example",
     "resources": [["Sample Grid Layout", "http://960.gs/"]],
     "subjects": ["CSS"],
-    "externalSource": "",
+    "externalSource": "http://960.gs/",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -749,17 +749,17 @@
     "instructions": "Solve all the hard-level puzzles on CodinGame using JavaScript",
     "resources": [["Classic puzzles", "https://www.codingame.com/"]],
     "subjects": ["Javascript"],
-    "externalSource": "",
+    "externalSource": "https://www.codingame.com/",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "crypto1": {
     "source": "P1XT",
     "name": "Cryptography I",
-    "description": "",
+    "description": "Encryption is one of the basic techniques used to protect information systems. In this lesson you'll gain an understanding of what cryptography is and the fundamental crypto algorithms used in modern applications.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
-    "externalSource": "",
+    "externalSource": "https://www.coursera.org/learn/crypto",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -771,17 +771,17 @@
     "instructions": "",
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subjects": ["Javascript"],
-    "externalSource": "",
+    "externalSource": "https://code.google.com/codejam/contest/6224486/dashboard",
     "estimatedTime": "long",
     "version": "1.0.0"
   },
   "crypto2": {
     "source": "P1XT",
     "name": "Cryptography II",
-    "description": "",
+    "description": "Building on Cryptography I this lesson provides you with the information and techniques to implement cryptography in your applications.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
-    "externalSource": "",
+    "externalSource": "https://www.coursera.org/learn/crypto2",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -793,17 +793,17 @@
     "instructions": "Build Twitter: yes, all the functionality. See here for a list of requirements you should fullfill.",
     "resources": [["Twitter", "http://twitter.com"]],
     "subjects": ["Fullstack", "HTML", "CSS", "Javascript", "Database"],
-    "externalSource": "",
+    "externalSource": "http://twitter.com",
     "estimatedTime": "long",
     "version": "1.0.0"
   },
   "computerarch": {
     "source": "P1XT",
     "name": "Computer Architecture",
-    "description": "",
+    "description": "Learn about the architecture of modern microprocessors.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
-    "externalSource": "",
+    "externalSource": "https://www.coursera.org/learn/comparch",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -815,17 +815,17 @@
     "instructions": "",
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subjects": ["Javascript"],
-    "externalSource": "",
+    "externalSource": "https://code.google.com/codejam/contest/6224486/dashboard",
     "estimatedTime": "long",
     "version": "1.0.0"
   },
   "cybersecurity": {
     "source": "P1XT",
     "name": "Introduction to Cyber Security",
-    "description": "",
+    "description": "Understanding cyber security is a requirement for all application developers. Learn the concepts that will help you create apps that are secure and dependable.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
-    "externalSource": "",
+    "externalSource": "https://www.futurelearn.com/courses/introduction-to-cyber-security",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -837,7 +837,7 @@
     "instructions": "Solve all the very hard-level puzzles on CodinGame using JavaScript",
     "resources": [["Classic puzzles", "https://www.codingame.com/"]],
     "subjects": ["Javascript"],
-    "externalSource": "",
+    "externalSource": "https://www.codingame.com/",
     "estimatedTime": "long",
     "version": "1.0.0"
   },
@@ -869,7 +869,7 @@
     "instructions": "",
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
     "subjects": ["Javascript"],
-    "externalSource": "",
+    "externalSource": "https://code.google.com/codejam/contest/6224486/dashboard",
     "estimatedTime": "long",
     "version": "1.0.0"
   },
@@ -891,7 +891,7 @@
     "instructions": "Design, implement, test, and deploy a game that is playable on the web, using the technologies of your choice. The only criteria are that it be playable online, and that it inculde a substantial AI component.",
     "resources": [[]],
     "subjects": ["Fullstack"],
-    "externalSource": "",
+    "externalSource": "http://www.flipcode.com/archives/Building_A_Game_On_Your_Own.shtml",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -901,7 +901,7 @@
     "description": "",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
-    "externalSource": "",
+    "externalSource": "https://www.youtube.com/view_play_list?p=-XXv-cvA_iBDyz-ba4yDskqMDY6A1w_c",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -920,20 +920,20 @@
   "compilers": {
     "source": "P1XT",
     "name": "Compilers",
-    "description": "",
+    "description": "Compling and translating abstract computer languages into executable programs is something all app developers use and depend on daily. Learn the concepts behind these processes and techniques.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
-    "externalSource": "",
+    "externalSource": "https://lagunita.stanford.edu/courses/Engineering/Compilers/Fall2014/about",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "nlp": {
     "source": "P1XT",
     "name": "Introduction to Natural Language Processing",
-    "description": "",
+    "description": "Learn about Computational Linguistics and Natural Language processing. Then practice what you learn with challenging programming exercises.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
-    "externalSource": "",
+    "externalSource": "https://www.coursera.org/learn/natural-language-processing",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -945,27 +945,27 @@
     "instructions": "Build a Learn Harmony clone with all the functionality.",
     "resources": [["Learn Harmony", "http://learnharmony.org/#/?_k=0okjs7"]],
     "subjects": ["Fullstack", "HTML", "CSS", "Javascript"],
-    "externalSource": "",
+    "externalSource": "http://learnharmony.org/#/?_k=0okjs7",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "networks": {
     "source": "P1XT",
     "name": "Computer Networks",
-    "description": "",
+    "description": "Applications depend on computer networks and especially the Internet. Learn more about this fundamental building block in this lesson.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
-    "externalSource": "",
+    "externalSource": "https://lagunita.stanford.edu/courses/Engineering/Networking-SP/SelfPaced/about",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "parallel": {
     "source": "P1XT",
     "name": "Parallel Computer Architecture and Programming",
-    "description": "",
+    "description": "Multicore CPU & GPU architectures are ubiqutous in devices from the smallest smartphone to the largest scientific computing platforms. Learn about these hardware architectures and the techniques of parallel processing in this lesson.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
-    "externalSource": "",
+    "externalSource": "http://15418.courses.cs.cmu.edu/spring2016/home",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -977,7 +977,7 @@
     "instructions": "Complete all problems from Distributed Google Code Jam 2015",
     "resources": [["Distributed Google Code Jam", "https://code.google.com/codejam/contest/4264486/dashboard"]],
     "subjects": ["Fullstack"],
-    "externalSource": "",
+    "externalSource": "https://code.google.com/codejam/contest/4264486/dashboard",
     "estimatedTime": "long",
     "version": "1.0.0"
   },
@@ -989,7 +989,7 @@
     "instructions": "Build a Slack clone the functionality should be complete to the point that one user can create a room, invite other users, and all users of that room can real-time chat. The room should be secure and inaccessible to anyone but those invited..",
     "resources": [["Learn Harmony", "http://learnharmony.org/#/?_k=0okjs7"]],
     "subjects": ["Fullstack"],
-    "externalSource": "",
+    "externalSource": "http://learnharmony.org/#/?_k=0okjs7",
     "estimatedTime": "long",
     "version": "1.0.0"
   },
@@ -1001,7 +1001,7 @@
     "instructions": "Create an npm module that bootstraps a fullstack application, with Node.js on the backend, and the SPA library/framework of your choice on the frontend. Include a full test suite and comprehensive build processes. Publish it to NPM.",
     "resources": [[]],
     "subjects": ["Fullstack"],
-    "externalSource": "",
+    "externalSource": "https://www.npmjs.com/",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -1013,7 +1013,7 @@
     "instructions": "Complete all problems from all rounds",
     "resources": [["Google Code Jam 2016", "https://code.google.com/codejam/past-contests"]],
     "subjects": ["Fullstack"],
-    "externalSource": "",
+    "externalSource": "https://code.google.com/codejam/past-contests",
     "estimatedTime": "long",
     "version": "1.0.0"
   },
@@ -1025,7 +1025,7 @@
     "instructions": "Extend your CSS grid framework to include the CSS and JavaScript required to implement 5 to 10 material design components",
     "resources": [["Material Design", "https://material.io/"]],
     "subjects": ["CSS"],
-    "externalSource": "",
+    "externalSource": "https://material.io/",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -1057,7 +1057,7 @@
     "instructions": "Build a complete CodePen clone",
     "resources": [["CodePen", "https://codepen.io/freeCodeCamp/full/zNqgVx"]],
     "subjects": ["HTML"],
-    "externalSource": "",
+    "externalSource": "https://codepen.io/freeCodeCamp/full/zNqgVx",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -1101,7 +1101,7 @@
     "instructions": "",
     "resources": [["Online Resume Template", "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot1"]],
     "subjects": ["HTML", "CSS"],
-    "externalSource": "",
+    "externalSource": "https://creativemarket.com/ikonome/686585-Material-Resume-Blue/screenshots/#screenshot1",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -1184,7 +1184,7 @@
     "instructions": "Modify your tribute page to use Bootstrap instead of native CSS",
     "resources": [["Bootstrap", "http://getbootstrap.com/"]],
     "subjects": ["CSS/Bootstrap"],
-    "externalSource": "",
+    "externalSource": "http://getbootstrap.com/",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -1214,7 +1214,7 @@
     "description": "Learn the basics of the Less library for styling your webpages",
     "type": "Lesson",
     "subjects": ["CSS/Less"],
-    "externalSource": "",
+    "externalSource": "https://www.codeproject.com/Articles/724246/Introduction-to-LESS-an-easier-way-to-create-CSS-s",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -1224,7 +1224,7 @@
     "description": "Learn the basics of the Stylus library for styling your webpages",
     "type": "Lesson",
     "subjects": ["CSS/Stylus"],
-    "externalSource": "",
+    "externalSource": "https://www.youtube.com/watch?v=eJahtnmywMI",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
