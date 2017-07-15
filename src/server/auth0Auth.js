@@ -1,6 +1,7 @@
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const FileStore = require('session-file-store')(session);
 const dotenv = require('dotenv');
 const passport = require('passport');
 const Auth0Strategy = require('passport-auth0');
@@ -33,9 +34,10 @@ const auth0Auth = (app) => {
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(cookieParser());
   app.use(session({
+    store: new FileStore(),
     secret: 'shhhhhhhhh',
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
   }));
   app.use(passport.initialize());
   app.use(passport.session());
