@@ -103,7 +103,7 @@ const Results = ({ curriculum, uiState }) => {
               item={lesson}
               linkTo={lesson.url}
               bgColorClass="bg-primary"
-              imgSrc={`/screenshots/${lessonId}.jpeg`}
+              imgSrc={`/screenshots/${lessonId}.jpg`}
               iconClass="fa-graduation-cap"
               imgBorderClass="border-1px border-primary"
               key={lessonId}
