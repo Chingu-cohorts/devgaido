@@ -92,7 +92,7 @@
   "cs50x": {
     "source": "P1XT",
     "name": "Introduction to Computer Science - CS50",
-    "description": "",
+    "description": "Join in Harvard Universities acclaimed Introduction to Computer Science course CS50!",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
     "externalSource": "https://www.edx.org/course/introduction-computer-science-harvardx-cs50x",
@@ -154,7 +154,7 @@
   "advhtmlcss": {
     "source": "P1XT",
     "name": "Learn to Code Advanced HTML & CSS",
-    "description": "",
+    "description": "Take a deep dive into to frontend design and development by learning the advanced HTML and CSS techniques you'll need in any Web Developer postion.",
     "type": "Course",
     "subjects": ["HTML", "CSS"],
     "externalSource": "http://learn.shayhowe.com/advanced-html-css/",
@@ -186,7 +186,7 @@
   "ettmath": {
     "source": "P1XT",
     "name": "Effective Thinking Through Mathematics",
-    "description": "",
+    "description": "Learn how to employ mathematical strategies to problems and question. Use these techniques to gain insight and find innovative solutions.",
     "type": "Supplemental Course",
     "subjects": ["Mathematics"],
     "externalSource": "https://www.edx.org/course/effective-thinking-through-mathematics-utaustinx-ut-9-01x-0",
@@ -196,7 +196,7 @@
   "setupes6": {
     "source": "P1XT",
     "name": "Setting Up ES6",
-    "description": "",
+    "description": "Learn how to setup Babel, the premier Javascript transpiler, so you can use ECMAScript 6 in your applications.",
     "type": "Reading",
     "subjects": ["Javascript ES6"],
     "externalSource": "https://leanpub.com/setting-up-es6/read",
@@ -206,7 +206,7 @@
   "jsallonge6": {
     "source": "P1XT",
     "name": "JavaScript Allongé, the \"Six\" Edition",
-    "description": "",
+    "description": "Learn how to program using functions in Javascript to write software that is simpler, cleaner, and less complicated than object-centric or code-centric approaches.",
     "type": "Reading",
     "subjects": ["Javascript"],
     "externalSource": "https://leanpub.com/javascriptallongesix",
@@ -216,7 +216,7 @@
   "getsassy": {
     "source": "P1XT",
     "name": "Getting Sassy with Sass",
-    "description": "",
+    "description": "Learn about one of the most popular CSS preprocessors - SASS.",
     "type": "Supplemental Course",
     "subjects": ["HTML", "CSS", "CSS/Sass"],
     "externalSource": "http://www.sassshop.com/",
@@ -249,38 +249,38 @@
   },
   "systematicpd1": {
     "source": "P1XT",
-    "name": "How to Code: Systematic Program Design - Part 1",
-    "description": "",
+    "name": "How to Code: Simple Data",
+    "description": "This lesson teaches a pragmatic and systematic approach to programming that is language independent, and therefore is applicably to whatever programming language you choose to work in.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
-    "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd1x",
+    "externalSource": "https://www.edx.org/course/how-code-simple-data-ubcx-htc1x",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "systematicpd2": {
     "source": "P1XT",
-    "name": "How to Code: Systematic Program Design - Part 2",
-    "description": "",
+    "name": "How to Code: Complex Data",
+    "description": "In this lesson you'll build on the methodology you learned in 'How to Code: Simple Data' to learn additional techniques for solving more complex problems.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
-    "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd2x",
+    "externalSource": "https://www.edx.org/course/how-code-complex-data-ubcx-htc2x",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "systematicpd3": {
     "source": "P1XT",
-    "name": "How to Code: Systematic Program Design - Part 3",
-    "description": "",
+    "name": "Software Construction: Data Abstraction",
+    "description": "In this lesson you'll gain an understanding of data abstraction and decomposition techniques necessary to design and construct large, complex applications",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
-    "externalSource": "https://www.edx.org/course/how-code-systematic-program-design-part-ubcx-spd3x",
+    "externalSource": "https://www.edx.org/course/software-construction-data-abstraction-ubcx-softconst1x#!",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
   "domenlightment": {
     "source": "P1XT",
     "name": "DOM Enlightenment",
-    "description": "",
+    "description": "Whether you are using HTML, CSS, Sass, Less, React, or Angular an understanding of the DOM is needed to create responsive and well performing apps.",
     "type": "Reading",
     "subjects": ["HTML", "CSS"],
     "externalSource": "http://domenlightenment.com/",
@@ -334,7 +334,7 @@
   "calculus1": {
     "source": "P1XT",
     "name": "Calculus One",
-    "description": "",
+    "description": "At it's core Calculus deals with how things change and is used across many different disciplines including not just Mathematics and Computer Science, but Engineering, Biology and Life Sciences, and Sociology, to name a few.",
     "type": "Supplemental Course",
     "subjects": ["Mathematics"],
     "externalSource": "https://www.coursera.org/learn/calculus1",
@@ -344,7 +344,7 @@
   "jsdesignpatterns": {
     "source": "P1XT",
     "name": "JavaScript Design Patterns",
-    "description": "",
+    "description": "Patterns in Computer Science define reusable solutions encountered in a variety of problem you will be faced with as a Web Developer. Learning design patterns is key to deveoping quality apps in a shorter time frame.",
     "type": "Reading",
     "subjects": ["Javascript"],
     "externalSource": "https://addyosmani.com/resources/essentialjsdesignpatterns/book/",
@@ -366,7 +366,7 @@
   "csmaths": {
     "source": "P1XT",
     "name": "Mathematics for Computer Science",
-    "description": "",
+    "description": "In this lesson you'll gain an understanding of the fundamentals of Discrete Mathematics used in Computer Science and Engineering.",
     "type": "Supplemental Course",
     "subjects": ["Mathematics"],
     "externalSource": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015/index.htm",
@@ -430,7 +430,7 @@
   "opendatastructs": {
     "source": "P1XT",
     "name": "Open Data Structures",
-    "description": "",
+    "description": "At their core application are tools for manipulating data. In this lesson learn the fundamental data structures used to manipulate data.",
     "type": "Reading",
     "subjects": ["Computer Science"],
     "externalSource": "http://www.aupress.ca/books/120226/ebook/99Z_Morin_2013-Open_Data_Structures.pdf",
@@ -440,7 +440,7 @@
   "algorithms1": {
     "source": "P1XT",
     "name": "Course: Algorithms, Part I",
-    "description": "",
+    "description": "Learn about elementary data structures, sorting, and searching algorithms.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
     "externalSource": "https://www.coursera.org/learn/introduction-to-algorithms",
@@ -450,10 +450,10 @@
   "algorithms2": {
     "source": "P1XT",
     "name": "Algorithms, Part II",
-    "description": "",
+    "description": "Learn about graph and string processing algorithms.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
-    "externalSource": "https://www.coursera.org/learn/java-data-structures-algorithms-2",
+    "externalSource": "https://www.coursera.org/learn/algorithms-part2",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -516,7 +516,7 @@
   "frisbys": {
     "source": "P1XT",
     "name": "Professor Frisby's Mostly Adequate Guide to Functional Programming",
-    "description": "",
+    "description": "In this lesson learn about Functional Programming using the most popular Functional Programming language - Javascript.",
     "type": "Reading",
     "subjects": ["Javascript"],
     "externalSource": "https://www.gitbook.com/book/drboolean/mostly-adequate-guide/details",
@@ -526,7 +526,7 @@
   "testing": {
     "source": "P1XT",
     "name": "Software Testing",
-    "description": "",
+    "description": "Software testing is key to application quality. In this lesson learn how to test the apps you create so they fail before, rather than after release.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
     "externalSource": "https://www.udacity.com/course/software-testing--cs258",
@@ -536,7 +536,7 @@
   "debugging": {
     "source": "P1XT",
     "name": "Software Debugging",
-    "description": "",
+    "description": "Learn a systematic process to debugging your applications and the tools that will help you automate the process of cleaning your code.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
     "externalSource": "https://www.udacity.com/course/software-debugging--cs259",
@@ -558,7 +558,7 @@
   "calculus2": {
     "source": "P1XT",
     "name": "Calculus Two: Sequences and Series",
-    "description": "",
+    "description": "Gain an understanding of sequences, infinite series, convergence tests, and Taylor series.",
     "type": "Supplemental Course",
     "subjects": ["Mathematics"],
     "externalSource": "https://www.coursera.org/learn/advanced-calculus",
@@ -568,7 +568,7 @@
   "classicpuzzles2": {
     "source": "P1XT",
     "name": "Complete all Classic Puzzles - Medium on CodinGame in JavaScript",
-    "description": "",
+    "description": "Improve your Javascript skills by completing the Medium level puzzles in this lesson.",
     "type": "Project",
     "instructions": "",
     "resources": [[]],
@@ -580,7 +580,7 @@
   "softwarearch": {
     "source": "P1XT",
     "name": "Software Architecture & Design",
-    "description": "",
+    "description": "Learn the principles and concepts involved in the analysis and design of large software systems using Unified Modeling Langual (UML) and the principles behind of sound software design and architecture.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
     "externalSource": "https://www.udacity.com/course/software-architecture-design--ud821",
@@ -590,7 +590,7 @@
   "codejam15r1a": {
     "source": "P1XT",
     "name": "Google Code Jam Round 1A - 2015",
-    "description": "",
+    "description": "Practice your Javascript and analytical skills by completing these challenges.",
     "type": "Project",
     "instructions": "Complete all challenges from the Code Jam Round 1A 2015",
     "resources": [["Google Code Jam", "https://code.google.com/codejam/contest/6224486/dashboard"]],
@@ -601,11 +601,11 @@
   },
   "jsspessore": {
     "source": "P1XT",
-    "name": "Book: JavaScript Spessore",
-    "description": "",
+    "name": "Programming Javascript Applications",
+    "description": "Refine your Javascript knowledge by learning about closures, functional programming, and prototypal inheritance.",
     "type": "Reading",
     "subjects": ["Javascript"],
-    "externalSource": "https://leanpub.com/javascript-spessore/read",
+    "externalSource": "http://chimera.labs.oreilly.com/books/1234000000262/index.html",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -634,7 +634,7 @@
   "agile": {
     "source": "P1XT",
     "name": "Agile Software Development",
-    "description": "",
+    "description": "Learn the principles of the Agile software methodology to help you gain synergy across your team to efficiently develop high quality applications.",
     "type": "Supplemental Course",
     "subjects": ["Project Management"],
     "externalSource": "https://www.edx.org/course/agile-software-development-ethx-asd-1x",
@@ -656,7 +656,7 @@
   "cloudcomputing": {
     "source": "P1XT",
     "name": "Introduction to Cloud Computing",
-    "description": "",
+    "description": "Learn the fundamentals of building and managing cloud technologies.",
     "type": "Supplemental Course",
     "subjects": ["Backend"],
     "externalSource": "https://www.edx.org/course/introduction-cloud-infrastructure-linuxfoundationx-lfs151-x",
@@ -734,7 +734,7 @@
   "linearalgebra": {
     "source": "P1XT",
     "name": "Linear Algebra - Foundations to Frontiers",
-    "description": "",
+    "description": "Learn about the more advanced mathematical concepts of linear transformations, matrices, and systems of linear equations and their application to real world problems.",
     "type": "Supplemental Course",
     "subjects": ["Mathematics"],
     "externalSource": "https://www.edx.org/course/linear-algebra-foundations-frontiers-utaustinx-ut-5-05x#!",
@@ -844,7 +844,7 @@
   "computergfx": {
     "source": "P1XT",
     "name": "Computer Graphics",
-    "description": "",
+    "description": "Learn the concepts of computer graphics including realistic ray tracing.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
     "externalSource": "https://www.edx.org/course/computer-graphics-uc-san-diegox-cse167x-1",
@@ -854,7 +854,7 @@
   "ai": {
     "source": "P1XT",
     "name": "Artificial Intelligence",
-    "description": "",
+    "description": "Learn the fundamentals of Artifical Intelligence and how to apply them.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
     "externalSource": "https://www.edx.org/course/artificial-intelligence-ai-columbiax-csmm-101x#!",
@@ -876,7 +876,7 @@
   "machinelearning": {
     "source": "P1XT",
     "name": "Machine Learning",
-    "description": "",
+    "description": "In this lesson learn about Machine Learning, the science of making computers act without explict programming.",
     "type": "Supplemental Course",
     "subjects": ["Computer Science"],
     "externalSource": "https://www.coursera.org/learn/machine-learning",
@@ -892,16 +892,6 @@
     "resources": [[]],
     "subjects": ["Fullstack"],
     "externalSource": "http://www.flipcode.com/archives/Building_A_Game_On_Your_Own.shtml",
-    "estimatedTime": "medium",
-    "version": "1.0.0"
-  },
-  "operatingsystems": {
-    "source": "P1XT",
-    "name": "Operating Systems and System Programming",
-    "description": "",
-    "type": "Supplemental Course",
-    "subjects": ["Computer Science"],
-    "externalSource": "https://www.youtube.com/view_play_list?p=-XXv-cvA_iBDyz-ba4yDskqMDY6A1w_c",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
