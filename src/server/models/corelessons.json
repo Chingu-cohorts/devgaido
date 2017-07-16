@@ -433,7 +433,7 @@
     "description": "At their core application are tools for manipulating data. In this lesson learn the fundamental data structures used to manipulate data.",
     "type": "Reading",
     "subjects": ["Computer Science"],
-    "externalSource": "http://www.aupress.ca/books/120226/ebook/99Z_Morin_2013-Open_Data_Structures.pdf",
+    "externalSource": "http://www.aupress.ca/index.php/books/120226",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
@@ -895,18 +895,6 @@
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
-  "mdconversion": {
-    "source": "P1XT",
-    "name": "Create Markdown Translator",
-    "description": "Create a node module that will convert Markdown formatted text to properly formatted HTML",
-    "type": "Project",
-    "instructions": "",
-    "resources": [[]],
-    "subjects": ["Javascript"],
-    "externalSource": "",
-    "estimatedTime": "medium",
-    "version": "1.0.0"
-  },
   "compilers": {
     "source": "P1XT",
     "name": "Compilers",
@@ -1142,7 +1130,7 @@
     "type": "Project",
     "instructions": "",
     "subjects": ["HTML", "CSS"],
-    "externalSource": "",
+    "externalSource": "https://www.freecodecamp.org/challenges/build-a-personal-portfolio-webpage",
     "estimatedTime": "medium",
     "version": "1.0.0"
   },
