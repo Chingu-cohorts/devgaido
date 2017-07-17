@@ -94,7 +94,7 @@ availability, and ease of deployment:
 
 - CDN: A content delivery network (CDN) is used to reduce the amount of time 
 necessary to serve up images and other static content.
-- Nginx: Is a web server providing load balancing, security (HTTPS), compression,
+- Nginx: Is a web server providing security (HTTPS), compression,
 and load balancing.
 - Docker: Docker containers house devGaido's application components that make
 devGaido easier to deploy and manage.
