@@ -66,10 +66,10 @@ const Lesson = ({ match, curriculum, user, dispatch }) => {
         <div className="row">
           <div className="grid-half">
             <InfoCard item={lesson} bgColorClass="bg-primary">
+              <h5 className="no-margin"><strong>Subjects: </strong></h5>
               {subjects.map(
                 subject => <div key={subject.name}>
-                  <p>{subject.name}</p>
-                  <p>{subject.description}</p>
+                  <p className="no-margin">{subject.name} - {subject.description}</p>
                 </div>)}
             </InfoCard>
           </div>
