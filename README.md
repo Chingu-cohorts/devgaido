@@ -6,7 +6,9 @@ achieving web development skills. For experienced developers it provides a
 a means of filling in skill gaps around specific technologies, libraries, and
 languages.
 
-[Features](#features) | [Installation](#installation) | [Usage](#usage) | [Examples](#examples) | [Command-line options](#options) | [Configuration](#configuration) | [Authors](#authors) |
+You can find devGaido at [www.devgaido.com](http://www.devgaido.com).
+
+[Features](#features) | [Development](#development) | [Runtime](#runtime) | [Authors](#authors) |
 [License](#license)
 
 ![screenshot]()
@@ -24,7 +26,7 @@ languages.
  provide the user with the option of specifying application-specific 
  credentials or integration with either GitHub or Google for authentication.
 
-## Developing
+## Development
 
 ### Built With
 
@@ -58,6 +60,7 @@ the wiki for more details and examples.
 | yarn dev:server   | Start development client          |
 | yarn dev:client   | Start development server          |
 | yarn analyzesize  | Analyze bundle sizes              |
+| yarn screenshots  | Capture Screenshots of Lesson URLs | 
 | yarn test         | Initiate tests and validations    |
 
 ### Configuration
@@ -81,6 +84,23 @@ The devGaido project folder is organized in the following manner:
     /test - Mocha tests and validations of JSON files
       /testdata - Data files designed to exercise the tests and validations
 ```
+
+## Runtime
+
+### Built With
+
+devGaido's runtime architecture leverages the following to achieve performance,
+availability, and ease of deployment:
+
+- CDN: A content delivery network (CDN) is used to reduce the amount of time 
+necessary to serve up images and other static content.
+- Nginx: Is a web server providing security (HTTPS), compression,
+and load balancing.
+- Docker: Docker containers house devGaido's application components that make
+devGaido easier to deploy and manage.
+- Travic CI: An automation platform integrated with GitHub that is used to
+automatically deploy devGaido to the production server(s) when changes are 
+made and successfully tested.
 
 ## Authors
 
