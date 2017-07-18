@@ -5,7 +5,7 @@ import { StaticRouter, matchPath } from 'react-router';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { Helmet } from 'react-helmet';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 import db from './db';
 import reducers from '../client/reducers';
