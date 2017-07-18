@@ -77,7 +77,7 @@ const Lesson = ({ match, curriculum, user, dispatch }) => {
           <div className="grid-half">
             <InfoCard item={lesson} bgColorClass="bg-primary">
               <h5 className="no-margin"><strong>Length: </strong></h5>
-              <p className="no-margin margin-left-small">{lesson.estimatedTime}</p>
+              <p className="no-margin margin-left-small">{lesson.estimatedTime.charAt(0).toUpperCase()+lesson.estimatedTime.slice(1)}</p>
               <h5 className="no-margin"><strong>Subjects: </strong></h5>
               {subjects.map(
                 subject => <div key={subject.name}>
