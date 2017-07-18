@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import ReactDisqusThread from 'react-disqus-thread';
 
 import PageHero from '../shared/PageHero';
 import BreadCrumbs from '../shared/BreadCrumbs';
 import { InfoCard, LinkCard } from '../shared/Cards';
 import PageDivider from '../shared/PageDivider';
+import DisqusThread from '../shared/DisqusThread';
 
 import { addBookmark, removeBookmark } from '../../actions/curriculumActions';
 
-const handleAddBookmarkClick = (courseId, dispatch) => () => dispatch(addBookmark(courseId, 'courses'));
-const handleRemoveBookmarkClick = (courseId, dispatch) => () => dispatch(removeBookmark(courseId, 'courses'));
+const handleAddBookmarkClick = (courseId, version, dispatch) => () => dispatch(addBookmark(courseId, 'courses', version));
+const handleRemoveBookmarkClick = (courseId, version, dispatch) => () => dispatch(removeBookmark(courseId, 'courses', version));
 
 const Course = ({ match, curriculum, user, dispatch }) => {
   const courseId = match.params.id;
@@ -51,8 +51,8 @@ const Course = ({ match, curriculum, user, dispatch }) => {
             <i className="fa fa-graduation-cap h3 c-primary margin-right-tiny" />{course.nCompleted}/{course.nTotal}
           </span>
           {!course.bookmarked ?
-            <button className="button--primary" onClick={handleAddBookmarkClick(courseId, dispatch)}>Bookmark Course</button> :
-            <button className="button--secondary" onClick={handleRemoveBookmarkClick(courseId, dispatch)}>Remove Bookmark</button>}
+            <button className="button--primary" onClick={handleAddBookmarkClick(courseId, course.version, dispatch)}>Bookmark Course</button> :
+            <button className="button--secondary" onClick={handleRemoveBookmarkClick(courseId, course.version, dispatch)}>Remove Bookmark</button>}
         </PageDivider> :
         <PageDivider />}
       <div className="container">
@@ -66,13 +66,10 @@ const Course = ({ match, curriculum, user, dispatch }) => {
         </div>
         {user.authenticated ? <hr /> : null}
         {user.authenticated ?
-          <ReactDisqusThread
-            shortname="devgaido"
-            identifier={`/course-${courseId}`}
+          <DisqusThread
+            id={`/course-${courseId}`}
             title={course.name}
-            url={undefined}
-            category_id={undefined}
-            onNewComment={null}
+            path={course.url}
           /> : null}
       </div>
     </div>

@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import ReactDisqusThread from 'react-disqus-thread';
 
 import PageHero from '../shared/PageHero';
 import BreadCrumbs from '../shared/BreadCrumbs';
 import { InfoCard, LinkCard } from '../shared/Cards';
 import PageDivider from '../shared/PageDivider';
+import DisqusThread from '../shared/DisqusThread';
 
 import { addBookmark, removeBookmark } from '../../actions/curriculumActions';
 import { setCurrentPath } from '../../actions/userActions';
 
-const handleStartClick = (pathId, dispatch) => () => dispatch(setCurrentPath(pathId));
+const handleStartClick = (pathId, version, dispatch) => () => dispatch(setCurrentPath(pathId, version));
 
-const handleAddBookmarkClick = (pathId, dispatch) => () => dispatch(addBookmark(pathId, 'paths'));
-const handleRemoveBookmarkClick = (pathId, dispatch) => () => dispatch(removeBookmark(pathId, 'paths'));
+const handleAddBookmarkClick = (pathId, version, dispatch) => () => dispatch(addBookmark(pathId, 'paths', version));
+const handleRemoveBookmarkClick = (pathId, version, dispatch) => () => dispatch(removeBookmark(pathId, 'paths', version));
 
 const Path = ({ match, curriculum, user, dispatch }) => {
   const pathId = match.params.id;
@@ -42,13 +42,13 @@ const Path = ({ match, curriculum, user, dispatch }) => {
       </PageHero>
       {user.authenticated ?
         <PageDivider>
-          <button className="button--secondary" onClick={handleStartClick(pathId, dispatch)}>Start Path</button>
+          <button className="button--secondary" onClick={handleStartClick(pathId, path.version, dispatch)}>Start Path</button>
           <span className="normal h3">
             <i className="fa fa-tasks h3 c-secondary margin-right-tiny" />{path.nCompleted}/{path.nTotal}
           </span>
           {!path.bookmarked ?
-            <button className="button--primary" onClick={handleAddBookmarkClick(pathId, dispatch)}>Bookmark Path</button> :
-            <button className="button--secondary" onClick={handleRemoveBookmarkClick(pathId, dispatch)}>Remove Bookmark</button>}
+            <button className="button--primary" onClick={handleAddBookmarkClick(pathId, path.version, dispatch)}>Bookmark Path</button> :
+            <button className="button--secondary" onClick={handleRemoveBookmarkClick(pathId, path.version, dispatch)}>Remove Bookmark</button>}
         </PageDivider> :
         <PageDivider />}
       <div className="container">
@@ -62,13 +62,10 @@ const Path = ({ match, curriculum, user, dispatch }) => {
         </div>
         {user.authenticated ? <hr /> : null}
         {user.authenticated ?
-          <ReactDisqusThread
-            shortname="devgaido"
-            identifier={`/path-${pathId}`}
+          <DisqusThread
+            id={`/path-${pathId}`}
             title={path.name}
-            url={undefined}
-            category_id={undefined}
-            onNewComment={null}
+            path={path.url}
           /> : null}
       </div>
     </div>
