@@ -1,3 +1,4 @@
+import persistentData from './persistentData';
 /**
  * User state consisting of attributes for the user if logged in.
  *
@@ -10,20 +11,31 @@ const user = (state = {
   authenticated: false,
   avatar: '',
   email: '',
-  dayLastVisited: Date.now(),
-  streak: 0,
   curPathId: '',
+  persistentData: {},
 }, action) => {
+  let retState = state;
+
   switch (action.type) {
     case 'SET_CURRENT_PATH': {
-      return {
+      retState = {
         ...state,
         curPathId: action.pathId,
       };
+      break;
     }
     default:
-      return state;
+      break;
   }
+
+  if (retState.authenticated) {
+    retState = {
+      ...retState,
+      persistentData: persistentData(retState.persistentData, action),
+    };
+  }
+
+  return retState;
 };
 
 export default user;

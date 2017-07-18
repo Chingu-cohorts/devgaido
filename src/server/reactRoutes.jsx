@@ -5,20 +5,29 @@ import { StaticRouter, matchPath } from 'react-router';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { Helmet } from 'react-helmet';
+import bcrypt from 'bcrypt';
 
+import db from './db';
 import reducers from '../client/reducers';
-import userReducer from '../client/reducers/userReducer';
-
 import getCurriculum from './services/coreCurriculum';
-
 import App from '../client/App';
-
 import routes from '../client/routes';
 
 const webRoot = (process.env.NODE_ENV !== 'production') ? 'http://localhost:8081' : '';
 const cssFile = (process.env.NODE_ENV !== 'production') ? '' : `<link rel="stylesheet" href="${webRoot}/style.css">`;
 
-const renderPage = (reactMarkup, initialState, helmet) => `
+const renderPage = (match, store) => {
+  const reactMarkup = renderToString(
+    <Provider store={store}>
+      <StaticRouter context={{}} location={match.url}>
+        <App serverMatch={match} />
+      </StaticRouter>
+    </Provider>,
+    );
+
+  const helmet = Helmet.renderStatic();
+
+  return `
   <!DOCTYPE html>
   <html ${helmet.htmlAttributes.toString()}>
     <head>
@@ -39,18 +48,69 @@ const renderPage = (reactMarkup, initialState, helmet) => `
     </head>
     <body>
       <div id="root">${reactMarkup}</div>
-      <script>window.__INITIAL_STATE__ = ${JSON.stringify(initialState).replace(/</g, '\\u003c')};</script>
+      <script>window.__INITIAL_STATE__ = ${JSON.stringify(store.getState()).replace(/</g, '\\u003c')};</script>
       <script src="${webRoot}/vendor.bundle.js"></script>
       <script src="${webRoot}/client.bundle.js"></script>
     </body>
   </html>
   `;
+};
 
-// We need to provide the serverMatch prop to <App /> since we are on the server side
-// and can only render a single route with StaticRouter (Switch is not working like on client side)
+const sendGuestPage = (res, match, auth0) => {
+  const curriculum = getCurriculum();
+
+  const state = { curriculum, auth0 };
+  const store = createStore(reducers, state);
+
+  res.set('Content-Type', 'text/html')
+      .status(200)
+      .end(renderPage(match, store));
+};
+
+const sendAuthenticatedPage = (res, req, match, auth0) => {
+  const persistentData = {
+    id: bcrypt.hashSync(req.user.nickname, 10),
+    data: [],
+  };
+
+  const user = {
+    name: req.user.nickname,
+    authenticated: true,
+    email: req.user._json.email,
+    avatar: req.user._json.picture,
+    curPathId: '',
+    persistentData,
+  };
+
+
+  const curriculum = getCurriculum();
+
+  // Find the user data by _id (hashed user.nickname)
+  // TODO: Find alternative way of checking against hash
+  // since this approach might be slow with lots of db documents.
+  db.find({ $where() { return bcrypt.compareSync(req.user.nickname, this._id); } }, (docs) => {
+    if (docs) {
+      user.persistentData.id = docs[0]._id;
+      user.persistentData.data = docs[0].data;
+    }
+    // TODO: Think of an elegant way to do this here and apply it to ALL parts of the store
+    const state = { user, curriculum, auth0 };
+    const store = createStore(reducers, state);
+
+    // 'Replay' all saved actions to recreate last saved store
+    user.persistentData.data.forEach((action) => {
+      store.dispatch(action);
+    });
+
+    res.set('Content-Type', 'text/html')
+      .status(200)
+      .end(renderPage(match, store));
+  });
+};
 
 export default (req, res, next) => {
   let match = null;
+  // Check if the requested url is one of the React Router routes from routes.js
   routes.forEach((route) => {
     const tmp = matchPath(req.baseUrl, { path: route.path, exact: route.exact, strict: false });
     if (tmp) {
@@ -59,60 +119,21 @@ export default (req, res, next) => {
   });
 
   if (!match) {
+    // Not a React Router route, so let express handle it
     next();
   } else {
+    // We got a React Router route, so start server side rendering
     const auth0 = {
       domain: process.env.AUTH0_DOMAIN,
       clientID: process.env.AUTH0_CLIENT_ID,
       callbackURL: process.env.AUTH0_CALLBACK_URL || 'http://localhost:8080/callback',
     };
 
-    const user = req.user ?
-    {
-      name: req.user.nickname,
-      authenticated: true,
-      email: req.user._json.email,
-      avatar: req.user._json.picture,
-    } : {
-      name: '',
-      authenticated: false,
-      email: '',
-      avatar: '',
-    };
-
-    const curriculum = getCurriculum();
-
-    // TODO: Default Dashboard.currentPath to user.curPath
-    const uiState = {
-      global: {
-        navMenuOpen: false,
-      },
-      Pages: {
-        Library: {
-          topic: 'All Topics',
-          searchTerm: '',
-        },
-        Dashboard: {
-          currentTab: 0,
-        },
-      },
-    };
-    // TODO: Think of an elegant way to do this here and apply it to ALL parts of the store
-    const state = { user: { ...userReducer(undefined, { type: null }), ...user }, curriculum, auth0, uiState };
-    const store = createStore(reducers, state);
-
-    const initialView = renderToString(
-      <Provider store={store}>
-        <StaticRouter context={{}} location={match.url}>
-          <App serverMatch={match} />
-        </StaticRouter>
-      </Provider>,
-      );
-
-    const helmet = Helmet.renderStatic();
-
-    res.set('Content-Type', 'text/html')
-    .status(200)
-    .end(renderPage(initialView, state, helmet));
+    // Render appropriate page depending on user authentication status
+    if (req.user) {
+      sendAuthenticatedPage(res, req, match, auth0);
+    } else {
+      sendGuestPage(res, match, auth0);
+    }
   }
 };

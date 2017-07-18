@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import ReactDisqusThread from 'react-disqus-thread';
 
 import PageHero from '../shared/PageHero';
 import BreadCrumbs from '../shared/BreadCrumbs';
 import { InfoCard, PreviewCard } from '../shared/Cards';
 import PageDivider from '../shared/PageDivider';
+import DisqusThread from '../shared/DisqusThread';
 
 import { addBookmark, removeBookmark, completeLesson } from '../../actions/curriculumActions';
 
-const handleCompleteClick = (lessonId, dispatch) => () => dispatch(completeLesson(lessonId));
+const handleCompleteClick = (lessonId, version, dispatch) => () => dispatch(completeLesson(lessonId, version));
 
-const handleAddBookmarkClick = (lessonId, dispatch) => () => dispatch(addBookmark(lessonId, 'lessons'));
-const handleRemoveBookmarkClick = (lessonId, dispatch) => () => dispatch(removeBookmark(lessonId, 'lessons'));
+const handleAddBookmarkClick = (lessonId, version, dispatch) => () => dispatch(addBookmark(lessonId, 'lessons', version));
+const handleRemoveBookmarkClick = (lessonId, version, dispatch) => () => dispatch(removeBookmark(lessonId, 'lessons', version));
 
 const Lesson = ({ match, curriculum, user, dispatch }) => {
   const lessonId = match.params.id;
@@ -55,11 +55,11 @@ const Lesson = ({ match, curriculum, user, dispatch }) => {
           <button className="button--primary hidden">Bookmark Lesson</button>
           <div className="flex width-100 justify-center">
             <a className="button button--secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">START LESSON</a>
-            <button className="button--primary margin-left-small" onClick={handleCompleteClick(lessonId, dispatch)}>COMPLETE LESSON</button>
+            <button className="button--primary margin-left-small" onClick={handleCompleteClick(lessonId, lesson.version, dispatch)}>COMPLETE LESSON</button>
           </div>
           {!lesson.bookmarked ?
-            <button className="button--primary" onClick={handleAddBookmarkClick(lessonId, dispatch)}>Bookmark Lesson</button> :
-            <button className="button--secondary" onClick={handleRemoveBookmarkClick(lessonId, dispatch)}>Remove Bookmark</button>}
+            <button className="button--primary" onClick={handleAddBookmarkClick(lessonId, lesson.version, dispatch)}>Bookmark Lesson</button> :
+            <button className="button--secondary" onClick={handleRemoveBookmarkClick(lessonId, lesson.version, dispatch)}>Remove Bookmark</button>}
         </PageDivider> :
         <PageDivider />}
       <div className="container">
@@ -81,13 +81,10 @@ const Lesson = ({ match, curriculum, user, dispatch }) => {
         </div>
         {user.authenticated ? <hr /> : null}
         {user.authenticated ?
-          <ReactDisqusThread
-            shortname="devgaido"
-            identifier={`/lesson-${lessonId}`}
+          <DisqusThread
+            id={`/lesson-${lessonId}`}
             title={lesson.name}
-            url={undefined}
-            category_id={undefined}
-            onNewComment={null}
+            path={lesson.url}
           /> : null}
       </div>
     </div>
