@@ -35,6 +35,16 @@ const Lesson = ({ match, curriculum, user, dispatch }) => {
     });
   }
 
+  let projectInstructions = 'N/a';
+  if (lesson.instructions !== undefined) {
+    projectInstructions = lesson.instructions;
+  }
+
+  let resourceList = [['N/a', null]];
+  if (lesson.resources !== undefined) {
+    resourceList = lesson.resources;
+  }
+
   return (
     <div>
       <Helmet
@@ -66,10 +76,19 @@ const Lesson = ({ match, curriculum, user, dispatch }) => {
         <div className="row">
           <div className="grid-half">
             <InfoCard item={lesson} bgColorClass="bg-primary">
+              <h5 className="no-margin"><strong>Length: </strong></h5>
+              <p className="no-margin margin-left-small">{lesson.estimatedTime.charAt(0).toUpperCase()+lesson.estimatedTime.slice(1)}</p>
               <h5 className="no-margin"><strong>Subjects: </strong></h5>
               {subjects.map(
                 subject => <div key={subject.name}>
-                  <p className="no-margin">{subject.name} - {subject.description}</p>
+                  <p className="no-margin margin-left-small">{subject.description}</p>
+                </div>)}
+              <div className="h5 no-margin"><strong>Instructions: </strong></div>
+              <p className="no-margin margin-left-small">{projectInstructions}</p>
+              <h5 className="no-margin"><strong>Resources: </strong></h5>
+              {resourceList.map(
+                resource => <div key={resource[0]}>
+                  <a href={resource[1]} target="_blank" rel="noopener noreferrer" className="no-margin margin-left-small">{resource[0]}</a>
                 </div>)}
             </InfoCard>
           </div>
