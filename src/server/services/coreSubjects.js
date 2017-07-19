@@ -1,7 +1,7 @@
 import CoreSubjects from '../models/coresubjects.json';
 
 /**
- * 
+ *
  * Core Subject Model
  *
  * This module contains functions implementing model layer functionality
@@ -23,11 +23,11 @@ import CoreSubjects from '../models/coresubjects.json';
  *                               Angular2 vs. Angular4)
  *    "authorityURL": "...", <-- For specific technologies the subject is based
  *                               on this notes the URL of the authorative
- *                               source. For example, for Google's Material 
+ *                               source. For example, for Google's Material
  *                               Design this would be www.materialdesign.io.
  *    "version": "1.0.0"     <-- Semantic version to track changes
  *  },
- * } 
+ * }
  */
 
 /**

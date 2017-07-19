@@ -5,7 +5,6 @@ import { StaticRouter, matchPath } from 'react-router';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { Helmet } from 'react-helmet';
-import bcrypt from 'bcryptjs';
 
 import db from './db';
 import reducers from '../client/reducers';
@@ -44,7 +43,6 @@ const renderPage = (match, store) => {
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
       <meta name="theme-color" content="#ffffff">
       ${cssFile}
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
       <div id="root">${reactMarkup}</div>
@@ -69,7 +67,7 @@ const sendGuestPage = (res, match, auth0) => {
 
 const sendAuthenticatedPage = (res, req, match, auth0) => {
   const persistentData = {
-    id: bcrypt.hashSync(req.user.nickname, 10),
+    id: req.user.id,
     data: [],
   };
 
@@ -82,21 +80,15 @@ const sendAuthenticatedPage = (res, req, match, auth0) => {
     persistentData,
   };
 
-
   const curriculum = getCurriculum();
 
-  // Find the user data by _id (hashed user.nickname)
-  // TODO: Find alternative way of checking against hash
-  // since this approach might be slow with lots of db documents.
-  db.find({ $where() { return bcrypt.compareSync(req.user.nickname, this._id); } }, (docs) => {
+  db.find({ _id: req.user.id }, (docs) => {
     if (docs) {
       user.persistentData.id = docs[0]._id;
       user.persistentData.data = docs[0].data;
     }
-    // TODO: Think of an elegant way to do this here and apply it to ALL parts of the store
     const state = { user, curriculum, auth0 };
     const store = createStore(reducers, state);
-
     // 'Replay' all saved actions to recreate last saved store
     user.persistentData.data.forEach((action) => {
       store.dispatch(action);

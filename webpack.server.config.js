@@ -39,10 +39,6 @@ const serverConfig = {
         use: 'babel-loader',
         exclude: /(node_modules|bower_components)/,
       },
-      {
-        test: /\.json$/,
-        loader: 'json-loader',
-      },
     ],
   },
   resolve: {

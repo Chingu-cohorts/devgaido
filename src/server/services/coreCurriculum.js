@@ -1,3 +1,5 @@
+import deepcopy from 'deepcopy';
+
 import { getAllPaths } from './corePaths';
 import { getAllCourses } from './coreCourses';
 import { getAllLessons } from './coreLessons';
@@ -13,7 +15,6 @@ const initPaths = (curriculum) => {
     path.nTotal = total;
     path.completed = false;
     path.subjects = [];
-
     path.courseIds.forEach((courseId) => {
       const course = curriculum.courses[courseId];
       course.parentPathIds.push(pathId);
@@ -77,11 +78,13 @@ const init = (curriculum) => {
 };
 
 const getCurriculum = () => {
+  // We need to create fresh copies or else
+  // they might get 'polluted' by playing back actions on the redux store.
   const curriculum = {
-    subjects: getAllSubjects(),
-    paths: getAllPaths(),
-    courses: getAllCourses(),
-    lessons: getAllLessons(),
+    subjects: deepcopy(getAllSubjects()),
+    paths: deepcopy(getAllPaths()),
+    courses: deepcopy(getAllCourses()),
+    lessons: deepcopy(getAllLessons()),
   };
   return init(curriculum);
 };

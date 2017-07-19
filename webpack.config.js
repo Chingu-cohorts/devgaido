@@ -52,10 +52,6 @@ const config = {
           'stylus-loader',
         ]),
       },
-      {
-        test: /\.json$/,
-        loader: 'json-loader',
-      },
     ],
   },
   resolve: {
