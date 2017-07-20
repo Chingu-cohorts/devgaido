@@ -41,7 +41,7 @@ const routes = [
     path: '/dashboard',
     exact: true,
     component: Dashboard,
-    passdown: ['dispatch', 'user', 'curriculum', 'uiState'],
+    passdown: ['user', 'curriculum', 'uiState'],
     reqAuth: true,
   },
   {
@@ -55,25 +55,25 @@ const routes = [
     path: '/paths/:id',
     exact: true,
     component: Path,
-    passdown: ['curriculum', 'user', 'dispatch'],
+    passdown: ['curriculum', 'user'],
   },
   {
     path: '/courses/:id',
     exact: true,
     component: Course,
-    passdown: ['curriculum', 'user', 'dispatch'],
+    passdown: ['curriculum', 'user'],
   },
   {
     path: '/lessons/:id',
     exact: true,
     component: Lesson,
-    passdown: ['curriculum', 'user', 'dispatch'],
+    passdown: ['curriculum', 'user'],
   },
   {
     path: '/library',
     exact: true,
     component: Library,
-    passdown: ['curriculum', 'dispatch', 'uiState'],
+    passdown: ['curriculum', 'uiState'],
   },
 ];
 

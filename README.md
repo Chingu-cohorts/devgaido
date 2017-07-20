@@ -74,8 +74,7 @@ The devGaido project folder is organized in the following manner:
     /client - Frontend application source
       /actions - Redux global app action handlers
       /assets - Client asset files
-      /pages - One subdirectory for each page containing .jsx files including 
-               page-specific actions and reducers.
+      /pages - One subdirectory for each page containing .jsx files
       /reducers - Redux global app reducer handlers
       /style - Style sheet files
     /server - Backend application source

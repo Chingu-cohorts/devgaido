@@ -26,11 +26,7 @@ const Profile = ({ user }) => (
 );
 
 Profile.propTypes = {
-  user: PropTypes.objectOf(PropTypes.shape),
-};
-
-Profile.defaultProps = {
-  user: null,
+  user: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default Profile;
