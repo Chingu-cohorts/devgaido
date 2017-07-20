@@ -25,7 +25,6 @@ const Footer = () => (
       </div>
       <div className="flex h2">
         <a href="https://github.com/Chingu-cohorts/devgaido" target="_blank" rel="noopener noreferrer" className="uppercase margin-right-small"><i className="fa fa-github" /></a>
-        <a href="/" target="_blank" rel="noopener noreferrer" className="margin-right-small"><i className="fa fa-facebook" /></a>
         <a href="/" target="_blank" rel="noopener noreferrer" className="uppercase margin-right-small"><i className="fa fa-twitter" /></a>
         <a href="/" target="_blank" rel="noopener noreferrer" className="uppercase margin-right-small"><i className="fa fa-youtube" /></a>
       </div>

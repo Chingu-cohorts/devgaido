@@ -10,7 +10,7 @@ import DisqusThread from '../shared/DisqusThread';
 
 import actions from '../../actions';
 
-const { addBookmark, removeBookmark, completeLesson } = actions;
+const { addBookmark, removeBookmark, completeLesson, unCompleteLesson } = actions;
 
 const Lesson = ({ match, curriculum, user }) => {
   const lessonId = match.params.id;
@@ -62,7 +62,9 @@ const Lesson = ({ match, curriculum, user }) => {
           <button className="button--primary hidden">Bookmark Lesson</button>
           <div className="flex width-100 justify-center">
             <a className="button button--secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">START LESSON</a>
-            <button className="button--primary margin-left-small" onClick={() => completeLesson(lessonId, lesson.version)}>COMPLETE LESSON</button>
+            {!lesson.completed ?
+              <button className="button--primary margin-left-small" onClick={() => completeLesson(lessonId, lesson.version)}>COMPLETE LESSON</button> :
+              <button className="button--secondary margin-left-small" onClick={() => unCompleteLesson(lessonId, lesson.version)}>UNCOMPLETE LESSON</button>}
           </div>
           {!lesson.bookmarked ?
             <button className="button--primary" onClick={() => addBookmark(lessonId, 'lessons', lesson.version)}>Bookmark Lesson</button> :
