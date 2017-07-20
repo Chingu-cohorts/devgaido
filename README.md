@@ -113,5 +113,5 @@ made and successfully tested.
 
 [MIT](https://tldrlegal.com/license/mit-license)
 
-[devgaido-image]: https://cdn.rawgit.com/Chingu-cohorts/devgaido/refactor/style/src/client/assets/img/devGaidoLogo.svg
+[devgaido-image]: https://cdn.rawgit.com/Chingu-cohorts/devgaido/development/src/client/assets/img/devGaidoLogo.svg
 [devgaido-url]: https://github.com/Chingu-cohorts/devgaido
