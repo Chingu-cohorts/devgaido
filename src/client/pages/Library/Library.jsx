@@ -6,18 +6,11 @@ import Legend from './Legend';
 import Results from './Results';
 import PageHero from '../shared/PageHero';
 import PageDivider from '../shared/PageDivider';
+import actions from '../../actions';
 
-import { setLibraryTopic, setLibrarySearchTerm } from './LibraryActions';
+const { setLibraryTopic, setLibrarySearchTerm } = actions;
 
-const onSearchChange = (e, dispatch) => {
-  dispatch(setLibrarySearchTerm(e.target.value));
-};
-
-const onTopicChange = (e, dispatch) => {
-  dispatch(setLibraryTopic(e.target.value));
-};
-
-const Library = ({ curriculum, uiState, dispatch }) => (
+const Library = ({ curriculum, uiState }) => (
   <div>
     <Helmet title="Library" />
     <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__library" title="Library">
@@ -26,11 +19,11 @@ const Library = ({ curriculum, uiState, dispatch }) => (
     <PageDivider>
       <div className="search-bar flex flex-1">
         <i className="fa fa-search c-secondary h3 margin-right-small" />
-        <input className="margin-right-small h5 thin" type="text" name="pathSearch" defaultValue={uiState.Pages.Library.searchTerm} placeholder="Search" onChange={e => onSearchChange(e, dispatch)} />
+        <input className="margin-right-small h5 thin" type="text" name="pathSearch" defaultValue={uiState.Pages.Library.searchTerm} placeholder="Search" onChange={e => setLibrarySearchTerm(e.target.value)} />
 
       </div>
       <div className="topics-dropdown relative">
-        <select className="h5 thin" defaultValue={uiState.Pages.Library.topic} onChange={e => onTopicChange(e, dispatch)} >
+        <select className="h5 thin" defaultValue={uiState.Pages.Library.topic} onChange={e => setLibraryTopic(e.target.value)} >
           <option value="All Topics" key="AllTopics">All Topics</option>
           {Object.keys(curriculum.subjects).map(
             subjectId => <option value={subjectId} key={subjectId}>{subjectId}</option>,
@@ -45,15 +38,8 @@ const Library = ({ curriculum, uiState, dispatch }) => (
 );
 
 Library.propTypes = {
-  curriculum: PropTypes.objectOf(PropTypes.shape),
-  dispatch: PropTypes.func,
-  uiState: PropTypes.objectOf(PropTypes.shape),
-};
-
-Library.defaultProps = {
-  curriculum: null,
-  dispatch: null,
-  uiState: null,
+  curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
+  uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default Library;

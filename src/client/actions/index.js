@@ -3,11 +3,17 @@ import { bindActionCreators } from 'redux';
 import * as globalActions from './globalActions';
 import * as curriculumActions from './curriculumActions';
 import * as userActions from './userActions';
+import * as DashBoardActions from './DashboardActions';
+import * as LibraryActions from './LibraryActions';
 
-const allActions = { ...globalActions, ...curriculumActions, ...userActions };
+import store from '../store';
 
-let dispatch = null;
+const allActions = {
+  ...globalActions,
+  ...curriculumActions,
+  ...userActions,
+  ...DashBoardActions,
+  ...LibraryActions,
+};
 
-const actions = (dispatch) => bindActionCreators(allActions, dispatch);
-
-export default bindActionCreators(allActions, dispatch);
+export default bindActionCreators(allActions, store.dispatch);

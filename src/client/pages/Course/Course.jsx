@@ -8,12 +8,11 @@ import { InfoCard, LinkCard } from '../shared/Cards';
 import PageDivider from '../shared/PageDivider';
 import DisqusThread from '../shared/DisqusThread';
 
-import { addBookmark, removeBookmark } from '../../actions/curriculumActions';
+import actions from '../../actions';
 
-const handleAddBookmarkClick = (courseId, version, dispatch) => () => dispatch(addBookmark(courseId, 'courses', version));
-const handleRemoveBookmarkClick = (courseId, version, dispatch) => () => dispatch(removeBookmark(courseId, 'courses', version));
+const { addBookmark, removeBookmark } = actions;
 
-const Course = ({ match, curriculum, user, dispatch }) => {
+const Course = ({ match, curriculum, user }) => {
   const courseId = match.params.id;
   const course = curriculum.courses[courseId];
 
@@ -51,8 +50,8 @@ const Course = ({ match, curriculum, user, dispatch }) => {
             <i className="fa fa-graduation-cap h3 c-primary margin-right-tiny" />{course.nCompleted}/{course.nTotal}
           </span>
           {!course.bookmarked ?
-            <button className="button--primary" onClick={handleAddBookmarkClick(courseId, course.version, dispatch)}>Bookmark Course</button> :
-            <button className="button--secondary" onClick={handleRemoveBookmarkClick(courseId, course.version, dispatch)}>Remove Bookmark</button>}
+            <button className="button--primary" onClick={() => addBookmark(courseId, 'courses', course.version)}>Bookmark Course</button> :
+            <button className="button--secondary" onClick={() => removeBookmark(courseId, 'courses', course.version)}>Remove Bookmark</button>}
         </PageDivider> :
         <PageDivider />}
       <div className="container">
@@ -80,7 +79,6 @@ Course.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
-  dispatch: PropTypes.func.isRequired,
 };
 
 export default Course;

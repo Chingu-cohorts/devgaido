@@ -1,5 +1,5 @@
-import Dashboard from '../pages/Dashboard/DashboardReducer';
-import Library from '../pages/Library/LibraryReducer';
+import Dashboard from './DashboardReducer';
+import Library from './LibraryReducer';
 /**
  * UI State. 'global' defines state items that are available across all pages
  * in the client, while 'Pages' contains state that is specific to a given

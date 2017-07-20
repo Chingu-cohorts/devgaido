@@ -8,14 +8,11 @@ import { InfoCard, PreviewCard } from '../shared/Cards';
 import PageDivider from '../shared/PageDivider';
 import DisqusThread from '../shared/DisqusThread';
 
-import { addBookmark, removeBookmark, completeLesson } from '../../actions/curriculumActions';
+import actions from '../../actions';
 
-const handleCompleteClick = (lessonId, version, dispatch) => () => dispatch(completeLesson(lessonId, version));
+const { addBookmark, removeBookmark, completeLesson } = actions;
 
-const handleAddBookmarkClick = (lessonId, version, dispatch) => () => dispatch(addBookmark(lessonId, 'lessons', version));
-const handleRemoveBookmarkClick = (lessonId, version, dispatch) => () => dispatch(removeBookmark(lessonId, 'lessons', version));
-
-const Lesson = ({ match, curriculum, user, dispatch }) => {
+const Lesson = ({ match, curriculum, user }) => {
   const lessonId = match.params.id;
   const lesson = curriculum.lessons[lessonId];
   const subjects = lesson.subjects.map(subjectId => curriculum.subjects[subjectId]);
@@ -65,11 +62,11 @@ const Lesson = ({ match, curriculum, user, dispatch }) => {
           <button className="button--primary hidden">Bookmark Lesson</button>
           <div className="flex width-100 justify-center">
             <a className="button button--secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">START LESSON</a>
-            <button className="button--primary margin-left-small" onClick={handleCompleteClick(lessonId, lesson.version, dispatch)}>COMPLETE LESSON</button>
+            <button className="button--primary margin-left-small" onClick={() => completeLesson(lessonId, lesson.version)}>COMPLETE LESSON</button>
           </div>
           {!lesson.bookmarked ?
-            <button className="button--primary" onClick={handleAddBookmarkClick(lessonId, lesson.version, dispatch)}>Bookmark Lesson</button> :
-            <button className="button--secondary" onClick={handleRemoveBookmarkClick(lessonId, lesson.version, dispatch)}>Remove Bookmark</button>}
+            <button className="button--primary" onClick={() => addBookmark(lessonId, 'lessons', lesson.version)}>Bookmark Lesson</button> :
+            <button className="button--secondary" onClick={() => removeBookmark(lessonId, 'lessons', lesson.version)}>Remove Bookmark</button>}
         </PageDivider> :
         <PageDivider />}
       <div className="container">
@@ -77,7 +74,7 @@ const Lesson = ({ match, curriculum, user, dispatch }) => {
           <div className="grid-half">
             <InfoCard item={lesson} bgColorClass="bg-primary">
               <h5 className="no-margin"><strong>Length: </strong></h5>
-              <p className="no-margin margin-left-small">{lesson.estimatedTime.charAt(0).toUpperCase()+lesson.estimatedTime.slice(1)}</p>
+              <p className="no-margin margin-left-small">{lesson.estimatedTime.charAt(0).toUpperCase() + lesson.estimatedTime.slice(1)}</p>
               <h5 className="no-margin"><strong>Subjects: </strong></h5>
               {subjects.map(
                 subject => <div key={subject.name}>
@@ -114,7 +111,6 @@ Lesson.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
-  dispatch: PropTypes.func.isRequired,
 };
 
 export default Lesson;

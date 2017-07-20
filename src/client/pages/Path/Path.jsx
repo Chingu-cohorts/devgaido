@@ -8,15 +8,11 @@ import { InfoCard, LinkCard } from '../shared/Cards';
 import PageDivider from '../shared/PageDivider';
 import DisqusThread from '../shared/DisqusThread';
 
-import { addBookmark, removeBookmark } from '../../actions/curriculumActions';
-import { setCurrentPath } from '../../actions/userActions';
+import actions from '../../actions';
 
-const handleStartClick = (pathId, version, dispatch) => () => dispatch(setCurrentPath(pathId, version));
+const { setCurrentPath, addBookmark, removeBookmark } = actions;
 
-const handleAddBookmarkClick = (pathId, version, dispatch) => () => dispatch(addBookmark(pathId, 'paths', version));
-const handleRemoveBookmarkClick = (pathId, version, dispatch) => () => dispatch(removeBookmark(pathId, 'paths', version));
-
-const Path = ({ match, curriculum, user, dispatch }) => {
+const Path = ({ match, curriculum, user }) => {
   const pathId = match.params.id;
   const path = curriculum.paths[match.params.id];
 
@@ -42,13 +38,13 @@ const Path = ({ match, curriculum, user, dispatch }) => {
       </PageHero>
       {user.authenticated ?
         <PageDivider>
-          <button className="button--secondary" onClick={handleStartClick(pathId, path.version, dispatch)}>Start Path</button>
+          <button className="button--secondary" onClick={() => setCurrentPath(pathId, path.version)}>Start Path</button>
           <span className="normal h3">
             <i className="fa fa-tasks h3 c-secondary margin-right-tiny" />{path.nCompleted}/{path.nTotal}
           </span>
           {!path.bookmarked ?
-            <button className="button--primary" onClick={handleAddBookmarkClick(pathId, path.version, dispatch)}>Bookmark Path</button> :
-            <button className="button--secondary" onClick={handleRemoveBookmarkClick(pathId, path.version, dispatch)}>Remove Bookmark</button>}
+            <button className="button--primary" onClick={() => addBookmark(pathId, 'paths', path.version)}>Bookmark Path</button> :
+            <button className="button--secondary" onClick={() => removeBookmark(pathId, 'paths', path.version)}>Remove Bookmark</button>}
         </PageDivider> :
         <PageDivider />}
       <div className="container">
@@ -76,7 +72,6 @@ Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
-  dispatch: PropTypes.func.isRequired,
 };
 
 export default Path;

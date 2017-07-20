@@ -15,13 +15,13 @@ import Header from './pages/shared/Header';
 import Footer from './pages/shared/Footer';
 import routesArr from './routes';
 
-const App = ({ serverMatch, dispatch, location, user, curriculum, uiState, auth0 }) => {
+const App = ({ serverMatch, location, user, curriculum, uiState, auth0 }) => {
 // If <App /> is rendered on the server we need to provide the serverMatch prop
 // since StaticRouter can only render a single Route (Switch only works on client side).
 // On the client though, just return all routes and let Switch do the work.
   const lock = Auth0LockWidget(auth0);
   const passdownProps = {
-    dispatch, user, curriculum, uiState, auth0, lock,
+    user, curriculum, uiState, auth0, lock,
   };
   const routes = [];
   if (serverMatch) {
@@ -54,7 +54,7 @@ const App = ({ serverMatch, dispatch, location, user, curriculum, uiState, auth0
           { name: 'description', content: 'devGaido provides easy to follow learning paths that help you become a web developer without the hassle.' },
         ]}
       />
-      <Header dispatch={dispatch} uiState={uiState} user={user} lock={lock} auth0={auth0} />
+      <Header uiState={uiState} user={user} lock={lock} auth0={auth0} />
       <div className="page-content relative overflow-hidden"> {/* For sticky footer and background color */}
         <CSSTransitionGroup
           transitionEnterTimeout={200}
@@ -76,7 +76,6 @@ App.propTypes = {
   curriculum: PropTypes.objectOf(PropTypes.shape),
   uiState: PropTypes.objectOf(PropTypes.shape),
   location: PropTypes.objectOf(PropTypes.shape).isRequired,
-  dispatch: PropTypes.func.isRequired,
   auth0: PropTypes.objectOf(PropTypes.shape).isRequired,
 
 };
