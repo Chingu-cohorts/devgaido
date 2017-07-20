@@ -5,6 +5,8 @@ import Lesson from './pages/Lesson/Lesson';
 import Library from './pages/Library/Library';
 import Profile from './pages/Profile/Profile';
 import Dashboard from './pages/Dashboard/Dashboard';
+import About from './pages/About/About';
+import Contact from './pages/Contact/Contact';
 import Disclaimer from './pages/Disclaimer/Disclaimer';
 import Styleguide from './pages/Styleguide/Styleguide';
 /**
@@ -30,6 +32,18 @@ const routes = [
     path: '/styleguide',
     exact: true,
     component: Styleguide,
+  },
+  {
+    path: '/about',
+    exact: true,
+    component: About,
+    passdown: ['lock'],
+  },
+  {
+    path: '/contact',
+    exact: true,
+    component: Contact,
+    passdown: ['lock'],
   },
   {
     path: '/disclaimer',

@@ -17,11 +17,11 @@ const Footer = () => (
         </h5>
       </div>
       <div className="flex">
-        <Link to="/" className="uppercase margin-right-small">About</Link>
+        <Link to="/about" className="uppercase margin-right-small">About</Link>
         <Link to="/" className="uppercase margin-right-small">Terms</Link>
         <Link to="/disclaimer" className="uppercase margin-right-small">Disclaimer</Link>
         <Link to="/" className="uppercase margin-right-small">Privacy</Link>
-        <Link to="/" className="uppercase margin-right-small">Contact</Link>
+        <Link to="/contact" className="uppercase margin-right-small">Contact</Link>
       </div>
       <div className="flex h2">
         <a href="https://github.com/Chingu-cohorts/devgaido" target="_blank" rel="noopener noreferrer" className="uppercase margin-right-small"><i className="fa fa-github" /></a>
