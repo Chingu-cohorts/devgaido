@@ -172,3 +172,73 @@ i::before
   transform: translateX(-100%)
   transition: transform 200ms
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.tag
+  padding 5px 15px
+  margin 2px
+
+.preview
+  width 100%
+  height 260px 
+
+/*.path-node__dot
+  width 50px
+  height 50px
+  border-radius: 50%
+  border 5px solid gray
+*/
+.dot:before
+  content: "";
+  position: absolute;
+  border-radius: 50%
+  left: -77px;
+  top: 5px;
+  width: 50px; 
+  height: 50px;
+  background colorPrimary
+  
+.dot--secondary:before
+  content: "";
+  position: absolute;
+  border-radius: 50%
+  left: -84px;
+  top: 1px;
+  width: 64px; 
+  height: 64px;
+  background colorSecondary
+
+.dot--empty:after
+  content: "";
+  position: absolute;
+  border-radius: 50%
+  left: -72px;
+  top: 10px;
+  width: 40px; 
+  height: 40px;
+  background colorPrimaryLight
+
+.dot--secondary.dot--empty:after
+  content: "";
+  position: absolute;
+  border-radius: 50%
+  left: -79px;
+  top: 6px;
+  width: 54px; 
+  height: 54px;
+  background colorPrimaryLight
+  
+.dot--empty.dot--displace:after
+  left -112px
+
+.dot--displace:before
+  left -117px
+
+.path-node
+  margin-top 50px
+  width 85px
+
+.path-node__connection
+  background alpha(colorPrimary,0.3)
+  margin-right 25px
+  width 5px
+  //flex-grow: 1
+  

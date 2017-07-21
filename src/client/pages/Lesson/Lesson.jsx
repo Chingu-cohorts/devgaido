@@ -21,7 +21,7 @@ const Lesson = ({ match, curriculum, user }) => {
   let courseId = null;
   let path = null;
   let course = null;
-  if (lesson.parentPathIds.indexOf(user.curPathId) !== -1) {
+  /*if (lesson.parentPathIds.indexOf(user.curPathId) !== -1) {
     pathId = user.curPathId;
     path = curriculum.paths[pathId];
     path.courseIds.forEach((_courseId) => {
@@ -30,14 +30,14 @@ const Lesson = ({ match, curriculum, user }) => {
         course = curriculum.courses[courseId];
       }
     });
-  }
+  }*/
 
   let projectInstructions = 'N/a';
   if (lesson.instructions !== undefined) {
     projectInstructions = lesson.instructions;
   }
 
-  let resourceList = [['N/a', null]];
+  let resourceList = [['No additional resources required.', null]];
   if (lesson.resources !== undefined) {
     resourceList = lesson.resources;
   }
@@ -50,14 +50,14 @@ const Lesson = ({ match, curriculum, user }) => {
           { name: 'description', content: lesson.description },
         ]}
       />
-      <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" title={lesson.name}>
+      <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" bgUrl={`/screenshots/${lessonId}.jpg`} title={lesson.name}>
         {pathId ?
           <BreadCrumbs rootNode={{ name: 'Current Path', url: '/dashboard' }} nodes={[path, course, lesson]} /> :
           <BreadCrumbs rootNode={{ name: 'Lessons', url: '/library' }} nodes={[lesson]} />}
         <i className="fa fa-graduation-cap c-white h0 abs-top-right" />
         {lesson.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
-      {user.authenticated ?
+      {/* user.authenticated ?
         <PageDivider>
           <button className="button--primary hidden">Bookmark Lesson</button>
           <div className="flex width-100 justify-center">
@@ -69,9 +69,60 @@ const Lesson = ({ match, curriculum, user }) => {
           {!lesson.bookmarked ?
             <button className="button--primary" onClick={() => addBookmark(lessonId, 'lessons', lesson.version)}>Bookmark Lesson</button> :
             <button className="button--secondary" onClick={() => removeBookmark(lessonId, 'lessons', lesson.version)}>Remove Bookmark</button>}
-        </PageDivider> :
-        <PageDivider />}
-      <div className="container">
+        </PageDivider> : null */}
+      <div className="bg-white margin-bottom-small">
+        <div className="container flex">
+          <div className="padding-vertical-big flex-1 flex-column">
+            <h2>About This Lesson</h2>
+            <p className="h5">{lesson.description}</p>
+            <h4 className="margin-top-big">INSTRUCTIONS</h4>
+            <p>{lesson.instructions ? lesson.instructions : 'No instructions specified.'}</p>
+            <h4 className="margin-top-big">ADDITIONAL RESOURCES</h4>
+            {resourceList.map(
+              resource => <div key={resource[0]}>
+                <a href={resource[1]} target="_blank" rel="noopener noreferrer" className="no-margin">{resource[0]}</a>
+              </div>)}
+            <div className="margin-top-huge flex flex-1 align-items-end">
+              <button className="button--secondary uppercase margin-right-small">Open Lesson</button>
+            </div>
+          </div>
+          <div className="padding-vertical-big margin-left-big">
+            <div className="right margin-bottom-big">
+              <button className="button--default uppercase">Bookmark</button>
+            </div>
+            <div className="flex justify-space-between">
+              <h5 className="normal">Rating</h5>
+              <div>
+                <i className="fa fa-star c-secondary h4 margin-left-tiny" />
+                <i className="fa fa-star c-secondary h4 margin-left-tiny" />
+                <i className="fa fa-star c-secondary h4 margin-left-tiny" />
+                <i className="fa fa-star c-secondary h4 margin-left-tiny" />
+              </div>
+            </div>
+            <div className="flex justify-space-between">
+              <h5 className="normal margin-right-huge">Estimated Length</h5>
+              <div>
+                <h4 className="c-primary uppercase right no-margin">Very Long</h4>
+                <h5 className="c-primary uppercase right">(> 100 hours)</h5>
+              </div>
+            </div>
+            <div className="flex justify-space-between">
+              <h5 className="normal">Tags</h5>
+              <div className="width-50 right">
+                <h6 className="tag c-white bg-primary center border-pill display-inline-block">HTML</h6>
+                <h6 className="tag c-white bg-primary center border-pill display-inline-block">Javascript</h6>
+                <h6 className="tag c-white bg-primary center border-pill display-inline-block">MongoDB</h6>
+                <h6 className="tag c-white bg-primary center border-pill display-inline-block">CSS</h6>
+              </div>
+            </div>
+            <div className="flex-column margin-top-big">
+              <h5 className="normal">Preview</h5>
+              <div className="preview overflow-hidden no-margin right border-round border-1px" style={{ background: `url(/screenshots/${lessonId}.jpg)`, backgroundSize: 'cover' }} />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/*<div className="container">
         <div className="row">
           <div className="grid-half">
             <InfoCard item={lesson} bgColorClass="bg-primary">
@@ -104,7 +155,7 @@ const Lesson = ({ match, curriculum, user }) => {
             title={lesson.name}
             path={lesson.url}
           /> : null}
-      </div>
+      </div>*/}
     </div>
   );
 };
