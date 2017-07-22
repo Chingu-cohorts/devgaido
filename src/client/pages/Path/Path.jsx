@@ -121,14 +121,16 @@ const Path = ({ match, curriculum, user }) => {
               {courses}
             </div>
           </div>*/}
-          {user.authenticated ? <hr /> : null}
-          {user.authenticated ?
-            <DisqusThread
-              id={`/path-${pathId}`}
-              title={path.name}
-              path={path.url}
-            /> : null}
         </div>
+      </div>
+      <div className="container">
+        {user.authenticated ? <hr /> : null}
+        {user.authenticated ?
+          <DisqusThread
+            id={`/path-${pathId}`}
+            title={path.name}
+            path={path.url}
+          /> : null}
       </div>
     </div>
   );
