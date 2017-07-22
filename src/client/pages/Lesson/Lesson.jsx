@@ -84,6 +84,7 @@ const Lesson = ({ match, curriculum, user }) => {
               </div>)}
             <div className="margin-top-huge flex flex-1 align-items-end">
               <button className="button--secondary uppercase margin-right-small">Open Lesson</button>
+              <button className="button--primary margin-left-small" onClick={() => completeLesson(lessonId, lesson.version)}>COMPLETE LESSON</button>
             </div>
           </div>
           <div className="padding-vertical-big margin-left-big">

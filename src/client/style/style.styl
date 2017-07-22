@@ -180,12 +180,6 @@ i::before
   width 100%
   height 260px 
 
-/*.path-node__dot
-  width 50px
-  height 50px
-  border-radius: 50%
-  border 5px solid gray
-*/
 .dot:before
   content: "";
   position: absolute;
@@ -240,5 +234,17 @@ i::before
   background alpha(colorPrimary,0.3)
   margin-right 25px
   width 5px
-  //flex-grow: 1
-  
+
+.collapsible
+  transition all 0.5s
+  opacity 1
+
+.collapsed
+  opacity 0
+  max-height 0 !important
+
+.mcard__icon
+  transition: transform 0.5s
+
+.rotated
+  transform: rotate(90deg)
