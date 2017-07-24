@@ -17,8 +17,8 @@ const Metrics = ({ curriculum }) => (
       <h1 className="metrics__courses__count c-white no-margin bold">
         {Object.keys(curriculum.courses).filter(cId => curriculum.courses[cId].completed).length}
       </h1>
-      <i className="fa fa-tasks c-white h1" />
-      <h6 className="c-white no-margin bold">Courses</h6>
+      <i className="fa fa-flag-checkered c-white h1" />
+      <h6 className="c-white no-margin bold">Milestones</h6>
     </div>
     <div className="metrics__lessons margin-left-tiny center">
       <h1 className="metrics__lessons__count c-white no-margin bold">

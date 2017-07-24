@@ -325,7 +325,7 @@
     "source": "P1XT",
     "name": "FCC Backend Certification",
     "description": "The FCC Backend Certification - all projects, ignore the tutorials and just read the official docs if you want.",
-    "type": "",
+    "type": "Project",
     "subjects": ["Backend", "Database"],
     "externalSource": "http://www.freecodecamp.com",
     "estimatedTime": "medium",

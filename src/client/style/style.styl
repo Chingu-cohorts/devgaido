@@ -175,6 +175,7 @@ i::before
 .tag
   padding 5px 15px
   margin 2px
+  white-space: nowrap
 
 .preview
   width 100%
@@ -252,3 +253,28 @@ i::before
 
 .rotated
   transform: rotate(90deg)
+
+.path-marker
+  padding 15px 25px
+
+.path-marker__start-icon
+  top 6px
+  left -66px
+  z-index: 100
+
+.path-end.dot--big:before
+  left -6px
+  top -1px
+
+.path-end.dot--big:after
+  left -1px
+  top 4px
+
+.mcard__content-left
+  flex-basis: 50%
+
+.no-milestone.dot:before
+  left -77px
+  
+.no-milestone.dot:after
+  left -72px

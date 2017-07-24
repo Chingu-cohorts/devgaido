@@ -41,7 +41,10 @@ const Lesson = ({ match, curriculum, user }) => {
   if (lesson.resources !== undefined) {
     resourceList = lesson.resources;
   }
-
+  const ratingStars = [];
+  for (let i = 0; i < lesson.rating; i += 1) {
+    ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" />);
+  }
   return (
     <div>
       <Helmet
@@ -50,28 +53,15 @@ const Lesson = ({ match, curriculum, user }) => {
           { name: 'description', content: lesson.description },
         ]}
       />
-      <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" bgUrl={`/screenshots/${lessonId}.jpg`} title={lesson.name}>
+      <PageHero bgColorClass="bg-secondary" bgImageClass="bg-img__path" bgUrl={`/screenshots/${lessonId}.jpg`} title={lesson.name}>
         {pathId ?
           <BreadCrumbs rootNode={{ name: 'Current Path', url: '/dashboard' }} nodes={[path, course, lesson]} /> :
           <BreadCrumbs rootNode={{ name: 'Lessons', url: '/library' }} nodes={[lesson]} />}
         <i className="fa fa-graduation-cap c-white h0 abs-top-right" />
         {lesson.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
-      {/* user.authenticated ?
-        <PageDivider>
-          <button className="button--primary hidden">Bookmark Lesson</button>
-          <div className="flex width-100 justify-center">
-            <a className="button button--secondary" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">START LESSON</a>
-            {!lesson.completed ?
-              <button className="button--primary margin-left-small" onClick={() => completeLesson(lessonId, lesson.version)}>COMPLETE LESSON</button> :
-              <button className="button--secondary margin-left-small" onClick={() => unCompleteLesson(lessonId, lesson.version)}>UNCOMPLETE LESSON</button>}
-          </div>
-          {!lesson.bookmarked ?
-            <button className="button--primary" onClick={() => addBookmark(lessonId, 'lessons', lesson.version)}>Bookmark Lesson</button> :
-            <button className="button--secondary" onClick={() => removeBookmark(lessonId, 'lessons', lesson.version)}>Remove Bookmark</button>}
-        </PageDivider> : null */}
-      <div className="bg-white margin-bottom-small">
-        <div className="container flex">
+      <div className="">
+        <div className="container flex bg-white padding-horizontal-big border-round margin-top-small">
           <div className="padding-vertical-big flex-1 flex-column">
             <h2>About This Lesson</h2>
             <p className="h5">{lesson.description}</p>
@@ -82,22 +72,31 @@ const Lesson = ({ match, curriculum, user }) => {
               resource => <div key={resource[0]}>
                 <a href={resource[1]} target="_blank" rel="noopener noreferrer" className="no-margin">{resource[0]}</a>
               </div>)}
-            <div className="margin-top-huge flex flex-1 align-items-end">
-              <button className="button--secondary uppercase margin-right-small">Open Lesson</button>
-              <button className="button--primary margin-left-small" onClick={() => completeLesson(lessonId, lesson.version)}>COMPLETE LESSON</button>
-            </div>
+            { user.authenticated ?
+              <div className="margin-top-huge flex flex-1 align-items-end">
+                <a className="button button--secondary uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">Open Lesson</a>
+                {!lesson.completed ?
+                  <button className="button--primary margin-left-small uppercase" onClick={() => completeLesson(lessonId, lesson.version)}>Complete Lesson</button> :
+                  <button className="button--primary margin-left-small uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>Un-Complete Lesson</button>}
+              </div> :
+              <div className="margin-top-huge flex flex-1 align-items-end">
+                <a className="button button--secondary uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">Open Lesson</a>
+              </div> }
           </div>
           <div className="padding-vertical-big margin-left-big">
-            <div className="right margin-bottom-big">
-              <button className="button--default uppercase">Bookmark</button>
-            </div>
+            { user.authenticated ?
+              <div className="right margin-bottom-big">
+                {!lesson.bookmarked ?
+                  <button className="button--default uppercase" onClick={() => addBookmark(lessonId, 'lessons', lesson.version)}>Bookmark</button> :
+                  <button className="button--default uppercase" onClick={() => removeBookmark(lessonId, 'lessons', lesson.version)}>Remove Bookmark</button>}
+              </div> :
+              <div className="right margin-bottom-big">
+                <button className="button--default uppercase hidden">Bookmark</button>
+              </div> }
             <div className="flex justify-space-between">
               <h5 className="normal">Rating</h5>
               <div>
-                <i className="fa fa-star c-secondary h4 margin-left-tiny" />
-                <i className="fa fa-star c-secondary h4 margin-left-tiny" />
-                <i className="fa fa-star c-secondary h4 margin-left-tiny" />
-                <i className="fa fa-star c-secondary h4 margin-left-tiny" />
+                {ratingStars}
               </div>
             </div>
             <div className="flex justify-space-between">
@@ -110,10 +109,9 @@ const Lesson = ({ match, curriculum, user }) => {
             <div className="flex justify-space-between">
               <h5 className="normal">Tags</h5>
               <div className="width-50 right">
-                <h6 className="tag c-white bg-primary center border-pill display-inline-block">HTML</h6>
-                <h6 className="tag c-white bg-primary center border-pill display-inline-block">Javascript</h6>
-                <h6 className="tag c-white bg-primary center border-pill display-inline-block">MongoDB</h6>
-                <h6 className="tag c-white bg-primary center border-pill display-inline-block">CSS</h6>
+                {lesson.subjectNames.map(
+                  subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block">{subjectName}</h6>
+                )}
               </div>
             </div>
             <div className="flex-column margin-top-big">
@@ -122,33 +120,8 @@ const Lesson = ({ match, curriculum, user }) => {
             </div>
           </div>
         </div>
-      </div>
-      {/*<div className="container">
-        <div className="row">
-          <div className="grid-half">
-            <InfoCard item={lesson} bgColorClass="bg-primary">
-              <h5 className="no-margin"><strong>Length: </strong></h5>
-              <p className="no-margin margin-left-small">{lesson.estimatedTime.charAt(0).toUpperCase() + lesson.estimatedTime.slice(1)}</p>
-              <h5 className="no-margin"><strong>Subjects: </strong></h5>
-              {subjects.map(
-                subject => <div key={subject.name}>
-                  <p className="no-margin margin-left-small">{subject.description}</p>
-                </div>)}
-              <div className="h5 no-margin"><strong>Instructions: </strong></div>
-              <p className="no-margin margin-left-small">{projectInstructions}</p>
-              <h5 className="no-margin"><strong>Resources: </strong></h5>
-              {resourceList.map(
-                resource => <div key={resource[0]}>
-                  <a href={resource[1]} target="_blank" rel="noopener noreferrer" className="no-margin margin-left-small">{resource[0]}</a>
-                </div>)}
-            </InfoCard>
-          </div>
-          <div className="grid-half">
-            <PreviewCard bgColorClass="bg-secondary">
-              <img className="preview-img" src={`/screenshots/${lessonId}.jpg`} alt={lesson.name} />
-            </PreviewCard>
-          </div>
-        </div>
+      </div>      
+      <div className="container">
         {user.authenticated ? <hr /> : null}
         {user.authenticated ?
           <DisqusThread
@@ -156,7 +129,7 @@ const Lesson = ({ match, curriculum, user }) => {
             title={lesson.name}
             path={lesson.url}
           /> : null}
-      </div>*/}
+      </div>
     </div>
   );
 };

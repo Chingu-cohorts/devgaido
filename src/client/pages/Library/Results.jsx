@@ -48,10 +48,6 @@ const Results = ({ curriculum, uiState }) => {
     curriculum.paths, uiState, filterByTopic, filterBySearchTerm,
   );
 
-  const filteredCourseIds = getFilteredItems(
-    curriculum.courses, uiState, filterByTopic, filterBySearchTerm,
-  );
-
   const filteredLessonIds = getFilteredItems(
     curriculum.lessons, uiState, filterByTopic, filterBySearchTerm,
   );
@@ -68,29 +64,9 @@ const Results = ({ curriculum, uiState }) => {
               bgColorClass="bg-primary"
               imgSrc={`/paths/${pathId}.jpg`}
               iconClass="fa-road"
-              childIconClass="fa-tasks c-secondary"
+              childIconClass="fa-flag-checkered c-secondary"
               imgBorderClass="border-1px border-primary"
               key={pathId}
-            />
-          );
-        })}
-      </div>
-      <div className="flex flex flex-wrap margin-vertical-big">
-        {filteredCourseIds.map((courseId) => {
-          const course = curriculum.courses[courseId];
-          const parentPath = curriculum.paths[course.parentPathIds[0]];
-          const sliceNumber = parentPath.courseIds.indexOf(courseId);
-          return (
-            <ImageLinkCard
-              item={course}
-              linkTo={course.url}
-              bgColorClass="bg-secondary"
-              sliceNumber={sliceNumber}
-              imgSrc={`/paths/${course.parentPathIds[0]}.jpg`}
-              iconClass="fa-tasks"
-              childIconClass="fa-graduation-cap c-primary"
-              imgBorderClass="border-1px border-secondary"
-              key={courseId}
             />
           );
         })}
@@ -102,10 +78,10 @@ const Results = ({ curriculum, uiState }) => {
             <ImageLinkCard
               item={lesson}
               linkTo={lesson.url}
-              bgColorClass="bg-primary"
+              bgColorClass="bg-secondary"
               imgSrc={`/screenshots/${lessonId}.jpg`}
               iconClass="fa-graduation-cap"
-              imgBorderClass="border-1px border-primary"
+              imgBorderClass="border-1px border-secondary"
               key={lessonId}
             />
           );

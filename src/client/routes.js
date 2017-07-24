@@ -1,6 +1,5 @@
 import Home from './pages/Home/Home';
 import Path from './pages/Path/Path';
-import Course from './pages/Course/Course';
 import Lesson from './pages/Lesson/Lesson';
 import Library from './pages/Library/Library';
 import Profile from './pages/Profile/Profile';
@@ -69,12 +68,6 @@ const routes = [
     path: '/paths/:id',
     exact: true,
     component: Path,
-    passdown: ['curriculum', 'user'],
-  },
-  {
-    path: '/courses/:id',
-    exact: true,
-    component: Course,
     passdown: ['curriculum', 'user'],
   },
   {

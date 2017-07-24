@@ -1,15 +1,7 @@
 import React from 'react';
 
-import { InfoCard } from '../shared/Cards';
-
 const StyleGuide = () => (
   <div className="container">
-    <div className="grid-half">
-      <InfoCard item={{ name: 'InfoCard bg-primary', description: 'InfoCardText' }} bgColorClass="bg-primary" />
-    </div>
-    <div className="grid-half">
-      <InfoCard item={{ name: 'InfoCard bg-secondary', description: 'InfoCardText' }} bgColorClass="bg-secondary" />
-    </div>
     <h1>H1 Heading</h1>
     <h2>H2 Heading</h2>
     <h3>H3 Heading</h3>
