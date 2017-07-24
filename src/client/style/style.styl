@@ -97,11 +97,11 @@ i::before
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* Dashboard: InProgressTab, BookmarkedTab, CompletedTab */
 
-.completed-tab, 
-.bookmarked-tab,
-.inprogress-tab
-  .link-card
-    lost-column 1/3 3
+//.completed-tab, 
+//.bookmarked-tab,
+//.inprogress-tab
+//  .link-card
+//    lost-column 1/3 3
 
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* Library */
@@ -180,6 +180,10 @@ i::before
   width 100%
   height 260px 
 
+.preview2
+  width 320px
+  height 240px
+
 .dot:before
   content: "";
   position: absolute;
@@ -188,9 +192,9 @@ i::before
   top: 5px;
   width: 50px; 
   height: 50px;
-  background colorPrimary
+  background colorSecondary
   
-.dot--secondary:before
+.dot--big:before
   content: "";
   position: absolute;
   border-radius: 50%
@@ -198,7 +202,7 @@ i::before
   top: 1px;
   width: 64px; 
   height: 64px;
-  background colorSecondary
+  background colorPrimary
 
 .dot--empty:after
   content: "";
@@ -210,7 +214,7 @@ i::before
   height: 40px;
   background colorPrimaryLight
 
-.dot--secondary.dot--empty:after
+.dot--big.dot--empty:after
   content: "";
   position: absolute;
   border-radius: 50%

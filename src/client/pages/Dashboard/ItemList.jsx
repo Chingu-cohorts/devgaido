@@ -11,12 +11,12 @@ const bgColorLookUp = {
 
 const iconLookUp = {
   paths: 'fa-road',
-  courses: 'fa-tasks',
+  courses: 'fa-flag-checkered',
   lessons: 'fa-graduation-cap',
 };
 
 const childIconLookUp = {
-  paths: 'fa-tasks c-secondary',
+  paths: 'fa-flag-checkered c-secondary',
   courses: 'fa-graduation-cap c-primary',
   lessons: '',
 };

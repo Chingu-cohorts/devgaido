@@ -13,6 +13,11 @@ import actions from '../../actions';
 
 const { setCurrentPath, addBookmark, removeBookmark } = actions;
 
+const typeIcons = {
+  Reading: 'fa-book',
+  "Supplemental Course": 'fa-graduation-cap',
+  Project: 'fa-cogs',
+};
 
 const Path = ({ match, curriculum, user }) => {
   const pathId = match.params.id;
@@ -21,10 +26,19 @@ const Path = ({ match, curriculum, user }) => {
     const course = curriculum.courses[courseId];
     const lessons = course.lessonIds.map((lessonId) => {
       const lesson = curriculum.lessons[lessonId];
-      return <LinkCard item={lesson} linkTo={lesson.url} bgColorClass="relative dot dot--empty dot--displace bg-primary" iconClass="fa-flag-checkered" key={lessonId} connectionClass="connected--secondary" />;
+      return (
+        <LinkCard
+          item={lesson}
+          linkTo={lesson.url}
+          bgColorClass="relative dot dot--empty dot--displace bg-secondary"
+          iconClass={typeIcons[lesson.type]}
+          key={lessonId}
+          connectionClass="connected--secondary"
+          imgSrc={`/screenshots/${lessonId}.jpg`}
+        />);
     });
 
-    return <MilestoneCard index={index} course={course} lessons={lessons} />;
+    return <MilestoneCard index={index} course={course} lessons={lessons} key={courseId} />;
   });
 
   return (

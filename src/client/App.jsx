@@ -11,6 +11,7 @@ import { CSSTransitionGroup } from 'react-transition-group';
 import PropsRoute from './pages/shared/PropsRoute';
 import Auth0LockWidget from './pages/shared/Auth0LockWidget';
 
+import ScrollToTop from './pages/shared/ScrollToTop';
 import Header from './pages/shared/Header';
 import Footer from './pages/shared/Footer';
 import routesArr from './routes';
@@ -45,29 +46,31 @@ const App = ({ serverMatch, location, user, curriculum, uiState, auth0 }) => {
     });
   }
   return (
-    <div className="App">
-      <Helmet
-        htmlAttributes={{ lang: 'en', amp: undefined }} // amp takes no value
-        titleTemplate="devGaido | %s"
-        titleAttributes={{ itemprop: 'name', lang: 'en' }}
-        meta={[
-          { name: 'description', content: 'devGaido provides easy to follow learning paths that help you become a web developer without the hassle.' },
-        ]}
-      />
-      <Header uiState={uiState} user={user} lock={lock} auth0={auth0} />
-      <div className="page-content relative overflow-hidden"> {/* For sticky footer and background color */}
-        <CSSTransitionGroup
-          transitionEnterTimeout={200}
-          transitionLeaveTimeout={200}
-          transitionName="page-transition"
-        >
-          <Switch key={location.pathname} location={location}>
-            {routes}
-          </Switch>
-        </CSSTransitionGroup>
+    <ScrollToTop>
+      <div className="App">
+        <Helmet
+          htmlAttributes={{ lang: 'en', amp: undefined }} // amp takes no value
+          titleTemplate="devGaido | %s"
+          titleAttributes={{ itemprop: 'name', lang: 'en' }}
+          meta={[
+            { name: 'description', content: 'devGaido provides easy to follow learning paths that help you become a web developer without the hassle.' },
+          ]}
+        />
+        <Header uiState={uiState} user={user} lock={lock} auth0={auth0} />
+        <div className="page-content relative overflow-hidden"> {/* For sticky footer and background color */}
+          <CSSTransitionGroup
+            transitionEnterTimeout={200}
+            transitionLeaveTimeout={200}
+            transitionName="page-transition"
+          >
+            <Switch key={location.pathname} location={location}>
+              {routes}
+            </Switch>
+          </CSSTransitionGroup>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>);
+    </ScrollToTop>);
 };
 
 App.propTypes = {
