@@ -7,7 +7,7 @@ const CardTemplate = ({ title, bgColorClass, iconClass, heightClass, content, fo
   <div className={`card flex-column border-round bg-white ${heightClass}`}>
     <div className={`card__header flex align-items-center border-round-top ${bgColorClass}`}>
       {iconClass ? <i className={`fa c-white h4 ${iconClass} margin-right-small`} /> : null}
-      <h5 className="card__header__text flex-1 c-white uppercase no-margin">{title}</h5>
+      <h4 className="card__header__text flex-1 c-white uppercase no-margin">{title}</h4>
       {iconClass ? <i className={`fa c-white h4 ${iconClass}`} /> : null}
     </div>
     <div className="card__content flex-1">
@@ -35,7 +35,7 @@ const MenuCard = ({ children }) => (
 const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, connectionClass, heightClass, linkTo }) => {
   const ratingStars = [];
   for (let i = 0; i < item.rating; i += 1) {
-    ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" />);
+    ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" key={item.name + i} />);
   }
   const subjects = [];
   const numSubjects = Math.min(2, item.subjectNames.length);
@@ -58,7 +58,7 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, conne
               <div className="preview2 no-margin border-round border-1px" style={{ background: `url(${imgSrc})`, backgroundSize: 'cover' }} />
             </div> : null}
           <div className="lcard__content-left flex-2 margin-left-small">
-            <h5>{item.description}</h5>
+            <h4>{item.description}</h4>
             <div className="right">
               <div>
                 {ratingStars}
@@ -72,7 +72,7 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, conne
             </div>
             <div className="right">
               {subjects.map(
-                subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block">{subjectName}</h6>,
+                subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block" key={item.name + subjectName} >{subjectName}</h6>,
               )}
 
             </div>

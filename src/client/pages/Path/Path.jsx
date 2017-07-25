@@ -68,7 +68,15 @@ const Path = ({ match, curriculum, user }) => {
 
   const ratingStars = [];
   for (let i = 0; i < path.rating; i += 1) {
-    ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" />);
+    ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" key={path.name + i} />);
+  }
+  const subjects = [];
+  const numSubjects = Math.min(2, path.subjectNames.length);
+  for (let i = 0; i < numSubjects; i += 1) {
+    subjects.push(path.subjectNames[i]);
+  }
+  if (path.subjectNames.length > 2) {
+    subjects.push(`... ${path.subjectNames.length - 2} more ...`);
   }
   console.log(path.estimatedTime);
   return (
@@ -79,11 +87,11 @@ const Path = ({ match, curriculum, user }) => {
           { name: 'description', content: path.description },
         ]}
       />
-      <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" bgUrl={`/paths/${pathId}.jpg`} title={path.name}>
+      <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" bgUrl={`/paths/${pathId}.jpg`} title={path.name} full>
         <i className="fa fa-road c-white h0 abs-top-right" />
         {path.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
-      <div className="">
+      <div className="page-hero__offset">
         <div className="container flex bg-white padding-horizontal-big border-round margin-top-small">
           <div className="padding-vertical-big flex-2">
             <h2>About This Path</h2>
@@ -117,8 +125,8 @@ const Path = ({ match, curriculum, user }) => {
             <div className="flex justify-space-between">
               <h5 className="normal">Tags</h5>
               <div className="width-50 right">
-                {path.subjectNames.map(
-                  subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block">{subjectName}</h6>,
+                {subjects.map(
+                  subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block" key={path.name + subjectName}>{subjectName}</h6>,
                 )}
               </div>
             </div>
