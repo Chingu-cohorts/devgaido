@@ -54,7 +54,7 @@ const Results = ({ curriculum, uiState }) => {
 
   return (
     <div className="results margin-vertical-big">
-      <div className="flex flex flex-wrap margin-vertical-big">
+      <div className="flex flex-wrap margin-vertical-big justify-space-around">
         {filteredPathIds.map((pathId) => {
           const path = curriculum.paths[pathId];
           return (
@@ -71,7 +71,7 @@ const Results = ({ curriculum, uiState }) => {
           );
         })}
       </div>
-      <div className="flex flex flex-wrap margin-vertical-big">
+      <div className="flex flex-wrap margin-vertical-big justify-space-around">
         {filteredLessonIds.map((lessonId) => {
           const lesson = curriculum.lessons[lessonId];
           return (
