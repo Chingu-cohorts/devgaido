@@ -2,15 +2,13 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 import PageHero from '../shared/PageHero';
-import PageDivider from '../shared/PageDivider';
 
 const About = () => (
   <div>
     <Helmet title="About" />
-    <PageHero bgColorClass="bg-secondary" bgImageClass="bg-img__dashboard" title="About" />
-    <PageDivider />
-    <div className="container margin-vertical-big">
-      <h1>Background</h1>
+    <PageHero bgColorClass="bg-secondary" bgImageClass="bg-img__dashboard" title="About" full />
+    <div className="container flex-column bg-white padding-big border-round margin-vertical-small page-hero__offset">
+      <h2>Background</h2>
       <p>devGaido is developed by the Chingu Cohorts. A global collaboration
         platform and coding-cohort generator. We connect motivated learners
         with shared goals to learn, help and build together.</p>

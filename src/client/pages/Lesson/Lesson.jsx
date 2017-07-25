@@ -37,7 +37,7 @@ const Lesson = ({ match, curriculum, user }) => {
           { name: 'description', content: lesson.description },
         ]}
       />
-      <PageHero bgColorClass="bg-secondary" bgImageClass="bg-img__path" bgUrl={`/screenshots/${lessonId}.jpg`} title={lesson.name} full>
+      <PageHero bgColorClass="bg-secondary--dark" bgImageClass="bg-img__path" bgUrl={`/screenshots/${lessonId}.jpg`} title={lesson.name} full>
         <i className="fa fa-graduation-cap c-white h0 abs-top-right" />
         {lesson.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
@@ -96,7 +96,7 @@ const Lesson = ({ match, curriculum, user }) => {
           </div>
           <div className="flex-column margin-top-big">
             <a href={lesson.externalSource} target="_blank" rel="noopener noreferrer">
-              <div className="preview overflow-hidden no-margin right border-round border-1px" style={{ background: `url(/screenshots/${lessonId}.jpg)`, backgroundSize: 'cover' }} />
+              <div className="preview overflow-hidden no-margin right border-round border-1px" style={{ background: `url(/screenshots/${lessonId}.jpg)`, backgroundSize: 'cover', borderColor: '#ccc' }} />
             </a>
           </div>
         </div>

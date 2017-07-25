@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 import MilestoneCard from './MilestoneCard';
 import PageHero from '../shared/PageHero';
-import BreadCrumbs from '../shared/BreadCrumbs';
+import PageDivider from '../shared/PageDivider';
 import { LinkCard } from '../shared/Cards';
 import DisqusThread from '../shared/DisqusThread';
 
@@ -38,7 +38,7 @@ const Path = ({ match, curriculum, user }) => {
           <LinkCard
             item={lesson}
             linkTo={lesson.url}
-            bgColorClass={`relative dot ${lesson.complete ? '' : 'dot--empty'} dot--displace bg-secondary`}
+            bgColorClass={`relative dot ${lesson.completed ? '' : 'dot--empty'} dot--displace bg-secondary`}
             iconClass={typeIcons[lesson.type]}
             key={lessonId}
             connectionClass="connected--secondary"
@@ -140,7 +140,7 @@ const Path = ({ match, curriculum, user }) => {
           </div>
         </div>
       </div>
-      <div className="container flex margin-vertical-big">
+      <div className="path__content container flex margin-vertical-big">
         <div className="path-node flex-column align-items-center">
           <div className="path-node__connection flex-1 margin-bottom-small">
             <p className="hidden">content</p>
@@ -157,7 +157,7 @@ const Path = ({ match, curriculum, user }) => {
           </div>
           <PathMarker
             text={'Path Completion'}
-            dotClass="dot--big dot--empty"
+            dotClass={`dot--big ${path.completed ? 'dot--trophy' : 'dot--empty'}`}
           />
         </div>
       </div>

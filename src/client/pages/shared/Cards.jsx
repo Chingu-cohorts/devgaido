@@ -32,7 +32,7 @@ const MenuCard = ({ children }) => (
   })
 );
 
-const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, connectionClass, heightClass, linkTo }) => {
+const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borderClass, connectionClass, heightClass, linkTo }) => {
   const ratingStars = [];
   for (let i = 0; i < item.rating; i += 1) {
     ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" key={item.name + i} />);
@@ -55,10 +55,10 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, conne
         content: <div className="flex">
           {imgSrc ?
             <div className="lcard__content-left flex-1">
-              <div className="preview2 no-margin border-round border-1px" style={{ background: `url(${imgSrc})`, backgroundSize: 'cover' }} />
+              <div className="preview2 no-margin border-round border-1px" style={{ background: `url(${imgSrc})`, backgroundSize: 'cover', borderColor: '#ccc' }} />
             </div> : null}
           <div className="lcard__content-left flex-2 margin-left-small">
-            <h4>{item.description}</h4>
+            <h5>{item.description}</h5>
             <div className="right">
               <div>
                 {ratingStars}
@@ -74,7 +74,6 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, conne
               {subjects.map(
                 subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block" key={item.name + subjectName} >{subjectName}</h6>,
               )}
-
             </div>
             <div className="flex justify-end">
               {!item.completed && item.nTotal ?

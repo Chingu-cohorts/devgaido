@@ -185,15 +185,34 @@ i::before
   height 100%
 
 .dot:before
-  content: "";
+  content: ""
   position: absolute;
   border-radius: 50%
   left: -77px;
   top: 5px;
   width: 50px; 
   height: 50px;
+  color white
   background colorSecondary
-  
+
+.dot:after
+  content: "\f05d"
+  font-family: 'FontAwesome'
+  font-size 39px
+  position: absolute;
+  left: -109px;
+  top: 0px;
+  color white
+
+.dot--big.dot--trophy:after
+  content: "\f091 "
+  font-family: 'FontAwesome'
+  font-size 39px
+  position: absolute;
+  left: -71px;
+  top: 4px;
+  color white
+
 .dot--big:before
   content: "";
   position: absolute;
@@ -275,8 +294,25 @@ i::before
 .no-milestone.dot:before
   left -77px
   
-.no-milestone.dot:after
-  left -72px
+.no-milestone.dot:after  
+  content: "\f05d"
+  font-family: 'FontAwesome'
+  font-size 39px
+  position: absolute;
+  left: -69px;
+  color white
 
+.no-milestone.dot.dot--empty:after
+  content: ""
+  left -72px
+  
 .page-hero__offset
-  margin-top: -220px
+  margin-top: -200px
+
+.mcard__checkmark
+  right 20px
+  top 5px
+
+.mcard__flag
+  top 11px
+  left -70px
