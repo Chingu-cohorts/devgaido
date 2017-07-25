@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import PageHero from '../shared/PageHero';
-import BreadCrumbs from '../shared/BreadCrumbs';
-import { InfoCard, PreviewCard } from '../shared/Cards';
-import PageDivider from '../shared/PageDivider';
 import DisqusThread from '../shared/DisqusThread';
 
 import actions from '../../actions';

@@ -20,7 +20,7 @@ const typeIcons = {
 
 const PathMarker = ({ text, dotClass, iconClass }) => (
   <div className={`path-marker relative ${dotClass} flex align-items-center bg-grey border-round`}>
-    <h2 className="path-marker__text flex-1 uppercase no-margin c-white bold">{text}</h2>
+    <h2 className="path-marker__text flex-1 uppercase no-margin c-white">{text}</h2>
     {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
   </div>);
 
@@ -140,7 +140,7 @@ const Path = ({ match, curriculum, user }) => {
         </div>
         <div className="container flex-column">
           <PathMarker
-            text={`Path Start: ${path.name}`}
+            text={`Path: ${path.name}`}
             iconClass="path-marker__start-icon fa-map-marker"
             dotClass="dot--big"
           />

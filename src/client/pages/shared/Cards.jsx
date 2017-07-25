@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const CardTemplate = ({ title, bgColorClass, iconClass, heightClass, content, footerContent }) => (
   <div className={`card flex-column border-round bg-white ${heightClass}`}>
     <div className={`card__header flex align-items-center border-round-top ${bgColorClass}`}>
+      {iconClass ? <i className={`fa c-white h4 ${iconClass} margin-right-small`} /> : null}
       <h5 className="card__header__text flex-1 c-white uppercase no-margin">{title}</h5>
       {iconClass ? <i className={`fa c-white h4 ${iconClass}`} /> : null}
     </div>
@@ -31,22 +32,18 @@ const MenuCard = ({ children }) => (
   })
 );
 
-const PreviewCard = ({ bgColorClass, children }) => (
-  CardTemplate({
-    title: 'Preview',
-    bgColorClass,
-    iconClass: 'fa-eye',
-    content: (
-      <div className="card__preview border-round subtle-border overflow-hidden">
-        {children || <p>No preview available.</p>}
-      </div>),
-  })
-);
-
 const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, connectionClass, heightClass, linkTo }) => {
   const ratingStars = [];
   for (let i = 0; i < item.rating; i += 1) {
     ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" />);
+  }
+  const subjects = [];
+  const numSubjects = Math.min(2, item.subjectNames.length);
+  for (let i = 0; i < numSubjects; i += 1) {
+    subjects.push(item.subjectNames[i]);
+  }
+  if (item.subjectNames.length > 2) {
+    subjects.push(`... ${item.subjectNames.length - 2} more ...`);
   }
   return (
     <Link className={`link-card ${connectionClass} relative width-100`} to={linkTo}>
@@ -57,33 +54,31 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, conne
         heightClass,
         content: <div className="flex">
           {imgSrc ?
-            <div className="lcard__content-left flex-1 margin-top-small">
-              <div className="preview2 overflow-hidden no-margin right border-round border-1px" style={{ background: `url(${imgSrc})`, backgroundSize: 'cover' }} />
+            <div className="lcard__content-left flex-1">
+              <div className="preview2 no-margin border-round border-1px" style={{ background: `url(${imgSrc})`, backgroundSize: 'cover' }} />
             </div> : null}
-          <div className="lcard__content-left flex-2 margin-left-small margin-top-small">
+          <div className="lcard__content-left flex-2 margin-left-small">
             <h5>{item.description}</h5>
-            <div className="flex justify-space-between">
-              <h6 className="normal" />
+            <div className="right">
               <div>
                 {ratingStars}
               </div>
             </div>
-            <div className="flex justify-space-between">
-              <h6 className="normal" />
+            <div className="right margin-top-small">
               <div>
                 <h5 className="c-primary uppercase right no-margin">Very Long</h5>
                 <h6 className="c-primary uppercase right">(> 100 hours)</h6>
               </div>
             </div>
             <div className="right">
-              {item.subjectNames.map(
+              {subjects.map(
                 subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block">{subjectName}</h6>,
               )}
 
             </div>
             <div className="flex justify-end">
               {!item.completed && item.nTotal ?
-                <h3 className="no-margin right flex-1">
+                <h3 className="no-margin right flex-1 margin-top-small">
                   <i className={`fa ${childIconClass} h3 right margin-right-tiny`} /><span className="">{item.nCompleted}/{item.nTotal}</span>
                   <i className={'fa fa-graduation-cap c-primary h3 right margin-left-big margin-right-tiny'} /><span className="">124/235</span>
                 </h3> : null}
