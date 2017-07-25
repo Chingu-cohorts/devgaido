@@ -87,7 +87,7 @@ const Lesson = ({ match, curriculum, user }) => {
             </div>
           </div>
           <div className="flex justify-space-between">
-            <h5 className="normal">Tags!!</h5>
+            <h5 className="normal">Tags</h5>
             <div className="width-50 right">
               {subjects.map(
                 subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block" key={lesson.name + subjectName}>{subjectName}</h6>,
