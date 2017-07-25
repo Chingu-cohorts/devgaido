@@ -33,7 +33,7 @@ class MilestoneCard extends React.Component {
             <i className={`mcard__icon fa fa-caret-right c-white h2 margin-right-small ${this.state.collapsed ? '' : 'rotated'}`} />
             <h3 className="mcard__header__text flex-1 c-white uppercase no-margin">Milestone {this.props.index + 1}: {this.props.course.name}</h3>
           </div>
-          <div className="flex margin-bottom-tiny">
+         {/*<div className="flex margin-bottom-tiny">
             <div className="mcard__content-left margin-left-small margin-top-small">
               <p>{this.props.course.description}</p>
             </div>
@@ -69,7 +69,7 @@ class MilestoneCard extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
+          </div>*/}
         </div>
         <div
           className={`collapsible ${this.state.collapsed ? 'collapsed' : 'padding-vertical-small'} bg-grey-blue border-round-bottom padding-horizontal-big`}

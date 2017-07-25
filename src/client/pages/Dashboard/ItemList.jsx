@@ -6,7 +6,7 @@ import { LinkCard } from '../shared/Cards';
 const bgColorLookUp = {
   paths: 'bg-primary',
   courses: 'bg-secondary',
-  lessons: 'bg-primary',
+  lessons: 'bg-secondary',
 };
 
 const iconLookUp = {

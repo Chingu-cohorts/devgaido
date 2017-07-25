@@ -14,13 +14,13 @@ const { addBookmark, removeBookmark } = actions;
 
 const typeIcons = {
   Reading: 'fa-book',
-  'Supplemental Course': 'fa-graduation-cap',
+  'Supplemental Course': 'fa-university',
   Project: 'fa-cogs',
 };
 
 const PathMarker = ({ text, dotClass, iconClass }) => (
   <div className={`path-marker relative ${dotClass} flex align-items-center bg-grey border-round margin-top-big`}>
-    <h3 className="path-marker__text flex-1 c-white uppercase no-margin">{text}</h3>
+    <h2 className="path-marker__text flex-1 uppercase no-margin c-white bold">{text}</h2>
     {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
   </div>);
 
