@@ -31,16 +31,6 @@ const getInProgressPaths = (curriculum) => {
   );
 };
 
-const CurrentPathSection = ({ curPath, curriculum, user, history, onViewClick }) => (
-  <div className="current-path margin-bottom-huge">
-    <span>CURRENT PATH</span>
-    <h2>{curPath.name}</h2>
-    <button className="button--default abs-top-right" onClick={onViewClick}>VIEW FULL PATH</button>
-    <p className="course-description">{curPath.description}</p>
-    <LessonSlider user={user} curriculum={curriculum} history={history} />
-  </div>
-);
-
 const InProgressSection = ({ inProgressPaths, curriculum }) => (
   <div className="inprogress-tab margin-bottom-huge">
     <span>PATHS</span>
@@ -49,27 +39,17 @@ const InProgressSection = ({ inProgressPaths, curriculum }) => (
   </div>
 );
 
-const InProgressTab = ({ user, curriculum, history }) => {
+const InProgressTab = ({ user, curriculum }) => {
   const inProgressPaths = getInProgressPaths(curriculum);
 
   return (
     <div>
-      {user.curPathId !== '' ?
-        <div>
-          <CurrentPathSection
-            curPath={curriculum.paths[user.curPathId]}
-            curriculum={curriculum}
-            user={user}
-            history={history}
-            onViewClick={() => history.push(`/paths/${user.curPathId}`)}
-          />
-          {inProgressPaths.length !== 0 ?
-            <InProgressSection
-              inProgressPaths={inProgressPaths}
-              curriculum={curriculum}
-              show={user.curPathId !== '' && inProgressPaths.length !== 0}
-            /> : null }
-        </div> :
+      {inProgressPaths.length !== 0 ?
+        <InProgressSection
+          inProgressPaths={inProgressPaths}
+          curriculum={curriculum}
+          show={user.curPathId !== '' && inProgressPaths.length !== 0}
+        /> :
         <div className="inprogress-tab margin-bottom-huge">
           <span>PATHS</span>
           <h2>In Progress</h2>
@@ -77,18 +57,9 @@ const InProgressTab = ({ user, curriculum, history }) => {
             <h3>You haven&apos;t started any paths yet.</h3>
             <Link className="button button--primary uppercase" to="/library">Browse Library</Link>
           </div>
-        </div>
-      }
+        </div>}
     </div>
   );
-};
-
-CurrentPathSection.propTypes = {
-  curPath: PropTypes.objectOf(PropTypes.shape).isRequired,
-  history: PropTypes.objectOf(PropTypes.shape).isRequired,
-  user: PropTypes.objectOf(PropTypes.shape).isRequired,
-  curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
-  onViewClick: PropTypes.func.isRequired,
 };
 
 InProgressSection.propTypes = {
@@ -97,7 +68,6 @@ InProgressSection.propTypes = {
 };
 
 InProgressTab.propTypes = {
-  history: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };

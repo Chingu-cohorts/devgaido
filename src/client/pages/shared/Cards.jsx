@@ -76,10 +76,15 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
               )}
             </div>
             <div className="flex justify-end">
-              {!item.completed && item.nTotal ?
-                <h3 className="no-margin right flex-1 margin-top-small">
-                  <i className={`fa ${childIconClass} h3 right margin-right-tiny`} /><span className="">{item.nCompleted}/{item.nTotal}</span>
-                  <i className={'fa fa-graduation-cap c-primary h3 right margin-left-big margin-right-tiny'} /><span className="">124/235</span>
+              {item.nTotal ?
+                <h3 className="no-margin right margin-top-small">
+                  <i className={`fa ${childIconClass} h3 right margin-right-tiny`} />
+                  <span className="">{item.nCompleted}/{item.nTotal}</span>
+                </h3> : null}
+              {item.nLessonsTotal ?
+                <h3 className="no-margin right margin-top-small">
+                  <i className={'fa fa-graduation-cap c-primary h3 right margin-left-big margin-right-tiny'} />
+                  <span className="">{item.nLessonsCompleted}/{item.nLessonsTotal}</span>
                 </h3> : null}
               {item.completed ? <i className="fa fa-check-circle-o h1 c-secondary right" /> : null}
             </div>
@@ -89,29 +94,6 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
     </Link>
   );
 };
-
-/*
-const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, connectionClass, heightClass, linkTo }) => (
-  <Link className={`link-card ${connectionClass} relative width-100`} to={linkTo}>
-    {CardTemplate({
-      title: item.name,
-      bgColorClass,
-      iconClass,
-      heightClass,
-      content: <p>{item.description ? item.description : 'No description given.'}</p>,
-      footerContent: (
-        <div>
-          {!item.completed && item.nTotal ?
-            <h4 className="no-margin right">
-              <i className={`fa ${childIconClass} h4 right margin-right-tiny`} /><span className="bold">{item.nCompleted}/{item.nTotal}</span>
-            </h4> : null}
-          {item.completed ? <i className="fa fa-check-circle-o h1 c-primary right" /> : null}
-        </div>
-      ),
-    })}
-  </Link>
-);*/
-
 
 CardTemplate.propTypes = {
   title: PropTypes.string.isRequired,
@@ -153,4 +135,4 @@ LinkCard.defaultProps = {
   heightClass: '',
 };
 
-export { MenuCard, LinkCard, PreviewCard };
+export { MenuCard, LinkCard };
