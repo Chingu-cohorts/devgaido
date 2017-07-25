@@ -77,18 +77,21 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, conne
                 <h6 className="c-secondary uppercase right">(> 100 hours)</h6>
               </div>
             </div>
-            <div className="flex justify-space-between">
+            {/* <div className="flex justify-space-between">
               <h6 className="normal">Tags</h6>
               <div className="width-75 right">
                 {item.subjectNames.map(
                   subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block">{subjectName}</h6>
                 )}
               </div>
-            </div>
+            </div>*/}
           </div>
         </div>,
         footerContent: (
           <div>
+            {item.subjectNames.map(
+                  subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block">{subjectName}</h6>
+                )}
             {!item.completed && item.nTotal ?
               <h3 className="no-margin right">
                 <i className={`fa ${childIconClass} h3 right margin-right-tiny`} /><span className="">{item.nCompleted}/{item.nTotal}</span>

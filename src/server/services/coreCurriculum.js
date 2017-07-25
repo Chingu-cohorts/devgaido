@@ -48,6 +48,7 @@ const initPaths = (curriculum) => {
     path.rating = Math.floor(accumulatedRating / path.nTotal);
     path.estimatedTime = accumulatedTime;
     path.url = `/paths/${pathId}`;
+    path.img = `/paths/${pathId}.jpg`;
   });
 };
 
@@ -100,6 +101,7 @@ const initLessons = (curriculum) => {
     });
     rating += 1;
     lesson.rating = rating % 5 + 1;
+    lesson.img = `/screenshots/${lessonId}.jpg`;
   });
 };
 

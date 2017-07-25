@@ -32,6 +32,7 @@ const ItemList = ({ items, category }) => (
         childIconClass={childIconLookUp[category]}
         heightClass="height-100"
         key={item.name}
+        imgSrc={item.img}
       />
     ))}
   </div>
