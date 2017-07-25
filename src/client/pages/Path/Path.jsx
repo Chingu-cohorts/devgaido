@@ -19,7 +19,7 @@ const typeIcons = {
 };
 
 const PathMarker = ({ text, dotClass, iconClass }) => (
-  <div className={`path-marker relative ${dotClass} flex align-items-center bg-grey border-round margin-top-big`}>
+  <div className={`path-marker relative ${dotClass} flex align-items-center bg-grey border-round`}>
     <h2 className="path-marker__text flex-1 uppercase no-margin c-white bold">{text}</h2>
     {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
   </div>);
@@ -80,21 +80,18 @@ const Path = ({ match, curriculum, user }) => {
         ]}
       />
       <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" bgUrl={`/paths/${pathId}.jpg`} title={path.name}>
-        {pathId === user.curPathId ?
-          <BreadCrumbs rootNode={{ name: 'Current Path', url: '/dashboard' }} nodes={[path]} /> :
-          <BreadCrumbs rootNode={{ name: 'Paths', url: '/library' }} nodes={[path]} />}
         <i className="fa fa-road c-white h0 abs-top-right" />
         {path.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
       <div className="">
         <div className="container flex bg-white padding-horizontal-big border-round margin-top-small">
-          <div className="padding-vertical-big">
+          <div className="padding-vertical-big flex-2">
             <h2>About This Path</h2>
             <p className="h5">{path.description}</p>
             <h3 className="margin-top-big">GOAL</h3>
             <p className="h5">Becoming a confident web developer ready to apply for junior positions.</p>
           </div>
-          <div className="padding-vertical-big margin-left-huge">
+          <div className="padding-vertical-big margin-left-huge flex-1">
             { user.authenticated ?
               <div className="right margin-bottom-big">
                 {!path.bookmarked ?
@@ -135,9 +132,9 @@ const Path = ({ match, curriculum, user }) => {
           </div>
         </div>
       </div>
-      <div className="container flex">
+      <div className="container flex margin-vertical-big">
         <div className="path-node flex-column align-items-center">
-          <div className="path-node__connection flex-1">
+          <div className="path-node__connection flex-1 margin-bottom-small">
             <p className="hidden">content</p>
           </div>
         </div>

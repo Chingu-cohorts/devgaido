@@ -63,36 +63,34 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, conne
           <div className="lcard__content-left flex-2 margin-left-small margin-top-small">
             <h5>{item.description}</h5>
             <div className="flex justify-space-between">
-              <h6 className="normal"></h6>
+              <h6 className="normal" />
               <div>
                 {ratingStars}
               </div>
             </div>
             <div className="flex justify-space-between">
-              <h6 className="normal"></h6>
+              <h6 className="normal" />
               <div>
                 <h5 className="c-primary uppercase right no-margin">Very Long</h5>
                 <h6 className="c-primary uppercase right">(> 100 hours)</h6>
               </div>
             </div>
             <div className="right">
-             {item.subjectNames.map(
-                subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block">{subjectName}</h6>
+              {item.subjectNames.map(
+                subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block">{subjectName}</h6>,
               )}
-            
+
             </div>
-             <div className="flex right">
-            
-             
-            {!item.completed && item.nTotal ?
-              <h3 className="no-margin right flex-1">
-                <i className={`fa ${childIconClass} h3 right margin-right-tiny`} /><span className="">{item.nCompleted}/{item.nTotal}</span>
-                <i className={`fa fa-graduation-cap c-primary h3 right margin-left-big margin-right-tiny`} /><span className="">124/235</span>
-              </h3> : null}
-            {item.completed ? <i className="fa fa-check-circle-o h1 c-secondary right" /> : null}
+            <div className="flex justify-end">
+              {!item.completed && item.nTotal ?
+                <h3 className="no-margin right flex-1">
+                  <i className={`fa ${childIconClass} h3 right margin-right-tiny`} /><span className="">{item.nCompleted}/{item.nTotal}</span>
+                  <i className={'fa fa-graduation-cap c-primary h3 right margin-left-big margin-right-tiny'} /><span className="">124/235</span>
+                </h3> : null}
+              {item.completed ? <i className="fa fa-check-circle-o h1 c-secondary right" /> : null}
+            </div>
           </div>
-          </div>
-        </div>
+        </div>,
       })}
     </Link>
   );

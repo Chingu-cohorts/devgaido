@@ -28,10 +28,14 @@ class MilestoneCard extends React.Component {
     }
     return (
       <div>
-        <div className={`mcard cursor-pointer relative dot--big dot--empty flex-column ${this.state.collapsed ? 'border-round' : 'border-round-top'} bg-white`} onClick={() => this.toggleCollapsed()}>
-          <div className="card__header flex align-items-center bg-primary border-round-top">
+        <div className={`mcard cursor-pointer relative dot--big dot--empty flex-column bg-white`} onClick={() => this.toggleCollapsed()}>
+          <div className={`card__header flex align-items-center bg-primary ${this.state.collapsed ? 'border-round' : 'border-round-top'}`}>
             <i className={`mcard__icon fa fa-caret-right c-white h2 margin-right-small ${this.state.collapsed ? '' : 'rotated'}`} />
             <h3 className="mcard__header__text flex-1 c-white uppercase no-margin">Milestone {this.props.index + 1}: {this.props.course.name}</h3>
+            <h3 className="right no-margin margin-left-big c-white ">
+              <i className={`fa fa-graduation-cap h3 right margin-left-big margin-right-tiny`} />
+              <span>{this.props.course.nCompleted}/{this.props.course.nTotal}</span>
+            </h3>
           </div>
          {/*<div className="flex margin-bottom-tiny">
             <div className="mcard__content-left margin-left-small margin-top-small">
@@ -72,7 +76,7 @@ class MilestoneCard extends React.Component {
           </div>*/}
         </div>
         <div
-          className={`collapsible ${this.state.collapsed ? 'collapsed' : 'padding-vertical-small'} bg-grey-blue border-round-bottom padding-horizontal-big`}
+          className={`collapsible ${this.state.collapsed ? 'collapsed' : 'padding-vertical-small'} bg-grey-blue border-round-bottom padding-horizontal-big margin-bottom-small`}
           ref={(domElem) => { this.lessonContainerRef = domElem; }}
         >
           {this.props.lessons}
