@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 
-const CardTemplate = ({ title, bgColorClass, iconClass, heightClass, content, footerContent }) => (
+const CardTemplate = ({ title, bgColorClass, iconClass, iconClass2, heightClass, content, footerContent }) => (
   <div className={`card flex-column border-round bg-white ${heightClass}`}>
     <div className={`card__header flex align-items-center border-round-top ${bgColorClass}`}>
       {iconClass ? <i className={`fa c-white h4 ${iconClass} margin-right-small`} /> : null}
       <h4 className="card__header__text flex-1 c-white uppercase no-margin">{title}</h4>
-      {iconClass ? <i className={`fa c-white h4 ${iconClass}`} /> : null}
+      {iconClass2 ? <i className={`lcard__checkmark fa c-white h1 no-margin absolute ${iconClass2}`} /> : null}
     </div>
     <div className="card__content flex-1">
       {content}
@@ -51,6 +51,7 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
         title: item.name,
         bgColorClass,
         iconClass,
+        iconClass2: item.completed ? 'fa-check-circle-o' : '',
         heightClass,
         content: <div className="flex">
           {imgSrc ?
@@ -86,7 +87,6 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
                   <i className={'fa fa-graduation-cap c-primary h3 right margin-left-big margin-right-tiny'} />
                   <span className="">{item.nLessonsCompleted}/{item.nLessonsTotal}</span>
                 </h3> : null}
-              {item.completed ? <i className="fa fa-check-circle-o h1 c-secondary right" /> : null}
             </div>
           </div>
         </div>,
