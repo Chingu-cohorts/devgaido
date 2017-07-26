@@ -1,12 +1,12 @@
-.card
-  margin-bottom 20px
-  
+.path__content
+  .card
+    margin-bottom 20px
 // Needed because we wrap the cards in <Link> components which overwrites text with link colors
 a.card,
 a > .card
     color $color-text
 
-.connected,
+/*.connected,
 .connected--secondary
   &:after
     content: ""
@@ -25,37 +25,13 @@ a > .card
 .connected--secondary
   &:after
     background: colorSecondary
-
+*/
 .card__header
   padding 15px 25px
 
 .card__content,
 .card__footer
   padding 20px 25px
-
-.card__preview
-  height 400px
-  margin-top 10px
-  margin-bottom 20px
-  img
-    width 100%
-
-.connected-horizontal
-  margin-right 30px
-  &:after
-    content: ""
-    position: absolute
-    display: block
-    top: 50%
-    right: -30px
-    width: 29px
-    height: 11px
-    opacity 0.5
-    background: colorPrimary
-
-.connected-horizontal:last-child
-  &:after
-    width 0
 
 // Add margin to LinkCards on Dashboard
 .item-list

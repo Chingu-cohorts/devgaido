@@ -56,7 +56,6 @@
     "express-session": "^1.15.2",
     "extract-text-webpack-plugin": "^2.1.0",
     "history": "^4.6.1",
-    "lost": "^8.0.0",
     "mkdirp": "^0.5.1",
     "mongodb": "^2.2.30",
     "ncp": "^2.0.0",

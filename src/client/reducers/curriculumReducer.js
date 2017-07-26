@@ -2,15 +2,30 @@ const updatePaths = (curriculum) => {
   Object.keys(curriculum.paths).forEach((pathId) => {
     let completed = 0;
     let total = 0;
+    let nLessonsTotal = 0;
+    let nLessonsCompleted = 0;
+
     const path = curriculum.paths[pathId];
     path.courseIds.forEach((courseId) => {
       total += 1;
       if (curriculum.courses[courseId] && curriculum.courses[courseId].completed) {
         completed += 1;
       }
+      const course = curriculum.courses[courseId];
+      course.lessonIds.forEach((lessonId) => {
+        const lesson = curriculum.lessons[lessonId];
+
+        nLessonsTotal += 1;
+        if (lesson.completed) {
+          nLessonsCompleted += 1;
+        }
+      });
     });
+
     path.nCompleted = completed;
     path.nTotal = total;
+    path.nLessonsTotal = nLessonsTotal;
+    path.nLessonsCompleted = nLessonsCompleted;
 
     if (total !== 0 && total === completed) {
       path.completed = true;

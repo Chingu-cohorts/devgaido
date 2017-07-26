@@ -2,8 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import LessonSlider from './LessonSlider';
 import ItemList from './ItemList';
+
+const CurrentPathSection = ({ path, curriculum }) => {
+  return (
+    <div className="inprogress-tab margin-bottom-small">
+      <span>CURRENT PATH</span>
+      <h2>{path.name}</h2>
+      <p className="margin-bottom-big">This section shows you the last path you were working on.</p>
+      <ItemList items={[path]} curriculum={curriculum} category="paths" />
+    </div>
+  );
+};
+
+const CurrentLessonSection = ({ lesson, curriculum }) => {
+  return (
+    <div className="inprogress-tab margin-bottom-small">
+      <span>LAST LESSON</span>
+      <h2>{lesson.name}</h2>
+      <p className="margin-bottom-big">This section shows the last lesson you worked on.</p>
+      <ItemList items={[lesson]} curriculum={curriculum} category="lessons" />
+    </div>
+  );
+};
+
 
 const isInProgress = (path, courses, lessons) => {
   let inProgress = false;
@@ -31,45 +53,32 @@ const getInProgressPaths = (curriculum) => {
   );
 };
 
-const CurrentPathSection = ({ curPath, curriculum, user, history, onViewClick }) => (
-  <div className="current-path margin-bottom-huge">
-    <span>CURRENT PATH</span>
-    <h2>{curPath.name}</h2>
-    <button className="button--default abs-top-right" onClick={onViewClick}>VIEW FULL PATH</button>
-    <p className="course-description">{curPath.description}</p>
-    <LessonSlider user={user} curriculum={curriculum} history={history} />
-  </div>
-);
-
 const InProgressSection = ({ inProgressPaths, curriculum }) => (
   <div className="inprogress-tab margin-bottom-huge">
     <span>PATHS</span>
     <h2>In Progress</h2>
-    <ItemList items={inProgressPaths} curriculum={curriculum} category="paths" /> :
+    <p className="margin-bottom-big">This section shows you all the paths which have at least one lesson in them you completed. Since lessons can be shared across paths it will show you ALL paths that a completed lesson is in.</p>
+    <ItemList items={inProgressPaths} curriculum={curriculum} category="paths" />
   </div>
 );
 
-const InProgressTab = ({ user, curriculum, history }) => {
+const InProgressTab = ({ user, curriculum }) => {
   const inProgressPaths = getInProgressPaths(curriculum);
+  const currentPath = user.curPathId ? curriculum.paths[user.curPathId] : null;
+  const currentLesson = user.lastLessonId ? curriculum.lessons[user.lastLessonId] : null;
 
   return (
     <div>
-      {user.curPathId !== '' ?
-        <div>
-          <CurrentPathSection
-            curPath={curriculum.paths[user.curPathId]}
-            curriculum={curriculum}
-            user={user}
-            history={history}
-            onViewClick={() => history.push(`/paths/${user.curPathId}`)}
-          />
-          {inProgressPaths.length !== 0 ?
-            <InProgressSection
-              inProgressPaths={inProgressPaths}
-              curriculum={curriculum}
-              show={user.curPathId !== '' && inProgressPaths.length !== 0}
-            /> : null }
-        </div> :
+      {currentLesson ?
+        <CurrentLessonSection lesson={currentLesson} curriculum={curriculum} /> : null}
+      {currentPath ?
+        <CurrentPathSection path={currentPath} curriculum={curriculum} /> : null}
+      {inProgressPaths.length !== 0 ?
+        <InProgressSection
+          inProgressPaths={inProgressPaths}
+          curriculum={curriculum}
+          show={user.curPathId !== '' && inProgressPaths.length !== 0}
+        /> :
         <div className="inprogress-tab margin-bottom-huge">
           <span>PATHS</span>
           <h2>In Progress</h2>
@@ -77,18 +86,9 @@ const InProgressTab = ({ user, curriculum, history }) => {
             <h3>You haven&apos;t started any paths yet.</h3>
             <Link className="button button--primary uppercase" to="/library">Browse Library</Link>
           </div>
-        </div>
-      }
+        </div>}
     </div>
   );
-};
-
-CurrentPathSection.propTypes = {
-  curPath: PropTypes.objectOf(PropTypes.shape).isRequired,
-  history: PropTypes.objectOf(PropTypes.shape).isRequired,
-  user: PropTypes.objectOf(PropTypes.shape).isRequired,
-  curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
-  onViewClick: PropTypes.func.isRequired,
 };
 
 InProgressSection.propTypes = {
@@ -97,7 +97,6 @@ InProgressSection.propTypes = {
 };
 
 InProgressTab.propTypes = {
-  history: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };

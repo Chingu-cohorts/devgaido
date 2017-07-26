@@ -1,13 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LazyLoad from 'react-lazyload';
 
 import { Link } from 'react-router-dom';
 
-const CardTemplate = ({ title, bgColorClass, iconClass, heightClass, content, footerContent }) => (
+import actions from '../../actions';
+
+const { setLastTouchedPath } = actions;
+
+const CardTemplate = ({ title, bgColorClass, iconClass, iconClass2, heightClass, content, footerContent }) => (
   <div className={`card flex-column border-round bg-white ${heightClass}`}>
     <div className={`card__header flex align-items-center border-round-top ${bgColorClass}`}>
-      <h5 className="card__header__text flex-1 c-white uppercase no-margin">{title}</h5>
-      {iconClass ? <i className={`fa c-white h4 ${iconClass}`} /> : null}
+      {iconClass ? <i className={`fa c-white h4 ${iconClass} margin-right-small`} /> : null}
+      <h4 className="card__header__text flex-1 c-white uppercase no-margin">{title}</h4>
+      {iconClass2 ? <i className={`lcard__checkmark fa c-white h1 no-margin absolute ${iconClass2}`} /> : null}
     </div>
     <div className="card__content flex-1">
       {content}
@@ -31,52 +37,75 @@ const MenuCard = ({ children }) => (
   })
 );
 
-const InfoCard = ({ item, bgColorClass, children }) => (
-  CardTemplate({
-    title: item.name,
-    bgColorClass,
-    iconClass: 'fa-info',
-    content: (
-      <div className="flex-column justify-space-between">
-        <p>{item.description}</p>
-        {children}
-      </div>),
-  })
-);
-
-const PreviewCard = ({ bgColorClass, children }) => (
-  CardTemplate({
-    title: 'Preview',
-    bgColorClass,
-    iconClass: 'fa-eye',
-    content: (
-      <div className="card__preview border-round subtle-border overflow-hidden">
-        {children || <p>No preview available.</p>}
-      </div>),
-  })
-);
-
-const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, connectionClass, heightClass, linkTo }) => (
-  <Link className={`link-card ${connectionClass} relative width-100`} to={linkTo}>
-    {CardTemplate({
-      title: item.name,
-      bgColorClass,
-      iconClass,
-      heightClass,
-      content: <p>{item.description ? item.description : 'No description given.'}</p>,
-      footerContent: (
-        <div>
-          {!item.completed && item.nTotal ?
-            <h4 className="no-margin right">
-              <i className={`fa ${childIconClass} h4 right margin-right-tiny`} /><span className="bold">{item.nCompleted}/{item.nTotal}</span>
-            </h4> : null}
-          {item.completed ? <i className="fa fa-check-circle-o h1 c-primary right" /> : null}
-        </div>
-      ),
-    })}
-  </Link>
-);
-
+const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borderClass, connectionClass, heightClass, linkTo, pathId }) => {
+  const ratingStars = [];
+  for (let i = 0; i < 5; i += 1) {
+    if (i < item.rating) {
+      ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" key={item.name + i} />);
+    } else {
+      ratingStars.push(<i className="fa fa-star-o c-secondary h4 margin-left-tiny" key={item.name + i} />);
+    }
+  }
+  const subjects = [];
+  const numSubjects = Math.min(2, item.subjectNames.length);
+  for (let i = 0; i < numSubjects; i += 1) {
+    subjects.push(item.subjectNames[i]);
+  }
+  if (item.subjectNames.length > 2) {
+    subjects.push(`... ${item.subjectNames.length - 2} more ...`);
+  }
+  return (
+    <Link className={`link-card ${connectionClass} relative width-100`} to={linkTo} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
+      {CardTemplate({
+        title: item.name,
+        bgColorClass,
+        iconClass,
+        iconClass2: item.completed ? 'fa-check-circle-o' : '',
+        heightClass,
+        content: <div className="flex">
+          {imgSrc ?
+            <LazyLoad height={200} once offset={201}>
+              <div className="lcard__content-left flex-1">
+                <div className="preview2 no-margin border-round border-1px" style={{ background: `url(${imgSrc})`, backgroundSize: 'cover', borderColor: '#ccc' }} />
+              </div>
+            </LazyLoad>
+             : null}
+          <div className="lcard__content-left flex-2 margin-left-small">
+            <h5>{item.description}</h5>
+            <div className="right">
+              <div>
+                {ratingStars}
+              </div>
+            </div>
+            <div className="right margin-top-small">
+              <div>
+                {/* <h5 className="c-primary uppercase right no-margin">Very Long</h5>*/}
+                <h5 className="c-primary uppercase right">{item.estimatedTimeStr} hours</h5>
+              </div>
+            </div>
+            <div className="right">
+              {subjects.map(
+                subjectName => <h6 className="tag center c-white border-pill bg-grey display-inline-block" key={item.name + subjectName} >{subjectName}</h6>,
+              )}
+            </div>
+            <div className="flex justify-end">
+              {item.nTotal && item.nTotal !== 1 ?
+                <h3 className="no-margin right margin-top-small">
+                  <i className={`fa ${childIconClass} h3 right margin-right-tiny`} />
+                  <span className="">{item.nCompleted}/{item.nTotal}</span>
+                </h3> : null}
+              {item.nLessonsTotal ?
+                <h3 className="no-margin right margin-top-small">
+                  <i className={'fa fa-graduation-cap c-primary h3 right margin-left-big margin-right-tiny'} />
+                  <span className="">{item.nLessonsCompleted}/{item.nLessonsTotal}</span>
+                </h3> : null}
+            </div>
+          </div>
+        </div>,
+      })}
+    </Link>
+  );
+};
 
 CardTemplate.propTypes = {
   title: PropTypes.string.isRequired,
@@ -118,4 +147,4 @@ LinkCard.defaultProps = {
   heightClass: '',
 };
 
-export { InfoCard, MenuCard, LinkCard, PreviewCard };
+export { MenuCard, LinkCard };

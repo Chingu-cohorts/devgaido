@@ -6,23 +6,23 @@ import { LinkCard } from '../shared/Cards';
 const bgColorLookUp = {
   paths: 'bg-primary',
   courses: 'bg-secondary',
-  lessons: 'bg-primary',
+  lessons: 'bg-secondary',
 };
 
 const iconLookUp = {
   paths: 'fa-road',
-  courses: 'fa-tasks',
+  courses: 'fa-flag-checkered',
   lessons: 'fa-graduation-cap',
 };
 
 const childIconLookUp = {
-  paths: 'fa-tasks c-secondary',
+  paths: 'fa-flag-checkered c-secondary',
   courses: 'fa-graduation-cap c-primary',
   lessons: '',
 };
 
 const ItemList = ({ items, category }) => (
-  <div className="item-list flex flex-wrap margin-bottom-huge">
+  <div className="item-list flex flex-wrap">
     {items.map(item => (
       <LinkCard
         item={item}
@@ -32,6 +32,8 @@ const ItemList = ({ items, category }) => (
         childIconClass={childIconLookUp[category]}
         heightClass="height-100"
         key={item.name}
+        imgSrc={item.img}
+        pathId={category === 'paths' ? item.id : undefined}
       />
     ))}
   </div>

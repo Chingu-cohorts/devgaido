@@ -12,6 +12,8 @@ const user = (state = {
   avatar: '',
   email: '',
   curPathId: '',
+  lastPathId: '',
+  lastLessonId: '',
   persistentData: {},
 }, action) => {
   let retState = state;
@@ -21,6 +23,28 @@ const user = (state = {
       retState = {
         ...state,
         curPathId: action.pathId,
+      };
+      break;
+    }
+    default:
+      break;
+  }
+  switch (action.type) {
+    case 'SET_LAST_TOUCHED_LESSON': {
+      retState = {
+        ...state,
+        lastLessonId: action.lessonId,
+      };
+      break;
+    }
+    default:
+      break;
+  }
+  switch (action.type) {
+    case 'SET_LAST_TOUCHED_PATH': {
+      retState = {
+        ...state,
+        lastPathId: action.pathId,
       };
       break;
     }
