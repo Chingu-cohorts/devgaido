@@ -9,35 +9,28 @@ class MilestoneCard extends React.Component {
     this.lessonContainerRef = null;
     this.maxContentHeight = null;
   }
+  componentDidUpdate() {
+    requestAnimationFrame(() => {
+      if (!this.state.collapsed) {
+        if (!this.maxContentHeight) {
+          this.maxContentHeight = `${this.lessonContainerRef.clientHeight}px`;
+        }
+
+        this.lessonContainerRef.style.maxHeight = `${0}px`;
+        this.lessonContainerRef.style.transition = 'all 0s';
+
+        requestAnimationFrame(() => {
+          this.lessonContainerRef.style.maxHeight = this.maxContentHeight;
+          this.lessonContainerRef.style.transition = 'all 0.5s';
+        });
+      }
+    });
+  }
   toggleCollapsed() {
     this.state = {
       collapsed: !this.state.collapsed,
     };
     this.forceUpdate();
-  }
-  /*componentDidMount() {
-    this.lessonContainerRef.style.maxHeight = `${this.lessonContainerRef.clientHeight}px`;
-    this.state = {
-      collapsed: true,
-    };
-    this.forceUpdate();
-  }*/
-  componentDidUpdate() {
-    requestAnimationFrame(() => {
-      if (!this.maxContentHeight) {
-        this.maxContentHeight = `${this.lessonContainerRef.clientHeight}px`;
-      }
-      if (!this.state.collapsed) {
-        this.lessonContainerRef.style.maxHeight = `${0}px`;
-        this.lessonContainerRef.style.transition = 'all 0s';
-      }
-      requestAnimationFrame(() => {
-        if (!this.state.collapsed) {
-          this.lessonContainerRef.style.maxHeight = this.maxContentHeight;
-          this.lessonContainerRef.style.transition = 'all 0.5s';
-        }
-      });
-    });
   }
   render() {
     const ratingStars = [];
@@ -51,20 +44,18 @@ class MilestoneCard extends React.Component {
             <i className={`mcard__icon fa fa-caret-right c-white h2 margin-right-small ${this.state.collapsed ? '' : 'rotated'}`} />
             <h3 className="mcard__header__text flex-1 c-white uppercase no-margin">Milestone {this.props.index + 1}: {this.props.course.name}</h3>
             {!this.props.course.completed ?
-              <h3 className="right no-margin margin-left-big c-white ">              
-                <i className={`fa fa-graduation-cap h3 right margin-left-big margin-right-tiny`} />
-                <span>{this.props.course.nCompleted}/{this.props.course.nTotal}</span>
-              </h3> : 
               <h3 className="right no-margin margin-left-big c-white ">
-                <i className={`mcard__checkmark fa fa-check-circle-o h0 absolute`} />
-                <i className={`mcard__flag fa fa-flag-checkered h2 absolute`} />
+                <i className={'fa fa-graduation-cap h3 right margin-left-big margin-right-tiny'} />
+                <span>{this.props.course.nCompleted}/{this.props.course.nTotal}</span>
+              </h3> :
+              <h3 className="right no-margin margin-left-big c-white ">
+                <i className={'mcard__checkmark fa fa-check-circle-o h0 absolute'} />
+                <i className={'mcard__flag fa fa-flag-checkered h2 absolute'} />
               </h3>
             }
           </div>
         </div>
         <div
-          // className={`collapsible ${this.state.collapsed ? 'collapsed' : 'padding-vertical-small'} bg-grey-blue border-round-bottom padding-horizontal-big margin-bottom-small`}
-          
           className={`collapsible ${this.state.collapsed ? 'collapsed' : 'padding-vertical-small'} bg-grey-blue border-round-bottom padding-horizontal-big margin-bottom-small`}
           ref={(domElem) => { this.lessonContainerRef = domElem; }}
         >
