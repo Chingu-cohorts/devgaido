@@ -67,6 +67,7 @@ const Results = ({ curriculum, uiState }) => {
               childIconClass="fa-flag-checkered c-secondary"
               imgBorderClass="border-1px border-primary"
               key={pathId}
+              pathId={pathId}
             />
           );
         })}

@@ -4,6 +4,10 @@ import LazyLoad from 'react-lazyload';
 
 import { Link } from 'react-router-dom';
 
+import actions from '../../actions';
+
+const { setLastTouchedPath } = actions;
+
 const CardTemplate = ({ title, bgColorClass, iconClass, iconClass2, heightClass, content, footerContent }) => (
   <div className={`card flex-column border-round bg-white ${heightClass}`}>
     <div className={`card__header flex align-items-center border-round-top ${bgColorClass}`}>
@@ -33,7 +37,7 @@ const MenuCard = ({ children }) => (
   })
 );
 
-const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borderClass, connectionClass, heightClass, linkTo }) => {
+const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borderClass, connectionClass, heightClass, linkTo, pathId }) => {
   const ratingStars = [];
   for (let i = 0; i < 5; i += 1) {
     if (i < item.rating) {
@@ -51,7 +55,7 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
     subjects.push(`... ${item.subjectNames.length - 2} more ...`);
   }
   return (
-    <Link className={`link-card ${connectionClass} relative width-100`} to={linkTo}>
+    <Link className={`link-card ${connectionClass} relative width-100`} to={linkTo} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
       {CardTemplate({
         title: item.name,
         bgColorClass,

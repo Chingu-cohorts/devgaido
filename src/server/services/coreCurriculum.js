@@ -56,6 +56,7 @@ const initPaths = (curriculum) => {
     path.estimatedTimeStr = `> ${path.estimatedTime}`;
     path.url = `/paths/${pathId}`;
     path.img = `/paths/${pathId}.jpg`;
+    path.id = pathId;
   });
 };
 
@@ -90,6 +91,7 @@ const initCourses = (curriculum) => {
     course.rating = Math.floor(accumulatedRating / course.nTotal);
     course.estimatedTime = accumulatedTime;
     course.url = `/courses/${courseId}`;
+    course.id = courseId;
   });
 };
 
@@ -110,6 +112,7 @@ const initLessons = (curriculum) => {
     lesson.rating = rating % 5 + 1;
     lesson.estimatedTimeStr = strToStr[lesson.estimatedTime];
     lesson.img = `/screenshots/${lessonId}.jpg`;
+    lesson.id = lessonId;
   });
 };
 

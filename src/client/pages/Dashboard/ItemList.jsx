@@ -22,7 +22,7 @@ const childIconLookUp = {
 };
 
 const ItemList = ({ items, category }) => (
-  <div className="item-list flex flex-wrap margin-bottom-huge">
+  <div className="item-list flex flex-wrap">
     {items.map(item => (
       <LinkCard
         item={item}
@@ -33,6 +33,7 @@ const ItemList = ({ items, category }) => (
         heightClass="height-100"
         key={item.name}
         imgSrc={item.img}
+        pathId={category === 'paths' ? item.id : undefined}
       />
     ))}
   </div>

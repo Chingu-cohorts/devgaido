@@ -4,6 +4,10 @@ import LazyLoad from 'react-lazyload';
 
 import { Link } from 'react-router-dom';
 
+import actions from '../../actions';
+
+const { setLastTouchedPath } = actions;
+
 const sliceWidth = 400;
 
 const bgPositions = [
@@ -19,7 +23,7 @@ const LoadingPlaceholder = () => (
   <div className="image-link-card__loading-spinner" />
 );
 
-const ImageLinkCard = ({ item, bgColorClass, imgBorderClass, imgSrc, sliceNumber, iconClass, childIconClass, linkTo }) => {
+const ImageLinkCard = ({ item, bgColorClass, imgBorderClass, imgSrc, sliceNumber, iconClass, childIconClass, linkTo, pathId }) => {
   const imageStyle = {
     background: `url(${imgSrc})`,
     backgroundSize: 'cover',
@@ -31,7 +35,7 @@ const ImageLinkCard = ({ item, bgColorClass, imgBorderClass, imgSrc, sliceNumber
   }
 
   return (
-    <Link className="card col-quarter border-round bg-white flex-column" to={linkTo}>
+    <Link className="card col-quarter border-round bg-white flex-column" to={linkTo} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
       <LazyLoad height={200} once placeholder={<LoadingPlaceholder />} offset={201}>
         <div className={`image-link-card__image ${imgBorderClass}`} style={imageStyle} />
       </LazyLoad>
@@ -62,6 +66,7 @@ ImageLinkCard.propTypes = {
   iconClass: PropTypes.string,
   childIconClass: PropTypes.string,
   imgBorderClass: PropTypes.string,
+  pathId: PropTypes.string,
 };
 
 ImageLinkCard.defaultProps = {
@@ -70,6 +75,7 @@ ImageLinkCard.defaultProps = {
   imgBorderClass: '',
   linkTo: '#',
   sliceNumber: -1,
+  pathId: undefined,
 };
 
 export default ImageLinkCard;

@@ -2,8 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import LessonSlider from './LessonSlider';
 import ItemList from './ItemList';
+
+const CurrentPathSection = ({ path, curriculum }) => {
+  return (
+    <div className="inprogress-tab margin-bottom-small">
+      <span>CURRENT PATH</span>
+      <h2>{path.name}</h2>
+      <p className="margin-bottom-big">This section shows you the last path you were working on.</p>
+      <ItemList items={[path]} curriculum={curriculum} category="paths" />
+    </div>
+  );
+};
+
+const CurrentLessonSection = ({ lesson, curriculum }) => {
+  return (
+    <div className="inprogress-tab margin-bottom-small">
+      <span>LAST LESSON</span>
+      <h2>{lesson.name}</h2>
+      <p className="margin-bottom-big">This section shows the last lesson you worked on.</p>
+      <ItemList items={[lesson]} curriculum={curriculum} category="lessons" />
+    </div>
+  );
+};
+
 
 const isInProgress = (path, courses, lessons) => {
   let inProgress = false;
@@ -35,15 +57,22 @@ const InProgressSection = ({ inProgressPaths, curriculum }) => (
   <div className="inprogress-tab margin-bottom-huge">
     <span>PATHS</span>
     <h2>In Progress</h2>
-    <ItemList items={inProgressPaths} curriculum={curriculum} category="paths" /> :
+    <p className="margin-bottom-big">This section shows you all the paths which have at least one lesson in them you completed. Since lessons can be shared across paths it will show you ALL paths that a completed lesson is in.</p>
+    <ItemList items={inProgressPaths} curriculum={curriculum} category="paths" />
   </div>
 );
 
 const InProgressTab = ({ user, curriculum }) => {
   const inProgressPaths = getInProgressPaths(curriculum);
+  const currentPath = user.curPathId ? curriculum.paths[user.curPathId] : null;
+  const currentLesson = user.lastLessonId ? curriculum.lessons[user.lastLessonId] : null;
 
   return (
     <div>
+      {currentLesson ?
+        <CurrentLessonSection lesson={currentLesson} curriculum={curriculum} /> : null}
+      {currentPath ?
+        <CurrentPathSection path={currentPath} curriculum={curriculum} /> : null}
       {inProgressPaths.length !== 0 ?
         <InProgressSection
           inProgressPaths={inProgressPaths}

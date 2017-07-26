@@ -7,12 +7,17 @@ import DisqusThread from '../shared/DisqusThread';
 
 import actions from '../../actions';
 
-const { addBookmark, removeBookmark, completeLesson, unCompleteLesson } = actions;
+const { setCurrentPath, setLastTouchedLesson, addBookmark, removeBookmark, completeLesson, unCompleteLesson } = actions;
 
 const typeIcons = {
   Book: 'fa-book',
   Course: 'fa-university',
   Project: 'fa-cogs',
+};
+
+const functionName = (user, lessonId) => {
+  setCurrentPath(user.lastPathId);
+  setLastTouchedLesson(lessonId);
 };
 
 const Lesson = ({ match, curriculum, user }) => {
@@ -64,9 +69,9 @@ const Lesson = ({ match, curriculum, user }) => {
             </div>)}
           { user.authenticated ?
             <div className="margin-top-huge flex flex-1 align-items-end">
-              <a className="button button--secondary uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">Open Lesson</a>
+              <a className="button button--secondary uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => functionName(user, lessonId)}>Open Lesson</a>
               {!lesson.completed ?
-                <button className="button--primary margin-left-small uppercase" onClick={() => completeLesson(lessonId, lesson.version)}>Complete Lesson</button> :
+                <button className="button--primary margin-left-small uppercase" onClick={() => { completeLesson(lessonId, lesson.version); functionName(user, lessonId); }}>Complete Lesson</button> :
                 <button className="button--primary margin-left-small uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>Un-Complete Lesson</button>}
             </div> :
             <div className="margin-top-huge flex flex-1 align-items-end">

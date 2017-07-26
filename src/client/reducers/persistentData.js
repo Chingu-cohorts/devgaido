@@ -83,6 +83,33 @@ const persistantData = (state = {
         data: newData,
       };
     }
+    case 'SET_LAST_TOUCHED_LESSON': {
+      const newData = state.data.slice(0);
+      let index = getIndex(action, newData);
+
+      if (index !== -1) {
+        // Same action as before, so return
+        return state;
+      }
+
+      index = getIndex({ type: 'SET_LAST_TOUCHED_LESSON' }, newData);
+
+      if (index !== -1) {
+        // Some other path, so remove old one first
+        newData.splice(index, 1);
+      }
+      newData.push(action);
+
+      saveToServer({
+        ...state,
+        data: newData,
+      });
+
+      return {
+        ...state,
+        data: newData,
+      };
+    }
 
     case 'UNCOMPLETE_LESSON':
     case 'REMOVE_BOOKMARK': {
