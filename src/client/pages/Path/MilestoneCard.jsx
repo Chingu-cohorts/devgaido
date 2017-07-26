@@ -13,7 +13,7 @@ class MilestoneCard extends React.Component {
     requestAnimationFrame(() => {
       if (!this.state.collapsed) {
         if (!this.maxContentHeight) {
-          this.maxContentHeight = `${this.lessonContainerRef.clientHeight}px`;
+          this.maxContentHeight = `${this.lessonContainerRef.clientHeight + 40}px`;
         }
 
         this.lessonContainerRef.style.maxHeight = `${0}px`;
