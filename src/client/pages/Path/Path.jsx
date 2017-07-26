@@ -74,8 +74,12 @@ const Path = ({ match, curriculum, user }) => {
   }
 
   const ratingStars = [];
-  for (let i = 0; i < path.rating; i += 1) {
-    ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" key={path.name + i} />);
+  for (let i = 0; i < 5; i += 1) {
+    if (i < path.rating) {
+      ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" key={path.name + i} />);
+    } else {
+      ratingStars.push(<i className="fa fa-star-o c-secondary h4 margin-left-tiny" key={path.name + i} />);
+    }
   }
   const subjects = [];
   const numSubjects = Math.min(2, path.subjectNames.length);
@@ -133,14 +137,14 @@ const Path = ({ match, curriculum, user }) => {
               <h5 className="normal">Tags</h5>
               <div className="width-50 right">
                 {subjects.map(
-                  subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block" key={path.name + subjectName}>{subjectName}</h6>,
+                  subjectName => <h6 className="tag center c-white border-pill bg-grey display-inline-block" key={path.name + subjectName}>{subjectName}</h6>,
                 )}
               </div>
             </div>
             <div className="flex justify-space-between margin-top-big">
               <h5 className="normal">Estimated Entry Salary</h5>
               <div className="right">
-                <h2 className="c-primary right no-margin margin-left-big">~ $35,000 / year</h2>
+                <h2 className="c-secondary right no-margin margin-left-big">~ $35,000 / year</h2>
                 <a href="/">(Source: Monster.com)</a>
               </div>
             </div>

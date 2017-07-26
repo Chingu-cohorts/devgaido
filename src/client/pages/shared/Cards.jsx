@@ -34,8 +34,12 @@ const MenuCard = ({ children }) => (
 
 const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borderClass, connectionClass, heightClass, linkTo }) => {
   const ratingStars = [];
-  for (let i = 0; i < item.rating; i += 1) {
-    ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" key={item.name + i} />);
+  for (let i = 0; i < 5; i += 1) {
+    if (i < item.rating) {
+      ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" key={item.name + i} />);
+    } else {
+      ratingStars.push(<i className="fa fa-star-o c-secondary h4 margin-left-tiny" key={item.name + i} />);
+    }
   }
   const subjects = [];
   const numSubjects = Math.min(2, item.subjectNames.length);
@@ -73,7 +77,7 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
             </div>
             <div className="right">
               {subjects.map(
-                subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block" key={item.name + subjectName} >{subjectName}</h6>,
+                subjectName => <h6 className="tag center c-white border-pill bg-grey display-inline-block" key={item.name + subjectName} >{subjectName}</h6>,
               )}
             </div>
             <div className="flex justify-end">

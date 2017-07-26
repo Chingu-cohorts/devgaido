@@ -18,8 +18,12 @@ const Lesson = ({ match, curriculum, user }) => {
     resourceList = lesson.resources;
   }
   const ratingStars = [];
-  for (let i = 0; i < lesson.rating; i += 1) {
-    ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" key={lessonId + i} />);
+  for (let i = 0; i < 5; i += 1) {
+    if (i < lesson.rating) {
+      ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" key={lesson.name + i} />);
+    } else {
+      ratingStars.push(<i className="fa fa-star-o c-secondary h4 margin-left-tiny" key={lesson.name + i} />);
+    }
   }
   const subjects = [];
   const numSubjects = Math.min(2, lesson.subjectNames.length);
@@ -90,7 +94,7 @@ const Lesson = ({ match, curriculum, user }) => {
             <h5 className="normal">Tags</h5>
             <div className="width-50 right">
               {subjects.map(
-                subjectName => <h6 className="tag center c-primary border-pill border-1px border-primary display-inline-block" key={lesson.name + subjectName}>{subjectName}</h6>,
+                subjectName => <h6 className="tag center c-white border-pill bg-grey display-inline-block" key={lesson.name + subjectName}>{subjectName}</h6>,
               )}
             </div>
           </div>
