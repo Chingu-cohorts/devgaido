@@ -6,9 +6,15 @@ import { getAllLessons } from './coreLessons';
 import { getAllSubjects } from './coreSubjects';
 
 const strToTime = {
-  short: 10,
-  medium: 20,
-  long: 40,
+  short: 4,
+  medium: 8,
+  long: 16,
+};
+
+const strToStr = {
+  short: '< 4',
+  medium: '< 16',
+  long: '> 16',
 };
 
 const initPaths = (curriculum) => {
@@ -47,6 +53,7 @@ const initPaths = (curriculum) => {
     });
     path.rating = Math.floor(accumulatedRating / path.nTotal);
     path.estimatedTime = accumulatedTime;
+    path.estimatedTimeStr = `> ${path.estimatedTime}`;
     path.url = `/paths/${pathId}`;
     path.img = `/paths/${pathId}.jpg`;
   });
@@ -101,6 +108,7 @@ const initLessons = (curriculum) => {
     });
     rating += 1;
     lesson.rating = rating % 5 + 1;
+    lesson.estimatedTimeStr = strToStr[lesson.estimatedTime];
     lesson.img = `/screenshots/${lessonId}.jpg`;
   });
 };

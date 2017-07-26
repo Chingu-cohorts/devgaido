@@ -7,6 +7,7 @@
       "github",
       "advancedgit"
     ],
+    "goal": "Getting comfortable with git and GitHub in order to manage source code like a pro.",
     "version": "1.0.0"
   },
   "webpagedc" : {
@@ -15,6 +16,7 @@
     "courseIds": [
       "buildwebpages"
     ],
+    "goal": "Being able to build simple websites using CSS and HTML.",
     "version": "1.0.0"
   },
   "javascript" : {
@@ -25,6 +27,7 @@
       "intermediatejs",
       "advancedjs"
     ],
+    "goal": "Having a thorough understanding of the Javascript language and its core concepts.",
     "version": "1.0.0"
   },
   "p1xt" : {
@@ -37,6 +40,8 @@
       "p1xttier3",
       "p1xttier4"
     ],
+    "goal": "Becoming a proficient web developer and software engineer.",
+    "salary": ["~ $65.000 / year", "(average, depending on location / experience)"],
     "version": "1.0.0"
   },
   "buildawebsite" : {
@@ -55,6 +60,7 @@
       "introless",
       "introstylus"
     ],
+    "goal": "Being able to build even the most complex websites using HTML, CSS frameworks and preprocessors.",
     "version": "1.0.0"
   },
   "learnhowwebworks" : {
@@ -64,6 +70,7 @@
       "howwebworks",
       "getstartedweb"
     ],
+    "goal": "Getting to know the fundamental building blocks of the world wide web.",
     "version": "1.0.0"
   }
 }

@@ -86,8 +86,8 @@ const Lesson = ({ match, curriculum, user }) => {
           <div className="flex justify-space-between">
             <h5 className="normal margin-right-huge">Estimated Length</h5>
             <div>
-              <h4 className="c-primary uppercase right no-margin">Very Long</h4>
-              <h5 className="c-primary uppercase right">(> 100 hours)</h5>
+              {/* <h4 className="c-primary uppercase right no-margin">Very Long</h4>*/}
+              <h5 className="c-primary uppercase right">{lesson.estimatedTimeStr} hours</h5>
             </div>
           </div>
           <div className="flex justify-space-between">

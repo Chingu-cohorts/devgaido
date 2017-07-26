@@ -89,7 +89,6 @@ const Path = ({ match, curriculum, user }) => {
   if (path.subjectNames.length > 2) {
     subjects.push(`... ${path.subjectNames.length - 2} more ...`);
   }
-  console.log(path.estimatedTime);
   return (
     <div>
       <Helmet
@@ -107,8 +106,11 @@ const Path = ({ match, curriculum, user }) => {
           <div className="padding-vertical-big flex-2">
             <h2>About This Path</h2>
             <p className="h5">{path.description}</p>
-            <h3 className="margin-top-big">GOAL</h3>
-            <p className="h5">Becoming a confident web developer ready to apply for junior positions.</p>
+            {path.goal ?
+              <div>
+                <h3 className="margin-top-big uppercase">Goal</h3>
+                <p className="h5">{path.goal}</p>
+              </div> : null}
           </div>
           <div className="padding-vertical-big margin-left-huge flex-1">
             { user.authenticated ?
@@ -129,8 +131,8 @@ const Path = ({ match, curriculum, user }) => {
             <div className="flex justify-space-between">
               <h5 className="normal">Estimated Length</h5>
               <div>
-                <h4 className="c-primary uppercase right no-margin">Very Long</h4>
-                <h5 className="c-primary uppercase right">(> 100 hours)</h5>
+                {/* <h4 className="c-primary uppercase right no-margin">Very Long</h4>*/}
+                <h5 className="c-primary uppercase right">{path.estimatedTimeStr} hours</h5>
               </div>
             </div>
             <div className="flex justify-space-between">
@@ -141,13 +143,14 @@ const Path = ({ match, curriculum, user }) => {
                 )}
               </div>
             </div>
-            <div className="flex justify-space-between margin-top-big">
-              <h5 className="normal">Estimated Entry Salary</h5>
-              <div className="right">
-                <h2 className="c-secondary right no-margin margin-left-big">~ $35,000 / year</h2>
-                <a href="/">(Source: Monster.com)</a>
-              </div>
-            </div>
+            {path.salary !== undefined ?
+              <div className="flex justify-space-between margin-top-big">
+                <h5 className="normal">Estimated Entry Salary</h5>
+                <div className="right">
+                  <h2 className="c-secondary right no-margin margin-left-big">{path.salary[0]}</h2>
+                  <p className="c-primary">{path.salary[1]}</p>
+                </div>
+              </div> : null}
           </div>
         </div>
       </div>

@@ -71,8 +71,8 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
             </div>
             <div className="right margin-top-small">
               <div>
-                <h5 className="c-primary uppercase right no-margin">Very Long</h5>
-                <h6 className="c-primary uppercase right">(> 100 hours)</h6>
+                {/* <h5 className="c-primary uppercase right no-margin">Very Long</h5>*/}
+                <h5 className="c-primary uppercase right">{item.estimatedTimeStr} hours</h5>
               </div>
             </div>
             <div className="right">
