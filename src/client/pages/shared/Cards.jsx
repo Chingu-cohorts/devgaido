@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LazyLoad from 'react-lazyload';
 
 import { Link } from 'react-router-dom';
 
@@ -59,9 +60,12 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
         heightClass,
         content: <div className="flex">
           {imgSrc ?
-            <div className="lcard__content-left flex-1">
-              <div className="preview2 no-margin border-round border-1px" style={{ background: `url(${imgSrc})`, backgroundSize: 'cover', borderColor: '#ccc' }} />
-            </div> : null}
+            <LazyLoad height={200} once offset={201}>
+              <div className="lcard__content-left flex-1">
+                <div className="preview2 no-margin border-round border-1px" style={{ background: `url(${imgSrc})`, backgroundSize: 'cover', borderColor: '#ccc' }} />
+              </div>
+            </LazyLoad>
+             : null}
           <div className="lcard__content-left flex-2 margin-left-small">
             <h5>{item.description}</h5>
             <div className="right">

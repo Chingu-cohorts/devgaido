@@ -32,7 +32,7 @@ const ImageLinkCard = ({ item, bgColorClass, imgBorderClass, imgSrc, sliceNumber
 
   return (
     <Link className="card col-quarter border-round bg-white flex-column" to={linkTo}>
-      <LazyLoad height={200} once placeholder={<LoadingPlaceholder />}>
+      <LazyLoad height={200} once placeholder={<LoadingPlaceholder />} offset={201}>
         <div className={`image-link-card__image ${imgBorderClass}`} style={imageStyle} />
       </LazyLoad>
       <div className={`card__header flex align-items-center ${bgColorClass}`}>

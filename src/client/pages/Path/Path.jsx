@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import LazyLoad from 'react-lazyload';
 
 import MilestoneCard from './MilestoneCard';
 import PageHero from '../shared/PageHero';
-import PageDivider from '../shared/PageDivider';
 import { LinkCard } from '../shared/Cards';
 import DisqusThread from '../shared/DisqusThread';
 
@@ -179,11 +179,14 @@ const Path = ({ match, curriculum, user }) => {
       <div className="container">
         {user.authenticated ? <hr /> : null}
         {user.authenticated ?
-          <DisqusThread
-            id={`/path-${pathId}`}
-            title={path.name}
-            path={path.url}
-          /> : null}
+          <LazyLoad height={200} once offset={101}>
+            <DisqusThread
+              id={`/path-${pathId}`}
+              title={path.name}
+              path={path.url}
+            />
+          </LazyLoad>
+         : null}
       </div>
     </div>
   );

@@ -4,9 +4,10 @@ class MilestoneCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      collapsed: false,
+      collapsed: true,
     };
     this.lessonContainerRef = null;
+    this.maxContentHeight = null;
   }
   toggleCollapsed() {
     this.state = {
@@ -14,12 +15,29 @@ class MilestoneCard extends React.Component {
     };
     this.forceUpdate();
   }
-  componentDidMount() {
+  /*componentDidMount() {
     this.lessonContainerRef.style.maxHeight = `${this.lessonContainerRef.clientHeight}px`;
     this.state = {
       collapsed: true,
     };
     this.forceUpdate();
+  }*/
+  componentDidUpdate() {
+    requestAnimationFrame(() => {
+      if (!this.maxContentHeight) {
+        this.maxContentHeight = `${this.lessonContainerRef.clientHeight}px`;
+      }
+      if (!this.state.collapsed) {
+        this.lessonContainerRef.style.maxHeight = `${0}px`;
+        this.lessonContainerRef.style.transition = 'all 0s';
+      }
+      requestAnimationFrame(() => {
+        if (!this.state.collapsed) {
+          this.lessonContainerRef.style.maxHeight = this.maxContentHeight;
+          this.lessonContainerRef.style.transition = 'all 0.5s';
+        }
+      });
+    });
   }
   render() {
     const ratingStars = [];
@@ -27,7 +45,7 @@ class MilestoneCard extends React.Component {
       ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" />);
     }
     return (
-      <div>
+      <div className="">
         <div className={`mcard cursor-pointer relative dot--big ${!this.props.course.completed ? 'dot--empty' : ''} flex-column bg-white`} onClick={() => this.toggleCollapsed()}>
           <div className={`card__header flex align-items-center bg-primary ${this.state.collapsed ? 'border-round' : 'border-round-top'}`}>
             <i className={`mcard__icon fa fa-caret-right c-white h2 margin-right-small ${this.state.collapsed ? '' : 'rotated'}`} />
@@ -45,6 +63,8 @@ class MilestoneCard extends React.Component {
           </div>
         </div>
         <div
+          // className={`collapsible ${this.state.collapsed ? 'collapsed' : 'padding-vertical-small'} bg-grey-blue border-round-bottom padding-horizontal-big margin-bottom-small`}
+          
           className={`collapsible ${this.state.collapsed ? 'collapsed' : 'padding-vertical-small'} bg-grey-blue border-round-bottom padding-horizontal-big margin-bottom-small`}
           ref={(domElem) => { this.lessonContainerRef = domElem; }}
         >
