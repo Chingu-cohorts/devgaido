@@ -20,11 +20,14 @@ const typeIcons = {
 
 const PathMarker = ({ text, dotClass, iconClass, path }) => (
   <div className={`path-marker relative ${dotClass} flex align-items-center bg-grey border-round`}>
-    <h2 className="path-marker__text flex-1 uppercase no-margin c-white">{text}</h2>
-    {path ?
-      <h3 className="right no-margin margin-left-big c-white ">
+    <h2 className="path-marker__text flex-1 uppercase no-margin c-white margin-right-small">{text}</h2>
+    {path && path.nTotal !== 1 ?
+      <h3 className="no-margin right c-white">
         <i className={'fa fa-flag-checkered h3 right margin-left-big margin-right-tiny'} />
         <span>{path.nCompleted}/{path.nTotal}</span>
+      </h3> : null}
+    {path && path.nLessonsTotal ?
+      <h3 className="no-margin right c-white">
         <i className={'fa fa-graduation-cap h3 right margin-left-big margin-right-tiny'} />
         <span>{path.nLessonsCompleted}/{path.nLessonsTotal}</span>
       </h3> : null}

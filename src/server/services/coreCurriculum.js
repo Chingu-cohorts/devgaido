@@ -109,7 +109,7 @@ const initLessons = (curriculum) => {
       lesson.subjectNames.push(curriculum.subjects[subject].name);
     });
     rating += 1;
-    lesson.rating = rating % 5 + 1;
+    lesson.rating = rating % 3 + 3;
     lesson.estimatedTimeStr = strToStr[lesson.estimatedTime];
     lesson.img = `/screenshots/${lessonId}.jpg`;
     lesson.id = lessonId;

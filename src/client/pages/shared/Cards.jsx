@@ -89,7 +89,7 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
               )}
             </div>
             <div className="flex justify-end">
-              {item.nTotal ?
+              {item.nTotal && item.nTotal !== 1 ?
                 <h3 className="no-margin right margin-top-small">
                   <i className={`fa ${childIconClass} h3 right margin-right-tiny`} />
                   <span className="">{item.nCompleted}/{item.nTotal}</span>
