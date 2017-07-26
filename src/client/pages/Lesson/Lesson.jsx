@@ -110,7 +110,7 @@ const Lesson = ({ match, curriculum, user }) => {
             </div>
           </div>
           <div className="flex-column margin-top-big">
-            <a href={lesson.externalSource} target="_blank" rel="noopener noreferrer">
+            <a href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={user.authenticated ? () => functionName(user, lessonId) : null}>
               <div className="preview overflow-hidden no-margin right border-round border-1px" style={{ background: `url(/screenshots/${lessonId}.jpg)`, backgroundSize: 'cover', borderColor: '#ccc' }} />
             </a>
           </div>
