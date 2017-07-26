@@ -9,6 +9,12 @@ import actions from '../../actions';
 
 const { addBookmark, removeBookmark, completeLesson, unCompleteLesson } = actions;
 
+const typeIcons = {
+  Book: 'fa-book',
+  Course: 'fa-university',
+  Project: 'fa-cogs',
+};
+
 const Lesson = ({ match, curriculum, user }) => {
   const lessonId = match.params.id;
   const lesson = curriculum.lessons[lessonId];
@@ -41,19 +47,19 @@ const Lesson = ({ match, curriculum, user }) => {
           { name: 'description', content: lesson.description },
         ]}
       />
-      <PageHero bgColorClass="bg-secondary--dark" bgImageClass="bg-img__path" bgUrl={`/screenshots/${lessonId}.jpg`} title={lesson.name} full>
-        <i className="fa fa-graduation-cap c-white h0 abs-top-right" />
+      <PageHero bgColorClass="bg-secondary--dark" bgImageClass="bg-img__path" bgUrl={`/screenshots/${lessonId}.jpg`} title={lesson.name} subtitle={lesson.type} full>
+        <i className={`fa ${typeIcons[lesson.type]} c-white h0 abs-top-right`} />
         {lesson.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
       <div className="container flex bg-white padding-horizontal-big border-round margin-vertical-small page-hero__offset">
         <div className="padding-vertical-big flex-2 flex-column">
           <h2>About This Lesson</h2>
           <p className="h5">{lesson.description}</p>
-          <h4 className="margin-top-big">INSTRUCTIONS</h4>
+          <h4 className="margin-top-big uppercase">Instructions</h4>
           <p>{lesson.instructions ? lesson.instructions : 'No instructions specified.'}</p>
-          <h4 className="margin-top-big">ADDITIONAL RESOURCES</h4>
+          <h4 className="margin-top-big">Additional Resources</h4>
           {resourceList.map(
-            resource => <div key={resource[0]}>
+            (resource, index) => <div key={index}>
               <a href={resource[1]} target="_blank" rel="noopener noreferrer" className="no-margin">{resource[0]}</a>
             </div>)}
           { user.authenticated ?

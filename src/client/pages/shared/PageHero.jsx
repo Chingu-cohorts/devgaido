@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const PageHero = ({ bgImageClass, bgColorClass, bgUrl, title, children, full }) => (
+const PageHero = ({ bgImageClass, bgColorClass, bgUrl, title, subtitle, children, full }) => (
   <div className={`${full ? 'page-hero--full' : 'page-hero'} relative`}>
     <div
       className={`page-hero__bg-image abs-center-stretch desaturate bg-cover ${bgImageClass}`}
@@ -10,7 +10,10 @@ const PageHero = ({ bgImageClass, bgColorClass, bgUrl, title, children, full }) 
     <div className={`page-hero__bg-overlay abs-center-stretch opacity-75 ${bgColorClass}`} />
     <div className="page-hero__banner relative">
       <div className="page-hero__container container relative height-100">
-        <h1 className="page-hero__title c-white bold center uppercase abs-center">{title}</h1>
+        <span className="page-hero__title c-white bold center uppercase abs-center">
+          <h4 className="bold no-margin">{subtitle}</h4>
+          <h1 className="bold">{title}</h1>
+        </span>
         {children}
       </div>
     </div>
@@ -25,6 +28,7 @@ PageHero.propTypes = {
   bgImageClass: PropTypes.string.isRequired,
   bgColorClass: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
   bgUrl: PropTypes.string,
   full: PropTypes.bool,
 };
@@ -32,6 +36,7 @@ PageHero.propTypes = {
 PageHero.defaultProps = {
   children: null,
   bgUrl: '',
+  subtitle: '',
   full: false,
 };
 

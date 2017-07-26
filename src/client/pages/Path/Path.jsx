@@ -13,8 +13,8 @@ import actions from '../../actions';
 const { addBookmark, removeBookmark } = actions;
 
 const typeIcons = {
-  Reading: 'fa-book',
-  'Supplemental Course': 'fa-university',
+  Book: 'fa-book',
+  Course: 'fa-university',
   Project: 'fa-cogs',
 };
 
@@ -22,10 +22,10 @@ const PathMarker = ({ text, dotClass, iconClass, path }) => (
   <div className={`path-marker relative ${dotClass} flex align-items-center bg-grey border-round`}>
     <h2 className="path-marker__text flex-1 uppercase no-margin c-white">{text}</h2>
     {path ?
-      <h3 className="right no-margin margin-left-big c-white ">              
-        <i className={`fa fa-flag-checkered h3 right margin-left-big margin-right-tiny`} />
+      <h3 className="right no-margin margin-left-big c-white ">
+        <i className={'fa fa-flag-checkered h3 right margin-left-big margin-right-tiny'} />
         <span>{path.nCompleted}/{path.nTotal}</span>
-        <i className={`fa fa-graduation-cap h3 right margin-left-big margin-right-tiny`} />
+        <i className={'fa fa-graduation-cap h3 right margin-left-big margin-right-tiny'} />
         <span>{path.nLessonsCompleted}/{path.nLessonsTotal}</span>
       </h3> : null}
     {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
