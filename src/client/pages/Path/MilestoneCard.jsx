@@ -59,6 +59,9 @@ class MilestoneCard extends React.Component {
           className={`collapsible ${this.state.collapsed ? 'collapsed' : 'padding-vertical-small'} bg-grey-blue border-round-bottom padding-horizontal-big margin-bottom-small`}
           ref={(domElem) => { this.lessonContainerRef = domElem; }}
         >
+          {this.props.course.completeX ?
+            <h4 className="bg-white border-round padding-small bold">Complete at least {this.props.course.completeX} of the following lessons to finish this milestone:</h4> : null
+          }
           {this.props.lessons}
         </div>
       </div>);

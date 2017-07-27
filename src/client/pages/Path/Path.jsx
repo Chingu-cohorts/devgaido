@@ -44,14 +44,14 @@ const Path = ({ match, curriculum, user }) => {
       const course = curriculum.courses[courseId];
       const lessons = course.lessonIds.map((lessonId) => {
         const lesson = curriculum.lessons[lessonId];
+        const dotClasses = !course.completeX ? `dot ${lesson.completed ? '' : 'dot--empty'} dot--displace` : '';
         return (
           <LinkCard
             item={lesson}
             linkTo={lesson.url}
-            bgColorClass={`relative dot ${lesson.completed ? '' : 'dot--empty'} dot--displace bg-secondary`}
+            bgColorClass={`relative ${dotClasses}  bg-secondary`}
             iconClass={typeIcons[lesson.type]}
             key={lessonId}
-            connectionClass="connected--secondary"
             imgSrc={`/screenshots/${lessonId}.jpg`}
           />);
       });
@@ -69,7 +69,6 @@ const Path = ({ match, curriculum, user }) => {
           bgColorClass={`relative no-milestone dot ${lesson.completed ? '' : 'dot--empty'} dot--displace bg-secondary`}
           iconClass={typeIcons[lesson.type]}
           key={lessonId}
-          connectionClass="connected--secondary"
           imgSrc={`/screenshots/${lessonId}.jpg`}
         />);
     });

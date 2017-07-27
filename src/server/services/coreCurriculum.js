@@ -89,7 +89,7 @@ const initCourses = (curriculum) => {
       });
     });
     course.rating = Math.floor(accumulatedRating / course.nTotal);
-    course.estimatedTime = accumulatedTime;
+    course.estimatedTime = course.completeX ? Math.floor(accumulatedTime / course.nTotal * course.completeX) : accumulatedTime;
     course.url = `/courses/${courseId}`;
     course.id = courseId;
   });
@@ -109,7 +109,7 @@ const initLessons = (curriculum) => {
       lesson.subjectNames.push(curriculum.subjects[subject].name);
     });
     rating += 1;
-    lesson.rating = rating % 3 + 3;
+    lesson.rating = rating % 2 + 4;
     lesson.estimatedTimeStr = strToStr[lesson.estimatedTime];
     lesson.img = `/screenshots/${lessonId}.jpg`;
     lesson.id = lessonId;

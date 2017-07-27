@@ -62,8 +62,94 @@
     ],
     "version": "1.0.0"
   },
-  "p1xtprereqs": {
-    "name": "P1XT Guide: Prerequisites",
+  "ydkjs1": {
+    "name": "You Don't Know JS - Basics",
+    "description": "",
+    "lessonIds": [
+      "ydkjsupngoing",
+      "ydkjsscope"
+    ],
+    "version": "1.0.0"
+  },
+  "ydkjs2": {
+    "name": "You Don't Know JS - Intermediate",
+    "description": "",
+    "lessonIds": [
+      "ydkjsthis",
+      "ydkjstypes"
+    ],
+    "version": "1.0.0"
+  },
+  "ydkjs3": {
+    "name": "You Don't Know JS - Advanced",
+    "description": "",
+    "lessonIds": [
+      "ydkjsasync",
+      "ydkjses6"
+    ],
+    "version": "1.0.0"
+  },
+  "cs1": {
+    "name": "Computer Science 1",
+    "description": "",
+    "lessonIds": [
+      "cs50x"
+    ],
+    "version": "1.0.0"
+  },
+  "cs2": {
+    "name": "Computer Science 2",
+    "description": "",
+    "lessonIds": [
+      "opendatastructs"
+    ],
+    "version": "1.0.0"
+  },
+  "frontendexp1": {
+    "name": "Frontend Expertise 1",
+    "description": "",
+    "lessonIds": [
+      "fccportfolio"
+    ],
+    "version": "1.0.0"
+  },
+  "frontendexp2": {
+    "name": "Frontend Expertise 2",
+    "description": "",
+    "lessonIds": [
+      "domenlightment",      
+      "clonenetflix"
+    ],
+    "version": "1.0.0"
+  },
+  "frontendexp3": {
+    "name": "Frontend Expertise 3",
+    "description": "",
+    "lessonIds": [
+      "cloneadmintemp"
+    ],
+    "version": "1.0.0"
+  },
+  "backendfound": {
+    "name": "Backend Foundations",
+    "description": "",
+    "lessonIds": [
+      "intromongodb",      
+      "fccbackend"
+    ],
+    "version": "1.0.0"
+  },
+  "jsboss": {
+    "name": "Javascript like a Boss",
+    "description": "",
+    "lessonIds": [
+      "jsallonge6",
+      "jsdesignpatterns"
+    ],
+    "version": "1.0.0"
+  },
+  "gitngithub": {
+    "name": "Git and GitHub",
     "description": "Maintaining your source code and publishing the body of work you create on an Open Source collaboration site are basic skills you'll need as a web developer. Complete this prerequisite before starting the four tiers of the P1XT Guide",
     "lessonIds": [
       "trygit",
@@ -73,6 +159,7 @@
       "gitimmersion",
       "howtogitngithub"
     ],
+    "completeX" : 1,
     "version": "1.0.0"
   },
   "p1xttier1": {
