@@ -12,10 +12,12 @@ const updatePaths = (curriculum) => {
         completed += 1;
       }
       const course = curriculum.courses[courseId];
+
+      nLessonsTotal += course.completeX ? course.completeX : course.lessonIds.length;
+
       course.lessonIds.forEach((lessonId) => {
         const lesson = curriculum.lessons[lessonId];
 
-        nLessonsTotal += 1;
         if (lesson.completed) {
           nLessonsCompleted += 1;
         }
@@ -47,9 +49,9 @@ const updateCourses = (curriculum) => {
       }
     });
     course.nCompleted = completed;
-    course.nTotal = total;
+    course.nTotal = course.completeX ? course.completeX : total;
 
-    if (total !== 0 && total === completed) {
+    if (course.nTotal !== 0 && course.nTotal <= completed) {
       course.completed = true;
     } else {
       course.completed = false;

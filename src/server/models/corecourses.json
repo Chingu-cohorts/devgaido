@@ -62,8 +62,59 @@
     ],
     "version": "1.0.0"
   },
-  "p1xtprereqs": {
-    "name": "P1XT Guide: Prerequisites",
+  "ydkjs1": {
+    "name": "You Don't Know JS - Basics",
+    "description": "",
+    "lessonIds": [
+      "ydkjsupngoing",
+      "ydkjsscope"
+    ],
+    "version": "1.0.0"
+  },
+  "ydkjs2": {
+    "name": "You Don't Know JS - Intermediate",
+    "description": "",
+    "lessonIds": [
+      "ydkjsthis",
+      "ydkjstypes"
+    ],
+    "version": "1.0.0"
+  },
+  "ydkjs3": {
+    "name": "You Don't Know JS - Advanced",
+    "description": "",
+    "lessonIds": [
+      "ydkjsasync",
+      "ydkjses6"
+    ],
+    "version": "1.0.0"
+  },
+  "cs50x": {
+    "name": "Introduction to Computer Science",
+    "description": "",
+    "lessonIds": [
+      "cs50x"
+    ],
+    "version": "1.0.0"
+  },
+  "rest": {
+    "name": "REST",
+    "description": "",
+    "lessonIds": [
+      "jsallonge6",
+      "intromongodb",
+      "fccbackend",
+      "domenlightment",
+      "fccportfolio",
+      "jsdesignpatterns",
+      "clonenetflix",
+      "opendatastructs",
+      "cloneadmintemp"
+    ],
+    "version": "1.0.0"
+  },
+  "gitngithub": {
+    "name": "Git and GitHub",
     "description": "Maintaining your source code and publishing the body of work you create on an Open Source collaboration site are basic skills you'll need as a web developer. Complete this prerequisite before starting the four tiers of the P1XT Guide",
     "lessonIds": [
       "trygit",
@@ -73,6 +124,7 @@
       "gitimmersion",
       "howtogitngithub"
     ],
+    "completeX" : 1,
     "version": "1.0.0"
   },
   "p1xttier1": {

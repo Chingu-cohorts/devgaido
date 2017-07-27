@@ -89,7 +89,7 @@ const initCourses = (curriculum) => {
       });
     });
     course.rating = Math.floor(accumulatedRating / course.nTotal);
-    course.estimatedTime = accumulatedTime;
+    course.estimatedTime = course.completeX ? Math.floor(accumulatedTime / course.nTotal * course.completeX) : accumulatedTime;
     course.url = `/courses/${courseId}`;
     course.id = courseId;
   });

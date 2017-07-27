@@ -1,4 +1,33 @@
 {
+  "p1xt" : {
+    "name": "The P1XT Guide",
+    "description": "Follow the P1XT Guide to master the web development using CSS, HTML, Javascript, and a variety of major libraries. ",
+    "courseIds": [
+      "gitngithub",
+      "p1xttier1",
+      "p1xttier2",
+      "p1xttier3",
+      "p1xttier4"
+    ],
+    "goal": "Becoming a proficient web developer and software engineer.",
+    "salary": ["~ $65.000 / year", "(average, depending on location / experience)"],
+    "version": "1.0.0"
+  },
+  "p1xt2" : {
+    "name": "Become A Frontend Web Developer",
+    "description": "Follow the P1XT Guide to master the web development using CSS, HTML, Javascript, and a variety of major libraries. ",
+    "courseIds": [
+      "gitngithub", 
+      "ydkjs1",
+      "ydkjs2",
+      "ydkjs3",
+      "cs50x",
+      "rest"
+    ],
+    "goal": "Becoming a proficient web developer and software engineer.",
+    "salary": ["~ $51.000 / year", "(average, depending on location / experience)"],
+    "version": "1.0.0"
+  },
   "srcctrl" : {
     "name": "Source Code Control Systems",
     "description": "Learn the tools and techniques needed to effectively and efficiently manage your projects source code. In this path you'll gain a working knowledge of Git, the source code control system GitHub is built around and one that is the industry standard used by many Open Source and commercial projects.",
@@ -29,21 +58,7 @@
     ],
     "goal": "Having a thorough understanding of the Javascript language and its core concepts.",
     "version": "1.0.0"
-  },
-  "p1xt" : {
-    "name": "The P1XT Guide",
-    "description": "Follow the P1XT Guide to master the web development using CSS, HTML, Javascript, and a variety of major libraries. ",
-    "courseIds": [
-      "p1xtprereqs",
-      "p1xttier1",
-      "p1xttier2",
-      "p1xttier3",
-      "p1xttier4"
-    ],
-    "goal": "Becoming a proficient web developer and software engineer.",
-    "salary": ["~ $65.000 / year", "(average, depending on location / experience)"],
-    "version": "1.0.0"
-  },
+  },  
   "buildawebsite" : {
     "name": "Build A Website",
     "description": "Learn how to build a website using HTML, CSS, and key libraries including Sass, Less, and Stylus. ",
