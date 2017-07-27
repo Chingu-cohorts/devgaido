@@ -89,27 +89,62 @@
     ],
     "version": "1.0.0"
   },
-  "cs50x": {
-    "name": "Introduction to Computer Science",
+  "cs1": {
+    "name": "Computer Science 1",
     "description": "",
     "lessonIds": [
       "cs50x"
     ],
     "version": "1.0.0"
   },
-  "rest": {
-    "name": "REST",
+  "cs2": {
+    "name": "Computer Science 2",
+    "description": "",
+    "lessonIds": [
+      "opendatastructs"
+    ],
+    "version": "1.0.0"
+  },
+  "frontendexp1": {
+    "name": "Frontend Expertise 1",
+    "description": "",
+    "lessonIds": [
+      "fccportfolio"
+    ],
+    "version": "1.0.0"
+  },
+  "frontendexp2": {
+    "name": "Frontend Expertise 2",
+    "description": "",
+    "lessonIds": [
+      "domenlightment",      
+      "clonenetflix"
+    ],
+    "version": "1.0.0"
+  },
+  "frontendexp3": {
+    "name": "Frontend Expertise 3",
+    "description": "",
+    "lessonIds": [
+      "cloneadmintemp"
+    ],
+    "version": "1.0.0"
+  },
+  "backendfound": {
+    "name": "Backend Foundations",
+    "description": "",
+    "lessonIds": [
+      "intromongodb",      
+      "fccbackend"
+    ],
+    "version": "1.0.0"
+  },
+  "jsboss": {
+    "name": "Javascript like a Boss",
     "description": "",
     "lessonIds": [
       "jsallonge6",
-      "intromongodb",
-      "fccbackend",
-      "domenlightment",
-      "fccportfolio",
-      "jsdesignpatterns",
-      "clonenetflix",
-      "opendatastructs",
-      "cloneadmintemp"
+      "jsdesignpatterns"
     ],
     "version": "1.0.0"
   },

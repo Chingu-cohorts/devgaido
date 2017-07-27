@@ -1,7 +1,7 @@
 {
   "p1xt" : {
-    "name": "The P1XT Guide",
-    "description": "Follow the P1XT Guide to master the web development using CSS, HTML, Javascript, and a variety of major libraries. ",
+    "name": "Become A Fullstack Developer (P1XT Guide)",
+    "description": "Get prepared, over the long haul, to be an established senior level software engineer, capable of architecting solutions for the web (and beyond it). ",
     "courseIds": [
       "gitngithub",
       "p1xttier1",
@@ -14,17 +14,22 @@
     "version": "1.0.0"
   },
   "p1xt2" : {
-    "name": "Become A Frontend Web Developer",
-    "description": "Follow the P1XT Guide to master the web development using CSS, HTML, Javascript, and a variety of major libraries. ",
+    "name": "Become A Frontend Developer (P1XT Guide)",
+    "description": "A structured plan of resources and activities for learners who want to beeline to 'job ready' and get there prepared to be successful.",
     "courseIds": [
-      "gitngithub", 
+      "gitngithub",
       "ydkjs1",
+      "frontendexp1",
       "ydkjs2",
+      "cs1",
       "ydkjs3",
-      "cs50x",
-      "rest"
+      "frontendexp2",
+      "cs2",
+      "backendfound",
+      "jsboss",
+      "frontendexp3"
     ],
-    "goal": "Becoming a proficient web developer and software engineer.",
+    "goal": "Getting 'job ready' for a (junior) frontend developer position in today's market.",
     "salary": ["~ $51.000 / year", "(average, depending on location / experience)"],
     "version": "1.0.0"
   },
