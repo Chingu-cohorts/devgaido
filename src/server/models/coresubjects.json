@@ -1,0 +1,191 @@
+{
+  "Android": {
+    "type": "Technology",
+    "focusArea": "Mobile",
+    "name": "Android",
+    "description": "Android mobile development",
+    "releaseNo": "",
+    "authorityURL": "https://www.android.com/",
+    "version": "1.0.0"
+  }, 
+  "Backend": {
+    "type": "Concept",
+    "focusArea": "Backend",
+    "name": "Backend",
+    "description": "Server-side application development",
+    "releaseNo": "",
+    "authorityURL": "",
+    "version": "1.0.0"
+  }, 
+  "CSS": {
+    "type": "Technology",
+    "focusArea": "Frontend",
+    "name": "CSS",
+    "description": "Cascading Stype Sheets",
+    "releaseNo": "",
+    "authorityURL": "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    "version": "1.0.0"
+  },
+  "CSS/Bootstrap": {
+    "type": "Framework",
+    "focusArea": "Frontend",
+    "name": "CSS/Bootstrap",
+    "description": "Bootstrap CSS Framework",
+    "releaseNo": "",
+    "authorityURL": "http://getbootstrap.com/",
+    "version": "1.0.0"
+  },
+  "CSS/Foundation": {
+    "type": "Framework",
+    "focusArea": "Frontend",
+    "name": "CSS/Foundation",
+    "description": "Foundation CSS Framework",
+    "releaseNo": "",
+    "authorityURL": "http://foundation.zurb.com/",
+    "version": "1.0.0"
+  },
+  "CSS/Sass": {
+    "type": "Preprocessor",
+    "focusArea": "Frontend",
+    "name": "CSS/Sass",
+    "description": "Sass CSS Preprocessor",
+    "releaseNo": "",
+    "authorityURL": "http://sass-lang.com/",
+    "version": "1.0.0"
+  },
+  "CSS/Less": {
+    "type": "Preprocessor",
+    "focusArea": "Frontend",
+    "name": "CSS/Less",
+    "description": "Less CSS Preprocessor",
+    "releaseNo": "",
+    "authorityURL": "http://lesscss.org/",
+    "version": "1.0.0"
+  },
+  "CSS/Stylus": {
+    "type": "Preprocessor",
+    "focusArea": "Frontend",
+    "name": "CSS/Stylus",
+    "description": "Stylus CSS Preprocessor",
+    "releaseNo": "",
+    "authorityURL": "http://stylus-lang.com/",
+    "version": "1.0.0"
+  },           
+  "Computer Science": {
+    "type": "Concept",
+    "focusArea": "Foundation",
+    "name": "Computer Science",
+    "description": "Computer Science ",
+    "releaseNo": "",
+    "authorityURL": "",
+    "version": "1.0.0"
+  }, 
+  "Database": {
+    "type": "Technology",
+    "focusArea": "Backend",
+    "name": "Database",
+    "description": "Database Management Systems",
+    "releaseNo": "",
+    "authorityURL": "",
+    "version": "1.0.0"
+  }, 
+  "Frontend": {
+    "type": "Concept",
+    "focusArea": "Frontend",
+    "name": "Frontend",
+    "description": "Client-side application development",
+    "releaseNo": "",
+    "authorityURL": "",
+    "version": "1.0.0"
+  }, 
+  "Fullstack": {
+    "type": "Concept",
+    "focusArea": "Fullstack",
+    "name": "Fullstack",
+    "description": "Client-side + Server-side application development",
+    "releaseNo": "",
+    "authorityURL": "",
+    "version": "1.0.0"
+  }, 
+  "Gulp": {
+    "type": "Library",
+    "focusArea": "Backend",
+    "name": "Gulp",
+    "description": "Application development automation",
+    "releaseNo": "",
+    "authorityURL": "",
+    "version": "1.0.0"
+  }, 
+  "HTML": {
+    "type": "Library",
+    "focusArea": "Frontend",
+    "name": "HTML",
+    "description": "Hypertext Markup Language",
+    "releaseNo": "5",
+    "authorityURL": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    "version": "1.0.0"
+  },
+  "Javascript": {
+    "type": "Language",
+    "focusArea": "Javascript",
+    "name": "Javascript",
+    "description": "Javascript ES5",
+    "releaseNo": "ES5",
+    "authorityURL": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    "version": "1.0.0"
+  }, 
+  "Javascript ES6": {
+    "type": "Language",
+    "focusArea": "Javascript",
+    "name": "Javascript ES6",
+    "description": "Javascript ES6",
+    "releaseNo": "ES6",
+    "authorityURL": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    "version": "1.0.0"
+  }, 
+  "Mathematics": {
+    "type": "Concept",
+    "focusArea": "Foundation",
+    "name": "Mathematics",
+    "description": "Mathematics",
+    "releaseNo": "",
+    "authorityURL": "",
+    "version": "1.0.0"
+  }, 
+  "Project Management": {
+    "type": "Concept",
+    "focusArea": "Foundation",
+    "name": "Project Management",
+    "description": "Agile Project Management",
+    "releaseNo": "",
+    "authorityURL": "",
+    "version": "1.0.0"
+  }, 
+  "Source Code Control": {
+    "type": "Concept",
+    "focusArea": "Fullstack",
+    "name": "Source Code Control",
+    "description": "Source Code Management",
+    "releaseNo": "",
+    "authorityURL": "",
+    "version": "1.0.0"
+  }, 
+  "UX/UI": {
+    "type": "Concept",
+    "focusArea": "Frontend",
+    "name": "UX/UI",
+    "description": "User Experience/User Interface",
+    "releaseNo": "",
+    "authorityURL": "",
+    "version": "1.0.0"
+  }, 
+  "Web Basics": {
+    "type": "Concept",
+    "focusArea": "Frontend",
+    "name": "Web Basics",
+    "description": "Technology that makes the World Wide Web Work",
+    "releaseNo": "",
+    "authorityURL": "",
+    "version": "1.0.0"
+  }
+}

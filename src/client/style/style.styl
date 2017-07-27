@@ -1,0 +1,332 @@
+
+@import './_variables'
+@import './sutairu'
+@import './modules'
+@import './_functional'
+
+// Needed to for Font Awesome
+i::before
+  font-family: 'FontAwesome'
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Sticky Footer & page content background color */
+
+.App
+  display flex
+  min-height: 100vh;
+  flex-direction: column;
+
+.page-content
+  background: #e7eaf6
+  flex 1
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Header */
+
+.logo
+  background: url('/img/devGaidoLogo.svg')
+  background-repeat: no-repeat
+  width 146px
+  height 28px
+
+.logo--small
+  width 112px
+  height 22px
+
+.avatar
+  width 50px
+  height 50px
+  vertical-align: middle
+  transition transform 0.3s
+  &:hover
+    transform scale(1.2)
+
+.menu
+  right 0
+  top 77px
+  z-index 999
+
+  .card__header__text
+    font-weight: normal
+
+  .card
+    position: relative
+    &:before
+      pointer-events:none
+      content: "";
+      position: absolute;
+      right: 15px;
+      top: 9px;
+      width: 0; 
+      height: 0; 
+      border-left: 10px solid transparent
+      border-right: 10px solid transparent
+      border-bottom: 10px solid white
+
+  .card__content
+    padding 10px 25px 20px 25px
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Home (Landing Page) */
+
+.home-hero
+  background-position-y: 50%
+  height 600px
+
+.home-img__loading-spinner
+  width 536px
+  height 350px
+  border-radius: 6px
+  background: url('/img/spinner.gif')
+  background-repeat: no-repeat
+  background-position: 50% 50%
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.grid-half
+  width 50%
+  flex 1 50%
+  padding 10px
+  margin-top 30px
+  margin-bottom 50px
+
+.col-quarter
+  flex 0 0 96%
+  margin-bottom 30px
+
+@media (min-width: 700px)
+  .col-quarter
+    flex 0 0 48%
+
+@media (min-width: 1100px)
+  .col-quarter
+    flex 0 0 32%
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Dashboard: InProgressTab, BookmarkedTab, CompletedTab */
+
+//.completed-tab, 
+//.bookmarked-tab,
+//.inprogress-tab
+//  .link-card
+//    lost-column 1/3 3
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Library */
+
+.image-link-card__image
+  background-size: cover
+  height 200px
+  border-radius: 6px 6px 0 0;
+  opacity 0.85
+  transition opacity 0.5s ease-out
+  &:hover
+    opacity 1
+
+.image-link-card__loading-spinner
+  height 200px
+  border-radius: 6px 6px 0 0;
+  background: url('/img/spinner.gif')
+  background-repeat: no-repeat
+  background-position: 50% 50%
+  width 100%
+
+.topics-dropdown:before
+  pointer-events:none
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent
+  border-right: 10px solid transparent
+  border-top: 10px solid colorSecondary
+
+.topics-dropdown:after
+  pointer-events:none
+  content: ""
+  position: absolute
+  right: 10px
+  top: 12px
+  width: 0
+  height: 0
+  border-left: 10px solid transparent
+  border-right: 10px solid transparent
+  border-top: 10px solid white
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Auth0LockWidget */
+
+.auth0-lock-header-logo
+  width 100% !important
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* App.jsx page-transition */
+.page-transition-enter
+  transform: translateX(100%)
+
+.page-transition-enter.page-transition-enter-active
+  transform: translateX(0%)
+  transition: transform 200ms
+
+.page-transition-leave
+  position absolute
+  width 100%
+  top 0
+  transform: translateX(0)
+
+.page-transition-leave.page-transition-leave-active
+  transform: translateX(-100%)
+  transition: transform 200ms
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.tag
+  padding 5px 15px
+  margin 2px
+  white-space: nowrap
+
+.preview
+  width 100%
+  height 260px 
+
+.preview2
+  width auto
+  height 100%
+
+.dot:before
+  content: ""
+  position: absolute;
+  border-radius: 50%
+  left: -77px;
+  top: 5px;
+  width: 50px; 
+  height: 50px;
+  color white
+  background colorSecondary
+
+.dot:after
+  content: "\f05d"
+  font-family: 'FontAwesome'
+  font-size 39px
+  position: absolute;
+  left: -109px;
+  top: 0px;
+  color white
+
+.dot--big.dot--trophy:after
+  content: "\f091 "
+  font-family: 'FontAwesome'
+  font-size 39px
+  position: absolute;
+  left: -71px;
+  top: 4px;
+  color white
+
+.dot--big:before
+  content: "";
+  position: absolute;
+  border-radius: 50%
+  left: -84px;
+  top: 1px;
+  width: 64px; 
+  height: 64px;
+  background colorPrimary
+
+.dot--empty:after
+  content: "";
+  position: absolute;
+  border-radius: 50%
+  left: -72px;
+  top: 10px;
+  width: 40px; 
+  height: 40px;
+  background colorPrimaryLight
+
+.dot--big.dot--empty:after
+  content: "";
+  position: absolute;
+  border-radius: 50%
+  left: -79px;
+  top: 6px;
+  width: 54px; 
+  height: 54px;
+  background colorPrimaryLight
+  
+.dot--empty.dot--displace:after
+  left -112px
+
+.dot--displace:before
+  left -117px
+
+.path-node
+  margin-top 50px
+  width 85px
+
+.path-node__connection
+  background alpha(colorPrimary,0.3)
+  margin-right 25px
+  width 5px
+
+.collapsible
+  transition all 0.5s
+  opacity 1
+
+.collapsed
+  opacity 0
+  max-height 0 !important
+
+.mcard__icon
+  transition: transform 0.5s
+
+.rotated
+  transform: rotate(90deg)
+
+.path-marker
+  padding 15px 25px
+
+.path-marker__start-icon
+  top 6px
+  left -66px
+  z-index: 100
+
+.path-end.dot--big:before
+  left -6px
+  top -1px
+
+.path-end.dot--big:after
+  left -1px
+  top 4px
+
+.mcard__content-left
+  flex-basis: 50%
+
+.no-milestone.dot:before
+  left -77px
+  
+.no-milestone.dot:after  
+  content: "\f05d"
+  font-family: 'FontAwesome'
+  font-size 39px
+  position: absolute;
+  left: -69px;
+  color white
+
+.no-milestone.dot.dot--empty:after
+  content: ""
+  left -72px
+  
+.page-hero__offset
+  margin-top: -200px
+
+.lcard__checkmark
+  right 20px
+  top 3px
+
+.mcard__checkmark
+  right 20px
+  top 5px
+
+.image-link-card__checkmark
+  right 20px
+  top 10px
+
+.mcard__flag
+  top 11px
+  left -70px

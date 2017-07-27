@@ -1,0 +1,396 @@
+{
+  "git": {
+    "name": "Understanding & Working with Git",
+    "description": "Git is the the source code control system used for both commercial and Open Source projects. This is your first step in understanding how Git helps developers to manage their source code and how to make it part of your daily development workflow.",
+    "lessonIds": [
+      "trygit",
+      "gitsimpleguide"
+    ],
+    "version": "1.0.0"
+  },
+  "github": {
+    "name": "Understanding & Working with GitHub",
+    "description": "As a leader in cloud-based Git systems it's important for web developers to understand its capabilities. In this course you'll learn how it is used not only to manage your team's source code, but also how it can help improve project management.",
+    "lessonIds": [
+      "howtogitngithub",
+      "githubhelloworld",
+      "githubtraining"
+    ],
+    "version": "1.0.0"
+  },
+  "advancedgit": {
+    "name": "Advanced Git",
+    "description": "To become a senior web developer you'll need to understand Git techniques and workflow processes that will make you an effective part of your team. As part of this you'll learn how to solve complex situations and problems using Git.",
+    "lessonIds": [
+      "gitimmersion"
+    ],
+    "version": "1.0.0"
+  },
+  "buildwebpages": {
+    "name": "Building Webpages",
+    "description": "Learn how to build simple webpages using HTML and CSS",
+    "lessonIds": [
+      "learnhtmlcss",
+      "onlineresume"
+    ],
+    "version": "1.0.0"
+  },
+  "beginnerjs": {
+    "name": "Beginning Javascript",
+    "description": "Learn the basics of the Javascript language",
+    "lessonIds": [
+      "ydkjsupngoing",
+      "ydkjsscope"
+    ],
+    "version": "1.0.0"
+  },
+  "intermediatejs": {
+    "name": "Intermediate Javascript",
+    "description": "Gain insight into how Javascript handles datatypes and objects",
+    "lessonIds": [
+      "ydkjsthis",
+      "ydkjstypes"
+    ],
+    "version": "1.0.0"
+  },
+  "advancedjs": {
+    "name": "Advanced Javascript",
+    "description": "Acquire and indepth understanding of asynchronous operations and modern ES6 Javascript",
+    "lessonIds": [
+      "ydkjsasync",
+      "ydkjses6"
+    ],
+    "version": "1.0.0"
+  },
+  "ydkjs1": {
+    "name": "You Don't Know JS - Basics",
+    "description": "",
+    "lessonIds": [
+      "ydkjsupngoing",
+      "ydkjsscope"
+    ],
+    "version": "1.0.0"
+  },
+  "ydkjs2": {
+    "name": "You Don't Know JS - Intermediate",
+    "description": "",
+    "lessonIds": [
+      "ydkjsthis",
+      "ydkjstypes"
+    ],
+    "version": "1.0.0"
+  },
+  "ydkjs3": {
+    "name": "You Don't Know JS - Advanced",
+    "description": "",
+    "lessonIds": [
+      "ydkjsasync",
+      "ydkjses6"
+    ],
+    "version": "1.0.0"
+  },
+  "cs1": {
+    "name": "Computer Science 1",
+    "description": "",
+    "lessonIds": [
+      "cs50x"
+    ],
+    "version": "1.0.0"
+  },
+  "cs2": {
+    "name": "Computer Science 2",
+    "description": "",
+    "lessonIds": [
+      "opendatastructs"
+    ],
+    "version": "1.0.0"
+  },
+  "frontendexp1": {
+    "name": "Frontend Expertise 1",
+    "description": "",
+    "lessonIds": [
+      "fccportfolio"
+    ],
+    "version": "1.0.0"
+  },
+  "frontendexp2": {
+    "name": "Frontend Expertise 2",
+    "description": "",
+    "lessonIds": [
+      "domenlightment",      
+      "clonenetflix"
+    ],
+    "version": "1.0.0"
+  },
+  "frontendexp3": {
+    "name": "Frontend Expertise 3",
+    "description": "",
+    "lessonIds": [
+      "cloneadmintemp"
+    ],
+    "version": "1.0.0"
+  },
+  "backendfound": {
+    "name": "Backend Foundations",
+    "description": "",
+    "lessonIds": [
+      "intromongodb",      
+      "fccbackend"
+    ],
+    "version": "1.0.0"
+  },
+  "jsboss": {
+    "name": "Javascript like a Boss",
+    "description": "",
+    "lessonIds": [
+      "jsallonge6",
+      "jsdesignpatterns"
+    ],
+    "version": "1.0.0"
+  },
+  "gitngithub": {
+    "name": "Git and GitHub",
+    "description": "Maintaining your source code and publishing the body of work you create on an Open Source collaboration site are basic skills you'll need as a web developer. Complete this prerequisite before starting the four tiers of the P1XT Guide",
+    "lessonIds": [
+      "trygit",
+      "gitsimpleguide",
+      "githubtraining",
+      "githubhelloworld",
+      "gitimmersion",
+      "howtogitngithub"
+    ],
+    "completeX" : 1,
+    "version": "1.0.0"
+  },
+  "p1xttier1": {
+    "name": "P1XT Guide: Tier 1 - Getting Started",
+    "description": "Prerequisite knowledge you will need before starting the courses that make up the four tiers of the P1XT Guide",
+    "lessonIds": [
+      "ydkjsupngoing",
+      "ydkjsscope",
+      "ydkjsthis",
+      "cs50x",
+      "learnhtmlcss", 
+      "onlineresume",
+      "ydkjstypes",
+      "ydkjsasync",
+      "ydkjses6",
+      "advhtmlcss", 
+      "fccportfolio",
+      "projectspecdocs",
+      "ettmath",
+      "setupes6",
+      "jsallonge6",
+      "getsassy",
+      "towersofhanoi",
+      "createcsstemp"
+    ],
+    "version": "1.0.0"
+  },
+  "p1xttier2": {
+    "name": "P1XT Guide: Tier 2 - Develop More Expertise",
+    "description": "Establish a solid foundational understanding of Javascript, HTML, and CSS",
+    "lessonIds": [
+      "systematicpd1",
+      "systematicpd2",
+      "systematicpd3", 
+      "domenlightment", 
+      "gulp",
+      "fccsimon", 
+      "intromongodb",
+      "fccbackend",
+      "calculus1", 
+      "jsdesignpatterns", 
+      "clonelandingpage", 
+      "csmaths",
+      "algnflowcharts", 
+      "intropencil",
+      "cloneadmintemp",
+      "thinkjava",
+      "classicpuzzles", 
+      "opendatastructs",
+      "algorithms1", 
+      "algorithms2",
+      "codejam15q2",
+      "clonefrontpage",
+      "mobileuxdesign", 
+      "androiddev",
+      "fccpomodoro"
+    ],
+    "version": "1.0.0"
+  },
+  "p1xttier3": {
+    "name": "P1XT Guide: Tier 3 - Add More Rigor",
+    "description": "Increase your knowledge by learning functional programming and webdev technologies and techniques.",
+    "lessonIds": [
+      "frisbys",
+      "testing", 
+      "debugging",
+      "clonenetflix", 
+      "calculus2",
+      "classicpuzzles2", 
+      "softwarearch",
+      "codejam15r1a",
+      "jsspessore",
+      "cloneblog",
+      "databases",
+      "agile",
+      "es6katas",
+      "cloudcomputing", 
+      "codejam15r1b",
+      "buildfacebook",
+      "theoreticalcs", 
+      "codejam15r1c", 
+      "probability",
+      "12colgrid", 
+      "linearalgebra",
+      "classicpuzzles3",
+      "crypto1",
+      "codejam15r2",
+      "crypto2", 
+      "clonetwitter"
+    ],
+    "version": "1.0.0"
+  },
+  "p1xttier4": {
+    "name": "P1XT Guide: Tier 4 - Polish the Rough Edges",
+    "description": "Round out your knowledge by increasing your knowledge of advanced subjects like Artificial Intelligence, and put your knowledge to the test by completing advanced projects.",
+    "lessonIds": [
+      "computerarch",
+      "codejam15r3",
+      "cybersecurity",
+      "classicpuzzles4",
+      "computergfx", 
+      "ai",
+      "codejam15f",
+      "machinelearning",
+      "webgame",
+      "compilers",
+      "nlp",
+      "cloneharmony",
+      "networks", 
+      "parallel", 
+      "codejam15dist",
+      "cloneslack",
+      "bootstrapfull",
+      "codejam16",
+      "materialdesign"
+    ],
+    "version": "1.0.0"
+  },
+  "htmlbasics": {
+    "name": "HTML Basics",
+    "description": "Learn the basics of HTML - the standard used to define webpages.",
+    "lessonIds": [
+      "introhtml",
+      "beginnerhtml",
+      "clonewebpage"
+    ],
+    "version": "1.0.0"
+  },
+  "cssbasics": {
+    "name": "CSS Basics",
+    "description": "Learn the basics of CSS - the standard used to style webpages.",
+    "lessonIds": [
+      "introcss",
+      "beginnercss",
+      "clonetributepage"
+     ],
+    "version": "1.0.0"
+  },
+  "marryhtmlcss": {
+    "name": "Marrying HTML & CSS",
+    "description": "Learn how to combine HTML and CSS to create a professional webpage",
+    "lessonIds": [
+      "learnhtmlcss",
+      "cloneresume"
+    ],
+    "version": "1.0.0"
+  },
+  "intermediatehtml": {
+    "name": "Intermediate HTML",
+    "description": "Improve your HTML knowledge with additional HTML programming techniques",
+    "lessonIds": [
+      "intermediatehtml"
+    ],
+    "version": "1.0.0"
+  },
+  "intermediatecss": {
+    "name": "Intermediate CSS",
+    "description": "Improve your CSS knowledge with additional CSS programming techniques",
+    "lessonIds": [
+      "intermediatecss"
+    ],
+    "version": "1.0.0"
+  },
+  "advancedhtmlcss": {
+    "name": "Advanced HTML & CSS",
+    "description": "Polish your HTML and CSS knowledge and skills with advanced techniques",
+    "lessonIds": [
+      "advancedhtml",
+      "advancedcss",
+      "buildportfolio"
+    ],
+    "version": "1.0.0"
+  },
+  "introbootstrap": {
+    "name": "Introduction to Bootstrap",
+    "description": "Learn how to use the Bootstrap Library for styling",
+    "lessonIds": [
+      "introbootstrap",
+      "qwbootstrap",
+      "bootstraptribute"
+    ],
+    "version": "1.0.0"
+  },
+  "introfoundation": {
+    "name": "Introduction to Foundation",
+    "description": "Learn how to use the Foundation Library for styling",
+    "lessonIds": [
+      "foundationcrash"
+    ],
+    "version": "1.0.0"
+  },
+  "introsass": {
+    "name": "Introduction to Sass",
+    "description": "Learn how to use the Sass Library for styling",
+    "lessonIds": [
+      "introsass"
+    ],
+    "version": "1.0.0"
+  },
+  "introless": {
+    "name": "Introduction to Less",
+    "description": "Learn how to use the Less Library for styling",
+    "lessonIds": [
+      "introless"
+    ],
+    "version": "1.0.0"
+  },
+  "introstylus": {
+    "name": "Introduction to Stylus",
+    "description": "Learn how to use the Stylus Library for styling",
+    "lessonIds": [
+      "introstylus"
+    ],
+    "version": "1.0.0"
+  },
+  "howwebworks": {
+    "name": "Learn How the Web Works",
+    "description": "Learn How the Internet and World Wide Web Work",
+    "lessonIds": [
+      "howinternetworks",
+      "howwebworks"
+    ],
+    "version": "1.0.0"
+  },
+  "getstartedweb": {
+    "name": "Getting Started with the Web",
+    "description": "Learn how to set up a web project folder and file system for you projects",
+    "lessonIds": [
+      "getstartedweb",
+      "setupwwwfolder"
+    ],
+    "version": "1.0.0"
+  }
+}

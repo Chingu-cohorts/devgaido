@@ -26,6 +26,7 @@ const serverConfig = {
     colors: true,
     reasons: false,
     chunks: false,
+    progress: true,
   },
   node: {
     __filename: true,

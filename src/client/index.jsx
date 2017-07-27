@@ -1,44 +1,34 @@
-import React, { createElement } from 'react';
-import { render } from 'react-dom';
-import { Route } from 'react-router';
-import { createStore, applyMiddleware } from 'redux';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import logger from 'redux-logger';
-import thunk from 'redux-thunk';
 import { AppContainer } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
-import reducer from './reducers';
+
 import App from './App';
-import './style.css';
-import routes from './routes';
+import store from './store';
 
+import './style/style.styl';
 
-const middleware = [thunk];
-if (process.env.NODE_ENV !== 'production') middleware.push(logger);
-
-const store = createStore(reducer, applyMiddleware(...middleware));
-const root = document.getElementById('root');
-
-const routeComponents = routes.map(({ path, exact, component }, index) => (
-      createElement(Route, { path, exact, component, key: index })
-    ));
-
-const hotRender = (Component) => {
-  render(
+/**
+ * Build the template for all pages in the application
+ *
+ * @param {any} Component - React Component containing on the page
+ * @returns {null} -
+ */
+const render = (Component) => {
+  ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
-        <Component
-          router={BrowserRouter}
-          routerProps={{ history: createBrowserHistory() }}
-          routes={routeComponents}
-        />
+        <BrowserRouter history={createBrowserHistory()}>
+          <Component />
+        </BrowserRouter>
       </Provider>
     </AppContainer>,
-  root,
+  document.getElementById('root'),
   );
 };
 
-hotRender(App);
+render(App);
 
-if (module.hot) module.hot.accept('./App', () => hotRender(App));
+if (module.hot) module.hot.accept('./App', () => render(App));

@@ -1,0 +1,21 @@
+{
+  "E12345678901234567": {
+    "source": "Error",
+    "name": "Error",
+    "description": "Error",
+    "type": "Error",
+    "subjects": ["Error"],
+    "externalSource": "",
+    "estimatedTime": "short",
+    "version": "1.0.0"
+  },
+  "orphanlesson": {
+    "source": "Error",
+    "name": "Error",
+    "description": "Error",
+    "type": "Error",
+    "subjects": ["Error"],
+    "externalSource": "",
+    "version": "1.0.0"
+  }
+}

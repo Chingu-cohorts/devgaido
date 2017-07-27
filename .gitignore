@@ -2,7 +2,8 @@
 logs
 *.log
 npm-debug.log*
-
+.DS_Store
+.env
 # Runtime data
 pids
 *.pid
@@ -37,3 +38,5 @@ jspm_packages
 .node_repl_history
 
 dist
+sessions
+.directory

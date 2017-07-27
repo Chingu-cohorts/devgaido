@@ -1,0 +1,12 @@
+{
+  "E2345678901234567" : {
+    "name": "Error test",
+    "description": "Path id exceeds 16 characters",
+    "courseIds": [
+      "error1",
+      "error2"
+    ],
+    "badAttribute": "Error",
+    "version": "1.0.0"
+  }
+}
