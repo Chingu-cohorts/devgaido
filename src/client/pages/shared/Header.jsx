@@ -1,23 +1,20 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { MenuCard } from '../shared/Cards';
+import StickyNav from './StickyNav';
 
-import actions from '../../actions';
-
-const { toggleNavMenu } = actions;
-
-const handleLoginClick = (e, lock) => {
-  e.preventDefault();
-  lock.show();
-};
 
 // TODO: Change nav bar to be hidden on scroll down and visible on scroll up instead of just "fixed"
-const Header = ({ user, uiState, lock }) => (
+const Header = ({ user, uiState, lock, history }) => (
   <header>
-    <div className="container flex justify-space-between align-items-center padding-vertical-small relative">
+    <StickyNav
+      user={user}
+      uiState={uiState}
+      lock={lock}
+      history={history}
+    />
+    {/* <div className="container flex justify-space-between align-items-center padding-vertical-small relative">
       <NavLink to={user.authenticated ? '/dashboard' : '/'} className="logo" />
       <nav className="flex align-items-center">
         <ul className="flex align-items-center no-margin list-style-none uppercase">
@@ -35,7 +32,7 @@ const Header = ({ user, uiState, lock }) => (
           </ul>
         </MenuCard>
       </div>
-    </div>
+    </div>*/}
   </header>
 );
 

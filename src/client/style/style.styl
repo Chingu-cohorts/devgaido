@@ -330,3 +330,32 @@ i::before
 .mcard__flag
   top 11px
   left -70px
+
+.back-button
+  text-align: center
+  position: absolute
+  border none
+  padding 30px 5px
+  margin 0
+  left 0
+  top 98px
+  width 60px
+  z-index: 999
+  color white
+  
+  transition background 0.5s
+  &:hover
+    background: transparent
+    color colorSecondary
+
+  i
+    transition color 0.5s
+    position: absolute
+    top -2px
+    left 4px
+
+.logo
+  transition margin 0.5s
+
+.logo--displaced
+  margin-left 100px
