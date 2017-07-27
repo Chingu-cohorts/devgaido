@@ -67,7 +67,7 @@ const initCourses = (curriculum) => {
     const total = course.lessonIds.length;
 
     course.nCompleted = completed;
-    course.nTotal = total;
+    course.nTotal = course.completeX ? course.completeX : total;
     course.completed = false;
     course.subjects = [];
     course.subjectNames = [];
