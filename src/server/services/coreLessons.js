@@ -26,9 +26,10 @@ import CoreLessons from '../models/corelessons.json';
  *    "externalSource": "...",     <-- Defines the url of the lesson
  *    "estimatedTime": "short|medium|long", <-- Defines the estimated amount of
  *                                     time required to complete the lesson.
- *                                     This is only an estimate and the actual
- *                                     amount of time required will vary from
- *                                     user to user.
+ *                                     Acceptable values are:
+ *                                     - short: 4 hours or less
+ *                                     - medium: 16 hours or less
+ *                                     - long: >16 hours
  *    "version": "1.0.0"           <-- Semantic version to track changes
  *  },
  * }
