@@ -17,6 +17,14 @@ const strToStr = {
   long: '> 16',
 };
 
+/**
+ * Initialize paths in the curriculum object inserting new runtime-only
+ * attributes not present in the JSON files.
+ *
+ * @param {any} curriculum - Contains paths, courses, and lessons that makes
+ *                           up the devGaido curriculm loaded from JSON files.
+ * @returns {null} n/a
+ */
 const initPaths = (curriculum) => {
   Object.keys(curriculum.paths).forEach((pathId) => {
     const path = curriculum.paths[pathId];
@@ -60,6 +68,14 @@ const initPaths = (curriculum) => {
   });
 };
 
+/**
+ * Initialize courses in the curriculum object inserting new runtime-only
+ * attributes not present in the JSON files.
+ *
+ * @param {any} curriculum - Contains paths, courses, and lessons that makes
+ *                           up the devGaido curriculm loaded from JSON files.
+ * @returns {null} n/a
+ */
 const initCourses = (curriculum) => {
   Object.keys(curriculum.courses).forEach((courseId) => {
     const course = curriculum.courses[courseId];
@@ -95,6 +111,14 @@ const initCourses = (curriculum) => {
   });
 };
 
+/**
+ * Initialize lessons in the curriculum object inserting new runtime-only
+ * attributes not present in the JSON files.
+ *
+ * @param {any} curriculum - Contains paths, courses, and lessons that makes
+ *                           up the devGaido curriculm loaded from JSON files.
+ * @returns {null} n/a
+ */
 const initLessons = (curriculum) => {
   let rating = 0;
 
@@ -116,6 +140,13 @@ const initLessons = (curriculum) => {
   });
 };
 
+/**
+ * Initialze a curriculum object
+ *
+ * @param {any} curriculum - Contains paths, courses, and lessons that makes
+ *                           up the devGaido curriculm loaded from JSON files.
+ * @returns {any} curriculum - Initialized curriculum object
+ */
 const init = (curriculum) => {
   initLessons(curriculum);
   initCourses(curriculum);
@@ -124,6 +155,11 @@ const init = (curriculum) => {
   return curriculum;
 };
 
+/**
+ * Build a new curriculum object
+ * 
+ * @returns {any} curriculum - Initialized curriculum object
+ */
 const getCurriculum = () => {
   // We need to create fresh copies or else
   // they might get 'polluted' by playing back actions on the redux store.
