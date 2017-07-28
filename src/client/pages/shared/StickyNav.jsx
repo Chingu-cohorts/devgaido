@@ -4,7 +4,6 @@ import React from 'react';
 
 import { NavLink } from 'react-router-dom';
 import { MenuCard } from '../shared/Cards';
-import BackButton from './BackButton';
 
 import actions from '../../actions';
 
@@ -14,26 +13,26 @@ const handleLoginClick = (e, lock) => {
   e.preventDefault();
   lock.show();
 };
+
 class StickyNav extends React.Component {
   constructor(props) {
     super(props);
-    this.buttonRef = null;
     this.sticky = false;
     this.hasDom = (typeof window !== 'undefined');
-    this.absoluteTop = 0;
-    this.absoluteLeft = 0;
-    this.fixedTop = 0;
-    this.fixedLeft = 0;
-    this.wasSticky = false;
     this.lastScrollPos = 0;
-    this.scrollDir = 0;
+    this.scrollDown = undefined;
     this.navBarHeight = undefined;
+    this.distanceToScrollUntilSticky = 0;
   }
 
   componentDidMount() {
     if (this.hasDom) {
+      this.navBarHeight = this.navbarRef.clientHeight;
+
+      this.navbarRefPlaceholder.style.height = `${this.navBarHeight}px`;
+      this.distanceToScrollUntilSticky = this.navBarHeight;
+
       window.addEventListener('scroll', () => this.handleScroll());
-      this.navbarRefPlaceholder.style.height = `${78}px`;
     }
   }
 
@@ -45,65 +44,61 @@ class StickyNav extends React.Component {
 
   handleScroll() {
     let sticky = false;
-    this.scrollDir = window.pageYOffset - this.lastScrollPos;
+    this.scrollingDown = (window.pageYOffset - this.lastScrollPos) > 0;
     this.lastScrollPos = window.pageYOffset;
 
-    if (this.scrollDir > 0 && window.pageYOffset > 78) {
-      this.navbarRef.style.opacity = 0;
-    } else {
-      this.navbarRef.style.opacity = 1;
+    if (this.scrollingDown) {
+      sticky = window.pageYOffset > this.distanceToScrollUntilSticky;
+      if (sticky) {
+        this.navbarRef.style.opacity = 0;
+        this.navbarRef.style.transform = `translateY(-${this.navBarHeight}px)`;
+      }
     }
-    //if (this.scrollDir < 0) {
-    sticky = window.pageYOffset > 78;
-    //}
+
+    if (!this.scrollingDown) {
+      sticky = window.pageYOffset !== 0;
+      this.navbarRef.style.transition = 'all 0.5s';
+      this.navbarRef.style.opacity = 1;
+      this.navbarRef.style.transform = 'translateY(0)';
+    }
 
     if (sticky !== this.sticky) {
-      if (sticky) {
-
-        this.navbarRef.style.transition = 'all 0.5s';
-        /*requestAnimationFrame(() => {
-          if (!this.navBarHeight) {
-            this.navBarHeight = `${this.navbarRef.clientHeight}px`;
-          }
-
-          this.navbarRef.style.maxHeight = `${0}px`;
-          this.navbarRef.style.opacity = 0;
-          this.navbarRef.style.transition = 'all 0s';
-
-          requestAnimationFrame(() => {
-            this.navbarRef.style.maxHeight = this.navBarHeight;
-            this.navbarRef.style.transition = 'all 0.5s';
-            this.navbarRef.style.opacity = 1;
-          });
-        });*/
-        this.navbarRef.style.top = `${0}px`;
-        this.navbarRef.style.zIndex = 999;
-        
-      } else {
-        this.navbarRef.style.transition = 'all 0s';
-      }
-/*
-      if (this.scrollDir > 0) {
-        //this.navbarRef.style.maxHeight = `${0}px`;
-        this.navbarRef.style.background = 'red';
-        //this.navbarRef.style.transition = 'all 0.5s';
-      } else {
-        this.navbarRef.style.background = 'blue';
-      }
-  */    
-
       this.sticky = sticky;
+      this.navbarRef.style.transition = 'all 0s';
       this.forceUpdate();
     }
+    /* TODO: Fix following issue:
+      When a transform is set, the z-index is ignored which would make the MenuCard appear "below"
+      the PageHero when scrolled up to the top. The fix below tries to stop all css animations (opacity + transform)
+      and then removes the transform to make z-index work again, but for some reason the opacity animation that is playing
+      is ignoring setting transition = 'all 0s'. This makes it so that the animation still plays out regardless and
+      the attempted removal of the transform occurs only AFTER 0.5s instead of instantaneous.
+      We tried everything to make this fix 100% functional to no avail.
+      The issue however, only occurs in the edge case of having the menu open when scrolled down and then super quickly
+      scrolling up to the very top so that the navbar should lose its 'fixed' property, so for now we leave it as is.
+    */
+    // Start of fix
+    if (window.pageYOffset === 0) {
+      requestAnimationFrame(() => {
+        this.navbarRef.style.opacity = 1;
+        this.navbarRef.style.transform = 'translateY(0)';
+        this.navbarRef.style.transition = 'all 0s';
+        this.forceUpdate();
+        requestAnimationFrame(() => {
+          this.navbarRef.style.transform = '';
+        });
+      });
+    }
+    // End of fix
   }
 
   render() {
     const { user, uiState, lock, history } = this.props;
     return (
       <div className={`width-100 bg-primary`} ref={(domElem) => { this.navbarRefPlaceholder = domElem; }}>
-        <div className={`width-100 bg-white ${this.sticky ? 'fixed' : ''} overflow-hidden`} ref={(domElem) => { this.navbarRef = domElem; }}>
+        <div className={`navbar width-100 bg-white ${this.sticky ? 'fixed' : ''}`} ref={(domElem) => { this.navbarRef = domElem; }}>
           <div className="container flex justify-space-between align-items-center padding-vertical-small relative">
-            <NavLink to={user.authenticated ? '/dashboard' : '/'} className={`logo ${this.sticky ? 'logo--displaced' : ''}`} />
+            <NavLink to={user.authenticated ? '/dashboard' : '/'} className="logo" />
             <nav className="flex align-items-center">
               <ul className="flex align-items-center no-margin list-style-none uppercase">
                 <li className="margin-right-small"><NavLink to="/library" activeClassName="boxshadow-underline bold">Library</NavLink></li>
