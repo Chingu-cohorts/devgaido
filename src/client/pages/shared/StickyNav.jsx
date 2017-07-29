@@ -93,9 +93,10 @@ class StickyNav extends React.Component {
     }
     // End of fix
   }
-
   render() {
     const { user, uiState, lock, history } = this.props;
+    const notOnHomeScreen = history.location.pathname !== '/';
+
     return (
       <div className={`width-100 bg-primary`} ref={(domElem) => { this.navbarRefPlaceholder = domElem; }}>
         <div className={`navbar width-100 bg-white ${this.sticky ? 'fixed' : ''}`} ref={(domElem) => { this.navbarRef = domElem; }}>
@@ -119,7 +120,7 @@ class StickyNav extends React.Component {
             </div>
           </div>
         </div>
-        <div className="side-drawer">
+        <div className={`side-drawer ${notOnHomeScreen ? '' : 'hidden'}`}>
           <BackButton history={history} />
           <i className="side-drawer__icon fa fa-chevron-left c-secondary h0" />
         </div>
