@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 
 import db from './db';
 import reducers from '../client/reducers';
+import getDevTeam from './services/devTeam';
 import getCurriculum from './services/coreCurriculum';
 import App from '../client/App';
 import routes from '../client/routes';
@@ -91,6 +92,7 @@ const sendAuthenticatedPage = (res, req, match, auth0) => {
   };
 
   const curriculum = getCurriculum();
+  const devTeam = getDevTeam();
 
   db.find({ _id: req.user.id }, (docs) => {
     if (docs) {
