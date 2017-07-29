@@ -331,14 +331,32 @@ i::before
   top 11px
   left -70px
 
+.logo
+  transition margin 0.5s
+
+.logo--displaced
+  margin-left 100px
+
+.navbar
+  top 0
+  z-index: 999
+  .card
+    z-index 9999 !important
+
+.navbar.fixed
+  box-shadow: -1px 1px 1px rgba(0,0,0,0.1)
+  .card
+    box-shadow: -1px 1px 1px rgba(0,0,0,0.1)
+
 .back-button
   text-align: center
   position: absolute
   border none
   padding 30px 5px
   margin 0
-  left 0
-  top 98px
+  left 50%
+  top 50%
+  transform: translate(-50%, -50%)
   width 60px
   z-index: 999
   color white
@@ -354,18 +372,41 @@ i::before
     top -2px
     left 4px
 
-.logo
-  transition margin 0.5s
-
-.logo--displaced
-  margin-left 100px
-
-.navbar
-  top 0
-  z-index: 999
-  .card
-    z-index 9999 !important
-.navbar.fixed
-  box-shadow: -1px 1px 1px rgba(0,0,0,0.1)
-  .card
-    box-shadow: -1px 1px 1px rgba(0,0,0,0.1)
+.side-drawer
+  position: fixed
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.1)
+  z-index: 777
+  background: colorPrimary
+  transform: translate(-100px)
+  opacity: 0.3
+  height 100vh
+  width 100px
+  transition: all 0.5s
+  &:hover
+    opacity 1
+    transform: translate(0)
+    .side-drawer__icon
+      transition: opacity 0.5s
+      opacity: 0
+/*    &:after
+      opacity: 0
+  &:after
+    transition: opacity 0.5s
+    opacity: 0.5
+    content: ""
+    z-index: 888
+    position: absolute
+    border-top: 40px solid transparent;
+    border-bottom: 40px solid transparent; 
+    border-right:15px solid colorSecondary
+    top 50%
+    width 40px
+    background: green
+    transform: translateY(-50%)
+    right -35px*/
+.side-drawer__icon
+  position: absolute
+  top 50%
+  right -90px
+  transform: translateY(-50%)
+  padding 43px 30px

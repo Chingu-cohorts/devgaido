@@ -3,7 +3,9 @@ import React from 'react';
 
 
 import { NavLink } from 'react-router-dom';
-import { MenuCard } from '../shared/Cards';
+import { MenuCard } from './Cards';
+
+import BackButton from './BackButton';
 
 import actions from '../../actions';
 
@@ -116,6 +118,10 @@ class StickyNav extends React.Component {
               </MenuCard>
             </div>
           </div>
+        </div>
+        <div className="side-drawer">
+          <BackButton history={history} />
+          <i className="side-drawer__icon fa fa-chevron-left c-secondary h0" />
         </div>
       </div>
     );
