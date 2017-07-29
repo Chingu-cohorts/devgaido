@@ -65,8 +65,8 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
         content: <div className="flex">
           {imgSrc ?
             <LazyLoad height={200} once offset={201}>
-              <div className="lcard__content-left flex-1">
-                <div className="preview2 no-margin border-round border-1px" style={{ background: `url(${imgSrc})`, backgroundSize: 'cover', borderColor: '#ccc' }} />
+              <div className="lcard__content-left flex-1 flex-column">
+                <div className="preview2 flex-1 no-margin border-round border-1px" style={{ background: `url(${imgSrc})`, backgroundSize: 'cover', borderColor: '#ccc' }} />
               </div>
             </LazyLoad>
              : null}
