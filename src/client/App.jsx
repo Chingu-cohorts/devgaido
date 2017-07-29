@@ -14,9 +14,10 @@ import Auth0LockWidget from './pages/shared/Auth0LockWidget';
 import ScrollToTop from './pages/shared/ScrollToTop';
 import Header from './pages/shared/Header';
 import Footer from './pages/shared/Footer';
+
 import routesArr from './routes';
 
-const App = ({ serverMatch, location, user, curriculum, uiState, auth0 }) => {
+const App = ({ serverMatch, location, user, curriculum, uiState, auth0, history }) => {
 // If <App /> is rendered on the server we need to provide the serverMatch prop
 // since StaticRouter can only render a single Route (Switch only works on client side).
 // On the client though, just return all routes and let Switch do the work.
@@ -56,7 +57,7 @@ const App = ({ serverMatch, location, user, curriculum, uiState, auth0 }) => {
             { name: 'description', content: 'devGaido provides easy to follow learning paths that help you become a web developer without the hassle.' },
           ]}
         />
-        <Header uiState={uiState} user={user} lock={lock} auth0={auth0} />
+        <Header uiState={uiState} user={user} lock={lock} auth0={auth0} history={history} />
         <div className="page-content relative overflow-hidden"> {/* For sticky footer and background color */}
           <CSSTransitionGroup
             transitionEnterTimeout={200}
