@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet';
 
 import db from './db';
 import reducers from '../client/reducers';
-import initializeContributors from './services/devTeam';
+import retrieveContributors from './services/contributors';
 import getCurriculum from './services/coreCurriculum';
 import App from '../client/App';
 import routes from '../client/routes';
@@ -67,6 +67,19 @@ const renderPage = (match, store) => {
 
 const sendGuestPage = (res, match, auth0) => {
   const curriculum = getCurriculum();
+  let contributors;
+
+  console.log('getting ready to retrieveContributors()');
+  retrieveContributors()
+  .then((devTeam) => {
+    console.log('.then got here');
+    contributors = devTeam;
+    console.log(`Our team: ${devTeam}`);
+  })
+  .catch((error) => {
+    console.log('.catch got here');
+    console.log(`Error retrieving contributors ${error}`);
+  });
 
   const state = { curriculum, auth0 };
   const store = createStore(reducers, state);
@@ -92,8 +105,6 @@ const sendAuthenticatedPage = (res, req, match, auth0) => {
   };
 
   const curriculum = getCurriculum();
-  const devTeam = initializeContributors();
-  console.log(`Our team: ${devTeam}`);
 
   db.find({ _id: req.user.id }, (docs) => {
     if (docs) {
