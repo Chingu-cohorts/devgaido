@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 const url = 'https://api.github.com/repos/Chingu-cohorts/devgaido/contributors';
 
@@ -7,34 +7,35 @@ const url = 'https://api.github.com/repos/Chingu-cohorts/devgaido/contributors';
  *
  * This module contains functions implementing the model layer functionality
  * describing the members of the Development Team. This model is specified as
- * an array whose elements contain the following:
+ * a JSON object formatted as follows:
  *
- *   "contributor-login-id"   <-- Unique GitHub contributor login id
- *   "avatar_url": "...",     <-- URL to contributors GitHub avatar
- *   "html_url": "...",       <-- URL to contributors GitHub profile
+ *   {
+ *     "contributor-login-id": {  <-- Unique GitHub contributor login id
+ *       "avatar_url": "...",     <-- URL to contributors GitHub avatar
+ *       "html_url": "...",       <-- URL to contributors GitHub profile
+ *     },
+ *     ...
+ *   }
  */
 
 /**
  * Retrieve members of the development team from the GitHub repo.
  *
- * @returns {Promise} - A Promise which when resolved contains the list of
- * GitHub contributors to the application.
+ * @returns {Promise} - A Promise which when resolved contains a JSON object
+ * defining the GitHub contributors to the application.
  */
 const retrieveContributors = new Promise((resolve, reject) => {
-  console.log('made it to retrieveContributors');
+  let contributorObject = '{';
   fetch(url)
   .then(resp => resp.json())
   .then((teamArray) => {
-    const contributors = teamArray.reduce((teamList, contributor) => {
-      const teamMember = {};
-      teamMember.login = contributor.login;
-      teamMember.avatar_url = contributor.avatar_url;
-      teamMember.html_url = contributor.html_url;
-      teamList.push(teamMember);
-      return teamList;
+    teamArray.forEach((contributor, currentIndex, array) => {
+      let teamMember = `"${contributor.login}": { "avatar_url": ${contributor.avatar_url}, "html_url": ${contributor.html_url} }`;
+      teamMember += currentIndex + 1 < array.length ? ',' : '';
+      contributorObject += teamMember;
     }, []);
-    console.log(`contributors: ${contributors}`);
-    return resolve(contributors);
+    contributorObject += '}';
+    resolve(JSON.stringify(contributorObject));
   })
   .catch((fetchError) => {
     console.log(`Error encountered attempting to fetch contributors from GitHub. ${fetchError}`);

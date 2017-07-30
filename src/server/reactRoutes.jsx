@@ -69,16 +69,13 @@ const sendGuestPage = (res, match, auth0) => {
   const curriculum = getCurriculum();
   let contributors;
 
-  console.log('getting ready to retrieveContributors()');
-  retrieveContributors()
+  retrieveContributors
   .then((devTeam) => {
-    console.log('.then got here');
     contributors = devTeam;
-    console.log(`Our team: ${devTeam}`);
+    console.log(`Our team: ${contributors}`);
   })
   .catch((error) => {
-    console.log('.catch got here');
-    console.log(`Error retrieving contributors ${error}`);
+    throw error;
   });
 
   const state = { curriculum, auth0 };
