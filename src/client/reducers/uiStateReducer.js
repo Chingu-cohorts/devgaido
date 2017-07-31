@@ -39,7 +39,6 @@ const uiState = (state = {
       } else {
         openedMilestones.push(action.milestoneId);
       }
-      console.log('OPENED MILESONTES:', openedMilestones);
       return {
         ...state,
         openedMilestones,

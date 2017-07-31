@@ -7,7 +7,7 @@ import LazyLoad from 'react-lazyload';
 import Redirect from '../shared/Redirect';
 
 const LoadingPlaceholder = () => (
-  <div className="home-img__loading-spinner border-round" />
+  <div className="loading__placeholder home-img__loading-spinner border-round" />
 );
 
 const handleStartNowClick = (e, lock) => {
@@ -33,7 +33,7 @@ const Home = ({ lock }) => (
     </div>
     <div className="container">
       <section className="flex margin-top-huge">
-        <LazyLoad height={200} once placeholder={<LoadingPlaceholder />}>
+        <LazyLoad height={350} once placeholder={<LoadingPlaceholder />}>
           <img className="border-round" src="/img/discover.jpg" alt="" />
         </LazyLoad>
         <div className="flex-1 margin-left-small margin-top-small">
@@ -46,12 +46,12 @@ const Home = ({ lock }) => (
           <h1 className="c-primary bold right">Learn</h1>
           <p className="width-50 margin-left-auto">Follow a learning path that is geared to what you want and need to know to become a better Web Developer. We&#039;ve done the work of plotting a course to your goals so you can focus on learning.</p>
         </div>
-        <LazyLoad height={200} once placeholder={<LoadingPlaceholder />}>
+        <LazyLoad height={350} once placeholder={<LoadingPlaceholder />}>
           <img className="border-round" src="/img/learn.jpg" alt="" />
         </LazyLoad>
       </section>
       <section className="flex margin-top-huge">
-        <LazyLoad height={200} once placeholder={<LoadingPlaceholder />}>
+        <LazyLoad height={350} once placeholder={<LoadingPlaceholder />}>
           <img className="border-round" src="/img/practise.jpg" alt="" />
         </LazyLoad>
         <div className="flex-1 margin-left-small margin-top-small">
@@ -64,7 +64,7 @@ const Home = ({ lock }) => (
           <h1 className="c-primary bold right">Build</h1>
           <p className="width-50 margin-left-auto">Challenges and projects are included to help you achieve a deep and comprehensive understanding of how to use the languages, libraries, tools, and techniques necessary to be a Web Developer.</p>
         </div>
-        <LazyLoad height={200} once placeholder={<LoadingPlaceholder />}>
+        <LazyLoad height={350} once placeholder={<LoadingPlaceholder />}>
           <img className="border-round" src="/img/build.jpg" alt="" />
         </LazyLoad>
       </section>
