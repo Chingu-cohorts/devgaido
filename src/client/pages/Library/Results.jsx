@@ -59,8 +59,8 @@ const Results = ({ curriculum, uiState, category }) => {
         linkTo={path.url}
         bgColorClass="bg-primary"
         imgSrc={`/paths/${pathId}.jpg`}
-        iconClass="fa-map-signs"
-        childIconClass="fa-flag-checkered c-secondary"
+        iconClass="icon-map-signs"
+        childIconClass="icon-flag-checkered c-secondary"
         imgBorderClass="border-1px border-primary"
         key={pathId}
         pathId={pathId}
@@ -75,7 +75,7 @@ const Results = ({ curriculum, uiState, category }) => {
         linkTo={lesson.url}
         bgColorClass="bg-secondary"
         imgSrc={`/screenshots/${lessonId}.jpg`}
-        iconClass="fa-graduation-cap"
+        iconClass="icon-graduation-cap"
         imgBorderClass="border-1px border-secondary"
         key={lessonId}
       />

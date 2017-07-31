@@ -26,9 +26,9 @@ const Contact = () => (
         Additionally, feel free to check out our social media and help spread the word by giving us a star, following us and / or subscribing to us:
       </p>
       <div className="flex h0 justify-center margin-top-big">
-        <a href="https://github.com/Chingu-cohorts/devgaido" target="_blank" rel="noopener noreferrer" className="uppercase margin-right-small"><i className="fa fa-github" /></a>
-        <a href="https://twitter.com/devgaido" target="_blank" rel="noopener noreferrer" className="uppercase margin-right-small"><i className="fa fa-twitter" /></a>
-        <a href="https://www.youtube.com/channel/UC3goUqdIGkmFYzi9mC9bSYQ" target="_blank" rel="noopener noreferrer" className="uppercase margin-right-small"><i className="fa fa-youtube" /></a>
+        <a href="https://github.com/Chingu-cohorts/devgaido" target="_blank" rel="noopener noreferrer" className="uppercase margin-right-small"><i className="fa icon-github" /></a>
+        <a href="https://twitter.com/devgaido" target="_blank" rel="noopener noreferrer" className="uppercase margin-right-small"><i className="fa icon-twitter" /></a>
+        <a href="https://www.youtube.com/channel/UC3goUqdIGkmFYzi9mC9bSYQ" target="_blank" rel="noopener noreferrer" className="uppercase margin-right-small"><i className="fa icon-youtube" /></a>
       </div>
     </div>
   </div>

@@ -110,8 +110,8 @@ class StickyNav extends React.Component {
             <div className={uiState.navMenuOpen ? 'menu absolute' : 'menu absolute hidden'}>
               <MenuCard username={user.name}>
                 <ul className="list-style-none no-margin">
-                  <li className="margin-bottom-small"><NavLink to="/profile" className="uppercase left" activeClassName="bold" onClick={() => toggleNavMenu()}><i className="fa fa-user h5 c-secondary margin-right-small" aria-hidden="true" /> Profile</NavLink></li>
-                  <li><a className="uppercase left" href="/logout"><i className="fa fa-sign-out h5 c-secondary margin-right-small" aria-hidden="true" />Logout</a></li>
+                  <li className="margin-bottom-small"><NavLink to="/profile" className="uppercase left" activeClassName="bold" onClick={() => toggleNavMenu()}><i className="fa icon-user h5 c-secondary margin-right-small" aria-hidden="true" /> Profile</NavLink></li>
+                  <li><a className="uppercase left" href="/logout"><i className="fa icon-sign-out h5 c-secondary margin-right-small" aria-hidden="true" />Logout</a></li>
                 </ul>
               </MenuCard>
             </div>

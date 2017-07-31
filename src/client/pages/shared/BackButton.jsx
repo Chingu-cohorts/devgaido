@@ -13,7 +13,7 @@ const BackButton = ({ history }) => (
     onClick={() => goBack(history)}
     ref={(domElem) => { this.buttonRef = domElem; }}
   >
-    <i className="fa fa-arrow-left h0" />
+    <i className="fa icon-arrow-left h0" />
   </button>
 );
 
