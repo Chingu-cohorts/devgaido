@@ -25,7 +25,7 @@ const routes = [
     path: '/',
     exact: true,
     component: Home,
-    passdown: ['lock', 'user'],
+    passdown: ['auth0', 'user'],
   },
   {
     path: '/styleguide',

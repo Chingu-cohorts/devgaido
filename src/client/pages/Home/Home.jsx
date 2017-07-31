@@ -5,17 +5,19 @@ import Helmet from 'react-helmet';
 import LazyLoad from 'react-lazyload';
 
 import Redirect from '../shared/Redirect';
+import Auth0LockWidget from '../shared/Auth0LockWidget';
 
 const LoadingPlaceholder = () => (
-  <div className="loading__placeholder home-img__loading-spinner border-round" />
+  <div className="loading__placeholder home-img__loading-spinner loading-spinner border-round" />
 );
 
-const handleStartNowClick = (e, lock) => {
+const handleStartNowClick = (e, auth0) => {
   e.preventDefault();
+  const lock = Auth0LockWidget(auth0);
   lock.show({ initialScreen: 'signUp' });
 };
 
-const Home = ({ lock }) => (
+const Home = ({ auth0 }) => (
   <div>
     <Helmet title="Home" />
     <div className="home-hero flex align-items-center justify-center bg-img__compass bg-cover">
@@ -26,7 +28,7 @@ const Home = ({ lock }) => (
         <p className="c-white"><span className="c-secondary">DevGaido</span> provides easy to follow learning paths that help you reach your goal without the hassle.</p>
         <p className="c-white">Never worry about learning the wrong stuff from subpar resources ever again!</p>
         <div className="margin-top-small width-100">
-          <Link className="button button--primary margin-right-small uppercase" to="/signup" onClick={e => handleStartNowClick(e, lock)}><i />Sign Up Now</Link>
+          <Link className="button button--primary margin-right-small uppercase" to="/signup" onClick={e => handleStartNowClick(e, auth0)}><i />Sign Up Now</Link>
           <Link className="button button--white-clear uppercase" to="/library">Explore Library</Link>
         </div>
       </div>
@@ -73,11 +75,7 @@ const Home = ({ lock }) => (
 );
 
 Home.propTypes = {
-  lock: PropTypes.objectOf(PropTypes.shape),
-};
-
-Home.defaultProps = {
-  lock: null,
+  auth0: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default Redirect(Home, true, '/dashboard');

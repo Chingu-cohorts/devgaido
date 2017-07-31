@@ -43,14 +43,6 @@ const renderPage = (match, store) => {
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
       <meta name="theme-color" content="#ffffff">
       ${cssFile}
-      <!-- Google Analytics -->
-      <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-103320988-1', 'auto');
-      ga('send', 'pageview');
-      </script>
-      <script async src='https://www.google-analytics.com/analytics.js'></script>
-      <!-- End Google Analytics -->
     </head>
     <body>
       <div id="root">${reactMarkup}</div>

@@ -1,16 +1,17 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-
 import { NavLink } from 'react-router-dom';
 import { MenuCard } from './Cards';
+import Auth0LockWidget from './Auth0LockWidget';
 
 import actions from '../../actions';
 
 const { toggleNavMenu } = actions;
 
-const handleLoginClick = (e, lock) => {
+const handleLoginClick = (e, auth0) => {
   e.preventDefault();
+  const lock = Auth0LockWidget(auth0);
   lock.show();
 };
 
@@ -92,7 +93,7 @@ class StickyNav extends React.Component {
     // End of fix
   }
   render() {
-    const { user, uiState, lock } = this.props;
+    const { user, uiState, auth0 } = this.props;
 
     return (
       <div className={`width-100 bg-primary`} ref={(domElem) => { this.navbarRefPlaceholder = domElem; }}>
@@ -105,7 +106,7 @@ class StickyNav extends React.Component {
                 {user.authenticated ? <li className="margin-right-small"><NavLink to="/dashboard" activeClassName="boxshadow-underline bold">Dashboard</NavLink></li> : null}
               </ul>
               {user.authenticated ? <img className="avatar circle-border subtle-border cursor-pointer" src={user.avatar} alt="avatar" role="button" onClick={() => toggleNavMenu()} /> : null}
-              {!user.authenticated ? <a className="button button--primary-clear uppercase" href="/" onClick={e => handleLoginClick(e, lock)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a> : null}
+              {!user.authenticated ? <a className="button button--primary-clear uppercase" href="/" onClick={e => handleLoginClick(e, auth0)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a> : null}
             </nav>
             <div className={uiState.navMenuOpen ? 'menu absolute' : 'menu absolute hidden'}>
               <MenuCard username={user.name}>

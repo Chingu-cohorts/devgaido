@@ -20,7 +20,7 @@ const bgPositions = [
   `${-sliceWidth * 6}px ${-sliceWidth * 1}px`,
 ];
 const LoadingPlaceholder = () => (
-  <div className="image-link-card__loading-spinner" />
+  <div className="image-link-card__loading-spinner loading-spinner" />
 );
 
 const ImageLinkCard = ({ item, bgColorClass, imgBorderClass, imgSrc, sliceNumber, iconClass, childIconClass, linkTo, pathId }) => {

@@ -7,6 +7,7 @@ import { createBrowserHistory } from 'history';
 
 import App from './App';
 import store from './store';
+import GAListener from './pages/shared/GAListener';
 
 import './style/style.styl';
 
@@ -21,7 +22,9 @@ const render = (Component) => {
     <AppContainer>
       <Provider store={store}>
         <BrowserRouter history={createBrowserHistory()}>
-          <Component />
+          <GAListener>
+            <Component />
+          </GAListener>
         </BrowserRouter>
       </Provider>
     </AppContainer>,
