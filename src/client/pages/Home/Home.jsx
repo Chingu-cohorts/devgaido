@@ -5,16 +5,18 @@ import Helmet from 'react-helmet';
 import LazyLoad from 'react-lazyload';
 
 import Redirect from '../shared/Redirect';
-import Auth0LockWidget from '../shared/Auth0LockWidget';
-
+//import Auth0LockWidget from '../shared/Auth0LockWidget';
+import Auth from '../../Auth';
 const LoadingPlaceholder = () => (
   <div className="loading__placeholder home-img__loading-spinner loading-spinner border-round" />
 );
 
 const handleStartNowClick = (e, auth0) => {
   e.preventDefault();
-  const lock = Auth0LockWidget(auth0);
-  lock.show({ initialScreen: 'signUp' });
+  const auth = new Auth(auth0);
+  auth.login();
+  //const lock = Auth0LockWidget(auth0);
+  //lock.show({ initialScreen: 'signUp' });
 };
 
 const Home = ({ auth0 }) => (

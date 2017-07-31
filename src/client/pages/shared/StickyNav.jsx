@@ -3,7 +3,8 @@ import React from 'react';
 
 import { NavLink } from 'react-router-dom';
 import { MenuCard } from './Cards';
-import Auth0LockWidget from './Auth0LockWidget';
+//import Auth0LockWidget from './Auth0LockWidget';
+import Auth from '../../Auth';
 
 import actions from '../../actions';
 
@@ -11,8 +12,10 @@ const { toggleNavMenu } = actions;
 
 const handleLoginClick = (e, auth0) => {
   e.preventDefault();
-  const lock = Auth0LockWidget(auth0);
-  lock.show();
+  const auth = new Auth(auth0);
+  auth.login();
+  //const lock = Auth0LockWidget(auth0);
+  //lock.show();
 };
 
 class StickyNav extends React.Component {
