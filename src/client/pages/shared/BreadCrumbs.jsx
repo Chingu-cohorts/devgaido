@@ -7,7 +7,7 @@ const BreadCrumbs = ({ rootNode, nodes, invertIconColors }) => {
   content.push(<Link className="c-white normal padding-right-tiny" to={rootNode.url} key={rootNode.url}>{rootNode.name}</Link>);
 
   nodes.forEach((node) => {
-    content.push(<i className={`fa fa-caret-right padding-right-tiny ${invertIconColors ? 'c-primary' : 'c-secondary '}`} key={node.name} />);
+    content.push(<i className={`fa icon-caret-right padding-right-tiny ${invertIconColors ? 'c-primary' : 'c-secondary '}`} key={node.name} />);
     content.push(<Link className="c-white normal padding-right-tiny" to={node.url} key={node.url}>{node.name}</Link>);
   });
   return (

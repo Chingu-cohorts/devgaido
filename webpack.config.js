@@ -25,7 +25,7 @@ const config = {
   output: {
     publicPath: 'http://localhost:8081/',
     path: path.join(__dirname, '/dist/public'),
-    filename: 'client.bundle.js',
+    filename: 'bundle.js',
   },
   stats: {
     colors: true,
@@ -65,19 +65,9 @@ const config = {
   },
   plugins: dev ? [
     new webpack.NamedModulesPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor.bundle.js',
-      minChunks: ({ resource }) => /node_modules/.test(resource),
-    }),
     new webpack.HotModuleReplacementPlugin(),
   ] : [
     new webpack.NamedModulesPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor.bundle.js',
-      minChunks: ({ resource }) => /node_modules/.test(resource),
-    }),
     new ExtractTextPlugin('style.css'),
   ],
 };

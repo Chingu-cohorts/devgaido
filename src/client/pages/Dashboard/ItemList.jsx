@@ -10,14 +10,14 @@ const bgColorLookUp = {
 };
 
 const iconLookUp = {
-  paths: 'fa-road',
-  courses: 'fa-flag-checkered',
-  lessons: 'fa-graduation-cap',
+  paths: 'icon-map-signs',
+  courses: 'icon-flag-checkered',
+  lessons: 'icon-graduation-cap',
 };
 
 const childIconLookUp = {
-  paths: 'fa-flag-checkered c-secondary',
-  courses: 'fa-graduation-cap c-primary',
+  paths: 'icon-flag-checkered c-secondary',
+  courses: 'icon-graduation-cap c-primary',
   lessons: '',
 };
 

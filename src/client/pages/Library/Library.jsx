@@ -20,7 +20,7 @@ const Library = ({ curriculum, uiState }) => (
     </PageHero>
     <PageDivider>
       <div className="search-bar flex flex-1">
-        <i className="fa fa-search c-secondary h3 margin-right-small" />
+        <i className="fa icon-search c-secondary h3 margin-right-small" />
         <input className="margin-right-small h5 thin" type="text" name="pathSearch" defaultValue={uiState.libSearchTerm} placeholder="Search" onChange={e => setLibrarySearchTerm(e.target.value)} />
       </div>
       <div className="topics-dropdown relative">

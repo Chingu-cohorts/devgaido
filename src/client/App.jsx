@@ -9,7 +9,6 @@ import { CSSTransitionGroup } from 'react-transition-group';
 
 
 import PropsRoute from './pages/shared/PropsRoute';
-import Auth0LockWidget from './pages/shared/Auth0LockWidget';
 
 import ScrollToTop from './pages/shared/ScrollToTop';
 import Header from './pages/shared/Header';
@@ -22,9 +21,8 @@ const App = ({ serverMatch, location, user, curriculum, uiState, auth0, history 
 // If <App /> is rendered on the server we need to provide the serverMatch prop
 // since StaticRouter can only render a single Route (Switch only works on client side).
 // On the client though, just return all routes and let Switch do the work.
-  const lock = Auth0LockWidget(auth0);
   const passdownProps = {
-    user, curriculum, uiState, auth0, lock,
+    user, curriculum, uiState, auth0,
   };
   const routes = [];
   if (serverMatch) {
@@ -58,7 +56,7 @@ const App = ({ serverMatch, location, user, curriculum, uiState, auth0, history 
             { name: 'description', content: 'devGaido provides easy to follow learning paths that help you become a web developer without the hassle.' },
           ]}
         />
-        <Header uiState={uiState} user={user} lock={lock} auth0={auth0} />
+        <Header uiState={uiState} user={user} auth0={auth0} />
         <SideDrawer history={history} />
         <div className="page-content relative overflow-hidden"> {/* For sticky footer and background color */}
           <CSSTransitionGroup
@@ -83,7 +81,7 @@ App.propTypes = {
   uiState: PropTypes.objectOf(PropTypes.shape),
   location: PropTypes.objectOf(PropTypes.shape).isRequired,
   auth0: PropTypes.objectOf(PropTypes.shape).isRequired,
-
+  history: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 App.defaultProps = {
