@@ -10,7 +10,7 @@ const bgColorLookUp = {
 };
 
 const iconLookUp = {
-  paths: 'fa-road',
+  paths: 'fa-map-signs',
   courses: 'fa-flag-checkered',
   lessons: 'fa-graduation-cap',
 };

@@ -100,7 +100,7 @@ const Path = ({ match, curriculum, user, uiState }) => {
         ]}
       />
       <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" bgUrl={`/paths/${pathId}.jpg`} title={path.name} full>
-        <i className="fa fa-road c-white h0 abs-top-right" />
+        <i className="fa fa-map-signs c-white h0 abs-top-right" />
         {path.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
       <div className="page-hero__offset">
