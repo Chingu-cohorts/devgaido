@@ -29,13 +29,15 @@ const retrieveContributors = new Promise((resolve, reject) => {
   fetch(url)
   .then(resp => resp.json())
   .then((teamArray) => {
+    console.log(`teamArray: ${teamArray}`);
     teamArray.forEach((contributor, currentIndex, array) => {
       let teamMember = `"${contributor.login}": { "avatar_url": ${contributor.avatar_url}, "html_url": ${contributor.html_url} }`;
       teamMember += currentIndex + 1 < array.length ? ',' : '';
       contributorObject += teamMember;
     }, []);
     contributorObject += '}';
-    resolve(JSON.stringify(contributorObject));
+    resolve(contributorObject);
+    console.log(`contributorObject: ${JSON.stringify(contributorObject)}`);
   })
   .catch((fetchError) => {
     console.log(`Error encountered attempting to fetch contributors from GitHub. ${fetchError}`);
