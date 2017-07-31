@@ -40,53 +40,53 @@ const getFilteredItems = (allItems, uiState, filterByTopic, filterBySearchTerm) 
   return filteredIds;
 };
 
-const Results = ({ curriculum, uiState }) => {
+const Results = ({ curriculum, uiState, category }) => {
   const filterByTopic = uiState.libTopic !== 'All Topics';
   const filterBySearchTerm = uiState.libSearchTerm !== '';
 
-  const filteredPathIds = getFilteredItems(
+  const filteredItems = category === 'paths' ? getFilteredItems(
     curriculum.paths, uiState, filterByTopic, filterBySearchTerm,
-  );
-
-  const filteredLessonIds = getFilteredItems(
+  ) : getFilteredItems(
     curriculum.lessons, uiState, filterByTopic, filterBySearchTerm,
   );
+
+  const results = category === 'paths' ?
+  filteredItems.map((pathId) => {
+    const path = curriculum.paths[pathId];
+    return (
+      <ImageLinkCard
+        item={path}
+        linkTo={path.url}
+        bgColorClass="bg-primary"
+        imgSrc={`/paths/${pathId}.jpg`}
+        iconClass="fa-road"
+        childIconClass="fa-flag-checkered c-secondary"
+        imgBorderClass="border-1px border-primary"
+        key={pathId}
+        pathId={pathId}
+      />
+    );
+  }) :
+  filteredItems.map((lessonId) => {
+    const lesson = curriculum.lessons[lessonId];
+    return (
+      <ImageLinkCard
+        item={lesson}
+        linkTo={lesson.url}
+        bgColorClass="bg-secondary"
+        imgSrc={`/screenshots/${lessonId}.jpg`}
+        iconClass="fa-graduation-cap"
+        imgBorderClass="border-1px border-secondary"
+        key={lessonId}
+      />
+    );
+  });
+
 
   return (
     <div className="results margin-vertical-big">
       <div className="flex flex-wrap margin-vertical-big justify-space-around">
-        {filteredPathIds.map((pathId) => {
-          const path = curriculum.paths[pathId];
-          return (
-            <ImageLinkCard
-              item={path}
-              linkTo={path.url}
-              bgColorClass="bg-primary"
-              imgSrc={`/paths/${pathId}.jpg`}
-              iconClass="fa-road"
-              childIconClass="fa-flag-checkered c-secondary"
-              imgBorderClass="border-1px border-primary"
-              key={pathId}
-              pathId={pathId}
-            />
-          );
-        })}
-      </div>
-      <div className="flex flex-wrap margin-vertical-big justify-space-around">
-        {filteredLessonIds.map((lessonId) => {
-          const lesson = curriculum.lessons[lessonId];
-          return (
-            <ImageLinkCard
-              item={lesson}
-              linkTo={lesson.url}
-              bgColorClass="bg-secondary"
-              imgSrc={`/screenshots/${lessonId}.jpg`}
-              iconClass="fa-graduation-cap"
-              imgBorderClass="border-1px border-secondary"
-              key={lessonId}
-            />
-          );
-        })}
+        {results}
       </div>
     </div>
   );

@@ -25,6 +25,13 @@ export function setCurrentDashboardTab(tabIndex) {
   };
 }
 
+export function setCurrentLibraryTab(tabIndex) {
+  return {
+    type: 'SET_CURRENT_LIBRARY_TAB',
+    tabIndex,
+  };
+}
+
 export function setLibraryTopic(topic) {
   return {
     type: 'SET_LIBRARY_TOPIC',

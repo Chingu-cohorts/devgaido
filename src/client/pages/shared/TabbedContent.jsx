@@ -2,18 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import PageDivider from '../shared/PageDivider';
-import actions from '../../actions';
 
-const { setCurrentDashboardTab } = actions;
-
-const TabbedContent = ({ content, uiState }) => (
+const TabbedContent = ({ content, tabIndex, onClick }) => (
   <div>
     <PageDivider>
       <div className="flex-1 center">
         {content.map((c, index) => (
           <button
-            className={index === uiState.curDashboardTab ? 'button--secondary uppercase margin-horizontal-tiny' : 'button--default uppercase margin-horizontal-tiny'}
-            onClick={() => setCurrentDashboardTab(index)}
+            className={index === tabIndex ? 'button--secondary uppercase margin-horizontal-tiny' : 'button--default uppercase margin-horizontal-tiny'}
+            onClick={() => onClick(index)}
             key={c.caption}
           >
             {c.caption}
@@ -22,15 +19,15 @@ const TabbedContent = ({ content, uiState }) => (
       </div>
     </PageDivider>
     <div className="container margin-top-small">
-      {content[uiState.curDashboardTab].content}
+      {content[tabIndex].content}
     </div>
   </div>
 );
 
-
 TabbedContent.propTypes = {
   content: PropTypes.arrayOf(PropTypes.shape).isRequired,
-  uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
+  tabIndex: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default TabbedContent;

@@ -3,6 +3,7 @@ const uiState = (state = {
   libSearchTerm: '',
   libTopic: 'All Topics',
   curDashboardTab: 0,
+  curLibraryTab: 0,
   openedMilestones: [],
 }, action) => {
   switch (action.type) {
@@ -10,6 +11,12 @@ const uiState = (state = {
       return {
         ...state,
         curDashboardTab: action.tabIndex,
+      };
+    }
+    case 'SET_CURRENT_LIBRARY_TAB': {
+      return {
+        ...state,
+        curLibraryTab: action.tabIndex,
       };
     }
     case 'SET_LIBRARY_SEARCH_TERM': {

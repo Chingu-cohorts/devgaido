@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import PageHero from '../shared/PageHero';
-import TabbedContent from './TabbedContent';
+import TabbedContent from '../shared//TabbedContent';
 import Metrics from './Metrics';
 import InProgressTab from './InProgressTab';
 import BookmarkedTab from './BookmarkedTab';
 import CompletedTab from './CompletedTab';
+
+import actions from '../../actions';
+
+const { setCurrentDashboardTab } = actions;
+
 
 const Dashboard = ({ user, curriculum, uiState, history }) => (
   <div>
@@ -28,7 +33,8 @@ const Dashboard = ({ user, curriculum, uiState, history }) => (
         caption: 'Completed',
         content: <CompletedTab curriculum={curriculum} />,
       }]}
-      uiState={uiState}
+      tabIndex={uiState.curDashboardTab}
+      onClick={index => setCurrentDashboardTab(index)}
     />
   </div>
 );
