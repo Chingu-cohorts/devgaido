@@ -6,13 +6,12 @@ import StickyNav from './StickyNav';
 
 
 // TODO: Change nav bar to be hidden on scroll down and visible on scroll up instead of just "fixed"
-const Header = ({ user, uiState, lock, history }) => (
+const Header = ({ user, uiState, lock }) => (
   <header>
     <StickyNav
       user={user}
       uiState={uiState}
       lock={lock}
-      history={history}
     />
   </header>
 );
@@ -20,7 +19,6 @@ const Header = ({ user, uiState, lock, history }) => (
 Header.propTypes = {
   uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
-  history: PropTypes.objectOf(PropTypes.shape).isRequired,
   lock: PropTypes.objectOf(PropTypes.shape),
 };
 

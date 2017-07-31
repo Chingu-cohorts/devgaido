@@ -5,8 +5,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { MenuCard } from './Cards';
 
-import BackButton from './BackButton';
-
 import actions from '../../actions';
 
 const { toggleNavMenu } = actions;
@@ -94,8 +92,7 @@ class StickyNav extends React.Component {
     // End of fix
   }
   render() {
-    const { user, uiState, lock, history } = this.props;
-    const notOnHomeScreen = history.location.pathname !== '/';
+    const { user, uiState, lock } = this.props;
 
     return (
       <div className={`width-100 bg-primary`} ref={(domElem) => { this.navbarRefPlaceholder = domElem; }}>
@@ -119,10 +116,6 @@ class StickyNav extends React.Component {
               </MenuCard>
             </div>
           </div>
-        </div>
-        <div className={`side-drawer ${notOnHomeScreen ? '' : 'hidden'}`}>
-          <BackButton history={history} />
-          <i className="side-drawer__icon fa fa-chevron-left c-secondary h0" />
         </div>
       </div>
     );

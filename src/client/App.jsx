@@ -13,6 +13,7 @@ import Auth0LockWidget from './pages/shared/Auth0LockWidget';
 
 import ScrollToTop from './pages/shared/ScrollToTop';
 import Header from './pages/shared/Header';
+import SideDrawer from './pages/shared/SideDrawer';
 import Footer from './pages/shared/Footer';
 
 import routesArr from './routes';
@@ -57,7 +58,8 @@ const App = ({ serverMatch, location, user, curriculum, uiState, auth0, history 
             { name: 'description', content: 'devGaido provides easy to follow learning paths that help you become a web developer without the hassle.' },
           ]}
         />
-        <Header uiState={uiState} user={user} lock={lock} auth0={auth0} history={history} />
+        <Header uiState={uiState} user={user} lock={lock} auth0={auth0} />
+        <SideDrawer history={history} />
         <div className="page-content relative overflow-hidden"> {/* For sticky footer and background color */}
           <CSSTransitionGroup
             transitionEnterTimeout={500}
