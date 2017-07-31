@@ -57,8 +57,7 @@ const renderPage = (match, store) => {
     <body>
       <div id="root">${reactMarkup}</div>
       <script>window.__INITIAL_STATE__ = ${JSON.stringify(store.getState()).replace(/</g, '\\u003c')};</script>
-      <script src="${webRoot}/vendor.bundle.js"></script>
-      <script src="${webRoot}/client.bundle.js"></script>
+      <script src="${webRoot}/bundle.js"></script>
     </body>
   </html>
   `;
