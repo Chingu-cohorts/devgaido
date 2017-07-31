@@ -12,7 +12,7 @@ const TabbedContent = ({ content, uiState }) => (
       <div className="flex-1 center">
         {content.map((c, index) => (
           <button
-            className={index === uiState.Pages.Dashboard.currentTab ? 'button--secondary uppercase margin-horizontal-tiny' : 'button--default uppercase margin-horizontal-tiny'}
+            className={index === uiState.curDashboardTab ? 'button--secondary uppercase margin-horizontal-tiny' : 'button--default uppercase margin-horizontal-tiny'}
             onClick={() => setCurrentDashboardTab(index)}
             key={c.caption}
           >
@@ -22,7 +22,7 @@ const TabbedContent = ({ content, uiState }) => (
       </div>
     </PageDivider>
     <div className="container margin-top-small">
-      {content[uiState.Pages.Dashboard.currentTab].content}
+      {content[uiState.curDashboardTab].content}
     </div>
   </div>
 );

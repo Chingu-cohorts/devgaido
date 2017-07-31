@@ -68,7 +68,7 @@ const routes = [
     path: '/paths/:id',
     exact: true,
     component: Path,
-    passdown: ['curriculum', 'user'],
+    passdown: ['curriculum', 'user', 'uiState'],
   },
   {
     path: '/lessons/:id',

@@ -34,7 +34,7 @@ const PathMarker = ({ text, dotClass, iconClass, path }) => (
     {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
   </div>);
 
-const Path = ({ match, curriculum, user }) => {
+const Path = ({ match, curriculum, user, uiState }) => {
   const pathId = match.params.id;
   const path = curriculum.paths[match.params.id];
   let milestones = null;
@@ -56,7 +56,7 @@ const Path = ({ match, curriculum, user }) => {
           />);
       });
 
-      return <MilestoneCard index={index} course={course} lessons={lessons} key={courseId} />;
+      return <MilestoneCard index={index} course={course} lessons={lessons} key={courseId} uiState={uiState} id={`${pathId}/${courseId}`} />;
     });
   } else {
     const course = curriculum.courses[path.courseIds[0]];
@@ -198,6 +198,7 @@ Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
+  uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default Path;

@@ -60,8 +60,8 @@ const App = ({ serverMatch, location, user, curriculum, uiState, auth0, history 
         <Header uiState={uiState} user={user} lock={lock} auth0={auth0} history={history} />
         <div className="page-content relative overflow-hidden"> {/* For sticky footer and background color */}
           <CSSTransitionGroup
-            transitionEnterTimeout={200}
-            transitionLeaveTimeout={200}
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}
             transitionName="page-transition"
           >
             <Switch key={location.pathname} location={location}>
