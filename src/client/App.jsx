@@ -49,7 +49,7 @@ const App = ({ serverMatch, location, user, curriculum, uiState, auth0, history 
     <ScrollToTop>
       <div className="App">
         <Helmet
-          htmlAttributes={{ lang: 'en', amp: undefined }} // amp takes no value
+          htmlAttributes={{ lang: 'en' }} // amp takes no value
           titleTemplate="devGaido | %s"
           titleAttributes={{ itemprop: 'name', lang: 'en' }}
           meta={[
