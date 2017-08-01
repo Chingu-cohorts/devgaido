@@ -65,25 +65,27 @@ const renderPage = (match, store) => {
   `;
 };
 
+let contributors;
+
 const sendGuestPage = (res, match, auth0) => {
   const curriculum = getCurriculum();
-  let contributors;
 
   retrieveContributors
   .then((devTeam) => {
     contributors = devTeam;
     console.log(`Our team: ${contributors}`);
+
+    const state = { curriculum, auth0, contributors };
+    console.log(`state.contributors:${state.contributors}`);
+    const store = createStore(reducers, state);
+
+    res.set('Content-Type', 'text/html')
+        .status(200)
+        .end(renderPage(match, store));
   })
   .catch((error) => {
     throw error;
   });
-
-  const state = { curriculum, auth0, contributors };
-  const store = createStore(reducers, state);
-
-  res.set('Content-Type', 'text/html')
-      .status(200)
-      .end(renderPage(match, store));
 };
 
 const sendAuthenticatedPage = (res, req, match, auth0) => {

@@ -1,17 +1,10 @@
-const Contributors = (state = {
-  topic: 'All Topics',
-  searchTerm: '',
+const contributors = (state = {
+  contributors: {},
 }, action) => {
   switch (action.type) {
-    case 'INIT_CONTRIBUTORS': {
-      return {
-        ...state,
-        topic: action.topic,
-      };
-    }
     default:
       return state;
   }
 };
 
-export default Contributors;
+export default contributors;

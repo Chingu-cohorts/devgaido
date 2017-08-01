@@ -36,7 +36,7 @@ const routes = [
     path: '/about',
     exact: true,
     component: About,
-    passdown: ['lock'],
+    passdown: ['lock', 'contributors'],
   },
   {
     path: '/contact',
