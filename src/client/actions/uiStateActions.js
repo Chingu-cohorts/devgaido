@@ -46,3 +46,14 @@ export function setLibrarySearchTerm(searchTerm) {
   };
 }
 
+export function toggleLibraryShowCompleted() {
+  return {
+    type: 'TOGGLE_LIBRARY_SHOW_COMPLETED',
+  };
+}
+
+export function toggleLibraryShowIncomplete() {
+  return {
+    type: 'TOGGLE_LIBRARY_SHOW_INCOMPLETE',
+  };
+}

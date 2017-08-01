@@ -6,13 +6,20 @@ import Legend from './Legend';
 import Results from './Results';
 import PageHero from '../shared/PageHero';
 import PageDivider from '../shared/PageDivider';
-import TabbedContent from '../shared//TabbedContent';
+import TabbedContent from '../shared/TabbedContent';
+import Checkbox from '../shared/Checkbox';
 
 import actions from '../../actions';
 
-const { setLibraryTopic, setLibrarySearchTerm, setCurrentLibraryTab } = actions;
+const {
+  setLibraryTopic,
+  setLibrarySearchTerm,
+  setCurrentLibraryTab,
+  toggleLibraryShowCompleted,
+  toggleLibraryShowIncomplete,
+} = actions;
 
-const Library = ({ curriculum, uiState }) => (
+const Library = ({ curriculum, uiState, user }) => (
   <div>
     <Helmet title="Library" />
     <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__library" title="Library">
@@ -31,6 +38,8 @@ const Library = ({ curriculum, uiState }) => (
           )}
         </select>
       </div>
+      { user.authenticated ? <Checkbox checked={uiState.libShowCompleted} onChange={toggleLibraryShowCompleted}>Completed</Checkbox> : null }
+      { user.authenticated ? <Checkbox checked={uiState.libShowIncomplete} onChange={toggleLibraryShowIncomplete}>Incomplete</Checkbox> : null }
     </PageDivider>
     <TabbedContent
       content={[{
@@ -49,6 +58,7 @@ const Library = ({ curriculum, uiState }) => (
 Library.propTypes = {
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
+  user: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default Library;

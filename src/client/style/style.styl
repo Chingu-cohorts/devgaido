@@ -422,3 +422,42 @@ i::before
 .loading__placeholder
   width 522px
   height 350px
+
+.checkbox
+  width: 38px
+  height: 38px
+  margin: auto
+
+  input
+    display: none
+    &:checked + .checkbox__box
+      &:after
+        opacity: 1
+        
+  .checkbox__box
+    width: 100%
+    height: 100%
+    border: 1px solid $color-quaternary
+    border-radius: 6px
+    position: relative
+    overflow: hidden
+    cursor: pointer
+    &:hover
+      border-color colorPrimary
+    &:after
+      opacity: 0
+      width: 50%
+      height: 20%
+      content: ''
+      position: absolute
+      border-left: 3.5px solid
+      border-bottom: 3.5px solid
+      border-color: colorSecondary
+      transform: rotate(-45deg) translate3d(0,0,0)
+      transform-origin: center center
+      transition: all 0.2s
+      left: 0
+      right: 0
+      top: 0
+      bottom: 5%
+      margin: auto
