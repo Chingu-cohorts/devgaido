@@ -41,9 +41,9 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
   const ratingStars = [];
   for (let i = 0; i < 5; i += 1) {
     if (i < item.rating) {
-      ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" key={item.name + i} />);
+      ratingStars.push(<i className="fa icon-star c-secondary h4 margin-left-tiny" key={item.name + i} />);
     } else {
-      ratingStars.push(<i className="fa fa-star-o c-secondary h4 margin-left-tiny" key={item.name + i} />);
+      ratingStars.push(<i className="fa icon-star-o c-secondary h4 margin-left-tiny" key={item.name + i} />);
     }
   }
   const subjects = [];
@@ -60,13 +60,13 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
         title: item.name,
         bgColorClass,
         iconClass,
-        iconClass2: item.completed ? 'fa-check-circle-o' : '',
+        iconClass2: item.completed ? 'icon-check-circle-o' : '',
         heightClass,
         content: <div className="flex">
           {imgSrc ?
             <LazyLoad height={200} once offset={201}>
-              <div className="lcard__content-left flex-1">
-                <div className="preview2 no-margin border-round border-1px" style={{ background: `url(${imgSrc})`, backgroundSize: 'cover', borderColor: '#ccc' }} />
+              <div className="lcard__content-left flex-1 flex-column">
+                <div className="preview2 flex-1 no-margin border-round border-1px" style={{ background: `url(${imgSrc})`, backgroundSize: 'cover', borderColor: '#ccc' }} />
               </div>
             </LazyLoad>
              : null}
@@ -96,7 +96,7 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
                 </h3> : null}
               {item.nLessonsTotal ?
                 <h3 className="no-margin right margin-top-small">
-                  <i className={'fa fa-graduation-cap c-primary h3 right margin-left-big margin-right-tiny'} />
+                  <i className={'fa icon-graduation-cap c-primary h3 right margin-left-big margin-right-tiny'} />
                   <span className="">{item.nLessonsCompleted}/{item.nLessonsTotal}</span>
                 </h3> : null}
             </div>

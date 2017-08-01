@@ -90,10 +90,13 @@
   display: inline-block
 
 .absolute
-  position absolute
+  position absolute !important
 
 .relative
-  position relative
+  position relative !important
+
+.fixed
+  position fixed !important
 
 .height-100
   height 100%
@@ -115,6 +118,9 @@
 
 .width-100
   width 100%
+
+.opacity-0
+  opacity: 0 !important
 
 .opacity-50
   opacity: 0.50 
@@ -396,6 +402,8 @@
 .cursor-pointer
   cursor pointer
 
+.pointer-events-none
+  pointer-events: none
 // Compounds
 .button--default
   @extend .border-pill

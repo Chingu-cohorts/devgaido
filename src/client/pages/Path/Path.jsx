@@ -13,9 +13,9 @@ import actions from '../../actions';
 const { addBookmark, removeBookmark } = actions;
 
 const typeIcons = {
-  Book: 'fa-book',
-  Course: 'fa-university',
-  Project: 'fa-cogs',
+  Book: 'icon-book',
+  Course: 'icon-university',
+  Project: 'icon-cogs',
 };
 
 const PathMarker = ({ text, dotClass, iconClass, path }) => (
@@ -23,18 +23,18 @@ const PathMarker = ({ text, dotClass, iconClass, path }) => (
     <h2 className="path-marker__text flex-1 uppercase no-margin c-white margin-right-small">{text}</h2>
     {path && path.nTotal !== 1 ?
       <h3 className="no-margin right c-white">
-        <i className={'fa fa-flag-checkered h3 right margin-left-big margin-right-tiny'} />
+        <i className={'fa icon-flag-checkered h3 right margin-left-big margin-right-tiny'} />
         <span>{path.nCompleted}/{path.nTotal}</span>
       </h3> : null}
     {path && path.nLessonsTotal ?
       <h3 className="no-margin right c-white">
-        <i className={'fa fa-graduation-cap h3 right margin-left-big margin-right-tiny'} />
+        <i className={'fa icon-graduation-cap h3 right margin-left-big margin-right-tiny'} />
         <span>{path.nLessonsCompleted}/{path.nLessonsTotal}</span>
       </h3> : null}
     {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
   </div>);
 
-const Path = ({ match, curriculum, user }) => {
+const Path = ({ match, curriculum, user, uiState }) => {
   const pathId = match.params.id;
   const path = curriculum.paths[match.params.id];
   let milestones = null;
@@ -56,7 +56,7 @@ const Path = ({ match, curriculum, user }) => {
           />);
       });
 
-      return <MilestoneCard index={index} course={course} lessons={lessons} key={courseId} />;
+      return <MilestoneCard index={index} course={course} lessons={lessons} key={courseId} uiState={uiState} id={`${pathId}/${courseId}`} />;
     });
   } else {
     const course = curriculum.courses[path.courseIds[0]];
@@ -78,9 +78,9 @@ const Path = ({ match, curriculum, user }) => {
   const ratingStars = [];
   for (let i = 0; i < 5; i += 1) {
     if (i < path.rating) {
-      ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" key={path.name + i} />);
+      ratingStars.push(<i className="fa icon-star c-secondary h4 margin-left-tiny" key={path.name + i} />);
     } else {
-      ratingStars.push(<i className="fa fa-star-o c-secondary h4 margin-left-tiny" key={path.name + i} />);
+      ratingStars.push(<i className="fa icon-star-o c-secondary h4 margin-left-tiny" key={path.name + i} />);
     }
   }
   const subjects = [];
@@ -100,8 +100,8 @@ const Path = ({ match, curriculum, user }) => {
         ]}
       />
       <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" bgUrl={`/paths/${pathId}.jpg`} title={path.name} full>
-        <i className="fa fa-road c-white h0 abs-top-right" />
-        {path.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
+        <i className="fa icon-map-signs c-white h0 abs-top-right" />
+        {path.completed ? <i className="fa icon-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
       <div className="page-hero__offset">
         <div className="container flex bg-white padding-horizontal-big border-round margin-top-small">
@@ -165,7 +165,7 @@ const Path = ({ match, curriculum, user }) => {
         <div className="container flex-column">
           <PathMarker
             text={`Path: ${path.name}`}
-            iconClass="path-marker__start-icon fa-map-marker"
+            iconClass="path-marker__start-icon icon-map-marker"
             dotClass="dot--big"
             path={path}
           />
@@ -198,6 +198,7 @@ Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
+  uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default Path;

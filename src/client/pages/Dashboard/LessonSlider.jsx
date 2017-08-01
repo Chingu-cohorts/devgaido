@@ -21,7 +21,7 @@ class LessonSlider extends React.Component {
           item={lessons[lessonId]}
           linkTo={lessons[lessonId].url}
           bgColorClass="bg-primary"
-          iconClass="fa-graduation-cap margin-left-small"
+          iconClass="icon-graduation-cap margin-left-small"
           history={props.history}
           refCallback={(domElem) => { this.slideRefs[lessonId] = domElem; }}
           key={lessonId}

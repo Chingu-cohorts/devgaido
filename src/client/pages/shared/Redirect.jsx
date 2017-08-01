@@ -5,11 +5,12 @@ const Redirect = (Component, onAuthenticated, path) => {
   class _PageContainer extends React.Component {
     componentWillMount() {
       if (this.props.user.authenticated === onAuthenticated) {
-        this.props.history.push(path);
+        this.dontRender = true;
+        this.props.history.push(path, { redirectFromHome: true });
       }
     }
     render() {
-      return <Component {...this.props} />;
+      return this.dontRender ? null : <Component {...this.props} />;
     }
   }
   _PageContainer.propTypes = {
