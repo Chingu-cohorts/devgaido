@@ -16,4 +16,8 @@ restrictRoutes(app);
 dbRoutes(app);
 app.use('*', handleReactRoutes);
 
+app.get('*', (req, res) => {
+  res.status(404).end();
+});
+
 export default app;
