@@ -80,7 +80,7 @@ const routes = [
     path: '/library',
     exact: true,
     component: Library,
-    passdown: ['curriculum', 'uiState'],
+    passdown: ['curriculum', 'uiState', 'user'],
   },
 ];
 

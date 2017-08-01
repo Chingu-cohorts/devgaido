@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 import ImageLinkCard from '../shared/ImageLinkCard';
 
-const filterItem = (item, uiState, filterByTopic, filterBySearchTerm) => {
+const filterByTermNTopic = (item, uiState) => {
+  const filterByTopic = uiState.libTopic !== 'All Topics';
+  const filterBySearchTerm = uiState.libSearchTerm !== '';
+
   let retValTopic = false;
   let retValSearchTerm = false;
 
@@ -32,26 +35,32 @@ const filterItem = (item, uiState, filterByTopic, filterBySearchTerm) => {
   return true;
 };
 
-const getFilteredItems = (allItems, uiState, filterByTopic, filterBySearchTerm) => {
-  const filteredIds = Object.keys(allItems).filter(
-    itemId => filterItem(allItems[itemId], uiState, filterByTopic, filterBySearchTerm),
-  );
+const filterByCompletion = (item, uiState) => {
+  const showCompleted = uiState.libShowCompleted;
+  const showIncomplete = uiState.libShowIncomplete;
 
+  if (item.completed) {
+    return showCompleted;
+  }
+
+  return showIncomplete;
+};
+
+const getFilteredItems = (allItems, uiState) => {
+  let filteredIds = Object.keys(allItems).filter(
+    itemId => filterByTermNTopic(allItems[itemId], uiState),
+  );
+  filteredIds = filteredIds.filter(
+    itemId => filterByCompletion(allItems[itemId], uiState),
+  );
   return filteredIds;
 };
 
 const Results = ({ curriculum, uiState, category }) => {
-  const filterByTopic = uiState.libTopic !== 'All Topics';
-  const filterBySearchTerm = uiState.libSearchTerm !== '';
-
-  const filteredItems = category === 'paths' ? getFilteredItems(
-    curriculum.paths, uiState, filterByTopic, filterBySearchTerm,
-  ) : getFilteredItems(
-    curriculum.lessons, uiState, filterByTopic, filterBySearchTerm,
-  );
+  const filteredIds = category === 'paths' ? getFilteredItems(curriculum.paths, uiState) : getFilteredItems(curriculum.lessons, uiState);
 
   const results = category === 'paths' ?
-  filteredItems.map((pathId) => {
+  filteredIds.map((pathId) => {
     const path = curriculum.paths[pathId];
     return (
       <ImageLinkCard
@@ -67,7 +76,7 @@ const Results = ({ curriculum, uiState, category }) => {
       />
     );
   }) :
-  filteredItems.map((lessonId) => {
+  filteredIds.map((lessonId) => {
     const lesson = curriculum.lessons[lessonId];
     return (
       <ImageLinkCard
@@ -82,7 +91,6 @@ const Results = ({ curriculum, uiState, category }) => {
     );
   });
 
-
   return (
     <div className="results margin-vertical-big">
       <div className="flex flex-wrap margin-vertical-big justify-space-around">
@@ -95,6 +103,7 @@ const Results = ({ curriculum, uiState, category }) => {
 Results.propTypes = {
   uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default Results;
