@@ -24,7 +24,7 @@ const url = 'https://api.github.com/repos/Chingu-cohorts/devgaido/contributors';
  * @returns {Promise} - A Promise which when resolved contains a JSON object
  * defining the GitHub contributors to the application.
  */
-const retrieveContributors = new Promise((resolve, reject) => {
+const getContributors = new Promise((resolve, reject) => {
   let contributorObject = '{';
   fetch(url)
   .then(resp => resp.json())
@@ -45,4 +45,4 @@ const retrieveContributors = new Promise((resolve, reject) => {
   });
 });
 
-export default retrieveContributors;
+export default getContributors;

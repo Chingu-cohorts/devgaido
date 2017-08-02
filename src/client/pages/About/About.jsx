@@ -5,6 +5,7 @@ import Contributors from './Contributors';
 
 
 import PageHero from '../shared/PageHero';
+import actions from '../../actions';
 
 const About = ({ contributors }) => (
   <div>
@@ -37,11 +38,7 @@ const About = ({ contributors }) => (
 );
 
 About.propTypes = {
-  contributors: PropTypes.objectOf(PropTypes.shape),
-};
-
-About.defaultProps = {
-  contributors: null,
+  contributors: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default About;
