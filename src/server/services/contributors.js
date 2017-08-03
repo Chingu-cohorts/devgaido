@@ -29,8 +29,8 @@ const getContributors = new Promise((resolve, reject) => {
   fetch(url)
   .then(resp => resp.json())
   .then((teamArray) => {
-    teamArray.forEach((contributor, currentIndex, array) => {
-      let teamMember = `${contributor.login}": [ "avatar_url": "${contributor.avatar_url}", "html_url": "${contributor.html_url}"`;
+    teamArray.forEach((contributor) => {
+      const teamMember = `"name": ${contributor.login}" "avatar_url": "${contributor.avatar_url}", "html_url": "${contributor.html_url}"`;
       contributors.push(teamMember);
     }, []);
     console.log(`contributors: ${contributors}`);
