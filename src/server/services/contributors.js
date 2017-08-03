@@ -25,19 +25,16 @@ const url = 'https://api.github.com/repos/Chingu-cohorts/devgaido/contributors';
  * defining the GitHub contributors to the application.
  */
 const getContributors = new Promise((resolve, reject) => {
-  let contributorObject = '{';
+  let contributors = [];
   fetch(url)
   .then(resp => resp.json())
   .then((teamArray) => {
-    console.log(`teamArray: ${teamArray}`);
     teamArray.forEach((contributor, currentIndex, array) => {
-      let teamMember = `"${contributor.login}": { "avatar_url": ${contributor.avatar_url}, "html_url": ${contributor.html_url} }`;
-      teamMember += currentIndex + 1 < array.length ? ',' : '';
-      contributorObject += teamMember;
+      let teamMember = `${contributor.login}": [ "avatar_url": "${contributor.avatar_url}", "html_url": "${contributor.html_url}"`;
+      contributors.push(teamMember);
     }, []);
-    contributorObject += '}';
-    resolve(contributorObject);
-    console.log(`contributorObject: ${JSON.stringify(contributorObject)}`);
+    console.log(`contributors: ${contributors}`);
+    resolve(contributors);
   })
   .catch((fetchError) => {
     console.log(`Error encountered attempting to fetch contributors from GitHub. ${fetchError}`);

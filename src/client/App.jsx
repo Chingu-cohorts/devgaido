@@ -81,7 +81,7 @@ App.propTypes = {
   uiState: PropTypes.objectOf(PropTypes.shape),
   location: PropTypes.objectOf(PropTypes.shape).isRequired,
   auth0: PropTypes.objectOf(PropTypes.shape).isRequired,
-  contributors: PropTypes.objectOf(PropTypes.shape),
+  contributors: PropTypes.arrayOf(React.PropTypes.string),
 };
 
 App.defaultProps = {
