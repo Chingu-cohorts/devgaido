@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 
 import db from './db';
 import reducers from '../client/reducers';
+import getContributors from './services/contributors';
 import getCurriculum from './services/coreCurriculum';
 import App from '../client/App';
 import routes from '../client/routes';
@@ -57,12 +58,18 @@ const renderPage = (match, store) => {
 const sendGuestPage = (res, match, auth0) => {
   const curriculum = getCurriculum();
 
-  const state = { curriculum, auth0 };
-  const store = createStore(reducers, state);
-
-  res.set('Content-Type', 'text/html')
-      .status(200)
-      .end(renderPage(match, store));
+  getContributors
+    .then((contributors) => {
+      console.log(JSON.stringify(contributors));
+      const state = { curriculum, auth0, contributors };
+      const store = createStore(reducers, state);
+      res.set('Content-Type', 'text/html')
+        .status(200)
+        .end(renderPage(match, store));
+    })
+    .catch((error) => {
+      throw error;
+    });
 };
 
 const sendAuthenticatedPage = (res, req, match, auth0) => {
