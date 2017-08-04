@@ -24,7 +24,7 @@ const Signup = ({ auth0 }) => (
         devGaido was created to address both of these needs by organizing learning material found on the Internet into learning Paths and Courses designed to help new web dens achieve larger scope goals like becoming a front end developer as well as experienced web devs acquire specific knowledge to fill a gap.
         </p>
         <h2>ADD HEADING HERE</h2>
-<p>
+        <p>
         Thank you for using devGaido! We hope you find that it is helping you on your path to become a better web developer. We operate on the principle of keeping our efforts and intentions transparent to our users. With this in mind please review the following points.
         </p>
         <p>
