@@ -17,7 +17,7 @@ import Footer from './pages/shared/Footer';
 
 import routesArr from './routes';
 
-const App = ({ serverMatch, location, user, curriculum, uiState, auth0, history }) => {
+const App = ({ serverMatch, location, user, curriculum, uiState, auth0, contributors, history }) => {
 // If <App /> is rendered on the server we need to provide the serverMatch prop
 // since StaticRouter can only render a single Route (Switch only works on client side).
 // On the client though, just return all routes and let Switch do the work.
@@ -81,6 +81,7 @@ App.propTypes = {
   uiState: PropTypes.objectOf(PropTypes.shape),
   location: PropTypes.objectOf(PropTypes.shape).isRequired,
   auth0: PropTypes.objectOf(PropTypes.shape).isRequired,
+  contributors: PropTypes.arrayOf(PropTypes.shape),
   history: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
@@ -88,6 +89,7 @@ App.defaultProps = {
   serverMatch: null,
   curriculum: [],
   uiState: null,
+  contributors: null,
 };
 // Without "withRouter" when using connect routes don't actually change
 // Maybe this is just a workaround so check back later maybe.
@@ -97,4 +99,5 @@ export default withRouter(connect(store => ({
   curriculum: store.curriculum,
   uiState: store.uiState,
   auth0: store.auth0,
+  contributors: store.contributors,
 }))(App));
