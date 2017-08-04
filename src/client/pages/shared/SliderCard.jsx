@@ -21,7 +21,7 @@ const SliderCard = ({ item, bgColorClass, iconClass, linkTo, history, refCallbac
       <p>{item.description ? item.description : 'No description given.'}</p>
     </div>
     <div className="card__footer width-100 right">
-      {item.completed ? <i className="fa fa-check-circle-o h1 c-primary" /> : null}
+      {item.completed ? <i className="fa icon-check-circle-o h1 c-primary" /> : null}
     </div>
   </a>
 );

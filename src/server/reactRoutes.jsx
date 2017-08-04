@@ -43,23 +43,13 @@ const renderPage = (match, store) => {
       <link rel="manifest" href="/manifest.json">
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
       <meta name="theme-color" content="#ffffff">
-      ${cssFile}
       <link href="https://fonts.googleapis.com/css?family=Fira+Sans:200,400,700" rel="stylesheet">
-      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-      <!-- Google Analytics -->
-      <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-103320988-1', 'auto');
-      ga('send', 'pageview');
-      </script>
-      <script async src='https://www.google-analytics.com/analytics.js'></script>
-      <!-- End Google Analytics -->
+      ${cssFile}
     </head>
     <body>
       <div id="root">${reactMarkup}</div>
       <script>window.__INITIAL_STATE__ = ${JSON.stringify(store.getState()).replace(/</g, '\\u003c')};</script>
-      <script src="${webRoot}/vendor.bundle.js"></script>
-      <script src="${webRoot}/client.bundle.js"></script>
+      <script src="${webRoot}/bundle.js"></script>
     </body>
   </html>
   `;
@@ -69,18 +59,17 @@ const sendGuestPage = (res, match, auth0) => {
   const curriculum = getCurriculum();
 
   getContributors
-  .then((contributors) => {
-    console.log(JSON.stringify(contributors));
-    const state = { curriculum, auth0, contributors };
-    const store = createStore(reducers, state);
-
-    res.set('Content-Type', 'text/html')
+    .then((contributors) => {
+      console.log(JSON.stringify(contributors));
+      const state = { curriculum, auth0, contributors };
+      const store = createStore(reducers, state);
+      res.set('Content-Type', 'text/html')
         .status(200)
         .end(renderPage(match, store));
-  })
-  .catch((error) => {
-    throw error;
-  });
+    })
+    .catch((error) => {
+      throw error;
+    });
 };
 
 const sendAuthenticatedPage = (res, req, match, auth0) => {

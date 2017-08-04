@@ -10,10 +10,14 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, '../../dist/public')));
+app.use(express.static(path.join(__dirname, '../../dist/public'), { maxage: '31536000000' }));
 auth0Auth(app);
 restrictRoutes(app);
 dbRoutes(app);
 app.use('*', handleReactRoutes);
+
+app.get('*', (req, res) => {
+  res.status(404).end();
+});
 
 export default app;

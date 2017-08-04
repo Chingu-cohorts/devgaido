@@ -2,8 +2,7 @@ const contributors = (state = {
   contributors: {},
 }, action) => {
   switch (action.type) {
-    default:
-      return state;
+    default: return state;
   }
 };
 

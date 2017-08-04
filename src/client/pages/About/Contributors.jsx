@@ -6,15 +6,14 @@ const Contributors = ({ contributors }) => (
     <div className="flex flex-wrap margin-vertical-big justify-space-around">
       {contributors.forEach((aContributor) => {
         console.log(`aContributor: ${aContributor}`);
-        <h3>{ aContributor }</h3>;
+        <h3>{aContributor}</h3>;
       })}
     </div>
   </div>
 );
 
 Contributors.propTypes = {
-  contributors: PropTypes.arrayOf(React.PropTypes.string).isRequired,
+  contributors: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
 
 export default Contributors;
-

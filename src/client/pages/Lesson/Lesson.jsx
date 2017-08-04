@@ -10,9 +10,9 @@ import actions from '../../actions';
 const { setCurrentPath, setLastTouchedLesson, addBookmark, removeBookmark, completeLesson, unCompleteLesson } = actions;
 
 const typeIcons = {
-  Book: 'fa-book',
-  Course: 'fa-university',
-  Project: 'fa-cogs',
+  Book: 'icon-book',
+  Course: 'icon-university',
+  Project: 'icon-cogs',
 };
 
 const functionName = (user, lessonId) => {
@@ -31,9 +31,9 @@ const Lesson = ({ match, curriculum, user }) => {
   const ratingStars = [];
   for (let i = 0; i < 5; i += 1) {
     if (i < lesson.rating) {
-      ratingStars.push(<i className="fa fa-star c-secondary h4 margin-left-tiny" key={lesson.name + i} />);
+      ratingStars.push(<i className="fa icon-star c-secondary h4 margin-left-tiny" key={lesson.name + i} />);
     } else {
-      ratingStars.push(<i className="fa fa-star-o c-secondary h4 margin-left-tiny" key={lesson.name + i} />);
+      ratingStars.push(<i className="fa icon-star-o c-secondary h4 margin-left-tiny" key={lesson.name + i} />);
     }
   }
   const subjects = [];
@@ -54,7 +54,7 @@ const Lesson = ({ match, curriculum, user }) => {
       />
       <PageHero bgColorClass="bg-secondary--dark" bgImageClass="bg-img__path" bgUrl={`/screenshots/${lessonId}.jpg`} title={lesson.name} subtitle={lesson.type} full>
         <i className={`fa ${typeIcons[lesson.type]} c-white h0 abs-top-right`} />
-        {lesson.completed ? <i className="fa fa-check-circle-o c-white h0 abs-bottom-right" /> : null}
+        {lesson.completed ? <i className="fa icon-check-circle-o c-white h0 abs-bottom-right" /> : null}
       </PageHero>
       <div className="container flex bg-white padding-horizontal-big border-round margin-vertical-small page-hero__offset">
         <div className="padding-vertical-big flex-2 flex-column">
