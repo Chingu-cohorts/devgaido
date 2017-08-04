@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
 import user from './userReducer';
 import curriculum from './curriculumReducer';
-import contributors from './contributorsReducer';
 import uiState from './uiStateReducer';
 import auth0 from './auth0Reducer';
 import contributors from './contributorsReducer';
