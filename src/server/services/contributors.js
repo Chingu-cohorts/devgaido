@@ -29,9 +29,8 @@ const getContributors = new Promise((resolve, reject) => {
     .then((teamArray) => {
       teamArray.forEach((contributor) => {
         const teamMember = `"login": "${contributor.login}" {"avatar": "${contributor.avatar_url}", "html": "${contributor.html_url}"}`;
-        contributors.push(JSON.parse(JSON.stringify(teamMember)));
+        contributors.push(teamMember);
       }, []);
-      console.log(`contributors: ${JSON.parse(JSON.stringify(contributors))}`);
       resolve(JSON.parse(JSON.stringify(contributors)));
     })
     .catch((fetchError) => {

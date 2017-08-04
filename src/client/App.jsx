@@ -22,7 +22,7 @@ const App = ({ serverMatch, location, user, curriculum, uiState, auth0, contribu
 // since StaticRouter can only render a single Route (Switch only works on client side).
 // On the client though, just return all routes and let Switch do the work.
   const passdownProps = {
-    user, curriculum, uiState, auth0,
+    user, curriculum, uiState, auth0, contributors,
   };
   const routes = [];
   if (serverMatch) {
@@ -89,7 +89,7 @@ App.defaultProps = {
   serverMatch: null,
   curriculum: [],
   uiState: null,
-  contributors: null,
+  contributors: [],
 };
 // Without "withRouter" when using connect routes don't actually change
 // Maybe this is just a workaround so check back later maybe.

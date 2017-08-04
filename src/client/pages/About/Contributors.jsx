@@ -5,7 +5,7 @@ const Contributors = ({ contributors }) => (
   <div className="results margin-vertical-big">
     <div className="flex flex-wrap margin-vertical-big justify-space-around">
       {contributors.forEach((aContributor) => {
-        console.log(`aContributor: ${aContributor}`);
+        console.log(`aContributor: ${aContributor["login"]}`);
         <h3>{aContributor}</h3>;
       })}
     </div>

@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import PageHero from '../shared/PageHero';
 import Contributors from './Contributors';
 
-const About = (contributors) => (
+const About = ({ contributors }) => (
   <div>
     <Helmet title="About" />
     <PageHero bgColorClass="bg-secondary" bgImageClass="bg-img__dashboard" title="About" full />
