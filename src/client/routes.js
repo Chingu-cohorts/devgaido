@@ -8,6 +8,7 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Disclaimer from './pages/Disclaimer/Disclaimer';
 import Styleguide from './pages/Styleguide/Styleguide';
+import Signup from './pages/Signup/Signup';
 /**
  * Client route definitions
  *
@@ -25,12 +26,18 @@ const routes = [
     path: '/',
     exact: true,
     component: Home,
-    passdown: ['auth0', 'user'],
+    passdown: ['user'],
   },
   {
     path: '/styleguide',
     exact: true,
     component: Styleguide,
+  },
+  {
+    path: '/signup',
+    exact: true,
+    component: Signup,
+    passdown: ['auth0'],
   },
   {
     path: '/about',
