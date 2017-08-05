@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Contributors = ({ contributors }) => (
-  <div className="results margin-vertical-big">
-    <div className="flex flex-wrap margin-vertical-big justify-space-around">
-      {contributors.forEach((aContributor) => {
-        console.log(`aContributor: ${aContributor["login"]}`);
-        <h3>{aContributor}</h3>;
-      })}
+const Contributors = ({ contributors }) => {
+  return (
+    <div className="results margin-vertical-big">
+      <div className="flex flex-wrap margin-vertical-big justify-space-around">
+        {contributors.map(aContributor =>
+          <h4 key={aContributor.login}>{aContributor.login}</h4>,
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 Contributors.propTypes = {
   contributors: PropTypes.arrayOf(PropTypes.shape).isRequired,

@@ -28,10 +28,10 @@ const getContributors = new Promise((resolve, reject) => {
     .then(resp => resp.json())
     .then((teamArray) => {
       teamArray.forEach((contributor) => {
-        const teamMember = `"login": "${contributor.login}" {"avatar": "${contributor.avatar_url}", "html": "${contributor.html_url}"}`;
-        contributors.push(teamMember);
+        const teamMember = `{"login": "${contributor.login}","avatar": "${contributor.avatar_url}", "html": "${contributor.html_url}"}`;
+        contributors.push(JSON.parse(teamMember));
       }, []);
-      resolve(JSON.parse(JSON.stringify(contributors)));
+      resolve(contributors);
     })
     .catch((fetchError) => {
       console.log(`Error encountered attempting to fetch contributors from GitHub. ${fetchError}`);
