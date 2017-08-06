@@ -8,33 +8,31 @@ const LoadingPlaceholder = () => (
 
 const ContributorImage = ({ avatarURL }) => (
   <div>
-    <LazyLoad height={350} once placeholder={<LoadingPlaceholder />}>
-      <img className="border-round" src={avatarURL} alt="" />
+    <LazyLoad height={250} once placeholder={<LoadingPlaceholder />}>
+      <img className="border-round" src={avatarURL} alt="" height="75%" width="65%" />
     </LazyLoad>
   </div>
 );
 
-const Contributors = ({ contributors }) => {
-  const left = 'l';
-  const right = 'r';
-  const horizontalPosition = right;
+const ContributorName = ({ contributorName, contributorHTML }) => (
+  <div className="flex-1 margin-left-tiny margin-top-small">
+    <h2 className="c-secondary bold">
+      <a href={contributorHTML} target="_blank" rel="noopener noreferrer">
+        {contributorName} </a>
+    </h2>
+  </div>
+);
 
-  return (
-    <div className="container">
-      {contributors.map(aContributor =>
-        <section className="flex margin-top-huge">
-          <ContributorImage avatarURL={aContributor.avatar} />
-          <div className="flex-1 margin-left-small margin-top-small">
-            <h1 className="c-secondary bold">
-              <a href={aContributor.html} target="_blank" rel="noopener noreferrer">
-                {aContributor.login} </a>
-            </h1>
-          </div>
-        </section>,
-      )}
-    </div>
-  );
-};
+const Contributors = ({ contributors }) => (
+  <div className="container">
+    {contributors.map(aContributor =>
+      <section className="flex margin-top-huge">
+        <ContributorImage avatarURL={aContributor.avatar} />
+        <ContributorName contributorName={aContributor.login} contributorHTML={aContributor.html} />
+      </section>,
+    )}
+  </div>
+);
 
 Contributors.propTypes = {
   contributors: PropTypes.arrayOf(PropTypes.shape).isRequired,
