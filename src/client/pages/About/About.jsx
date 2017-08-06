@@ -29,7 +29,7 @@ const About = ({ contributors }) => (
     </div>
     <div className="container flex-column bg-white padding-big border-round margin-vertical-small page-hero__offset">
       <h2>Contributors</h2>
-        -=<Contributors contributors={contributors} />
+      <Contributors contributors={contributors} />
     </div>
   </div>
 );
