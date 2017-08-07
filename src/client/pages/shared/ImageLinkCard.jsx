@@ -44,7 +44,7 @@ const ImageLinkCard = ({ item, bgColorClass, imgBorderClass, imgSrc, sliceNumber
   }
 
   const progressBarWidth = 80;
-  const progress = progressBarWidth * item.nCompleted / item.nTotal;
+  const progress = (progressBarWidth * item.nCompleted) / item.nTotal;
 
   return (
     <Link className="card col-quarter border-round bg-white flex-column" to={linkTo} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>

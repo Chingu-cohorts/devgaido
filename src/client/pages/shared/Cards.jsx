@@ -54,6 +54,9 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
   if (item.subjectNames.length > 2) {
     subjects.push(`... ${item.subjectNames.length - 2} more ...`);
   }
+  const progressBarWidth = 80;
+  const progress = (progressBarWidth * item.nCompleted) / item.nTotal;
+
   return (
     <Link className={`link-card ${connectionClass} relative width-100`} to={linkTo} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
       {CardTemplate({
@@ -88,7 +91,13 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
                 subjectName => <h6 className="tag center c-white border-pill bg-grey display-inline-block" key={item.name + subjectName} >{subjectName}</h6>,
               )}
             </div>
-            <div className="flex justify-end">
+            <div className="flex justify-space-between">
+            {item.nTotal && item.nTotal !==1 ?
+              <div className="flex no-margin margin-top-small right">
+                <div style={{ margin: 'auto', background: 'red', width: `${progressBarWidth}`, height: 10 }}>
+                  <div style={{ background: 'green', width: `${ progress }`, height: 10 }}></div>
+                </div>
+              </div> : null}
               {item.nTotal && item.nTotal !== 1 ?
                 <h3 className="no-margin right margin-top-small">
                   <i className={`fa ${childIconClass} h3 right margin-right-tiny`} />
