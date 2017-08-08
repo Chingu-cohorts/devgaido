@@ -31,13 +31,13 @@ const Contributors = ({ contributors }) => {
     if (lastPosition === right) {
       lastPosition = left;
       return (
-        <div key={aContributor.login} className="flex flex-wrap">
-          <section className="flex">
-            <ContributorImage avatarURL={aContributor.avatar} imageAlignment={'border-round'} />
+        <div key={aContributor.login}>
+          <section className="flex margin-top-tiny">
+            <ContributorImage avatarURL={aContributor.avatar} imageAlignment={'border-round no-padding'} />
             <ContributorName
               contributorName={aContributor.login}
               contributorHTML={aContributor.html}
-              nameAlignment={'margin-left-tiny padding-left-small'}
+              nameAlignment={'flex-1 margin-top-tiny margin-left-small'}
               nameStyle={'c-primary bold'}
             />
           </section>
@@ -46,15 +46,15 @@ const Contributors = ({ contributors }) => {
     }
     lastPosition = right;
     return (
-      <div key={aContributor.login} className="flex flex-wrap">
-        <section className="flex">
+      <div key={aContributor.login}>
+        <section className="flex margin-top-tiny">
           <ContributorName
             contributorName={aContributor.login}
             contributorHTML={aContributor.html}
-            nameAlignment={'margin-right-huge'}
+            nameAlignment={'flex-1 margin-top-tiny margin-right-small right'}
             nameStyle={'c-secondary bold'}
           />
-          <ContributorImage avatarURL={aContributor.avatar} imageAlignment={'border-round'} />
+          <ContributorImage avatarURL={aContributor.avatar} imageAlignment={'border-round no-padding'} />
         </section>
       </div>
     );
