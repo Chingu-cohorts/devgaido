@@ -108,6 +108,7 @@ made and successfully tested.
 - [Kim Kwanka](https://github.com/kimkwanka)
 - [Chance McAllister](https://github.com/tropicalchancer)
 - [Jim Medlock](https://github.com/jdmedlock)
+- [Nick Papasavvas](https://github.com/nickolaos77)
 
 ## License
 
