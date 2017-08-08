@@ -1,7 +1,7 @@
 # [![devGaido version][devgaido-image]][devgaido-url]
 
 devGaido provides a guided learning experience through the Web Development 
-ecosystem by providing those new to the craft with predefined pathas to aid in
+ecosystem by providing those new to the craft with predefined paths to aid in
 achieving web development skills. For experienced developers it provides a 
 a means of filling in skill gaps around specific technologies, libraries, and
 languages.
