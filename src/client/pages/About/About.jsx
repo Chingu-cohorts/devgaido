@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import PageHero from '../shared/PageHero';
+import Contributors from './Contributors';
 
-const About = () => (
+const About = ({ contributors }) => (
   <div>
     <Helmet title="About" />
     <PageHero bgColorClass="bg-secondary" bgImageClass="bg-img__dashboard" title="About" full />
@@ -25,8 +27,15 @@ const About = () => (
         a front end developer as well as experienced web devs acquire specific
         knowledge to fill a gap.</p>
     </div>
+    <div className="container flex-column bg-white padding-big border-round margin-vertical-small page-hero__offset">
+      <h2>Contributors</h2>
+      <Contributors contributors={contributors} />
+    </div>
   </div>
 );
 
+About.propTypes = {
+  contributors: PropTypes.arrayOf(PropTypes.shape).isRequired,
+};
 
 export default About;
