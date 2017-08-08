@@ -7,9 +7,9 @@ const LoadingPlaceholder = () => (
 );
 
 const ContributorImage = ({ avatarURL, imageAlignment }) => (
-  <div>
+  <div className={imageAlignment}>
     <LazyLoad height={250} once placeholder={<LoadingPlaceholder />}>
-      <img className={imageAlignment} src={avatarURL} alt="" height="80%" width="65%" />
+      <img src={avatarURL} alt="" height="80%" width="65%" />
     </LazyLoad>
   </div>
 );
@@ -33,7 +33,7 @@ const Contributors = ({ contributors }) => {
       return (
         <div key={aContributor.login}>
           <section className="flex margin-top-tiny">
-            <ContributorImage avatarURL={aContributor.avatar} imageAlignment={'border-round no-padding'} />
+            <ContributorImage avatarURL={aContributor.avatar} imageAlignment={'border-round'} />
             <ContributorName
               contributorName={aContributor.login}
               contributorHTML={aContributor.html}
