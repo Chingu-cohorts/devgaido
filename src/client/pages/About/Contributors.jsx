@@ -9,7 +9,7 @@ const LoadingPlaceholder = () => (
 const ContributorImage = ({ avatarURL, imageAlignment }) => (
   <div className={imageAlignment}>
     <LazyLoad height={250} once placeholder={<LoadingPlaceholder />}>
-      <img src={avatarURL} alt="" height="80%" width="65%" />
+      <div style={{ backgroundImage: `url(${avatarURL})`, width: '300px', height: '300px', backgroundSize: '300px' }} />
     </LazyLoad>
   </div>
 );
@@ -33,7 +33,7 @@ const Contributors = ({ contributors }) => {
       return (
         <div key={aContributor.login}>
           <section className="flex margin-top-tiny">
-            <ContributorImage avatarURL={aContributor.avatar} imageAlignment={'border-round'} />
+            <ContributorImage avatarURL={aContributor.avatar} imageAlignment={'border-round margin-left-huge'} />
             <ContributorName
               contributorName={aContributor.login}
               contributorHTML={aContributor.html}
@@ -54,7 +54,7 @@ const Contributors = ({ contributors }) => {
             nameAlignment={'flex-1 margin-top-tiny margin-right-small right'}
             nameStyle={'c-secondary bold'}
           />
-          <ContributorImage avatarURL={aContributor.avatar} imageAlignment={'border-round no-padding'} />
+          <ContributorImage avatarURL={aContributor.avatar} imageAlignment={'border-round margin-right-huge'} />
         </section>
       </div>
     );
