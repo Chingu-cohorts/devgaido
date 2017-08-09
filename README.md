@@ -97,9 +97,6 @@ necessary to serve up images and other static content.
 and load balancing.
 - Docker: Docker containers house devGaido's application components that make
 devGaido easier to deploy and manage.
-- Travic CI: An automation platform integrated with GitHub that is used to
-automatically deploy devGaido to the production server(s) when changes are 
-made and successfully tested.
 
 ## Authors
 
