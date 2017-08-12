@@ -9,7 +9,7 @@ const LoadingPlaceholder = () => (
 const ContributorImage = ({ avatarURL, imageAlignment }) => (
   <div className={imageAlignment}>
     <LazyLoad height={250} once placeholder={<LoadingPlaceholder />}>
-      <div style={{ backgroundImage: `url(${avatarURL})`, width: '300px', height: '300px', backgroundSize: '300px' }} />
+      <div style={{ backgroundImage: `url(${avatarURL})`, width: '300px', height: '300px', backgroundSize: '300px', borderRadius: '150px'}} />
     </LazyLoad>
   </div>
 );
