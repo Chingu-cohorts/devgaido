@@ -43,6 +43,9 @@ const ImageLinkCard = ({ item, bgColorClass, imgBorderClass, imgSrc, sliceNumber
     }
   }
 
+  const progressBarWidth = 80;
+  const progress = (progressBarWidth * item.nCompleted) / item.nTotal;
+
   return (
     <Link className="card col-quarter border-round bg-white flex-column" to={linkTo} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
       <LazyLoad height={200} once placeholder={<LoadingPlaceholder />} offset={201}>
@@ -60,8 +63,13 @@ const ImageLinkCard = ({ item, bgColorClass, imgBorderClass, imgSrc, sliceNumber
         <div className="right">
           {ratingStars}
         </div>
-        <span className="h5 bold left" />
-        <div className="flex justify-end margin-top-small">
+        <span className="h5 bold left"></span>
+        <div className="flex justify-space-between margin-top-small">
+          <div className="flex no-margin right">
+            <div style={{ margin: 'auto', background: 'red', width: `${progressBarWidth}`, height: 10 }}>
+                <div style={{ background: 'green', width: `${ progress }`, height: 10 }}></div>
+            </div>
+          </div>
           {item.nTotal && item.nTotal !== 1 ?
             <h4 className="no-margin right margin-top-tiny">
               <i className={`fa ${childIconClass} h4 right margin-right-tiny`} />
@@ -69,7 +77,7 @@ const ImageLinkCard = ({ item, bgColorClass, imgBorderClass, imgSrc, sliceNumber
             </h4> : null}
           {item.nLessonsTotal ?
             <h4 className="no-margin right margin-top-tiny">
-              <i className={'fa icon-graduation-cap c-primary h4 right margin-left-big margin-right-tiny'} />
+              <i className={'fa icon-graduation-cap c-primary h4 right  margin-right-tiny'} />
               <span className="">{item.nLessonsCompleted}/{item.nLessonsTotal}</span>
             </h4> : null}
         </div>
