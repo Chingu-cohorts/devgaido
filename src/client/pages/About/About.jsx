@@ -27,7 +27,7 @@ const About = ({ contributors }) => (
         a front end developer as well as experienced web devs acquire specific
         knowledge to fill a gap.</p>
     </div>
-    <div className="container flex-column bg-white padding-big border-round margin-vertical-small page-hero__offset">
+    <div className="container flex-column bg-white padding-big border-round margin-vertical-small">
       <h2>Contributors</h2>
       <Contributors contributors={contributors} />
     </div>

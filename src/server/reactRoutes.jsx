@@ -93,16 +93,21 @@ const sendAuthenticatedPage = (res, req, match, auth0) => {
       user.persistentData.id = docs[0]._id;
       user.persistentData.data = docs[0].data;
     }
-    const state = { user, curriculum, auth0 };
-    const store = createStore(reducers, state);
-    // 'Replay' all saved actions to recreate last saved store
-    user.persistentData.data.forEach((action) => {
-      store.dispatch(action);
-    });
-
-    res.set('Content-Type', 'text/html')
-      .status(200)
-      .end(renderPage(match, store));
+    getContributors
+      .then((contributors) => {
+        const state = { user, curriculum, auth0, contributors };
+        const store = createStore(reducers, state);
+        // 'Replay' all saved actions to recreate last saved store
+        user.persistentData.data.forEach((action) => {
+          store.dispatch(action);
+        });
+        res.set('Content-Type', 'text/html')
+          .status(200)
+          .end(renderPage(match, store));
+      })
+      .catch((error) => {
+        throw error;
+      });
   });
 };
 
