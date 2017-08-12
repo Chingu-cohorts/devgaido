@@ -16,7 +16,7 @@ const ContributorImage = ({ avatarURL, imageAlignment }) => (
 
 const ContributorName = ({ contributorName, contributorHTML, nameAlignment, nameStyle }) => (
   <div className={nameAlignment} >
-    <h2>
+    <h2 className="no-margin">
       <a href={contributorHTML} target="_blank" rel="noopener noreferrer" className={nameStyle}>
         {contributorName} </a>
     </h2>
