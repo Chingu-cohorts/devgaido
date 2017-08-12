@@ -43,8 +43,7 @@ const ImageLinkCard = ({ item, bgColorClass, imgBorderClass, imgSrc, sliceNumber
     }
   }
 
-  const progressBarWidth = 80;
-  const progress = (progressBarWidth * item.nCompleted) / item.nTotal;
+  const progressInverse = 100 - ((100 * item.nCompleted) / item.nTotal);
 
   return (
     <Link className="card col-quarter border-round bg-white flex-column" to={linkTo} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
@@ -59,25 +58,27 @@ const ImageLinkCard = ({ item, bgColorClass, imgBorderClass, imgSrc, sliceNumber
       <div className="card__content flex-1">
         <p>{item.description ? item.description : 'No description given.'}</p>
       </div>
-      <div className="ilcard__footer flex-column padding-bottom-small padding-horizontal-small">
-        <div className="right">
-          {ratingStars}
-        </div>
-        <span className="h5 bold left"></span>
-        <div className="flex justify-space-between margin-top-small">
-          <div className="flex no-margin right">
-            <div style={{ margin: 'auto', background: 'red', width: `${progressBarWidth}`, height: 10 }}>
-                <div style={{ background: 'green', width: `${ progress }`, height: 10 }}></div>
-            </div>
+      <div className="right margin-horizontal-small">
+        {ratingStars}
+      </div>
+      {item.nLessonsTotal ?
+        <div className="flex no-margin margin-top-small margin-horizontal-small">
+          <div className="progress border-pill overflow-hidden">
+            <div className="progress__fill bg-secondary border-pill" />
+            <div className="progress__mask bg-secondary" style={{ width: `${progressInverse}%` }} />
           </div>
+        </div> : null}
+      <div className="ilcard__footer flex-column padding-bottom-small padding-horizontal-small">
+        <span className="h5 bold left" />
+        <div className="flex justify-end margin-top-small">
           {item.nTotal && item.nTotal !== 1 ?
-            <h4 className="no-margin right margin-top-tiny">
-              <i className={`fa ${childIconClass} h4 right margin-right-tiny`} />
+            <h4 className="no-margin margin-top-tiny margin-right-small">
+              <i className={`fa ${childIconClass} h4 margin-right-tiny`} />
               <span className="">{item.nCompleted}/{item.nTotal}</span>
             </h4> : null}
           {item.nLessonsTotal ?
-            <h4 className="no-margin right margin-top-tiny">
-              <i className={'fa icon-graduation-cap c-primary h4 right  margin-right-tiny'} />
+            <h4 className="no-margin margin-top-tiny">
+              <i className={'fa icon-graduation-cap c-secondary h4 margin-right-tiny'} />
               <span className="">{item.nLessonsCompleted}/{item.nLessonsTotal}</span>
             </h4> : null}
         </div>

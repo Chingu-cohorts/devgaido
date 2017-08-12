@@ -16,8 +16,8 @@ const iconLookUp = {
 };
 
 const childIconLookUp = {
-  paths: 'icon-flag-checkered c-secondary',
-  courses: 'icon-graduation-cap c-primary',
+  paths: 'icon-flag-checkered c-primary',
+  courses: 'icon-graduation-cap c-secondary',
   lessons: '',
 };
 

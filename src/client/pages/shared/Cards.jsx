@@ -37,7 +37,7 @@ const MenuCard = ({ children }) => (
   })
 );
 
-const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borderClass, connectionClass, heightClass, linkTo, pathId }) => {
+const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, connectionClass, heightClass, linkTo, pathId }) => {
   const ratingStars = [];
   for (let i = 0; i < 5; i += 1) {
     if (i < item.rating) {
@@ -54,8 +54,7 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
   if (item.subjectNames.length > 2) {
     subjects.push(`... ${item.subjectNames.length - 2} more ...`);
   }
-  const progressBarWidth = 80;
-  const progress = (progressBarWidth * item.nCompleted) / item.nTotal;
+  const progressInverse = 100 - ((100 * item.nLessonsCompleted) / item.nLessonsTotal);
 
   return (
     <Link className={`link-card ${connectionClass} relative width-100`} to={linkTo} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
@@ -91,21 +90,23 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borde
                 subjectName => <h6 className="tag center c-white border-pill bg-grey display-inline-block" key={item.name + subjectName} >{subjectName}</h6>,
               )}
             </div>
-            <div className="flex justify-space-between">
-            {item.nTotal && item.nTotal !==1 ?
-              <div className="flex no-margin margin-top-small right">
-                <div style={{ margin: 'auto', background: 'red', width: `${progressBarWidth}`, height: 10 }}>
-                  <div style={{ background: 'green', width: `${ progress }`, height: 10 }}></div>
+            {item.nLessonsTotal ?
+              <div className="flex no-margin margin-top-small">
+                <div className="progress border-pill overflow-hidden">
+                  <div className="progress__fill bg-secondary border-pill" />
+                  <div className="progress__mask bg-secondary" style={{ width: `${progressInverse}%` }} />
                 </div>
               </div> : null}
+
+            <div className="flex justify-end">
               {item.nTotal && item.nTotal !== 1 ?
-                <h3 className="no-margin right margin-top-small">
-                  <i className={`fa ${childIconClass} h3 right margin-right-tiny`} />
+                <h3 className="no-margin margin-top-small">
+                  <i className={`fa ${childIconClass} h3 margin-right-tiny`} />
                   <span className="">{item.nCompleted}/{item.nTotal}</span>
                 </h3> : null}
               {item.nLessonsTotal ?
-                <h3 className="no-margin right margin-top-small">
-                  <i className={'fa icon-graduation-cap c-primary h3 right margin-left-big margin-right-tiny'} />
+                <h3 className="no-margin margin-top-small">
+                  <i className={'fa icon-graduation-cap c-secondary h3 margin-left-big margin-right-tiny'} />
                   <span className="">{item.nLessonsCompleted}/{item.nLessonsTotal}</span>
                 </h3> : null}
             </div>
@@ -120,6 +121,7 @@ CardTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   bgColorClass: PropTypes.string.isRequired,
   iconClass: PropTypes.string,
+  iconClass2: PropTypes.string,
   heightClass: PropTypes.string,
   content: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
@@ -133,6 +135,7 @@ CardTemplate.propTypes = {
 
 CardTemplate.defaultProps = {
   iconClass: '',
+  iconClass2: '',
   bgImageClass: '',
   heightClass: '',
   footerContent: null,
@@ -144,8 +147,10 @@ LinkCard.propTypes = {
   linkTo: PropTypes.string,
   iconClass: PropTypes.string,
   childIconClass: PropTypes.string,
+  imgSrc: PropTypes.string,
   connectionClass: PropTypes.string,
   heightClass: PropTypes.string,
+  pathId: PropTypes.string,
 };
 
 LinkCard.defaultProps = {
@@ -154,6 +159,8 @@ LinkCard.defaultProps = {
   linkTo: '#',
   connectionClass: '',
   heightClass: '',
+  imgSrc: '',
+  pathId: '',
 };
 
 export { MenuCard, LinkCard };

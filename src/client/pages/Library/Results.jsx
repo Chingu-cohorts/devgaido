@@ -69,7 +69,7 @@ const Results = ({ curriculum, uiState, category }) => {
         bgColorClass="bg-primary"
         imgSrc={`/paths/${pathId}.jpg`}
         iconClass="icon-map-signs"
-        childIconClass="icon-flag-checkered c-secondary"
+        childIconClass="icon-flag-checkered c-primary"
         imgBorderClass="border-1px border-primary"
         key={pathId}
         pathId={pathId}
