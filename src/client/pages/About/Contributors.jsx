@@ -32,7 +32,7 @@ const Contributors = ({ contributors }) => {
       lastPosition = left;
       return (
         <div key={aContributor.login}>
-          <section className="flex margin-top-tiny">
+          <section className="flex margin-top-tiny align-items-center">
             <ContributorImage avatarURL={aContributor.avatar} imageAlignment={'border-round margin-left-huge'} />
             <ContributorName
               contributorName={aContributor.login}
@@ -47,7 +47,7 @@ const Contributors = ({ contributors }) => {
     lastPosition = right;
     return (
       <div key={aContributor.login}>
-        <section className="flex margin-top-tiny">
+        <section className="flex margin-top-tiny align-items-center">
           <ContributorName
             contributorName={aContributor.login}
             contributorHTML={aContributor.html}
@@ -60,7 +60,7 @@ const Contributors = ({ contributors }) => {
     );
   });
   return (
-    <div className="container">
+    <div className="container margin-top-huge margin-bottom-huge">
       {contributorElement}
     </div>
   );

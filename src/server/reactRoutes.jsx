@@ -60,7 +60,6 @@ const sendGuestPage = (res, match, auth0) => {
 
   getContributors
     .then((contributors) => {
-      console.log(JSON.stringify(contributors));
       const state = { curriculum, auth0, contributors };
       const store = createStore(reducers, state);
       res.set('Content-Type', 'text/html')
