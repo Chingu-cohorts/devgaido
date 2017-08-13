@@ -92,5 +92,24 @@
     ],
     "goal": "Getting to know the fundamental building blocks of the world wide web.",
     "version": "1.0.0"
+  },
+  "gettingstartedredux" : {
+    "name": "Getting Started with Redux",
+    "description": "Learn how to effectively and efficiently manage the state in your web applications using the Redux from it's creator -- Dan Abramov.",
+    "courseIds": [
+      "reduxconcepts",
+      "reduxstore",
+      "reduxmutations",
+      "reduxtodo1",
+      "reduxreducercomposition",
+      "reduxtodo2",
+      "reduxextractpresentation",
+      "reduxextractcontainers",
+      "reduxpassstore",
+      "reduxgeneratingcontainers",
+      "reduxextractingactions"
+    ],
+    "goal": "Managing application state is an essential skill employers look for in webdevs. Understanding state and how to manage it during the app lifecycle will help you land your webdev job.",
+    "version": "1.0.0"
   }
 }
