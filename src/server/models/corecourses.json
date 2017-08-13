@@ -392,5 +392,119 @@
       "setupwwwfolder"
     ],
     "version": "1.0.0"
+  },
+  "reduxconcepts": {
+    "name": "State, Actions, and Reducers",
+    "description": "Gain insight into the fundamentals of how Redux works.",
+    "lessonIds": [
+      "redux01",
+      "redux02",
+      "redux03",
+      "redux04",
+      "redux05"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxstore": {
+    "name": "The Redux Store",
+    "description": "Learn about the Redux Store.",
+    "lessonIds": [
+      "redux06",
+      "redux07"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxcheckpoint": {
+    "name": "Putting it All Together: React & Redux",
+    "description": "See how React and Redux can work together in this simple example.",
+    "lessonIds": [
+      "redux08"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxmutations": {
+    "name": "Avoiding Mutations in Redux",
+    "description": "Understand how to avoid array and object mutations in Redux.",
+    "lessonIds": [
+      "redux09",
+      "redux10"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxtodo1": {
+    "name": "Example: Creating a ToDo Application",
+    "description": "Learn how to build an app application using Redux.",
+    "lessonIds": [
+      "redux11",
+      "redux12"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxreducercomposition": {
+    "name": "Understanding Reducer Composition",
+    "description": "Learn about reducer composition in Redux.",
+    "lessonIds": [
+      "redux13",
+      "redux14",
+      "redux15",
+      "redux16"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxtodo2": {
+    "name": "Example: Adding Features to the ToDo Application",
+    "description": "Extend your knowledge of Redux through this example of how to add new features to the ToDo app.",
+    "lessonIds": [
+      "redux17",
+      "redux18",
+      "redux19"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxextractpresentation": {
+    "name": "Extracting Presentational Components",
+    "description": "See how to extract presentational components to separate app behavior from appearance.",
+    "lessonIds": [
+      "redux20",
+      "redux21"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxextractcontainers": {
+    "name": "Extracting Container Components",
+    "description": "Learn the how and why of extracting container components to limit the unnecessary passing of props.",
+    "lessonIds": [
+      "redux22",
+      "redux23"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxpassstore": {
+    "name": "Passing the Store to App Components",
+    "description": "Learn the how and why of extracting container components to limit the unnecessary passing of props.",
+    "lessonIds": [
+      "redux24",
+      "redux25",
+      "redux26"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxgeneratingcontainers": {
+    "name": "Generating Containers",
+    "description": "Learn the how to use Redux to generate container components.",
+    "lessonIds": [
+      "redux27",
+      "redux28",
+      "redux29"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxextractingactions": {
+    "name": "Extracting Action Creators",
+    "description": "Learn how to extract action creators from components to improve the maintainability of your apps.",
+    "lessonIds": [
+      "redux30"
+    ],
+    "version": "1.0.0"
   }
 }
