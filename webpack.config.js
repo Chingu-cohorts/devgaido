@@ -5,6 +5,7 @@ const usePreact = false;
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const AssetsPlugin = require('assets-webpack-plugin');
 
 const config = {
   devServer: {
@@ -25,24 +26,11 @@ const config = {
     ],
   } : {
     main: path.join(__dirname, '/src/client/index.jsx'),
-    vendor: [
-      'react',
-      'react-dom',
-      'react-ga',
-      'react-helmet',
-      'react-lazyload',
-      'react-redux',
-      'react-router',
-      'react-router-dom',
-      'react-transition-group',
-      'redux',
-      'redux-thunk',
-    ],
   },
   output: {
     publicPath: 'http://localhost:8081/',
     path: path.join(__dirname, '/dist/public'),
-    filename: '[name].[chunkhash].js',
+    filename: dev ? '[name].js' : '[name]-[chunkhash].js',
   },
   stats: {
     colors: true,
@@ -84,28 +72,25 @@ const config = {
     new webpack.NamedModulesPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      // filename: 'vendor.bundle.[hash].js',
-      // minChunks: ({ resource }) => /node_modules/.test(resource),
+      minChunks: ({ resource }) => /node_modules/.test(resource),
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'runtime',
-      // filename: 'vendor.bundle.[hash].js',
-      // minChunks: ({ resource }) => /node_modules/.test(resource),
     }),
     new webpack.HotModuleReplacementPlugin(),
   ] : [
     new webpack.HashedModuleIdsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      // filename: 'vendor.bundle.[hash].js',
-      // minChunks: ({ resource }) => /node_modules/.test(resource),
+      minChunks: ({ resource }) => /node_modules/.test(resource),
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'runtime',
-      // filename: 'vendor.bundle.[hash].js',
-      // minChunks: ({ resource }) => /node_modules/.test(resource),
     }),
-    new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin('style-[contenthash].css'),
+    new AssetsPlugin({
+      fullPath: false,
+    }),
   ],
 };
 

@@ -15,8 +15,15 @@ import getCurriculum from './services/coreCurriculum';
 import App from '../client/App';
 import routes from '../client/routes';
 
+const fs = require('fs');
+
+const webpackAssets = JSON.parse(fs.readFileSync('webpack-assets.json', 'utf8'));
+
 const webRoot = (process.env.NODE_ENV !== 'production') ? 'http://localhost:8081' : '';
-const cssFile = (process.env.NODE_ENV !== 'production') ? '' : `<link rel="stylesheet" href="${webRoot}/style.css">`;
+const cssFile = (process.env.NODE_ENV !== 'production') ? '' : `<link rel="stylesheet" href="${webRoot}/${webpackAssets.main.css}">`;
+const runtimeJs = (process.env.NODE_ENV !== 'production') ? `${webRoot}/runtime.js` : `${webRoot}/${webpackAssets.runtime.js}`;
+const vendorJs = (process.env.NODE_ENV !== 'production') ? `${webRoot}/vendor.js` : `${webRoot}/${webpackAssets.vendor.js}`;
+const mainJs = (process.env.NODE_ENV !== 'production') ? `${webRoot}/main.js` : `${webRoot}/${webpackAssets.main.js}`;
 
 const renderPage = (matchedRoute, store) => {
   const reactMarkup = renderToString(
@@ -51,8 +58,9 @@ const renderPage = (matchedRoute, store) => {
     <body>
       <div id="root">${reactMarkup}</div>
       <script>window.__INITIAL_STATE__ = ${JSON.stringify(store.getState()).replace(/</g, '\\u003c')};</script>
-      <script src="${webRoot}/vendor.bundle.js"></script>
-      <script src="${webRoot}/client.bundle.js"></script>
+      <script src="${runtimeJs}"></script>
+      <script src="${vendorJs}"></script>
+      <script src="${mainJs}"></script>
     </body>
   </html>
   `;
