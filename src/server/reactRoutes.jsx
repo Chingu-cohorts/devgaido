@@ -74,12 +74,12 @@ const initDefaults = new Promise((resolve, reject) => {
     clientID: process.env.AUTH0_CLIENT_ID,
     callbackURL: process.env.AUTH0_CALLBACK_URL || 'http://localhost:8080/callback',
   };
-
+  
   getContributors
     .then((contributors) => {
       defaults.curriculum = curriculum;
       defaults.contributors = contributors;
-      defaults.auth = auth0;
+      defaults.auth0 = auth0;
       defaults.state = { curriculum, auth0, contributors };
       defaults.store = createStore(reducers, defaults.state);
       resolve(defaults);
@@ -118,7 +118,7 @@ const sendAuthenticatedPage = (res, req, matchedRoute) => {
       user.persistentData.id = docs[0]._id;
       user.persistentData.data = docs[0].data;
     }
-    const state = { user, curriculum, auth0: defaults.auth0, contributers: defaults.contributors };
+    const state = { user, curriculum, auth0: defaults.auth0, contributors: defaults.contributors };
     const store = createStore(reducers, state);
 
     res.set('Content-Type', 'text/html')

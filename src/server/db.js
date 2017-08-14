@@ -1,4 +1,4 @@
-const mongoURI = (process.env.NODE_ENV !== 'production') ? 'mongodb://localhost:27017/devgaido' : process.env.MONGODB_URI;
+const mongoURI = (process.env.NODE_ENV !== 'production') ? 'mongodb://localhost:27017/devgaido' : process.env.MONGODB_URI || 'mongodb://localhost:27017/devgaido';
 const mongo = require('mongodb').MongoClient;
 
 let db = null;
