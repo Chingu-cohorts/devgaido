@@ -40,3 +40,5 @@ jspm_packages
 dist
 sessions
 .directory
+
+webpack-assets.json
