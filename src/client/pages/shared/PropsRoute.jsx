@@ -1,6 +1,6 @@
 import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
-import { Route } from 'react-router';
+import { Route } from 'react-router-dom';
 
 const renderWithProps = (component, routeProps, passdownProps, passdownArr) => {
   const finalProps = { ...routeProps };

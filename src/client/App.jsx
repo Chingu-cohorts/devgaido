@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, withRouter } from 'react-router';
+import { Switch, withRouter } from 'react-router-dom';
 import Helmet from 'react-helmet';
 
 import PropTypes from 'prop-types';
