@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { Helmet } from 'react-helmet';
 
+import dotenv from 'dotenv';
+
 import db from './db';
 import reducers from '../client/reducers';
 import getContributors from './services/contributors';
@@ -16,11 +18,11 @@ import routes from '../client/routes';
 const webRoot = (process.env.NODE_ENV !== 'production') ? 'http://localhost:8081' : '';
 const cssFile = (process.env.NODE_ENV !== 'production') ? '' : `<link rel="stylesheet" href="${webRoot}/style.css">`;
 
-const renderPage = (match, store) => {
+const renderPage = (matchedRoute, store) => {
   const reactMarkup = renderToString(
     <Provider store={store}>
-      <StaticRouter context={{}} location={match.url}>
-        <App serverMatch={match} />
+      <StaticRouter context={{}} location={matchedRoute.url}>
+        <App serverMatch={matchedRoute} />
       </StaticRouter>
     </Provider>,
     );
@@ -55,23 +57,46 @@ const renderPage = (match, store) => {
   `;
 };
 
-const sendGuestPage = (res, match, auth0) => {
+const defaults = {
+  contributors: null,
+  curriculum: null,
+  state: null,
+  store: null,
+  auth0: null,
+};
+
+const initDefaults = new Promise((resolve, reject) => {
+  dotenv.load();
   const curriculum = getCurriculum();
+
+  const auth0 = {
+    domain: process.env.AUTH0_DOMAIN,
+    clientID: process.env.AUTH0_CLIENT_ID,
+    callbackURL: process.env.AUTH0_CALLBACK_URL || 'http://localhost:8080/callback',
+  };
 
   getContributors
     .then((contributors) => {
-      const state = { curriculum, auth0, contributors };
-      const store = createStore(reducers, state);
-      res.set('Content-Type', 'text/html')
-        .status(200)
-        .end(renderPage(match, store));
+      defaults.curriculum = curriculum;
+      defaults.contributors = contributors;
+      defaults.auth = auth0;
+      defaults.state = { curriculum, auth0, contributors };
+      defaults.store = createStore(reducers, defaults.state);
+      resolve(defaults);
     })
     .catch((error) => {
-      throw error;
+      console.log(`Error initializing default values for Redux store. ${error}`);
+      reject(error);
     });
+});
+
+const sendGuestPage = (res, matchedRoute) => {
+  res.set('Content-Type', 'text/html')
+      .status(200)
+      .end(renderPage(matchedRoute, defaults.store));
 };
 
-const sendAuthenticatedPage = (res, req, match, auth0) => {
+const sendAuthenticatedPage = (res, req, matchedRoute) => {
   const persistentData = {
     id: req.user.id,
     data: [],
@@ -93,50 +118,57 @@ const sendAuthenticatedPage = (res, req, match, auth0) => {
       user.persistentData.id = docs[0]._id;
       user.persistentData.data = docs[0].data;
     }
-    getContributors
-      .then((contributors) => {
-        const state = { user, curriculum, auth0, contributors };
-        const store = createStore(reducers, state);
-        // 'Replay' all saved actions to recreate last saved store
-        user.persistentData.data.forEach((action) => {
-          store.dispatch(action);
-        });
-        res.set('Content-Type', 'text/html')
-          .status(200)
-          .end(renderPage(match, store));
-      })
-      .catch((error) => {
-        throw error;
-      });
+    const state = { user, curriculum, auth0: defaults.auth0, contributers: defaults.contributors };
+    const store = createStore(reducers, state);
+
+    res.set('Content-Type', 'text/html')
+      .status(200)
+      .end(renderPage(matchedRoute, store));
   });
 };
 
-export default (req, res, next) => {
-  let match = null;
-  // Check if the requested url is one of the React Router routes from routes.js
-  routes.forEach((route) => {
-    const tmp = matchPath(req.baseUrl, { path: route.path, exact: route.exact, strict: false });
-    if (tmp) {
-      match = { ...tmp, component: route.component, passdown: route.passdown };
-    }
-  });
+const handleReactRoutes = (req, res, next) => {
+  let matchedRoute = null;
 
-  if (!match) {
+  // Check if the requested url is one of the React Router routes from routes.js
+  for (let i = 0; i < routes.length; i += 1) {
+    matchedRoute = matchPath(req.baseUrl, {
+      path: routes[i].path,
+      exact: routes[i].exact,
+      strict: false,
+    });
+
+    if (matchedRoute) {
+      matchedRoute = routes[i];
+      matchedRoute.url = matchedRoute.path;
+      break;
+    }
+  }
+  if (!matchedRoute) {
     // Not a React Router route, so let express handle it
     next();
   } else {
     // We got a React Router route, so start server side rendering
-    const auth0 = {
-      domain: process.env.AUTH0_DOMAIN,
-      clientID: process.env.AUTH0_CLIENT_ID,
-      callbackURL: process.env.AUTH0_CALLBACK_URL || 'http://localhost:8080/callback',
-    };
 
     // Render appropriate page depending on user authentication status
     if (req.user) {
-      sendAuthenticatedPage(res, req, match, auth0);
+      sendAuthenticatedPage(res, req, matchedRoute);
     } else {
-      sendGuestPage(res, match, auth0);
+      sendGuestPage(res, matchedRoute);
     }
   }
 };
+
+const initReactRoutes = new Promise((resolve, reject) => {
+  initDefaults
+  .then(() => {
+    console.log('React routes successfully initialized.');
+    resolve(handleReactRoutes);
+  })
+  .catch((error) => {
+    console.log('Error initializing React routes.');
+    reject(error);
+  });
+});
+
+export default initReactRoutes;

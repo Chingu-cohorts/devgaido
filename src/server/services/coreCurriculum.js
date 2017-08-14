@@ -157,7 +157,7 @@ const init = (curriculum) => {
 
 /**
  * Build a new curriculum object
- * 
+ *
  * @returns {any} curriculum - Initialized curriculum object
  */
 const getCurriculum = () => {
