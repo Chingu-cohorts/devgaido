@@ -5,10 +5,14 @@
  * @param {*} action -
  * @returns {state} state - Auth0 data
  */
-const auth0 = (state = {
-  domain: '',
-  clientID: '',
-  callbackURL: '',
+const backendData = (state = {
+  auth0: {
+    domain: '',
+    clientID: '',
+    callbackURL: '',
+  },
+  isProduction: false,
+  gaId: '',
 }, action) => {
   switch (action.type) {
     default:
@@ -16,4 +20,4 @@ const auth0 = (state = {
   }
 };
 
-export default auth0;
+export default backendData;
