@@ -17,15 +17,32 @@ const config = {
     },
   },
   devtool: dev ? 'eval' : false,
-  entry: dev ? [
-    'webpack-dev-server/client?http://localhost:8081',
-    'react-hot-loader/patch',
-    path.join(__dirname, '/src/client/index.jsx'),
-  ] : path.join(__dirname, '/src/client/index.jsx'),
+  entry: dev ? {
+    main: [
+      'webpack-dev-server/client?http://localhost:8081',
+      'react-hot-loader/patch',
+      path.join(__dirname, '/src/client/index.jsx'),
+    ],
+  } : {
+    main: path.join(__dirname, '/src/client/index.jsx'),
+    vendor: [
+      'react',
+      'react-dom',
+      'react-ga',
+      'react-helmet',
+      'react-lazyload',
+      'react-redux',
+      'react-router',
+      'react-router-dom',
+      'react-transition-group',
+      'redux',
+      'redux-thunk',
+    ],
+  },
   output: {
     publicPath: 'http://localhost:8081/',
     path: path.join(__dirname, '/dist/public'),
-    filename: 'bundle.js',
+    filename: '[name].[chunkhash].js',
   },
   stats: {
     colors: true,
@@ -65,9 +82,29 @@ const config = {
   },
   plugins: dev ? [
     new webpack.NamedModulesPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      // filename: 'vendor.bundle.[hash].js',
+      // minChunks: ({ resource }) => /node_modules/.test(resource),
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime',
+      // filename: 'vendor.bundle.[hash].js',
+      // minChunks: ({ resource }) => /node_modules/.test(resource),
+    }),
     new webpack.HotModuleReplacementPlugin(),
   ] : [
-    new webpack.NamedModulesPlugin(),
+    new webpack.HashedModuleIdsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      // filename: 'vendor.bundle.[hash].js',
+      // minChunks: ({ resource }) => /node_modules/.test(resource),
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime',
+      // filename: 'vendor.bundle.[hash].js',
+      // minChunks: ({ resource }) => /node_modules/.test(resource),
+    }),
     new ExtractTextPlugin('style.css'),
   ],
 };
