@@ -62,7 +62,7 @@ const defaults = {
   curriculum: null,
   state: null,
   store: null,
-  auth0: null,
+  backendData: null,
 };
 
 const initDefaults = new Promise((resolve, reject) => {
@@ -74,13 +74,19 @@ const initDefaults = new Promise((resolve, reject) => {
     clientID: process.env.AUTH0_CLIENT_ID,
     callbackURL: process.env.AUTH0_CALLBACK_URL || 'http://localhost:8080/callback',
   };
-  
+
+  const backendData = {
+    auth0,
+    isProduction: (process.env.NODE_ENV === 'production'),
+    gaId: process.env.GA_ID,
+  };
+
   getContributors
     .then((contributors) => {
       defaults.curriculum = curriculum;
       defaults.contributors = contributors;
-      defaults.auth0 = auth0;
-      defaults.state = { curriculum, auth0, contributors };
+      defaults.backendData = backendData;
+      defaults.state = { curriculum, backendData, contributors };
       defaults.store = createStore(reducers, defaults.state);
       resolve(defaults);
     })
@@ -118,7 +124,7 @@ const sendAuthenticatedPage = (res, req, matchedRoute) => {
       user.persistentData.id = docs[0]._id;
       user.persistentData.data = docs[0].data;
     }
-    const state = { user, curriculum, auth0: defaults.auth0, contributors: defaults.contributors };
+    const state = { user, curriculum, backendData: defaults.backendData, contributors: defaults.contributors };
     const store = createStore(reducers, state);
 
     res.set('Content-Type', 'text/html')
@@ -151,6 +157,7 @@ const handleReactRoutes = (req, res, next) => {
     // We got a React Router route, so start server side rendering
 
     // Render appropriate page depending on user authentication status
+
     if (req.user) {
       sendAuthenticatedPage(res, req, matchedRoute);
     } else {

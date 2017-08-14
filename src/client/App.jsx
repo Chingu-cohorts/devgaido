@@ -17,10 +17,11 @@ import Footer from './pages/shared/Footer';
 
 import routesArr from './routes';
 
-const App = ({ serverMatch, location, user, curriculum, uiState, auth0, contributors, history }) => {
+const App = ({ serverMatch, location, user, curriculum, uiState, backendData, contributors, history }) => {
 // If <App /> is rendered on the server we need to provide the serverMatch prop
 // since StaticRouter can only render a single Route (Switch only works on client side).
 // On the client though, just return all routes and let Switch do the work.
+  const auth0 = backendData.auth0;
   const passdownProps = {
     user, curriculum, uiState, auth0, contributors,
   };
@@ -80,7 +81,7 @@ App.propTypes = {
   curriculum: PropTypes.objectOf(PropTypes.shape),
   uiState: PropTypes.objectOf(PropTypes.shape),
   location: PropTypes.objectOf(PropTypes.shape).isRequired,
-  auth0: PropTypes.objectOf(PropTypes.shape).isRequired,
+  backendData: PropTypes.objectOf(PropTypes.shape).isRequired,
   contributors: PropTypes.arrayOf(PropTypes.shape),
   history: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
@@ -98,6 +99,6 @@ export default withRouter(connect(store => ({
   user: store.user,
   curriculum: store.curriculum,
   uiState: store.uiState,
-  auth0: store.auth0,
+  backendData: store.backendData,
   contributors: store.contributors,
 }))(App));

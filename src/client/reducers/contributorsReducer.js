@@ -1,5 +1,5 @@
 const contributors = (state = {
-  contributors: {},
+  contributors: [],
 }, action) => {
   switch (action.type) {
     default: return state;
