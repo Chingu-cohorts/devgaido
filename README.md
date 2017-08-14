@@ -9,7 +9,7 @@ languages.
 You can find devGaido at [www.devgaido.com](http://www.devgaido.com).
 
 [Features](#features) | [Development](#development) | [Runtime](#runtime) | [Authors](#authors) |
-[License](#license)
+[License](#license) | [Release Notes](releasenotes.md)
 
 ![screenshot]()
 
