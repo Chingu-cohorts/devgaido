@@ -77,6 +77,9 @@ const config = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'runtime',
     }),
+    new AssetsPlugin({
+      fullPath: false,
+    }),
     new webpack.HotModuleReplacementPlugin(),
   ] : [
     new webpack.HashedModuleIdsPlugin(),
