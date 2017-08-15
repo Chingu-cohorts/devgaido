@@ -12,4 +12,4 @@ You can find devGaido at [www.devgaido.com](http://www.devgaido.com).
 
 ### Fixes
 
-- Corrected an issue in the registration process which prevented registration using a user-supplied email and password from successfully completing. 
+- Issue #102: Corrected an issue in the registration process which prevented registration using a user-supplied email and password from successfully completing. 
