@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { connect } from 'react-redux';
 
 import PageHero from '../shared/PageHero';
 import TabbedContent from '../shared//TabbedContent';
@@ -14,24 +15,24 @@ import actions from '../../actions';
 const { setCurrentDashboardTab } = actions;
 
 
-const Dashboard = ({ user, curriculum, uiState }) => (
+const Dashboard = ({ uiState }) => (
   <div>
     <Helmet
       title="Dashboard"
     />
     <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__dashboard" title="Dashboard">
-      <Metrics user={user} curriculum={curriculum} />
+      <Metrics />
     </PageHero>
     <TabbedContent
       content={[{
         caption: 'In Progress',
-        content: <InProgressTab curriculum={curriculum} user={user} />,
+        content: <InProgressTab />,
       }, {
         caption: 'Bookmarked',
-        content: <BookmarkedTab curriculum={curriculum} />,
+        content: <BookmarkedTab />,
       }, {
         caption: 'Completed',
-        content: <CompletedTab curriculum={curriculum} />,
+        content: <CompletedTab />,
       }]}
       tabIndex={uiState.curDashboardTab}
       onClick={index => setCurrentDashboardTab(index)}
@@ -41,8 +42,8 @@ const Dashboard = ({ user, curriculum, uiState }) => (
 
 Dashboard.propTypes = {
   uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
-  curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
-  user: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-export default Dashboard;
+export default connect(store => ({
+  uiState: store.uiState,
+}))(Dashboard);

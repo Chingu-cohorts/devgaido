@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import PageHero from '../shared/PageHero';
 import Auth0LockWidget from '../shared/Auth0LockWidget';
@@ -48,5 +49,6 @@ const Signup = ({ auth0 }) => (
   </div>
 );
 
-
-export default Signup;
+export default connect(store => ({
+  auth0: store.backendData.auth0,
+}))(Signup);

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import ImageLinkCard from '../shared/ImageLinkCard';
 
@@ -106,5 +107,8 @@ Results.propTypes = {
   category: PropTypes.string.isRequired,
 };
 
-export default Results;
+export default connect(store => ({
+  uiState: store.uiState,
+  curriculum: store.curriculum,
+}))(Results);
 

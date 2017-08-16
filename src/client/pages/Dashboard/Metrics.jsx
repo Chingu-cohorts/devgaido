@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 const Metrics = ({ curriculum }) => (
   <div className="metrics abs-bottom-right flex align-items-end">
@@ -34,4 +35,6 @@ Metrics.propTypes = {
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-export default Metrics;
+export default connect(store => ({
+  curriculum: store.curriculum,
+}))(Metrics);

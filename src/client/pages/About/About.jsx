@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { connect } from 'react-redux';
 
 import PageHero from '../shared/PageHero';
 import Contributors from './Contributors';
@@ -38,4 +39,6 @@ About.propTypes = {
   contributors: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
 
-export default About;
+export default connect(store => ({
+  contributors: store.contributors,
+}))(About);

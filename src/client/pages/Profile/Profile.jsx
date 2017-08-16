@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { connect } from 'react-redux';
 
 import PageHero from '../shared/PageHero';
 import PageDivider from '../shared/PageDivider';
@@ -29,4 +30,6 @@ Profile.propTypes = {
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-export default Profile;
+export default connect(store => ({
+  user: store.user,
+}))(Profile);

@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
-// import PropTypes from 'prop-types';
-
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { MenuCard } from './Cards';
 import Auth0LockWidget from './Auth0LockWidget';
@@ -96,7 +97,7 @@ class StickyNav extends React.Component {
     const { user, uiState, auth0 } = this.props;
 
     return (
-      <div className={`width-100 bg-white`} ref={(domElem) => { this.navbarRefPlaceholder = domElem; }}>
+      <div className={'width-100 bg-white'} ref={(domElem) => { this.navbarRefPlaceholder = domElem; }}>
         <div className={`navbar width-100 bg-white ${this.sticky ? 'fixed' : ''}`} ref={(domElem) => { this.navbarRef = domElem; }}>
           <div className="container flex justify-space-between align-items-center padding-vertical-small relative">
             <NavLink to={user.authenticated ? '/dashboard' : '/'} className="logo" />
@@ -123,5 +124,15 @@ class StickyNav extends React.Component {
   }
 }
 
-export default StickyNav;
+StickyNav.propTypes = {
+  uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
+  user: PropTypes.objectOf(PropTypes.shape).isRequired,
+  auth0: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
+export default connect(store => ({
+  user: store.user,
+  uiState: store.uiState,
+  auth0: store.backendData.auth0,
+}))(StickyNav);
 

@@ -1,30 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import ItemList from './ItemList';
 
-const CurrentPathSection = ({ path, curriculum }) => {
-  return (
-    <div className="inprogress-tab margin-bottom-small">
-      <span>CURRENT PATH</span>
-      <h2>{path.name}</h2>
-      <p className="margin-bottom-big">This section shows you the last path you were working on.</p>
-      <ItemList items={[path]} curriculum={curriculum} category="paths" />
-    </div>
-  );
-};
+const CurrentPathSection = ({ path, curriculum }) => (
+  <div className="inprogress-tab margin-bottom-small">
+    <span>CURRENT PATH</span>
+    <h2>{path.name}</h2>
+    <p className="margin-bottom-big">This section shows you the last path you were working on.</p>
+    <ItemList items={[path]} curriculum={curriculum} category="paths" />
+  </div>
+);
 
-const CurrentLessonSection = ({ lesson, curriculum }) => {
-  return (
-    <div className="inprogress-tab margin-bottom-small">
-      <span>LAST LESSON</span>
-      <h2>{lesson.name}</h2>
-      <p className="margin-bottom-big">This section shows the last lesson you worked on.</p>
-      <ItemList items={[lesson]} curriculum={curriculum} category="lessons" />
-    </div>
-  );
-};
+const CurrentLessonSection = ({ lesson, curriculum }) => (
+  <div className="inprogress-tab margin-bottom-small">
+    <span>LAST LESSON</span>
+    <h2>{lesson.name}</h2>
+    <p className="margin-bottom-big">This section shows the last lesson you worked on.</p>
+    <ItemList items={[lesson]} curriculum={curriculum} category="lessons" />
+  </div>
+);
 
 
 const isInProgress = (path, courses, lessons) => {
@@ -91,6 +88,16 @@ const InProgressTab = ({ user, curriculum }) => {
   );
 };
 
+CurrentPathSection.propTypes = {
+  path: PropTypes.objectOf(PropTypes.shape).isRequired,
+  curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
+CurrentLessonSection.propTypes = {
+  lesson: PropTypes.objectOf(PropTypes.shape).isRequired,
+  curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
 InProgressSection.propTypes = {
   inProgressPaths: PropTypes.arrayOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
@@ -101,4 +108,7 @@ InProgressTab.propTypes = {
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-export default InProgressTab;
+export default connect(store => ({
+  user: store.user,
+  curriculum: store.curriculum,
+}))(InProgressTab);

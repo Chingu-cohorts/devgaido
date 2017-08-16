@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import LazyLoad from 'react-lazyload';
+import { connect } from 'react-redux';
 
 import MilestoneCard from './MilestoneCard';
 import PageHero from '../shared/PageHero';
@@ -34,7 +35,7 @@ const PathMarker = ({ text, dotClass, iconClass, path }) => (
     {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
   </div>);
 
-const Path = ({ match, curriculum, user, uiState }) => {
+const Path = ({ match, curriculum, user }) => {
   const pathId = match.params.id;
   const path = curriculum.paths[match.params.id];
   let milestones = null;
@@ -56,7 +57,7 @@ const Path = ({ match, curriculum, user, uiState }) => {
           />);
       });
 
-      return <MilestoneCard index={index} course={course} lessons={lessons} key={courseId} uiState={uiState} id={`${pathId}/${courseId}`} />;
+      return <MilestoneCard index={index} course={course} lessons={lessons} key={courseId} id={`${pathId}/${courseId}`} />;
     });
   } else {
     const course = curriculum.courses[path.courseIds[0]];
@@ -198,7 +199,9 @@ Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
-  uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-export default Path;
+export default connect(store => ({
+  curriculum: store.curriculum,
+  user: store.user,
+}))(Path);
