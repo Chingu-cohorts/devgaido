@@ -21,20 +21,13 @@ const App = ({ serverMatch, location, history }) => {
   const routes = [];
   if (serverMatch) {
     routes.push(
-      <Route
-        {...serverMatch}
-        key={0}
-        location={location}
-      />);
+      <Route {...serverMatch} key={0} location={location} />,
+    );
   } else {
     let key = 0;
     routesArr.forEach((route) => {
       routes.push(
-        <Route
-          {...route}
-          key={key += 1}
-          location={location}
-        />);
+        <Route {...route} key={key += 1} location={location} />);
     });
   }
   return (
@@ -74,9 +67,6 @@ App.propTypes = {
 
 App.defaultProps = {
   serverMatch: null,
-  curriculum: [],
-  uiState: null,
-  contributors: [],
 };
 
 export default withRouter(App);
