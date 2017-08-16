@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 const Redirect = (Component, onAuthenticated, path) => {
   class _PageContainer extends React.Component {
@@ -17,7 +19,9 @@ const Redirect = (Component, onAuthenticated, path) => {
     user: PropTypes.objectOf(PropTypes.shape).isRequired,
     history: PropTypes.objectOf(PropTypes.shape).isRequired,
   };
-  return _PageContainer;
+  return withRouter(connect(store => ({
+    user: store.user,
+  }))(_PageContainer));
 };
 
 export default Redirect;

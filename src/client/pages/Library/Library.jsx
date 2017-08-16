@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { connect } from 'react-redux';
 
 import Legend from './Legend';
 import Results from './Results';
@@ -23,7 +24,7 @@ const Library = ({ curriculum, uiState, user }) => (
   <div>
     <Helmet title="Library" />
     <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__library" title="Library">
-      <Legend curriculum={curriculum} />
+      <Legend />
     </PageHero>
     <PageDivider>
       <div className="search-bar flex flex-1">
@@ -44,10 +45,10 @@ const Library = ({ curriculum, uiState, user }) => (
     <TabbedContent
       content={[{
         caption: 'Paths',
-        content: <Results curriculum={curriculum} uiState={uiState} category="paths" />,
+        content: <Results category="paths" />,
       }, {
         caption: 'Lessons',
-        content: <Results curriculum={curriculum} uiState={uiState} category="lessons" />,
+        content: <Results category="lessons" />,
       }]}
       tabIndex={uiState.curLibraryTab}
       onClick={index => setCurrentLibraryTab(index)}
@@ -61,4 +62,9 @@ Library.propTypes = {
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-export default Library;
+export default connect(store => ({
+  user: store.user,
+  uiState: store.uiState,
+  curriculum: store.curriculum,
+}))(Library);
+

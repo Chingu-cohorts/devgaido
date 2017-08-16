@@ -1,13 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { connect } from 'react-redux';
 
 import PageHero from '../shared/PageHero';
 import DisqusThread from '../shared/DisqusThread';
 
 import actions from '../../actions';
 
-const { setCurrentPath, setLastTouchedLesson, addBookmark, removeBookmark, completeLesson, unCompleteLesson } = actions;
+const {
+  setCurrentPath,
+  setLastTouchedLesson,
+  addBookmark,
+  removeBookmark,
+  completeLesson,
+  unCompleteLesson,
+} = actions;
 
 const typeIcons = {
   Book: 'icon-book',
@@ -135,4 +143,7 @@ Lesson.propTypes = {
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-export default Lesson;
+export default connect(store => ({
+  user: store.user,
+  curriculum: store.curriculum,
+}))(Lesson);

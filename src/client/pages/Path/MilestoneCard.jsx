@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 import actions from '../../actions';
 
 const { toggleMilestoneCard } = actions;
@@ -61,4 +61,6 @@ class MilestoneCard extends React.Component {
   }
 }
 
-export default MilestoneCard;
+export default connect(store => ({
+  uiState: store.uiState,
+}))(MilestoneCard);
