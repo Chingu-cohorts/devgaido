@@ -34,7 +34,6 @@ const routes = [
     path: '/signup',
     exact: true,
     component: Signup,
-    // passdown: ['auth0'],
   },
   {
     path: '/about',
