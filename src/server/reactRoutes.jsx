@@ -33,7 +33,7 @@ const renderPage = (matchedRoute, store) => {
   const reactMarkup = renderToString(
     <Provider store={store}>
       <StaticRouter context={{}} location={matchedRoute.url}>
-        <App serverMatch={matchedRoute} />
+        <App serverRoute={matchedRoute} />
       </StaticRouter>
     </Provider>,
     );
