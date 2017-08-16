@@ -14,7 +14,7 @@ import actions from '../../actions';
 const { setCurrentDashboardTab } = actions;
 
 
-const Dashboard = ({ user, curriculum, uiState, history }) => (
+const Dashboard = ({ user, curriculum, uiState }) => (
   <div>
     <Helmet
       title="Dashboard"
@@ -25,7 +25,7 @@ const Dashboard = ({ user, curriculum, uiState, history }) => (
     <TabbedContent
       content={[{
         caption: 'In Progress',
-        content: <InProgressTab curriculum={curriculum} user={user} history={history} />,
+        content: <InProgressTab curriculum={curriculum} user={user} />,
       }, {
         caption: 'Bookmarked',
         content: <BookmarkedTab curriculum={curriculum} />,
@@ -43,7 +43,6 @@ Dashboard.propTypes = {
   uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
-  history: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default Dashboard;

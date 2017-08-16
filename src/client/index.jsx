@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader';
 import { BrowserRouter } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 
 import App from './App';
 import store from './store';
@@ -21,7 +20,7 @@ const render = (Component) => {
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
-        <BrowserRouter history={createBrowserHistory()}>
+        <BrowserRouter>
           <GAListener>
             <Component />
           </GAListener>
