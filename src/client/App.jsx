@@ -14,7 +14,7 @@ import Footer from './pages/shared/Footer';
 import routesArr from './routes';
 
 const App = ({ serverRoute, location, history }) => {
-// If <App /> is rendered on the server we need to provide the serverMatch prop
+// If <App /> is rendered on the server we need to provide the serverRoute prop
 // since StaticRouter can only render a single Route (Switch only works on client side).
 // On the client though, just return all routes and let Switch do the work.
 
