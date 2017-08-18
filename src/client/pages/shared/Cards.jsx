@@ -10,10 +10,10 @@ const { setLastTouchedPath } = actions;
 
 const CardTemplate = ({ title, bgColorClass, iconClass, iconClass2, heightClass, content, footerContent }) => (
   <div className={`card flex-column border-round bg-white ${heightClass}`}>
-    <div className={`card__header flex align-items-center border-round-top ${bgColorClass}`}>
+    <div className={`card__header flex items-center border-round-top ${bgColorClass}`}>
       {iconClass ? <i className={`fa c-white h4 ${iconClass} margin-right-small`} /> : null}
       <h4 className="card__header__text flex-1 c-white uppercase no-margin">{title}</h4>
-      {iconClass2 ? <i className={`lcard__checkmark fa c-white h1 no-margin absolute ${iconClass2}`} /> : null}
+      {iconClass2 ? <i className={`lcard__checkmark fa c-white h2 no-margin margin-top-tiny absolute ${iconClass2}`} /> : null}
     </div>
     <div className="card__content flex-1">
       {content}
@@ -41,9 +41,9 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, conne
   const ratingStars = [];
   for (let i = 0; i < 5; i += 1) {
     if (i < item.rating) {
-      ratingStars.push(<i className="fa icon-star c-secondary h4 margin-left-tiny" key={item.name + i} />);
+      ratingStars.push(<i className="fa icon-star c-accent h4 margin-left-tiny" key={item.name + i} />);
     } else {
-      ratingStars.push(<i className="fa icon-star-o c-secondary h4 margin-left-tiny" key={item.name + i} />);
+      ratingStars.push(<i className="fa icon-star-o c-accent h4 margin-left-tiny" key={item.name + i} />);
     }
   }
   const subjects = [];
@@ -93,8 +93,8 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, conne
             {item.nLessonsTotal ?
               <div className="flex no-margin margin-top-small">
                 <div className="progress border-pill overflow-hidden">
-                  <div className="progress__fill bg-secondary border-pill" />
-                  <div className="progress__mask bg-secondary" style={{ width: `${progressInverse}%` }} />
+                  <div className="progress__fill bg-accent border-pill" />
+                  <div className="progress__mask" style={{ width: `${progressInverse}%` }} />
                 </div>
               </div> : null}
 
@@ -106,7 +106,7 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, conne
                 </h3> : null}
               {item.nLessonsTotal ?
                 <h3 className="no-margin margin-top-small">
-                  <i className={'fa icon-graduation-cap c-secondary h3 margin-left-big margin-right-tiny'} />
+                  <i className={'fa icon-graduation-cap c-accent h3 margin-left-big margin-right-tiny'} />
                   <span className="">{item.nLessonsCompleted}/{item.nLessonsTotal}</span>
                 </h3> : null}
             </div>

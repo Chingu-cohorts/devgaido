@@ -1,10 +1,78 @@
+// You can easily overwrite the default variables like this:
+$primaryColorLight = #e7eaf6
+$primaryColor = #007399
+$accentColor  = #DB684E
+$headingFontWeight = 100
+$fontWeight = 100
+// $fontSize = 1.8rem
+$buttonFontWeight = 100
+$fontFamily = 'Fira Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+$containerGap = 20px
+$containerWidth = "calc(1220px + %s * 2)" % ($containerGap)
+// (Check /sutairu/base/_defaultVars.styl and /atomiku/_defaultVars for all default variables.)
 
-@import './_variables'
+$pageContentColor = #ddd //#e7eaf6 
+$page-hero-height = 270px
+$page-hero-height--full = 470px
+
 @import './sutairu'
-@import './modules'
-@import './_functional'
-
+@import './atomiku'
 @import './iconFont'
+@import './modules'
+
+.bg-accent--dark
+  background: darken($accentColor, 15)
+
+.boxshadow-underline
+  box-shadow 0px 1px $accentColor
+
+// Compounds
+.button--default
+  @extend .border-pill
+  @extend .bg-transparent
+  @extend .border-text
+  @extend .c-text
+  @extend .c-hover-white
+  @extend .bg-hover-primary
+  @extend .border-hover-primary
+  
+.button--primary
+  @extend .border-pill
+  @extend .bg-primary
+  @extend .border-primary
+  @extend .bg-hover-accent
+  @extend .border-hover-accent
+
+.button--accent
+  @extend .border-pill
+  @extend .c-white
+  @extend .border-accent
+  @extend .bg-hover-primary
+  @extend .border-hover-primary
+
+.button--primary-clear
+  @extend .border-pill
+  @extend .c-primary
+  @extend .border-primary
+  @extend .bg-transparent
+  @extend .bg-hover-accent
+  @extend .c-hover-white
+  @extend .border-hover-accent
+
+.button--accent-clear
+  @extend .border-pill
+  @extend .c-accent
+  @extend .border-accent
+  @extend .bg-transparent
+  @extend .bg-hover-black
+
+.button--white-clear
+  @extend .border-pill
+  @extend .c-white
+  @extend .border-white
+  @extend .bg-transparent
+  @extend .bg-hover-accent
+  @extend .border-hover-accent
 
 // Needed to for Icon Font
 i::before
@@ -19,7 +87,7 @@ i::before
   flex-direction: column;
 
 .page-content
-  background: #e7eaf6
+  background: $pageContentColor
   flex 1
 
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
@@ -140,7 +208,7 @@ i::before
   height: 0; 
   border-left: 10px solid transparent
   border-right: 10px solid transparent
-  border-top: 10px solid colorSecondary
+  border-top: 10px solid $accentColor
 
 .topics-dropdown:after
   pointer-events:none
@@ -201,7 +269,7 @@ i::before
   width: 50px; 
   height: 50px;
   color white
-  background colorSecondary
+  background $accentColor
 
 .dot:after
   content: "\f05d"
@@ -229,7 +297,7 @@ i::before
   top: 1px;
   width: 64px; 
   height: 64px;
-  background colorPrimary
+  background $primaryColor
 
 .dot--empty:after
   content: "";
@@ -239,7 +307,7 @@ i::before
   top: 10px;
   width: 40px; 
   height: 40px;
-  background colorPrimaryLight
+  background $primaryColorLight
 
 .dot--big.dot--empty:after
   content: "";
@@ -249,7 +317,7 @@ i::before
   top: 6px;
   width: 54px; 
   height: 54px;
-  background colorPrimaryLight
+  background $primaryColorLight
   
 .dot--empty.dot--displace:after
   left -112px
@@ -262,8 +330,8 @@ i::before
   width 85px
 
 .path-node__connection
-  background alpha(colorPrimary,0.3)
-  margin-right 25px
+  background alpha($primaryColor,0.3)
+  margin-right -13px
   width 5px
 
 .collapsible
@@ -315,7 +383,7 @@ i::before
   left -72px
   
 .page-hero__offset
-  margin-top: -200px
+  margin-top: -200px !important
 
 .lcard__checkmark
   right 20px
@@ -354,6 +422,7 @@ i::before
   text-align: center
   position: absolute
   border none
+  background: transparent
   padding 30px 5px
   margin 0
   left 50%
@@ -366,7 +435,7 @@ i::before
   transition background 0.5s
   &:hover
     background: transparent
-    color colorSecondary
+    color $accentColor
 
   i
     transition color 0.5s
@@ -378,7 +447,7 @@ i::before
   position: fixed
   box-shadow: 1px 1px 1px rgba(0,0,0,0.1)
   z-index: 777
-  background: colorPrimary
+  background: $primaryColor
   transform: translate(-100px)
   opacity: 0.3
   height 100vh
@@ -400,7 +469,7 @@ i::before
     position: absolute
     border-top: 40px solid transparent;
     border-bottom: 40px solid transparent; 
-    border-right:15px solid colorSecondary
+    border-right:15px solid $accentColor
     top 50%
     width 40px
     background: green
@@ -437,13 +506,13 @@ i::before
   .checkbox__box
     width: 100%
     height: 100%
-    border: 1px solid $color-quaternary
+    border: 1px solid $inputBorderColor
     border-radius: 6px
     position: relative
     overflow: hidden
     cursor: pointer
     &:hover
-      border-color colorPrimary
+      border-color $primaryColor
     &:after
       opacity: 0
       width: 50%
@@ -452,7 +521,7 @@ i::before
       position: absolute
       border-left: 3.5px solid
       border-bottom: 3.5px solid
-      border-color: colorSecondary
+      border-color: $accentColor
       transform: rotate(-45deg) translate3d(0,0,0)
       transform-origin: center center
       transition: all 0.2s

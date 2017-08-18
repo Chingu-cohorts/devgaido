@@ -99,21 +99,21 @@ class StickyNav extends React.Component {
     return (
       <div className={'width-100 bg-white'} ref={(domElem) => { this.navbarRefPlaceholder = domElem; }}>
         <div className={`navbar width-100 bg-white ${this.sticky ? 'fixed' : ''}`} ref={(domElem) => { this.navbarRef = domElem; }}>
-          <div className="container flex justify-space-between align-items-center padding-vertical-small relative">
+          <div className="container flex justify-between items-center padding-vertical-small relative">
             <NavLink to={user.authenticated ? '/dashboard' : '/'} className="logo" />
-            <nav className="flex align-items-center">
-              <ul className="flex align-items-center no-margin list-style-none uppercase">
+            <nav className="flex items-center">
+              <ul className="flex items-center no-margin list-style-none uppercase">
                 <li className="margin-right-small"><NavLink to="/library" activeClassName="boxshadow-underline bold">Library</NavLink></li>
                 {user.authenticated ? <li className="margin-right-small"><NavLink to="/dashboard" activeClassName="boxshadow-underline bold">Dashboard</NavLink></li> : null}
               </ul>
-              {user.authenticated ? <img className="avatar circle-border subtle-border cursor-pointer" src={user.avatar} alt="avatar" role="button" onClick={() => toggleNavMenu()} /> : null}
+              {user.authenticated ? <img className="avatar border-circle border-subtle cursor-pointer" src={user.avatar} alt="avatar" role="button" onClick={() => toggleNavMenu()} /> : null}
               {!user.authenticated ? <a className="button button--primary-clear uppercase" href="/" onClick={e => handleLoginClick(e, auth0)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a> : null}
             </nav>
             <div className={uiState.navMenuOpen ? 'menu absolute' : 'menu absolute hidden'}>
               <MenuCard username={user.name}>
                 <ul className="list-style-none no-margin">
-                  <li className="margin-bottom-small"><NavLink to="/profile" className="uppercase left" activeClassName="bold" onClick={() => toggleNavMenu()}><i className="fa icon-user h5 c-secondary margin-right-small" aria-hidden="true" /> Profile</NavLink></li>
-                  <li><a className="uppercase left" href="/logout"><i className="fa icon-sign-out h5 c-secondary margin-right-small" aria-hidden="true" />Logout</a></li>
+                  <li className="margin-bottom-small"><NavLink to="/profile" className="uppercase left" activeClassName="bold" onClick={() => toggleNavMenu()}><i className="fa icon-user h5 c-accent margin-right-small" aria-hidden="true" /> Profile</NavLink></li>
+                  <li><a className="uppercase left" href="/logout"><i className="fa icon-sign-out h5 c-accent margin-right-small" aria-hidden="true" />Logout</a></li>
                 </ul>
               </MenuCard>
             </div>

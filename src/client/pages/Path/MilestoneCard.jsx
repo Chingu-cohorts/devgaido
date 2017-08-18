@@ -27,13 +27,13 @@ class MilestoneCard extends React.Component {
   render() {
     const ratingStars = [];
     for (let i = 0; i < this.props.course.rating; i += 1) {
-      ratingStars.push(<i className="fa icon-star c-secondary h4 margin-left-tiny" />);
+      ratingStars.push(<i className="fa icon-star c-accent h4 margin-left-tiny" />);
     }
     this.collapsed = this.firstRender ? false : this.props.uiState.openedMilestones.indexOf(this.props.id) === -1;
     return (
       <div className="">
         <div className={`mcard cursor-pointer relative dot--big ${!this.props.course.completed ? 'dot--empty' : ''} flex-column bg-white`} onClick={() => this.toggleCollapsed(this.props.id)}>
-          <div className={`card__header flex align-items-center bg-primary ${this.collapsed ? 'border-round' : 'border-round-top'}`}>
+          <div className={`card__header flex items-center bg-primary bg-hover-accent ${this.collapsed ? 'border-round' : 'border-round-top'}`}>
             <i className={`mcard__icon fa icon-caret-right c-white h2 margin-right-small ${this.collapsed ? '' : 'rotated'}`} />
             <h3 className="mcard__header__text flex-1 c-white uppercase no-margin">Milestone {this.props.index + 1}: {this.props.course.name}</h3>
             {!this.props.course.completed ?

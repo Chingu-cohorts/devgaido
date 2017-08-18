@@ -83,10 +83,10 @@ const Results = ({ curriculum, uiState, category }) => {
       <ImageLinkCard
         item={lesson}
         linkTo={lesson.url}
-        bgColorClass="bg-secondary"
+        bgColorClass="bg-accent"
         imgSrc={`/screenshots/${lessonId}.jpg`}
         iconClass="icon-graduation-cap"
-        imgBorderClass="border-1px border-secondary"
+        imgBorderClass="border-1px border-accent"
         key={lessonId}
       />
     );
@@ -94,7 +94,7 @@ const Results = ({ curriculum, uiState, category }) => {
 
   return (
     <div className="results margin-vertical-big">
-      <div className="flex flex-wrap margin-vertical-big justify-space-around">
+      <div className="flex flex-wrap margin-vertical-big justify-around">
         {results}
       </div>
     </div>

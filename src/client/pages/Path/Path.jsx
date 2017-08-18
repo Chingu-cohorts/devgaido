@@ -20,7 +20,7 @@ const typeIcons = {
 };
 
 const PathMarker = ({ text, dotClass, iconClass, path }) => (
-  <div className={`path-marker relative ${dotClass} flex align-items-center bg-grey border-round`}>
+  <div className={`path-marker relative ${dotClass} flex items-center bg-grey border-round`}>
     <h2 className="path-marker__text flex-1 uppercase no-margin c-white margin-right-small">{text}</h2>
     {path && path.nTotal !== 1 ?
       <h3 className="no-margin right c-white">
@@ -50,7 +50,7 @@ const Path = ({ match, curriculum, user }) => {
           <LinkCard
             item={lesson}
             linkTo={lesson.url}
-            bgColorClass={`relative ${dotClasses}  bg-secondary`}
+            bgColorClass={`relative ${dotClasses}  bg-accent`}
             iconClass={typeIcons[lesson.type]}
             key={lessonId}
             imgSrc={`/screenshots/${lessonId}.jpg`}
@@ -67,7 +67,7 @@ const Path = ({ match, curriculum, user }) => {
         <LinkCard
           item={lesson}
           linkTo={lesson.url}
-          bgColorClass={`relative no-milestone dot ${lesson.completed ? '' : 'dot--empty'} dot--displace bg-secondary`}
+          bgColorClass={`relative no-milestone dot ${lesson.completed ? '' : 'dot--empty'} dot--displace bg-accent`}
           iconClass={typeIcons[lesson.type]}
           key={lessonId}
           imgSrc={`/screenshots/${lessonId}.jpg`}
@@ -79,9 +79,9 @@ const Path = ({ match, curriculum, user }) => {
   const ratingStars = [];
   for (let i = 0; i < 5; i += 1) {
     if (i < path.rating) {
-      ratingStars.push(<i className="fa icon-star c-secondary h4 margin-left-tiny" key={path.name + i} />);
+      ratingStars.push(<i className="fa icon-star c-accent h4 margin-left-tiny" key={path.name + i} />);
     } else {
-      ratingStars.push(<i className="fa icon-star-o c-secondary h4 margin-left-tiny" key={path.name + i} />);
+      ratingStars.push(<i className="fa icon-star-o c-accent h4 margin-left-tiny" key={path.name + i} />);
     }
   }
   const subjects = [];
@@ -100,66 +100,68 @@ const Path = ({ match, curriculum, user }) => {
           { name: 'description', content: path.description },
         ]}
       />
-      <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__path" bgUrl={`/paths/${pathId}.jpg`} title={path.name} full>
-        <i className="fa icon-map-signs c-white h0 abs-top-right" />
-        {path.completed ? <i className="fa icon-check-circle-o c-white h0 abs-bottom-right" /> : null}
+      <PageHero bgColorClass="bg-primary" bgUrl={`/paths/${pathId}.jpg`} title={path.name} full>
+        <i className="fa icon-map-signs c-white h1 abs-top-right margin-top-small margin-right-small" />
+        {path.completed ? <i className="fa icon-check-circle-o c-white h0 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
       </PageHero>
       <div className="page-hero__offset">
-        <div className="container flex bg-white padding-horizontal-big border-round margin-top-small">
-          <div className="padding-vertical-big flex-2">
-            <h2>About This Path</h2>
-            <p className="h5">{path.description}</p>
-            {path.goal ?
-              <div>
-                <h3 className="margin-top-big uppercase">Goal</h3>
-                <p className="h5">{path.goal}</p>
-              </div> : null}
-          </div>
-          <div className="padding-vertical-big margin-left-huge flex-1">
-            { user.authenticated ?
-              <div className="right margin-bottom-big">
-                {!path.bookmarked ?
-                  <button className="button--default uppercase" onClick={() => addBookmark(pathId, 'paths', path.version)}>Bookmark</button> :
-                  <button className="button--default uppercase" onClick={() => removeBookmark(pathId, 'paths', path.version)}>Remove Bookmark</button>}
-              </div> :
-              <div className="right margin-bottom-big">
-                <button className="button--default uppercase hidden">Bookmark</button>
-              </div> }
-            <div className="flex justify-space-between">
-              <h5 className="normal">Rating</h5>
-              <div>
-                {ratingStars}
-              </div>
+        <div className="container">
+          <div className="flex bg-white padding-horizontal-big border-round margin-top-small">
+            <div className="padding-vertical-big flex-2">
+              <h2>About This Path</h2>
+              <p className="h5">{path.description}</p>
+              {path.goal ?
+                <div>
+                  <h3 className="margin-top-big uppercase">Goal</h3>
+                  <p className="h5">{path.goal}</p>
+                </div> : null}
             </div>
-            <div className="flex justify-space-between">
-              <h5 className="normal">Estimated Length</h5>
-              <div>
-                {/* <h4 className="c-primary uppercase right no-margin">Very Long</h4>*/}
-                <h5 className="c-primary uppercase right">{path.estimatedTimeStr} hours</h5>
-              </div>
-            </div>
-            <div className="flex justify-space-between">
-              <h5 className="normal">Tags</h5>
-              <div className="width-50 right">
-                {subjects.map(
-                  subjectName => <h6 className="tag center c-white border-pill bg-grey display-inline-block" key={path.name + subjectName}>{subjectName}</h6>,
-                )}
-              </div>
-            </div>
-            {path.salary !== undefined ?
-              <div className="flex justify-space-between margin-top-big">
-                <h5 className="normal">Estimated Entry Salary</h5>
-                <div className="right">
-                  <h2 className="c-secondary right no-margin margin-left-big">{path.salary[0]}</h2>
-                  <p className="c-primary">{path.salary[1]}</p>
+            <div className="padding-vertical-big margin-left-huge flex-1">
+              { user.authenticated ?
+                <div className="right margin-bottom-big">
+                  {!path.bookmarked ?
+                    <button className="button--default uppercase" onClick={() => addBookmark(pathId, 'paths', path.version)}>Bookmark</button> :
+                    <button className="button--default uppercase" onClick={() => removeBookmark(pathId, 'paths', path.version)}>Remove Bookmark</button>}
+                </div> :
+                <div className="right margin-bottom-big">
+                  <button className="button--default uppercase hidden">Bookmark</button>
+                </div> }
+              <div className="flex justify-between">
+                <h5 className="normal">Rating</h5>
+                <div>
+                  {ratingStars}
                 </div>
-              </div> : null}
+              </div>
+              <div className="flex justify-between">
+                <h5 className="normal">Estimated Length</h5>
+                <div>
+                  {/* <h4 className="c-primary uppercase right no-margin">Very Long</h4>*/}
+                  <h5 className="c-primary uppercase right">{path.estimatedTimeStr} hours</h5>
+                </div>
+              </div>
+              <div className="flex justify-between">
+                <h5 className="normal">Tags</h5>
+                <div className="width-50 right">
+                  {subjects.map(
+                    subjectName => <h6 className="tag center c-white border-pill bg-grey display-inline-block" key={path.name + subjectName}>{subjectName}</h6>,
+                  )}
+                </div>
+              </div>
+              {path.salary !== undefined ?
+                <div className="flex justify-between margin-top-big">
+                  <h5 className="normal">Estimated Entry Salary</h5>
+                  <div className="right">
+                    <h2 className="c-accent right no-margin margin-left-big">{path.salary[0]}</h2>
+                    <p className="c-primary">{path.salary[1]}</p>
+                  </div>
+                </div> : null}
+            </div>
           </div>
         </div>
       </div>
       <div className="path__content container flex margin-vertical-big">
-        <div className="path-node flex-column align-items-center">
-          <div className="path-node__connection flex-1 margin-bottom-small">
+        <div className="path-node flex-column items-center">
+          <div className="path-node__connection flex-1 margin-bottom">
             <p className="hidden">content</p>
           </div>
         </div>

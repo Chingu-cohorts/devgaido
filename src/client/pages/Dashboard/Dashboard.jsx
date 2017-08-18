@@ -20,7 +20,7 @@ const Dashboard = ({ uiState }) => (
     <Helmet
       title="Dashboard"
     />
-    <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__dashboard" title="Dashboard">
+    <PageHero bgColorClass="bg-primary" bgUrl="/img/dashboard.jpg" title="Dashboard">
       <Metrics />
     </PageHero>
     <TabbedContent

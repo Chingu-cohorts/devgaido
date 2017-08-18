@@ -13,12 +13,12 @@ const LoadingPlaceholder = () => (
 const Home = () => (
   <div>
     <Helmet title="Home" />
-    <div className="home-hero flex align-items-center justify-center bg-img__compass bg-cover">
+    <div className="home-hero flex items-center justify-center bg-cover" style={{ backgroundImage: "url('/img/compass.jpg')" }}>
       <div className="flex flex-wrap width-50">
         <h1 className="c-white bold width-100">LEARN WEB DEVELOPMENT</h1>
-        <h1 className="c-secondary bold margin-bottom-big width-100">THE DEVGAIDO WAY</h1>
+        <h1 className="c-accent bold margin-bottom-big width-100">THE DEVGAIDO WAY</h1>
         <p className="c-white">Whether you&#039;re just starting out or want to brush up a certain skill:</p>
-        <p className="c-white"><span className="c-secondary">DevGaido</span> provides easy to follow learning paths that help you reach your goal without the hassle.</p>
+        <p className="c-white"><span className="c-accent">DevGaido</span> provides easy to follow learning paths that help you reach your goal without the hassle.</p>
         <p className="c-white">Never worry about learning the wrong stuff from subpar resources ever again!</p>
         <div className="margin-top-small width-100">
           <Link className="button button--primary margin-right-small uppercase" to="/signup">Sign Up Now</Link>
@@ -32,7 +32,7 @@ const Home = () => (
           <img className="border-round" src="/img/discover.jpg" alt="" />
         </LazyLoad>
         <div className="flex-1 margin-left-small margin-top-small">
-          <h1 className="c-secondary bold">Discover</h1>
+          <h1 className="c-accent bold">Discover</h1>
           <p className="width-50">Whether you are a new Web Developer seeking to gain broader skills or an experienced developer who wants to fill a specific gap - let devGaido help you discover what you need to know.</p>
         </div>
       </section>
@@ -50,7 +50,7 @@ const Home = () => (
           <img className="border-round" src="/img/practise.jpg" alt="" />
         </LazyLoad>
         <div className="flex-1 margin-left-small margin-top-small">
-          <h1 className="c-secondary bold">Practice</h1>
+          <h1 className="c-accent bold">Practice</h1>
           <p className="width-50">Practice makes perfect! devGaido&#039;s learning paths include strategically placed exercises and quizzes so you can reinforce your newfound knowledge and understanding.</p>
         </div>
       </section>

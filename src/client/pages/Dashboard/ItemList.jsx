@@ -5,8 +5,8 @@ import { LinkCard } from '../shared/Cards';
 
 const bgColorLookUp = {
   paths: 'bg-primary',
-  courses: 'bg-secondary',
-  lessons: 'bg-secondary',
+  courses: 'bg-accent',
+  lessons: 'bg-accent',
 };
 
 const iconLookUp = {
@@ -17,7 +17,7 @@ const iconLookUp = {
 
 const childIconLookUp = {
   paths: 'icon-flag-checkered c-primary',
-  courses: 'icon-graduation-cap c-secondary',
+  courses: 'icon-graduation-cap c-accent',
   lessons: '',
 };
 
