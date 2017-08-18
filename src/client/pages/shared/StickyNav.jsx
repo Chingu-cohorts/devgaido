@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { MenuCard } from './Cards';
 import Auth0LockWidget from './Auth0LockWidget';
 
@@ -130,9 +130,9 @@ StickyNav.propTypes = {
   auth0: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-export default connect(store => ({
+export default withRouter(connect(store => ({
   user: store.user,
   uiState: store.uiState,
   auth0: store.backendData.auth0,
-}))(StickyNav);
+}))(StickyNav));
 
