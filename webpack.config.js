@@ -94,7 +94,7 @@ const config = {
     }),
     new ExtractTextPlugin('style-[contenthash].css'),
     new PurifyCSSPlugin({
-      paths: glob.sync(path.join(__dirname, '/src/client/pages/**/*.jsx'), { nodir: true }),
+      paths: glob.sync(path.join(__dirname, '/src/client/**/*.jsx'), { nodir: true }),
       minimize: true,
       purifyOptions: {
         info: true,
