@@ -124,38 +124,39 @@ const LinkCard = ({ item }) => {
   );
 };
 
+const typeIcons = {
+  Book: 'fa h3 icon-book c-primary',
+  Course: 'fa h3 icon-university c-primary',
+  Project: 'fa h3 icon-cogs c-primary',
+};
+
 const ImageLinkCard = ({ item }) => {
   const itemIsPath = item.nLessonsTotal !== undefined;
-  const typeIcon = itemIsPath ? 'fa h3 icon-map-signs c-primary' : 'fa h3 icon-graduation-cap c-accent';
-  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-primary' : 'fa h2 icon-check-circle-o c-accent';
-  const underline = itemIsPath ? 'shadow-bottom-primary-2' : 'shadow-bottom-accent-2';
+  const typeIcon = itemIsPath ? '' : typeIcons[item.type];
+  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-white' : 'fa h2 icon-check-circle-o c-white';
+  const underline = itemIsPath ? 'shadow-vertical-primary-2' : 'shadow-vertical-accent-2';
   const pathId = itemIsPath ? item.id : undefined;
+  const bgCol = itemIsPath ? 'bg-primary-25' : 'bg-accent-50';
 
   return (
-    <Link className={'link-card flex-column width-100 bg-white border-round c-text margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
-      <FlexRow className={`margin-top-small margin-horizontal-small items-center padding-bottom-tiny ${underline}`}>
-        <i className={typeIcon} />
-        <h3 className="flex-1 no-margin margin-left-small">{item.name}</h3>
-        {item.completed ? <i className={completeIcon} /> : null}
-      </FlexRow>
-      <FlexRow className="margin items-start">
-        <LazyLoad height={200} once offset={201}>
-          <img className="height-auto width-33" src={item.img} alt="" />
-        </LazyLoad>
-        <FlexColumn className="margin-left">
-          <p className="">{item.description}</p>
+    <Link className={'image-link-card col-quarter flex-column bg-white border-round c-text margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
+      <div className="image-link-card__img bg-cover border-round-top border-1px border-white relative flex-column justify-center" style={{ backgroundImage: `url(${item.img})` }}>
+        <div className="border-round-top bg-black opacity-50 abs-center-stretch" />
+        <div className={`border-round-top ${bgCol} abs-center-stretch`} />
+        <FlexRow className={`items-center padding-horizontal-small padding-vertical-tiny border-round-top c-white relative`}>
+          <h3 className="flex-1 no-margin text-shadow-subtle uppercase wider">{item.name}</h3>
+          {item.completed ? <i className={completeIcon} /> : null}
+        </FlexRow>
+      </div>
+      <p className="flex-1 margin-small">{item.description}</p>
+      <FlexColumn className="margin-small">
+        <FlexRow className="justify-between">
+          <i className={typeIcon} />
           <RatingStars item={item} />
-          <EstimatedTime item={item} />
-          <Subjects item={item} />
-          {itemIsPath ?
-            <Progress item={item} /> : null}
-          {itemIsPath ?
-            <FlexRow className="justify-end">
-              <MilestonesComplete item={item} />
-              <LessonsComplete item={item} />
-            </FlexRow> : null}
-        </FlexColumn>
-      </FlexRow>
+        </FlexRow>
+        {itemIsPath ?
+          <Progress item={item} /> : null}
+      </FlexColumn>
     </Link>
   );
 };

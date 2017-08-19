@@ -26,5 +26,13 @@ createColors(cNames, cVals)
         color: cVals[i] !important
 createColors($colorNames, $colorValues)
 
+createOpacityColors(cNames, cVals, steps)
+  for name, i in cNames
+    for step in steps
+      .bg-{name}-{step}
+        background: rgba(cVals[i], (step / 100)) !important
+    
+createOpacityColors($colorNames, $colorValues, $opacitySteps)
+
 .desaturate
 	filter: grayscale(100%)

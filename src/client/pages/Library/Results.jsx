@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import ImageLinkCard from '../shared/ImageLinkCard';
+import { ImageLinkCard } from '../shared/Cards';
 
 const filterByTermNTopic = (item, uiState) => {
   const filterByTopic = uiState.libTopic !== 'All Topics';
