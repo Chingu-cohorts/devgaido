@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+
 import { connect } from 'react-redux';
 
 import PageHero from '../shared/PageHero';
 import DisqusThread from '../shared/DisqusThread';
+import Modal from '../shared/Modal'
 
 import actions from '../../actions';
 
@@ -15,6 +17,7 @@ const {
   removeBookmark,
   completeLesson,
   unCompleteLesson,
+  toggleModal,
 } = actions;
 
 const typeIcons = {
@@ -28,7 +31,7 @@ const functionName = (user, lessonId) => {
   setLastTouchedLesson(lessonId);
 };
 
-const Lesson = ({ match, curriculum, user }) => {
+const Lesson = ({ match, curriculum, user, uiState }) => {
   const lessonId = match.params.id;
   const lesson = curriculum.lessons[lessonId];
 
@@ -78,13 +81,21 @@ const Lesson = ({ match, curriculum, user }) => {
           { user.authenticated ?
             <div className="margin-top-huge flex flex-1 align-items-end">
               <a className="button button--secondary uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => functionName(user, lessonId)}>Open Lesson</a>
-              {!lesson.completed ?
-                <button className="button--primary margin-left-small uppercase" onClick={() => { completeLesson(lessonId, lesson.version); functionName(user, lessonId); }}>Complete Lesson</button> :
-                <button className="button--primary margin-left-small uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>Un-Complete Lesson</button>}
-            </div> :
+              {!lesson.completed
+                ?
+                <button className="button--primary margin-left-small uppercase" onClick={() => { completeLesson(lessonId, lesson.version); toggleModal(); functionName(user, lessonId); }}>Complete Lesson</button>
+                :
+                <div>
+                <button className="button--primary margin-left-small uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>Un-Complete Lesson</button>
+                { uiState.showModal ? <Modal /> : null }
+                </div>
+              } 
+            </div>
+             :
             <div className="margin-top-huge flex flex-1 align-items-end">
               <a className="button button--secondary uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">Open Lesson</a>
-            </div> }
+            </div> 
+          }
         </div>
         <div className="padding-vertical-big margin-left-big flex-1">
           { user.authenticated ?
@@ -141,9 +152,11 @@ Lesson.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
+  uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default connect(store => ({
   user: store.user,
   curriculum: store.curriculum,
+  uiState: store.uiState,
 }))(Lesson);
