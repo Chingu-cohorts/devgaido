@@ -47,14 +47,7 @@ const Path = ({ match, curriculum, user }) => {
         const lesson = curriculum.lessons[lessonId];
         const dotClasses = !course.completeX ? `dot ${lesson.completed ? '' : 'dot--empty'} dot--displace` : '';
         return (
-          <LinkCard
-            item={lesson}
-            linkTo={lesson.url}
-            bgColorClass={`relative ${dotClasses}  bg-accent`}
-            iconClass={typeIcons[lesson.type]}
-            key={lessonId}
-            imgSrc={`/screenshots/${lessonId}.jpg`}
-          />);
+          <LinkCard item={lesson} key={lessonId} />);
       });
 
       return <MilestoneCard index={index} course={course} lessons={lessons} key={courseId} id={`${pathId}/${courseId}`} />;
