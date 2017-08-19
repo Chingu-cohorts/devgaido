@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 const Metrics = ({ curriculum }) => (
   <div className="metrics abs-bottom-right flex items-end margin-bottom-small margin-right-small">
     <div className="margin-left-tiny">
-      <h5 className="c-white no-margin bold">Completed:</h5>
+      <h5 className="c-white no-margin wide uppercase">Completed:</h5>
     </div>
     <div className="metrics__paths margin-left-tiny center">
       <h1 className="metrics__paths__count c-white no-margin bold">

@@ -8,14 +8,16 @@ import actions from '../../actions';
 
 const { setLastTouchedPath } = actions;
 
-const CardTemplate = ({ title, bgColorClass, iconClass, iconClass2, heightClass, content, footerContent }) => (
+const CardTemplate = ({ title, bgColorClass, iconClass, iconClass2, heightClass, content, footerContent, checkmarkColor }) => (
   <div className={`card flex-column border-round bg-white ${heightClass}`}>
-    <div className={`card__header flex items-center border-round-top ${bgColorClass}`}>
-      {iconClass ? <i className={`fa c-white h4 ${iconClass} margin-right-small`} /> : null}
-      <h4 className="card__header__text flex-1 c-white uppercase no-margin">{title}</h4>
-      {iconClass2 ? <i className={`lcard__checkmark fa c-white h2 no-margin margin-top-tiny absolute ${iconClass2}`} /> : null}
+    <div className={`flex padding-horizontal-small padding-vertical-tiny padding-top-small items-center border-round-top`}>
+      {iconClass ? <i className={`fa h4 ${iconClass} margin-right-small`} /> : null}
+      <h3 className="card__header__text flex-1uppercase no-margin uppercase wide">{title}</h3>
+      {iconClass2 ? <i className={`lcard__checkmark fa h2 no-margin margin-top-tiny absolute ${checkmarkColor} ${iconClass2}`} /> : null}
     </div>
-    <div className="card__content flex-1">
+    <div className={`il-card__header2 ${bgColorClass}`}>
+    </div>
+    <div className="card__content flex-1 padding-bottom-big">
       {content}
     </div>
     {footerContent ?
@@ -37,7 +39,7 @@ const MenuCard = ({ children }) => (
   })
 );
 
-const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, connectionClass, heightClass, linkTo, pathId }) => {
+const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, connectionClass, heightClass, linkTo, pathId, checkmarkColor }) => {
   const ratingStars = [];
   for (let i = 0; i < 5; i += 1) {
     if (i < item.rating) {
@@ -62,6 +64,7 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, conne
         title: item.name,
         bgColorClass,
         iconClass,
+        checkmarkColor,
         iconClass2: item.completed ? 'icon-check-circle-o' : '',
         heightClass,
         content: <div className="flex">
@@ -71,9 +74,9 @@ const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, conne
                 <div className="preview2 flex-1 no-margin border-round border-1px" style={{ background: `url(${imgSrc})`, backgroundSize: 'cover', borderColor: '#ccc' }} />
               </div>
             </LazyLoad>
-             : null}
+            : null}
           <div className="lcard__content-left flex-2 margin-left-small">
-            <h5>{item.description}</h5>
+            <p>{item.description}</p>
             <div className="right">
               <div>
                 {ratingStars}

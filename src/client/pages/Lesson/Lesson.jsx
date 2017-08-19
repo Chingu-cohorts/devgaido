@@ -67,20 +67,20 @@ const Lesson = ({ match, curriculum, user }) => {
       <div className="container">
         <div className="flex bg-white padding-horizontal-big border-round margin-vertical-small page-hero__offset">
           <div className="padding-vertical-big flex-2 flex-column">
-            <h2>About This Lesson</h2>
-            <p className="h5">{lesson.description}</p>
-            <h4 className="margin-top-big uppercase">Instructions</h4>
+            <h2 className="c-primary">About This Lesson</h2>
+            <p>{lesson.description}</p>
+            <h4 className="margin-top-big uppercase c-accent">Instructions</h4>
             <p>{lesson.instructions ? lesson.instructions : 'No instructions specified.'}</p>
-            <h4 className="margin-top-big">Additional Resources</h4>
+            <h4 className="margin-top-big c-accent">Additional Resources</h4>
             {resourceList.map(
               (resource, index) => <div key={index}>
                 <a href={resource[1]} target="_blank" rel="noopener noreferrer" className="no-margin">{resource[0]}</a>
               </div>)}
             { user.authenticated ?
               <div className="margin-top-huge flex flex-1 items-end">
-                <a className="button button--accent uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => functionName(user, lessonId)}>Open Lesson</a>
+                <a className="button button--primary uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => functionName(user, lessonId)}>Open Lesson</a>
                 {!lesson.completed ?
-                  <button className="button--primary margin-left-small uppercase" onClick={() => { completeLesson(lessonId, lesson.version); functionName(user, lessonId); }}>Complete Lesson</button> :
+                  <button className="button--accent margin-left-small uppercase" onClick={() => { completeLesson(lessonId, lesson.version); functionName(user, lessonId); }}>Complete Lesson</button> :
                   <button className="button--primary margin-left-small uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>Un-Complete Lesson</button>}
               </div> :
               <div className="margin-top-huge flex flex-1 items-end">

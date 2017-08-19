@@ -108,12 +108,12 @@ const Path = ({ match, curriculum, user }) => {
         <div className="container">
           <div className="flex bg-white padding-horizontal-big border-round margin-top-small">
             <div className="padding-vertical-big flex-2">
-              <h2>About This Path</h2>
-              <p className="h5">{path.description}</p>
+              <h2 className="c-accent">About This Path</h2>
+              <p >{path.description}</p>
               {path.goal ?
                 <div>
-                  <h3 className="margin-top-big uppercase">Goal</h3>
-                  <p className="h5">{path.goal}</p>
+                  <h3 className="margin-top-big uppercase c-primary">Goal</h3>
+                  <p>{path.goal}</p>
                 </div> : null}
             </div>
             <div className="padding-vertical-big margin-left-huge flex-1">

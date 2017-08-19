@@ -69,9 +69,10 @@ const Results = ({ curriculum, uiState, category }) => {
         linkTo={path.url}
         bgColorClass="bg-primary"
         imgSrc={`/paths/${pathId}.jpg`}
-        iconClass="icon-map-signs"
+        iconClass="icon-map-signs c-primary"
         childIconClass="icon-flag-checkered c-primary"
         imgBorderClass="border-1px border-primary"
+        checkmarkColor="c-primary"
         key={pathId}
         pathId={pathId}
       />
@@ -85,8 +86,9 @@ const Results = ({ curriculum, uiState, category }) => {
         linkTo={lesson.url}
         bgColorClass="bg-accent"
         imgSrc={`/screenshots/${lessonId}.jpg`}
-        iconClass="icon-graduation-cap"
+        iconClass="icon-graduation-cap c-accent"
         imgBorderClass="border-1px border-accent"
+        checkmarkColor="c-accent"
         key={lessonId}
       />
     );

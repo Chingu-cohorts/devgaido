@@ -36,7 +36,7 @@ const Contributors = ({ contributors }) => {
               contributorName={aContributor.login}
               contributorHTML={aContributor.html}
               nameAlignment={'flex-1 margin-top-tiny margin-left-small'}
-              nameStyle={'c-primary bold h2'}
+              nameStyle={'c-primary h2 wide'}
             />
           </section>
         </div>
@@ -50,7 +50,7 @@ const Contributors = ({ contributors }) => {
             contributorName={aContributor.login}
             contributorHTML={aContributor.html}
             nameAlignment={'flex-1 margin-top-tiny margin-right-small right'}
-            nameStyle={'c-accent bold h2'}
+            nameStyle={'c-accent h2 wide'}
           />
           <ContributorImage avatarURL={aContributor.avatar} imageAlignment={'border-round margin-right-huge'} />
         </section>

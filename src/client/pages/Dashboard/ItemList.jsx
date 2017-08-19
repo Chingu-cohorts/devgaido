@@ -10,9 +10,9 @@ const bgColorLookUp = {
 };
 
 const iconLookUp = {
-  paths: 'icon-map-signs',
+  paths: 'icon-map-signs c-primary',
   courses: 'icon-flag-checkered',
-  lessons: 'icon-graduation-cap',
+  lessons: 'icon-graduation-cap c-accent',
 };
 
 const childIconLookUp = {
@@ -30,6 +30,7 @@ const ItemList = ({ items, category }) => (
         bgColorClass={bgColorLookUp[category]}
         iconClass={iconLookUp[category]}
         childIconClass={childIconLookUp[category]}
+        checkmarkColor={(category === 'paths') ? 'c-primary' : 'c-accent'}
         heightClass="height-100"
         key={item.name}
         imgSrc={item.img}
