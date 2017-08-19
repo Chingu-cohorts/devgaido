@@ -11,7 +11,7 @@ const Modal = () => (
     <div className="modal-container" 
     style={{ backgroundColor:'#fff',border:'1px solid #000', width:'50vw', maxWidth:'400px', margin: 'auto', padding:20,  borderRadius:5 }}>
       <p> I love all cats</p>
-      <button onClick={() => toggleModal()}>Close the modal</button>
+      <button onClick={() => toggleModal()}>Close </button>
     </div>
   </div>
 );
