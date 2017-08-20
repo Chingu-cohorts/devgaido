@@ -1,4 +1,4 @@
-# [![devGaido version][devgaido-image]][devgaido-url]
+# [![devGaido][devgaido-image]][devgaido-url]
 
 devGaido provides a guided learning experience through the Web Development 
 ecosystem by providing those new to the craft with predefined paths to aid in
@@ -86,17 +86,7 @@ The devGaido project folder is organized in the following manner:
 
 ## Runtime
 
-### Built With
-
-devGaido's runtime architecture leverages the following to achieve performance,
-availability, and ease of deployment:
-
-- CDN: A content delivery network (CDN) is used to reduce the amount of time 
-necessary to serve up images and other static content.
-- Nginx: Is a web server providing security (HTTPS), compression,
-and load balancing.
-- Docker: Docker containers house devGaido's application components that make
-devGaido easier to deploy and manage.
+A separate repo is used to manage application runtime components. For more information about the devGaido devops environment please consult [devGaido DevOps](https://github.com/Chingu-cohorts/devgaido_devops)
 
 ## Authors
 
