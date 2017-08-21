@@ -499,6 +499,65 @@
     ],
     "version": "1.0.0"
   },
+  "reactbasicssetup": {
+    "name": "What is React?",
+    "description": "Learn what ReactJS is useful for and how to set up your development environment to begin writing apps that rely on it.",
+    "lessonIds": [
+      "reactbasics01",
+      "reactbasics02",
+      "reactbasics03"
+    ],
+    "version": "1.0.0"
+  },
+  "reactbasicscomps": {
+    "name": "All About Components",
+    "description": "Learn about ReactJS Components and how they function in and app.",
+    "lessonIds": [
+      "reactbasics04",
+      "reactbasics05",
+      "reactbasics06"
+    ],
+    "version": "1.0.0"
+  },
+  "reactbasicsprops": {
+    "name": "Props, Events, and State",
+    "description": "Learn about ReactJS Components and how they function in and app.",
+    "lessonIds": [
+      "reactbasics07",
+      "reactbasics08"
+    ],
+    "version": "1.0.0"
+  },
+  "reactbasicsstate": {
+    "name": "Stateful Components, Stateless Components, and the DOM",
+    "description": "Learn about state and its interaction with the DOM.",
+    "lessonIds": [
+      "reactbasics09",
+      "reactbasics10",
+      "reactbasics11"
+    ],
+    "version": "1.0.0"
+  },
+  "reactbasicscomm": {
+    "name": "Communicating Between Components and the ReactJS Lifecycle",
+    "description": "Learn how to communicate between parent and child components, as well as about the lifecycle of a React app.",
+    "lessonIds": [
+      "reactbasics12",
+      "reactbasics13",
+      "reactbasics14",
+      "reactbasics15"
+    ],
+    "version": "1.0.0"
+  },
+  "reactbasicsroute": {
+    "name": "React Routing",
+    "description": "Learn about React Router and how to leverage it in your applications.",
+    "lessonIds": [
+      "reactbasics16",
+      "reactbasics17"
+    ],
+    "version": "1.0.0"
+  },
   "reduxextractingactions": {
     "name": "Extracting Action Creators",
     "description": "Learn how to extract action creators from components to improve the maintainability of your apps.",
