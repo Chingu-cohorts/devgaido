@@ -32,17 +32,24 @@ const Progress = ({ item }) => {
 };
 
 const MilestonesComplete = ({ item }) => (
-  <h3 className="no-margin">
-    <i className="fa icon-flag-checkered c-primary h3 margin-right-tiny" />
+  <h4 className="no-margin">
+    <i className="fa icon-flag-checkered c-primary h4 margin-right-tiny" />
     <span>{item.nCompleted}/{item.nTotal}</span>
-  </h3>
+  </h4>
+);
+
+const MilestoneNumber = ({ item }) => (
+  <h4 className="no-margin">
+    <i className="fa icon-flag-checkered c-primary h4 margin-right-tiny" />
+    <span>{item.nTotal}</span>
+  </h4>
 );
 
 const LessonsComplete = ({ item }) => (
-  <h3 className="no-margin margin-left-small">
-    <i className="fa icon-graduation-cap c-accent h3 margin-right-tiny" />
+  <h4 className="no-margin margin-left-small">
+    <i className="fa icon-graduation-cap c-accent h4 margin-right-tiny" />
     <span>{item.nLessonsCompleted}/{item.nLessonsTotal}</span>
-  </h3>
+  </h4>
 );
 
 const RatingStars = ({ item }) => {
@@ -63,12 +70,12 @@ const RatingStars = ({ item }) => {
 
 const Subjects = ({ item }) => {
   const subjects = [];
-  const numSubjects = Math.min(2, item.subjectNames.length);
+  const numSubjects = Math.min(3, item.subjectNames.length);
   for (let i = 0; i < numSubjects; i += 1) {
-    subjects.push(item.subjectNames[i]);
+    subjects.push(<h5 className="tag border-pill bg-grey c-white">{item.subjectNames[i]}</h5>);
   }
-  if (item.subjectNames.length > 2) {
-    subjects.push(`... ${item.subjectNames.length - 2} more ...`);
+  if (item.subjectNames.length > 3) {
+    subjects.push(<h5 className="tag border-pill bg-grey c-white">{`... ${item.subjectNames.length - 2} more ...`}</h5>);
   }
   return (
     <div className="right">
@@ -78,8 +85,14 @@ const Subjects = ({ item }) => {
 };
 
 const EstimatedTime = ({ item }) => (
-  <h5 className="c-primary uppercase right margin-top-small">{item.estimatedTimeStr} hours</h5>
+  <h5 className="c-primary uppercase right no-margin">{item.estimatedTimeStr} hours</h5>
 );
+
+const typeIcons = {
+  Book: 'fa h3 icon-book c-pale-blue',
+  Course: 'fa h3 icon-university c-pale-green',
+  Project: 'fa h3 icon-cogs c-pale-red',
+};
 
 const MenuCard = ({ children }) => (
   <FlexColumn className="menu-card bg-white c-text padding-small border-round">
@@ -90,88 +103,8 @@ const MenuCard = ({ children }) => (
 
 const DashboardCard = ({ item }) => {
   const itemIsPath = item.nLessonsTotal !== undefined;
-  const typeIcon = itemIsPath ? 'fa h3 icon-map-signs c-primary' : 'fa h3 icon-graduation-cap c-accent';
-  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-primary' : 'fa h2 icon-check-circle-o c-accent';
-  const underline = itemIsPath ? 'shadow-bottom-primary-2' : 'shadow-bottom-accent-2';
-  const pathId = itemIsPath ? item.id : undefined;
-
-  return (
-    <Link className={'link-card flex-column width-100 bg-grey border-round c-text margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
-      <FlexRow className={`margin-top-small margin-horizontal-small items-center padding-bottom-tiny ${underline}`}>
-        <i className={typeIcon} />
-        <h3 className="flex-1 no-margin margin-left-small">{item.name}</h3>
-        {item.completed ? <i className={completeIcon} /> : null}
-      </FlexRow>
-      <FlexRow className="margin items-start">
-        <LazyLoad height={200} once offset={201}>
-          <img className="height-auto width-33" src={item.img} alt="" />
-        </LazyLoad>
-        <FlexColumn className="margin-left">
-          <p className="">{item.description}</p>
-          <RatingStars item={item} />
-          <EstimatedTime item={item} />
-          <Subjects item={item} />
-          {itemIsPath ?
-            <Progress item={item} /> : null}
-          {itemIsPath ?
-            <FlexRow className="justify-end">
-              <MilestonesComplete item={item} />
-              <LessonsComplete item={item} />
-            </FlexRow> : null}
-        </FlexColumn>
-      </FlexRow>
-    </Link>
-  );
-};
-
-
-const MilestoneSubCard = ({ item }) => {
-  const itemIsPath = item.nLessonsTotal !== undefined;
-  const typeIcon = itemIsPath ? 'fa h3 icon-map-signs c-primary' : 'fa h3 icon-graduation-cap c-accent';
-  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-primary' : 'fa h2 icon-check-circle-o c-accent';
-  const underline = itemIsPath ? 'shadow-bottom-primary-2' : 'shadow-bottom-accent-2';
-  const pathId = itemIsPath ? item.id : undefined;
-
-  return (
-    <Link className={'link-card flex-column width-100 bg-white border-round c-text margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
-      <FlexRow className={`margin-top-small margin-horizontal-small items-center padding-bottom-tiny ${underline}`}>
-        <i className={typeIcon} />
-        <h3 className="flex-1 no-margin margin-left-small">{item.name}</h3>
-        {item.completed ? <i className={completeIcon} /> : null}
-      </FlexRow>
-      <FlexRow className="margin items-start">
-        <LazyLoad height={200} once offset={201}>
-          <img className="height-auto width-33" src={item.img} alt="" />
-        </LazyLoad>
-        <FlexColumn className="margin-left">
-          <p className="">{item.description}</p>
-          <RatingStars item={item} />
-          <EstimatedTime item={item} />
-          <Subjects item={item} />
-          {itemIsPath ?
-            <Progress item={item} /> : null}
-          {itemIsPath ?
-            <FlexRow className="justify-end">
-              <MilestonesComplete item={item} />
-              <LessonsComplete item={item} />
-            </FlexRow> : null}
-        </FlexColumn>
-      </FlexRow>
-    </Link>
-  );
-};
-
-const typeIcons = {
-  Book: 'fa h3 icon-book c-primary',
-  Course: 'fa h3 icon-university c-primary',
-  Project: 'fa h3 icon-cogs c-primary',
-};
-
-const LibraryCard = ({ item }) => {
-  const itemIsPath = item.courseIds !== undefined;
   const typeIcon = itemIsPath ? '' : typeIcons[item.type];
   const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-white' : 'fa h2 icon-check-circle-o c-white';
-  const underline = itemIsPath ? 'shadow-vertical-primary-2' : 'shadow-vertical-accent-2';
   const pathId = itemIsPath ? item.id : undefined;
   const bgCol = itemIsPath ? 'bg-primary-25' : 'bg-accent-50';
 
@@ -180,15 +113,107 @@ const LibraryCard = ({ item }) => {
       <div className="image-link-card__img bg-cover border-round-top border-1px border-white relative flex-column justify-center" style={{ backgroundImage: `url(${item.img})` }}>
         <div className="border-round-top bg-black opacity-50 abs-center-stretch" />
         <div className={`border-round-top ${bgCol} abs-center-stretch`} />
-        <FlexRow className={`items-center padding-horizontal-small padding-vertical-tiny border-round-top c-white relative`}>
+        <FlexRow className={'items-center padding-horizontal-small padding-vertical-tiny border-round-top c-white relative'}>
+          <h3 className="flex-1 no-margin text-shadow-subtle uppercase wider">{item.name}</h3>
+          {item.completed ? <i className={completeIcon} /> : null}
+        </FlexRow>
+      </div>
+      <FlexRow>
+        <FlexColumn className="flex-2 margin-horizontal-small margin-top-small items-start justify-between">
+          <p className="">{item.description}</p>
+        </FlexColumn>
+        <FlexColumn className="margin-horizontal-small margin-top-small flex-1">
+          <FlexRow className="items-center justify-between margin-bottom-tiny">
+            <h5 className="no-margin">Rating</h5>
+            <RatingStars item={item} />
+          </FlexRow>
+          <FlexRow className="items-center justify-between">
+            <h5 className="no-margin">Estimated Length</h5>
+            <EstimatedTime item={item} />
+          </FlexRow>
+          {item.nLessonsTotal > 0 ?
+            <Progress item={item} /> : null}
+        </FlexColumn>
+      </FlexRow>
+      <FlexRow className="margin-horizontal-small margin-bottom-small items-center justify-between">
+        <Subjects item={item} />
+        {itemIsPath ?
+          <FlexRow className="justify-end">
+            <MilestonesComplete item={item} />
+            <LessonsComplete item={item} />
+          </FlexRow> : <i className={typeIcon} />}
+      </FlexRow>
+    </Link>
+  );
+};
+
+const MilestoneSubCard = ({ item }) => {
+  const itemIsPath = item.nLessonsTotal !== undefined;
+  const typeIcon = itemIsPath ? '' : typeIcons[item.type];
+  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-white' : 'fa h2 icon-check-circle-o c-white';
+  const pathId = itemIsPath ? item.id : undefined;
+  const underline = itemIsPath ? 'shadow-bottom-primary-2' : 'shadow-bottom-accent-2';
+
+  return (
+    <Link className={'link-card flex-column width-100 bg-white border-round c-text margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
+      <FlexRow className={`margin-top-small margin-horizontal-small items-center padding-bottom-tiny ${underline}`}>
+        <h3 className="flex-1 no-margin">{item.name}</h3>
+        {item.completed ? <i className={completeIcon} /> : null}
+      </FlexRow>
+      <FlexRow>
+        <FlexColumn className="flex-2 margin-horizontal-small margin-top-small items-start justify-between">
+          <p className="">{item.description}</p>
+        </FlexColumn>
+        <FlexColumn className="margin-horizontal-small margin-top-small flex-1">
+          <FlexRow className="items-center justify-between margin-bottom-tiny">
+            <h5 className="no-margin">Rating</h5>
+            <RatingStars item={item} />
+          </FlexRow>
+          <FlexRow className="items-center justify-between">
+            <h5 className="no-margin">Estimated Length</h5>
+            <EstimatedTime item={item} />
+          </FlexRow>
+          {item.nLessonsTotal > 0 ?
+            <Progress item={item} /> : null}
+        </FlexColumn>
+      </FlexRow>
+      <FlexRow className="margin-horizontal-small margin-bottom-small items-center justify-between">
+        <Subjects item={item} />
+        {itemIsPath ?
+          <FlexRow className="justify-end">
+            <MilestonesComplete item={item} />
+            <LessonsComplete item={item} />
+          </FlexRow> : <i className={typeIcon} />}
+      </FlexRow>
+    </Link>
+  );
+};
+
+const LibraryCard = ({ item }) => {
+  const itemIsPath = item.courseIds !== undefined;
+  const typeIcon = itemIsPath ? '' : typeIcons[item.type];
+  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-white' : 'fa h2 icon-check-circle-o c-white';
+  const pathId = itemIsPath ? item.id : undefined;
+  const bgCol = itemIsPath ? 'bg-primary-25' : 'bg-accent-50';
+  const metrics = item.nLessonsCompleted > 0 ?
+    (<FlexRow className="justify-end">
+      <MilestonesComplete item={item} />
+      <LessonsComplete item={item} />
+    </FlexRow>) : <MilestoneNumber item={item} />;
+  return (
+    <Link className={'image-link-card col-quarter flex-column bg-white border-round c-text margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
+      <div className="image-link-card__img bg-cover border-round-top border-1px border-white relative flex-column justify-center" style={{ backgroundImage: `url(${item.img})` }}>
+        <div className="border-round-top bg-black opacity-50 abs-center-stretch" />
+        <div className={`border-round-top ${bgCol} abs-center-stretch`} />
+        <FlexRow className={'items-center padding-horizontal-small padding-vertical-tiny border-round-top c-white relative'}>
           <h3 className="flex-1 no-margin text-shadow-subtle uppercase wider">{item.name}</h3>
           {item.completed ? <i className={completeIcon} /> : null}
         </FlexRow>
       </div>
       <p className="flex-1 margin-small">{item.description}</p>
       <FlexColumn className="margin-small">
-        <FlexRow className="justify-between">
-          <i className={typeIcon} />
+        <FlexRow className="items-center justify-between">
+          {itemIsPath ? metrics : <i className={typeIcon} />}
           <RatingStars item={item} />
         </FlexRow>
         {item.nLessonsTotal > 0 ?

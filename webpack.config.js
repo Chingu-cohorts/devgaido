@@ -98,7 +98,7 @@ const config = {
       minimize: true,
       purifyOptions: {
         info: true,
-        rejected: true,
+        rejected: false,
       },
     }),
     new AssetsPlugin({
