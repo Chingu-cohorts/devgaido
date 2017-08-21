@@ -88,7 +88,44 @@ const MenuCard = ({ children }) => (
   </FlexColumn>
 );
 
-const LinkCard = ({ item }) => {
+const DashboardCard = ({ item }) => {
+  const itemIsPath = item.nLessonsTotal !== undefined;
+  const typeIcon = itemIsPath ? 'fa h3 icon-map-signs c-primary' : 'fa h3 icon-graduation-cap c-accent';
+  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-primary' : 'fa h2 icon-check-circle-o c-accent';
+  const underline = itemIsPath ? 'shadow-bottom-primary-2' : 'shadow-bottom-accent-2';
+  const pathId = itemIsPath ? item.id : undefined;
+
+  return (
+    <Link className={'link-card flex-column width-100 bg-grey border-round c-text margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
+      <FlexRow className={`margin-top-small margin-horizontal-small items-center padding-bottom-tiny ${underline}`}>
+        <i className={typeIcon} />
+        <h3 className="flex-1 no-margin margin-left-small">{item.name}</h3>
+        {item.completed ? <i className={completeIcon} /> : null}
+      </FlexRow>
+      <FlexRow className="margin items-start">
+        <LazyLoad height={200} once offset={201}>
+          <img className="height-auto width-33" src={item.img} alt="" />
+        </LazyLoad>
+        <FlexColumn className="margin-left">
+          <p className="">{item.description}</p>
+          <RatingStars item={item} />
+          <EstimatedTime item={item} />
+          <Subjects item={item} />
+          {itemIsPath ?
+            <Progress item={item} /> : null}
+          {itemIsPath ?
+            <FlexRow className="justify-end">
+              <MilestonesComplete item={item} />
+              <LessonsComplete item={item} />
+            </FlexRow> : null}
+        </FlexColumn>
+      </FlexRow>
+    </Link>
+  );
+};
+
+
+const MilestoneSubCard = ({ item }) => {
   const itemIsPath = item.nLessonsTotal !== undefined;
   const typeIcon = itemIsPath ? 'fa h3 icon-map-signs c-primary' : 'fa h3 icon-graduation-cap c-accent';
   const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-primary' : 'fa h2 icon-check-circle-o c-accent';
@@ -130,8 +167,8 @@ const typeIcons = {
   Project: 'fa h3 icon-cogs c-primary',
 };
 
-const ImageLinkCard = ({ item }) => {
-  const itemIsPath = item.nLessonsTotal !== undefined;
+const LibraryCard = ({ item }) => {
+  const itemIsPath = item.courseIds !== undefined;
   const typeIcon = itemIsPath ? '' : typeIcons[item.type];
   const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-white' : 'fa h2 icon-check-circle-o c-white';
   const underline = itemIsPath ? 'shadow-vertical-primary-2' : 'shadow-vertical-accent-2';
@@ -154,7 +191,7 @@ const ImageLinkCard = ({ item }) => {
           <i className={typeIcon} />
           <RatingStars item={item} />
         </FlexRow>
-        {itemIsPath ?
+        {item.nLessonsTotal > 0 ?
           <Progress item={item} /> : null}
       </FlexColumn>
     </Link>
@@ -216,11 +253,15 @@ MenuCard.propTypes = {
   ]).isRequired,
 };
 
-LinkCard.propTypes = {
+DashboardCard.propTypes = {
   item: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-ImageLinkCard.propTypes = {
+MilestoneSubCard.propTypes = {
   item: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
-export { MenuCard, LinkCard, ImageLinkCard };
+
+LibraryCard.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+export { MenuCard, DashboardCard, LibraryCard, MilestoneSubCard };

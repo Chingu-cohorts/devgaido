@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { ImageLinkCard } from '../shared/Cards';
+import { LibraryCard } from '../shared/Cards';
 
 const filterByTermNTopic = (item, uiState) => {
   const filterByTopic = uiState.libTopic !== 'All Topics';
@@ -64,33 +64,13 @@ const Results = ({ curriculum, uiState, category }) => {
   filteredIds.map((pathId) => {
     const path = curriculum.paths[pathId];
     return (
-      <ImageLinkCard
-        item={path}
-        linkTo={path.url}
-        bgColorClass="bg-primary"
-        imgSrc={`/paths/${pathId}.jpg`}
-        iconClass="icon-map-signs c-primary"
-        childIconClass="icon-flag-checkered c-primary"
-        imgBorderClass="border-1px border-primary"
-        checkmarkColor="c-primary"
-        key={pathId}
-        pathId={pathId}
-      />
+      <LibraryCard item={path} key={pathId} />
     );
   }) :
   filteredIds.map((lessonId) => {
     const lesson = curriculum.lessons[lessonId];
     return (
-      <ImageLinkCard
-        item={lesson}
-        linkTo={lesson.url}
-        bgColorClass="bg-accent"
-        imgSrc={`/screenshots/${lessonId}.jpg`}
-        iconClass="icon-graduation-cap c-accent"
-        imgBorderClass="border-1px border-accent"
-        checkmarkColor="c-accent"
-        key={lessonId}
-      />
+      <LibraryCard item={lesson} key={lessonId} />
     );
   });
 

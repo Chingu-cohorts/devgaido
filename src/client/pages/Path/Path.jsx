@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 import MilestoneCard from './MilestoneCard';
 import PageHero from '../shared/PageHero';
-import { LinkCard } from '../shared/Cards';
+import { MilestoneSubCard } from '../shared/Cards';
 import DisqusThread from '../shared/DisqusThread';
 
 import actions from '../../actions';
@@ -47,7 +47,7 @@ const Path = ({ match, curriculum, user }) => {
         const lesson = curriculum.lessons[lessonId];
         const dotClasses = !course.completeX ? `dot ${lesson.completed ? '' : 'dot--empty'} dot--displace` : '';
         return (
-          <LinkCard item={lesson} key={lessonId} />);
+          <MilestoneSubCard item={lesson} key={lessonId} />);
       });
 
       return <MilestoneCard index={index} course={course} lessons={lessons} key={courseId} id={`${pathId}/${courseId}`} />;
@@ -57,7 +57,7 @@ const Path = ({ match, curriculum, user }) => {
     const lessons = course.lessonIds.map((lessonId) => {
       const lesson = curriculum.lessons[lessonId];
       return (
-        <LinkCard
+        <MilestoneSubCard
           item={lesson}
           linkTo={lesson.url}
           bgColorClass={`relative no-milestone dot ${lesson.completed ? '' : 'dot--empty'} dot--displace bg-accent`}

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { LinkCard } from '../shared/Cards';
+import { DashboardCard } from '../shared/Cards';
 
 const ItemList = ({ items }) => (
   <div className="item-list">
     {items.map(item => (
-      <LinkCard item={item} key={item.name} />
+      <DashboardCard item={item} key={item.name} />
     ))}
   </div>
 );
