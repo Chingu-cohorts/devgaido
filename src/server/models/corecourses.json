@@ -414,7 +414,7 @@
     ],
     "version": "1.0.0"
   },
-  "reduxcheckpoint": {
+  "reduxcheckpt": {
     "name": "Putting it All Together: React & Redux",
     "description": "See how React and Redux can work together in this simple example.",
     "lessonIds": [
@@ -440,7 +440,7 @@
     ],
     "version": "1.0.0"
   },
-  "reduxreducercomposition": {
+  "reduxreducer": {
     "name": "Understanding Reducer Composition",
     "description": "Learn about reducer composition in Redux.",
     "lessonIds": [
@@ -461,7 +461,7 @@
     ],
     "version": "1.0.0"
   },
-  "reduxextractpresentation": {
+  "reduxextpres": {
     "name": "Extracting Presentational Components",
     "description": "See how to extract presentational components to separate app behavior from appearance.",
     "lessonIds": [
@@ -470,7 +470,7 @@
     ],
     "version": "1.0.0"
   },
-  "reduxextractcontainers": {
+  "reduxextcont": {
     "name": "Extracting Container Components",
     "description": "Learn the how and why of extracting container components to limit the unnecessary passing of props.",
     "lessonIds": [
@@ -489,7 +489,7 @@
     ],
     "version": "1.0.0"
   },
-  "reduxgeneratingcontainers": {
+  "reduxgencont": {
     "name": "Generating Containers",
     "description": "Learn the how to use Redux to generate container components.",
     "lessonIds": [
@@ -499,7 +499,15 @@
     ],
     "version": "1.0.0"
   },
-  "reactbasicssetup": {
+  "reduxextact": {
+    "name": "Extracting Action Creators",
+    "description": "Learn how to extract action creators from components to improve the maintainability of your apps.",
+    "lessonIds": [
+      "redux30"
+    ],
+    "version": "1.0.0"
+  },
+  "reactbasicsetup": {
     "name": "What is React?",
     "description": "Learn what ReactJS is useful for and how to set up your development environment to begin writing apps that rely on it.",
     "lessonIds": [
@@ -509,7 +517,7 @@
     ],
     "version": "1.0.0"
   },
-  "reactbasicscomps": {
+  "reactbasiccomps": {
     "name": "All About Components",
     "description": "Learn about ReactJS Components and how they function in and app.",
     "lessonIds": [
@@ -519,7 +527,7 @@
     ],
     "version": "1.0.0"
   },
-  "reactbasicsprops": {
+  "reactbasicprops": {
     "name": "Props, Events, and State",
     "description": "Learn about ReactJS Components and how they function in and app.",
     "lessonIds": [
@@ -528,7 +536,7 @@
     ],
     "version": "1.0.0"
   },
-  "reactbasicsstate": {
+  "reactbasicstate": {
     "name": "Stateful Components, Stateless Components, and the DOM",
     "description": "Learn about state and its interaction with the DOM.",
     "lessonIds": [
@@ -538,7 +546,7 @@
     ],
     "version": "1.0.0"
   },
-  "reactbasicscomm": {
+  "reactbasiccomm": {
     "name": "Communicating Between Components and the ReactJS Lifecycle",
     "description": "Learn how to communicate between parent and child components, as well as about the lifecycle of a React app.",
     "lessonIds": [
@@ -549,20 +557,12 @@
     ],
     "version": "1.0.0"
   },
-  "reactbasicsroute": {
+  "reactbasicroute": {
     "name": "React Routing",
     "description": "Learn about React Router and how to leverage it in your applications.",
     "lessonIds": [
       "reactbasics16",
       "reactbasics17"
-    ],
-    "version": "1.0.0"
-  },
-  "reduxextractingactions": {
-    "name": "Extracting Action Creators",
-    "description": "Learn how to extract action creators from components to improve the maintainability of your apps.",
-    "lessonIds": [
-      "redux30"
     ],
     "version": "1.0.0"
   }
