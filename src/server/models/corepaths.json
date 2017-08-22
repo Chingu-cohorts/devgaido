@@ -97,31 +97,32 @@
     "name": "ReactJS Basics",
     "description": "Learn what ReactJS is, why you might want to use it, and how to develop applications based on React.",
     "courseIds": [
-      "reactbasicssetup",
-      "reactbasicscomps",
-      "reactbasicsprops",
-      "reactbasicsstate",
-      "reactbasicscomm",
-      "reactbasicsroute"
+      "reactbasicsetup",
+      "reactbasiccomps",
+      "reactbasicprops",
+      "reactbasicstate",
+      "reactbasiccomm",
+      "reactbasicroute"
     ],
     "goal": "ReactJS is the frontend library Facebook is implemented in. Along with Angular and Vue this is one of the leading frontend libraries organizations of all sizes are using it in their apps.",
     "version": "1.0.0"
   },
-  "gettingstartedredux" : {
+  "getstartredux" : {
     "name": "Getting Started with Redux",
     "description": "Learn how to effectively and efficiently manage the state in your web applications using the Redux from it's creator -- Dan Abramov.",
     "courseIds": [
       "reduxconcepts",
       "reduxstore",
+      "reduxcheckpt",
       "reduxmutations",
       "reduxtodo1",
-      "reduxreducercomposition",
+      "reduxreducer",
       "reduxtodo2",
-      "reduxextractpresentation",
-      "reduxextractcontainers",
+      "reduxextpres",
+      "reduxextcont",
       "reduxpassstore",
-      "reduxgeneratingcontainers",
-      "reduxextractingactions"
+      "reduxgencont",
+      "reduxextact"
     ],
     "goal": "Managing application state is an essential skill employers look for in webdevs. Understanding state and how to manage it during the app lifecycle will help you land your webdev job.",
     "version": "1.0.0"
