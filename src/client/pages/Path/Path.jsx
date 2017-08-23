@@ -61,9 +61,8 @@ const Path = ({ match, curriculum, user }) => {
       const course = curriculum.courses[courseId];
       const lessons = course.lessonIds.map((lessonId) => {
         const lesson = curriculum.lessons[lessonId];
-        const dotClasses = !course.completeX ? `dot ${lesson.completed ? '' : 'dot--empty'} dot--displace` : '';
         return (
-          <MilestoneSubCard item={lesson} key={lessonId} />);
+          <MilestoneSubCard item={lesson} key={lessonId} completeX={course.completeX} />);
       });
 
       return <MilestoneCard index={index} course={course} lessons={lessons} key={courseId} id={`${pathId}/${courseId}`} />;

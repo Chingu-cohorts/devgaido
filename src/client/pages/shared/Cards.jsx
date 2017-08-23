@@ -147,15 +147,16 @@ const DashboardCard = ({ item }) => {
   );
 };
 
-const MilestoneSubCard = ({ item }) => {
+const MilestoneSubCard = ({ item, completeX }) => {
   const itemIsPath = item.nLessonsTotal !== undefined;
   const typeIcon = itemIsPath ? '' : typeIcons[item.type];
-  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-white' : 'fa h2 icon-check-circle-o c-white';
+  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-accent' : 'fa h2 icon-check-circle-o c-accent';
   const pathId = itemIsPath ? item.id : undefined;
   const underline = itemIsPath ? 'shadow-bottom-primary-2' : 'shadow-bottom-accent-2';
+  const dotClasses = !completeX ? `dot ${item.completed ? '' : 'dot--empty'} dot--displace` : '';
 
   return (
-    <Link className={'link-card flex-column width-100 bg-white border-round c-text margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
+    <Link className={`link-card ${dotClasses} flex-column width-100 bg-white border-round c-text margin-bottom-small relative`} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
       <FlexRow className={`margin-top-small margin-horizontal-small items-center padding-bottom-tiny ${underline}`}>
         <h3 className="flex-1 no-margin">{item.name}</h3>
         {item.completed ? <i className={completeIcon} /> : null}
