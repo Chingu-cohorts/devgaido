@@ -28,6 +28,22 @@ const functionName = (user, lessonId) => {
   setLastTouchedLesson(lessonId);
 };
 
+const Subjects = ({ item }) => {
+  const subjects = [];
+  const numSubjects = Math.min(3, item.subjectNames.length);
+  for (let i = 0; i < numSubjects; i += 1) {
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-left-tiny">{item.subjectNames[i]}</h5>);
+  }
+  if (item.subjectNames.length > 3) {
+    subjects.push(<h5 className="tag border-round bg-light-grey c-tex margin-left-tiny">{`... ${item.subjectNames.length - 2} more ...`}</h5>);
+  }
+  return (
+    <div className="right">
+      {subjects}
+    </div>
+  );
+};
+
 const Lesson = ({ match, curriculum, user }) => {
   const lessonId = match.params.id;
   const lesson = curriculum.lessons[lessonId];
@@ -44,14 +60,7 @@ const Lesson = ({ match, curriculum, user }) => {
       ratingStars.push(<i className="fa icon-star-o c-accent h4 margin-left-tiny" key={lesson.name + i} />);
     }
   }
-  const subjects = [];
-  const numSubjects = Math.min(2, lesson.subjectNames.length);
-  for (let i = 0; i < numSubjects; i += 1) {
-    subjects.push(lesson.subjectNames[i]);
-  }
-  if (lesson.subjectNames.length > 2) {
-    subjects.push(`... ${lesson.subjectNames.length - 2} more ...`);
-  }
+
   return (
     <div>
       <Helmet
@@ -61,8 +70,8 @@ const Lesson = ({ match, curriculum, user }) => {
         ]}
       />
       <PageHero bgColorClass="bg-accent--dark" bgUrl={`/screenshots/${lessonId}.jpg`} title={lesson.name} subtitle={lesson.type} full>
-        <i className={`fa ${typeIcons[lesson.type]} c-white h0 abs-top-right margin-top-small margin-right-small`} />
-        {lesson.completed ? <i className="fa icon-check-circle-o c-white h0 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
+        <i className={`fa ${typeIcons[lesson.type]} c-white h2 abs-top-right margin-top-small margin-right-small`} />
+        {lesson.completed ? <i className="fa icon-check-circle-o c-white h1 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
       </PageHero>
       <div className="container">
         <div className="flex bg-white padding-horizontal-big border-round margin-vertical-small page-hero__offset">
@@ -112,10 +121,8 @@ const Lesson = ({ match, curriculum, user }) => {
             </div>
             <div className="flex justify-between">
               <h5 className="normal">Tags</h5>
-              <div className="width-50 right">
-                {subjects.map(
-                  subjectName => <h6 className="tag center c-white border-pill bg-grey display-inline-block" key={lesson.name + subjectName}>{subjectName}</h6>,
-                )}
+              <div className="width-75 right">
+                <Subjects item={lesson} />
               </div>
             </div>
             <div className="flex-column margin-top-big">
@@ -126,7 +133,7 @@ const Lesson = ({ match, curriculum, user }) => {
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container margin-top-huge">
         {user.authenticated ? <hr /> : null}
         {user.authenticated ?
           <DisqusThread

@@ -72,10 +72,10 @@ const Subjects = ({ item }) => {
   const subjects = [];
   const numSubjects = Math.min(3, item.subjectNames.length);
   for (let i = 0; i < numSubjects; i += 1) {
-    subjects.push(<h5 className="tag border-pill bg-grey c-white">{item.subjectNames[i]}</h5>);
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-right-tiny">{item.subjectNames[i]}</h5>);
   }
   if (item.subjectNames.length > 3) {
-    subjects.push(<h5 className="tag border-pill bg-grey c-white">{`... ${item.subjectNames.length - 2} more ...`}</h5>);
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text">{`... ${item.subjectNames.length - 2} more ...`}</h5>);
   }
   return (
     <div className="right">
@@ -260,6 +260,10 @@ Subjects.propTypes = {
 };
 
 MilestonesComplete.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
+MilestoneNumber.propTypes = {
   item: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 

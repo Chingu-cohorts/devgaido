@@ -19,9 +19,25 @@ const typeIcons = {
   Project: 'icon-cogs',
 };
 
+const Subjects = ({ item }) => {
+  const subjects = [];
+  const numSubjects = Math.min(3, item.subjectNames.length);
+  for (let i = 0; i < numSubjects; i += 1) {
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-left-tiny">{item.subjectNames[i]}</h5>);
+  }
+  if (item.subjectNames.length > 3) {
+    subjects.push(<h5 className="tag border-round bg-light-grey c-tex margin-left-tiny">{`... ${item.subjectNames.length - 2} more ...`}</h5>);
+  }
+  return (
+    <div className="right">
+      {subjects}
+    </div>
+  );
+};
+
 const PathMarker = ({ text, dotClass, iconClass, path }) => (
   <div className={`path-marker relative ${dotClass} flex items-center bg-grey border-round`}>
-    <h2 className="path-marker__text flex-1 uppercase no-margin c-white margin-right-small">{text}</h2>
+    <h3 className="path-marker__text flex-1 uppercase no-margin c-white margin-right-small wide">{text}</h3>
     {path && path.nTotal !== 1 ?
       <h3 className="no-margin right c-white">
         <i className={'fa icon-flag-checkered h3 right margin-left-big margin-right-tiny'} />
@@ -77,14 +93,7 @@ const Path = ({ match, curriculum, user }) => {
       ratingStars.push(<i className="fa icon-star-o c-accent h4 margin-left-tiny" key={path.name + i} />);
     }
   }
-  const subjects = [];
-  const numSubjects = Math.min(2, path.subjectNames.length);
-  for (let i = 0; i < numSubjects; i += 1) {
-    subjects.push(path.subjectNames[i]);
-  }
-  if (path.subjectNames.length > 2) {
-    subjects.push(`... ${path.subjectNames.length - 2} more ...`);
-  }
+
   return (
     <div>
       <Helmet
@@ -94,8 +103,8 @@ const Path = ({ match, curriculum, user }) => {
         ]}
       />
       <PageHero bgColorClass="bg-primary" bgUrl={`/paths/${pathId}.jpg`} title={path.name} full>
-        <i className="fa icon-map-signs c-white h1 abs-top-right margin-top-small margin-right-small" />
-        {path.completed ? <i className="fa icon-check-circle-o c-white h0 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
+        <i className="fa icon-map-signs c-white h2 abs-top-right margin-top-small margin-right-small" />
+        {path.completed ? <i className="fa icon-check-circle-o c-white h1 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
       </PageHero>
       <div className="page-hero__offset">
         <div className="container">
@@ -134,10 +143,8 @@ const Path = ({ match, curriculum, user }) => {
               </div>
               <div className="flex justify-between">
                 <h5 className="normal">Tags</h5>
-                <div className="width-50 right">
-                  {subjects.map(
-                    subjectName => <h6 className="tag center c-white border-pill bg-grey display-inline-block" key={path.name + subjectName}>{subjectName}</h6>,
-                  )}
+                <div className="width-75 right">
+                  <Subjects item={path} />
                 </div>
               </div>
               {path.salary !== undefined ?
@@ -174,7 +181,7 @@ const Path = ({ match, curriculum, user }) => {
           />
         </div>
       </div>
-      <div className="container">
+      <div className="container margin-top-huge">
         {user.authenticated ? <hr /> : null}
         {user.authenticated ?
           <LazyLoad height={200} once offset={101}>
