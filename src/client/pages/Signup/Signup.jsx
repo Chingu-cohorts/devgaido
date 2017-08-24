@@ -15,7 +15,7 @@ const handleStartNowClick = (e, auth0) => {
 const Signup = ({ auth0 }) => (
   <div>
     <Helmet title="Sign up" />
-    <PageHero bgColorClass="bg-secondary" bgImageClass="bg-img__dashboard" title="Sign up" full />
+    <PageHero bgColorClass="bg-accent" bgImageClass="bg-img__dashboard" title="Sign up" full />
     <div className="container flex-column bg-white padding-big border-round margin-vertical-small page-hero__offset">
     devGaido is developed by the Chingu Cohorts. A global collaboration platform and coding-cohort generator. We connect motivated learners with shared goals to learn, help and build together.
         <p>

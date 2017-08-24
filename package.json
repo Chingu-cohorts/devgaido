@@ -68,6 +68,8 @@
     "preact": "^8.1.0",
     "preact-compat": "^3.16.0",
     "prop-types": "^15.5.8",
+    "purify-css": "https://github.com/kimkwanka/purifycss.git",
+    "purifycss-webpack": "^0.7.0",
     "rc-css-transition-group": "^2.1.4",
     "react-dom": "^15.5.4",
     "react-ga": "^2.2.0",

@@ -20,13 +20,13 @@ const StyleGuide = () => (
     <blockquote>
       <p><em>This is a blockquote</em></p>
     </blockquote>
-    <div className="flex flex-wrap justify-space-between">
+    <div className="flex flex-wrap justify-between">
       <button>Button</button>
       <input type="submit" value="Input Button" />
       <a className="button" href="/">Anchor Button</a>
       <button className="button--default">button--default</button>
       <button className="button--primary">button--primary</button>
-      <button className="button--secondary">button--secondary</button>
+      <button className="button--accent">button--accent</button>
       <button className="button--primary-clear">button--primary-clear</button>
       <div className="bg-grey">
         <button className="button--white-clear">button--white-clear</button>

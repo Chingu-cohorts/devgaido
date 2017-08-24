@@ -23,12 +23,12 @@ const {
 const Library = ({ curriculum, uiState, user }) => (
   <div>
     <Helmet title="Library" />
-    <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__library" title="Library">
+    <PageHero bgColorClass="bg-primary" bgUrl="/img/library.jpg" title="Library">
       <Legend />
     </PageHero>
     <PageDivider>
       <div className="search-bar flex flex-1">
-        <i className="fa icon-search c-secondary h3 margin-right-small" />
+        <i className="fa icon-search c-accent h3 margin-right-small" />
         <input className="margin-right-small h5 thin" type="text" name="pathSearch" defaultValue={uiState.libSearchTerm} placeholder="Search" onChange={e => setLibrarySearchTerm(e.target.value)} />
       </div>
       <div className="topics-dropdown relative">
@@ -46,9 +46,11 @@ const Library = ({ curriculum, uiState, user }) => (
       content={[{
         caption: 'Paths',
         content: <Results category="paths" />,
+        buttonClass: 'button--primary',
       }, {
         caption: 'Lessons',
         content: <Results category="lessons" />,
+        buttonClass: 'button--accent',
       }]}
       tabIndex={uiState.curLibraryTab}
       onClick={index => setCurrentLibraryTab(index)}

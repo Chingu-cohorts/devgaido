@@ -1,0 +1,20 @@
+createShadows(steps, cNames, cVals)
+  for step in steps
+    for cName, i in cNames
+      .shadow-bottom-{cName}-{step}
+        box-shadow: 0px 1px * step cVals[i]
+      .shadow-top-{cName}-{step}
+        box-shadow: 0px -1px * step cVals[i]
+      .shadow-left-{cName}-{step}
+        box-shadow: -1px * step 0px cVals[i]
+      .shadow-right-{cName}-{step}
+        box-shadow: 1px * step 0px cVals[i]
+      .shadow-vertical-{cName}-{step}
+        box-shadow: 0px -1px * step cVals[i], 0px 1px * step cVals[i]
+      .shadow-horizontal-{cName}-{step}
+        box-shadow: -1px * step 0px cVals[i], 1px * step 0px cVals[i]
+
+createShadows($shadowSteps, $colorNames, $colorValues )
+
+.text-shadow-subtle
+  text-shadow: 1px 1px rgba(0,0,0,0.5)

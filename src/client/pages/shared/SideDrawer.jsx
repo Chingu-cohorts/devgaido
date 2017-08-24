@@ -8,7 +8,7 @@ const SideDrawer = ({ history }) => {
   return (
     <div className={`side-drawer ${notOnHomeScreen ? '' : 'hidden'}`}>
       <BackButton history={history} />
-      <i className="side-drawer__icon fa icon-chevron-left c-secondary h0" />
+      <i className="side-drawer__icon fa icon-chevron-left c-accent h2" />
     </div>
   );
 };
