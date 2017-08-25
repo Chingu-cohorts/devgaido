@@ -47,10 +47,12 @@ const Library = ({ curriculum, uiState, user }) => (
         caption: 'Paths',
         content: <Results category="paths" />,
         buttonClass: 'button--primary',
+        icon: <i className="fa icon-map-signs margin-right-tiny" />,
       }, {
         caption: 'Lessons',
         content: <Results category="lessons" />,
         buttonClass: 'button--accent',
+        icon: <i className="fa icon-graduation-cap margin-right-tiny" />,
       }]}
       tabIndex={uiState.curLibraryTab}
       onClick={index => setCurrentLibraryTab(index)}
