@@ -31,9 +31,11 @@ const Library = ({ curriculum, uiState, user }) => (
         <i className="fa icon-search c-accent h3 margin-right-small" />
         <input className="margin-right-small h5 thin" type="text" name="pathSearch" defaultValue={uiState.libSearchTerm} placeholder="Search" onChange={e => setLibrarySearchTerm(e.target.value)} />
       </div>
-      <div className="topics-dropdown relative">
+      <div className="topics-dropdown relative flex items-center">
+        <i className="fa icon-tags h4 margin-right-tiny c-accent" />
         <select className="h5 thin" defaultValue={uiState.libTopic} onChange={e => setLibraryTopic(e.target.value)} >
-          <option value="All Topics" key="AllTopics">All Topics</option>
+
+          <option value="All Tags" key="AllTags">All Tags</option>
           {Object.keys(curriculum.subjects).map(
             subjectId => <option value={subjectId} key={subjectId}>{subjectId}</option>,
           )}

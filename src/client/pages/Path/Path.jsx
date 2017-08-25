@@ -121,8 +121,18 @@ const Path = ({ match, curriculum, user }) => {
               { user.authenticated ?
                 <div className="right margin-bottom-big">
                   {!path.bookmarked ?
-                    <button className="button--default uppercase" onClick={() => addBookmark(pathId, 'paths', path.version)}>Bookmark</button> :
-                    <button className="button--default uppercase" onClick={() => removeBookmark(pathId, 'paths', path.version)}>Remove Bookmark</button>}
+                    <button className="button--default uppercase" onClick={() => addBookmark(pathId, 'paths', path.version)}>
+                      <div className="flex items-center">
+                        <i className="fa icon-thumb-tack margin-right-tiny" />
+                        Bookmark
+                      </div>
+                    </button> :
+                    <button className="button--default uppercase" onClick={() => removeBookmark(pathId, 'paths', path.version)}>
+                      <div className="flex items-center">
+                        <i className="fa icon-remove margin-right-tiny" />
+                        Remove Bookmark
+                      </div>
+                    </button>}
                 </div> :
                 <div className="right margin-bottom-big">
                   <button className="button--default uppercase hidden">Bookmark</button>
