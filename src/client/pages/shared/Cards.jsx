@@ -38,10 +38,10 @@ const MilestonesComplete = ({ item }) => (
   </h4>
 );
 
-const MilestoneNumber = ({ item }) => (
+const LessonsNumber = ({ item }) => (
   <h4 className="no-margin">
-    <i className="fa icon-flag-checkered c-primary h4 margin-right-tiny" />
-    <span>{item.nTotal}</span>
+    <i className="fa icon-graduation-cap c-accent h4 margin-right-tiny" />
+    <span>{item.nLessonsTotal}</span>
   </h4>
 );
 
@@ -200,7 +200,7 @@ const LibraryCard = ({ item }) => {
     (<FlexRow className="justify-end">
       <MilestonesComplete item={item} />
       <LessonsComplete item={item} />
-    </FlexRow>) : <MilestoneNumber item={item} />;
+    </FlexRow>) : <LessonsNumber item={item} />;
   return (
     <Link className={'image-link-card col-quarter flex-column bg-white border-round c-text margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
       <div className="image-link-card__img bg-cover border-round-top border-1px border-white relative flex-column justify-center" style={{ backgroundImage: `url(${item.img})` }}>
@@ -264,7 +264,7 @@ MilestonesComplete.propTypes = {
   item: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-MilestoneNumber.propTypes = {
+LessonsNumber.propTypes = {
   item: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
