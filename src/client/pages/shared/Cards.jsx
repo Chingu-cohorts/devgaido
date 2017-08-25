@@ -123,12 +123,10 @@ const DashboardCard = ({ item }) => {
           <p className="">{item.description}</p>
         </FlexColumn>
         <FlexColumn className="margin-horizontal-small margin-top-small flex-1">
-          <FlexRow className="items-center justify-between margin-bottom-tiny">
-            <h5 className="no-margin">Rating</h5>
+          <FlexRow className="items-center justify-end margin-bottom-tiny">
             <RatingStars item={item} />
           </FlexRow>
-          <FlexRow className="items-center justify-between">
-            <h5 className="no-margin">Estimated Length</h5>
+          <FlexRow className="items-center justify-end">
             <EstimatedTime item={item} />
           </FlexRow>
           {item.nLessonsTotal > 0 ?
@@ -166,12 +164,10 @@ const MilestoneSubCard = ({ item, completeX }) => {
           <p className="">{item.description}</p>
         </FlexColumn>
         <FlexColumn className="margin-horizontal-small margin-top-small flex-1">
-          <FlexRow className="items-center justify-between margin-bottom-tiny">
-            <h5 className="no-margin">Rating</h5>
+          <FlexRow className="items-center justify-end margin-bottom-tiny">
             <RatingStars item={item} />
           </FlexRow>
-          <FlexRow className="items-center justify-between">
-            <h5 className="no-margin">Estimated Length</h5>
+          <FlexRow className="items-center justify-end">
             <EstimatedTime item={item} />
           </FlexRow>
           {item.nLessonsTotal > 0 ?

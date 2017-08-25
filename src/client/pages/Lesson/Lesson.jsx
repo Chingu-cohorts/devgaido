@@ -136,21 +136,13 @@ const Lesson = ({ match, curriculum, user }) => {
               <div className="right margin-bottom-big">
                 <button className="button--default uppercase hidden">Bookmark</button>
               </div> }
-            <div className="flex justify-between">
-              <h5 className="normal">Rating</h5>
-              <div>
-                {ratingStars}
-              </div>
+            <div className="right margin-bottom-tiny">
+              {ratingStars}
             </div>
-            <div className="flex justify-between">
-              <h5 className="normal margin-right-huge">Estimated Length</h5>
-              <div>
-                {/* <h4 className="c-primary uppercase right no-margin">Very Long</h4>*/}
-                <h5 className="c-primary uppercase right">{lesson.estimatedTimeStr} hours</h5>
-              </div>
+            <div className="flex items-center justify-end margin-bottom-tiny">
+              <h5 className="c-primary no-margin uppercase right">{lesson.estimatedTimeStr} hours</h5>
             </div>
-            <div className="flex justify-between">
-              <h5 className="normal">Tags</h5>
+            <div className="flex justify-end">
               <div className="width-75 right">
                 <Subjects item={lesson} />
               </div>
