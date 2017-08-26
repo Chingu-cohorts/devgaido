@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import BackButton from './BackButton';
 
@@ -8,9 +8,13 @@ const SideDrawer = ({ history }) => {
   return (
     <div className={`side-drawer ${notOnHomeScreen ? '' : 'hidden'}`}>
       <BackButton history={history} />
-      <i className="side-drawer__icon fa icon-chevron-left c-secondary h0" />
+      <i className="side-drawer__icon fa icon-chevron-left c-accent h2" />
     </div>
   );
+};
+
+SideDrawer.propTypes = {
+  history: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default SideDrawer;

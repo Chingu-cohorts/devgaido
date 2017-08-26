@@ -1,7 +1,9 @@
 const uiState = (state = {
   navMenuOpen: false,
   libSearchTerm: '',
-  libTopic: 'All Topics',
+  libTopic: 'All Tags',
+  libShowCompleted: true,
+  libShowIncomplete: true,
   curDashboardTab: 0,
   curLibraryTab: 0,
   openedMilestones: [],
@@ -29,6 +31,18 @@ const uiState = (state = {
       return {
         ...state,
         libTopic: action.topic,
+      };
+    }
+    case 'TOGGLE_LIBRARY_SHOW_COMPLETED': {
+      return {
+        ...state,
+        libShowCompleted: !state.libShowCompleted,
+      };
+    }
+    case 'TOGGLE_LIBRARY_SHOW_INCOMPLETE': {
+      return {
+        ...state,
+        libShowIncomplete: !state.libShowIncomplete,
       };
     }
     case 'TOGGLE_NAV_MENU': {

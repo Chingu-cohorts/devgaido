@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import ItemList from './ItemList';
 
@@ -31,7 +32,12 @@ const BookmarkedTab = ({ curriculum }) => {
       { bookmarkedLessons.length + bookmarkedCourses.length + bookmarkedPaths.length <= 0 ?
         <div className="center margin-top-huge">
           <h3>You haven&apos;t bookmarked anything yet.</h3>
-          <Link className="button button--primary uppercase" to="/library">Browse Library</Link>
+          <Link className="button button--primary uppercase" to="/library">
+            <div className="flex items-center">
+              <i className="fa icon-search margin-right-tiny" />
+              Browse Library
+            </div>
+          </Link>
         </div> : null }
     </div>
   );
@@ -41,4 +47,6 @@ BookmarkedTab.propTypes = {
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-export default BookmarkedTab;
+export default connect(store => ({
+  curriculum: store.curriculum,
+}))(BookmarkedTab);

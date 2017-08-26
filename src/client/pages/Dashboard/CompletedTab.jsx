@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import ItemList from './ItemList';
 
@@ -27,7 +28,12 @@ const CompletedTab = ({ curriculum }) => {
       { completedLessons.length + completedPaths.length <= 0 ?
         <div className="center margin-top-huge">
           <h3>You haven&apos;t completed anything yet.</h3>
-          <Link className="button button--primary uppercase" to="/library">Browse Library</Link>
+          <Link className="button button--primary uppercase" to="/library">
+            <div className="flex items-center">
+              <i className="fa icon-search margin-right-tiny" />
+              Browse Library
+            </div>
+          </Link>
         </div> : null }
     </div>
   );
@@ -37,4 +43,6 @@ CompletedTab.propTypes = {
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-export default CompletedTab;
+export default connect(store => ({
+  curriculum: store.curriculum,
+}))(CompletedTab);

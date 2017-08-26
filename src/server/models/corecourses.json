@@ -392,5 +392,178 @@
       "setupwwwfolder"
     ],
     "version": "1.0.0"
+  },
+  "reduxconcepts": {
+    "name": "State, Actions, and Reducers",
+    "description": "Gain insight into the fundamentals of how Redux works.",
+    "lessonIds": [
+      "redux01",
+      "redux02",
+      "redux03",
+      "redux04",
+      "redux05"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxstore": {
+    "name": "The Redux Store",
+    "description": "Learn about the Redux Store.",
+    "lessonIds": [
+      "redux06",
+      "redux07"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxcheckpt": {
+    "name": "Putting it All Together: React & Redux",
+    "description": "See how React and Redux can work together in this simple example.",
+    "lessonIds": [
+      "redux08"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxmutations": {
+    "name": "Avoiding Mutations in Redux",
+    "description": "Understand how to avoid array and object mutations in Redux.",
+    "lessonIds": [
+      "redux09",
+      "redux10"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxtodo1": {
+    "name": "Example: Creating a ToDo Application",
+    "description": "Learn how to build an app application using Redux.",
+    "lessonIds": [
+      "redux11",
+      "redux12"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxreducer": {
+    "name": "Understanding Reducer Composition",
+    "description": "Learn about reducer composition in Redux.",
+    "lessonIds": [
+      "redux13",
+      "redux14",
+      "redux15",
+      "redux16"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxtodo2": {
+    "name": "Example: Adding Features to the ToDo Application",
+    "description": "Extend your knowledge of Redux through this example of how to add new features to the ToDo app.",
+    "lessonIds": [
+      "redux17",
+      "redux18",
+      "redux19"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxextpres": {
+    "name": "Extracting Presentational Components",
+    "description": "See how to extract presentational components to separate app behavior from appearance.",
+    "lessonIds": [
+      "redux20",
+      "redux21"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxextcont": {
+    "name": "Extracting Container Components",
+    "description": "Learn the how and why of extracting container components to limit the unnecessary passing of props.",
+    "lessonIds": [
+      "redux22",
+      "redux23"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxpassstore": {
+    "name": "Passing the Store to App Components",
+    "description": "Learn the how and why of extracting container components to limit the unnecessary passing of props.",
+    "lessonIds": [
+      "redux24",
+      "redux25",
+      "redux26"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxgencont": {
+    "name": "Generating Containers",
+    "description": "Learn the how to use Redux to generate container components.",
+    "lessonIds": [
+      "redux27",
+      "redux28",
+      "redux29"
+    ],
+    "version": "1.0.0"
+  },
+  "reduxextact": {
+    "name": "Extracting Action Creators",
+    "description": "Learn how to extract action creators from components to improve the maintainability of your apps.",
+    "lessonIds": [
+      "redux30"
+    ],
+    "version": "1.0.0"
+  },
+  "reactbasicsetup": {
+    "name": "What is React?",
+    "description": "Learn what ReactJS is useful for and how to set up your development environment to begin writing apps that rely on it.",
+    "lessonIds": [
+      "reactbasics01",
+      "reactbasics02",
+      "reactbasics03"
+    ],
+    "version": "1.0.0"
+  },
+  "reactbasiccomps": {
+    "name": "All About Components",
+    "description": "Learn about ReactJS Components and how they function in and app.",
+    "lessonIds": [
+      "reactbasics04",
+      "reactbasics05",
+      "reactbasics06"
+    ],
+    "version": "1.0.0"
+  },
+  "reactbasicprops": {
+    "name": "Props, Events, and State",
+    "description": "Learn about ReactJS Components and how they function in and app.",
+    "lessonIds": [
+      "reactbasics07",
+      "reactbasics08"
+    ],
+    "version": "1.0.0"
+  },
+  "reactbasicstate": {
+    "name": "Stateful Components, Stateless Components, and the DOM",
+    "description": "Learn about state and its interaction with the DOM.",
+    "lessonIds": [
+      "reactbasics09",
+      "reactbasics10",
+      "reactbasics11"
+    ],
+    "version": "1.0.0"
+  },
+  "reactbasiccomm": {
+    "name": "Communicating Between Components and the ReactJS Lifecycle",
+    "description": "Learn how to communicate between parent and child components, as well as about the lifecycle of a React app.",
+    "lessonIds": [
+      "reactbasics12",
+      "reactbasics13",
+      "reactbasics14",
+      "reactbasics15"
+    ],
+    "version": "1.0.0"
+  },
+  "reactbasicroute": {
+    "name": "React Routing",
+    "description": "Learn about React Router and how to leverage it in your applications.",
+    "lessonIds": [
+      "reactbasics16",
+      "reactbasics17"
+    ],
+    "version": "1.0.0"
   }
 }

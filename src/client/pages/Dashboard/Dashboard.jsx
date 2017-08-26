@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { connect } from 'react-redux';
 
 import PageHero from '../shared/PageHero';
 import TabbedContent from '../shared//TabbedContent';
@@ -14,24 +15,30 @@ import actions from '../../actions';
 const { setCurrentDashboardTab } = actions;
 
 
-const Dashboard = ({ user, curriculum, uiState, history }) => (
+const Dashboard = ({ uiState }) => (
   <div>
     <Helmet
       title="Dashboard"
     />
-    <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__dashboard" title="Dashboard">
-      <Metrics user={user} curriculum={curriculum} />
+    <PageHero bgColorClass="bg-primary" bgUrl="/img/dashboard.jpg" title="Dashboard">
+      <Metrics />
     </PageHero>
     <TabbedContent
       content={[{
         caption: 'In Progress',
-        content: <InProgressTab curriculum={curriculum} user={user} history={history} />,
+        content: <InProgressTab />,
+        buttonClass: 'button--accent',
+        icon: <i className="fa icon-spinner margin-right-tiny" />,
       }, {
         caption: 'Bookmarked',
-        content: <BookmarkedTab curriculum={curriculum} />,
+        content: <BookmarkedTab />,
+        buttonClass: 'button--accent',
+        icon: <i className="fa icon-bookmark margin-right-tiny" />,
       }, {
         caption: 'Completed',
-        content: <CompletedTab curriculum={curriculum} />,
+        content: <CompletedTab />,
+        buttonClass: 'button--accent',
+        icon: <i className="fa icon-check-circle-o margin-right-tiny" />,
       }]}
       tabIndex={uiState.curDashboardTab}
       onClick={index => setCurrentDashboardTab(index)}
@@ -41,9 +48,8 @@ const Dashboard = ({ user, curriculum, uiState, history }) => (
 
 Dashboard.propTypes = {
   uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
-  curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
-  user: PropTypes.objectOf(PropTypes.shape).isRequired,
-  history: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-export default Dashboard;
+export default connect(store => ({
+  uiState: store.uiState,
+}))(Dashboard);

@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import ImageLinkCard from '../shared/ImageLinkCard';
+import { LibraryCard } from '../shared/Cards';
 
-const filterItem = (item, uiState, filterByTopic, filterBySearchTerm) => {
+const filterByTermNTopic = (item, uiState) => {
+  const filterByTopic = uiState.libTopic !== 'All Tags';
+  const filterBySearchTerm = uiState.libSearchTerm !== '';
+
   let retValTopic = false;
   let retValSearchTerm = false;
 
@@ -32,60 +36,47 @@ const filterItem = (item, uiState, filterByTopic, filterBySearchTerm) => {
   return true;
 };
 
-const getFilteredItems = (allItems, uiState, filterByTopic, filterBySearchTerm) => {
-  const filteredIds = Object.keys(allItems).filter(
-    itemId => filterItem(allItems[itemId], uiState, filterByTopic, filterBySearchTerm),
-  );
+const filterByCompletion = (item, uiState) => {
+  const showCompleted = uiState.libShowCompleted;
+  const showIncomplete = uiState.libShowIncomplete;
 
+  if (item.completed) {
+    return showCompleted;
+  }
+
+  return showIncomplete;
+};
+
+const getFilteredItems = (allItems, uiState) => {
+  let filteredIds = Object.keys(allItems).filter(
+    itemId => filterByTermNTopic(allItems[itemId], uiState),
+  );
+  filteredIds = filteredIds.filter(
+    itemId => filterByCompletion(allItems[itemId], uiState),
+  );
   return filteredIds;
 };
 
 const Results = ({ curriculum, uiState, category }) => {
-  const filterByTopic = uiState.libTopic !== 'All Topics';
-  const filterBySearchTerm = uiState.libSearchTerm !== '';
-
-  const filteredItems = category === 'paths' ? getFilteredItems(
-    curriculum.paths, uiState, filterByTopic, filterBySearchTerm,
-  ) : getFilteredItems(
-    curriculum.lessons, uiState, filterByTopic, filterBySearchTerm,
-  );
+  const filteredIds = category === 'paths' ? getFilteredItems(curriculum.paths, uiState) : getFilteredItems(curriculum.lessons, uiState);
 
   const results = category === 'paths' ?
-  filteredItems.map((pathId) => {
+  filteredIds.map((pathId) => {
     const path = curriculum.paths[pathId];
     return (
-      <ImageLinkCard
-        item={path}
-        linkTo={path.url}
-        bgColorClass="bg-primary"
-        imgSrc={`/paths/${pathId}.jpg`}
-        iconClass="icon-map-signs"
-        childIconClass="icon-flag-checkered c-secondary"
-        imgBorderClass="border-1px border-primary"
-        key={pathId}
-        pathId={pathId}
-      />
+      <LibraryCard item={path} key={pathId} />
     );
   }) :
-  filteredItems.map((lessonId) => {
+  filteredIds.map((lessonId) => {
     const lesson = curriculum.lessons[lessonId];
     return (
-      <ImageLinkCard
-        item={lesson}
-        linkTo={lesson.url}
-        bgColorClass="bg-secondary"
-        imgSrc={`/screenshots/${lessonId}.jpg`}
-        iconClass="icon-graduation-cap"
-        imgBorderClass="border-1px border-secondary"
-        key={lessonId}
-      />
+      <LibraryCard item={lesson} key={lessonId} />
     );
   });
 
-
   return (
     <div className="results margin-vertical-big">
-      <div className="flex flex-wrap margin-vertical-big justify-space-around">
+      <div className="flex flex-wrap margin-vertical-big justify-around">
         {results}
       </div>
     </div>
@@ -95,7 +86,11 @@ const Results = ({ curriculum, uiState, category }) => {
 Results.propTypes = {
   uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
+  category: PropTypes.string.isRequired,
 };
 
-export default Results;
+export default connect(store => ({
+  uiState: store.uiState,
+  curriculum: store.curriculum,
+}))(Results);
 

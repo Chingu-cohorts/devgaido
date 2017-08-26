@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const PageDivider = ({ children }) => (
   <div className="page-divider bg-white">
-    <div className="page-divider__content container height-100 flex justify-space-between align-items-center">
+    <div className="page-divider__content container height-100 flex justify-between items-center">
       {children}
     </div>
   </div>

@@ -41,7 +41,7 @@ class DisqusThread extends React.Component {
       console.log(window.disqus_identifier, window.disqus_title, window.disqus_url);
     }
 
-    return <div {...other} id="disqus_thread" />;
+    return <div className="margin-top-small margin-bottom-huge" {...other} id="disqus_thread" />;
   }
 }
 

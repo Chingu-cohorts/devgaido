@@ -1,0 +1,70 @@
+createMargins(strs, factors)
+  for str, i in strs
+    .margin-left{str}
+      margin-left: factors[i] * $spaceSize !important
+    .margin-right{str}
+      margin-right: factors[i] * $spaceSize !important
+    .margin-top{str}
+      margin-top: factors[i] * $spaceSize !important
+    .margin-bottom{str}
+      margin-bottom: factors[i] * $spaceSize !important
+    .margin{str}
+      margin: factors[i] * $spaceSize !important
+    .margin-vertical{str}
+      margin-top: factors[i] * $spaceSize !important
+      margin-bottom: factors[i] * $spaceSize !important
+    .margin-horizontal{str}
+      margin-left: factors[i] * $spaceSize !important
+      margin-right: factors[i] * $spaceSize !important
+      
+createMargins($spaceSizeStrs, $spaceSizeFactors)
+
+.margin-left-auto
+  margin-left: auto !important
+.margin-right-auto
+  margin-right: auto !important
+.margin-top-auto
+  margin-top: auto !important
+.margin-bottom-auto
+  margin-bottom: auto !important
+.margin-auto
+  margin: auto !important
+.margin-vertical-auto
+  margin-top: auto !important
+  margin-bottom: auto !important
+.margin-horizontal-auto
+  margin-left: auto !important
+  margin-right: auto !important
+
+.no-margin
+  margin: 0
+
+.no-margin-i
+  margin: 0 !important
+
+createPaddings(strs, factors)
+  for str, i in strs
+    .padding-left{str}
+      padding-left: factors[i] * $spaceSize !important
+    .padding-right{str}
+      padding-right: factors[i] * $spaceSize !important
+    .padding-top{str}
+      padding-top: factors[i] * $spaceSize !important
+    .padding-bottom{str}
+      padding-bottom: factors[i] * $spaceSize !important
+    .padding{str}
+      padding: factors[i] * $spaceSize !important
+    .padding-vertical{str}
+      padding-top: factors[i] * $spaceSize !important
+      padding-bottom: factors[i] * $spaceSize !important
+    .padding-horizontal{str}
+      padding-left: factors[i] * $spaceSize !important
+      padding-right: factors[i] * $spaceSize !important
+
+createPaddings($spaceSizeStrs, $spaceSizeFactors)
+
+.no-padding
+  padding: 0
+
+.no-padding-i
+  padding: 0 !important

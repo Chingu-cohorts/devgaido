@@ -9,13 +9,17 @@ const TabbedContent = ({ content, tabIndex, onClick }) => (
       <div className="flex-1 center">
         {content.map((c, index) => (
           <button
-            className={index === tabIndex ? 'button--secondary uppercase margin-horizontal-tiny' : 'button--default uppercase margin-horizontal-tiny'}
+            className={index === tabIndex ? `${c.buttonClass} uppercase margin-horizontal-tiny ` : 'button--default uppercase margin-horizontal-tiny'}
             onClick={() => onClick(index)}
             key={c.caption}
           >
-            {c.caption}
+            <div className="flex items-center">
+              {c.icon ? c.icon : null}
+              {c.caption}
+            </div>
           </button>
-        ))}
+          ),
+        )}
       </div>
     </PageDivider>
     <div className="container margin-top-small">

@@ -160,6 +160,15 @@
     "releaseNo": "",
     "authorityURL": "",
     "version": "1.0.0"
+  },
+  "React": {
+    "type": "Library",
+    "focusArea": "Foundation",
+    "name": "React",
+    "description": "ReachJS",
+    "releaseNo": "",
+    "authorityURL": "",
+    "version": "1.0.0"
   }, 
   "Source Code Control": {
     "type": "Concept",

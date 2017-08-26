@@ -3,8 +3,11 @@ const dev = process.env.NODE_ENV !== 'production' && process.argv.indexOf('-p') 
 const usePreact = false;
 
 const path = require('path');
+const glob = require('glob');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
+const AssetsPlugin = require('assets-webpack-plugin');
 
 const config = {
   devServer: {
@@ -17,15 +20,19 @@ const config = {
     },
   },
   devtool: dev ? 'eval' : false,
-  entry: dev ? [
-    'webpack-dev-server/client?http://localhost:8081',
-    'react-hot-loader/patch',
-    path.join(__dirname, '/src/client/index.jsx'),
-  ] : path.join(__dirname, '/src/client/index.jsx'),
+  entry: dev ? {
+    main: [
+      'webpack-dev-server/client?http://localhost:8081',
+      'react-hot-loader/patch',
+      path.join(__dirname, '/src/client/index.jsx'),
+    ],
+  } : {
+    main: path.join(__dirname, '/src/client/index.jsx'),
+  },
   output: {
     publicPath: 'http://localhost:8081/',
     path: path.join(__dirname, '/dist/public'),
-    filename: 'bundle.js',
+    filename: dev ? '[name].js' : '[name]-[chunkhash].js',
   },
   stats: {
     colors: true,
@@ -46,7 +53,7 @@ const config = {
         ExtractTextPlugin.extract([
           {
             loader: 'css-loader',
-            options: { minimize: true },
+            options: { minimize: false },
           },
           'postcss-loader',
           'stylus-loader',
@@ -65,10 +72,38 @@ const config = {
   },
   plugins: dev ? [
     new webpack.NamedModulesPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: ({ resource }) => /node_modules/.test(resource),
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime',
+    }),
+    new AssetsPlugin({
+      fullPath: false,
+    }),
     new webpack.HotModuleReplacementPlugin(),
   ] : [
-    new webpack.NamedModulesPlugin(),
-    new ExtractTextPlugin('style.css'),
+    new webpack.HashedModuleIdsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: ({ resource }) => /node_modules/.test(resource),
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime',
+    }),
+    new ExtractTextPlugin('style-[contenthash].css'),
+    new PurifyCSSPlugin({
+      paths: glob.sync(path.join(__dirname, '/src/client/**/*.jsx'), { nodir: true }),
+      minimize: true,
+      purifyOptions: {
+        info: true,
+        rejected: false,
+      },
+    }),
+    new AssetsPlugin({
+      fullPath: false,
+    }),
   ],
 };
 

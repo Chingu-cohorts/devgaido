@@ -20,7 +20,7 @@ const serverConfig = {
   // Exclude all node_modules from the bundle, except those in the white list.
   // The white listed modules will be transpiled by the babel-loader.
   externals: [nodeExternals({
-    whitelist: dev ? ['webpack/hot/poll?1000', 'react-router', 'react-redux', /^lodash/] : ['react-router', 'react-redux', /^lodash/],
+    whitelist: dev ? ['webpack/hot/poll?1000', 'react-router-dom', 'react-redux', /^lodash/] : ['react-router-dom', 'react-redux', /^lodash/],
   })],
   stats: {
     colors: true,

@@ -1,14 +1,23 @@
 import React from 'react';
 import ReactGA from 'react-ga';
 
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 // Based on code from: https://github.com/react-ga/react-ga/issues/122
 class GAListener extends React.Component {
+  constructor(props) {
+    super(props);
+    this.gaId = props.backendData.gaId;
+  }
   componentDidMount() {
-    ReactGA.initialize('UA-103320988-1');
-    this.sendPageView(this.props.history.location);
-    this.props.history.listen(this.sendPageView);
+    if (this.props.backendData.isProduction) {
+      ReactGA.initialize(this.gaId);
+      this.sendPageView(this.props.history.location);
+      this.props.history.listen(this.sendPageView);
+    } else {
+      console.log('Development mode - no Google Analytics will be used.');
+    }
   }
 
   sendPageView(location) {
@@ -20,5 +29,6 @@ class GAListener extends React.Component {
     return this.props.children;
   }
 }
-
-export default withRouter(GAListener);
+export default withRouter(connect(store => ({
+  backendData: store.backendData,
+}))(GAListener));

@@ -1,7 +1,7 @@
-# [![devGaido version][devgaido-image]][devgaido-url]
+# [![devGaido][devgaido-image]][devgaido-url]
 
 devGaido provides a guided learning experience through the Web Development 
-ecosystem by providing those new to the craft with predefined pathas to aid in
+ecosystem by providing those new to the craft with predefined paths to aid in
 achieving web development skills. For experienced developers it provides a 
 a means of filling in skill gaps around specific technologies, libraries, and
 languages.
@@ -9,7 +9,7 @@ languages.
 You can find devGaido at [www.devgaido.com](http://www.devgaido.com).
 
 [Features](#features) | [Development](#development) | [Runtime](#runtime) | [Authors](#authors) |
-[License](#license)
+[License](#license) | [Release Notes](releasenotes.md)
 
 ![screenshot]()
 
@@ -86,20 +86,7 @@ The devGaido project folder is organized in the following manner:
 
 ## Runtime
 
-### Built With
-
-devGaido's runtime architecture leverages the following to achieve performance,
-availability, and ease of deployment:
-
-- CDN: A content delivery network (CDN) is used to reduce the amount of time 
-necessary to serve up images and other static content.
-- Nginx: Is a web server providing security (HTTPS), compression,
-and load balancing.
-- Docker: Docker containers house devGaido's application components that make
-devGaido easier to deploy and manage.
-- Travic CI: An automation platform integrated with GitHub that is used to
-automatically deploy devGaido to the production server(s) when changes are 
-made and successfully tested.
+A separate repo is used to manage application runtime components. For more information about the devGaido devops environment please consult [devGaido DevOps](https://github.com/Chingu-cohorts/devgaido_devops)
 
 ## Authors
 
@@ -108,6 +95,7 @@ made and successfully tested.
 - [Kim Kwanka](https://github.com/kimkwanka)
 - [Chance McAllister](https://github.com/tropicalchancer)
 - [Jim Medlock](https://github.com/jdmedlock)
+- [Nick Papasavvas](https://github.com/nickolaos77)
 
 ## License
 

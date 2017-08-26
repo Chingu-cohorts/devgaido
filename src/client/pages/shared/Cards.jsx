@@ -1,150 +1,293 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LazyLoad from 'react-lazyload';
-
 import { Link } from 'react-router-dom';
 
 import actions from '../../actions';
 
 const { setLastTouchedPath } = actions;
 
-const CardTemplate = ({ title, bgColorClass, iconClass, iconClass2, heightClass, content, footerContent }) => (
-  <div className={`card flex-column border-round bg-white ${heightClass}`}>
-    <div className={`card__header flex align-items-center border-round-top ${bgColorClass}`}>
-      {iconClass ? <i className={`fa c-white h4 ${iconClass} margin-right-small`} /> : null}
-      <h4 className="card__header__text flex-1 c-white uppercase no-margin">{title}</h4>
-      {iconClass2 ? <i className={`lcard__checkmark fa c-white h1 no-margin absolute ${iconClass2}`} /> : null}
-    </div>
-    <div className="card__content flex-1">
-      {content}
-    </div>
-    {footerContent ?
-      <div className="card__footer width-100 right">
-        {footerContent}
-      </div> : null}
+const FlexRow = ({ className, children }) => (
+  <div className={`flex ${className}`}>
+    {children}
   </div>
 );
 
-const MenuCard = ({ children }) => (
-  CardTemplate({
-    title: 'Menu',
-    bgColorClass: 'bg-grey',
-    iconClass: '',
-    content: (
-      <div>
-        {children}
-      </div>),
-  })
+const FlexColumn = ({ className, children }) => (
+  <div className={`flex-column ${className}`}>
+    {children}
+  </div>
 );
 
-const LinkCard = ({ item, bgColorClass, iconClass, childIconClass, imgSrc, borderClass, connectionClass, heightClass, linkTo, pathId }) => {
+const Progress = ({ item }) => {
+  const progressInverse = 100 - ((100 * item.nLessonsCompleted) / item.nLessonsTotal);
+  return (
+    <div className="margin-vertical-small">
+      <div className="progress relative bg-light-grey border-pill overflow-hidden">
+        <div className="progress__fill bg-accent border-pill" />
+        <div className="progress__mask abs-top-right bg-light-grey" style={{ width: `${progressInverse}%` }} />
+      </div>
+    </div>
+  );
+};
+
+const MilestonesComplete = ({ item }) => (
+  <h4 className="no-margin">
+    <i className="fa icon-flag-checkered c-primary h4 margin-right-tiny" />
+    <span>{item.nCompleted}/{item.nTotal}</span>
+  </h4>
+);
+
+const LessonsNumber = ({ item }) => (
+  <h4 className="no-margin">
+    <i className="fa icon-graduation-cap c-accent h4 margin-right-tiny" />
+    <span>{item.nLessonsTotal}</span>
+  </h4>
+);
+
+const LessonsComplete = ({ item }) => (
+  <h4 className="no-margin margin-left-small">
+    <i className="fa icon-graduation-cap c-accent h4 margin-right-tiny" />
+    <span>{item.nLessonsCompleted}/{item.nLessonsTotal}</span>
+  </h4>
+);
+
+const RatingStars = ({ item }) => {
   const ratingStars = [];
   for (let i = 0; i < 5; i += 1) {
     if (i < item.rating) {
-      ratingStars.push(<i className="fa icon-star c-secondary h4 margin-left-tiny" key={item.name + i} />);
+      ratingStars.push(<i className="fa icon-star c-accent h4 margin-left-tiny" key={item.name + i} />);
     } else {
-      ratingStars.push(<i className="fa icon-star-o c-secondary h4 margin-left-tiny" key={item.name + i} />);
+      ratingStars.push(<i className="fa icon-star-o c-accent h4 margin-left-tiny" key={item.name + i} />);
     }
   }
+  return (
+    <div className="right">
+      {ratingStars}
+    </div>
+  );
+};
+
+const Subjects = ({ item }) => {
   const subjects = [];
-  const numSubjects = Math.min(2, item.subjectNames.length);
+  const numSubjects = Math.min(3, item.subjectNames.length);
   for (let i = 0; i < numSubjects; i += 1) {
-    subjects.push(item.subjectNames[i]);
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-right-tiny">{item.subjectNames[i]}</h5>);
   }
-  if (item.subjectNames.length > 2) {
-    subjects.push(`... ${item.subjectNames.length - 2} more ...`);
+  if (item.subjectNames.length > 3) {
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text">{`... ${item.subjectNames.length - 2} more ...`}</h5>);
   }
   return (
-    <Link className={`link-card ${connectionClass} relative width-100`} to={linkTo} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
-      {CardTemplate({
-        title: item.name,
-        bgColorClass,
-        iconClass,
-        iconClass2: item.completed ? 'icon-check-circle-o' : '',
-        heightClass,
-        content: <div className="flex">
-          {imgSrc ?
-            <LazyLoad height={200} once offset={201}>
-              <div className="lcard__content-left flex-1 flex-column">
-                <div className="preview2 flex-1 no-margin border-round border-1px" style={{ background: `url(${imgSrc})`, backgroundSize: 'cover', borderColor: '#ccc' }} />
-              </div>
-            </LazyLoad>
-             : null}
-          <div className="lcard__content-left flex-2 margin-left-small">
-            <h5>{item.description}</h5>
-            <div className="right">
-              <div>
-                {ratingStars}
-              </div>
-            </div>
-            <div className="right margin-top-small">
-              <div>
-                {/* <h5 className="c-primary uppercase right no-margin">Very Long</h5>*/}
-                <h5 className="c-primary uppercase right">{item.estimatedTimeStr} hours</h5>
-              </div>
-            </div>
-            <div className="right">
-              {subjects.map(
-                subjectName => <h6 className="tag center c-white border-pill bg-grey display-inline-block" key={item.name + subjectName} >{subjectName}</h6>,
-              )}
-            </div>
-            <div className="flex justify-end">
-              {item.nTotal && item.nTotal !== 1 ?
-                <h3 className="no-margin right margin-top-small">
-                  <i className={`fa ${childIconClass} h3 right margin-right-tiny`} />
-                  <span className="">{item.nCompleted}/{item.nTotal}</span>
-                </h3> : null}
-              {item.nLessonsTotal ?
-                <h3 className="no-margin right margin-top-small">
-                  <i className={'fa icon-graduation-cap c-primary h3 right margin-left-big margin-right-tiny'} />
-                  <span className="">{item.nLessonsCompleted}/{item.nLessonsTotal}</span>
-                </h3> : null}
-            </div>
-          </div>
-        </div>,
-      })}
+    <div className="right">
+      {subjects}
+    </div>
+  );
+};
+
+const EstimatedTime = ({ item }) => (
+  <h5 className="c-primary uppercase right no-margin">{item.estimatedTimeStr} hours</h5>
+);
+
+const typeIcons = {
+  Book: 'fa h3 icon-book c-pale-blue',
+  Course: 'fa h3 icon-university c-pale-green',
+  Project: 'fa h3 icon-cogs c-pale-red',
+};
+
+const MenuCard = ({ children }) => (
+  <FlexColumn className="menu-card bg-white c-text padding-small border-round">
+    <h4 className="shadow-bottom-primary-2">Menu</h4>
+    {children}
+  </FlexColumn>
+);
+
+const DashboardCard = ({ item }) => {
+  const itemIsPath = item.nLessonsTotal !== undefined;
+  const typeIcon = itemIsPath ? '' : typeIcons[item.type];
+  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-white' : 'fa h2 icon-check-circle-o c-white';
+  const pathId = itemIsPath ? item.id : undefined;
+  const bgCol = itemIsPath ? 'bg-primary-25' : 'bg-accent-50';
+
+  return (
+    <Link className={'image-link-card col-quarter flex-column bg-white border-round c-text margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
+      <div className="image-link-card__img bg-cover border-round-top border-1px border-white relative flex-column justify-center" style={{ backgroundImage: `url(${item.img})` }}>
+        <div className="border-round-top bg-black opacity-50 abs-center-stretch" />
+        <div className={`border-round-top ${bgCol} abs-center-stretch`} />
+        <FlexRow className={'items-center padding-horizontal-small padding-vertical-tiny border-round-top c-white relative'}>
+          <h3 className="flex-1 no-margin text-shadow-subtle uppercase wider">{item.name}</h3>
+          {item.completed ? <i className={completeIcon} /> : null}
+        </FlexRow>
+      </div>
+      <FlexRow>
+        <FlexColumn className="flex-2 margin-horizontal-small margin-top-small items-start justify-between">
+          <p className="">{item.description}</p>
+        </FlexColumn>
+        <FlexColumn className="margin-horizontal-small margin-top-small flex-1">
+          <FlexRow className="items-center justify-end margin-bottom-tiny">
+            <RatingStars item={item} />
+          </FlexRow>
+          <FlexRow className="items-center justify-end">
+            <EstimatedTime item={item} />
+          </FlexRow>
+          {item.nLessonsTotal > 0 ?
+            <Progress item={item} /> : null}
+        </FlexColumn>
+      </FlexRow>
+      <FlexRow className="margin-horizontal-small margin-bottom-small items-center justify-between">
+        <Subjects item={item} />
+        {itemIsPath ?
+          <FlexRow className="justify-end">
+            <MilestonesComplete item={item} />
+            <LessonsComplete item={item} />
+          </FlexRow> : <i className={typeIcon} />}
+      </FlexRow>
     </Link>
   );
 };
 
-CardTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  bgColorClass: PropTypes.string.isRequired,
-  iconClass: PropTypes.string,
-  heightClass: PropTypes.string,
-  content: PropTypes.oneOfType([
+const MilestoneSubCard = ({ item, completeX }) => {
+  const itemIsPath = item.nLessonsTotal !== undefined;
+  const typeIcon = itemIsPath ? '' : typeIcons[item.type];
+  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-accent' : 'fa h2 icon-check-circle-o c-accent';
+  const pathId = itemIsPath ? item.id : undefined;
+  const underline = itemIsPath ? 'shadow-bottom-primary-2' : 'shadow-bottom-accent-2';
+  const dotClasses = !completeX ? `dot ${item.completed ? '' : 'dot--empty'} dot--displace` : '';
+
+  return (
+    <Link className={`link-card ${dotClasses} flex-column width-100 bg-white border-round c-text margin-bottom-small relative`} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
+      <FlexRow className={`margin-top-small margin-horizontal-small items-center padding-bottom-tiny ${underline}`}>
+        <h3 className="flex-1 no-margin">{item.name}</h3>
+        {item.completed ? <i className={completeIcon} /> : null}
+      </FlexRow>
+      <FlexRow>
+        <FlexColumn className="flex-2 margin-horizontal-small margin-top-small items-start justify-between">
+          <p className="">{item.description}</p>
+        </FlexColumn>
+        <FlexColumn className="margin-horizontal-small margin-top-small flex-1">
+          <FlexRow className="items-center justify-end margin-bottom-tiny">
+            <RatingStars item={item} />
+          </FlexRow>
+          <FlexRow className="items-center justify-end">
+            <EstimatedTime item={item} />
+          </FlexRow>
+          {item.nLessonsTotal > 0 ?
+            <Progress item={item} /> : null}
+        </FlexColumn>
+      </FlexRow>
+      <FlexRow className="margin-horizontal-small margin-bottom-small items-center justify-between">
+        <Subjects item={item} />
+        {itemIsPath ?
+          <FlexRow className="justify-end">
+            <MilestonesComplete item={item} />
+            <LessonsComplete item={item} />
+          </FlexRow> : <i className={typeIcon} />}
+      </FlexRow>
+    </Link>
+  );
+};
+
+const LibraryCard = ({ item }) => {
+  const itemIsPath = item.courseIds !== undefined;
+  const typeIcon = itemIsPath ? '' : typeIcons[item.type];
+  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-white' : 'fa h2 icon-check-circle-o c-white';
+  const pathId = itemIsPath ? item.id : undefined;
+  const bgCol = itemIsPath ? 'bg-primary-25' : 'bg-accent-50';
+  const metrics = item.nLessonsCompleted > 0 ?
+    (<FlexRow className="justify-end">
+      <MilestonesComplete item={item} />
+      <LessonsComplete item={item} />
+    </FlexRow>) : <LessonsNumber item={item} />;
+  return (
+    <Link className={'image-link-card col-quarter flex-column bg-white border-round c-text margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
+      <div className="image-link-card__img bg-cover border-round-top border-1px border-white relative flex-column justify-center" style={{ backgroundImage: `url(${item.img})` }}>
+        <div className="border-round-top bg-black opacity-50 abs-center-stretch" />
+        <div className={`border-round-top ${bgCol} abs-center-stretch`} />
+        <FlexRow className={'items-center padding-horizontal-small padding-vertical-tiny border-round-top c-white relative'}>
+          <h3 className="flex-1 no-margin text-shadow-subtle uppercase wider">{item.name}</h3>
+          {item.completed ? <i className={completeIcon} /> : null}
+        </FlexRow>
+      </div>
+      <p className="flex-1 margin-small">{item.description}</p>
+      <FlexColumn className="margin-small">
+        <FlexRow className="items-center justify-between">
+          {itemIsPath ? metrics : <i className={typeIcon} />}
+          <RatingStars item={item} />
+        </FlexRow>
+        {item.nLessonsTotal > 0 ?
+          <Progress item={item} /> : null}
+      </FlexColumn>
+    </Link>
+  );
+};
+
+FlexRow.propTypes = {
+  children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
-  footerContent: PropTypes.oneOfType([
+  className: PropTypes.string,
+};
+
+FlexRow.defaultProps = {
+  className: '',
+};
+
+FlexColumn.propTypes = {
+  children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
-  ]),
+  ]).isRequired,
+  className: PropTypes.string,
 };
 
-CardTemplate.defaultProps = {
-  iconClass: '',
-  bgImageClass: '',
-  heightClass: '',
-  footerContent: null,
+FlexColumn.defaultProps = {
+  className: '',
 };
 
-LinkCard.propTypes = {
+Progress.propTypes = {
   item: PropTypes.objectOf(PropTypes.shape).isRequired,
-  bgColorClass: PropTypes.string.isRequired,
-  linkTo: PropTypes.string,
-  iconClass: PropTypes.string,
-  childIconClass: PropTypes.string,
-  connectionClass: PropTypes.string,
-  heightClass: PropTypes.string,
 };
 
-LinkCard.defaultProps = {
-  iconClass: '',
-  childIconClass: '',
-  linkTo: '#',
-  connectionClass: '',
-  heightClass: '',
+RatingStars.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-export { MenuCard, LinkCard };
+Subjects.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
+MilestonesComplete.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
+LessonsNumber.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
+LessonsComplete.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
+EstimatedTime.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
+MenuCard.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+};
+
+DashboardCard.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
+MilestoneSubCard.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
+LibraryCard.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+export { MenuCard, DashboardCard, LibraryCard, MilestoneSubCard };
