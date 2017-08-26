@@ -13,7 +13,7 @@ const SliderCard = ({ item, bgColorClass, iconClass, linkTo, history, refCallbac
     onClick={e => handleSliderCardClick(e, linkTo, history)}
     ref={domElem => refCallback(domElem)}
   >
-    <div className={`card__header flex align-items-center border-round-top ${bgColorClass}`}>
+    <div className={`card__header flex items-center border-round-top ${bgColorClass}`}>
       <h5 className="card__header__text flex-1 c-white uppercase no-margin">{item.name}</h5>
       {iconClass ? <i className={`fa c-white h4 ${iconClass}`} /> : null}
     </div>

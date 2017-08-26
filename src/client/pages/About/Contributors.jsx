@@ -16,10 +16,8 @@ const ContributorImage = ({ avatarURL, imageAlignment }) => (
 
 const ContributorName = ({ contributorName, contributorHTML, nameAlignment, nameStyle }) => (
   <div className={nameAlignment} >
-    <h2 className="no-margin">
-      <a href={contributorHTML} target="_blank" rel="noopener noreferrer" className={nameStyle}>
-        {contributorName} </a>
-    </h2>
+    <a href={contributorHTML} target="_blank" rel="noopener noreferrer" className={nameStyle}>
+      {contributorName} </a>
   </div>
 );
 
@@ -32,13 +30,13 @@ const Contributors = ({ contributors }) => {
       lastPosition = left;
       return (
         <div key={aContributor.login}>
-          <section className="flex margin-top-tiny align-items-center">
+          <section className="flex margin-top-tiny items-center">
             <ContributorImage avatarURL={aContributor.avatar} imageAlignment={'border-round margin-left-huge'} />
             <ContributorName
               contributorName={aContributor.login}
               contributorHTML={aContributor.html}
               nameAlignment={'flex-1 margin-top-tiny margin-left-small'}
-              nameStyle={'c-primary bold'}
+              nameStyle={'c-primary h2 wide'}
             />
           </section>
         </div>
@@ -47,12 +45,12 @@ const Contributors = ({ contributors }) => {
     lastPosition = right;
     return (
       <div key={aContributor.login}>
-        <section className="flex margin-top-tiny align-items-center">
+        <section className="flex margin-top-tiny items-center">
           <ContributorName
             contributorName={aContributor.login}
             contributorHTML={aContributor.html}
             nameAlignment={'flex-1 margin-top-tiny margin-right-small right'}
-            nameStyle={'c-secondary bold'}
+            nameStyle={'c-accent h2 wide'}
           />
           <ContributorImage avatarURL={aContributor.avatar} imageAlignment={'border-round margin-right-huge'} />
         </section>

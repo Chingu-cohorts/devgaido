@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { MenuCard } from './Cards';
 import Auth0LockWidget from './Auth0LockWidget';
 
@@ -99,21 +99,36 @@ class StickyNav extends React.Component {
     return (
       <div className={'width-100 bg-white'} ref={(domElem) => { this.navbarRefPlaceholder = domElem; }}>
         <div className={`navbar width-100 bg-white ${this.sticky ? 'fixed' : ''}`} ref={(domElem) => { this.navbarRef = domElem; }}>
-          <div className="container flex justify-space-between align-items-center padding-vertical-small relative">
+          <div className="container flex justify-between items-center padding-vertical-small relative">
             <NavLink to={user.authenticated ? '/dashboard' : '/'} className="logo" />
-            <nav className="flex align-items-center">
-              <ul className="flex align-items-center no-margin list-style-none uppercase">
+            <nav className="flex items-center">
+              <ul className="flex items-center no-margin list-style-none uppercase">
                 <li className="margin-right-small"><NavLink to="/library" activeClassName="boxshadow-underline bold">Library</NavLink></li>
                 {user.authenticated ? <li className="margin-right-small"><NavLink to="/dashboard" activeClassName="boxshadow-underline bold">Dashboard</NavLink></li> : null}
               </ul>
-              {user.authenticated ? <img className="avatar circle-border subtle-border cursor-pointer" src={user.avatar} alt="avatar" role="button" onClick={() => toggleNavMenu()} /> : null}
-              {!user.authenticated ? <a className="button button--primary-clear uppercase" href="/" onClick={e => handleLoginClick(e, auth0)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a> : null}
+              {user.authenticated ? <img className="avatar border-circle border-subtle cursor-pointer" src={user.avatar} alt="avatar" role="button" onClick={() => toggleNavMenu()} /> : null}
+              {!user.authenticated ? <a className="button button--primary-clear uppercase" href="/" onClick={e => handleLoginClick(e, auth0)} title="Login">
+                <div className="flex items-center">
+                  <i className="fa icon-sign-in margin-right-tiny" />
+                  L‌‌o‌‌g‌‌i‌‌n‌
+                </div>
+              </a> : null}
             </nav>
-            <div className={uiState.navMenuOpen ? 'menu absolute' : 'menu absolute hidden'}>
+            <div className={uiState.navMenuOpen ? 'menu absolute' : 'menu absolute display-none'}>
               <MenuCard username={user.name}>
                 <ul className="list-style-none no-margin">
-                  <li className="margin-bottom-small"><NavLink to="/profile" className="uppercase left" activeClassName="bold" onClick={() => toggleNavMenu()}><i className="fa icon-user h5 c-secondary margin-right-small" aria-hidden="true" /> Profile</NavLink></li>
-                  <li><a className="uppercase left" href="/logout"><i className="fa icon-sign-out h5 c-secondary margin-right-small" aria-hidden="true" />Logout</a></li>
+                  <li className="margin-bottom-small">
+                    <NavLink to="/profile" className="uppercase flex items-center justify-between" activeClassName="bold" onClick={() => toggleNavMenu()}>
+                      <i className="fa icon-user h5 c-accent margin-right-small" aria-hidden="true" />
+                      <span>Profile</span>
+                    </NavLink>
+                  </li>
+                  <li>
+                    <a className="uppercase flex items-center justify-between" href="/logout">
+                      <i className="fa icon-sign-out h5 c-accent margin-right-small" aria-hidden="true" />
+                      <span>Logout</span>
+                    </a>
+                  </li>
                 </ul>
               </MenuCard>
             </div>
@@ -130,9 +145,9 @@ StickyNav.propTypes = {
   auth0: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-export default connect(store => ({
+export default withRouter(connect(store => ({
   user: store.user,
   uiState: store.uiState,
   auth0: store.backendData.auth0,
-}))(StickyNav);
+}))(StickyNav));
 

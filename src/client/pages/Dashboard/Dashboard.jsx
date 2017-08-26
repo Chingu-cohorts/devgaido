@@ -20,19 +20,25 @@ const Dashboard = ({ uiState }) => (
     <Helmet
       title="Dashboard"
     />
-    <PageHero bgColorClass="bg-primary" bgImageClass="bg-img__dashboard" title="Dashboard">
+    <PageHero bgColorClass="bg-primary" bgUrl="/img/dashboard.jpg" title="Dashboard">
       <Metrics />
     </PageHero>
     <TabbedContent
       content={[{
         caption: 'In Progress',
         content: <InProgressTab />,
+        buttonClass: 'button--accent',
+        icon: <i className="fa icon-spinner margin-right-tiny" />,
       }, {
         caption: 'Bookmarked',
         content: <BookmarkedTab />,
+        buttonClass: 'button--accent',
+        icon: <i className="fa icon-bookmark margin-right-tiny" />,
       }, {
         caption: 'Completed',
         content: <CompletedTab />,
+        buttonClass: 'button--accent',
+        icon: <i className="fa icon-check-circle-o margin-right-tiny" />,
       }]}
       tabIndex={uiState.curDashboardTab}
       onClick={index => setCurrentDashboardTab(index)}

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Checkbox = ({ checked, onChange, children }) => (
-  <div className="flex align-items-center margin-left-small">
+  <div className="flex items-center margin-left-small">
     <label className="checkbox">
       <input type="checkbox" checked={checked} onChange={onChange} />
       <div className="checkbox__box" />

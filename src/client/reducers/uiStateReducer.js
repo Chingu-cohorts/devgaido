@@ -1,7 +1,7 @@
 const uiState = (state = {
   navMenuOpen: false,
   libSearchTerm: '',
-  libTopic: 'All Topics',
+  libTopic: 'All Tags',
   libShowCompleted: true,
   libShowIncomplete: true,
   curDashboardTab: 0,

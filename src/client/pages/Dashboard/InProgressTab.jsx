@@ -7,8 +7,8 @@ import ItemList from './ItemList';
 
 const CurrentPathSection = ({ path, curriculum }) => (
   <div className="inprogress-tab margin-bottom-small">
-    <span>CURRENT PATH</span>
-    <h2>{path.name}</h2>
+    <span>PATH</span>
+    <h2>Last Worked On</h2>
     <p className="margin-bottom-big">This section shows you the last path you were working on.</p>
     <ItemList items={[path]} curriculum={curriculum} category="paths" />
   </div>
@@ -16,9 +16,9 @@ const CurrentPathSection = ({ path, curriculum }) => (
 
 const CurrentLessonSection = ({ lesson, curriculum }) => (
   <div className="inprogress-tab margin-bottom-small">
-    <span>LAST LESSON</span>
-    <h2>{lesson.name}</h2>
-    <p className="margin-bottom-big">This section shows the last lesson you worked on.</p>
+    <span>LESSON</span>
+    <h2>Last Viewed</h2>
+    <p className="margin-bottom-big">This section shows the last lesson you viewed.</p>
     <ItemList items={[lesson]} curriculum={curriculum} category="lessons" />
   </div>
 );
@@ -52,7 +52,7 @@ const getInProgressPaths = (curriculum) => {
 
 const InProgressSection = ({ inProgressPaths, curriculum }) => (
   <div className="inprogress-tab margin-bottom-huge">
-    <span>PATHS</span>
+    <span>ALL PATHS</span>
     <h2>In Progress</h2>
     <p className="margin-bottom-big">This section shows you all the paths which have at least one lesson in them you completed. Since lessons can be shared across paths it will show you ALL paths that a completed lesson is in.</p>
     <ItemList items={inProgressPaths} curriculum={curriculum} category="paths" />
@@ -81,7 +81,12 @@ const InProgressTab = ({ user, curriculum }) => {
           <h2>In Progress</h2>
           <div className="center margin-top-huge">
             <h3>You haven&apos;t started any paths yet.</h3>
-            <Link className="button button--primary uppercase" to="/library">Browse Library</Link>
+            <Link className="button button--primary uppercase" to="/library">
+              <div className="flex items-center">
+                <i className="fa icon-search margin-right-tiny" />
+                Browse Library
+              </div>
+            </Link>
           </div>
         </div>}
     </div>

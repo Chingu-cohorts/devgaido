@@ -1,0 +1,38 @@
+createColors(cNames, cVals)
+  for name, i in cNames
+    .bg-{name}
+      background: cVals[i] !important
+    .c-{name}
+      color: cVals[i] !important
+    .border-{name}
+      border-color: cVals[i] !important
+    .bg-hover-{name}
+      &:hover
+        background: cVals[i] !important
+    .bg-focus-{name}
+      &:focus
+        background: cVals[i] !important
+    .border-hover-{name}
+      &:hover
+        border-color: cVals[i] !important
+    .border-focus-{name}
+      &:focus
+        border-color: cVals[i] !important
+    .c-hover-{name}
+      &:hover
+        color: cVals[i] !important
+    .c-focus-{name}
+      &:focus
+        color: cVals[i] !important
+createColors($colorNames, $colorValues)
+
+createOpacityColors(cNames, cVals, steps)
+  for name, i in cNames
+    for step in steps
+      .bg-{name}-{step}
+        background: rgba(cVals[i], (step / 100)) !important
+    
+createOpacityColors($colorNames, $colorValues, $opacitySteps)
+
+.desaturate
+	filter: grayscale(100%)
