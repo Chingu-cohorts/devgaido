@@ -116,44 +116,50 @@ const Path = ({ match, curriculum, user }) => {
                   <h3 className="margin-top-big uppercase c-primary">Goal</h3>
                   <p>{path.goal}</p>
                 </div> : null}
+              {path.salary !== undefined ?
+                <div className="flex justify-start margin-top-big">
+                  <div className="left">
+                    <h3 className="c-accent left no-margin">Estimated Salary: {path.salary[0]}</h3>
+                    <p className="c-primary">{path.salary[1]}</p>
+                  </div>
+                </div> : null}
             </div>
             <div className="padding-vertical-big margin-left-huge flex-1">
               { user.authenticated ?
                 <div className="right margin-bottom-big">
                   {!path.bookmarked ?
-                    <button className="button--default uppercase" onClick={() => addBookmark(pathId, 'paths', path.version)}>Bookmark</button> :
-                    <button className="button--default uppercase" onClick={() => removeBookmark(pathId, 'paths', path.version)}>Remove Bookmark</button>}
+                    <button className="button--default uppercase" onClick={() => addBookmark(pathId, 'paths', path.version)}>
+                      <div className="flex items-center">
+                        <i className="fa icon-thumb-tack margin-right-tiny" />
+                        Bookmark
+                      </div>
+                    </button> :
+                    <button className="button--default uppercase" onClick={() => removeBookmark(pathId, 'paths', path.version)}>
+                      <div className="flex items-center">
+                        <i className="fa icon-remove margin-right-tiny" />
+                        Remove Bookmark
+                      </div>
+                    </button>}
                 </div> :
                 <div className="right margin-bottom-big">
                   <button className="button--default uppercase hidden">Bookmark</button>
                 </div> }
-              <div className="flex justify-between">
-                <h5 className="normal">Rating</h5>
+              <div className="flex justify-end">
                 <div>
                   {ratingStars}
                 </div>
               </div>
-              <div className="flex justify-between">
-                <h5 className="normal">Estimated Length</h5>
+              <div className="flex justify-end">
                 <div>
                   {/* <h4 className="c-primary uppercase right no-margin">Very Long</h4>*/}
                   <h5 className="c-primary uppercase right">{path.estimatedTimeStr} hours</h5>
                 </div>
               </div>
-              <div className="flex justify-between">
-                <h5 className="normal">Tags</h5>
+              <div className="flex justify-end">
                 <div className="width-75 right">
                   <Subjects item={path} />
                 </div>
               </div>
-              {path.salary !== undefined ?
-                <div className="flex justify-between margin-top-big">
-                  <h5 className="normal">Estimated Entry Salary</h5>
-                  <div className="right">
-                    <h2 className="c-accent right no-margin margin-left-big">{path.salary[0]}</h2>
-                    <p className="c-primary">{path.salary[1]}</p>
-                  </div>
-                </div> : null}
             </div>
           </div>
         </div>

@@ -13,7 +13,10 @@ const TabbedContent = ({ content, tabIndex, onClick }) => (
             onClick={() => onClick(index)}
             key={c.caption}
           >
-            {c.caption}
+            <div className="flex items-center">
+              {c.icon ? c.icon : null}
+              {c.caption}
+            </div>
           </button>
           ),
         )}

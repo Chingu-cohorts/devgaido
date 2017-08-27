@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { LibraryCard } from '../shared/Cards';
 
 const filterByTermNTopic = (item, uiState) => {
-  const filterByTopic = uiState.libTopic !== 'All Topics';
+  const filterByTopic = uiState.libTopic !== 'All Tags';
   const filterBySearchTerm = uiState.libSearchTerm !== '';
 
   let retValTopic = false;

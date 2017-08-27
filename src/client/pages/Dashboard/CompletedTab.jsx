@@ -28,7 +28,12 @@ const CompletedTab = ({ curriculum }) => {
       { completedLessons.length + completedPaths.length <= 0 ?
         <div className="center margin-top-huge">
           <h3>You haven&apos;t completed anything yet.</h3>
-          <Link className="button button--primary uppercase" to="/library">Browse Library</Link>
+          <Link className="button button--primary uppercase" to="/library">
+            <div className="flex items-center">
+              <i className="fa icon-search margin-right-tiny" />
+              Browse Library
+            </div>
+          </Link>
         </div> : null }
     </div>
   );
