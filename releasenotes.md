@@ -2,7 +2,7 @@
 
 You can find devGaido at [www.devgaido.com](http://www.devgaido.com).
 
-## Next Release date TBD
+## August 25, 2017
 
 ### New Features
 
