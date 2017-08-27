@@ -16,7 +16,6 @@
     "dev:client": "webpack-dev-server",
     "copyassets": "rimraf ./dist && mkdirp ./dist/public && ncp ./src/client/assets/ ./dist/public/",
     "analyzesize": "webpack -p --config webpack.config.js --json | webpack-bundle-size-analyzer",
-    "screenshot": "node ./src/server/screenshot ",
     "screenshots": "node ./src/server/screenshots",
     "test": "mocha --require ./test/helper.js '+(test|validate)/**/*Spec.js'"
   },
