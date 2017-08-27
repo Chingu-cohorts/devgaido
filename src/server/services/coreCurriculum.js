@@ -30,7 +30,8 @@ const initPaths = (curriculum) => {
     const path = curriculum.paths[pathId];
     const completed = 0;
     const total = path.courseIds.length;
-
+    let nLessonsTotal = 0;
+    
     path.nCompleted = completed;
     path.nTotal = total;
     path.completed = false;
@@ -53,12 +54,15 @@ const initPaths = (curriculum) => {
       });
       course.lessonIds.forEach((lessonId) => {
         const lesson = curriculum.lessons[lessonId];
-
+        nLessonsTotal += 1;
         if (lesson.parentPathIds.indexOf(pathId) === -1) {
           lesson.parentPathIds.push(pathId);
         }
       });
     });
+
+    path.nLessonsTotal = nLessonsTotal;
+    path.nLessonsCompleted = 0;
     path.rating = Math.floor(accumulatedRating / path.nTotal);
     path.estimatedTime = accumulatedTime;
     path.estimatedTimeStr = `> ${path.estimatedTime}`;

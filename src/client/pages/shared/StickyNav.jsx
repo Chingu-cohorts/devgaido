@@ -107,7 +107,12 @@ class StickyNav extends React.Component {
                 {user.authenticated ? <li className="margin-right-small"><NavLink to="/dashboard" activeClassName="boxshadow-underline bold">Dashboard</NavLink></li> : null}
               </ul>
               {user.authenticated ? <img className="avatar border-circle border-subtle cursor-pointer" src={user.avatar} alt="avatar" role="button" onClick={() => toggleNavMenu()} /> : null}
-              {!user.authenticated ? <a className="button button--primary-clear uppercase" href="/" onClick={e => handleLoginClick(e, auth0)} title="Login">L‌‌o‌‌g‌‌i‌‌n‌</a> : null}
+              {!user.authenticated ? <a className="button button--primary-clear uppercase" href="/" onClick={e => handleLoginClick(e, auth0)} title="Login">
+                <div className="flex items-center">
+                  <i className="fa icon-sign-in margin-right-tiny" />
+                  L‌‌o‌‌g‌‌i‌‌n‌
+                </div>
+              </a> : null}
             </nav>
             <div className={uiState.navMenuOpen ? 'menu absolute' : 'menu absolute display-none'}>
               <MenuCard username={user.name}>
@@ -120,7 +125,7 @@ class StickyNav extends React.Component {
                   </li>
                   <li>
                     <a className="uppercase flex items-center justify-between" href="/logout">
-                      <i className="fa icon-sign-in h5 c-accent margin-right-small" aria-hidden="true" />
+                      <i className="fa icon-sign-out h5 c-accent margin-right-small" aria-hidden="true" />
                       <span>Logout</span>
                     </a>
                   </li>

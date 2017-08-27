@@ -18,11 +18,21 @@ const Home = () => (
         <h1 className="c-white width-100 wider">LEARN WEB DEVELOPMENT</h1>
         <h1 className="c-white wider margin-bottom-big width-100">THE DEVGAIDO WAY</h1>
         <p className="c-white">Whether you&#039;re just starting out or want to brush up a certain skill:</p>
-        <p className="c-white"><span className="c-accent">DevGaido</span> provides easy to follow learning paths that help you reach your goal without the hassle.</p>
+        <p className="c-white"><span className="c-accent">devGaido</span> provides easy to follow learning paths that help you reach your goal without the hassle.</p>
         <p className="c-white">Never worry about learning the wrong stuff from subpar resources ever again!</p>
         <div className="margin-top-small width-100">
-          <Link className="button button--primary margin-right-small uppercase" to="/signup">Sign Up Now</Link>
-          <Link className="button button--white-clear uppercase" to="/library">Explore Library</Link>
+          <Link className="button button--primary margin-right-small uppercase" to="/signup">
+            <div className="flex items-center">
+              <i className="fa icon-sign-in margin-right-tiny" />
+              Sign Up Now
+            </div>
+          </Link>
+          <Link className="button button--white-clear uppercase bg-black-50" to="/library">
+            <div className="flex items-center">
+              <i className="fa icon-search margin-right-tiny" />
+              Explore Library
+            </div>
+          </Link>
         </div>
       </div>
     </div>

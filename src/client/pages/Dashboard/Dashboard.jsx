@@ -28,14 +28,17 @@ const Dashboard = ({ uiState }) => (
         caption: 'In Progress',
         content: <InProgressTab />,
         buttonClass: 'button--accent',
+        icon: <i className="fa icon-spinner margin-right-tiny" />,
       }, {
         caption: 'Bookmarked',
         content: <BookmarkedTab />,
         buttonClass: 'button--accent',
+        icon: <i className="fa icon-bookmark margin-right-tiny" />,
       }, {
         caption: 'Completed',
         content: <CompletedTab />,
         buttonClass: 'button--accent',
+        icon: <i className="fa icon-check-circle-o margin-right-tiny" />,
       }]}
       tabIndex={uiState.curDashboardTab}
       onClick={index => setCurrentDashboardTab(index)}

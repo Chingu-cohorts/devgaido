@@ -87,40 +87,62 @@ const Lesson = ({ match, curriculum, user }) => {
               </div>)}
             { user.authenticated ?
               <div className="margin-top-huge flex flex-1 items-end">
-                <a className="button button--primary uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => functionName(user, lessonId)}>Open Lesson</a>
+                <a className="button button--primary uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => functionName(user, lessonId)}>
+                  <div className="flex items-center">
+                    <i className="fa icon-external-link margin-right-tiny" />
+                    Open Lesson
+                  </div>
+                </a>
                 {!lesson.completed ?
-                  <button className="button--accent margin-left-small uppercase" onClick={() => { completeLesson(lessonId, lesson.version); functionName(user, lessonId); }}>Complete Lesson</button> :
-                  <button className="button--primary margin-left-small uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>Un-Complete Lesson</button>}
+                  <button className="button--accent margin-left-small uppercase" onClick={() => { completeLesson(lessonId, lesson.version); functionName(user, lessonId); }}>
+                    <div className="flex items-center">
+                      <i className="fa icon-check-square-o margin-right-tiny" />
+                      Complete Lesson
+                    </div>
+                  </button> :
+                  <button className="button--default margin-left-small uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>
+                    <div className="flex items-center">
+                      <i className="fa icon-remove margin-right-tiny" />
+                      Un-Complete Lesson
+                    </div>
+                  </button>}
               </div> :
               <div className="margin-top-huge flex flex-1 items-end">
-                <a className="button button--accent uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">Open Lesson</a>
+                <a className="button button--accent uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">
+                  <div className="flex items-center">
+                    <i className="fa icon-external-link margin-right-tiny" />
+                    Open Lesson
+                  </div>
+                </a>
               </div> }
           </div>
           <div className="padding-vertical-big margin-left-big flex-1">
             { user.authenticated ?
               <div className="right margin-bottom-big">
                 {!lesson.bookmarked ?
-                  <button className="button--default uppercase" onClick={() => addBookmark(lessonId, 'lessons', lesson.version)}>Bookmark</button> :
-                  <button className="button--default uppercase" onClick={() => removeBookmark(lessonId, 'lessons', lesson.version)}>Remove Bookmark</button>}
+                  <button className="button--default uppercase" onClick={() => addBookmark(lessonId, 'lessons', lesson.version)}>
+                    <div className="flex items-center">
+                      <i className="fa icon-thumb-tack margin-right-tiny" />
+                      Bookmark
+                    </div>
+                  </button> :
+                  <button className="button--default uppercase" onClick={() => removeBookmark(lessonId, 'lessons', lesson.version)}>
+                    <div className="flex items-center">
+                      <i className="fa icon-remove margin-right-tiny" />
+                      Remove Bookmark
+                    </div>
+                  </button>}
               </div> :
               <div className="right margin-bottom-big">
                 <button className="button--default uppercase hidden">Bookmark</button>
               </div> }
-            <div className="flex justify-between">
-              <h5 className="normal">Rating</h5>
-              <div>
-                {ratingStars}
-              </div>
+            <div className="right margin-bottom-tiny">
+              {ratingStars}
             </div>
-            <div className="flex justify-between">
-              <h5 className="normal margin-right-huge">Estimated Length</h5>
-              <div>
-                {/* <h4 className="c-primary uppercase right no-margin">Very Long</h4>*/}
-                <h5 className="c-primary uppercase right">{lesson.estimatedTimeStr} hours</h5>
-              </div>
+            <div className="flex items-center justify-end margin-bottom-tiny">
+              <h5 className="c-primary no-margin uppercase right">{lesson.estimatedTimeStr} hours</h5>
             </div>
-            <div className="flex justify-between">
-              <h5 className="normal">Tags</h5>
+            <div className="flex justify-end">
               <div className="width-75 right">
                 <Subjects item={lesson} />
               </div>
