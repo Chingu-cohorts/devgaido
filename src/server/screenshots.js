@@ -9,7 +9,7 @@ const allLessonIds = Object.keys(lessons);
 /**
  * @description Generate a screenshot for one or more lessons in the curriculum based on
  * invocation parameters.
- * @param {string} parmFlag A parameter flag designating which lessons screenshots are to
+ * @param {string} process.argv[2] A parameter designating which lessons screenshots are to
  * be generated for.
  *    '':            Generate screenshots for all lessons
  *    'new':         Generate screenshots based for any lesson for which there is no screenshot
@@ -17,7 +17,7 @@ const allLessonIds = Object.keys(lessons);
  * @returns {null} N/a
  */
 if (process.argv.length < 2 || process.argv.length > 3) {
-  console.log('Usage: yarn screenshotter <parameter> where <parmeter> may be one of the following:');
+  console.log('Usage: yarn screenshotter <parameter> where <parmeter> is one of the following:');
   console.log('   Parameter omitted - generate screenshots for all lessons.');
   console.log('   new               - generate screenshots for any lesson for which none exists');
   console.log('   <lesson-id>       - generate a screenshot for the specified lesson id');
