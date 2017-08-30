@@ -57,20 +57,20 @@ const getFilteredItems = (allItems, uiState) => {
   return filteredIds;
 };
 
-const Results = ({ curriculum, uiState, category }) => {
+const Results = ({ curriculum, uiState, user, category }) => {
   const filteredIds = category === 'paths' ? getFilteredItems(curriculum.paths, uiState) : getFilteredItems(curriculum.lessons, uiState);
 
   const results = category === 'paths' ?
   filteredIds.map((pathId) => {
     const path = curriculum.paths[pathId];
     return (
-      <LibraryCard item={path} key={pathId} />
+      <LibraryCard item={path} user={user} key={pathId} />
     );
   }) :
   filteredIds.map((lessonId) => {
     const lesson = curriculum.lessons[lessonId];
     return (
-      <LibraryCard item={lesson} key={lessonId} />
+      <LibraryCard item={lesson} user={user} key={lessonId} />
     );
   });
 
@@ -86,11 +86,13 @@ const Results = ({ curriculum, uiState, category }) => {
 Results.propTypes = {
   uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
+  user: PropTypes.objectOf(PropTypes.shape).isRequired,
   category: PropTypes.string.isRequired,
 };
 
 export default connect(store => ({
   uiState: store.uiState,
+  user: store.user,
   curriculum: store.curriculum,
 }))(Results);
 
