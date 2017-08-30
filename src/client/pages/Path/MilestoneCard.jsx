@@ -33,7 +33,7 @@ class MilestoneCard extends React.Component {
     return (
       <div className="">
         <div className={`mcard cursor-pointer relative dot--big ${!this.props.course.completed ? 'dot--empty' : ''} flex-column bg-white`} onClick={() => this.toggleCollapsed(this.props.id)}>
-          <div className={`flex padding-tiny items-center bg-primary bg-hover-accent ${this.collapsed ? 'border-round' : 'border-round-top'}`}>
+          <div className={`flex padding-tiny items-center bg-primary transition-fast bg-hover-accent ${this.collapsed ? 'border-round' : 'border-round-top'}`}>
             <i className={`mcard__icon fa icon-caret-right c-white h2 margin-left-tiny margin-right-small ${this.collapsed ? '' : 'rotated'}`} />
             <h3 className="mcard__header__text flex-1 c-white uppercase no-margin wide">Milestone {this.props.index + 1}: {this.props.course.name}</h3>
             {!this.props.course.completed ?
