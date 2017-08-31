@@ -67,12 +67,12 @@ const RatingStars = ({ item }) => {
     </div>
   );
 };
-
+// TODO: Create unique keys
 const Subjects = ({ item }) => {
   const subjects = [];
   const numSubjects = Math.min(3, item.subjectNames.length);
   for (let i = 0; i < numSubjects; i += 1) {
-    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-right-tiny">{item.subjectNames[i]}</h5>);
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-right-tiny" key={item.subjectNames[i].name} >{item.subjectNames[i]}</h5>);
   }
   if (item.subjectNames.length > 3) {
     subjects.push(<h5 className="tag border-round bg-light-grey c-text">{`... ${item.subjectNames.length - 2} more ...`}</h5>);
@@ -186,7 +186,7 @@ const MilestoneSubCard = ({ item, completeX }) => {
   );
 };
 
-const LibraryCard = ({ item }) => {
+const LibraryCard = ({ item, user }) => {
   const itemIsPath = item.courseIds !== undefined;
   const typeIcon = itemIsPath ? '' : typeIcons[item.type];
   const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-white' : 'fa h2 icon-check-circle-o c-white';
@@ -213,7 +213,7 @@ const LibraryCard = ({ item }) => {
           {itemIsPath ? metrics : <i className={typeIcon} />}
           <RatingStars item={item} />
         </FlexRow>
-        {item.nLessonsTotal > 0 ?
+        {user.authenticated && item.nLessonsTotal > 0 ?
           <Progress item={item} /> : null}
       </FlexColumn>
     </Link>
@@ -288,6 +288,7 @@ MilestoneSubCard.propTypes = {
 };
 
 LibraryCard.propTypes = {
+  user: PropTypes.objectOf(PropTypes.shape).isRequired,
   item: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 export { MenuCard, DashboardCard, LibraryCard, MilestoneSubCard };
