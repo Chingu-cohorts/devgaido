@@ -16,6 +16,11 @@
     "dev:client": "webpack-dev-server",
     "copyassets": "rimraf ./dist && mkdirp ./dist/public && ncp ./src/client/assets/ ./dist/public/",
     "analyzesize": "webpack -p --config webpack.config.js --json | webpack-bundle-size-analyzer",
+    "//": "Screenshots commands:",
+    "//": "...yarn screenshots              : Generate all screenshots",
+    "//": "...yarn screenshots new          : Generate new (missing) screenshots",
+    "//": "...yarn screenshots <lesson-id>  : Generate specific screenshot",
+    "//": "Note that interrupting screenshot generation can result in missing screenshots.",
     "screenshots": "node ./src/server/screenshots",
     "test": "mocha --require ./test/helper.js '+(test|validate)/**/*Spec.js'"
   },
