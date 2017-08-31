@@ -4,8 +4,6 @@ import Helmet from 'react-helmet';
 
 import PropTypes from 'prop-types';
 
-import { CSSTransitionGroup } from 'react-transition-group';
-
 import ScrollToTop from './pages/shared/ScrollToTop';
 import Header from './pages/shared/Header';
 import SideDrawer from './pages/shared/SideDrawer';
@@ -44,15 +42,9 @@ const App = ({ serverRoute, location, history }) => {
         <Header />
         <SideDrawer history={history} />
         <div className="page-content relative overflow-hidden"> {/* For sticky footer and background color */}
-          <CSSTransitionGroup
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={500}
-            transitionName="page-transition"
-          >
-            <Switch key={location.pathname} location={location}>
-              {routes}
-            </Switch>
-          </CSSTransitionGroup>
+          <Switch>
+            {routes}
+          </Switch>
         </div>
         <Footer />
       </div>
