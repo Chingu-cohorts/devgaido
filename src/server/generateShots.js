@@ -5,7 +5,7 @@ const errors = [];
 let count = 0;
 
 const options = {
-  renderDelay: 2000,
+  renderDelay: 5000,
   timeOut: 3000,
 };
 
