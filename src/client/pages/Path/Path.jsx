@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import LazyLoad from 'react-lazyload';
 import { connect } from 'react-redux';
 
-import MilestoneCard from './MilestoneCard';
+import MilestoneCard from './_MilestoneCard';
 import PageHero from '../shared/PageHero';
 import { MilestoneSubCard } from '../shared/Cards';
 import DisqusThread from '../shared/DisqusThread';
@@ -24,12 +24,13 @@ const Subjects = ({ item, setState, state }) => {
   const subjects = [];
   const numSubjects = Math.min(3, item.subjectNames.length);
   for (let i = 0; i < numSubjects; i += 1) {
-    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-left-tiny">{item.subjectNames[i]}</h5>);
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-left-tiny" key={item.name + item.subjectNames[i].name + i}>{item.subjectNames[i]}</h5>);
   }
   if (item.subjectNames.length > 3) {
     subjects.push(
       <button
         className="tag button--primary border-round bg-light-grey c-black margin-left-tiny"
+        key={item.name + 'moreButton'}
         onClick={() => {
           setState({
             tagIsOpened: !state.tagIsOpened,
@@ -216,12 +217,9 @@ const Path = ({ match, curriculum, user, state, setState }) => {
     </div>
   );
 };
-const _constructor = () => {
-  console.log('CONSTRUCTING');
-};
 
 const componentDidUpdate = (prevProps, prevState) => {
-  console.log(prevProps, prevState);
+  console.log('Did Update', prevProps, prevState);
 };
 
 const componentDidMount = () => {
@@ -240,7 +238,6 @@ export default connect(store => ({
 }))(StateProvider(Path, {
   tagIsOpened: false,
 }, {
-  _constructor,
   componentDidUpdate,
   componentDidMount,
 }));

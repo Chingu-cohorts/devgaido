@@ -9,11 +9,11 @@ const StateProvider = (Component, initialState, lifeCycleHooks) => {
       this._state = initialState;
 
       Object.keys(lifeCycleHooks).forEach(
-        (functionName) => { this[functionName] = lifeCycleHooks[functionName]; },
+        (functionName) => { this[functionName] = lifeCycleHooks[functionName](this); },
       );
 
       if (lifeCycleHooks._constructor) {
-        lifeCycleHooks._constructor();
+        lifeCycleHooks._constructor(this)();
       }
     }
 
@@ -28,6 +28,8 @@ const StateProvider = (Component, initialState, lifeCycleHooks) => {
           {...this.props}
           state={this._state}
           setState={newState => this._setState(newState)}
+          forceUpdate={() => this.forceUpdate()}
+          that={this}
         />
       );
     }
