@@ -36,6 +36,9 @@ const persistantData = (state = {
 }, action) => {
   switch (action.type) {
     case 'COMPLETE_LESSON':
+    case 'REVIEW_LESSON': {
+      return state;
+    }
     case 'ADD_BOOKMARK': {
       const newData = state.data.slice(0);
       const index = getIndex(action, newData);

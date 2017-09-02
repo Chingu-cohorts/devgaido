@@ -33,3 +33,12 @@ export function unCompleteLesson(lessonId, version) {
     version,
   };
 }
+
+export function submitReview(lessonId, version, rating) {
+  return {
+    type: 'REVIEW_LESSON',
+    lessonId,
+    version,
+    rating,
+  };
+}
