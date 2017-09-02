@@ -1,13 +1,15 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-const StateProvider = (Component, initialState) => {
+const StateProvider = (Component, initialState, _componentDidMount) => {
   class _StateProviderContainer extends React.Component {
     constructor() {
       super();
       this._state = initialState;
     }
-
+    componentDidUpdate() {
+      _componentDidMount();
+    }
     _setState(newState) {
       this._state = newState;
       this.forceUpdate();

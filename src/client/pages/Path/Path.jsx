@@ -63,11 +63,14 @@ const PathMarker = ({ text, dotClass, iconClass, path }) => (
     {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
   </div>);
 
+
+let _props = null;
+
 const Path = ({ match, curriculum, user, state, setState }) => {
   const pathId = match.params.id;
   const path = curriculum.paths[match.params.id];
   let milestones = null;
-
+  _props = { match, curriculum, user, state, setState };
   if (path.courseIds.length > 1) {
     milestones = path.courseIds.map((courseId, index) => {
       const course = curriculum.courses[courseId];
@@ -214,6 +217,11 @@ const Path = ({ match, curriculum, user, state, setState }) => {
   );
 };
 
+const componentDidUpdate = () => {
+  console.log(_props);
+};
+
+
 Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
@@ -225,4 +233,4 @@ export default connect(store => ({
   user: store.user,
 }))(StateProvider(Path, {
   tagIsOpened: false,
-}));
+}, componentDidUpdate));
