@@ -17,6 +17,9 @@ $containerGap = 20px
 $containerWidth = "calc(1220px + %s * 2)" % ($containerGap)
 // (Check /sutairu/base/_defaultVars.styl and /atomiku/_defaultVars for all default variables.)
 
+// $homeHeight = 600
+$homeHeight = 650px
+
 $pageContentColor = #e5e5e5
 $page-hero-height = 270px
 $page-hero-height--full = 470px
@@ -146,7 +149,7 @@ i::before
 
 .home-hero
   background-position-y: 50%
-  height 600px
+  height $homeHeight
   background-attachment: fixed
 
 .home-img__loading-spinner
