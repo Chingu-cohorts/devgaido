@@ -216,11 +216,17 @@ const Path = ({ match, curriculum, user, state, setState }) => {
     </div>
   );
 };
-
-const componentDidUpdate = () => {
-  console.log(_props);
+const _constructor = () => {
+  console.log('CONSTRUCTING');
 };
 
+const componentDidUpdate = (prevProps, prevState) => {
+  console.log(prevProps, prevState);
+};
+
+const componentDidMount = () => {
+  console.log('Did mount!');
+};
 
 Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
@@ -233,4 +239,8 @@ export default connect(store => ({
   user: store.user,
 }))(StateProvider(Path, {
   tagIsOpened: false,
-}, componentDidUpdate));
+}, {
+  _constructor,
+  componentDidUpdate,
+  componentDidMount,
+}));
