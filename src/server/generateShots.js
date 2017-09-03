@@ -21,9 +21,9 @@ let retryInProgress = false;
  * @returns {Array} Array of lesson ids that were in error.
  */
 const generateShots = function (lessonIds, delayType) {
-  options.renderDelay = delayType === undefined ? 2000 : 7000;
-  console.log(`options.renderDelay: ${options.renderDelay}`);
   if (lessonIds.length > 0) {
+    options.renderDelay = delayType === undefined ? 2000 : 10000;
+    console.log(`options.renderDelay: ${options.renderDelay} lessonIds.length: ${lessonIds.length}`);
     const lessonId = lessonIds.pop();
     const lesson = lessons[lessonId];
     const extSrc = lesson.externalSource;
@@ -39,7 +39,7 @@ const generateShots = function (lessonIds, delayType) {
         console.log('Couldn\'t take screenshot of', lessonId, url);
         errors.push(lessonId);
       } else {
-        console.log(`${lessonId}.jpg`);
+        console.log(`Successfully generated ${lessonId}.jpg`);
       }
       generateShots(lessonIds);
     });
@@ -50,8 +50,9 @@ const generateShots = function (lessonIds, delayType) {
     errors.forEach((errLessonId) => {
       console.log(`...${errLessonId}`);
     });
-    errors = [];
     retryLessonIds = errors.slice();
+    errors = [];
+    console.log(`retryLessonIds: ${retryLessonIds}`);
     retryInProgress = true;
     generateShots(retryLessonIds, LONG_RENDER_DELAY);
     if (errors.length > 0) {
@@ -64,7 +65,6 @@ const generateShots = function (lessonIds, delayType) {
     console.log(`Successfully created ${count - errors.length} screenshots.`);
     console.log(`Unsuccessful ${errors.length}`);
   }
-  return errors;
 };
 
 module.exports = generateShots;
