@@ -1,0 +1,46 @@
+.modal
+    position:fixed
+    background-color:rgba(0,0,0,0.8)
+    z-index: 2
+    top:0px
+    left:0px
+    height:100%
+    width:100%
+    display:flex
+
+.modal-container 
+    background-color:#fff
+    border: 1px solid #000
+    max-width:400px
+    margin:auto;
+    padding:20px
+    border-radius:5px
+    animation: appear 1s ease forwards
+
+.rating 
+  unicode-bidi: bidi-override
+  direction: rtl
+
+.rating > span 
+  display: inline-block
+  position: relative
+  width: 1.1em
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before 
+   content: "\2605"
+   position: absolute
+   color: yellow
+
+
+
+.modal__button
+    width:33%
+
+@keyframes appear 
+    0% 
+        opacity: 0
+        width:10vw
+    100% 
+        opacity:1
+        width:50vw

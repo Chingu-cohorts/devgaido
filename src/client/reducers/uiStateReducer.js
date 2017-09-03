@@ -4,6 +4,7 @@ const uiState = (state = {
   libTopic: 'All Tags',
   libShowCompleted: true,
   libShowIncomplete: true,
+  showPopup: false,
   curDashboardTab: 0,
   curLibraryTab: 0,
   openedMilestones: [],
@@ -43,6 +44,12 @@ const uiState = (state = {
       return {
         ...state,
         libShowIncomplete: !state.libShowIncomplete,
+      };
+    }
+    case 'TOGGLE_MODAL': {
+      return {
+        ...state,
+        showModal: !state.showModal,
       };
     }
     case 'TOGGLE_NAV_MENU': {
