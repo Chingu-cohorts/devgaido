@@ -44,8 +44,8 @@ const generateShots = function (lessonIds, delayType) {
       generateShots(lessonIds);
     });
   } else if (!retryInProgress) {
-    // Display the failed lessons and then retry screenshot generation using a longer rendering
-    // delay interval
+    // Display the failed lessons and then retry screenshot generation using a
+    // longer rendering delay interval
     console.log('Retrying failed lessons:');
     errors.forEach((errLessonId) => {
       console.log(`...${errLessonId}`);
