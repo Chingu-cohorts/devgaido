@@ -1,7 +1,8 @@
 const webshot = require('webshot');
 const lessons = require('./models/corelessons');
 
-const errors = [];
+let errors = [];
+let retryLessonIds = [];
 let count = 0;
 
 const options = {
@@ -9,13 +10,20 @@ const options = {
   timeOut: 3000,
 };
 
+const LONG_RENDER_DELAY = 'long';
+let retryInProgress = false;
+
 /**
  * @description Create a .jpg screenshot for all lessons in the curriculum.
  * @param {any} lessonIds Array of lesson identifiers
- * @returns {null} N/a
+ * @param {String} delayType Length type of options.renderDelay interval.
+ *                          'short' results in 2000 and 'long' results in 5000.
+ * @returns {Array} Array of lesson ids that were in error.
  */
-const generateShots = function (lessonIds) {
+const generateShots = function (lessonIds, delayType) {
   if (lessonIds.length > 0) {
+    options.renderDelay = delayType === undefined ? 2000 : 10000;
+    console.log(`options.renderDelay: ${options.renderDelay} lessonIds.length: ${lessonIds.length}`);
     const lessonId = lessonIds.pop();
     const lesson = lessons[lessonId];
     const extSrc = lesson.externalSource;
@@ -31,16 +39,31 @@ const generateShots = function (lessonIds) {
         console.log('Couldn\'t take screenshot of', lessonId, url);
         errors.push(lessonId);
       } else {
-        console.log(`${lessonId}.jpg`);
+        console.log(`Successfully generated ${lessonId}.jpg`);
       }
       generateShots(lessonIds);
     });
-  } else {
-    console.log('Successfully created', count, 'screenshots.');
-    console.log('Unsuccessful: ', errors.length);
+  } else if (!retryInProgress) {
+    // Display the failed lessons and then retry screenshot generation using a
+    // longer rendering delay interval
+    console.log('Retrying failed lessons:');
     errors.forEach((errLessonId) => {
-      console.log(errLessonId);
+      console.log(`...${errLessonId}`);
     });
+    retryLessonIds = errors.slice();
+    errors = [];
+    console.log(`retryLessonIds: ${retryLessonIds}`);
+    retryInProgress = true;
+    generateShots(retryLessonIds, LONG_RENDER_DELAY);
+    if (errors.length > 0) {
+      console.log('Failed lessons:');
+      errors.forEach((errLessonId) => {
+        console.log(`...${errLessonId}`);
+      });
+    }
+    console.log(`Attempted to create ${count} screenshots.`);
+    console.log(`Successfully created ${count - errors.length} screenshots.`);
+    console.log(`Unsuccessful ${errors.length}`);
   }
 };
 

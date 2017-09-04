@@ -99,6 +99,7 @@ const config = {
       purifyOptions: {
         info: true,
         rejected: false,
+        whitelist: ['auth0-lock-header-logo', 'auth0-lock-widget'],
       },
     }),
     new AssetsPlugin({
