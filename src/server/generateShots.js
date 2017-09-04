@@ -46,20 +46,22 @@ const generateShots = function (lessonIds, delayType) {
   } else if (!retryInProgress) {
     // Display the failed lessons and then retry screenshot generation using a
     // longer rendering delay interval
-    console.log('Retrying failed lessons:');
-    errors.forEach((errLessonId) => {
-      console.log(`...${errLessonId}`);
-    });
-    retryLessonIds = errors.slice();
-    errors = [];
-    console.log(`retryLessonIds: ${retryLessonIds}`);
-    retryInProgress = true;
-    generateShots(retryLessonIds, LONG_RENDER_DELAY);
     if (errors.length > 0) {
-      console.log('Failed lessons:');
+      retryInProgress = true;
+      console.log('Retrying failed lessons:');
       errors.forEach((errLessonId) => {
         console.log(`...${errLessonId}`);
       });
+      retryLessonIds = errors.slice();
+      errors = [];
+      console.log(`retryLessonIds: ${retryLessonIds}`);
+      generateShots(retryLessonIds, LONG_RENDER_DELAY);
+      if (errors.length > 0) {
+        console.log('Failed lessons:');
+        errors.forEach((errLessonId) => {
+          console.log(`...${errLessonId}`);
+        });
+      }
     }
     console.log(`Attempted to create ${count} screenshots.`);
     console.log(`Successfully created ${count - errors.length} screenshots.`);
