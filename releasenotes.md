@@ -2,6 +2,20 @@
 
 You can find devGaido at [www.devgaido.com](http://www.devgaido.com).
 
+## Coming Soon!
+
+### New Features
+
+- Refactored the Home page to make the banner text easier to read.
+- Incorporated CSS Purify to prune unused CSS elements to reduce the Production bundle size. We really are fanatical about performance.
+- Added new options to the screenshot generation component. This is used only by the Dev Team. Pay no attention to the man behind the curtain.
+
+## Fixes
+
+- #68:  Some elements are too close to the page borders
+- #124: Incorrect width on Login dialog. 
+- #125: Inconsistent status messages on screenshot capture. You'll never notice this! It's a component used only by the Dev Team. Yay Dev Team!
+
 ## August 25, 2017
 
 ### New Features
