@@ -35,7 +35,7 @@ const Subjects = ({ item, setState, state }) => {
     subjects.push(
       <div className="flex-wrap">
         <button
-          className="button--primary border-round bg-light-grey c-black uppercase margin-top-tiny"
+          className="button--primary border-round bg-light-grey c-text margin-top-tiny"
           key={`${item.name}moreButton`}
           onClick={() => {
             setState({
