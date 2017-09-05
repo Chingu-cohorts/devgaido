@@ -239,6 +239,21 @@ Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
+  state: PropTypes.objectOf(PropTypes.shape).isRequired,
+  setState: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
+Subjects.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
+  state: PropTypes.objectOf(PropTypes.shape).isRequired,
+  setState: PropTypes.objectOf(PropTypes.shape).isRequired,
+};
+
+PathMarker.propTypes = {
+  text: PropTypes.objectOf(PropTypes.shape).isRequired,
+  dotClass: PropTypes.objectOf(PropTypes.shape).isRequired,
+  iconClass: PropTypes.objectOf(PropTypes.shape).isRequired,
+  path: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default connect(store => ({
