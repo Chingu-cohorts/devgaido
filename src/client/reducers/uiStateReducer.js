@@ -8,6 +8,7 @@ const uiState = (state = {
   curDashboardTab: 0,
   curLibraryTab: 0,
   openedMilestones: [],
+  showModal: false,
 }, action) => {
   switch (action.type) {
     case 'SET_CURRENT_DASHBOARD_TAB': {

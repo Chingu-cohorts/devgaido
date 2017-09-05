@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import PageHero from '../shared/PageHero';
 import DisqusThread from '../shared/DisqusThread';
+import Modal from '../shared/Modal';
 
 import actions from '../../actions';
 
@@ -15,6 +16,7 @@ const {
   removeBookmark,
   completeLesson,
   unCompleteLesson,
+  toggleModal,
 } = actions;
 
 const typeIcons = {
@@ -44,7 +46,7 @@ const Subjects = ({ item }) => {
   );
 };
 
-const Lesson = ({ match, curriculum, user }) => {
+const Lesson = ({ match, curriculum, user, uiState }) => {
   const lessonId = match.params.id;
   const lesson = curriculum.lessons[lessonId];
 
@@ -94,7 +96,7 @@ const Lesson = ({ match, curriculum, user }) => {
                   </div>
                 </a>
                 {!lesson.completed ?
-                  <button className="button--accent margin-left-small uppercase" onClick={() => { completeLesson(lessonId, lesson.version); functionName(user, lessonId); }}>
+                  <button className="button--accent margin-left-small uppercase" onClick={() => { completeLesson(lessonId, lesson.version); toggleModal(); functionName(user, lessonId); }}>
                     <div className="flex items-center">
                       <i className="fa icon-check-square-o margin-right-tiny" />
                       Complete Lesson
@@ -106,6 +108,7 @@ const Lesson = ({ match, curriculum, user }) => {
                       Un-Complete Lesson
                     </div>
                   </button>}
+                { uiState.showModal ? <Modal /> : null }
               </div> :
               <div className="margin-top-huge flex flex-1 items-end">
                 <a className="button button--accent uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">
@@ -172,9 +175,11 @@ Lesson.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
+  uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default connect(store => ({
   user: store.user,
   curriculum: store.curriculum,
+  uiState: store.uiState,
 }))(Lesson);
