@@ -72,10 +72,10 @@ const Subjects = ({ item }) => {
   const subjects = [];
   const numSubjects = Math.min(3, item.subjectNames.length);
   for (let i = 0; i < numSubjects; i += 1) {
-    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-right-tiny" key={item.subjectNames[i].name} >{item.subjectNames[i]}</h5>);
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-right-tiny" key={item.name + item.subjectNames[i].name + i} >{item.subjectNames[i]}</h5>);
   }
   if (item.subjectNames.length > 3) {
-    subjects.push(<h5 className="tag border-round bg-light-grey c-text">{`... ${item.subjectNames.length - 2} more ...`}</h5>);
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text" key={item.name + 'moreButton'}>{`... ${item.subjectNames.length - 2} more ...`}</h5>);
   }
   return (
     <div className="right">

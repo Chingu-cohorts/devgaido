@@ -4,10 +4,11 @@ import Helmet from 'react-helmet';
 import LazyLoad from 'react-lazyload';
 import { connect } from 'react-redux';
 
-import MilestoneCard from './MilestoneCard';
+import MilestoneCard from './_MilestoneCard';
 import PageHero from '../shared/PageHero';
 import { MilestoneSubCard } from '../shared/Cards';
 import DisqusThread from '../shared/DisqusThread';
+import StateProvider from '../shared/StateProvider';
 
 import actions from '../../actions';
 
@@ -19,14 +20,26 @@ const typeIcons = {
   Project: 'icon-cogs',
 };
 
-const Subjects = ({ item }) => {
+const Subjects = ({ item, setState, state }) => {
   const subjects = [];
   const numSubjects = Math.min(3, item.subjectNames.length);
   for (let i = 0; i < numSubjects; i += 1) {
-    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-left-tiny">{item.subjectNames[i]}</h5>);
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-left-tiny" key={item.name + item.subjectNames[i].name + i}>{item.subjectNames[i]}</h5>);
   }
   if (item.subjectNames.length > 3) {
-    subjects.push(<h5 className="tag border-round bg-light-grey c-tex margin-left-tiny">{`... ${item.subjectNames.length - 2} more ...`}</h5>);
+    subjects.push(
+      <button
+        className="tag button--primary border-round bg-light-grey c-black margin-left-tiny"
+        key={item.name + 'moreButton'}
+        onClick={() => {
+          setState({
+            tagIsOpened: !state.tagIsOpened,
+          });
+        }}
+      >
+        {state.tagIsOpened ? 'OPEN' : 'CLOSED'}
+        {`... ${item.subjectNames.length - 2} more ...`}
+      </button>);
   }
   return (
     <div className="right">
@@ -51,11 +64,14 @@ const PathMarker = ({ text, dotClass, iconClass, path }) => (
     {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
   </div>);
 
-const Path = ({ match, curriculum, user }) => {
+
+let _props = null;
+
+const Path = ({ match, curriculum, user, state, setState }) => {
   const pathId = match.params.id;
   const path = curriculum.paths[match.params.id];
   let milestones = null;
-
+  _props = { match, curriculum, user, state, setState };
   if (path.courseIds.length > 1) {
     milestones = path.courseIds.map((courseId, index) => {
       const course = curriculum.courses[courseId];
@@ -157,7 +173,7 @@ const Path = ({ match, curriculum, user }) => {
               </div>
               <div className="flex justify-end">
                 <div className="width-75 right">
-                  <Subjects item={path} />
+                  <Subjects item={path} state={state} setState={setState} />
                 </div>
               </div>
             </div>
@@ -202,6 +218,14 @@ const Path = ({ match, curriculum, user }) => {
   );
 };
 
+const componentDidUpdate = (prevProps, prevState) => {
+  console.log('Did Update', prevProps, prevState);
+};
+
+const componentDidMount = () => {
+  console.log('Did mount!');
+};
+
 Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
@@ -211,4 +235,9 @@ Path.propTypes = {
 export default connect(store => ({
   curriculum: store.curriculum,
   user: store.user,
-}))(Path);
+}))(StateProvider(Path, {
+  tagIsOpened: false,
+}, {
+  componentDidUpdate,
+  componentDidMount,
+}));
