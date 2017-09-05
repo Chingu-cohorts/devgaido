@@ -22,24 +22,33 @@ const typeIcons = {
 
 const Subjects = ({ item, setState, state }) => {
   const subjects = [];
-  const numSubjects = Math.min(3, item.subjectNames.length);
+  let numSubjects = 0;
+  if (state.tagIsOpened) {
+    numSubjects = item.subjectNames.length;
+  } else {
+    numSubjects = Math.min(3, item.subjectNames.length);
+  }
   for (let i = 0; i < numSubjects; i += 1) {
     subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-left-tiny" key={item.name + item.subjectNames[i].name + i}>{item.subjectNames[i]}</h5>);
   }
   if (item.subjectNames.length > 3) {
     subjects.push(
-      <button
-        className="tag button--primary border-round bg-light-grey c-black margin-left-tiny"
-        key={item.name + 'moreButton'}
-        onClick={() => {
-          setState({
-            tagIsOpened: !state.tagIsOpened,
-          });
-        }}
-      >
-        {state.tagIsOpened ? 'OPEN' : 'CLOSED'}
-        {`... ${item.subjectNames.length - 2} more ...`}
-      </button>);
+      <div className="flex-wrap">
+        <button
+          className="button--primary border-round bg-light-grey c-black uppercase margin-top-tiny"
+          key={`${item.name}moreButton`}
+          onClick={() => {
+            setState({
+              tagIsOpened: !state.tagIsOpened,
+            });
+          }}
+        >
+          <div className="flex items-center">
+            {state.tagIsOpened ? 'COLLAPSE' : 'EXPAND'}
+          </div>
+        </button>
+      </div>,
+    );
   }
   return (
     <div className="right">
