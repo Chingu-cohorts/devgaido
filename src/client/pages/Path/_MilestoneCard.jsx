@@ -38,10 +38,23 @@ const toggleCollapsed = that => (id) => {
   toggleMilestoneCard(id);
 };
 
+/**
+ * Constructor function that is invoked by StateProvider when instantiating the
+ * class to maintain state for the MilestoneCard.
+ *
+ * @param {any} that The value of the StateProvider instance for this card. Aka 'this'.
+ * @return {null} N/a
+ */
 const _constructor = that => () => {
   setValsForFirstRender(that);
 };
 
+/**
+ * Invoked by StateProvider when the componentDidMount lifecycle event it triggered.
+ *
+ * @param {any} that The value of the StateProvider instance for this card. Aka 'this'.
+ * @return {null} N/a
+ */
 const componentDidMount = that => () => {
   grabHeightAndRerender(that);
 };
