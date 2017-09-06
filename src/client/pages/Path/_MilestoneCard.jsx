@@ -14,9 +14,11 @@ const { toggleMilestoneCard } = actions;
 let collapsed;
 let maxContentHeight;
 let firstRender;
+let transitionAdded;
 
 const setValsForFirstRender = (that) => {
   collapsed = false;
+  transitionAdded = false;
   maxContentHeight = null;
   firstRender = true;
   // The reference to the dom element has to be saved on the StateProvider's 'this' (=that)
@@ -33,16 +35,19 @@ const grabHeightAndRerender = (that) => {
 };
 
 const toggleCollapsed = that => (id) => {
-  that.lessonContainerRef.style.transition = 'all 0.3s';
-  that.forceUpdate();
+  if (!transitionAdded) {
+    that.lessonContainerRef.style.transition = 'all 0.3s';
+    transitionAdded = true;
+    that.forceUpdate();
+  }
   toggleMilestoneCard(id);
 };
 
-const _constructor = that => () => {
+const _constructor = (that) => {
   setValsForFirstRender(that);
 };
 
-const componentDidMount = that => () => {
+const componentDidMount = (that) => {
   grabHeightAndRerender(that);
 };
 
