@@ -11,48 +11,59 @@ import actions from '../../actions';
 
 const { toggleMilestoneCard } = actions;
 
-let collapsed;
-let maxContentHeight;
-let firstRender;
-let transitionAdded;
+const toggleCollapsed = that => (id) => {
+  // When the card is opened the first time by the user,
+  // enable transitions.
+  if (!that.state.transitionAdded) {
+    that.lessonContainerRef.style.transition = 'all 0.3s';
+    that.setState({
+      ...that.state,
+      transitionAdded: true,
+    });
+  }
+  toggleMilestoneCard(id);
+};
 
-const setValsForFirstRender = (that) => {
-  collapsed = false;
-  transitionAdded = false;
-  maxContentHeight = null;
-  firstRender = true;
+/**
+ * Constructor function that is invoked by StateProvider when instantiating the
+ * class to maintain state for the MilestoneCard.
+ *
+ * @param {any} that The value of the StateProvider instance for this card. Aka 'this'.
+ * @return {null} N/a
+ */
+const _constructor = (that) => {
   // The reference to the dom element has to be saved on the StateProvider's 'this' (=that)
   // since it will otherwise get lost.
   that.lessonContainerRef = null;
 };
 
-const grabHeightAndRerender = (that) => {
-  maxContentHeight = `${that.lessonContainerRef.clientHeight}px`;
-  that.lessonContainerRef.style.maxHeight = maxContentHeight;
-  collapsed = true;
-  firstRender = false;
-  that.forceUpdate();
-};
-
-const toggleCollapsed = that => (id) => {
-  if (!transitionAdded) {
-    that.lessonContainerRef.style.transition = 'all 0.3s';
-    transitionAdded = true;
-    that.forceUpdate();
-  }
-  toggleMilestoneCard(id);
-};
-
-const _constructor = (that) => {
-  setValsForFirstRender(that);
-};
-
+/**
+ * Invoked by StateProvider when the componentDidMount lifecycle event it triggered.
+ *
+ * @param {any} that The value of the StateProvider instance for this card. Aka 'this'.
+ * @return {null} N/a
+ */
 const componentDidMount = (that) => {
-  grabHeightAndRerender(that);
+  // Grab the correct max-height value on first render, then update the state
+  // to force a rerender in "uncollapsed" state.
+  // Note that the transition has to be disabled at this point in time or the user would be
+  // able to notice the card animating from uncollapsed to collapsed.
+  that.setState({
+    firstRender: false,
+    transitionAdded: false,
+    maxContentHeight: `${that.lessonContainerRef.clientHeight}px`,
+  }, () => {
+    that.lessonContainerRef.style.maxHeight = that.state.maxContentHeight;
+  });
 };
 
-const MilestoneCard = ({ uiState, id, course, index, lessons, that }) => {
-  collapsed = firstRender ? false : uiState.openedMilestones.indexOf(id) === -1;
+const shouldComponentUpdate = (that, nextProps) =>
+  that.state.firstRender ||
+    nextProps.uiState.openedMilestones.indexOf(that.props.id) !==
+    that.props.uiState.openedMilestones.indexOf(that.props.id);
+
+const MilestoneCard = ({ uiState, id, course, index, lessons, that, state }) => {
+  const collapsed = state.firstRender ? false : uiState.openedMilestones.indexOf(id) === -1;
 
   return (
     <div className="">
@@ -73,7 +84,7 @@ const MilestoneCard = ({ uiState, id, course, index, lessons, that }) => {
         </div>
       </div>
       <div
-        className={`collapsible ${firstRender ? 'absolute opacity-0 pointer-events-none' : ''} ${collapsed ? 'collapsed' : 'padding-vertical-small'} bg-grey-blue border-round-bottom padding-horizontal-big margin-bottom-small`}
+        className={`collapsible ${state.firstRender ? 'absolute opacity-0 pointer-events-none' : ''} ${collapsed ? 'collapsed' : 'padding-vertical-small'} bg-grey-blue border-round-bottom padding-horizontal-big margin-bottom-small`}
         ref={(domElem) => { that.lessonContainerRef = domElem; }}
       >
         {course.completeX ?
@@ -89,6 +100,7 @@ MilestoneCard.propTypes = {
   uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
   course: PropTypes.objectOf(PropTypes.shape).isRequired,
   lessons: PropTypes.arrayOf(PropTypes.node).isRequired,
+  state: PropTypes.objectOf(PropTypes.shape).isRequired,
   id: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   that: PropTypes.objectOf(PropTypes.shape).isRequired,
@@ -96,7 +108,12 @@ MilestoneCard.propTypes = {
 
 export default connect(store => ({
   uiState: store.uiState,
-}))(StateProvider(MilestoneCard, {}, {
+}))(StateProvider(MilestoneCard, {
+  firstRender: true,
+  transitionAdded: false,
+  maxContentHeight: '',
+}, {
   _constructor,
   componentDidMount,
+  shouldComponentUpdate,
 }));
