@@ -5,18 +5,11 @@
  *
  * @returns {object} type - Action type identifier
  */
-export function toggleNavMenu() {
-  return {
-    type: 'TOGGLE_NAV_MENU',
-  };
-}
+import makeActionCreator from './makeActionCreator';
 
-export function toggleMilestoneCard(milestoneId) {
-  return {
-    type: 'TOGGLE_MILESTONE_CARD',
-    milestoneId,
-  };
-}
+export const toggleNavMenu = makeActionCreator('TOGGLE_NAV_MENU');
+export const toggleMilestoneCard = makeActionCreator( 'TOGGLE_MILESTONE_CARD', 'milestoneId');
+
 
 export function setCurrentDashboardTab(tabIndex) {
   return {
