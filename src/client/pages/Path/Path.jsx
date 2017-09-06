@@ -33,10 +33,9 @@ const Subjects = ({ item, setState, state }) => {
   }
   if (item.subjectNames.length > 3) {
     subjects.push(
-      <div className="flex-wrap">
+      <div className="flex-wrap" key={`${item.name}moreSubjects`}>
         <button
           className="button--primary border-round bg-light-grey c-text margin-top-tiny"
-          key={`${item.name}moreButton`}
           onClick={() => {
             setState({
               tagIsOpened: !state.tagIsOpened,
@@ -73,14 +72,11 @@ const PathMarker = ({ text, dotClass, iconClass, path }) => (
     {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
   </div>);
 
-
-let _props = null;
-
 const Path = ({ match, curriculum, user, state, setState }) => {
   const pathId = match.params.id;
   const path = curriculum.paths[match.params.id];
   let milestones = null;
-  _props = { match, curriculum, user, state, setState };
+
   if (path.courseIds.length > 1) {
     milestones = path.courseIds.map((courseId, index) => {
       const course = curriculum.courses[courseId];
@@ -227,33 +223,30 @@ const Path = ({ match, curriculum, user, state, setState }) => {
   );
 };
 
-const componentDidUpdate = (prevProps, prevState) => {
-  console.log('Did Update', prevProps, prevState);
-};
-
-const componentDidMount = () => {
-  console.log('Did mount!');
-};
-
 Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
   state: PropTypes.objectOf(PropTypes.shape).isRequired,
-  setState: PropTypes.objectOf(PropTypes.shape).isRequired,
+  setState: PropTypes.func.isRequired,
 };
 
 Subjects.propTypes = {
   item: PropTypes.objectOf(PropTypes.shape).isRequired,
   state: PropTypes.objectOf(PropTypes.shape).isRequired,
-  setState: PropTypes.objectOf(PropTypes.shape).isRequired,
+  setState: PropTypes.func.isRequired,
 };
 
 PathMarker.propTypes = {
-  text: PropTypes.objectOf(PropTypes.shape).isRequired,
-  dotClass: PropTypes.objectOf(PropTypes.shape).isRequired,
-  iconClass: PropTypes.objectOf(PropTypes.shape).isRequired,
-  path: PropTypes.objectOf(PropTypes.shape).isRequired,
+  text: PropTypes.string.isRequired,
+  dotClass: PropTypes.string.isRequired,
+  path: PropTypes.objectOf(PropTypes.shape),
+  iconClass: PropTypes.string,
+};
+
+PathMarker.defaultProps = {
+  path: null,
+  iconClass: '',
 };
 
 export default connect(store => ({
@@ -261,7 +254,4 @@ export default connect(store => ({
   user: store.user,
 }))(StateProvider(Path, {
   tagIsOpened: false,
-}, {
-  componentDidUpdate,
-  componentDidMount,
-}));
+}, {}));
