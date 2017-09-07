@@ -8,6 +8,7 @@ import MilestoneCard from './MilestoneCard';
 import PageHero from '../shared/PageHero';
 import { MilestoneSubCard } from '../shared/Cards';
 import DisqusThread from '../shared/DisqusThread';
+import StateProvider from '../shared/StateProvider';
 
 import actions from '../../actions';
 
@@ -19,14 +20,34 @@ const typeIcons = {
   Project: 'icon-cogs',
 };
 
-const Subjects = ({ item }) => {
+const Subjects = ({ item, setState, state }) => {
   const subjects = [];
-  const numSubjects = Math.min(3, item.subjectNames.length);
+  let numSubjects = 0;
+  if (state.tagIsOpened) {
+    numSubjects = item.subjectNames.length;
+  } else {
+    numSubjects = Math.min(3, item.subjectNames.length);
+  }
   for (let i = 0; i < numSubjects; i += 1) {
-    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-left-tiny">{item.subjectNames[i]}</h5>);
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-left-tiny" key={item.name + item.subjectNames[i].name + i}>{item.subjectNames[i]}</h5>);
   }
   if (item.subjectNames.length > 3) {
-    subjects.push(<h5 className="tag border-round bg-light-grey c-tex margin-left-tiny">{`... ${item.subjectNames.length - 2} more ...`}</h5>);
+    subjects.push(
+      <div className="flex-wrap" key={`${item.name}moreSubjects`}>
+        <button
+          className="border-round border-none bg-hover-accent transition-fast bg-light-grey c-text c-hover-white margin-top-tiny"
+          onClick={() => {
+            setState({
+              tagIsOpened: !state.tagIsOpened,
+            });
+          }}
+        >
+          <div className="flex items-center">
+            {state.tagIsOpened ? '<<' : '...'}
+          </div>
+        </button>
+      </div>,
+    );
   }
   return (
     <div className="right">
@@ -51,7 +72,7 @@ const PathMarker = ({ text, dotClass, iconClass, path }) => (
     {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
   </div>);
 
-const Path = ({ match, curriculum, user }) => {
+const Path = ({ match, curriculum, user, state, setState }) => {
   const pathId = match.params.id;
   const path = curriculum.paths[match.params.id];
   let milestones = null;
@@ -157,7 +178,7 @@ const Path = ({ match, curriculum, user }) => {
               </div>
               <div className="flex justify-end">
                 <div className="width-75 right">
-                  <Subjects item={path} />
+                  <Subjects item={path} state={state} setState={setState} />
                 </div>
               </div>
             </div>
@@ -206,9 +227,31 @@ Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
+  state: PropTypes.objectOf(PropTypes.shape).isRequired,
+  setState: PropTypes.func.isRequired,
+};
+
+Subjects.propTypes = {
+  item: PropTypes.objectOf(PropTypes.shape).isRequired,
+  state: PropTypes.objectOf(PropTypes.shape).isRequired,
+  setState: PropTypes.func.isRequired,
+};
+
+PathMarker.propTypes = {
+  text: PropTypes.string.isRequired,
+  dotClass: PropTypes.string.isRequired,
+  path: PropTypes.objectOf(PropTypes.shape),
+  iconClass: PropTypes.string,
+};
+
+PathMarker.defaultProps = {
+  path: null,
+  iconClass: '',
 };
 
 export default connect(store => ({
   curriculum: store.curriculum,
   user: store.user,
-}))(Path);
+}))(StateProvider(Path, {
+  tagIsOpened: false,
+}, {}));
