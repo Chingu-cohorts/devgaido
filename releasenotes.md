@@ -7,6 +7,8 @@ You can find devGaido at [www.devgaido.com](http://www.devgaido.com).
 ### New Features
 
 - Refactored the Home page to make the banner text easier to read.
+- Added functionality to expand/collapse tags on cards.
+- Added new page transitions to provide a more distinct, but subdued effect.
 - Incorporated CSS Purify to prune unused CSS elements to reduce the Production bundle size. We really are fanatical about performance.
 - Added new options to the screenshot generation component. This is used only by the Dev Team. Pay no attention to the man behind the curtain.
 
