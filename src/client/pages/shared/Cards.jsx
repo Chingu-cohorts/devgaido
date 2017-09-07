@@ -75,7 +75,7 @@ const Subjects = ({ item }) => {
     subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-right-tiny" key={item.name + item.subjectNames[i].name + i} >{item.subjectNames[i]}</h5>);
   }
   if (item.subjectNames.length > 3) {
-    subjects.push(<h5 className="tag border-round bg-light-grey c-text" key={item.name + 'moreButton'}>{`... ${item.subjectNames.length - 2} more ...`}</h5>);
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text" key={item.name + '...'}>{'...'}</h5>);
   }
   return (
     <div className="right">
