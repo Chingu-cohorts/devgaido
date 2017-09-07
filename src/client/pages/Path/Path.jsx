@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import LazyLoad from 'react-lazyload';
 import { connect } from 'react-redux';
 
-import MilestoneCard from './_MilestoneCard';
+import MilestoneCard from './MilestoneCard';
 import PageHero from '../shared/PageHero';
 import { MilestoneSubCard } from '../shared/Cards';
 import DisqusThread from '../shared/DisqusThread';
