@@ -15,23 +15,29 @@ import React from 'react';
  *
  * @returns {Class} Stateful version of the original component
  * with added props "state", "setState(...)" and "that" (=reference to 'this')
+ *
+ * Example usage in the export statement:
+ *
+ * export default StateProvider(MilestoneCard, {       // Component
+ *   firstRender: true,                                // initialState
+ *   transitionAdded: false,
+ *   maxContentHeight: '',
+ * }, {
+ *   _constructor,                                     // lifeCycleHooks
+ *   componentDidMount,
+ *   shouldComponentUpdate,
+ * });
  */
 const StateProvider = (Component, initialState, lifeCycleHooks) => class extends React.Component {
    /**
    * Since the stateful component returned by StateProvider has no name
    * return the original Components name instead. This makes it so that error messages and
    * the React dev tools show the correct Component name.
-   *
-   * @returns {string} Name of the component
    */
   static get name() {
     return Component.name;
   }
-  /**
-   * Constructor
-   *
-   * @returns {null} N/a
-   */
+
   constructor() {
     super();
     this.state = initialState;
@@ -48,12 +54,6 @@ const StateProvider = (Component, initialState, lifeCycleHooks) => class extends
     }
   }
 
-  /**
-   * Render the component by calling the the
-   * original component as a function with additional props.
-   *
-   * @returns {null} N/a
-   */
   render() {
     return Component({
       ...this.props,

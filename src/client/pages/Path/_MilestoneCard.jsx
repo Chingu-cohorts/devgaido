@@ -11,9 +11,13 @@ import actions from '../../actions';
 
 const { toggleMilestoneCard } = actions;
 
-const toggleCollapsed = that => (id) => {
+/**
+ * StateProvider is used to add state and life cycle hooks to MilestoneCard.
+ */
+
   // When the card is opened the first time by the user,
   // enable transitions.
+const toggleCollapsed = that => (id) => {
   if (!that.state.transitionAdded) {
     that.lessonContainerRef.style.transition = 'all 0.3s';
     that.setState({
@@ -24,30 +28,17 @@ const toggleCollapsed = that => (id) => {
   toggleMilestoneCard(id);
 };
 
-/**
- * Constructor function that is invoked by StateProvider when instantiating the
- * class to maintain state for the MilestoneCard.
- *
- * @param {any} that The value of the StateProvider instance for this card. Aka 'this'.
- * @return {null} N/a
- */
-const _constructor = (that) => {
   // The reference to the dom element has to be saved on the StateProvider's 'this' (=that)
   // since it will otherwise get lost.
+const _constructor = (that) => {
   that.lessonContainerRef = null;
 };
 
-/**
- * Invoked by StateProvider when the componentDidMount lifecycle event it triggered.
- *
- * @param {any} that The value of the StateProvider instance for this card. Aka 'this'.
- * @return {null} N/a
- */
-const componentDidMount = (that) => {
   // Grab the correct max-height value on first render, then update the state
   // to force a rerender in "uncollapsed" state.
   // Note that the transition has to be disabled at this point in time or the user would be
   // able to notice the card animating from uncollapsed to collapsed.
+const componentDidMount = (that) => {
   that.setState({
     firstRender: false,
     transitionAdded: false,

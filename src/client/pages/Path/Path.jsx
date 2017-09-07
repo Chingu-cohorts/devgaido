@@ -35,7 +35,7 @@ const Subjects = ({ item, setState, state }) => {
     subjects.push(
       <div className="flex-wrap" key={`${item.name}moreSubjects`}>
         <button
-          className="button--primary border-round bg-light-grey c-text margin-top-tiny"
+          className="border-round border-none bg-hover-accent transition-fast bg-light-grey c-text c-hover-white margin-top-tiny"
           onClick={() => {
             setState({
               tagIsOpened: !state.tagIsOpened,
@@ -43,7 +43,7 @@ const Subjects = ({ item, setState, state }) => {
           }}
         >
           <div className="flex items-center">
-            {state.tagIsOpened ? 'COLLAPSE' : 'EXPAND'}
+            {state.tagIsOpened ? '<<' : '...'}
           </div>
         </button>
       </div>,
