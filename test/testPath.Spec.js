@@ -8,6 +8,9 @@ describe('Test corePaths.js functions', function () {
    * Test the corePaths.getPath function
    */
   describe('Test the getPath function', function () {
+    it('should return name "Become A Fullstack Developer (P1XT Guide)" for the named path"', function () {
+      assert.equal('Become A Fullstack Developer (P1XT Guide)', corePaths.getPath('p1xt').name);
+    });
     it('should return name "Webpage Design & Construction" for the named path"', function () {
       assert.equal('Webpage Design & Construction', corePaths.getPath('webpagedc').name);
     });

@@ -1,12 +1,26 @@
 {
+  "testmultiversions" : {
+    "version-2.0": {
+      "description": "Use case where multiple versions exist within a path"
+    },
+    "version-1.0": {
+      "name": "Multiple version test",
+      "description": "Test the case where multiple versions exist in a path",
+      "courseIds": [
+        "error1",
+        "error2"
+      ]
+    }
+  },
   "E2345678901234567" : {
-    "name": "Error test",
-    "description": "Path id exceeds 16 characters",
-    "courseIds": [
-      "error1",
-      "error2"
-    ],
-    "badAttribute": "Error",
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Error test",
+      "description": "Path id exceeds 16 characters",
+      "courseIds": [
+        "error1",
+        "error2"
+      ],
+      "badAttribute": "Error"
+    }
   }
 }

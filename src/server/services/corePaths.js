@@ -58,9 +58,34 @@ const getExpectedAttributes = () => pathAttributes;
  * @returns {String[]} - JSON object containing attributes of the path
  */
 const getPath = (pathId) => {
-  const currentPath = CorePaths[pathId]['version-1.0'];
-  console.log(`Current path: ${JSON.stringify(currentPath)}`);
-  return currentPath;
+  let currentPath = CorePaths[pathId];
+  const pathKeys = Object.keys(currentPath)
+    .sort((a, b) => {
+      const nameA = a.toUpperCase(); // ignore upper and lowercase
+      const nameB = b.toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      // names must be equal
+      return 0;
+    });
+  console.log(`\n...Path keys: ${pathKeys}`);
+
+  // Merge the current key attributes into its prececessor
+  const mergedPath = pathKeys.reduce((mergedPath, currentPath) => {
+    return { ...mergedPath, ...currentPath };
+  }, []);
+  console.log(`\n...Merged path: ${JSON.stringify(mergedPath)}`);
+
+  /*
+  console.log(`\nCurrent path: ${JSON.stringify(currentPath)}`);
+  console.log(`\n...Object keys: ${Object.keys(currentPath)}`);
+  console.log(`\n...Object values: ${JSON.stringify(Object.values(currentPath))}`);
+  */
+  return mergedPath;
 };
 
 /**

@@ -30,6 +30,7 @@ const courseAttributes = [
   ['description', 'required'],
   ['lessonIds', 'required'],
   ['version', 'required'],
+  ['completeX', 'optional'],
 ];
 
 /**
