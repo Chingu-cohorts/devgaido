@@ -50,14 +50,17 @@ const pathAttributes = [
 const getExpectedAttributes = () => pathAttributes;
 
 /**
- * Extract a specific path and its details from the Core Paths
+ * Extract a specific path and its details from the Core Paths. Before returning the
+ * JSON for the specified path id the version attributes must be collapsed into a
+ * single JSON object. Version "1.0" is used as the base on to which changes from more
+ * recent versions are folded into to create a single JSON object.
  *
- * @param {String} pathName - Unique path identifier
  * @returns {String[]} - JSON object containing attributes of the path
  */
-const getPath = (pathName) => {
-  console.log(`path:${CorePaths[pathName]}`);
-  return CorePaths[pathName];
+const getPath = (pathId) => {
+  const currentPath = CorePaths[pathId]['version-1.0'];
+  console.log(`Current path: ${JSON.stringify(currentPath)}`);
+  return currentPath;
 };
 
 /**
@@ -65,9 +68,6 @@ const getPath = (pathName) => {
  *
  * @returns {Object} - JSON object containing attributes of the core path
  */
-const getAllPaths = () => {
-  console.log(`paths: ${CorePaths}`);
-  return CorePaths;
-};
+const getAllPaths = () => CorePaths;
 
 export { getExpectedAttributes, getPath, getAllPaths };
