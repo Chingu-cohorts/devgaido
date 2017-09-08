@@ -50,15 +50,14 @@ const pathAttributes = [
 const getExpectedAttributes = () => pathAttributes;
 
 /**
- * Extract a specific path and its details from the Core Paths. Before returning the
- * JSON for the specified path id the version attributes must be collapsed into a
- * single JSON object. Version "1.0" is used as the base on to which changes from more
- * recent versions are folded into to create a single JSON object.
+ * Collapse all versions of a path into a single JSON object.  Version "1.0" is used
+ * as the base on to which changes from more recent versions are folded into to create
+ * a single JSON object.
  *
- * @returns {String[]} - JSON object containing attributes of the path
+ * @returns {String[]} - A collapsed JSON object containing the combined attributes
+ * from all versions
  */
-const getPath = (pathId) => {
-  const currentPath = CorePaths[pathId];
+const collapsePath = (currentPath) => {
   const pathKeys = Object.keys(currentPath)
     .sort((a, b) => {
       const nameA = a.toUpperCase(); // ignore upper and lowercase
@@ -72,15 +71,21 @@ const getPath = (pathId) => {
       // names must be equal
       return 0;
     });
-  // Merge each set of attributes from the oldest version to the most recent version. This 
+  // Merge each set of attributes from the oldest version to the most recent version. This
   // results in a single JSON object that contains the modification from all versions of
   // the path.
-  const mergedPath = pathKeys.reduce((combinedPath, currentIndex) => {
-    return { ...combinedPath, ...currentPath[currentIndex] };
-  }, []);
-  console.log(`mergedPath: ${JSON.stringify(mergedPath)}`);
-  return mergedPath;
+  const collapsedPath = pathKeys.reduce((combinedPath, currentIndex) =>
+    ({ ...combinedPath, ...currentPath[currentIndex] }), []);
+  console.log(`collapsedPath: ${JSON.stringify(collapsedPath)}`);
+  return collapsedPath;
 };
+
+/**
+ * Extract a specific path and its details from the Core Paths.
+ *
+ * @returns {String[]} - JSON object containing attributes of the path
+ */
+const getPath = pathId => collapsePath(CorePaths[pathId]);
 
 /**
  * Retrieve all paths from the Core Paths
