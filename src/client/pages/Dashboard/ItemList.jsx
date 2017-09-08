@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import AnimateVisibleChildren from '../shared/AnimateVisibleChildren';
 import { DashboardCard } from '../shared/Cards';
 
 const ItemList = ({ items }) => (
   <div className="item-list">
-    {items.map(item => (
-      <DashboardCard item={item} key={item.name} />
-    ))}
+    <AnimateVisibleChildren className="flex flex-wrap margin-vertical-big justify-around">
+      {items.map(item => (
+        <DashboardCard item={item} key={item.name} />
+      ))}
+    </AnimateVisibleChildren>
   </div>
 );
 
