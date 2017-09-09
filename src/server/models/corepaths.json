@@ -1,5 +1,9 @@
 {
   "p1xt" : {
+    "version-3.0": {
+      "description": "Prepare yourself to become a senior level software engineer capable of architecting advanced application solutions for the web (and beyond it). ",
+      "goal": "Become a senior level web developer and software engineer"
+    },
     "version-2.0": {
       "description": "Prepare yourself to be an established senior level software engineer capable of architecting advanced application solutions for the web (and beyond it). "
     },
