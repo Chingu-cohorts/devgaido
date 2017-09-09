@@ -49,35 +49,31 @@ const pathAttributes = [
  */
 const getExpectedAttributes = () => pathAttributes;
 
+const ascStringComparator = (firstKey, secondKey) => {
+  const firstValue = firstKey.toUpperCase();   // ignore upper and lowercase
+  const secondValue = secondKey.toUpperCase(); // ignore upper and lowercase
+  if (firstValue < secondValue) {
+    return -1;
+  }
+  if (firstValue > secondValue) {
+    return 1;
+  }
+  return 0;                                    // values are equal to one another
+};
+
 /**
- * Collapse all versions of a path into a single JSON object.  Version "1.0" is used
- * as the base on to which changes from more recent versions are folded into to create
- * a single JSON object.
+ * Collapse all versions of a path into a single JSON object. Merge each set of attributes
+ * from the oldest version to the most recent version. This results in a single JSON object
+ * that contains the modification from all versions of the path.
  *
  * @returns {String[]} - A collapsed JSON object containing the combined attributes
  * from all versions
  */
-const collapsePath = (currentPath) => {
-  const pathKeys = Object.keys(currentPath)
-    .sort((a, b) => {
-      const nameA = a.toUpperCase(); // ignore upper and lowercase
-      const nameB = b.toUpperCase(); // ignore upper and lowercase
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
-      }
-      // names must be equal
-      return 0;
-    });
-  // Merge each set of attributes from the oldest version to the most recent version. This
-  // results in a single JSON object that contains the modification from all versions of
-  // the path.
-  const collapsedPath = pathKeys.reduce((combinedPath, currentIndex) =>
-    ({ ...combinedPath, ...currentPath[currentIndex] }), []);
-  return collapsedPath;
-};
+const collapsePath = currentPath =>
+  Object.keys(currentPath)
+    .sort(ascStringComparator)
+    .reduce((combinedPath, currentIndex) =>
+      ({ ...combinedPath, ...currentPath[currentIndex] }), []);
 
 /**
  * Extract a specific path and its details from the Core Paths.
