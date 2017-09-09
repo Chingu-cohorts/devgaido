@@ -60,7 +60,9 @@ the wiki for more details and examples.
 | yarn dev:server   | Start development client          |
 | yarn dev:client   | Start development server          |
 | yarn analyzesize  | Analyze bundle sizes              |
-| yarn screenshots  | Capture Screenshots of Lesson URLs | 
+| yarn screenshots  | Capture screenshots of all lessons |
+| yarn screenshots new | Capture screenshots of all lessons with no screenshot |
+| yarn screenshots lesson-id | Capture screenshot for specified lesson id |
 | yarn test         | Initiate tests and validations    |
 
 ### Configuration
@@ -82,6 +84,96 @@ The devGaido project folder is organized in the following manner:
       /services - Microservices
     /test - Mocha tests and validations of JSON files
       /testdata - Data files designed to exercise the tests and validations
+```
+
+#### Models - Curriculum JSON Format
+
+The core curriculum (subjects, paths, courses, and lessons) are maintained in a set of four
+JSON files which are passed from the server to clients running the devGaido application
+when the user session is started.
+
+##### src/server/models/corepaths.json
+```
+  {
+    "path-identifier" : { <-- Unique path identifier. Max of 16 chars.
+    "name": "...",        <-- Short path name
+    "description": "...", <-- Path description. Must describe the knowledge
+                              the user should expect to achieve from taking
+                              the courses in this path.
+    "courseIds": [        <-- Array of unique course id's contained in the path.
+                              Course id's can be referenced in more than one path.
+      "...",                  <-- Course id
+    ],
+    "version": "1.0.0"    <-- Semantic version to track changes
+   },
+  }
+```
+##### src/server/models/corecourses.json
+```
+  {
+   "course-identifier" : { <-- Unique path identifier. Max of 16 chars.
+     "name": "...",        <-- Short course name
+     "description": "...", <-- Course description must define the objective
+                               of the course and what the user can expect to
+                               gain from it.
+     "lessonIds": [        <-- Array of lesson ids included in the course
+       "...",              <-- Lesson identifier
+     ],
+     "version": "1.0.0"    <-- Semantic version to track changes
+   },
+  }
+```
+##### src/server/models/corelessons.json
+```
+  {
+   "path-identifier" : {          <-- Unique lesson identifier. Max of 16 chars.
+     "source": "...",             <-- Textual definition of the lessons origin (e.g. P1XT)
+     "name": "...",               <-- Short lesson name
+     "description": "...",        <-- Lesson description. This should describe
+                                      the lesson, as well as what knowledge will
+                                      be provided to the user.
+     "type": "...",               <-- Lesson type categorizes the medium used to
+                                      transmit the information (e.g. reading, video, etc.)
+     "instructions": "...",       <-- For "type": "Project" this describes what
+                                      is expected of the user
+     "resources":[["resource-description","resource-url"],...],
+                                  <-- For "type": "Project" this defines relevant
+                                      supplemental material
+     "subjects: ["..."]..,        <-- An array of subject names this lesson is
+                                      associated with.
+     "externalSource": "...",     <-- Defines the url of the lesson
+     "estimatedTime": "short|medium|long", <-- Defines the estimated amount of
+                                      time required to complete the lesson.
+                                      Acceptable values are:
+                                      - short: 4 hours or less
+                                      - medium: 16 hours or less
+                                      - long: >16 hours
+     "version": "1.0.0"           <-- Semantic version to track changes
+   },
+  }
+```
+##### src/server/models/coresubjects.json
+```
+  {
+   "subject-identifier" : { <-- Unique subject identifier. Max of 16 chars.
+     "type": "...",         <-- Subject type which categorizes the associated
+                                subject material (e.g. CSS, HTML, Javascript, etc.)
+     "focusArea": "...",    <-- Subject focus area based on a specific webdev
+                                role (e.g. Frontend, Backend, Fullstack, etc.)
+     "name": "...",         <-- Short subject name
+     "description": "...",  <-- Subject description describing the associated
+                                subject material and how it relates to the
+                                webdev role.
+     "releaseNo": "...",    <-- Defines the release number for the associated
+                                technology the subject may be based on (e.g.
+                                Angular2 vs. Angular4)
+     "authorityURL": "...", <-- For specific technologies the subject is based
+                                on this notes the URL of the authorative
+                                source. For example, for Google's Material
+                                Design this would be www.materialdesign.io.
+     "version": "1.0.0"     <-- Semantic version to track changes
+   },
+  }
 ```
 
 ## Runtime
