@@ -76,7 +76,6 @@ const collapsePath = (currentPath) => {
   // the path.
   const collapsedPath = pathKeys.reduce((combinedPath, currentIndex) =>
     ({ ...combinedPath, ...currentPath[currentIndex] }), []);
-  console.log(`collapsedPath: ${JSON.stringify(collapsedPath)}`);
   return collapsedPath;
 };
 
@@ -92,6 +91,12 @@ const getPath = pathId => collapsePath(CorePaths[pathId]);
  *
  * @returns {Object} - JSON object containing attributes of the core path
  */
-const getAllPaths = () => CorePaths;
+const getAllPaths = () => {
+  const currentPath = {};
+  Object.keys(CorePaths).forEach((key) => {
+    currentPath[key] = collapsePath(CorePaths[key]);
+  });
+  return currentPath;
+};
 
 export { getExpectedAttributes, getPath, getAllPaths };
