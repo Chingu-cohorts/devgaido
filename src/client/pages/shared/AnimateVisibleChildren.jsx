@@ -20,10 +20,11 @@ const _constructor = (that) => {
 };
 
 const animate = (that) => {
-  that.visibleChildren.forEach((child) => {
+  that.visibleChildren.forEach((child, index) => {
     child.style.opacity = '1';
     child.style.transform = 'translateX(0)';
     child.style.transition = 'all 0.2s';
+    child.style.transitionDelay = `${index * 0.025}s`;
   });
 };
 
@@ -50,7 +51,7 @@ const componentDidMount = (that) => {
         bounds = child.getBoundingClientRect();
 
         if (isVisible(bounds, windowHeight)) {
-          child.style.transform = 'translateX(-200px)';
+          child.style.transform = 'translateX(-100px)';
           child.style.opacity = '0';
           that.visibleChildren.push(child);
           atLeastOneVisibleChild = true;
