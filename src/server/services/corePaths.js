@@ -1,4 +1,5 @@
 import CorePaths from '../models/corepaths.json';
+import { collapseVersions } from './commonServices';
 
 /**
  * Core Paths Model
@@ -15,7 +16,8 @@ const pathAttributes = [
   ['name', 'required'],
   ['description', 'required'],
   ['courseIds', 'required'],
-  ['version', 'required'],
+  ['goal', 'optional'],
+  ['salary', 'optional'],
 ];
 
 /**
@@ -30,13 +32,28 @@ const getExpectedAttributes = () => pathAttributes;
  *
  * @returns {String[]} - JSON object containing attributes of the path
  */
-const getPath = pathName => CorePaths[pathName];
+const getPath = (pathId, overrideJSON) => {
+  const path = overrideJSON !== undefined ? overrideJSON[pathId] : CorePaths[pathId];
+  if (path === undefined) {
+    return path;
+  }
+  return collapseVersions(path);
+};
 
 /**
  * Retrieve all paths from the Core Paths
  *
+ * @param {any} overrideJSON - JSON path object that is to be used instead of that
+ * defined by CorePaths. This is an optional parameter used for testing
  * @returns {Object} - JSON object containing attributes of the core path
  */
-const getAllPaths = () => CorePaths;
+const getAllPaths = (overrideJSON) => {
+  const currentPath = {};
+  const paths = overrideJSON !== undefined ? overrideJSON : CorePaths;
+  Object.keys(paths).forEach((key) => {
+    currentPath[key] = collapseVersions(paths[key]);
+  });
+  return currentPath;
+};
 
 export { getExpectedAttributes, getPath, getAllPaths };

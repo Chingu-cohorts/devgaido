@@ -65,7 +65,7 @@ describe('Validate corecourses.json', () => {
       assert.equal(invalidIds.length, 2);
     });
   });
-  describe('Vaidate that there are no orphaned lessons', () => {
+  describe('Vaidate that there are no orphaned courses', () => {
     let orphanedCourseIds = [];
     afterEach(() => {
       orphanedCourseIds = logErrors(orphanedCourseIds);

@@ -1,130 +1,146 @@
 {
   "p1xt" : {
-    "name": "Become A Fullstack Developer (P1XT Guide)",
-    "description": "Get prepared, over the long haul, to be an established senior level software engineer, capable of architecting solutions for the web (and beyond it). ",
-    "courseIds": [
-      "gitngithub",
-      "p1xttier1",
-      "p1xttier2",
-      "p1xttier3",
-      "p1xttier4"
-    ],
-    "goal": "Becoming a proficient web developer and software engineer.",
-    "salary": ["~ $65.000 / year", "(average, depending on location / experience)"],
-    "version": "1.0.0"
+    "version-3.0": {
+      "description": "Prepare yourself to become a senior level software engineer capable of architecting advanced application solutions for the web (and beyond it). ",
+      "goal": "Become a senior level web developer and software engineer"
+    },
+    "version-2.0": {
+      "description": "Prepare yourself to be an established senior level software engineer capable of architecting advanced application solutions for the web (and beyond it). "
+    },
+    "version-1.0": {
+      "name": "Become A Fullstack Developer (P1XT Guide)",
+      "description": "Get prepared, over the long haul, to be an established senior level software engineer, capable of architecting solutions for the web (and beyond it). ",
+      "courseIds": [
+        "gitngithub",
+        "p1xttier1",
+        "p1xttier2",
+        "p1xttier3",
+        "p1xttier4"
+      ],
+      "goal": "Becoming a proficient web developer and software engineer.",
+      "salary": ["~ $65.000 / year", "(average, depending on location / experience)"]
+    }
   },
   "p1xt2" : {
-    "name": "Become A Frontend Developer (P1XT Guide)",
-    "description": "A structured plan of resources and activities for learners who want to beeline to 'job ready' and get there prepared to be successful.",
-    "courseIds": [
-      "gitngithub",
-      "ydkjs1",
-      "frontendexp1",
-      "ydkjs2",
-      "cs1",
-      "ydkjs3",
-      "frontendexp2",
-      "cs2",
-      "backendfound",
-      "jsboss",
-      "frontendexp3"
-    ],
-    "goal": "Getting 'job ready' for a (junior) frontend developer position in today's market.",
-    "salary": ["~ $51.000 / year", "(average, depending on location / experience)"],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Become A Frontend Developer (P1XT Guide)",
+      "description": "A structured plan of resources and activities for learners who want to beeline to 'job ready' and get there prepared to be successful.",
+      "courseIds": [
+        "gitngithub",
+        "ydkjs1",
+        "frontendexp1",
+        "ydkjs2",
+        "cs1",
+        "ydkjs3",
+        "frontendexp2",
+        "cs2",
+        "backendfound",
+        "jsboss",
+        "frontendexp3"
+      ],
+      "goal": "Getting 'job ready' for a (junior) frontend developer position in today's market.",
+      "salary": ["~ $51.000 / year", "(average, depending on location / experience)"]
+    }
   },
   "srcctrl" : {
-    "name": "Source Code Control Systems",
-    "description": "Learn the tools and techniques needed to effectively and efficiently manage your projects source code. In this path you'll gain a working knowledge of Git, the source code control system GitHub is built around and one that is the industry standard used by many Open Source and commercial projects.",
-    "courseIds": [
-      "git",
-      "github",
-      "advancedgit"
-    ],
-    "goal": "Getting comfortable with git and GitHub in order to manage source code like a pro.",
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Source Code Control Systems",
+      "description": "Learn the tools and techniques needed to effectively and efficiently manage your projects source code. In this path you'll gain a working knowledge of Git, the source code control system GitHub is built around and one that is the industry standard used by many Open Source and commercial projects.",
+      "courseIds": [
+        "git",
+        "github",
+        "advancedgit"
+      ],
+      "goal": "Getting comfortable with git and GitHub in order to manage source code like a pro."
+    }
   },
   "webpagedc" : {
-    "name": "Webpage Design & Construction",
-    "description": "Learn the technologies necessary to build simple webpages. In this path you'll become acquainted with CSS and HTML - the defacto standards for creating webpages.",
-    "courseIds": [
-      "buildwebpages"
-    ],
-    "goal": "Being able to build simple websites using CSS and HTML.",
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Webpage Design & Construction",
+      "description": "Learn the technologies necessary to build simple webpages. In this path you'll become acquainted with CSS and HTML - the defacto standards for creating webpages.",
+      "courseIds": [
+        "buildwebpages"
+      ],
+      "goal": "Being able to build simple websites using CSS and HTML."
+    }
   },
   "javascript" : {
-    "name": "Javascript",
-    "description": "Learn Javascript to start you on your way to becoming a Web Developer. Gain the skills needed to develop world-class Web Applications using the leading web development language - Javascript",
-    "courseIds": [
-      "beginnerjs",
-      "intermediatejs",
-      "advancedjs"
-    ],
-    "goal": "Having a thorough understanding of the Javascript language and its core concepts.",
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Javascript",
+      "description": "Learn Javascript to start you on your way to becoming a Web Developer. Gain the skills needed to develop world-class Web Applications using the leading web development language - Javascript",
+      "courseIds": [
+        "beginnerjs",
+        "intermediatejs",
+        "advancedjs"
+      ],
+      "goal": "Having a thorough understanding of the Javascript language and its core concepts."
+    }
   },  
   "buildawebsite" : {
-    "name": "Build A Website",
-    "description": "Learn how to build a website using HTML, CSS, and key libraries including Sass, Less, and Stylus. ",
-    "courseIds": [
-      "htmlbasics",
-      "cssbasics",
-      "marryhtmlcss",
-      "intermediatehtml",
-      "intermediatecss",
-      "advancedhtmlcss",
-      "introbootstrap",
-      "introfoundation",
-      "introsass",
-      "introless",
-      "introstylus"
-    ],
-    "goal": "Being able to build even the most complex websites using HTML, CSS frameworks and preprocessors.",
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Build A Website",
+      "description": "Learn how to build a website using HTML, CSS, and key libraries including Sass, Less, and Stylus. ",
+      "courseIds": [
+        "htmlbasics",
+        "cssbasics",
+        "marryhtmlcss",
+        "intermediatehtml",
+        "intermediatecss",
+        "advancedhtmlcss",
+        "introbootstrap",
+        "introfoundation",
+        "introsass",
+        "introless",
+        "introstylus"
+      ],
+      "goal": "Being able to build even the most complex websites using HTML, CSS frameworks and preprocessors."
+    }
   },
   "learnhowwebworks" : {
-    "name": "Learn How the Web Works",
-    "description": "Learn how the Internet and the World Wide Web work by mastering the fundamental technologies they are built on. Increase your knowledge of the hardware, software, and protocol that make up the Internet.",
-    "courseIds": [
-      "howwebworks",
-      "getstartedweb"
-    ],
-    "goal": "Getting to know the fundamental building blocks of the world wide web.",
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Learn How the Web Works",
+      "description": "Learn how the Internet and the World Wide Web work by mastering the fundamental technologies they are built on. Increase your knowledge of the hardware, software, and protocol that make up the Internet.",
+      "courseIds": [
+        "howwebworks",
+        "getstartedweb"
+      ],
+      "goal": "Getting to know the fundamental building blocks of the world wide web."
+    }
   },
   "reactjsbasics" : {
-    "name": "ReactJS Basics",
-    "description": "Learn what ReactJS is, why you might want to use it, and how to develop applications based on React.",
-    "courseIds": [
-      "reactbasicsetup",
-      "reactbasiccomps",
-      "reactbasicprops",
-      "reactbasicstate",
-      "reactbasiccomm",
-      "reactbasicroute"
-    ],
-    "goal": "ReactJS is the frontend library Facebook is implemented in. Along with Angular and Vue this is one of the leading frontend libraries organizations of all sizes are using it in their apps.",
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "ReactJS Basics",
+      "description": "Learn what ReactJS is, why you might want to use it, and how to develop applications based on React.",
+      "courseIds": [
+        "reactbasicsetup",
+        "reactbasiccomps",
+        "reactbasicprops",
+        "reactbasicstate",
+        "reactbasiccomm",
+        "reactbasicroute"
+      ],
+      "goal": "ReactJS is the frontend library Facebook is implemented in. Along with Angular and Vue this is one of the leading frontend libraries organizations of all sizes are using it in their apps."
+    }
   },
   "getstartredux" : {
-    "name": "Getting Started with Redux",
-    "description": "Learn how to effectively and efficiently manage the state in your web applications using the Redux from it's creator -- Dan Abramov.",
-    "courseIds": [
-      "reduxconcepts",
-      "reduxstore",
-      "reduxcheckpt",
-      "reduxmutations",
-      "reduxtodo1",
-      "reduxreducer",
-      "reduxtodo2",
-      "reduxextpres",
-      "reduxextcont",
-      "reduxpassstore",
-      "reduxgencont",
-      "reduxextact"
-    ],
-    "goal": "Managing application state is an essential skill employers look for in webdevs. Understanding state and how to manage it during the app lifecycle will help you land your webdev job.",
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Getting Started with Redux",
+      "description": "Learn how to effectively and efficiently manage the state in your web applications using the Redux from it's creator -- Dan Abramov.",
+      "courseIds": [
+        "reduxconcepts",
+        "reduxstore",
+        "reduxcheckpt",
+        "reduxmutations",
+        "reduxtodo1",
+        "reduxreducer",
+        "reduxtodo2",
+        "reduxextpres",
+        "reduxextcont",
+        "reduxpassstore",
+        "reduxgencont",
+        "reduxextact"
+      ],
+      "goal": "Managing application state is an essential skill employers look for in webdevs. Understanding state and how to manage it during the app lifecycle will help you land your webdev job."
+    }
   }
 }
