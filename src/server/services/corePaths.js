@@ -1,4 +1,5 @@
 import CorePaths from '../models/corepaths.json';
+import { collapseVersions } from './commonServices';
 
 /**
  * Core Paths Model
@@ -49,38 +50,12 @@ const pathAttributes = [
  */
 const getExpectedAttributes = () => pathAttributes;
 
-const ascStringComparator = (firstKey, secondKey) => {
-  const firstValue = firstKey.toUpperCase();   // ignore upper and lowercase
-  const secondValue = secondKey.toUpperCase(); // ignore upper and lowercase
-  if (firstValue < secondValue) {
-    return -1;
-  }
-  if (firstValue > secondValue) {
-    return 1;
-  }
-  return 0;                                    // values are equal to one another
-};
-
-/**
- * Collapse all versions of a path into a single JSON object. Merge each set of attributes
- * from the oldest version to the most recent version. This results in a single JSON object
- * that contains the modification from all versions of the path.
- *
- * @returns {String[]} - A collapsed JSON object containing the combined attributes
- * from all versions
- */
-const collapsePath = currentPath =>
-  Object.keys(currentPath)
-    .sort(ascStringComparator)
-    .reduce((combinedPath, currentIndex) =>
-      ({ ...combinedPath, ...currentPath[currentIndex] }), []);
-
 /**
  * Extract a specific path and its details from the Core Paths.
  *
  * @returns {String[]} - JSON object containing attributes of the path
  */
-const getPath = pathId => collapsePath(CorePaths[pathId]);
+const getPath = pathId => collapseVersions(CorePaths[pathId]);
 
 /**
  * Retrieve all paths from the Core Paths
@@ -90,7 +65,7 @@ const getPath = pathId => collapsePath(CorePaths[pathId]);
 const getAllPaths = () => {
   const currentPath = {};
   Object.keys(CorePaths).forEach((key) => {
-    currentPath[key] = collapsePath(CorePaths[key]);
+    currentPath[key] = collapseVersions(CorePaths[key]);
   });
   return currentPath;
 };
