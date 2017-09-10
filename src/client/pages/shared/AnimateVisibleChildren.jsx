@@ -27,22 +27,37 @@ const animate = (that) => {
   });
 };
 
+const isVisible = (bounds, windowHeight) =>
+  (bounds.top >= 0 && bounds.top <= windowHeight) ||
+  (bounds.bottom >= 0 && bounds.bottom <= windowHeight);
+
 const componentDidMount = (that) => {
   if (that.hasDom) {
     // divRef.children is an HTMLCollection so we need .slice to turn it
     // into a regular array
     that.childrenRefs = Array.prototype.slice.call(that.divRef.children);
-
+    that.visibleChildren = [];
     // Use requestAnimationFrame to make sure our code is run before the next repaint
     window.requestAnimationFrame(() => {
-      that.childrenRefs.forEach((child) => {
-        // Initialize all visible children
-        if (child.getBoundingClientRect().top - window.pageYOffset <= window.innerHeight) {
+      let atLeastOneVisibleChild = false;
+      let child = null;
+      let bounds = null;
+
+      const windowHeight = window.innerHeight;
+
+      for (let i = 0; i < that.childrenRefs.length; i += 1) {
+        child = that.childrenRefs[i];
+        bounds = child.getBoundingClientRect();
+
+        if (isVisible(bounds, windowHeight)) {
           child.style.transform = 'translateX(-200px)';
           child.style.opacity = '0';
           that.visibleChildren.push(child);
+          atLeastOneVisibleChild = true;
+        } else if (atLeastOneVisibleChild) {
+          break;
         }
-      });
+      }
       // Start animation before next repaint
       window.requestAnimationFrame(() => {
         animate(that);
@@ -84,6 +99,10 @@ const componentDidMount = (that) => {
   }
 };
 
+const componentDidUpdate = (that) => {
+  componentDidMount(that);
+};
+
 const AnimateVisibleChildren = ({ className, children, that }) => (
   <div className={className} ref={(domElem) => { that.divRef = domElem; }}>
     {children}
@@ -106,4 +125,5 @@ AnimateVisibleChildren.defaultProps = {
 export default StateProvider(AnimateVisibleChildren, {}, {
   _constructor,
   componentDidMount,
+  componentDidUpdate,
 });
