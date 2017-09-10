@@ -5,29 +5,9 @@ import { collapseVersions } from './commonServices';
  * Core Paths Model
  *
  * This module contains functions implementing model layer functionality
- * for the application. The JSON file referenced by this module has the
- * following structure:
- *
- * {
- *   "path-identifier" : { <-- Unique path identifier. Max of 16 chars.
- *     "version-n.n": {    <-- Version specific changes
- *                               1. "version-1.0" must contain values for all required
- *                                  attributes and must be the last version in the JSON
- *                                  object.
- *                               2. New version blocks must be added to the top of the
- *                                  JSON object. Version block occur from the most recent
- *                                  to the oldest (i.e. "version-1.0") within the path JSON.
- *        "name": "...",        <-- Short path name
- *        "description": "...", <-- Path description. Must describe the knowledge
- *                                  the user should expect to achieve from taking
- *                                  the courses in this path.
- *        "courseIds": [        <-- Array of unique course id's contained in the path.
- *                                  Course id's can be referenced in more than one path.
- *          "...",              <-- Course id
- *        ],
- *     }
- *   },
- * }
+ * for the application. All access to the path model must be made through
+ * these functions since they collapse versions in the path to create a
+ * single view of the information contained in the path.
  */
 
 /*
@@ -38,7 +18,6 @@ const pathAttributes = [
   ['name', 'required'],
   ['description', 'required'],
   ['courseIds', 'required'],
-  ['version', 'required'],
   ['goal', 'optional'],
   ['salary', 'optional'],
 ];
@@ -52,20 +31,32 @@ const getExpectedAttributes = () => pathAttributes;
 
 /**
  * Extract a specific path and its details from the Core Paths.
- *
+ *{}
+ * @param {String} pathId - Identifier of the path that is to be returned
+ * @param {any} overrideJSON - JSON path object that is to be used instead of that
+ * defined by CorePaths. This is an optional parameter used for testing
  * @returns {String[]} - JSON object containing attributes of the path
  */
-const getPath = pathId => collapseVersions(CorePaths[pathId]);
+const getPath = (pathId, overrideJSON) => {
+  const path = overrideJSON !== undefined ? overrideJSON[pathId] : CorePaths[pathId];
+  if (path === undefined) {
+    return path;
+  }
+  return collapseVersions(path);
+};
 
 /**
  * Retrieve all paths from the Core Paths
  *
+ * @param {any} overrideJSON - JSON path object that is to be used instead of that
+ * defined by CorePaths. This is an optional parameter used for testing
  * @returns {Object} - JSON object containing attributes of the core path
  */
-const getAllPaths = () => {
+const getAllPaths = (overrideJSON) => {
   const currentPath = {};
-  Object.keys(CorePaths).forEach((key) => {
-    currentPath[key] = collapseVersions(CorePaths[key]);
+  const paths = overrideJSON !== undefined ? overrideJSON : CorePaths;
+  Object.keys(paths).forEach((key) => {
+    currentPath[key] = collapseVersions(paths[key]);
   });
   return currentPath;
 };
