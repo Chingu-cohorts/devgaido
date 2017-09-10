@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import ItemList from './ItemList';
+import AnimateVisibleChildren from '../shared/AnimateVisibleChildren';
 
 const getCompletedItems = (allItems) => {
   const items = Object.keys(allItems).filter(itemId => allItems[itemId].completed).map(
@@ -17,9 +18,11 @@ const CompletedTab = ({ curriculum }) => {
   const completedLessons = getCompletedItems(curriculum.lessons);
 
   return (
-    <div className="bookmarked-tab margin-bottom-huge">
-      <span>RESOURCES</span>
-      <h2>Completed</h2>
+    <AnimateVisibleChildren className="bookmarked-tab margin-bottom-huge">
+      <div>
+        <span>RESOURCES</span>
+        <h2>Completed</h2>
+      </div>
       { completedPaths.length !== 0 ?
         <ItemList items={completedPaths} curriculum={curriculum} category="paths" /> : null }
       {
@@ -35,7 +38,7 @@ const CompletedTab = ({ curriculum }) => {
             </div>
           </Link>
         </div> : null }
-    </div>
+    </AnimateVisibleChildren>
   );
 };
 

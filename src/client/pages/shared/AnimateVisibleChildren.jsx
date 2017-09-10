@@ -51,6 +51,7 @@ const componentDidMount = (that) => {
         bounds = child.getBoundingClientRect();
 
         if (isVisible(bounds, windowHeight)) {
+          // child.style.border = '4px solid red';
           child.style.transform = 'translateX(-100px)';
           child.style.opacity = '0';
           that.visibleChildren.push(child);
