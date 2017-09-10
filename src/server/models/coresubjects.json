@@ -1,200 +1,221 @@
-{
-  "Android": {
-    "type": "Technology",
-    "focusArea": "Mobile",
-    "name": "Android",
-    "description": "Android mobile development",
-    "releaseNo": "",
-    "authorityURL": "https://www.android.com/",
-    "version": "1.0.0"
-  }, 
+{ "Android": {
+    "version-1.0": {
+      "type": "Technology",
+      "focusArea": "Mobile",
+      "name": "Android",
+      "description": "Android mobile development",
+      "releaseNo": "",
+      "authorityURL": "https://www.android.com/"
+    }
+  },
   "Backend": {
-    "type": "Concept",
-    "focusArea": "Backend",
-    "name": "Backend",
-    "description": "Server-side application development",
-    "releaseNo": "",
-    "authorityURL": "",
-    "version": "1.0.0"
-  }, 
+    "version-1.0": {
+      "type": "Concept",
+      "focusArea": "Backend",
+      "name": "Backend",
+      "description": "Server-side application development",
+      "releaseNo": "",
+      "authorityURL": ""
+    }
+  },
   "CSS": {
-    "type": "Technology",
-    "focusArea": "Frontend",
-    "name": "CSS",
-    "description": "Cascading Stype Sheets",
-    "releaseNo": "",
-    "authorityURL": "https://developer.mozilla.org/en-US/docs/Web/CSS",
-    "version": "1.0.0"
+    "version-1.0": {
+      "type": "Technology",
+      "focusArea": "Frontend",
+      "name": "CSS",
+      "description": "Cascading Stype Sheets",
+      "releaseNo": "",
+      "authorityURL": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+    }
   },
   "CSS/Bootstrap": {
-    "type": "Framework",
-    "focusArea": "Frontend",
-    "name": "CSS/Bootstrap",
-    "description": "Bootstrap CSS Framework",
-    "releaseNo": "",
-    "authorityURL": "http://getbootstrap.com/",
-    "version": "1.0.0"
+    "version-1.0": {
+      "type": "Framework",
+      "focusArea": "Frontend",
+      "name": "CSS/Bootstrap",
+      "description": "Bootstrap CSS Framework",
+      "releaseNo": "",
+      "authorityURL": "http://getbootstrap.com/"
+    }
   },
   "CSS/Foundation": {
-    "type": "Framework",
-    "focusArea": "Frontend",
-    "name": "CSS/Foundation",
-    "description": "Foundation CSS Framework",
-    "releaseNo": "",
-    "authorityURL": "http://foundation.zurb.com/",
-    "version": "1.0.0"
+    "version-1.0": {
+      "type": "Framework",
+      "focusArea": "Frontend",
+      "name": "CSS/Foundation",
+      "description": "Foundation CSS Framework",
+      "releaseNo": "",
+      "authorityURL": "http://foundation.zurb.com/"
+    }
   },
   "CSS/Sass": {
-    "type": "Preprocessor",
-    "focusArea": "Frontend",
-    "name": "CSS/Sass",
-    "description": "Sass CSS Preprocessor",
-    "releaseNo": "",
-    "authorityURL": "http://sass-lang.com/",
-    "version": "1.0.0"
+    "version-1.0": {
+      "type": "Preprocessor",
+      "focusArea": "Frontend",
+      "name": "CSS/Sass",
+      "description": "Sass CSS Preprocessor",
+      "releaseNo": "",
+      "authorityURL": "http://sass-lang.com/"
+    }
   },
   "CSS/Less": {
-    "type": "Preprocessor",
-    "focusArea": "Frontend",
-    "name": "CSS/Less",
-    "description": "Less CSS Preprocessor",
-    "releaseNo": "",
-    "authorityURL": "http://lesscss.org/",
-    "version": "1.0.0"
+    "version-1.0": {
+      "type": "Preprocessor",
+      "focusArea": "Frontend",
+      "name": "CSS/Less",
+      "description": "Less CSS Preprocessor",
+      "releaseNo": "",
+      "authorityURL": "http://lesscss.org/"
+    }
   },
   "CSS/Stylus": {
-    "type": "Preprocessor",
-    "focusArea": "Frontend",
-    "name": "CSS/Stylus",
-    "description": "Stylus CSS Preprocessor",
-    "releaseNo": "",
-    "authorityURL": "http://stylus-lang.com/",
-    "version": "1.0.0"
-  },           
+    "version-1.0": {
+      "type": "Preprocessor",
+      "focusArea": "Frontend",
+      "name": "CSS/Stylus",
+      "description": "Stylus CSS Preprocessor",
+      "releaseNo": "",
+      "authorityURL": "http://stylus-lang.com/"
+    }
+  },
   "Computer Science": {
-    "type": "Concept",
-    "focusArea": "Foundation",
-    "name": "Computer Science",
-    "description": "Computer Science ",
-    "releaseNo": "",
-    "authorityURL": "",
-    "version": "1.0.0"
-  }, 
+    "version-1.0": {
+      "type": "Concept",
+      "focusArea": "Foundation",
+      "name": "Computer Science",
+      "description": "Computer Science ",
+      "releaseNo": "",
+      "authorityURL": ""
+    }
+  },
   "Database": {
-    "type": "Technology",
-    "focusArea": "Backend",
-    "name": "Database",
-    "description": "Database Management Systems",
-    "releaseNo": "",
-    "authorityURL": "",
-    "version": "1.0.0"
-  }, 
+    "version-1.0": {
+      "type": "Technology",
+      "focusArea": "Backend",
+      "name": "Database",
+      "description": "Database Management Systems",
+      "releaseNo": "",
+      "authorityURL": ""
+    }
+  },
   "Frontend": {
-    "type": "Concept",
-    "focusArea": "Frontend",
-    "name": "Frontend",
-    "description": "Client-side application development",
-    "releaseNo": "",
-    "authorityURL": "",
-    "version": "1.0.0"
-  }, 
+    "version-1.0": {
+      "type": "Concept",
+      "focusArea": "Frontend",
+      "name": "Frontend",
+      "description": "Client-side application development",
+      "releaseNo": "",
+      "authorityURL": ""
+    }
+  },
   "Fullstack": {
-    "type": "Concept",
-    "focusArea": "Fullstack",
-    "name": "Fullstack",
-    "description": "Client-side + Server-side application development",
-    "releaseNo": "",
-    "authorityURL": "",
-    "version": "1.0.0"
-  }, 
+    "version-1.0": {
+      "type": "Concept",
+      "focusArea": "Fullstack",
+      "name": "Fullstack",
+      "description": "Client-side + Server-side application development",
+      "releaseNo": "",
+      "authorityURL": ""
+    }
+  },
   "Gulp": {
-    "type": "Library",
-    "focusArea": "Backend",
-    "name": "Gulp",
-    "description": "Application development automation",
-    "releaseNo": "",
-    "authorityURL": "",
-    "version": "1.0.0"
-  }, 
+    "version-1.0": {
+      "type": "Library",
+      "focusArea": "Backend",
+      "name": "Gulp",
+      "description": "Application development automation",
+      "releaseNo": "",
+      "authorityURL": ""
+    }
+  },
   "HTML": {
-    "type": "Library",
-    "focusArea": "Frontend",
-    "name": "HTML",
-    "description": "Hypertext Markup Language",
-    "releaseNo": "5",
-    "authorityURL": "https://developer.mozilla.org/en-US/docs/Web/HTML",
-    "version": "1.0.0"
+    "version-1.0": {
+      "type": "Library",
+      "focusArea": "Frontend",
+      "name": "HTML",
+      "description": "Hypertext Markup Language",
+      "releaseNo": "5",
+      "authorityURL": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+    }
   },
   "Javascript": {
-    "type": "Language",
-    "focusArea": "Javascript",
-    "name": "Javascript",
-    "description": "Javascript ES5",
-    "releaseNo": "ES5",
-    "authorityURL": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    "version": "1.0.0"
-  }, 
+    "version-1.0": {
+      "type": "Language",
+      "focusArea": "Javascript",
+      "name": "Javascript",
+      "description": "Javascript ES5",
+      "releaseNo": "ES5",
+      "authorityURL": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    }
+  },
   "Javascript ES6": {
-    "type": "Language",
-    "focusArea": "Javascript",
-    "name": "Javascript ES6",
-    "description": "Javascript ES6",
-    "releaseNo": "ES6",
-    "authorityURL": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-    "version": "1.0.0"
-  }, 
+    "version-1.0": {
+      "type": "Language",
+      "focusArea": "Javascript",
+      "name": "Javascript ES6",
+      "description": "Javascript ES6",
+      "releaseNo": "ES6",
+      "authorityURL": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    }
+  },
   "Mathematics": {
-    "type": "Concept",
-    "focusArea": "Foundation",
-    "name": "Mathematics",
-    "description": "Mathematics",
-    "releaseNo": "",
-    "authorityURL": "",
-    "version": "1.0.0"
-  }, 
+    "version-1.0": {
+      "type": "Concept",
+      "focusArea": "Foundation",
+      "name": "Mathematics",
+      "description": "Mathematics",
+      "releaseNo": "",
+      "authorityURL": ""
+    }
+  },
   "Project Management": {
-    "type": "Concept",
-    "focusArea": "Foundation",
-    "name": "Project Management",
-    "description": "Agile Project Management",
-    "releaseNo": "",
-    "authorityURL": "",
-    "version": "1.0.0"
+    "version-1.0": {
+      "type": "Concept",
+      "focusArea": "Foundation",
+      "name": "Project Management",
+      "description": "Agile Project Management",
+      "releaseNo": "",
+      "authorityURL": ""
+    }
   },
   "React": {
-    "type": "Library",
-    "focusArea": "Foundation",
-    "name": "React",
-    "description": "ReachJS",
-    "releaseNo": "",
-    "authorityURL": "",
-    "version": "1.0.0"
-  }, 
+    "version-1.0": {
+      "type": "Library",
+      "focusArea": "Foundation",
+      "name": "React",
+      "description": "ReachJS",
+      "releaseNo": "",
+      "authorityURL": ""
+    }
+  },
   "Source Code Control": {
-    "type": "Concept",
-    "focusArea": "Fullstack",
-    "name": "Source Code Control",
-    "description": "Source Code Management",
-    "releaseNo": "",
-    "authorityURL": "",
-    "version": "1.0.0"
-  }, 
+    "version-1.0": {
+      "type": "Library",
+      "focusArea": "Foundation",
+      "name": "React",
+      "description": "ReachJS",
+      "releaseNo": "",
+      "authorityURL": ""
+    }
+  },
   "UX/UI": {
-    "type": "Concept",
-    "focusArea": "Frontend",
-    "name": "UX/UI",
-    "description": "User Experience/User Interface",
-    "releaseNo": "",
-    "authorityURL": "",
-    "version": "1.0.0"
-  }, 
+    "version-1.0": {
+      "type": "Concept",
+      "focusArea": "Frontend",
+      "name": "UX/UI",
+      "description": "User Experience/User Interface",
+      "releaseNo": "",
+      "authorityURL": ""
+    }
+  },
   "Web Basics": {
-    "type": "Concept",
-    "focusArea": "Frontend",
-    "name": "Web Basics",
-    "description": "Technology that makes the World Wide Web Work",
-    "releaseNo": "",
-    "authorityURL": "",
-    "version": "1.0.0"
+    "version-1.0": {
+      "type": "Concept",
+      "focusArea": "Frontend",
+      "name": "Web Basics",
+      "description": "Technology that makes the World Wide Web Work",
+      "releaseNo": "",
+      "authorityURL": ""
+    }
   }
 }
