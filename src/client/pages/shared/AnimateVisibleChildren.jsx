@@ -20,14 +20,10 @@ const _constructor = (that) => {
 };
 
 const animate = (that) => {
-  let count = 0;
   that.visibleChildren.forEach((child) => {
-    child.isVisible = true;
     child.style.opacity = '1';
     child.style.transform = 'translateX(0)';
     child.style.transition = 'all 0.2s';
-    child.style.transitionDelay = `${count * 0.025}s`;
-    count += 1;
   });
 };
 
@@ -37,17 +33,21 @@ const componentDidMount = (that) => {
     // into a regular array
     that.childrenRefs = Array.prototype.slice.call(that.divRef.children);
 
-    that.childrenRefs.forEach((child) => {
-      if (child.getBoundingClientRect().top - window.pageYOffset <= window.innerHeight) {
-        child.style.transform = 'translateX(-200px)';
-        child.style.opacity = '0';
-        that.visibleChildren.push(child);
-      }
+    // Use requestAnimationFrame to make sure our code is run before the next repaint
+    window.requestAnimationFrame(() => {
+      that.childrenRefs.forEach((child) => {
+        // Initialize all visible children
+        if (child.getBoundingClientRect().top - window.pageYOffset <= window.innerHeight) {
+          child.style.transform = 'translateX(-200px)';
+          child.style.opacity = '0';
+          that.visibleChildren.push(child);
+        }
+      });
+      // Start animation before next repaint
+      window.requestAnimationFrame(() => {
+        animate(that);
+      });
     });
-
-    that.forceUpdate();
-
-    animate(that);
 
     /*
       ** NOTE ON BUGGED BEHAVIOUR WHEN CHROME/FIREFOX DEV TOOLS ARE OPEN **
