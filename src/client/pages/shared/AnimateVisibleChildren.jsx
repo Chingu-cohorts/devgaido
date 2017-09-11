@@ -26,8 +26,8 @@ const animate = (that) => {
     child = that.childrenRefs[i];
     child.style.opacity = '1';
     child.style.transform = 'translateX(0)';
-    child.style.transition = 'all 0.2s';
-    child.style.transitionDelay = `${i * 0.05}s`;
+    child.style.transition = `all ${that.speed}s`;
+    child.style.transitionDelay = `${i * that.stagger}s`;
   }
 };
 
@@ -112,11 +112,15 @@ const componentDidUpdate = (that) => {
   componentDidMount(that);
 };
 
-const AnimateVisibleChildren = ({ className, children, that }) => (
-  <div className={className} ref={(domElem) => { that.divRef = domElem; }}>
-    {children}
-  </div>
-);
+const AnimateVisibleChildren = ({ className, children, that, speed = 0.2, stagger = 0.05 }) => {
+  that.speed = speed;
+  that.stagger = stagger;
+  return (
+    <div className={className} ref={(domElem) => { that.divRef = domElem; }}>
+      {children}
+    </div>
+  );
+};
 
 AnimateVisibleChildren.propTypes = {
   children: PropTypes.oneOfType([
@@ -125,10 +129,14 @@ AnimateVisibleChildren.propTypes = {
   ]).isRequired,
   className: PropTypes.string,
   that: PropTypes.objectOf(PropTypes.shape).isRequired,
+  speed: PropTypes.number,
+  stagger: PropTypes.number,
 };
 
 AnimateVisibleChildren.defaultProps = {
   className: '',
+  speed: 0.2,
+  stagger: 0.05,
 };
 
 export default StateProvider(AnimateVisibleChildren, {}, {
