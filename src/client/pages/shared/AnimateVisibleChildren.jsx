@@ -51,6 +51,9 @@ const componentDidMount = (that) => {
 
       that.firstVisibleIndex = -1;
 
+      const alternate = that.alternate ? -1 : 1;
+      let alternateMod = that.alternate ? -1 : 1;
+
       for (let i = 0; i < that.childrenRefs.length; i += 1) {
         child = that.childrenRefs[i];
         bounds = child.getBoundingClientRect();
@@ -60,8 +63,11 @@ const componentDidMount = (that) => {
             that.firstVisibleIndex = i;
           }
           that.lastVisibleIndex = i;
-          child.style.transform = 'translateX(-100px)';
+
+          alternateMod *= alternate;
+          child.style.transform = `translateX(${alternateMod * that.direction * 100}px)`;
           child.style.opacity = '0';
+
           atLeastOneVisibleChild = true;
         } else if (atLeastOneVisibleChild) {
           break;
@@ -72,39 +78,6 @@ const componentDidMount = (that) => {
         animate(that);
       });
     });
-
-    /*
-      ** NOTE ON BUGGED BEHAVIOUR WHEN CHROME/FIREFOX DEV TOOLS ARE OPEN **
-      (Works perfectly fine when dev tools are NOT open)
-      ------------------------------------------------------------
-      In some cases, when the Chrome Dev Tools pane is open (doesn't matter if on the left, right,
-      bottom or extra window) the returned getBoundingClientRect().top is only correct for the
-      first row of elements in the container. This makes it so that later elements trigger
-      "too late" - the further down you scroll the more noticeable this becomes.
-      (the discrepancy between the correct trigger y-pos and the point at which elements
-      actually trigger gets bigger and bigger)
-      It seems to be related to a weird issue where the height of elements
-      is not correctly calculated.
-      Logging with:
-                      console.log([child]);
-                      console.log(child.clientHeight);
-      shows the correct clientHeight when clicking on the logged object in the console
-      but the incorrect value for the second.
-      When logging the child itself, the height will always differ from what .clientHeight
-      or getBoundingClientRect().height will return by the exact amount you have
-      to "scroll more" for the child element to actually trigger.
-      There seems to be NO way to actually get this correct height value
-      since when you try to access it in code, it will give you the incorrect value.
-      Only when you look at the properties of the logged child in the console
-      you can see the correct value.
-      NOW HERE COMES THE KICKER!
-      Firefox seems to have the same issue - only in reverse!
-      So while the dev tools are open there, the elements will trigger too soon.
-      Seemingly, I'm not the first person to have ever encountered this kind of issue as you
-      can see from this Stackoverflow question:
-      https://stackoverflow.com/questions/28413114/jquery-document-height-wrong-when-developer-tools-is-open
-      A solution has yet to be discovered though.
-    */
   }
 };
 
@@ -112,9 +85,11 @@ const componentDidUpdate = (that) => {
   componentDidMount(that);
 };
 
-const AnimateVisibleChildren = ({ className, children, that, speed = 0.2, stagger = 0.05 }) => {
+const AnimateVisibleChildren = ({ className, children, that, speed = 0.2, stagger = 0.05, direction = -1, alternate = false }) => {
   that.speed = speed;
   that.stagger = stagger;
+  that.direction = direction;
+  that.alternate = alternate;
   return (
     <div className={className} ref={(domElem) => { that.divRef = domElem; }}>
       {children}
@@ -131,12 +106,16 @@ AnimateVisibleChildren.propTypes = {
   that: PropTypes.objectOf(PropTypes.shape).isRequired,
   speed: PropTypes.number,
   stagger: PropTypes.number,
+  direction: PropTypes.number,
+  alternate: PropTypes.bool,
 };
 
 AnimateVisibleChildren.defaultProps = {
   className: '',
   speed: 0.2,
   stagger: 0.05,
+  direction: 1,
+  alternate: false,
 };
 
 export default StateProvider(AnimateVisibleChildren, {}, {
