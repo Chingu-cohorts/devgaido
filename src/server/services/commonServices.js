@@ -1,5 +1,28 @@
 
 /**
+ * Polyfill from Mozilla MDN to implement the String.padStart function. This is required since we
+ * are running in the backend and don't have access to functions implemented in the browser.
+ */
+// https://github.com/uxitten/polyfill/blob/master/string.polyfill.js
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+if (!String.prototype.padStart) {
+  String.prototype.padStart = function padStart(targetLength,padString) {
+      targetLength = targetLength>>0; //floor if number or convert non-number to 0;
+      padString = String(padString || ' ');
+      if (this.length > targetLength) {
+          return String(this);
+      }
+      else {
+          targetLength = targetLength-this.length;
+          if (targetLength > padString.length) {
+              padString += padString.repeat(targetLength/padString.length); //append to original to ensure we are longer than needed
+          }
+          return padString.slice(0,targetLength) + String(this);
+      }
+  };
+}
+
+/**
  * Convert the version number attribute to a standard format. The version attribute is
  * expected to be in the format 'version-n.n', where each number in 'n.n' may be from
  * 1 to 3 digits long. Since a string sort is used the version number must be coersed
