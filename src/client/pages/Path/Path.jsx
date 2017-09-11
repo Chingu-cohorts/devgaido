@@ -9,6 +9,7 @@ import PageHero from '../shared/PageHero';
 import { MilestoneSubCard } from '../shared/Cards';
 import DisqusThread from '../shared/DisqusThread';
 import StateProvider from '../shared/StateProvider';
+import AnimateVisibleChildren from '../shared/AnimateVisibleChildren';
 
 import actions from '../../actions';
 
@@ -126,99 +127,101 @@ const Path = ({ match, curriculum, user, state, setState }) => {
         <i className="fa icon-map-signs c-white h2 abs-top-right margin-top-small margin-right-small" />
         {path.completed ? <i className="fa icon-check-circle-o c-white h1 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
       </PageHero>
-      <div className="page-hero__offset">
-        <div className="container">
-          <div className="flex bg-white padding-horizontal-big border-round margin-top-small">
-            <div className="padding-vertical-big flex-2">
-              <h2 className="c-accent">About This Path</h2>
-              <p >{path.description}</p>
-              {path.goal ?
-                <div>
-                  <h3 className="margin-top-big uppercase c-primary">Goal</h3>
-                  <p>{path.goal}</p>
-                </div> : null}
-              {path.salary !== undefined ?
-                <div className="flex justify-start margin-top-big">
-                  <div className="left">
-                    <h3 className="c-accent left no-margin">Estimated Salary: {path.salary[0]}</h3>
-                    <p className="c-primary">{path.salary[1]}</p>
+      <AnimateVisibleChildren className="flex flex-wrap margin-vertical-big justify-around">
+        <div className="page-hero__offset">
+          <div className="container">
+            <div className="flex bg-white padding-horizontal-big border-round margin-top-small">
+              <div className="padding-vertical-big flex-2">
+                <h2 className="c-accent">About This Path</h2>
+                <p >{path.description}</p>
+                {path.goal ?
+                  <div>
+                    <h3 className="margin-top-big uppercase c-primary">Goal</h3>
+                    <p>{path.goal}</p>
+                  </div> : null}
+                {path.salary !== undefined ?
+                  <div className="flex justify-start margin-top-big">
+                    <div className="left">
+                      <h3 className="c-accent left no-margin">Estimated Salary: {path.salary[0]}</h3>
+                      <p className="c-primary">{path.salary[1]}</p>
+                    </div>
+                  </div> : null}
+              </div>
+              <div className="padding-vertical-big margin-left-huge flex-1">
+                { user.authenticated ?
+                  <div className="right margin-bottom-big">
+                    {!path.bookmarked ?
+                      <button className="button--default uppercase" onClick={() => addBookmark(pathId, 'paths', path.version)}>
+                        <div className="flex items-center">
+                          <i className="fa icon-thumb-tack margin-right-tiny" />
+                          Bookmark
+                        </div>
+                      </button> :
+                      <button className="button--default uppercase" onClick={() => removeBookmark(pathId, 'paths', path.version)}>
+                        <div className="flex items-center">
+                          <i className="fa icon-remove margin-right-tiny" />
+                          Remove Bookmark
+                        </div>
+                      </button>}
+                  </div> :
+                  <div className="right margin-bottom-big">
+                    <button className="button--default uppercase hidden">Bookmark</button>
+                  </div> }
+                <div className="flex justify-end">
+                  <div>
+                    {ratingStars}
                   </div>
-                </div> : null}
-            </div>
-            <div className="padding-vertical-big margin-left-huge flex-1">
-              { user.authenticated ?
-                <div className="right margin-bottom-big">
-                  {!path.bookmarked ?
-                    <button className="button--default uppercase" onClick={() => addBookmark(pathId, 'paths', path.version)}>
-                      <div className="flex items-center">
-                        <i className="fa icon-thumb-tack margin-right-tiny" />
-                        Bookmark
-                      </div>
-                    </button> :
-                    <button className="button--default uppercase" onClick={() => removeBookmark(pathId, 'paths', path.version)}>
-                      <div className="flex items-center">
-                        <i className="fa icon-remove margin-right-tiny" />
-                        Remove Bookmark
-                      </div>
-                    </button>}
-                </div> :
-                <div className="right margin-bottom-big">
-                  <button className="button--default uppercase hidden">Bookmark</button>
-                </div> }
-              <div className="flex justify-end">
-                <div>
-                  {ratingStars}
                 </div>
-              </div>
-              <div className="flex justify-end">
-                <div>
-                  {/* <h4 className="c-primary uppercase right no-margin">Very Long</h4>*/}
-                  <h5 className="c-primary uppercase right">{path.estimatedTimeStr} hours</h5>
+                <div className="flex justify-end">
+                  <div>
+                    {/* <h4 className="c-primary uppercase right no-margin">Very Long</h4>*/}
+                    <h5 className="c-primary uppercase right">{path.estimatedTimeStr} hours</h5>
+                  </div>
                 </div>
-              </div>
-              <div className="flex justify-end">
-                <div className="width-75 right">
-                  <Subjects item={path} state={state} setState={setState} />
+                <div className="flex justify-end">
+                  <div className="width-75 right">
+                    <Subjects item={path} state={state} setState={setState} />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="path__content container flex margin-vertical-big">
-        <div className="path-node flex-column items-center">
-          <div className="path-node__connection flex-1 margin-bottom">
-            <p className="hidden">content</p>
+        <div className="path__content container flex margin-vertical-big">
+          <div className="path-node flex-column items-center">
+            <div className="path-node__connection flex-1 margin-bottom">
+              <p className="hidden">content</p>
+            </div>
           </div>
-        </div>
-        <div className="container flex-column">
-          <PathMarker
-            text={`Path: ${path.name}`}
-            iconClass="path-marker__start-icon icon-map-marker"
-            dotClass="dot--big"
-            path={path}
-          />
-          <div className="margin-top-small">
-            {milestones}
-          </div>
-          <PathMarker
-            text={'Path Completion'}
-            dotClass={`dot--big ${path.completed ? 'dot--trophy' : 'dot--empty'}`}
-          />
-        </div>
-      </div>
-      <div className="container margin-top-huge">
-        {user.authenticated ? <hr /> : null}
-        {user.authenticated ?
-          <LazyLoad height={200} once offset={101}>
-            <DisqusThread
-              id={`/path-${pathId}`}
-              title={path.name}
-              path={path.url}
+          <div className="container flex-column">
+            <PathMarker
+              text={`Path: ${path.name}`}
+              iconClass="path-marker__start-icon icon-map-marker"
+              dotClass="dot--big"
+              path={path}
             />
-          </LazyLoad>
-         : null}
-      </div>
+            <div className="margin-top-small">
+              {milestones}
+            </div>
+            <PathMarker
+              text={'Path Completion'}
+              dotClass={`dot--big ${path.completed ? 'dot--trophy' : 'dot--empty'}`}
+            />
+          </div>
+        </div>
+        <div className="container margin-top-huge">
+          {user.authenticated ? <hr /> : null}
+          {user.authenticated ?
+            <LazyLoad height={200} once offset={101}>
+              <DisqusThread
+                id={`/path-${pathId}`}
+                title={path.name}
+                path={path.url}
+              />
+            </LazyLoad>
+          : null}
+        </div>
+      </AnimateVisibleChildren>
     </div>
   );
 };
