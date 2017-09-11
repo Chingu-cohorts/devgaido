@@ -15,17 +15,20 @@ import StateProvider from './StateProvider';
 const _constructor = (that) => {
   that.divRef = null;
   that.childrenRefs = null;
-  that.visibleChildren = [];
   that.hasDom = (typeof window !== 'undefined');
+  that.firstVisibleIndex = -1;
+  that.lastVisibleIndex = -1;
 };
 
 const animate = (that) => {
-  that.visibleChildren.forEach((child, index) => {
+  let child = null;
+  for (let i = that.firstVisibleIndex; i <= that.lastVisibleIndex; i += 1) {
+    child = that.childrenRefs[i];
     child.style.opacity = '1';
     child.style.transform = 'translateX(0)';
     child.style.transition = 'all 0.2s';
-    child.style.transitionDelay = `${index * 0.025}s`;
-  });
+    child.style.transitionDelay = `${i * 0.05}s`;
+  }
 };
 
 const isVisible = (bounds, windowHeight) =>
@@ -37,7 +40,7 @@ const componentDidMount = (that) => {
     // divRef.children is an HTMLCollection so we need .slice to turn it
     // into a regular array
     that.childrenRefs = Array.prototype.slice.call(that.divRef.children);
-    that.visibleChildren = [];
+
     // Use requestAnimationFrame to make sure our code is run before the next repaint
     window.requestAnimationFrame(() => {
       let atLeastOneVisibleChild = false;
@@ -46,15 +49,19 @@ const componentDidMount = (that) => {
 
       const windowHeight = window.innerHeight;
 
+      that.firstVisibleIndex = -1;
+
       for (let i = 0; i < that.childrenRefs.length; i += 1) {
         child = that.childrenRefs[i];
         bounds = child.getBoundingClientRect();
 
         if (isVisible(bounds, windowHeight)) {
-          // child.style.border = '4px solid red';
+          if (that.firstVisibleIndex === -1) {
+            that.firstVisibleIndex = i;
+          }
+          that.lastVisibleIndex = i;
           child.style.transform = 'translateX(-100px)';
           child.style.opacity = '0';
-          that.visibleChildren.push(child);
           atLeastOneVisibleChild = true;
         } else if (atLeastOneVisibleChild) {
           break;
