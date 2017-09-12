@@ -76,10 +76,9 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
         <i className={`fa ${typeIcons[lesson.type]} c-white h2 abs-top-right margin-top-small margin-right-small`} />
         {lesson.completed ? <i className="fa icon-check-circle-o c-white h1 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
       </PageHero>
-      <div className="container">
-        <AnimateVisibleChildren className="flex flex-wrap margin-vertical-big justify-around">
+      <AnimateVisibleChildren className="container">
           <div className="flex bg-white padding-horizontal-big border-round margin-vertical-small page-hero__offset">
-            <div className="padding-vertical-big flex-2 flex-column">
+            <AnimateVisibleChildren className="padding-vertical-big flex-2 flex-column">
               <h2 className="c-primary">About This Lesson</h2>
               <p>{lesson.description}</p>
               <h4 className="margin-top-big uppercase c-accent">Instructions</h4>
@@ -120,7 +119,7 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
                     </div>
                   </a>
                 </div> }
-            </div>
+            </AnimateVisibleChildren>
             <div className="padding-vertical-big margin-left-big flex-1">
               { user.authenticated ?
                 <div className="right margin-bottom-big">
@@ -159,8 +158,7 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
               </div>
             </div>
           </div>
-        </AnimateVisibleChildren>
-      </div>
+      </AnimateVisibleChildren>
       <div className="container margin-top-huge">
         {user.authenticated ? <hr /> : null}
         {user.authenticated ?
