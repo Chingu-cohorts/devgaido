@@ -127,7 +127,7 @@ const Path = ({ match, curriculum, user, state, setState }) => {
         <i className="fa icon-map-signs c-white h2 abs-top-right margin-top-small margin-right-small" />
         {path.completed ? <i className="fa icon-check-circle-o c-white h1 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
       </PageHero>
-      <AnimateVisibleChildren className="flex flex-wrap margin-vertical-big justify-around">
+      <AnimateVisibleChildren dontTriggerOnUpdate className="flex flex-wrap margin-vertical-big justify-around">
         <div className="page-hero__offset">
           <div className="container">
             <div className="flex bg-white padding-horizontal-big border-round margin-top-small">
