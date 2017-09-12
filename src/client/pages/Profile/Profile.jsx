@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import PageHero from '../shared/PageHero';
 import PageDivider from '../shared/PageDivider';
+import AnimateVisibleChildren from '../shared/AnimateVisibleChildren';
 
 const Profile = ({ user }) => (
   <div>
@@ -12,16 +13,20 @@ const Profile = ({ user }) => (
     <PageHero bgColorClass="bg-primary" bgUrl="/img/path.jpg" title="Profile" />
     <PageDivider />
     <div className="container margin-top-huge margin-bottom-huge">
-      <h1>Basic user information</h1>
-      <p>Please fill out your profile details</p>
-      <form>
-        <label className="" htmlFor="username">
-          <input type="text" name="username" placeholder="User name" defaultValue={user.name} />
-        </label>
-        <label className="" htmlFor="email">
-          <input type="email" name="email" placeholder="Email" defaultValue={user.email} />
-        </label>
-      </form>
+      <AnimateVisibleChildren className="flex flex-wrap margin-vertical-big justify-around">
+        <div>
+          <h1>Basic user information</h1>
+          <p>Please fill out your profile details</p>
+          <form>
+            <label className="" htmlFor="username">
+              <input type="text" name="username" placeholder="User name" defaultValue={user.name} />
+            </label>
+            <label className="" htmlFor="email">
+              <input type="email" name="email" placeholder="Email" defaultValue={user.email} />
+            </label>
+          </form>
+        </div>
+      </AnimateVisibleChildren>
     </div>
   </div>
 );
