@@ -82,14 +82,17 @@ const componentDidMount = (that) => {
 };
 
 const componentDidUpdate = (that) => {
-  componentDidMount(that);
+  if (!that.dontTriggerOnUpdate) {
+    componentDidMount(that);
+  }
 };
 
-const AnimateVisibleChildren = ({ className, children, that, speed = 0.2, stagger = 0.05, direction = -1, alternate = false }) => {
+const AnimateVisibleChildren = ({ className, children, that, speed = 0.2, stagger = 0.05, direction = -1, alternate = false, dontTriggerOnUpdate = false }) => {
   that.speed = speed;
   that.stagger = stagger;
   that.direction = direction;
   that.alternate = alternate;
+  that.dontTriggerOnUpdate = dontTriggerOnUpdate;
   return (
     <div className={className} ref={(domElem) => { that.divRef = domElem; }}>
       {children}
@@ -108,6 +111,7 @@ AnimateVisibleChildren.propTypes = {
   stagger: PropTypes.number,
   direction: PropTypes.number,
   alternate: PropTypes.bool,
+  dontTriggerOnUpdate: PropTypes.bool,
 };
 
 AnimateVisibleChildren.defaultProps = {
@@ -116,6 +120,7 @@ AnimateVisibleChildren.defaultProps = {
   stagger: 0.05,
   direction: 1,
   alternate: false,
+  dontTriggerOnUpdate: false,
 };
 
 export default StateProvider(AnimateVisibleChildren, {}, {
