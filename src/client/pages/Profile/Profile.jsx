@@ -5,14 +5,14 @@ import { connect } from 'react-redux';
 
 import PageHero from '../shared/PageHero';
 import PageDivider from '../shared/PageDivider';
-import AnimateVisibleChildren from '../shared/AnimateVisibleChildren';
+import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
 const Profile = ({ user }) => (
   <div>
     <Helmet title="Profile" />
     <PageHero bgColorClass="bg-primary" bgUrl="/img/path.jpg" title="Profile" />
     <PageDivider />
-    <AnimateVisibleChildren className="container margin-top-huge margin-bottom-huge">
+    <AnimateVisibleChildrenDiv className="container margin-top-huge margin-bottom-huge">
       <div>
         <h1>Basic user information</h1>
         <p>Please fill out your profile details</p>
@@ -25,7 +25,7 @@ const Profile = ({ user }) => (
           </label>
         </form>
       </div>
-    </AnimateVisibleChildren>
+    </AnimateVisibleChildrenDiv>
   </div>
 );
 

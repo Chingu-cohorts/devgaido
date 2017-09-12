@@ -9,7 +9,7 @@ import PageHero from '../shared/PageHero';
 import { MilestoneSubCard } from '../shared/Cards';
 import DisqusThread from '../shared/DisqusThread';
 import StateProvider from '../shared/StateProvider';
-import AnimateVisibleChildren from '../shared/AnimateVisibleChildren';
+import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
 import actions from '../../actions';
 
@@ -130,7 +130,7 @@ const Path = ({ match, curriculum, user, state, setState }) => {
       <div className="page-hero__offset">
         <div className="container">
           <div className="flex bg-white padding-horizontal-big border-round margin-top-small">
-            <AnimateVisibleChildren className="padding-vertical-big flex-2">
+            <AnimateVisibleChildrenDiv className="padding-vertical-big flex-2">
               <h2 className="c-accent">About This Path</h2>
               <p >{path.description}</p>
               {path.goal ?
@@ -145,8 +145,8 @@ const Path = ({ match, curriculum, user, state, setState }) => {
                     <p className="c-primary">{path.salary[1]}</p>
                   </div>
                 </div> : null}
-            </AnimateVisibleChildren>
-            <AnimateVisibleChildren className="padding-vertical-big margin-left-huge flex-1">
+            </AnimateVisibleChildrenDiv>
+            <AnimateVisibleChildrenDiv className="padding-vertical-big margin-left-huge flex-1">
               { user.authenticated ?
                 <div className="right margin-bottom-big">
                   {!path.bookmarked ?
@@ -182,7 +182,7 @@ const Path = ({ match, curriculum, user, state, setState }) => {
                   <Subjects item={path} state={state} setState={setState} />
                 </div>
               </div>
-            </AnimateVisibleChildren>
+            </AnimateVisibleChildrenDiv>
           </div>
         </div>
       </div>
@@ -192,7 +192,7 @@ const Path = ({ match, curriculum, user, state, setState }) => {
             <p className="hidden">content</p>
           </div>
         </div>
-        <AnimateVisibleChildren dontTriggerOnUpdate className="container flex-column">
+        <AnimateVisibleChildrenDiv dontTriggerOnUpdate className="container flex-column">
           <PathMarker
             text={`Path: ${path.name}`}
             iconClass="path-marker__start-icon icon-map-marker"
@@ -206,7 +206,7 @@ const Path = ({ match, curriculum, user, state, setState }) => {
             text={'Path Completion'}
             dotClass={`dot--big ${path.completed ? 'dot--trophy' : 'dot--empty'}`}
           />
-        </AnimateVisibleChildren>
+        </AnimateVisibleChildrenDiv>
       </div>
       <div className="container margin-top-huge">
         {user.authenticated ? <hr /> : null}

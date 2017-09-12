@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import ItemList from './ItemList';
-import AnimateVisibleChildren from '../shared/AnimateVisibleChildren';
+import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
 const CurrentPathSection = ({ path, curriculum }) => (
   <div className="inprogress-tab margin-bottom-small">
@@ -66,7 +66,7 @@ const InProgressTab = ({ user, curriculum }) => {
   const currentLesson = user.lastLessonId ? curriculum.lessons[user.lastLessonId] : null;
 
   return (
-    <AnimateVisibleChildren>
+    <AnimateVisibleChildrenDiv>
       {currentLesson ?
         <CurrentLessonSection lesson={currentLesson} curriculum={curriculum} /> : null}
       {currentPath ?
@@ -90,7 +90,7 @@ const InProgressTab = ({ user, curriculum }) => {
             </Link>
           </div>
         </div>}
-    </AnimateVisibleChildren>
+    </AnimateVisibleChildrenDiv>
   );
 };
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import LazyLoad from 'react-lazyload';
 
-import AnimateVisibleChildren from '../shared/AnimateVisibleChildren';
+import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 import Redirect from '../shared/Redirect';
 
 const LoadingPlaceholder = () => (
@@ -15,7 +15,7 @@ const Home = () => (
     <Helmet title="Home" />
     <div className="home-hero flex items-center justify-center bg-cover relative" style={{ backgroundImage: "url('/img/compass.jpg')" }}>
       <div className="flex items-center justify-center bg-primary-25 width-100 height-100 ">
-        <AnimateVisibleChildren speed={0.7} stagger={0.1} className="flex flex-wrap width-50">
+        <AnimateVisibleChildrenDiv speed={0.7} stagger={0.1} className="flex flex-wrap width-50">
           <h1 className="c-white width-100 wider">LEARN WEB DEVELOPMENT</h1>
           <h1 className="c-white wider margin-bottom-big width-100">THE DEVGAIDO WAY</h1>
           <p className="c-white h4">Whether you&#039;re just starting out or want to brush up a certain skill:</p>
@@ -35,10 +35,10 @@ const Home = () => (
               </div>
             </Link>
           </div>
-        </AnimateVisibleChildren>
+        </AnimateVisibleChildrenDiv>
       </div>
     </div>
-    <AnimateVisibleChildren speed={0.7} stagger={0.2} alternate className="container">
+    <AnimateVisibleChildrenDiv speed={0.7} stagger={0.2} alternate className="container">
       <section className="flex margin-top-huge">
         <LazyLoad height={350} once placeholder={<LoadingPlaceholder />}>
           <img className="border-round" src="/img/discover.jpg" alt="" />
@@ -75,7 +75,7 @@ const Home = () => (
           <img className="border-round" src="/img/build.jpg" alt="" />
         </LazyLoad>
       </section>
-    </AnimateVisibleChildren>
+    </AnimateVisibleChildrenDiv>
   </div>
 );
 

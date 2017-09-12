@@ -87,7 +87,7 @@ const componentDidUpdate = (that) => {
   }
 };
 
-const AnimateVisibleChildren = ({ className, children, that, speed = 0.2, stagger = 0.05, direction = -1, alternate = false, dontTriggerOnUpdate = false }) => {
+const AnimateVisibleChildrenDiv = ({ className, children, that, speed = 0.2, stagger = 0.05, direction = -1, alternate = false, dontTriggerOnUpdate = false }) => {
   that.speed = speed;
   that.stagger = stagger;
   that.direction = direction;
@@ -100,7 +100,7 @@ const AnimateVisibleChildren = ({ className, children, that, speed = 0.2, stagge
   );
 };
 
-AnimateVisibleChildren.propTypes = {
+AnimateVisibleChildrenDiv.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -114,7 +114,7 @@ AnimateVisibleChildren.propTypes = {
   dontTriggerOnUpdate: PropTypes.bool,
 };
 
-AnimateVisibleChildren.defaultProps = {
+AnimateVisibleChildrenDiv.defaultProps = {
   className: '',
   speed: 0.2,
   stagger: 0.05,
@@ -123,7 +123,7 @@ AnimateVisibleChildren.defaultProps = {
   dontTriggerOnUpdate: false,
 };
 
-export default StateProvider(AnimateVisibleChildren, {}, {
+export default StateProvider(AnimateVisibleChildrenDiv, {}, {
   _constructor,
   componentDidMount,
   componentDidUpdate,

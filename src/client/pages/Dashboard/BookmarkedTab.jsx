@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import ItemList from './ItemList';
-import AnimateVisibleChildren from '../shared/AnimateVisibleChildren';
+import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
 const getBookmarkedItems = (allItems) => {
   const items = Object.keys(allItems).filter(itemId => allItems[itemId].bookmarked).map(
@@ -19,7 +19,7 @@ const BookmarkedTab = ({ curriculum }) => {
   const bookmarkedLessons = getBookmarkedItems(curriculum.lessons);
 
   return (
-    <AnimateVisibleChildren className="bookmarked-tab margin-bottom-huge">
+    <AnimateVisibleChildrenDiv className="bookmarked-tab margin-bottom-huge">
       <div>
         <span>RESOURCES</span>
         <h2>Bookmarked</h2>
@@ -42,7 +42,7 @@ const BookmarkedTab = ({ curriculum }) => {
             </div>
           </Link>
         </div> : null }
-    </AnimateVisibleChildren>
+    </AnimateVisibleChildrenDiv>
   );
 };
 
