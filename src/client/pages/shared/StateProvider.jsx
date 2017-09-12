@@ -38,8 +38,8 @@ const StateProvider = (Component, initialState, lifeCycleHooks) => class extends
     return Component.name;
   }
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = initialState;
 
     Object.keys(lifeCycleHooks).forEach(
@@ -50,7 +50,7 @@ const StateProvider = (Component, initialState, lifeCycleHooks) => class extends
     );
 
     if (lifeCycleHooks._constructor) {
-      lifeCycleHooks._constructor(this);
+      lifeCycleHooks._constructor(this, props);
     }
   }
 

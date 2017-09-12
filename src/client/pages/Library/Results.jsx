@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { LibraryCard } from '../shared/Cards';
+import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
 const filterByTermNTopic = (item, uiState) => {
   const filterByTopic = uiState.libTopic !== 'All Tags';
@@ -76,9 +77,9 @@ const Results = ({ curriculum, uiState, user, category }) => {
 
   return (
     <div className="results margin-vertical-big">
-      <div className="flex flex-wrap margin-vertical-big justify-around">
+      <AnimateVisibleChildrenDiv className="flex flex-wrap margin-vertical-big justify-around">
         {results}
-      </div>
+      </AnimateVisibleChildrenDiv>
     </div>
   );
 };

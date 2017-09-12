@@ -5,24 +5,27 @@ import { connect } from 'react-redux';
 
 import PageHero from '../shared/PageHero';
 import PageDivider from '../shared/PageDivider';
+import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
 const Profile = ({ user }) => (
   <div>
     <Helmet title="Profile" />
     <PageHero bgColorClass="bg-primary" bgUrl="/img/path.jpg" title="Profile" />
     <PageDivider />
-    <div className="container margin-top-huge margin-bottom-huge">
-      <h1>Basic user information</h1>
-      <p>Please fill out your profile details</p>
-      <form>
-        <label className="" htmlFor="username">
-          <input type="text" name="username" placeholder="User name" defaultValue={user.name} />
-        </label>
-        <label className="" htmlFor="email">
-          <input type="email" name="email" placeholder="Email" defaultValue={user.email} />
-        </label>
-      </form>
-    </div>
+    <AnimateVisibleChildrenDiv className="container margin-top-huge margin-bottom-huge">
+      <div>
+        <h1>Basic user information</h1>
+        <p>Please fill out your profile details</p>
+        <form>
+          <label className="" htmlFor="username">
+            <input type="text" name="username" placeholder="User name" defaultValue={user.name} />
+          </label>
+          <label className="" htmlFor="email">
+            <input type="email" name="email" placeholder="Email" defaultValue={user.email} />
+          </label>
+        </form>
+      </div>
+    </AnimateVisibleChildrenDiv>
   </div>
 );
 
