@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
 
+import StateProvider from '../shared/StateProvider';
+
 import actions from '../../actions';
 
 const { setLastTouchedPath } = actions;
@@ -144,8 +146,9 @@ const DashboardCard = ({ item }) => {
     </Link>
   );
 };
+const shouldComponentUpdate = (that, nextProps) => nextProps.item !== that.props.item;
 
-const MilestoneSubCard = ({ item, completeX }) => {
+const MilestoneSubCard = StateProvider(({ item, completeX }) => {
   const itemIsPath = item.nLessonsTotal !== undefined;
   const typeIcon = itemIsPath ? '' : typeIcons[item.type];
   const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-accent' : 'fa h2 icon-check-circle-o c-accent';
@@ -184,7 +187,9 @@ const MilestoneSubCard = ({ item, completeX }) => {
       </FlexRow>
     </Link>
   );
-};
+}, {}, {
+  shouldComponentUpdate,
+});
 
 const LibraryCard = ({ item, user }) => {
   const itemIsPath = item.courseIds !== undefined;
