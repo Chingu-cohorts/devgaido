@@ -116,7 +116,7 @@ const Path = ({ match, curriculum, user, state, setState }) => {
   }
 
   return (
-    <div>
+    <div id="path-content">
       <Helmet
         title={`Path: ${path.name}`}
         meta={[

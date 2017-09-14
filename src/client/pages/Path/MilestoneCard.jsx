@@ -51,31 +51,31 @@ const componentDidMount = (that) => {
     maxContentHeight: `${that.lessonContainerRef.clientHeight}px`,
   }, () => {
     that.lessonContainerRef.style.maxHeight = that.state.maxContentHeight;
-    /*if (!pageContent) {
-      pageContent = document.getElementById('page-content');
+    if (!pageContent) {
+      pageContent = document.getElementById('path-content');
       originalPageContentHeight = pageContent.clientHeight;
-    }*/
+    }
   });
 };
 
 const updateCSSRule = (that) => {
-  // if (that.styleSheet.cssRules[0].selectorText === '#page-content') {
-  //   that.styleSheet.deleteRule(0);
-  // }
+  if (that.styleSheet.cssRules[0].selectorText === '#path-content') {
+    that.styleSheet.deleteRule(0);
+  }
   if (that.styleSheet.cssRules[0].selectorText === '.mopen ~ .mclosed') {
     that.styleSheet.deleteRule(0);
   }
   that.styleSheet.insertRule(`.mopen ~ .mclosed { transform: translateY(${that.state.maxContentHeight}); }`, 0);
-  // that.styleSheet.insertRule(`#page-content { height: ${originalPageContentHeight + +that.state.maxContentHeight.slice(0, that.state.maxContentHeight.length - 2)}px; }`, 0);
+  that.styleSheet.insertRule(`#path-content { height: ${originalPageContentHeight + +that.state.maxContentHeight.slice(0, that.state.maxContentHeight.length - 2)}px; }`, 0);
 };
 
 const shouldComponentUpdate = (that, nextProps) =>
   that.state.firstRender ||
-    nextProps.uiState.openedMilestones.indexOf(that.props.id) !==
-    that.props.uiState.openedMilestones.indexOf(that.props.id);
+    (nextProps.uiState.openMilestone === that.props.id) !==
+    (that.props.uiState.openMilestone === that.props.id);
 
 const MilestoneCard = ({ uiState, id, course, index, lessons, that, state }) => {
-  const collapsed = state.firstRender ? false : uiState.openedMilestones.indexOf(id) === -1;
+  const collapsed = state.firstRender ? false : uiState.openMilestone !== id;
 
   if (!state.firstRender && !collapsed) {
     updateCSSRule(that);
@@ -99,7 +99,7 @@ const MilestoneCard = ({ uiState, id, course, index, lessons, that, state }) => 
         </div>
       </div>
       <div
-        className={`collapsible padding-vertical-small ${state.firstRender ? 'absolute opacity-0 pointer-events-none' : 'absolute'} ${collapsed ? 'collapsed' : ''} bg-grey-blue border-round-bottom padding-horizontal-big`}
+        className={`collapsible width-100 padding-vertical-small ${state.firstRender ? 'absolute opacity-0 pointer-events-none' : 'absolute'} ${collapsed ? 'collapsed' : ''} bg-grey-blue border-round-bottom padding-horizontal-big`}
         ref={(domElem) => { that.lessonContainerRef = domElem; }}
       >
         {course.completeX ?
