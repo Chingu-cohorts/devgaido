@@ -58,7 +58,7 @@ const Subjects = ({ item, setState, state }) => {
 };
 
 const PathMarker = ({ text, dotClass, iconClass, path }) => (
-  <div className={`path-marker relative ${dotClass} flex items-center bg-grey border-round`}>
+  <div className={`path-marker mclosed relative ${dotClass} flex items-center bg-grey border-round`}>
     <h3 className="path-marker__text flex-1 uppercase no-margin c-white margin-right-small wide">{text}</h3>
     {path && path.nTotal !== 1 ?
       <h3 className="no-margin right c-white">
@@ -200,12 +200,11 @@ const Path = ({ match, curriculum, user, state, setState }) => {
             path={path}
           />
           <div className="margin-top-small">
-            {milestones}
+            {milestones.concat([<PathMarker
+              text={'Path Completion'}
+              dotClass={`dot--big ${path.completed ? 'dot--trophy' : 'dot--empty'}`}
+            />])}
           </div>
-          <PathMarker
-            text={'Path Completion'}
-            dotClass={`dot--big ${path.completed ? 'dot--trophy' : 'dot--empty'}`}
-          />
         </AnimateVisibleChildrenDiv>
       </div>
       <div className="container margin-top-huge">
