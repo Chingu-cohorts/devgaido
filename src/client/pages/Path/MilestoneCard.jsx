@@ -58,14 +58,22 @@ const componentDidMount = (that) => {
   });
 };
 
-const updateCSSRule = (that) => {
-  if (that.styleSheet.cssRules[0].selectorText === '#path-content') {
+const deleteCSSRule = (that, selectorText) => {
+  if (that.styleSheet.cssRules[0].selectorText === selectorText) {
     that.styleSheet.deleteRule(0);
   }
-  if (that.styleSheet.cssRules[0].selectorText === '.mopen ~ .mclosed') {
-    that.styleSheet.deleteRule(0);
+  if (that.styleSheet.cssRules[1].selectorText === selectorText) {
+    that.styleSheet.deleteRule(1);
   }
+};
+
+const updateMilestoneCss = (that) => {
+  deleteCSSRule(that, '.mopen ~ .mclosed');
   that.styleSheet.insertRule(`.mopen ~ .mclosed { transform: translateY(${that.state.maxContentHeight}); }`, 0);
+};
+
+const updatePathContentCSS = (that) => {
+  deleteCSSRule(that, '#path-content');
   that.styleSheet.insertRule(`#path-content { height: ${originalPageContentHeight + +that.state.maxContentHeight.slice(0, that.state.maxContentHeight.length - 2)}px; }`, 0);
 };
 
@@ -78,8 +86,16 @@ const MilestoneCard = ({ uiState, id, course, index, lessons, that, state }) => 
   const collapsed = state.firstRender ? false : uiState.openMilestone !== id;
 
   if (!state.firstRender && !collapsed) {
-    updateCSSRule(that);
+    updateMilestoneCss(that);
+    updatePathContentCSS(that);
+    that.wasOpen = true;
   }
+
+  if (collapsed && that.wasOpen && uiState.openMilestone === '') {
+    deleteCSSRule(that, '#path-content');
+    that.wasOpen = false;
+  }
+
   return (
     <div className={collapsed ? 'mclosed margin-bottom-small relative' : 'mopen margin-bottom-small relative'}>
       <div className={`mcard cursor-pointer dot--big ${!course.completed ? 'dot--empty' : ''} flex-column bg-white`} onClick={() => toggleCollapsed(that)(id)}>

@@ -116,7 +116,7 @@ const Path = ({ match, curriculum, user, state, setState }) => {
   }
 
   return (
-    <div id="path-content">
+    <div>
       <Helmet
         title={`Path: ${path.name}`}
         meta={[
@@ -130,7 +130,7 @@ const Path = ({ match, curriculum, user, state, setState }) => {
       <div className="page-hero__offset">
         <div className="container">
           <div className="flex bg-white padding-horizontal-big border-round margin-top-small">
-            <AnimateVisibleChildrenDiv className="padding-vertical-big flex-2">
+            <AnimateVisibleChildrenDiv dontTriggerOnUpdate className="padding-vertical-big flex-2">
               <h2 className="c-accent">About This Path</h2>
               <p >{path.description}</p>
               {path.goal ?
@@ -186,7 +186,7 @@ const Path = ({ match, curriculum, user, state, setState }) => {
           </div>
         </div>
       </div>
-      <div className="path__content container flex margin-vertical-big">
+      <div className="path__content container flex margin-vertical-big" id="path-content">
         <div className="path-node flex-column items-center">
           <div className="path-node__connection flex-1 margin-bottom">
             <p className="hidden">content</p>
