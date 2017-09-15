@@ -7,7 +7,7 @@ const uiState = (state = {
   showPopup: false,
   curDashboardTab: 0,
   curLibraryTab: 0,
-  openedMilestones: [],
+  openMilestone: '',
   showModal: false,
 }, action) => {
   switch (action.type) {
@@ -60,17 +60,9 @@ const uiState = (state = {
       };
     }
     case 'TOGGLE_MILESTONE_CARD': {
-      const openedMilestones = state.openedMilestones.slice(0);
-      const index = openedMilestones.indexOf(action.milestoneId);
-
-      if (index !== -1) {
-        openedMilestones.splice(index, 1);
-      } else {
-        openedMilestones.push(action.milestoneId);
-      }
       return {
         ...state,
-        openedMilestones,
+        openMilestone: state.openMilestone === action.milestoneId ? '' : action.milestoneId,
       };
     }
     default:
