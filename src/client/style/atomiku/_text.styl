@@ -1,6 +1,6 @@
 createResponsiveText(bNames, bValues)
     for bName, i in bNames
-      @media only screen and (min-width: bValues[i])
+      @media only screen and (max-width: bValues[i])
         .h0-{bNames[i]}
           font-size: "calc(%s * %s * %s * %s * %s * %s)" % ($fontSize $headingScale $headingScale $headingScale $headingScale $headingScale)
           line-height: 1.2

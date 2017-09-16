@@ -10,7 +10,7 @@ createDimensions($dimensionSteps)
 createResponsiveDimensions(steps, bNames, bValues)
     for bName, i in bNames
       for step in steps
-        @media only screen and (min-width: bValues[i])
+        @media only screen and (max-width: bValues[i])
           .width-{step}-{bNames[i]}
             width: step + '%' !important
 
