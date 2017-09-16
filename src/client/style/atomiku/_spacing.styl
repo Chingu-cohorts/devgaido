@@ -19,6 +19,50 @@ createMargins(strs, factors)
       
 createMargins($spaceSizeStrs, $spaceSizeFactors)
 
+createResponsiveMargins(strs, factors, bNames, bValues)
+    for bName, j in bNames
+      @media only screen and (max-width: bValues[j])
+        .no-margin-{bName}
+          margin: 0
+        .no-margin-i-{bName}
+          margin: 0 !important
+        .margin-left-auto-{bName}
+          margin-left: auto !important
+        .margin-right-auto-{bName}
+          margin-right: auto !important
+        .margin-top-auto-{bName}
+          margin-top: auto !important
+        .margin-bottom-auto-{bName}
+          margin-bottom: auto !important
+        .margin-auto-{bName}
+          margin: auto !important
+        .margin-vertical-auto-{bName}
+          margin-top: auto !important
+          margin-bottom: auto !important
+        .margin-horizontal-auto-{bName}
+          margin-left: auto !important
+          margin-right: auto !important
+      for str, i in strs
+         @media only screen and (max-width: bValues[j])
+          .margin-left{str}-{bName}
+            margin-left: factors[i] * $spaceSize !important
+          .margin-right{str}-{bName}
+            margin-right: factors[i] * $spaceSize !important
+          .margin-top{str}-{bName}
+            margin-top: factors[i] * $spaceSize !important
+          .margin-bottom{str}-{bName}
+            margin-bottom: factors[i] * $spaceSize !important
+          .margin{str}-{bName}
+            margin: factors[i] * $spaceSize !important
+          .margin-vertical{str}-{bName}
+            margin-top: factors[i] * $spaceSize !important
+            margin-bottom: factors[i] * $spaceSize !important
+          .margin-horizontal{str}-{bName}
+            margin-left: factors[i] * $spaceSize !important
+            margin-right: factors[i] * $spaceSize !important
+
+createResponsiveMargins($spaceSizeStrs, $spaceSizeFactors, $breakpointNames, $breakpointValues)
+
 .margin-left-auto
   margin-left: auto !important
 .margin-right-auto
@@ -62,6 +106,34 @@ createPaddings(strs, factors)
       padding-right: factors[i] * $spaceSize !important
 
 createPaddings($spaceSizeStrs, $spaceSizeFactors)
+
+createResponsivePaddings(strs, factors, bNames, bValues)
+    for bName, j in bNames
+      @media only screen and (max-width: bValues[j])
+        .no-padding-{bName}
+          padding: 0
+        .no-padding-i-{bName}
+          padding: 0 !important
+      for str, i in strs
+         @media only screen and (max-width: bValues[j])
+          .padding-left{str}-{bName}
+            padding-left: factors[i] * $spaceSize !important
+          .padding-right{str}-{bName}
+            padding-right: factors[i] * $spaceSize !important
+          .padding-top{str}-{bName}
+            padding-top: factors[i] * $spaceSize !important
+          .padding-bottom{str}-{bName}
+            padding-bottom: factors[i] * $spaceSize !important
+          .padding{str}-{bName}
+            padding: factors[i] * $spaceSize !important
+          .padding-vertical{str}-{bName}
+            padding-top: factors[i] * $spaceSize !important
+            padding-bottom: factors[i] * $spaceSize !important
+          .padding-horizontal{str}-{bName}
+            padding-left: factors[i] * $spaceSize !important
+            padding-right: factors[i] * $spaceSize !important
+
+createResponsivePaddings($spaceSizeStrs, $spaceSizeFactors, $breakpointNames, $breakpointValues)
 
 .no-padding
   padding: 0
