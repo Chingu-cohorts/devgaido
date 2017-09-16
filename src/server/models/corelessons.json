@@ -1,6 +1,6 @@
 {
   "trygit": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "GitHub",
       "name": "Try Git",
       "description": "Use this short interactive introduction to Git to learn the fundamentals of the Git source code control system.",
@@ -11,7 +11,7 @@
     }
   },
   "gitsimpleguide": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Git - the simple guide",
       "description": "Learn the basics of Git including workflows you'll come to rely on in your daily web development activities.",
@@ -22,7 +22,7 @@
     }
   },
   "githubtraining": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "GitHub Training & Guide",
       "description": "Extend your understanding of Git and GitHub by Book the series of guides developed by the staff of GitHub.",
@@ -33,7 +33,7 @@
     }
   },
   "githubhelloworld": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "GitHub Hello World",
       "description": "Build on your knowledge of Git and GitHub by using them to create and manage a Hello World application.",
@@ -44,7 +44,7 @@
     }
   },
   "gitimmersion": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Git Immersion",
       "description": "Reinforce what you already know about Git as well as learning new techniques and workflows by using Git in this guided tour.",
@@ -55,7 +55,7 @@
     }
   },
   "howtogitngithub": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "How to Use Git and GitHub",
       "description": "Gain an understanding of the basics of using source code control by learning the industrity standard tools - Git and GitHub.",
@@ -66,7 +66,7 @@
     }
   },
   "ydkjsupngoing": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "You Don't Know JS: Up & Going",
       "description": "Learn the basics of the Javascript language to establish a firm foundation on your journey to becoming a Javascript developer.",
@@ -77,7 +77,7 @@
     }
   },
   "ydkjsscope": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "You Don't Know JS: Scope & Closures",
       "description": "Having a thorough understanding of scopes and closures is key to being a good Javascript developer and a prerequiste before learning more advanced concepts.",
@@ -88,7 +88,7 @@
     }
   },
   "ydkjsthis": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "You Don't Know JS: this & Object Prototypes",
       "description": "The concept of 'this' is one of the most confusing in Javascript. In this lesson you'll gain an understand of this and the object prototyping mechanism that make Javascript both unique and powerful.",
@@ -99,7 +99,7 @@
     }
   },
   "cs50x": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Introduction to Computer Science - CS50",
       "description": "Join in Harvard Universities acclaimed Introduction to Computer Science course CS50!",
@@ -110,7 +110,7 @@
     }
   },
   "learnhtmlcss": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Learn to Code HTML & CSS",
       "description": "Use this guide to learn the fundamental technologies and techniques of front end design and development using HTML and CSS.",
@@ -121,7 +121,7 @@
     }
   },
   "onlineresume": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Clone this online resume template",
       "description": "Practice your HTML and CSS skills by cloning an online resume template.",
@@ -139,7 +139,7 @@
     }
   },
   "ydkjstypes": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "You Don't Know JS: Types & Grammar",
       "description": "While Javascript is a dynamic language it is none-the-less important to understand how data is typed. In addition, it's always important to have a firm grasp of the rules, or grammar, that govern how Javascript works.",
@@ -150,7 +150,7 @@
     }
   },
   "ydkjsasync": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "You Don't Know JS: Async & Performance",
       "description": "One way that modern applications achieve performance is by performing operations in parallel with one another. In this lesson you'll learn the techniques of asynchronous programming and how to benchmark and tune your applications.",
@@ -161,7 +161,7 @@
     }
   },
   "ydkjses6": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Book: You Don't Know JS: ES6 & Beyond",
       "description": "While the history of Javascript is ECMAScript 5, it's future is ECMASCript 6. Learn how to take advantage of the benefits of ES6 in your applications.",
@@ -172,7 +172,7 @@
     }
   },
   "advhtmlcss": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Learn to Code Advanced HTML & CSS",
       "description": "Take a deep dive into to frontend design and development by learning the advanced HTML and CSS techniques you'll need in any Web Developer postion.",
@@ -183,7 +183,7 @@
     }
   },
   "fccportfolio": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Build FCC Personal Portfolio Webpage",
       "description": "Build a personal porfolio to showcase your achievements.",
@@ -201,7 +201,7 @@
     }
   },
   "projectspecdocs": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Project Specification Documents",
       "description": "Learn how to read Project Specification Documents and get in the habit of including every bit of information it details that makes sense for a project in the README.md or other supporting documentation for your projects",
@@ -212,7 +212,7 @@
     }
   },
   "ettmath": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Effective Thinking Through Mathematics",
       "description": "Learn how to employ mathematical strategies to problems and question. Use these techniques to gain insight and find innovative solutions.",
@@ -223,7 +223,7 @@
     }
   },
   "setupes6": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Setting Up ES6",
       "description": "Learn how to setup Babel, the premier Javascript transpiler, so you can use ECMAScript 6 in your applications.",
@@ -234,7 +234,7 @@
     }
   },
   "jsallonge6": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "JavaScript Allongé, the \"Six\" Edition",
       "description": "Learn how to program using functions in Javascript to write software that is simpler, cleaner, and less complicated than object-centric or code-centric approaches.",
@@ -245,7 +245,7 @@
     }
   },
   "getsassy": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Getting Sassy with Sass",
       "description": "Learn about one of the most popular CSS preprocessors - SASS.",
@@ -256,7 +256,7 @@
     }
   },
   "towersofhanoi": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Towers of Hanoi",
       "description": "Build an online Towers of Hanoi solver",
@@ -274,7 +274,7 @@
     }
   },
   "createcsstemp": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": " Create Webpage Template",
       "description": "Create a Webpage Template",
@@ -289,7 +289,7 @@
     }
   },
   "systematicpd1": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "How to Code: Simple Data",
       "description": "This lesson teaches a pragmatic and systematic approach to programming that is language independent, and therefore is applicably to whatever programming language you choose to work in.",
@@ -300,7 +300,7 @@
     }
   },
   "systematicpd2": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "How to Code: Complex Data",
       "description": "In this lesson you'll build on the methodology you learned in 'How to Code: Simple Data' to learn additional techniques for solving more complex problems.",
@@ -311,7 +311,7 @@
     }
   },
   "systematicpd3": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Software Construction: Data Abstraction",
       "description": "In this lesson you'll gain an understanding of data abstraction and decomposition techniques necessary to design and construct large, complex applications",
@@ -322,7 +322,7 @@
     }
   },
   "domenlightment": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "DOM Enlightenment",
       "description": "Whether you are using HTML, CSS, Sass, Less, React, or Angular an understanding of the DOM is needed to create responsive and well performing apps.",
@@ -333,7 +333,7 @@
     }
   },
   "gulp": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Create a Gulp Workflow",
       "description": "Gulp Workflow Automation",
@@ -346,7 +346,7 @@
     }
   },
   "fccsimon": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": " Simon Game",
       "description": "Demonstrate your frontend webdev skills by developing your own Simon Game",
@@ -364,7 +364,7 @@
     }
   },
   "intromongodb": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Introduction to MongoDB",
       "description": "Learn more about MongoDB using the MEAN stack.",
@@ -375,7 +375,7 @@
     }
   },
   "fccbackend": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "FCC Backend Certification",
       "description": "The FCC Backend Certification - all projects, ignore the tutorials and just read the official docs if you want.",
@@ -386,7 +386,7 @@
     }
   },
   "calculus1": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Calculus One",
       "description": "At it's core Calculus deals with how things change and is used across many different disciplines including not just Mathematics and Computer Science, but Engineering, Biology and Life Sciences, and Sociology, to name a few.",
@@ -397,7 +397,7 @@
     }
   },
   "jsdesignpatterns": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "JavaScript Design Patterns",
       "description": "Patterns in Computer Science define reusable solutions encountered in a variety of problem you will be faced with as a Web Developer. Learning design patterns is key to deveoping quality apps in a shorter time frame.",
@@ -408,7 +408,7 @@
     }
   },
   "clonelandingpage": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Clone Landing Page",
       "description": "Exercise your frontend webdev HTML and CSS knowledge by cloning a landing page.",
@@ -426,7 +426,7 @@
     }
   },
   "csmaths": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Mathematics for Computer Science",
       "description": "In this lesson you'll gain an understanding of the fundamentals of Discrete Mathematics used in Computer Science and Engineering.",
@@ -437,7 +437,7 @@
     }
   },
   "algnflowcharts": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Algorithms and Flowcharts",
       "description": "Read this article to improve your understanding of algorithms and how to describe them using classical flowcharting techniques.",
@@ -448,7 +448,7 @@
     }
   },
   "intropencil": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Familiarize yourself with Pencil",
       "description": "Familiarize yourself with Pencil ... start flowcharting complex portions of your code logic as part of your documentation",
@@ -459,7 +459,7 @@
     }
   },
   "cloneadmintemp": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Clone this administrative dashboard",
       "description": "Exercise your skills by using a JS frontend library to clone a complex webpage",
@@ -477,7 +477,7 @@
     }
   },
   "thinkjava": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Think Java - How to Think Like a Computer Scientist",
       "description": "Learn the basic concepts computer scientists understand and utilize to solve computing problems.",
@@ -488,7 +488,7 @@
     }
   },
   "classicpuzzles": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Complete all Classic Puzzles - Easy",
       "description": "Complete the Easy level Classic Puzzles",
@@ -501,7 +501,7 @@
     }
   },
   "opendatastructs": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Open Data Structures",
       "description": "At their core application are tools for manipulating data. In this lesson learn the fundamental data structures used to manipulate data.",
@@ -512,7 +512,7 @@
     }
   },
   "algorithms1": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Course: Algorithms, Part I",
       "description": "Learn about elementary data structures, sorting, and searching algorithms.",
@@ -523,7 +523,7 @@
     }
   },
   "algorithms2": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Algorithms, Part II",
       "description": "Learn about graph and string processing algorithms.",
@@ -534,7 +534,7 @@
     }
   },
   "codejam15q2": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Google Code Jam Qualification Round 2",
       "description": "Complete all challenges from Googles Code Jam 2015 Qualification Round 2",
@@ -552,7 +552,7 @@
     }
   },
   "clonefrontpage": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Clone Website Front Page",
       "description": "Recreate the front page of this website",
@@ -565,7 +565,7 @@
     }
   },
   "mobileuxdesign": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "UX Design for Mobile Developers",
       "description": "The smaller form factor of many mobile devices make them unique and sometimes challenging to develop for. Use this resource to learn how to effectively exploit the user experience of your apps for these devices.",
@@ -576,7 +576,7 @@
     }
   },
   "androiddev": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Android Development for Beginners",
       "description": "Learn the basics of Android development.",
@@ -587,7 +587,7 @@
     }
   },
   "fccpomodoro": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Build an Android Pomodoro Clock",
       "description": "Demonstrate your knowledge and skill by developing a Android Pomodoro clock",
@@ -605,7 +605,7 @@
     }
   },
   "frisbys": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Professor Frisby's Mostly Adequate Guide to Functional Programming",
       "description": "In this lesson learn about Functional Programming using the most popular Functional Programming language - Javascript.",
@@ -616,7 +616,7 @@
     }
   },
   "testing": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Software Testing",
       "description": "Software testing is key to application quality. In this lesson learn how to test the apps you create so they fail before, rather than after release.",
@@ -627,7 +627,7 @@
     }
   },
   "debugging": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Software Debugging",
       "description": "Learn a systematic process to debugging your applications and the tools that will help you automate the process of cleaning your code.",
@@ -638,7 +638,7 @@
     }
   },
   "clonenetflix": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": " Clone the Netflix Interface",
       "description": "Put your frontend webdev skills to the test by using a frontend library to recreate a sophisticated user interface.",
@@ -651,7 +651,7 @@
     }
   },
   "calculus2": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Calculus Two: Sequences and Series",
       "description": "Gain an understanding of sequences, infinite series, convergence tests, and Taylor series.",
@@ -662,7 +662,7 @@
     }
   },
   "classicpuzzles2": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Complete all Classic Puzzles - Medium on CodinGame in JavaScript",
       "description": "Improve your Javascript skills by completing the Medium level puzzles in this lesson.",
@@ -675,7 +675,7 @@
     }
   },
   "softwarearch": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Software Architecture & Design",
       "description": "Learn the principles and concepts involved in the analysis and design of large software systems using Unified Modeling Langual (UML) and the principles behind of sound software design and architecture.",
@@ -686,7 +686,7 @@
     }
   },
   "codejam15r1a": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Google Code Jam Round 1A - 2015",
       "description": "Practice your Javascript and analytical skills by completing these challenges.",
@@ -704,7 +704,7 @@
     }
   },
   "jsspessore": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Programming Javascript Applications",
       "description": "Refine your Javascript knowledge by learning about closures, functional programming, and prototypal inheritance.",
@@ -715,7 +715,7 @@
     }
   },
   "cloneblog": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": " Clone this blog template",
       "description": "Clone this blog template",
@@ -733,7 +733,7 @@
     }
   },
   "databases": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Databases",
       "description": "This set of mini-courses provides an understanding of fundamental database technologies including Relational, Structured Query Language (SQL), and semi-structure data structures such as XML and JSON.",
@@ -744,7 +744,7 @@
     }
   },
   "agile": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Agile Software Development",
       "description": "Learn the principles of the Agile software methodology to help you gain synergy across your team to efficiently develop high quality applications.",
@@ -755,7 +755,7 @@
     }
   },
   "es6katas": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Complete ES6 Katas",
       "description": "Show off your ES6 skills by completing a series of coding challenges",
@@ -768,7 +768,7 @@
     }
   },
   "cloudcomputing": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Introduction to Cloud Computing",
       "description": "Learn the fundamentals of building and managing cloud technologies.",
@@ -779,7 +779,7 @@
     }
   },
   "codejam15r1b": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Google Code Jam Round 1B - 2015",
       "description": "Complete all challenges from the Code Jam Round 1B 2015",
@@ -797,7 +797,7 @@
     }
   },
   "buildfacebook": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Build FaceBook Clone",
       "description": "Demonstrate your fullstack webdev capabilities by creating a Facebook clone.",
@@ -815,7 +815,7 @@
     }
   },
   "theoreticalcs": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Intro to Theoretical Computer Science",
       "description": "In this course you'll learn about advanced computer science techniques and algorithms such as NP-completeness. These are the tools you can use in your apps to solve the hard problems.",
@@ -826,7 +826,7 @@
     }
   },
   "codejam15r1c": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Google Code Jam Round 1C - 2015",
       "description": "Complete all challenges from the Code Jam Round 1C 2015",
@@ -844,7 +844,7 @@
     }
   },
   "probability": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Introduction to Probability - The Science of Uncertainty",
       "description": "Understanding probability is integral to many problems you'll be asked to solve as an application developer. In this course you'll gain an understanding of probability and its application to real world problems.",
@@ -855,7 +855,7 @@
     }
   },
   "12colgrid": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "CSS Grid Layout",
       "description": "Demonstrate advanced CSS skills by implementing a complex grid",
@@ -868,7 +868,7 @@
     }
   },
   "linearalgebra": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Linear Algebra - Foundations to Frontiers",
       "description": "Learn about the more advanced mathematical concepts of linear transformations, matrices, and systems of linear equations and their application to real world problems.",
@@ -879,7 +879,7 @@
     }
   },
   "classicpuzzles3": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Complete all Classic Puzzles - Easy",
       "description": "Complete the Hard level Classic Puzzles",
@@ -892,7 +892,7 @@
     }
   },
   "crypto1": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Cryptography I",
       "description": "Encryption is one of the basic techniques used to protect information systems. In this lesson you'll gain an understanding of what cryptography is and the fundamental crypto algorithms used in modern applications.",
@@ -903,7 +903,7 @@
     }
   },
   "codejam15r2": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Google Code Jam Round 2 - 2015",
       "description": "Complete all challenges from the Code Jam Round 2 2015",
@@ -921,7 +921,7 @@
     }
   },
   "crypto2": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Cryptography II",
       "description": "Building on Cryptography I this lesson provides you with the information and techniques to implement cryptography in your applications.",
@@ -932,7 +932,7 @@
     }
   },
   "clonetwitter": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Build Twitter Clone",
       "description": "Demonstrate your fullstack webdev capabilities by creating a Twitter clone.",
@@ -945,7 +945,7 @@
     }
   },
   "computerarch": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Computer Architecture",
       "description": "Learn about the architecture of modern microprocessors.",
@@ -956,7 +956,7 @@
     }
   },
   "codejam15r3": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Google Code Jam Round 3 - 2015",
       "description": "Complete all challenges from the Code Jam Round 3 2015",
@@ -974,7 +974,7 @@
     }
   },
   "cybersecurity": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Introduction to Cyber Security",
       "description": "Understanding cyber security is a requirement for all application developers. Learn the concepts that will help you create apps that are secure and dependable.",
@@ -985,7 +985,7 @@
     }
   },
   "classicpuzzles4": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Complete all Classic Puzzles - Very Hard",
       "description": "Complete the Hard level Classic Puzzles",
@@ -998,7 +998,7 @@
     }
   },
   "computergfx": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Computer Graphics",
       "description": "Learn the concepts of computer graphics including realistic ray tracing.",
@@ -1009,7 +1009,7 @@
     }
   },
   "ai": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Artificial Intelligence",
       "description": "Learn the fundamentals of Artifical Intelligence and how to apply them.",
@@ -1020,7 +1020,7 @@
     }
   },
   "codejam15f": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Google Code Jam World Finals - 2015",
       "description": "Complete all challenges from the Code Jam World Finals 2015",
@@ -1038,7 +1038,7 @@
     }
   },
   "machinelearning": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Machine Learning",
       "description": "In this lesson learn about Machine Learning, the science of making computers act without explict programming.",
@@ -1049,7 +1049,7 @@
     }
   },
   "webgame": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Create a Web-based Game",
       "description": "Demonstrate the skills of an professional fullstack web dev by creating a game of your own design",
@@ -1062,7 +1062,7 @@
     }
   },
   "compilers": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Compilers",
       "description": "Compling and translating abstract computer languages into executable programs is something all app developers use and depend on daily. Learn the concepts behind these processes and techniques.",
@@ -1073,7 +1073,7 @@
     }
   },
   "nlp": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Introduction to Natural Language Processing",
       "description": "Learn about Computational Linguistics and Natural Language processing. Then practice what you learn with challenging programming exercises.",
@@ -1084,7 +1084,7 @@
     }
   },
   "cloneharmony": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Clone Learn Harmony",
       "description": "Demonstrate your fullstack webdev capabilities by creating a Learn Harmony clone.",
@@ -1097,7 +1097,7 @@
     }
   },
   "networks": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Computer Networks",
       "description": "Applications depend on computer networks and especially the Internet. Learn more about this fundamental building block in this lesson.",
@@ -1108,7 +1108,7 @@
     }
   },
   "parallel": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Parallel Computer Architecture and Programming",
       "description": "Multicore CPU & GPU architectures are ubiqutous in devices from the smallest smartphone to the largest scientific computing platforms. Learn about these hardware architectures and the techniques of parallel processing in this lesson.",
@@ -1119,7 +1119,7 @@
     }
   },
   "codejam15dist": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Distributed Google Code Jam - 2015",
       "description": "Exercise your knowledge of distributed applications.",
@@ -1137,7 +1137,7 @@
     }
   },
   "cloneslack": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Clone Slack ",
       "description": "Demonstrate your fullstack webdev capabilities by creating a Slack clone.",
@@ -1150,7 +1150,7 @@
     }
   },
   "bootstrapfull": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Create an NPM Module",
       "description": "Demonstrate your expertise and contribute to Open Source by creating an NPM module",
@@ -1163,7 +1163,7 @@
     }
   },
   "codejam16": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Google Code Jam - 2016",
       "description": "Complete all challenges from the Code Jam - 2016",
@@ -1181,7 +1181,7 @@
     }
   },
   "materialdesign": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "P1XT",
       "name": "Extend your CSS grid framework",
       "description": "Enhance your CSS grid by upgrading it to follow Material Design principles",
@@ -1194,7 +1194,7 @@
     }
   },
   "introhtml": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Khan Academy",
       "name": "Intro to HTML",
       "description": "Introduction to HTML",
@@ -1205,7 +1205,7 @@
     }
   },
   "beginnerhtml": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "HtmlDog",
       "name": "HTML Beginner Guide",
       "description": "HTML Beginner Guide",
@@ -1216,7 +1216,7 @@
     }
   },
   "clonewebpage": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "CodePen",
       "name": "Clone CodePen",
       "description": "Demonstrate your fullstack webdev capabilities by creating a CodePen clone.",
@@ -1229,7 +1229,7 @@
     }
   },
   "introcss": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Khan Academy",
       "name": "Intro to CSS",
       "description": "Introduction to CSS",
@@ -1240,7 +1240,7 @@
     }
   },
   "beginnercss": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "HtmlDog",
       "name": "CSS Beginner Guide",
       "description": "CSS Beginner Guide",
@@ -1251,7 +1251,7 @@
     }
   },
   "clonetributepage": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "CodePen",
       "name": "Clone this Tribute Page",
       "description": "Test your CSS skills by cloning this complex tribute page.",
@@ -1264,7 +1264,7 @@
     }
   },
   "cloneresume": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Creative Market",
       "name": "Clone Online Resume",
       "description": "Test your advanced HTML and CSS knowledge by cloning an Online Resume",
@@ -1282,7 +1282,7 @@
     }
   },
   "intermediatehtml": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "HtmlDog",
       "name": "Intermediate HTML",
       "description": "Intermediate HTML",
@@ -1293,7 +1293,7 @@
     }
   },
   "intermediatecss": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "HtmlDog",
       "name": "Intermediate CSS",
       "description": "Intermediate CSS",
@@ -1304,7 +1304,7 @@
     }
   },
   "advancedhtml": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "HtmlDog",
       "name": "Advanced HTML",
       "description": "Advanced HTML",
@@ -1315,7 +1315,7 @@
     }
   },
   "advancedcss": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "HtmlDog",
       "name": "Advanced CSS",
       "description": "Advanced CSS",
@@ -1326,7 +1326,7 @@
     }
   },
   "buildportfolio": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "N/a",
       "name": "Build a Personal Portfolio",
       "description": "Build a Personal Portfolio webpage",
@@ -1338,7 +1338,7 @@
     }
   },
   "introbootstrap": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Edx",
       "name": "Introduction to Bootstrap",
       "description": "Learn how to use the Bootstrap Library for styling your webpages",
@@ -1349,7 +1349,7 @@
     }
   },
   "qwbootstrap": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "YouTube",
       "name": "Quentin Watt Bootstrap Video Series",
       "description": "Get a deeper understanding of Bootstrap's capabilities and usage",
@@ -1360,7 +1360,7 @@
     }
   },
   "bootstraptribute": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "N/a",
       "name": "Bootstrap-ify your Tribute Page",
       "description": "Demonstrate your knowledge of the Bootstrap library by modifying your Tribute Page to use this library",
@@ -1373,7 +1373,7 @@
     }
   },
   "foundationcrash": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "YouTube",
       "name": "Foundation Framework Crash Course",
       "description": "Learn the basics of the Framework library for styling your webpages",
@@ -1384,7 +1384,7 @@
     }
   },
   "introsass": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Callmenick",
       "name": "Introduction to Sass",
       "description": "Learn the basics of the Sass library for styling your webpages",
@@ -1395,7 +1395,7 @@
     }
   },
   "introless": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "N/a",
       "name": "Introduction to Less",
       "description": "Learn the basics of the Less library for styling your webpages",
@@ -1406,7 +1406,7 @@
     }
   },
   "introstylus": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "N/a",
       "name": "Introduction to Stylus",
       "description": "Learn the basics of the Stylus library for styling your webpages",
@@ -1417,7 +1417,7 @@
     }
   },
   "howinternetworks": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Khan Academy",
       "name": "How the Internet Works",
       "description": "Gain insight into the hardware and software that are the backbone of the Internet.",
@@ -1428,7 +1428,7 @@
     }
   },
   "howwebworks": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Mozilla",
       "name": "How the Web Works",
       "description": "Gain insight into the software and protocols that make up the how the World Wide Web (www).",
@@ -1439,7 +1439,7 @@
     }
   },
   "getstartedweb": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Mozilla",
       "name": "Getting Started with the Web",
       "description": "Getting started with the Web is a concise series introducing you to the practicalities of web development. You'll set up the tools you need to construct a simple webpage and publish your own simple code.",
@@ -1450,7 +1450,7 @@
     }
   },
   "setupwwwfolder": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Mozilla",
       "name": "Setup Your Project Folder",
       "description": "Learn what you should be aware of when setting up your project so you can set up a sensible file structure for your website. (Note: please skip the Javascript portion of this walkthrough for now).",
@@ -1463,7 +1463,7 @@
     }
   },
   "redux01": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: The Single Immutable State Tree",
       "description": "Understand the problem Redux is trying to solve and how it differs from other libraries with the same goal",
@@ -1476,7 +1476,7 @@
     }
   },
   "redux02": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Describing State Changes with Actions",
       "description": "Dive deeper into state changes by learning how to describe them using Redux Actions.",
@@ -1489,7 +1489,7 @@
     }
   },
   "redux03": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Pure and Impure Functions",
       "description": "Understand a bit more about the types of functions you'll be creating to make good use of Redux.",
@@ -1502,7 +1502,7 @@
     }
   },
   "redux04": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: The Reducer Function",
       "description": "Reducers are functions you create to operate on state changes. In this lesson learn about the power and flexibility they can bring to your apps.",
@@ -1515,7 +1515,7 @@
     }
   },
   "redux05": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Writing a Counter Reducer with Tests",
       "description": "See Redux in action with this example of a counter implemented using Redux actions and reducers.",
@@ -1528,7 +1528,7 @@
     }
   },
   "redux06": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Store Methods: getState(), dispatch(), and subscribe()",
       "description": "Understand the fundamentals of the Redux Store and how you can interact with it to share data across your app.",
@@ -1541,7 +1541,7 @@
     }
   },
   "redux07": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Implementing Store from Scratch",
       "description": "Learn how to implement and interact with the Redux Store",
@@ -1554,7 +1554,7 @@
     }
   },
   "redux08": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: React Counter Example",
       "description": "See how React and Redux can be used.",
@@ -1567,7 +1567,7 @@
     }
   },
   "redux09": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Avoiding Array Mutations with concat(), slice(), and ...spread",
       "description": "Learn how to avoid array mutations by using concat(), slice(), and the spread operator.",
@@ -1580,7 +1580,7 @@
     }
   },
   "redux10": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Avoiding Object Mutations with Object.assign() and ...spread",
       "description": "Learn how to avoid object mutations by using Object.assign() and the spread operator.",
@@ -1593,7 +1593,7 @@
     }
   },
   "redux11": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Writing a ToDo List Reducer (Adding a ToDo)",
       "description": "Learn how more complex applications can take advantage of Redux via this ToDo app example.",
@@ -1606,7 +1606,7 @@
     }
   },
   "redux12": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Writing a ToDo List Reducer (Toggling a ToDo)",
       "description": "Continue learning about how an app can use Redux with this example showing how to toggle a todo item in the ToDo app.",
@@ -1619,7 +1619,7 @@
     }
   },
   "redux13": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Reducer Composition with Arrays",
       "description": "Learn the pattern for updating arrays through reducer composition.",
@@ -1632,7 +1632,7 @@
     }
   },
   "redux14": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Reducer Composition with Objects",
       "description": "Learn how to updating object properties through this reducer composition pattern.",
@@ -1645,7 +1645,7 @@
     }
   },
   "redux15": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Reducer Composition with combineReducers()",
       "description": "Learn how to use the combineReducer() function to create a new reducer from several that already exist.",
@@ -1658,7 +1658,7 @@
     }
   },
   "redux16": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Implementing combineReducers() from Scratch",
       "description": "Gain an understanding of the combineReducers() function by seeing how it is written.",
@@ -1671,7 +1671,7 @@
     }
   },
   "redux17": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: React Todo List Example (Adding a Todo)",
       "description": "Extend your Redux knowledge by seeing how to implement a feature to add a new ToDo.",
@@ -1684,7 +1684,7 @@
     }
   },
   "redux18": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: React Todo List Example (Toggling a Todo)",
       "description": "Continue your Reduct journey by seeing how to implement a feature to toggle a ToDo.",
@@ -1697,7 +1697,7 @@
     }
   },
   "redux19": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: React Todo List Example (Filtering Todos)",
       "description": "Now see how Redux reducers can be used to filter a list of todo items.",
@@ -1710,7 +1710,7 @@
     }
   },
   "redux20": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Extracting Presentational Components (Todo, TodoList)",
       "description": "Learn how to separate behavior and appearance in an app to make it more maintainable.",
@@ -1723,7 +1723,7 @@
     }
   },
   "redux21": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Extracting Presentational Components (AddTodo, Footer, FilterLink)",
       "description": "Continue learning about the separatation of behavior and appearance in an app.",
@@ -1736,7 +1736,7 @@
     }
   },
   "redux22": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Extracting Container Components (FilterLink)",
       "description": "Learn how to avoid the unnecessary passing of props to intermediate components.",
@@ -1749,7 +1749,7 @@
     }
   },
   "redux23": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Extracting Container Components (VisibleTodoList, AddTodo)",
       "description": "Learn more about how to avoid the unnecessary passing of props to intermediate components.",
@@ -1762,7 +1762,7 @@
     }
   },
   "redux24": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Passing the Store Down Explicitly via Props",
       "description": "Learn how explicitly pass the store as a prop to your apps components.",
@@ -1775,7 +1775,7 @@
     }
   },
   "redux25": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Passing the Store Down Implicitly via Context",
       "description": "Learn how use React context to pass the store to all of your apps components.",
@@ -1788,7 +1788,7 @@
     }
   },
   "redux26": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Passing the Store Down with <Provider> from React Redux",
       "description": "Learn how use the React Redux <Provider> to pass the store to your apps components.",
@@ -1801,7 +1801,7 @@
     }
   },
   "redux27": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Generating Containers with connect() from React Redux (VisibleTodoList)",
       "description": "Learn how use the React Redux connect() function to generate your apps containers.",
@@ -1814,7 +1814,7 @@
     }
   },
   "redux28": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Generating Containers with connect() from React Redux (AddTodo)",
       "description": "Learn how use the Redux dispatch() function as a prop into React component.",
@@ -1827,7 +1827,7 @@
     }
   },
   "redux29": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Generating Containers with connect() from React Redux (FooterLink)",
       "description": "Discover how to use a containers props within the mapStateToProps() and mapDispatchToProps() functions.",
@@ -1840,7 +1840,7 @@
     }
   },
   "redux30": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Egghead",
       "name": "Redux: Extracting Action Creators",
       "description": "Learn how to extract a components action creators to make your application maintainable.",
@@ -1853,7 +1853,7 @@
     }
   },
   "reactbasics01": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "What Is React?",
       "description": "Learn what ReactJS is, how it excels as JS frontend technology, and how you can use it in your applications.",
@@ -1866,7 +1866,7 @@
     }
   },
   "reactbasics02": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "Setup Workspace with Webpack",
       "description": "Dive into the ReactJS workspace structure and walkthrough the steps to create one.",
@@ -1879,7 +1879,7 @@
     }
   },
   "reactbasics03": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "Set up Git",
       "description": "Learn how to set up a local Git repository for your ReactJS applications",
@@ -1892,7 +1892,7 @@
     }
   },
   "reactbasics04": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "First Component",
       "description": "Learn about React Components, how they interact with the DOM, and how to create one.",
@@ -1905,7 +1905,7 @@
     }
   },
   "reactbasics05": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "Multiple Components",
       "description": "Discover how to use multiple components, including nested components, in your apps.",
@@ -1918,7 +1918,7 @@
     }
   },
   "reactbasics06": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "Outputting Dynamic Data",
       "description": "Discover how to create webpages containing not just static, but also dynamic data.",
@@ -1931,7 +1931,7 @@
     }
   },
   "reactbasics07": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "Passing Data with Props",
       "description": "Learn all about props and how you can use them to pass data to components.",
@@ -1944,7 +1944,7 @@
     }
   },
   "reactbasics08": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "Events and ReactJS",
       "description": "Learn how your app can interact with users through events.",
@@ -1957,7 +1957,7 @@
     }
   },
   "reactbasics09": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "State of Components",
       "description": "Learn how to manipulate state to control when a component is rendered in the DOM.",
@@ -1970,7 +1970,7 @@
     }
   },
   "reactbasics10": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "How Does ReactJS Update the DOM?",
       "description": "This lesson explains the ReactJS lifecycle and how and when elements in the DOM are updated.",
@@ -1983,7 +1983,7 @@
     }
   },
   "reactbasics11": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "Stateless Components",
       "description": "State is great, but not every component needs it. In this lesson learn all about stateless components.",
@@ -1996,7 +1996,7 @@
     }
   },
   "reactbasics12": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "Communicating between Parent and Child Component",
       "description": "",
@@ -2009,7 +2009,7 @@
     }
   },
   "reactbasics13": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "Passing Data Between Parent & Child Components",
       "description": "Learn how parent and child components can communicate with one another by passing data.",
@@ -2022,7 +2022,7 @@
     }
   },
   "reactbasics14": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "Two-Way Binding",
       "description": "Learn all about two-way binding and how to effectively utilize it in this lesson.",
@@ -2035,7 +2035,7 @@
     }
   },
   "reactbasics15": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "Component Lifecycle",
       "description": "Learn about the lifecycle of ReactJS components - from creation to unmounting.",
@@ -2048,7 +2048,7 @@
     }
   },
   "reactbasics16": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "React Router Setup",
       "description": "In this lesson you'll learn how to create, manage, and use routes in your apps.",
@@ -2061,7 +2061,7 @@
     }
   },
   "reactbasics17": {
-    "version-1-0": {
+    "version-1.0": {
       "source": "Academind",
       "name": "React Router - Navigation & Parameters",
       "description": "Learn more about React Router and how it can be an integral part of your single page applications.",
