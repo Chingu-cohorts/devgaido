@@ -15,12 +15,12 @@ const Home = () => (
     <Helmet title="Home" />
     <div className="home-hero flex items-center justify-center bg-cover relative" style={{ backgroundImage: "url('/img/compass.jpg')" }}>
       <div className="flex items-center justify-center bg-primary-25 width-100 height-100 ">
-        <AnimateVisibleChildrenDiv speed={0.7} stagger={0.1} className="flex flex-wrap width-50">
-          <h1 className="c-white width-100 wider">LEARN WEB DEVELOPMENT</h1>
-          <h1 className="c-white wider margin-bottom-big width-100">THE DEVGAIDO WAY</h1>
-          <p className="c-white h4">Whether you&#039;re just starting out or want to brush up a certain skill:</p>
-          <p className="c-white h4"><span className="c-accent bold">devGaido</span> provides easy to follow learning paths that help you reach your goal without the hassle.</p>
-          <p className="c-white h4">Never worry about learning the wrong stuff from subpar resources ever again!</p>
+        <AnimateVisibleChildrenDiv speed={0.7} stagger={0.1} className="flex flex-wrap width-90 width-50-d">
+          <h1 className="h3 h2-m h1-d1 c-white width-100 wider">LEARN WEB DEVELOPMENT</h1>
+          <h1 className="h3 h2-m h1-d1 c-white wider margin-bottom-big width-100">THE DEVGAIDO WAY</h1>
+          <p className="c-white h5 h4-d1">Whether you&#039;re just starting out or want to brush up a certain skill:</p>
+          <p className="c-white h5 h4-d1"><span className="c-accent bold">devGaido</span> provides easy to follow learning paths that help you reach your goal without the hassle.</p>
+          <p className="c-white h5 h4-d1">Never worry about learning the wrong stuff from subpar resources ever again!</p>
           <div className="margin-top-small width-100">
             <Link className="button button--primary margin-right-small uppercase" to="/signup">
               <div className="flex items-center">

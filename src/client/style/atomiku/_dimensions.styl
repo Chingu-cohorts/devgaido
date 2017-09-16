@@ -7,8 +7,20 @@ createDimensions(steps)
 
 createDimensions($dimensionSteps)
 
+createResponsiveDimensions(steps, bNames, bValues)
+    for bName, i in bNames
+      for step in steps
+        @media only screen and (min-width: bValues[i])
+          .width-{step}-{bNames[i]}
+            width: step + '%' !important
+
+createResponsiveDimensions($dimensionSteps, $breakpointNames, $breakpointValues)
+
 .width-auto
   width: auto
 
 .height-auto
   height: auto
+/*
+$breakpointNames ?= mobile tablet desktop fullhd  
+$breakpointValues ?= 768px 769px 1008px 1392px */
