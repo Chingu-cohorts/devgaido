@@ -15,9 +15,9 @@ const Home = () => (
     <Helmet title="Home" />
     <div className="home-hero flex items-center justify-center bg-cover relative" style={{ backgroundImage: "url('/img/compass.jpg')" }}>
       <div className="flex items-center justify-center bg-primary-25 width-100 height-100">
-        <AnimateVisibleChildrenDiv speed={0.7} stagger={0.1} className="flex flex-wrap width-50 width-90-d">
-          <h1 className="h2-d1 h3-m c-white width-100 wider">LEARN WEB DEVELOPMENT</h1>
-          <h1 className="h2-d1 h3-m c-white wider margin-bottom-big width-100">THE DEVGAIDO WAY</h1>
+        <AnimateVisibleChildrenDiv speed={0.7} stagger={0.1} className="flex flex-wrap width-60 width-70-d1 width-90-t">
+          <h1 className="h2-d1 h3-t c-white width-100 wider">LEARN WEB DEVELOPMENT</h1>
+          <h1 className="h2-d1 h3-t c-white wider margin-bottom-big width-100">THE DEVGAIDO WAY</h1>
           <p className="c-white h4 h5-d1">Whether you&#039;re just starting out or want to brush up a certain skill:</p>
           <p className="c-white h4 h5-d1"><span className="c-accent bold">devGaido</span> provides easy to follow learning paths that help you reach your goal without the hassle.</p>
           <p className="c-white h4 h5-d1">Never worry about learning the wrong stuff from subpar resources ever again!</p>
