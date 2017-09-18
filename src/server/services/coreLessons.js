@@ -1,4 +1,5 @@
 import CoreLessons from '../models/corelessons.json';
+import { collapseVersions } from './commonServices';
 
 /**
  * Core Lessons Model
@@ -36,13 +37,30 @@ const getExpectedAttributes = () => lessonAttributes;
  *
  * @returns {String[]} - JSON object containing attributes of the lesson
  */
-const getLesson = lessonId => CoreLessons[lessonId];
+
+const getLesson = (lessonId, overrideJSON) => {
+  const lesson = overrideJSON !== undefined ? overrideJSON[lessonId] : CoreLessons[lessonId];
+  if (lesson === undefined) {
+    return lesson;
+  }
+  return collapseVersions(lesson);
+};
 
 /**
  * Retrieve all lessons from the Core Lessons
  *
- * @returns {Object} - JSON object containing all lessons
+ * @param {any} overrideJSON - JSON lesson object that is to be used instead of that
+ * defined by CoreLessons. This is an optional parameter used for testing
+ * @returns {Object} - JSON object containing attributes of the core lesson
  */
-const getAllLessons = () => CoreLessons;
+
+const getAllLessons = (overrideJSON) => {
+  const currentlesson = {};
+  const lessons = overrideJSON !== undefined ? overrideJSON : CoreLessons;
+  Object.keys(lessons).forEach((key) => {
+    currentlesson[key] = collapseVersions(lessons[key]);
+  });
+  return currentlesson;
+};
 
 export { getExpectedAttributes, getLesson, getAllLessons };
