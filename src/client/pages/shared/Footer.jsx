@@ -5,17 +5,17 @@ const year = new Date().getFullYear();
 
 const Footer = () => (
   <footer>
-    <div className="container padding-vertical-big flex justify-between">
-      <Link to="/" className="logo logo--small" />
-      <div className="flex-column items-center">
-        <div className="flex">
-          <Link to="/about" className="uppercase margin-right-small">About</Link>
+    <div className="container padding-vertical-big flex flex-wrap justify-between">
+      <Link to="/" className="flex logo logo--small margin-bottom-small" />
+      <div className="flex-column items-center margin-bottom-tiny">
+        <div className="flex margin-bottom-tiny">
+          <Link to="/about" className="h4 h5-d1 uppercase margin-right-small">About</Link>
           {/* <Link to="/" className="uppercase margin-right-small">Terms</Link> */}
-          <Link to="/disclaimer" className="uppercase margin-right-small">Disclaimer</Link>
+          <Link to="/disclaimer" className="h4 h5-d1 uppercase margin-right-small">Disclaimer</Link>
           {/* <Link to="/" className="uppercase margin-right-small">Privacy</Link> */}
-          <Link to="/contact" className="uppercase">Contact</Link>
+          <Link to="/contact" className="h4 h5-d1 uppercase">Contact</Link>
         </div>
-        <h5 className="margin-top-small">
+        <h5 className="h4 h5-d1 margin-top-tiny">
           <a
             href="https://chingu-cohorts.github.io/chingu-directory/"
             target="_blank" rel="noopener noreferrer"
