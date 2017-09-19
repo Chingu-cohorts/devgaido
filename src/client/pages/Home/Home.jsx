@@ -39,34 +39,43 @@ const Home = () => (
       </div>
     </div>
     <AnimateVisibleChildrenDiv speed={0.7} stagger={0.2} alternate className="container">
-      <section className="flex margin-top-huge">
+      <section className="flex flex-wrap margin-top-huge">
         <LazyLoad height={350} once placeholder={<LoadingPlaceholder />}>
-          <img className="border-round" src="/img/discover.jpg" alt="" />
+          <img className="border-round" src="/img/discover.jpg" alt=""
+            srcSet="/img/discover.jpg, 320w, /img/discover.jpg, 640w, /img/discover.jpg, 1280w"
+            sizes="(max-width: 320px) 15vw, (max-width: 480px) 50vw, (max-width: 900px) 75vw, 100vw"
+          />
         </LazyLoad>
         <div className="flex-1 margin-left-small margin-top-small">
-          <h1 className="h2-d1 h3-t c-accent wider">Discover</h1>
-          <p className="h4 h5-d1 width-50">Whether you are a new Web Developer seeking to gain broader skills or an experienced developer who wants to fill a specific gap - let devGaido help you discover what you need to know.</p>
+          <h1 className="flex-wrap h2-d1 h3-t c-accent wider">Discover</h1>
+          <p className="flex-wrap h4 h5-d1 width-50">Whether you are a new Web Developer seeking to gain broader skills or an experienced developer who wants to fill a specific gap - let devGaido help you discover what you need to know.</p>
         </div>
       </section>
-      <section className="flex margin-top-huge">
+      <section className="flex flex-wrap margin-top-huge">
         <div className="flex-1 margin-right-small margin-top-small right">
           <h1 className="h2-d1 h3-t c-primary wider right">Learn</h1>
           <p className="h4 h5-d1 width-50 margin-left-auto">Follow a learning path that is geared to what you want and need to know to become a better Web Developer. We&#039;ve done the work of plotting a course to your goals so you can focus on learning.</p>
         </div>
         <LazyLoad height={350} once placeholder={<LoadingPlaceholder />}>
-          <img className="border-round" src="/img/learn.jpg" alt="" />
+          <img className="border-round" src="/img/learn.jpg" alt=""
+            srcSet="/img/learn.jpg, 320w, /img/learn.jpg, 640w, /img/learn.jpg, 1280w"
+            sizes="(max-width: 320px) 15vw, (max-width: 480px) 50vw, (max-width: 900px) 75vw, 100vw"
+          />
         </LazyLoad>
       </section>
-      <section className="flex margin-top-huge">
+      <section className="flex flex-wrap margin-top-huge">
         <LazyLoad height={350} once placeholder={<LoadingPlaceholder />}>
-          <img className="border-round" src="/img/practise.jpg" alt="" />
+          <img className="border-round" src="/img/practise.jpg" alt=""
+            srcSet="/img/practise.jpg, 320w, /img/practise.jpg, 640w, /img/practise.jpg, 1280w"
+            sizes="(max-width: 320px) 15vw, (max-width: 480px) 50vw, (max-width: 900px) 75vw, 100vw"
+          />
         </LazyLoad>
         <div className="flex-1 margin-left-small margin-top-small">
           <h1 className="h2-d1 h3-t c-accent wider">Practice</h1>
           <p className="h4 h5-d1 width-50">Practice makes perfect! devGaido&#039;s learning paths include strategically placed exercises and quizzes so you can reinforce your newfound knowledge and understanding.</p>
         </div>
       </section>
-      <section className="flex margin-top-huge margin-bottom-huge">
+      <section className="flex flex-wrap margin-top-huge margin-bottom-huge">
         <div className="flex-1 margin-right-small margin-top-small right">
           <h1 className="h2-d1 h3-t c-primary wider right">Build</h1>
           <p className="h4 h5-d1 width-50 margin-left-auto">Challenges and projects are included to help you achieve a deep and comprehensive understanding of how to use the languages, libraries, tools, and techniques necessary to be a Web Developer.</p>
