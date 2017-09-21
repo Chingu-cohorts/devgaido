@@ -42,6 +42,14 @@ createResponsiveMargins(strs, factors, bNames, bValues)
         .margin-horizontal-auto-{bName}
           margin-left: auto !important
           margin-right: auto !important
+        .margin-left-0-{bName}
+          margin-left: 0 !important
+        .margin-right-0-{bName}
+          margin-right: 0 !important
+        .margin-bottom-0-{bName}
+          margin-bottom: 0 !important
+        .margin-top-0-{bName}
+          margin-top: 0 !important
       for str, i in strs
          @media only screen and (max-width: bValues[j])
           .margin-left{str}-{bName}
@@ -62,6 +70,15 @@ createResponsiveMargins(strs, factors, bNames, bValues)
             margin-right: factors[i] * $spaceSize !important
 
 createResponsiveMargins($spaceSizeStrs, $spaceSizeFactors, $breakpointNames, $breakpointValues)
+
+.margin-left-0
+  margin-left: 0 !important
+.margin-right-0
+  margin-right: 0 !important
+.margin-bottom-0
+  margin-bottom: 0 !important
+.margin-top-0
+  margin-top: 0 !important
 
 .margin-left-auto
   margin-left: auto !important

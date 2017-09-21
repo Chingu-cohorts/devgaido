@@ -4,6 +4,14 @@ createDimensions(steps)
       width: step + '%' !important
     .height-{step}
       height: step + '%' !important
+    .max-width-{step}
+      max-width: step + '%' !important
+    .min-width-{step}
+      min-width: step + '%' !important
+    .max-height-{step}
+      max-height: step + '%' !important
+    .min-height-{step}
+      min-height: step + '%' !important
 
 createDimensions($dimensionSteps)
 
@@ -13,6 +21,16 @@ createResponsiveDimensions(steps, bNames, bValues)
         @media only screen and (max-width: bValues[i])
           .width-{step}-{bNames[i]}
             width: step + '%' !important
+          .height-{step}-{bNames[i]}
+            height: step + '%' !important
+          .max-width-{step}-{bNames[i]}
+            max-width: step + '%' !important
+          .min-width-{step}-{bNames[i]}
+            min-width: step + '%' !important
+          .max-height-{step}-{bNames[i]}
+            max-height: step + '%' !important
+          .min-height-{step}-{bNames[i]}
+            min-height: step + '%' !important
 
 createResponsiveDimensions($dimensionSteps, $breakpointNames, $breakpointValues)
 

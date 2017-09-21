@@ -77,3 +77,108 @@
 
 .flex-3
   flex: 3
+
+.order-1
+  order: 1
+.order-2
+  order: 2
+.order-3
+  order: 3
+.order-4
+  order: 4
+.order-5
+  order: 5
+
+createResponsiveFlex(bNames, bValues)
+    for bName, i in bNames
+      for step in steps
+        @media only screen and (max-width: bValues[i])
+          .flex-{bNames[i]}
+            display: flex
+
+          .flex-column-{bNames[i]}
+            display: flex
+            flex-direction: column
+
+          .flex-column-reverse-{bNames[i]}
+            display: flex
+            flex-direction: column-reverse
+
+          .flex-wrap-{bNames[i]}
+            flex-wrap: wrap
+
+          .flex-wrap-reverse-{bNames[i]}
+            flex-wrap: wrap-reverse
+
+          .items-start-{bNames[i]}
+            align-items: flex-start
+
+          .items-center-{bNames[i]}
+            align-items: center
+
+          .items-end-{bNames[i]}
+            align-items: flex-end
+
+          .items-stretch-{bNames[i]}
+            align-items: stretch
+
+          .items-baseline-{bNames[i]}
+            align-items: baseline
+
+          .justify-start-{bNames[i]}
+            justify-content: flex-start
+
+          .justify-center-{bNames[i]}
+            justify-content: center
+
+          .justify-end-{bNames[i]}
+            justify-content: flex-end
+
+          .justify-between-{bNames[i]}
+            justify-content: space-between
+
+          .justify-around-{bNames[i]}
+            justify-content: space-around
+
+          .content-start-{bNames[i]}
+            align-content: flex-start
+
+          .content-end-{bNames[i]}
+            align-content: flex-end
+
+          .content-center-{bNames[i]}
+            align-content: center
+
+          .content-between-{bNames[i]}
+            align-content: space-between
+
+          .content-around-{bNames[i]}
+            align-content: space-around
+
+          .content-stretch-{bNames[i]}
+            align-content: stretch
+
+          .flex-0-{bNames[i]}
+            flex: 0
+
+          .flex-1-{bNames[i]}
+            flex: 1
+
+          .flex-2-{bNames[i]}
+            flex: 2
+
+          .flex-3-{bNames[i]}
+            flex: 3
+
+          .order-1-{bNames[i]}
+            order: 1
+          .order-2-{bNames[i]}
+            order: 2
+          .order-3-{bNames[i]}
+            order: 3
+          .order-4-{bNames[i]}
+            order: 4
+          .order-5-{bNames[i]}
+            order: 5
+
+createResponsiveFlex($breakpointNames, $breakpointValues)
