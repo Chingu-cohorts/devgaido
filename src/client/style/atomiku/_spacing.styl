@@ -50,6 +50,12 @@ createResponsiveMargins(strs, factors, bNames, bValues)
           margin-bottom: 0 !important
         .margin-top-0-{bName}
           margin-top: 0 !important
+        .margin-horizontal-0-{bName}
+          margin-left: 0 !important
+          margin-right: 0 !important
+        .margin-vertical-0-{bName}
+          margin-top: 0 !important
+          margin-bottom: 0 !important
       for str, i in strs
          @media only screen and (max-width: bValues[j])
           .margin-left{str}-{bName}
@@ -79,6 +85,12 @@ createResponsiveMargins($spaceSizeStrs, $spaceSizeFactors, $breakpointNames, $br
   margin-bottom: 0 !important
 .margin-top-0
   margin-top: 0 !important
+.margin-horizontal-0
+  margin-left: 0 !important
+  margin-right: 0 !important
+.margin-vertical-0
+  margin-top: 0 !important
+  margin-bottom: 0 !important
 
 .margin-left-auto
   margin-left: auto !important
@@ -131,6 +143,20 @@ createResponsivePaddings(strs, factors, bNames, bValues)
           padding: 0
         .no-padding-i-{bName}
           padding: 0 !important
+        .padding-left-0-{bName}
+          padding-left: 0 !important
+        .padding-right-0-{bName}
+          padding-right: 0 !important
+        .padding-bottom-0-{bName}
+          padding-bottom: 0 !important
+        .padding-top-0-{bName}
+          padding-top: 0 !important
+        .padding-horizontal-0-{bName}
+          padding-left: 0 !important
+          padding-right: 0 !important
+        .padding-vertical-0-{bName}
+          padding-top: 0 !important
+          padding-bottom: 0 !important
       for str, i in strs
          @media only screen and (max-width: bValues[j])
           .padding-left{str}-{bName}
@@ -157,3 +183,18 @@ createResponsivePaddings($spaceSizeStrs, $spaceSizeFactors, $breakpointNames, $b
 
 .no-padding-i
   padding: 0 !important
+
+.padding-left-0
+  padding-left: 0 !important
+.padding-right-0
+  padding-right: 0 !important
+.padding-bottom-0
+  padding-bottom: 0 !important
+.padding-top-0
+  padding-top: 0 !important
+.padding-horizontal-0
+  padding-left: 0 !important
+  padding-right: 0 !important
+.padding-vertical-0
+  padding-top: 0 !important
+  padding-bottom: 0 !important

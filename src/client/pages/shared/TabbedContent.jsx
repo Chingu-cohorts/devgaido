@@ -18,7 +18,7 @@ const TabbedContent = ({ content, tabIndex, onClick }) => (
         ),
       )}
     </div>
-    <div className="container margin-top-small">
+    <div className="container padding-horizontal-0-t margin-top-small">
       {content[tabIndex].content}
     </div>
   </div>

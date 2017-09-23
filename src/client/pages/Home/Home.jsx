@@ -47,14 +47,14 @@ const Home = () => (
           />
         </LazyLoad>
         <div className="margin-left-small margin-left-0-t margin-top-small width-50 width-100-t">
-          <h1 className="flex-wrap h2-d1 h3-t c-accent wider">Discover</h1>
-          <p className="flex-wrap h4 h5-d1 ">Whether you are a new Web Developer seeking to gain broader skills or an experienced developer who wants to fill a specific gap - let devGaido help you discover what you need to know.</p>
+          <h1 className="h2-d1 h3-t c-accent wider">Discover</h1>
+          <p>Whether you are a new Web Developer seeking to gain broader skills or an experienced developer who wants to fill a specific gap - let devGaido help you discover what you need to know.</p>
         </div>
       </section>
       <section className="flex flex-column-t margin-top-huge">
         <div className="margin-right-small margin-top-small right order-2-t width-50 width-100-t">
           <h1 className="h2-d1 h3-t c-primary wider right">Learn</h1>
-          <p className="h4 h5-d1 margin-left-auto">Follow a learning path that is geared to what you want and need to know to become a better Web Developer. We&#039;ve done the work of plotting a course to your goals so you can focus on learning.</p>
+          <p className="margin-left-auto">Follow a learning path that is geared to what you want and need to know to become a better Web Developer. We&#039;ve done the work of plotting a course to your goals so you can focus on learning.</p>
         </div>
         <LazyLoad once placeholder={<LoadingPlaceholder />}>
           <img className="width-50 width-100-t height-auto border-round order-1-t" src="/img/learn.jpg" alt=""
@@ -72,13 +72,13 @@ const Home = () => (
         </LazyLoad>
         <div className="margin-left-small margin-left-0-t margin-top-small width-50 width-100-t ">
           <h1 className="h2-d1 h3-t c-accent wider">Practice</h1>
-          <p className="h4 h5-d1">Practice makes perfect! devGaido&#039;s learning paths include strategically placed exercises and quizzes so you can reinforce your newfound knowledge and understanding.</p>
+          <p>Practice makes perfect! devGaido&#039;s learning paths include strategically placed exercises and quizzes so you can reinforce your newfound knowledge and understanding.</p>
         </div>
       </section>
       <section className="flex flex-column-t margin-top-huge margin-bottom-huge">
         <div className="margin-right-small margin-top-small right order-2-t width-50 width-100-t">
           <h1 className="h2-d1 h3-t c-primary wider right">Build</h1>
-          <p className="h4 h5-d1 margin-left-auto">Challenges and projects are included to help you achieve a deep and comprehensive understanding of how to use the languages, libraries, tools, and techniques necessary to be a Web Developer.</p>
+          <p className="margin-left-auto">Challenges and projects are included to help you achieve a deep and comprehensive understanding of how to use the languages, libraries, tools, and techniques necessary to be a Web Developer.</p>
         </div>
         <LazyLoad once placeholder={<LoadingPlaceholder />}>
           <img className="width-50 width-100-t height-auto border-round order-1-t" src="/img/build.jpg" alt=""
