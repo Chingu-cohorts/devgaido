@@ -1,40 +1,77 @@
 createResponsiveText(bNames, bValues)
     for bName, i in bNames
       @media only screen and (max-width: bValues[i])
-        .h0-{bNames[i]}
+        .h0-below-{bNames[i]}
           font-size: "calc(%s * %s * %s * %s * %s * %s)" % ($fontSize $headingScale $headingScale $headingScale $headingScale $headingScale)
           line-height: 1.2
           letter-spacing: $headingLetterSpacing
 
-        .h1-{bNames[i]}
+        .h1-below-{bNames[i]}
           font-size: "calc(%s * %s * %s * %s * %s)" % ($fontSize $headingScale $headingScale $headingScale $headingScale)
           line-height: 1.2
           letter-spacing: $headingLetterSpacing
 
-        .h2-{bNames[i]}
+        .h2-below-{bNames[i]}
           font-size: "calc(%s * %s * %s * %s)" % ($fontSize $headingScale $headingScale $headingScale)
           line-height: 1.25
           letter-spacing: $headingLetterSpacing
 
-        .h3-{bNames[i]}
+        .h3-below-{bNames[i]}
           font-size: "calc(%s * %s * %s)" % ($fontSize $headingScale $headingScale)
           line-height: 1.3
           letter-spacing: $headingLetterSpacing
 
-        .h4-{bNames[i]}
+        .h4-below-{bNames[i]}
           font-size: "calc(%s * %s)" % ($fontSize $headingScale)
           letter-spacing: -.08rem
           line-height: 1.35
         
-        .h5-{bNames[i]}
+        .h5-below-{bNames[i]}
           font-size: "calc(%s)" % ($fontSize)
           letter-spacing: -.05rem
           line-height: 1.4
 
-        .h6-{bNames[i]}
+        .h6-below-{bNames[i]}
           font-size: "calc(%s / %s)" % ($fontSize $headingScale)
           letter-spacing: 0
           line-height: 1.45
+
+      @media only screen and (min-width: bValues[i])
+        .h0-above-{bNames[i]}
+          font-size: "calc(%s * %s * %s * %s * %s * %s)" % ($fontSize $headingScale $headingScale $headingScale $headingScale $headingScale)
+          line-height: 1.2
+          letter-spacing: $headingLetterSpacing
+
+        .h1-above-{bNames[i]}
+          font-size: "calc(%s * %s * %s * %s * %s)" % ($fontSize $headingScale $headingScale $headingScale $headingScale)
+          line-height: 1.2
+          letter-spacing: $headingLetterSpacing
+
+        .h2-above-{bNames[i]}
+          font-size: "calc(%s * %s * %s * %s)" % ($fontSize $headingScale $headingScale $headingScale)
+          line-height: 1.25
+          letter-spacing: $headingLetterSpacing
+
+        .h3-above-{bNames[i]}
+          font-size: "calc(%s * %s * %s)" % ($fontSize $headingScale $headingScale)
+          line-height: 1.3
+          letter-spacing: $headingLetterSpacing
+
+        .h4-above-{bNames[i]}
+          font-size: "calc(%s * %s)" % ($fontSize $headingScale)
+          letter-spacing: -.08rem
+          line-height: 1.35
+        
+        .h5-above-{bNames[i]}
+          font-size: "calc(%s)" % ($fontSize)
+          letter-spacing: -.05rem
+          line-height: 1.4
+
+        .h6-above-{bNames[i]}
+          font-size: "calc(%s / %s)" % ($fontSize $headingScale)
+          letter-spacing: 0
+          line-height: 1.45
+
 
 createResponsiveText($breakpointNames, $breakpointValues)
 
