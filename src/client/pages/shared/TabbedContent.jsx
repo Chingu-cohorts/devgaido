@@ -9,7 +9,7 @@ const TabbedContent = ({ content, tabIndex, onClick }) => (
       <div className="flex-1 center">
         {content.map((c, index) => (
           <button
-            className={index === tabIndex ? `${c.buttonClass} uppercase margin-horizontal-tiny ` : 'button--default uppercase margin-horizontal-tiny'}
+            className={index === tabIndex ? `${c.buttonClass} h4 h5-t uppercase margin-horizontal-tiny ` : 'button--default h4 h5-t uppercase margin-horizontal-tiny'}
             onClick={() => onClick(index)}
             key={c.caption}
           >
