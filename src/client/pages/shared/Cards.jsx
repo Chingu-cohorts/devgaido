@@ -208,11 +208,11 @@ const LibraryCard = ({ item, user }) => {
         <div className="border-round-top bg-black opacity-50 abs-center-stretch" />
         <div className={`border-round-top ${bgCol} abs-center-stretch`} />
         <FlexRow className={'items-center padding-horizontal-small padding-vertical-tiny border-round-top c-white relative'}>
-          <h3 className="flex-1 h3-d1 h4-t no-margin text-shadow-subtle uppercase wider">{item.name}</h3>
+          <h3 className="flex-1 h5-m h4-t no-margin text-shadow-subtle uppercase wider">{item.name}</h3>
           {item.completed ? <i className={completeIcon} /> : null}
         </FlexRow>
       </div>
-      <p className="flex-1 h4 margin-small">{item.description}</p>
+      <p className="flex-1 h5 h6-m margin-small">{item.description}</p>
       <FlexColumn className="margin-small">
         <FlexRow className="items-center justify-between">
           {itemIsPath ? metrics : <i className={typeIcon} />}

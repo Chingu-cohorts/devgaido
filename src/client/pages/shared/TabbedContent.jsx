@@ -1,27 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import PageDivider from '../shared/PageDivider';
-
 const TabbedContent = ({ content, tabIndex, onClick }) => (
   <div>
-    <PageDivider>
-      <div className="flex-1 center">
-        {content.map((c, index) => (
-          <button
-            className={index === tabIndex ? `${c.buttonClass} h4 h5-t uppercase margin-horizontal-tiny ` : 'button--default h4 h5-t uppercase margin-horizontal-tiny'}
-            onClick={() => onClick(index)}
-            key={c.caption}
-          >
-            <div className="flex items-center">
-              {c.icon ? c.icon : null}
-              {c.caption}
-            </div>
-          </button>
-          ),
-        )}
-      </div>
-    </PageDivider>
+    <div className="bg-white flex flex-column-t items-center-t justify-center padding-vertical-tiny">
+      {content.map((c, index) => (
+        <button
+          className={index === tabIndex ? `${c.buttonClass} uppercase margin-horizontal-tiny margin-bottom-tiny-t` : 'button--default uppercase margin-horizontal-tiny'}
+          onClick={() => onClick(index)}
+          key={c.caption}
+        >
+          <div className="flex items-center">
+            {c.icon ? c.icon : null}
+            {c.caption}
+          </div>
+        </button>
+        ),
+      )}
+    </div>
     <div className="container margin-top-small">
       {content[tabIndex].content}
     </div>

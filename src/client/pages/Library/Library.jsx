@@ -27,12 +27,12 @@ const Library = ({ curriculum, uiState, user }) => (
       <Legend />
     </PageHero>
     <PageDivider>
-      <div className="search-bar flex flex-1">
-        <i className="fa icon-search c-accent h3 margin-right-small" />
-        <input className="margin-right-small h5 thin" type="text" name="pathSearch" defaultValue={uiState.libSearchTerm} placeholder="Search" onChange={e => setLibrarySearchTerm(e.target.value)} />
+      <div className="search-bar flex flex-1 margin-bottom-tiny-t">
+        <i className="fa icon-search libIcon c-accent h3 h4-t margin-right-small margin-right-tiny-t" />
+        <input className="margin-right-small margin-right-0-t h5 thin" type="text" name="pathSearch" defaultValue={uiState.libSearchTerm} placeholder="Search" onChange={e => setLibrarySearchTerm(e.target.value)} />
       </div>
       <div className="topics-dropdown relative flex items-center">
-        <i className="fa icon-tags h4 margin-right-tiny c-accent" />
+        <i className="fa icon-tags libIcon h4 margin-right-tiny c-accent" />
         <select className="h5 thin" defaultValue={uiState.libTopic} onChange={e => setLibraryTopic(e.target.value)} >
           <option value="All Tags" key="AllTags">All Tags</option>
           {Object.keys(curriculum.subjects).map(
@@ -40,8 +40,10 @@ const Library = ({ curriculum, uiState, user }) => (
           )}
         </select>
       </div>
-      { user.authenticated ? <Checkbox checked={uiState.libShowCompleted} onChange={toggleLibraryShowCompleted}>Completed</Checkbox> : null }
-      { user.authenticated ? <Checkbox checked={uiState.libShowIncomplete} onChange={toggleLibraryShowIncomplete}>Incomplete</Checkbox> : null }
+      <div className="checkboxes flex margin-top-tiny-t justify-center">
+        { user.authenticated ? <Checkbox checked={uiState.libShowCompleted} onChange={toggleLibraryShowCompleted}>Completed</Checkbox> : null }
+        { user.authenticated ? <Checkbox checked={uiState.libShowIncomplete} onChange={toggleLibraryShowIncomplete}>Incomplete</Checkbox> : null }
+      </div>
     </PageDivider>
     <TabbedContent
       content={[{
