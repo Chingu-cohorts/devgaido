@@ -77,7 +77,7 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
         {lesson.completed ? <i className="fa icon-check-circle-o c-white h1 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
       </PageHero>
       <AnimateVisibleChildrenDiv className="container">
-          <div className="flex bg-white padding-horizontal-big border-round margin-vertical-small page-hero__offset">
+          <div className="flex flex-column-below-t bg-white padding-horizontal-big border-round margin-vertical-small page-hero__offset">
             <AnimateVisibleChildrenDiv className="padding-vertical-big flex-2 flex-column">
               <h2 className="c-primary">About This Lesson</h2>
               <p>{lesson.description}</p>
@@ -89,21 +89,21 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
                   <a href={resource[1]} target="_blank" rel="noopener noreferrer" className="no-margin">{resource[0]}</a>
                 </div>)}
               { user.authenticated ?
-                <div className="margin-top-huge flex flex-1 items-end">
-                  <a className="button button--primary uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => functionName(user, lessonId)}>
+                <div className="margin-top-huge flex flex-1 flex-column-below-t items-center-below-t">
+                  <a className="button button--primary margin-bottom-small-below-t uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => functionName(user, lessonId)}>
                     <div className="flex items-center">
                       <i className="fa icon-external-link margin-right-tiny" />
                       Open Lesson
                     </div>
                   </a>
                   {!lesson.completed ?
-                    <button className="button--accent margin-left-small uppercase" onClick={() => { completeLesson(lessonId, lesson.version); toggleModal(); functionName(user, lessonId); }}>
+                    <button className="button--accent margin-left-small-above-t uppercase" onClick={() => { completeLesson(lessonId, lesson.version); toggleModal(); functionName(user, lessonId); }}>
                       <div className="flex items-center">
                         <i className="fa icon-check-square-o margin-right-tiny" />
                         Complete Lesson
                       </div>
                     </button> :
-                    <button className="button--default margin-left-small uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>
+                    <button className="button--default margin-left-small-above-t uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>
                       <div className="flex items-center">
                         <i className="fa icon-remove margin-right-tiny" />
                         Un-Complete Lesson
@@ -111,7 +111,7 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
                     </button>}
                   { uiState.showModal ? <Modal /> : null }
                 </div> :
-                <div className="margin-top-huge flex flex-1 items-end">
+                <div className="margin-top-huge flex flex-1 justify-center-below-t">
                   <a className="button button--accent uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">
                     <div className="flex items-center">
                       <i className="fa icon-external-link margin-right-tiny" />
