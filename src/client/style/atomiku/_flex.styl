@@ -77,3 +77,196 @@
 
 .flex-3
   flex: 3
+
+.order-1
+  order: 1
+.order-2
+  order: 2
+.order-3
+  order: 3
+.order-4
+  order: 4
+.order-5
+  order: 5
+
+createResponsiveFlex(bNames, bValues)
+    for bName, i in bNames
+      for step in steps
+        @media only screen and (max-width: bValues[i])
+          .flex-below-{bNames[i]}
+            display: flex
+
+          .flex-column-below-{bNames[i]}
+            display: flex
+            flex-direction: column
+
+          .flex-column-reverse-below-{bNames[i]}
+            display: flex
+            flex-direction: column-reverse
+
+          .flex-wrap-below-{bNames[i]}
+            flex-wrap: wrap
+
+          .flex-wrap-reverse-below-{bNames[i]}
+            flex-wrap: wrap-reverse
+
+          .items-start-below-{bNames[i]}
+            align-items: flex-start
+
+          .items-center-below-{bNames[i]}
+            align-items: center
+
+          .items-end-below-{bNames[i]}
+            align-items: flex-end
+
+          .items-stretch-below-{bNames[i]}
+            align-items: stretch
+
+          .items-baseline-below-{bNames[i]}
+            align-items: baseline
+
+          .justify-start-below-{bNames[i]}
+            justify-content: flex-start
+
+          .justify-center-below-{bNames[i]}
+            justify-content: center
+
+          .justify-end-below-{bNames[i]}
+            justify-content: flex-end
+
+          .justify-between-below-{bNames[i]}
+            justify-content: space-between
+
+          .justify-around-below-{bNames[i]}
+            justify-content: space-around
+
+          .content-start-below-{bNames[i]}
+            align-content: flex-start
+
+          .content-end-below-{bNames[i]}
+            align-content: flex-end
+
+          .content-center-below-{bNames[i]}
+            align-content: center
+
+          .content-between-below-{bNames[i]}
+            align-content: space-between
+
+          .content-around-below-{bNames[i]}
+            align-content: space-around
+
+          .content-stretch-below-{bNames[i]}
+            align-content: stretch
+
+          .flex-0-below-{bNames[i]}
+            flex: 0
+
+          .flex-1-below-{bNames[i]}
+            flex: 1
+
+          .flex-2-below-{bNames[i]}
+            flex: 2
+
+          .flex-3-below-{bNames[i]}
+            flex: 3
+
+          .order-1-below-{bNames[i]}
+            order: 1
+          .order-2-below-{bNames[i]}
+            order: 2
+          .order-3-below-{bNames[i]}
+            order: 3
+          .order-4-below-{bNames[i]}
+            order: 4
+          .order-5-below-{bNames[i]}
+            order: 5
+
+        @media only screen and (min-width: bValues[i])
+          .flex-above-{bNames[i]}
+            display: flex
+
+          .flex-column-above-{bNames[i]}
+            display: flex
+            flex-direction: column
+
+          .flex-column-reverse-above-{bNames[i]}
+            display: flex
+            flex-direction: column-reverse
+
+          .flex-wrap-above-{bNames[i]}
+            flex-wrap: wrap
+
+          .flex-wrap-reverse-above-{bNames[i]}
+            flex-wrap: wrap-reverse
+
+          .items-start-above-{bNames[i]}
+            align-items: flex-start
+
+          .items-center-above-{bNames[i]}
+            align-items: center
+
+          .items-end-above-{bNames[i]}
+            align-items: flex-end
+
+          .items-stretch-above-{bNames[i]}
+            align-items: stretch
+
+          .items-baseline-above-{bNames[i]}
+            align-items: baseline
+
+          .justify-start-above-{bNames[i]}
+            justify-content: flex-start
+
+          .justify-center-above-{bNames[i]}
+            justify-content: center
+
+          .justify-end-above-{bNames[i]}
+            justify-content: flex-end
+
+          .justify-between-above-{bNames[i]}
+            justify-content: space-between
+
+          .justify-around-above-{bNames[i]}
+            justify-content: space-around
+
+          .content-start-above-{bNames[i]}
+            align-content: flex-start
+
+          .content-end-above-{bNames[i]}
+            align-content: flex-end
+
+          .content-center-above-{bNames[i]}
+            align-content: center
+
+          .content-between-above-{bNames[i]}
+            align-content: space-between
+
+          .content-around-above-{bNames[i]}
+            align-content: space-around
+
+          .content-stretch-above-{bNames[i]}
+            align-content: stretch
+
+          .flex-0-above-{bNames[i]}
+            flex: 0
+
+          .flex-1-above-{bNames[i]}
+            flex: 1
+
+          .flex-2-above-{bNames[i]}
+            flex: 2
+
+          .flex-3-above-{bNames[i]}
+            flex: 3
+
+          .order-1-above-{bNames[i]}
+            order: 1
+          .order-2-above-{bNames[i]}
+            order: 2
+          .order-3-above-{bNames[i]}
+            order: 3
+          .order-4-above-{bNames[i]}
+            order: 4
+          .order-5-above-{bNames[i]}
+            order: 5
+createResponsiveFlex($breakpointNames, $breakpointValues)
