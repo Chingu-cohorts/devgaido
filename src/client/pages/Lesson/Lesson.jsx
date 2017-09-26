@@ -83,7 +83,7 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
               <p>{lesson.description}</p>
               <h4 className="margin-top-big uppercase c-accent">Instructions</h4>
               <p>{lesson.instructions ? lesson.instructions : 'No instructions specified.'}</p>
-              <h4 className="margin-top-big c-accent">Additional Resources</h4>
+              <h4 className="margin-top-big c-accent uppercase">Additional Resources</h4>
               {resourceList.map(
                 (resource, index) => <div key={index}>
                   <a href={resource[1]} target="_blank" rel="noopener noreferrer" className="no-margin">{resource[0]}</a>
