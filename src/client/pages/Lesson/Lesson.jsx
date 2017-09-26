@@ -77,87 +77,84 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
         {lesson.completed ? <i className="fa icon-check-circle-o c-white h1 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
       </PageHero>
       <AnimateVisibleChildrenDiv className="container">
-          <div className="flex flex-column-below-t bg-white padding-horizontal-big border-round margin-vertical-small page-hero__offset">
-            <AnimateVisibleChildrenDiv className="padding-vertical-big flex-2 flex-column">
-              <h2 className="c-primary">About This Lesson</h2>
-              <p>{lesson.description}</p>
-              <h4 className="margin-top-big uppercase c-accent">Instructions</h4>
-              <p>{lesson.instructions ? lesson.instructions : 'No instructions specified.'}</p>
-              <h4 className="margin-top-big c-accent uppercase">Additional Resources</h4>
-              {resourceList.map(
-                (resource, index) => <div key={index}>
-                  <a href={resource[1]} target="_blank" rel="noopener noreferrer" className="no-margin">{resource[0]}</a>
-                </div>)}
-              { user.authenticated ?
-                <div className="margin-top-huge flex flex-1 flex-column-below-t items-center-below-t">
-                  <a className="button button--primary margin-bottom-small-below-t uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => functionName(user, lessonId)}>
-                    <div className="flex items-center">
-                      <i className="fa icon-external-link margin-right-tiny" />
-                      Open Lesson
-                    </div>
-                  </a>
-                  {!lesson.completed ?
-                    <button className="button--accent margin-left-small-above-t uppercase" onClick={() => { completeLesson(lessonId, lesson.version); toggleModal(); functionName(user, lessonId); }}>
-                      <div className="flex items-center">
-                        <i className="fa icon-check-square-o margin-right-tiny" />
-                        Complete Lesson
-                      </div>
-                    </button> :
-                    <button className="button--default margin-left-small-above-t uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>
-                      <div className="flex items-center">
-                        <i className="fa icon-remove margin-right-tiny" />
-                        Un-Complete Lesson
-                      </div>
-                    </button>}
-                  { uiState.showModal ? <Modal /> : null }
-                </div> :
-                <div className="margin-top-huge flex flex-1 justify-center-below-t">
-                  <a className="button button--accent uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">
-                    <div className="flex items-center">
-                      <i className="fa icon-external-link margin-right-tiny" />
-                      Open Lesson
-                    </div>
-                  </a>
-                </div> }
-            </AnimateVisibleChildrenDiv>
-            <div className="padding-vertical-big margin-left-big flex-1">
-              { user.authenticated ?
-                <div className="right margin-bottom-big">
-                  {!lesson.bookmarked ?
-                    <button className="button--default uppercase" onClick={() => addBookmark(lessonId, 'lessons', lesson.version)}>
-                      <div className="flex items-center">
-                        <i className="fa icon-thumb-tack margin-right-tiny" />
-                        Bookmark
-                      </div>
-                    </button> :
-                    <button className="button--default uppercase" onClick={() => removeBookmark(lessonId, 'lessons', lesson.version)}>
-                      <div className="flex items-center">
-                        <i className="fa icon-remove margin-right-tiny" />
-                        Remove Bookmark
-                      </div>
-                    </button>}
-                </div> :
-                <div className="right margin-bottom-big">
-                  <button className="button--default uppercase hidden">Bookmark</button>
-                </div> }
-              <div className="right margin-bottom-tiny">
+        <div className="flex bg-white padding-horizontal-big border-round margin-vertical-small page-hero__offset">
+          <AnimateVisibleChildrenDiv className="padding-vertical-big">
+            <div className="margin-top-big">
+              <a href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={user.authenticated ? () => functionName(user, lessonId) : null}>
+                <div className="preview overflow-hidden no-margin right border-round border-1px" style={{ background: `url(/screenshots/${lessonId}.jpg)`, backgroundSize: 'cover', borderColor: '#ccc' }} />
+              </a>
+            </div>
+            <div className="flex padding-vertical-small">
+              <div className="flex-1 margin-bottom-tiny">
                 {ratingStars}
               </div>
-              <div className="flex items-center justify-end margin-bottom-tiny">
+              <div className="flex-2 margin-bottom-tiny">
                 <h5 className="c-primary no-margin uppercase right">{lesson.estimatedTimeStr} hours</h5>
               </div>
-              <div className="flex justify-end">
-                <div className="width-75 right">
-                  <Subjects item={lesson} />
-                </div>
+            </div>
+            <p>{lesson.description}</p>
+            <div className="flex margin-left-0">
+              <Subjects item={lesson} />
+            </div>
+            <div className="flex margin-top-big">
+              <div className="flex-1">
+                <h4 className="uppercase c-accent">Instructions</h4>
+                <p>{lesson.instructions ? lesson.instructions : 'No instructions specified.'}</p>
               </div>
-              <div className="flex-column margin-top-big">
-                <a href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={user.authenticated ? () => functionName(user, lessonId) : null}>
-                  <div className="preview overflow-hidden no-margin right border-round border-1px" style={{ background: `url(/screenshots/${lessonId}.jpg)`, backgroundSize: 'cover', borderColor: '#ccc' }} />
-                </a>
+              <div className="flex-2">
+                <h4 className="c-accent uppercase">Additional Resources</h4>
+                {resourceList.map(
+                    (resource, index) => <div key={index}>
+                      <a href={resource[1]} target="_blank" rel="noopener noreferrer" className="no-margin">{resource[0]}</a>
+                    </div>)}
               </div>
             </div>
-          </div>
+            { user.authenticated ?
+              <div className="margin-top-big flex justify-center">
+                {!lesson.bookmarked ?
+                  <button className="button--default uppercase" onClick={() => addBookmark(lessonId, 'lessons', lesson.version)}>
+                    <div className="flex items-center">
+                      <i className="fa icon-thumb-tack margin-right-tiny" />
+                        Bookmark
+                      </div>
+                  </button> :
+                  <button className="button--default uppercase" onClick={() => removeBookmark(lessonId, 'lessons', lesson.version)}>
+                    <div className="flex items-center">
+                      <i className="fa icon-remove margin-right-tiny" />
+                        Remove Bookmark
+                      </div>
+                  </button>}
+                <a className="button button--primary margin-left-small-above-t margin-bottom-small-below-t uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => functionName(user, lessonId)}>
+                  <div className="flex items-center">
+                    <i className="fa icon-external-link margin-right-tiny" />
+                      Open Lesson
+                    </div>
+                </a>
+                {!lesson.completed ?
+                  <button className="button--accent margin-left-small-above-t uppercase" onClick={() => { completeLesson(lessonId, lesson.version); toggleModal(); functionName(user, lessonId); }}>
+                    <div className="flex items-center">
+                      <i className="fa icon-check-square-o margin-right-tiny" />
+                        Complete Lesson
+                      </div>
+                  </button> :
+                  <button className="button--accent margin-left-small-above-t uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>
+                    <div className="flex items-center">
+                      <i className="fa icon-remove margin-right-tiny" />
+                        Un-Complete Lesson
+                      </div>
+                  </button>}
+                { uiState.showModal ? <Modal /> : null }
+              </div> :
+              <div className="margin-top-huge flex justify-center-below-t">
+                <a className="button button--primary uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">
+                  <div className="flex items-center">
+                    <i className="fa icon-external-link margin-right-tiny" />
+                      Open Lesson
+                    </div>
+                </a>
+              </div> }
+          </AnimateVisibleChildrenDiv>
+        </div>
       </AnimateVisibleChildrenDiv>
       <div className="container margin-top-huge">
         {user.authenticated ? <hr /> : null}
