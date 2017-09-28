@@ -47,9 +47,30 @@ const Subjects = ({ item }) => {
   );
 };
 
+const OptionalInfo = (lesson, resourceList) => (
+  <div className="flex margin-top-huge">
+    <div className="width-50 margin-right-small">
+      <h4 className="center uppercase c-accent margin-bottom-tiny">Instructions</h4>
+      <p>{lesson.instructions ? lesson.instructions : 'No instructions specified.'}</p>
+    </div>
+    <div className="width-50">
+      <h4 className="center c-accent uppercase margin-bottom-tiny">Additional Resources</h4>
+      <div className="flex-column items-center">
+        {resourceList.map(
+            (resource, index) =>
+              <a key={index} href={resource[1]} target="_blank" rel="noopener noreferrer" className="no-margin">{resource[0]}</a>,
+            )}
+      </div>
+    </div>
+  </div>
+);
+
 const Lesson = ({ match, curriculum, user, uiState }) => {
   const lessonId = match.params.id;
   const lesson = curriculum.lessons[lessonId];
+
+  console.log(`lesson.resources: ${lesson.resources}`);
+  console.log(`lesson.instructions: ${lesson.instructions}`);
 
   let resourceList = [['No additional resources required.', null]];
   if (lesson.resources !== undefined) {
@@ -94,21 +115,7 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
               </div>
             </div>
             <p>{lesson.description}</p>
-            <div className="flex margin-top-huge">
-              <div className="width-50 margin-right-small">
-                <h4 className="center uppercase c-accent margin-bottom-tiny">Instructions</h4>
-                <p>{lesson.instructions ? lesson.instructions : 'No instructions specified.'}</p>
-              </div>
-              <div className="width-50">
-                <h4 className="center c-accent uppercase margin-bottom-tiny">Additional Resources</h4>
-                <div className="flex-column items-center">
-                  {resourceList.map(
-                      (resource, index) =>
-                        <a key={index} href={resource[1]} target="_blank" rel="noopener noreferrer" className="no-margin">{resource[0]}</a>,
-                      )}
-                </div>
-              </div>
-            </div>
+            { (lesson.resources !== undefined || lesson.instructions !== undefined) ? OptionalInfo(lesson, resourceList) : null }
             { user.authenticated ?
               <div className="margin-top-huge flex justify-center">
                 {!lesson.bookmarked ?
