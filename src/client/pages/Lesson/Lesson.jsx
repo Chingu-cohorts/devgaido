@@ -51,7 +51,7 @@ const OptionalInfo = (lesson, resourceList) => (
   <div className="flex margin-top-huge">
     <div className="width-50 margin-right-small">
       <h4 className="center uppercase c-accent margin-bottom-tiny">Instructions</h4>
-      <p>{lesson.instructions ? lesson.instructions : 'No instructions specified.'}</p>
+      <p className="no-margin">{lesson.instructions ? lesson.instructions : 'No instructions specified.'}</p>
     </div>
     <div className="width-50">
       <h4 className="center c-accent uppercase margin-bottom-tiny">Additional Resources</h4>
@@ -99,11 +99,11 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
         {lesson.completed ? <i className="fa icon-check-circle-o c-white h1 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
       </PageHero>
       <AnimateVisibleChildrenDiv className="container">
-        <div className="flex width-100 bg-white padding-horizontal-big border-round margin-bottom-small page-hero__offset">
-          <AnimateVisibleChildrenDiv className="padding-vertical-small width-100">
-            <div className="margin-top-big margin-bottom-small">
+        <div className="flex width-100 bg-white padding-horizontal-big padding-vertical-big border-round margin-bottom-small page-hero__offset">
+          <AnimateVisibleChildrenDiv className="width-100">
+            <div className="margin-bottom-big">
               <a href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={user.authenticated ? () => functionName(user, lessonId) : null}>
-                <div className="preview overflow-hidden no-margin right border-round border-1px" style={{ background: `url(/screenshots/${lessonId}.jpg)`, backgroundSize: 'cover', borderColor: '#ccc' }} />
+                <div className="preview border-round" style={{ background: `url(/screenshots/${lessonId}.jpg)`, backgroundSize: 'cover', borderColor: '#ccc' }} />
               </a>
             </div>
             <div className="flex margin-bottom-small">
@@ -114,10 +114,10 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
                 <h5 className="c-primary no-margin uppercase right">{lesson.estimatedTimeStr} hours</h5>
               </div>
             </div>
-            <p>{lesson.description}</p>
+            <p className="no-margin">{lesson.description}</p>
             { (lesson.resources !== undefined || lesson.instructions !== undefined) ? OptionalInfo(lesson, resourceList) : null }
             { user.authenticated ?
-              <div className="margin-top-huge flex justify-center">
+              <div className="margin-top-big flex justify-center">
                 {!lesson.bookmarked ?
                   <button className="button--default uppercase" onClick={() => addBookmark(lessonId, 'lessons', lesson.version)}>
                     <div className="flex items-center">
@@ -152,7 +152,7 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
                   </button>}
                 { uiState.showModal ? <Modal /> : null }
               </div> :
-              <div className="margin-top-below flex justify-center-below-t">
+              <div className="margin-top-big margin-top-below-t flex justify-center-below-t">
                 <a className="button button--primary uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">
                   <div className="flex items-center">
                     <i className="fa icon-external-link margin-right-tiny" />
@@ -160,9 +160,9 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
                     </div>
                 </a>
               </div> }
-              <div className="flex margin-top-huge">
-                <Subjects item={lesson} />
-              </div>
+            <div className="flex margin-top-huge">
+              <Subjects item={lesson} />
+            </div>
           </AnimateVisibleChildrenDiv>
         </div>
       </AnimateVisibleChildrenDiv>
