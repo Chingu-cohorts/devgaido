@@ -2,6 +2,7 @@
 $primaryColorLight = #e7eaf6
 $primaryColor = #007399
 $accentColor  = #DB684E
+$buttonHoverColor = grey
 
 $fontFamily = 'Fira Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 //$fontFamily = -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -46,24 +47,18 @@ a:not(.image-link-card)
   @extend .border-text
   @extend .c-text
   @extend .c-hover-white
-  @extend .bg-hover-primary
-  @extend .border-hover-primary
   @extend .transition-fast
 
 .button--primary
   @extend .border-pill
   @extend .bg-primary
   @extend .border-primary
-  @extend .bg-hover-accent
-  @extend .border-hover-accent
   @extend .transition-fast
 
 .button--accent
   @extend .border-pill
   @extend .c-white
   @extend .border-accent
-  @extend .bg-hover-primary
-  @extend .border-hover-primary
   @extend .transition-fast
 
 .button--primary-clear
@@ -71,9 +66,7 @@ a:not(.image-link-card)
   @extend .c-primary
   @extend .border-primary
   @extend .bg-transparent
-  @extend .bg-hover-accent
   @extend .c-hover-white
-  @extend .border-hover-accent
   @extend .transition-fast
 
 .button--accent-clear
@@ -81,7 +74,6 @@ a:not(.image-link-card)
   @extend .c-accent
   @extend .border-accent
   @extend .bg-transparent
-  @extend .bg-hover-black
   @extend .transition-fast
 
 .button--white-clear
@@ -89,8 +81,6 @@ a:not(.image-link-card)
   @extend .c-white
   @extend .border-white
   @extend .bg-transparent
-  @extend .bg-hover-accent
-  @extend .border-hover-accent
   @extend .transition-fast
 
 // Needed to for Icon Font
@@ -259,8 +249,8 @@ i::before
   display: inline-block
 
 .preview
-  width 100%
-  height 260px 
+  height 350px
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.5)
 
 .preview2
   width auto

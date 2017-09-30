@@ -77,7 +77,7 @@ const Results = ({ curriculum, uiState, user, category }) => {
 
   return (
     <div className="results margin-vertical-big">
-      <AnimateVisibleChildrenDiv className="flex flex-wrap margin-vertical-big justify-around">
+      <AnimateVisibleChildrenDiv dontTriggerOnUpdate className="flex flex-wrap margin-vertical-big justify-around">
         {results}
       </AnimateVisibleChildrenDiv>
     </div>
