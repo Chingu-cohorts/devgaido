@@ -114,34 +114,34 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
             <p className="no-margin">{lesson.description}</p>
             { (lesson.resources !== undefined || lesson.instructions !== undefined) ? OptionalInfo(lesson, resourceList) : null }
             { user.authenticated ?
-              <div className="margin-top-big flex justify-center">
+              <div className="margin-top-big flex flex-wrap-below-t justify-center">
                 {!lesson.bookmarked ?
-                  <button className="button--default uppercase" onClick={() => addBookmark(lessonId, 'lessons', lesson.version)}>
+                  <button className="button--default uppercase margin-right-small margin-bottom-small-below-t" onClick={() => addBookmark(lessonId, 'lessons', lesson.version)}>
                     <div className="flex items-center">
                       <i className="fa icon-thumb-tack margin-right-tiny" />
                         Bookmark
                       </div>
                   </button> :
-                  <button className="button--default uppercase" onClick={() => removeBookmark(lessonId, 'lessons', lesson.version)}>
+                  <button className="button--default uppercase margin-right-small margin-bottom-small-below-t" onClick={() => removeBookmark(lessonId, 'lessons', lesson.version)}>
                     <div className="flex items-center">
                       <i className="fa icon-remove margin-right-tiny" />
                         Remove Bookmark
                       </div>
                   </button>}
-                <a className="button button--primary margin-left-small-above-t margin-bottom-small-below-t uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => functionName(user, lessonId)}>
+                <a className="button button--primary margin-right-small margin-bottom-small-below-t uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => functionName(user, lessonId)}>
                   <div className="flex items-center">
                     <i className="fa icon-external-link margin-right-tiny" />
                       Open Lesson
                     </div>
                 </a>
                 {!lesson.completed ?
-                  <button className="button--accent margin-left-small-above-t uppercase" onClick={() => { completeLesson(lessonId, lesson.version); toggleModal(); functionName(user, lessonId); }}>
+                  <button className="button--accent margin-right-small uppercase" onClick={() => { completeLesson(lessonId, lesson.version); toggleModal(); functionName(user, lessonId); }}>
                     <div className="flex items-center">
                       <i className="fa icon-check-square-o margin-right-tiny" />
                         Complete Lesson
                       </div>
                   </button> :
-                  <button className="button--accent margin-left-small-above-t uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>
+                  <button className="button--accent margin-right-small uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>
                     <div className="flex items-center">
                       <i className="fa icon-remove margin-right-tiny" />
                         Un-Complete Lesson
