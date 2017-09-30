@@ -69,9 +69,6 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
   const lessonId = match.params.id;
   const lesson = curriculum.lessons[lessonId];
 
-  console.log(`lesson.resources: ${lesson.resources}`);
-  console.log(`lesson.instructions: ${lesson.instructions}`);
-
   let resourceList = [['No additional resources required.', null]];
   if (lesson.resources !== undefined) {
     resourceList = lesson.resources;
