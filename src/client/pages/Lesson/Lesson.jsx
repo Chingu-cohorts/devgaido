@@ -8,6 +8,8 @@ import DisqusThread from '../shared/DisqusThread';
 import Modal from '../shared/Modal';
 import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
+import BigCard from '../shared/BigCard';
+
 import actions from '../../actions';
 
 const {
@@ -95,7 +97,8 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
         <i className={`fa ${typeIcons[lesson.type]} c-white h2 abs-top-right margin-top-small margin-right-small`} />
         {lesson.completed ? <i className="fa icon-check-circle-o c-white h1 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
       </PageHero>
-      <AnimateVisibleChildrenDiv className="container">
+      <BigCard item={lesson} type="lesson" />
+      {/* <AnimateVisibleChildrenDiv className="container">
         <div className="flex width-100 bg-white padding-horizontal-big padding-vertical-big border-round margin-bottom-small page-hero__offset">
           <AnimateVisibleChildrenDiv className="width-100">
             <div className="margin-bottom-big">
@@ -162,7 +165,7 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
             </div>
           </AnimateVisibleChildrenDiv>
         </div>
-      </AnimateVisibleChildrenDiv>
+      </AnimateVisibleChildrenDiv> */}
       <div className="container margin-top-huge">
         {user.authenticated ? <hr /> : null}
         {user.authenticated ?
