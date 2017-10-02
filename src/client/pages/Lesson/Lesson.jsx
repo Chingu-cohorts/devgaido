@@ -116,33 +116,33 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
             { user.authenticated ?
               <div className="margin-top-big flex flex-wrap-below-t justify-center">
                 {!lesson.bookmarked ?
-                  <button className="button--default uppercase margin-right-small margin-bottom-small-below-t" onClick={() => addBookmark(lessonId, 'lessons', lesson.version)}>
-                    <div className="flex items-center">
+                  <button className="button--default uppercase width-100-below-t margin-right-small-above-t margin-bottom-small-below-t" onClick={() => addBookmark(lessonId, 'lessons', lesson.version)}>
+                    <div className="flex items-center justify-center">
                       <i className="fa icon-thumb-tack margin-right-tiny" />
                         Bookmark
                       </div>
                   </button> :
-                  <button className="button--default uppercase margin-right-small margin-bottom-small-below-t" onClick={() => removeBookmark(lessonId, 'lessons', lesson.version)}>
-                    <div className="flex items-center">
+                  <button className="button--default uppercase width-100-below-t margin-right-small-above-t margin-bottom-small-below-t" onClick={() => removeBookmark(lessonId, 'lessons', lesson.version)}>
+                    <div className="flex items-center justify-center">
                       <i className="fa icon-remove margin-right-tiny" />
                         Remove Bookmark
                       </div>
                   </button>}
-                <a className="button button--primary margin-right-small margin-bottom-small-below-t uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => functionName(user, lessonId)}>
-                  <div className="flex items-center">
+                <a className="button button--primary width-100-below-t margin-right-small-above-t margin-bottom-small-below-t uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer" onClick={() => functionName(user, lessonId)}>
+                  <div className="flex items-center justify-center">
                     <i className="fa icon-external-link margin-right-tiny" />
                       Open Lesson
                     </div>
                 </a>
                 {!lesson.completed ?
-                  <button className="button--accent margin-right-small uppercase" onClick={() => { completeLesson(lessonId, lesson.version); toggleModal(); functionName(user, lessonId); }}>
-                    <div className="flex items-center">
+                  <button className="button--accent width-100-below-t margin-right-small-above-t uppercase" onClick={() => { completeLesson(lessonId, lesson.version); toggleModal(); functionName(user, lessonId); }}>
+                    <div className="flex items-center justify-center">
                       <i className="fa icon-check-square-o margin-right-tiny" />
                         Complete Lesson
                       </div>
                   </button> :
-                  <button className="button--accent margin-right-small uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>
-                    <div className="flex items-center">
+                  <button className="button--accent width-100-below-t margin-right-small-above-t uppercase" onClick={() => unCompleteLesson(lessonId, lesson.version)}>
+                    <div className="flex items-center justify-center">
                       <i className="fa icon-remove margin-right-tiny" />
                         Un-Complete Lesson
                       </div>
@@ -150,8 +150,8 @@ const Lesson = ({ match, curriculum, user, uiState }) => {
                 { uiState.showModal ? <Modal /> : null }
               </div> :
               <div className="margin-top-big margin-top-below-t flex justify-center-below-t">
-                <a className="button button--primary uppercase" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">
-                  <div className="flex items-center">
+                <a className="button button--primary uppercase width-100-below-t" href={lesson.externalSource} target="_blank" rel="noopener noreferrer">
+                  <div className="flex items-center justify-center">
                     <i className="fa icon-external-link margin-right-tiny" />
                       Open Lesson
                     </div>
