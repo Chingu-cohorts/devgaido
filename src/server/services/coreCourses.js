@@ -15,7 +15,6 @@ const courseAttributes = [
   ['name', 'required'],
   ['description', 'required'],
   ['lessonIds', 'required'],
-  ['version', 'required'],
   ['completeX', 'optional'],
 ];
 
