@@ -4,57 +4,18 @@ import Helmet from 'react-helmet';
 import LazyLoad from 'react-lazyload';
 import { connect } from 'react-redux';
 
+import BigPathCard from '../shared/Cards/BigPathCard/BigPathCard';
+
 import MilestoneCard from './MilestoneCard';
 import PageHero from '../shared/PageHero';
 import { MilestoneSubCard } from '../shared/Cards';
 import DisqusThread from '../shared/DisqusThread';
-import StateProvider from '../shared/StateProvider';
 import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
-
-import actions from '../../actions';
-
-const { addBookmark, removeBookmark } = actions;
 
 const typeIcons = {
   Book: 'icon-book',
   Course: 'icon-university',
   Project: 'icon-cogs',
-};
-
-const Subjects = ({ item, setState, state }) => {
-  const subjects = [];
-  let numSubjects = 0;
-  if (state.tagIsOpened) {
-    numSubjects = item.subjectNames.length;
-  } else {
-    numSubjects = Math.min(3, item.subjectNames.length);
-  }
-  for (let i = 0; i < numSubjects; i += 1) {
-    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-left-tiny" key={item.name + item.subjectNames[i].name + i}>{item.subjectNames[i]}</h5>);
-  }
-  if (item.subjectNames.length > 3) {
-    subjects.push(
-      <div className="flex-wrap" key={`${item.name}moreSubjects`}>
-        <button
-          className="border-round border-none bg-hover-accent transition-fast bg-light-grey c-text c-hover-white margin-top-tiny"
-          onClick={() => {
-            setState({
-              tagIsOpened: !state.tagIsOpened,
-            });
-          }}
-        >
-          <div className="flex items-center">
-            {state.tagIsOpened ? '<<' : '...'}
-          </div>
-        </button>
-      </div>,
-    );
-  }
-  return (
-    <div className="right">
-      {subjects}
-    </div>
-  );
 };
 
 const PathMarker = ({ text, dotClass, iconClass, path }) => (
@@ -73,7 +34,7 @@ const PathMarker = ({ text, dotClass, iconClass, path }) => (
     {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
   </div>);
 
-const Path = ({ match, curriculum, user, state, setState }) => {
+const Path = ({ match, curriculum, user }) => {
   const pathId = match.params.id;
   const path = curriculum.paths[match.params.id];
   let milestones = null;
@@ -127,63 +88,7 @@ const Path = ({ match, curriculum, user, state, setState }) => {
         <i className="fa icon-map-signs c-white h2 abs-top-right margin-top-small margin-right-small" />
         {path.completed ? <i className="fa icon-check-circle-o c-white h1 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
       </PageHero>
-      <div className="container page-hero__offset">
-        <div className="flex bg-white padding-horizontal-big border-round margin-top-small">
-          <AnimateVisibleChildrenDiv dontTriggerOnUpdate className="padding-vertical-big flex-2">
-            <h2 className="c-accent">About This Path</h2>
-            <p >{path.description}</p>
-            {path.goal ?
-              <div>
-                <h3 className="margin-top-big uppercase c-primary">Goal</h3>
-                <p>{path.goal}</p>
-              </div> : null}
-            {path.salary !== undefined ?
-              <div className="flex justify-start margin-top-big">
-                <div className="left">
-                  <h3 className="c-accent left no-margin">Estimated Salary: {path.salary[0]}</h3>
-                  <p className="c-primary">{path.salary[1]}</p>
-                </div>
-              </div> : null}
-          </AnimateVisibleChildrenDiv>
-          <AnimateVisibleChildrenDiv className="padding-vertical-big margin-left-huge flex-1">
-            { user.authenticated ?
-              <div className="right margin-bottom-big">
-                {!path.bookmarked ?
-                  <button className="button--default uppercase" onClick={() => addBookmark(pathId, 'paths', path.version)}>
-                    <div className="flex items-center">
-                      <i className="fa icon-thumb-tack margin-right-tiny" />
-                      Bookmark
-                    </div>
-                  </button> :
-                  <button className="button--default uppercase" onClick={() => removeBookmark(pathId, 'paths', path.version)}>
-                    <div className="flex items-center">
-                      <i className="fa icon-remove margin-right-tiny" />
-                      Remove Bookmark
-                    </div>
-                  </button>}
-              </div> :
-              <div className="right margin-bottom-big">
-                <button className="button--default uppercase hidden">Bookmark</button>
-              </div> }
-            <div className="flex justify-end">
-              <div>
-                {ratingStars}
-              </div>
-            </div>
-            <div className="flex justify-end">
-              <div>
-                {/* <h4 className="c-primary uppercase right no-margin">Very Long</h4>*/}
-                <h5 className="c-primary uppercase right">{path.estimatedTimeStr} hours</h5>
-              </div>
-            </div>
-            <div className="flex justify-end">
-              <div className="width-75 right">
-                <Subjects item={path} state={state} setState={setState} />
-              </div>
-            </div>
-          </AnimateVisibleChildrenDiv>
-        </div>
-      </div>
+      <BigPathCard path={path} />
       <div className="path__content container flex margin-vertical-big" id="path-content">
         <div className="path-node flex-column items-center">
           <div className="path-node__connection flex-1 margin-bottom">
@@ -225,14 +130,6 @@ Path.propTypes = {
   match: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
   user: PropTypes.objectOf(PropTypes.shape).isRequired,
-  state: PropTypes.objectOf(PropTypes.shape).isRequired,
-  setState: PropTypes.func.isRequired,
-};
-
-Subjects.propTypes = {
-  item: PropTypes.objectOf(PropTypes.shape).isRequired,
-  state: PropTypes.objectOf(PropTypes.shape).isRequired,
-  setState: PropTypes.func.isRequired,
 };
 
 PathMarker.propTypes = {
@@ -250,6 +147,4 @@ PathMarker.defaultProps = {
 export default connect(store => ({
   curriculum: store.curriculum,
   user: store.user,
-}))(StateProvider(Path, {
-  tagIsOpened: false,
-}, {}));
+}))(Path);
