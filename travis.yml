@@ -1,0 +1,22 @@
+#
+# File:        travis.yml
+# Description: Define the continuous integration environment and rules (including tests) to be 
+#              executed whenever changes are promoted to the "development" branch in GitHub.
+#
+language: node_js
+node_js:
+  - 6
+cache:
+  yarn: true
+  directories:
+    - node_modules
+script:
+#  - yarn lint
+  - yarn test
+  - yarn build
+
+#deploy:
+#  provider: surge
+#  project: ./build/
+#  domain: alexandria-temp.surge.sh
+#  skip_cleanup: true
