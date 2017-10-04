@@ -5,9 +5,11 @@ import { logErrors, logInvalidRelations,
   validateIdComposition, validateIdLength, validateRelationship,
   validateRequiredAttributes, validateUnknownAttributes } from './commonValidations';
 import { getExpectedAttributes, getAllPaths } from '../src/server/services/corePaths';
-import coreCourses from '../src/server/models/corecourses.json';
+import { getAllCourses } from '../src/server/services/coreCourses';
 
 const assert = require('assert');
+
+const maxPathIdLth = 24;
 
 /**
  * Check the validity of the corepaths.json file
@@ -32,8 +34,8 @@ describe('Validate corepaths.json', () => {
     afterEach(() => {
       invalidPathIds = logErrors(invalidPathIds);
     });
-    it('should verify that path ids are <= 16 characters', () => {
-      invalidPathIds = validateIdLength({ ...getAllPaths() });
+    it('should verify that path ids are <= 24 characters', () => {
+      invalidPathIds = validateIdLength({ ...getAllPaths() }, maxPathIdLth);
       assert.equal(invalidPathIds.length, 0);
     });
   });
@@ -53,7 +55,7 @@ describe('Validate corepaths.json', () => {
       invalidIds = logInvalidRelations('Path', 'Course', invalidIds);
     });
     it('should verify that course ids exist', () => {
-      invalidIds = validateRelationship('courseIds', { ...getAllPaths() }, 'courseId', coreCourses);
+      invalidIds = validateRelationship('courseIds', { ...getAllPaths() }, 'courseId', { ...getAllCourses() });
       assert.equal(invalidIds.length, 0);
     });
   });

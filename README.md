@@ -92,86 +92,99 @@ The core curriculum (subjects, paths, courses, and lessons) are maintained in a 
 JSON files which are passed from the server to clients running the devGaido application
 when the user session is started.
 
+Each JSON envelope contains one or more sets of "version-n.n" objects. The
+first, "version-1.0", is the original version. Subsequent versions are added
+with new version numbers and contain only the new or modified attributes.
+
 ##### src/server/models/corepaths.json
 ```
   {
-    "path-identifier" : { <-- Unique path identifier. Max of 16 chars.
-    "name": "...",        <-- Short path name
-    "description": "...", <-- Path description. Must describe the knowledge
-                              the user should expect to achieve from taking
-                              the courses in this path.
-    "courseIds": [        <-- Array of unique course id's contained in the path.
-                              Course id's can be referenced in more than one path.
-      "...",                  <-- Course id
-    ],
-    "version": "1.0.0"    <-- Semantic version to track changes
-   },
+    "path-identifier" : { <-- Unique path identifier. Max of 24 chars.
+      "version-n.n": {    <-- Semantic version to track changes
+        "name": "...",        <-- Short path name
+        "description": "...", <-- Path description. Must describe the knowledge
+                                  the user should expect to achieve from taking
+                                  the courses in this path.
+        "courseIds": [        <-- Array of unique course id's contained in the path.
+                                  Course id's can be referenced in more than one path.
+          "...",                  <-- Course id
+        ],
+      },
+      "version-1.0": {...}    <-- Original version
+    }
   }
 ```
 ##### src/server/models/corecourses.json
 ```
   {
-   "course-identifier" : { <-- Unique path identifier. Max of 16 chars.
-     "name": "...",        <-- Short course name
-     "description": "...", <-- Course description must define the objective
-                               of the course and what the user can expect to
-                               gain from it.
-     "lessonIds": [        <-- Array of lesson ids included in the course
-       "...",              <-- Lesson identifier
-     ],
-     "version": "1.0.0"    <-- Semantic version to track changes
-   },
+    "course-identifier" : { <-- Unique path identifier. Max of 24 chars.
+      "version-n.n": {      <-- Semantic version to track changes
+        "name": "...",        <-- Short course name
+        "description": "...", <-- Course description must define the objective
+                                  of the course and what the user can expect to
+                                  gain from it.
+        "lessonIds": [        <-- Array of lesson ids included in the course
+         "...",                   <-- Lesson identifier
+       ],
+      },
+      "version-1.0": {...}    <-- Original version
+   }
   }
 ```
 ##### src/server/models/corelessons.json
 ```
   {
-   "path-identifier" : {          <-- Unique lesson identifier. Max of 16 chars.
-     "source": "...",             <-- Textual definition of the lessons origin (e.g. P1XT)
-     "name": "...",               <-- Short lesson name
-     "description": "...",        <-- Lesson description. This should describe
+    "path-identifier" : {     <-- Unique lesson identifier. Max of 24 chars.
+      "version-n.n": {        <-- Semantic version to track changes
+        "source": "...",          <-- Textual definition of the lessons origin (e.g. P1XT)
+        "name": "...",            <-- Short lesson name
+        "description": "...",     <-- Lesson description. This should describe
                                       the lesson, as well as what knowledge will
                                       be provided to the user.
-     "type": "...",               <-- Lesson type categorizes the medium used to
+        "type": "...",            <-- Lesson type categorizes the medium used to
                                       transmit the information (e.g. reading, video, etc.)
-     "instructions": "...",       <-- For "type": "Project" this describes what
+        "instructions": "...",    <-- For "type": "Project" this describes what
                                       is expected of the user
-     "resources":[["resource-description","resource-url"],...],
+        "resources":[["resource-description","resource-url"],...],
                                   <-- For "type": "Project" this defines relevant
                                       supplemental material
-     "subjects: ["..."]..,        <-- An array of subject names this lesson is
+        "subjects: ["..."]..,     <-- An array of subject names this lesson is
                                       associated with.
-     "externalSource": "...",     <-- Defines the url of the lesson
-     "estimatedTime": "short|medium|long", <-- Defines the estimated amount of
+        "externalSource": "...",  <-- Defines the url of the lesson
+        "estimatedTime": "short|medium|long", 
+                                  <-- Defines the estimated amount of
                                       time required to complete the lesson.
                                       Acceptable values are:
                                       - short: 4 hours or less
                                       - medium: 16 hours or less
                                       - long: >16 hours
-     "version": "1.0.0"           <-- Semantic version to track changes
+      },
+      "version-1.0": {...}    <-- Original version
    },
   }
 ```
 ##### src/server/models/coresubjects.json
 ```
   {
-   "subject-identifier" : { <-- Unique subject identifier. Max of 16 chars.
-     "type": "...",         <-- Subject type which categorizes the associated
-                                subject material (e.g. CSS, HTML, Javascript, etc.)
-     "focusArea": "...",    <-- Subject focus area based on a specific webdev
-                                role (e.g. Frontend, Backend, Fullstack, etc.)
-     "name": "...",         <-- Short subject name
-     "description": "...",  <-- Subject description describing the associated
-                                subject material and how it relates to the
-                                webdev role.
-     "releaseNo": "...",    <-- Defines the release number for the associated
-                                technology the subject may be based on (e.g.
-                                Angular2 vs. Angular4)
-     "authorityURL": "...", <-- For specific technologies the subject is based
-                                on this notes the URL of the authorative
-                                source. For example, for Google's Material
-                                Design this would be www.materialdesign.io.
-     "version": "1.0.0"     <-- Semantic version to track changes
+    "subject-identifier" : { <-- Unique subject identifier. Max of 24 chars.
+      "version-n.n": {        <-- Semantic version to track changes
+        "type": "...",        <-- Subject type which categorizes the associated
+                                  subject material (e.g. CSS, HTML, Javascript, etc.)
+        "focusArea": "...",   <-- Subject focus area based on a specific webdev
+                                  role (e.g. Frontend, Backend, Fullstack, etc.)
+        "name": "...",        <-- Short subject name
+        "description": "...", <-- Subject description describing the associated
+                                  subject material and how it relates to the
+                                  webdev role.
+        "releaseNo": "...",   <-- Defines the release number for the associated
+                                  technology the subject may be based on (e.g.
+                                  Angular2 vs. Angular4)
+        "authorityURL": "...", <-- For specific technologies the subject is based
+                                  on this notes the URL of the authorative
+                                  source. For example, for Google's Material
+                                  Design this would be www.materialdesign.io.
+      },
+      "version-1.0": {...}    <-- Original version
    },
   }
 ```
