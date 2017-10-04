@@ -13,18 +13,18 @@ import OptionalPathInfo from './OptionalPathInfo';
 const BigPathCard = ({ path, user }) => (
   <BigCard>
     <PathImage path={path} />
-    <div className="flex margin-bottom-small">
+    <div className="flex flex-column-below-m justify-between-above-m margin-bottom-small">
       <RatingStars item={path} />
-      <div className="flex-2 margin-bottom-tiny">
-        <h5 className="c-primary no-margin uppercase right">{path.estimatedTimeStr} hours</h5>
+      <div className="margin-bottom-tiny">
+        <h5 className="c-primary no-margin uppercase">{path.estimatedTimeStr} hours</h5>
       </div>
     </div>
     <p className="no-margin">{path.description}</p>
     <OptionalPathInfo path={path} />
-    <div className="margin-top-big flex flex-wrap-below-t justify-center">
+    <div className="margin-top-big margin-top-small-below-t flex flex-wrap-below-t justify-center">
       { user.authenticated ? <BookmarkButton item={path} type="path" key="BookmarkButton" /> : null}
     </div>
-    <div className="flex margin-top-huge">
+    <div className="flex margin-top-big margin-top-small-below-t">
       <SubjectTags item={path} />
     </div>
   </BigCard>

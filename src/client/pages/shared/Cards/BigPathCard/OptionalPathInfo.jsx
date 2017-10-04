@@ -6,7 +6,7 @@ const OptionalPathInfo = ({ path }) => {
     return null;
   }
   return (
-    <div className="flex flex-column-below-t margin-top-huge">
+    <div className="flex flex-column-below-t margin-top-big margin-top-small-below-t">
       <div className="width-50-above-t margin-right-small-above-t">
         <h4 className="center uppercase c-primary margin-bottom-tiny">Goal</h4>
         <p className="no-margin">{path.goal ? path.goal : ''}</p>

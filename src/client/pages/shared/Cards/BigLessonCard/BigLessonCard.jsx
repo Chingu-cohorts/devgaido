@@ -18,21 +18,21 @@ import OpenButton from './OpenButton';
 const BigLessonCard = ({ lesson, user, uiState }) => (
   <BigCard>
     <LessonPreviewImage lesson={lesson} user={user} />
-    <div className="flex margin-bottom-small">
+    <div className="flex flex-column-below-m justify-between-above-m margin-bottom-small">
       <RatingStars item={lesson} />
-      <div className="flex-2 margin-bottom-tiny">
-        <h5 className="c-primary no-margin uppercase right">{lesson.estimatedTimeStr} hours</h5>
+      <div className="margin-bottom-tiny">
+        <h5 className="c-primary no-margin uppercase">{lesson.estimatedTimeStr} hours</h5>
       </div>
     </div>
     <p className="no-margin">{lesson.description}</p>
     <OptionalLessonInfo lesson={lesson} />
-    <div className="margin-top-big flex flex-wrap-below-t justify-center">
+    <div className="margin-top-big margin-top-small-below-t flex flex-wrap-below-t justify-center">
       { user.authenticated ? <BookmarkButton item={lesson} type="lesson" key="BookmarkButton" /> : null}
       <OpenButton lesson={lesson} user={user} />
       { user.authenticated ? <CompleteButton lesson={lesson} user={user} /> : null}
       { user.authenticated && uiState.showModal ? <Modal /> : null}
     </div>
-    <div className="flex margin-top-huge">
+    <div className="flex margin-top-big margin-top-small-below-t">
       <SubjectTags item={lesson} />
     </div>
   </BigCard>
