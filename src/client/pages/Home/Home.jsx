@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import LazyLoad from 'react-lazyload';
 
-import LinkButton from '../shared/Button';
+import LinkButton from '../shared/LinkButton';
 import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 import Redirect from '../shared/Redirect';
 
