@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Helmet from 'react-helmet';
 import LazyLoad from 'react-lazyload';
 
+import LinkButton from '../shared/LinkButton';
 import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 import Redirect from '../shared/Redirect';
 
@@ -22,18 +23,8 @@ const Home = () => (
           <p className="h4 h5-below-d1 c-white"><span className="c-accent bold">devGaido</span> provides easy to follow learning paths that help you reach your goal without the hassle.</p>
           <p className="h4 h5-below-d1 c-white">Never worry about learning the wrong stuff from subpar resources ever again!</p>
           <div className="margin-top-small width-100">
-            <Link className="button button--primary margin-right-small uppercase margin-bottom-small-below-t" to="/signup">
-              <div className="flex items-center">
-                <i className="fa icon-sign-in margin-right-tiny" />
-                Sign Up Now
-              </div>
-            </Link>
-            <Link className="button button--white-clear uppercase bg-black-50" to="/library">
-              <div className="flex items-center">
-                <i className="fa icon-search margin-right-tiny" />
-                Explore Library
-              </div>
-            </Link>
+            <LinkButton buttonType="button--primary" icon="icon-sign-in" href="/signup">Sign Up Now</LinkButton>
+            <LinkButton buttonType="button--white-clear" icon="icon-search" href="/signup">Explore Library</LinkButton>
           </div>
         </AnimateVisibleChildrenDiv>
       </div>

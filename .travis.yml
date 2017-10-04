@@ -1,0 +1,26 @@
+#
+# File:        travis.yml
+# Description: Define the continuous integration environment and rules (including tests) to be 
+#              executed whenever changes are promoted to the "development" branch in GitHub.
+#              At this time TravisCI is used only for continuous testing, but the longer term
+#              vision is to run this whenever changes are promoted to the "development" 
+#              branch and to deploy to the Production runtime environment as long as all
+#              tests pass.
+#
+language: node_js
+node_js:
+  - 6
+cache:
+  yarn: true
+  directories:
+    - node_modules
+script:
+#  - yarn lint
+  - yarn test
+  - yarn build
+
+#deploy:
+#  provider: surge
+#  project: ./build/
+#  domain: alexandria-temp.surge.sh
+#  skip_cleanup: true

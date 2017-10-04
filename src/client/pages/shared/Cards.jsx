@@ -203,7 +203,7 @@ const LibraryCard = ({ item, user }) => {
       <LessonsComplete item={item} />
     </FlexRow>) : <LessonsNumber item={item} />;
   return (
-    <Link className={'image-link-card col-quarter flex-column bg-white border-round c-text margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
+    <Link className={'image-link-card col-quarter flex-column bg-white border-round _c-text_ margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
       <div className="image-link-card__img bg-cover border-round-top border-1px border-white relative flex-column justify-center" style={{ backgroundImage: `url(${item.img})` }}>
         <div className="border-round-top bg-black opacity-50 abs-center-stretch" />
         <div className={`border-round-top ${bgCol} abs-center-stretch`} />

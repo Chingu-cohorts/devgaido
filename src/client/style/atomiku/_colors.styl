@@ -1,37 +1,71 @@
 createColors(cNames, cVals)
   for name, i in cNames
     .bg-{name}
-      background: cVals[i] !important
+      background: cVals[i]
     .c-{name}
-      color: cVals[i] !important
+      color: cVals[i]
     .border-{name}
-      border-color: cVals[i] !important
+      border-color: cVals[i]
     .bg-hover-{name}
       &:hover
-        background: cVals[i] !important
+        background: cVals[i]
     .bg-focus-{name}
       &:focus
-        background: cVals[i] !important
+        background: cVals[i]
     .border-hover-{name}
       &:hover
-        border-color: cVals[i] !important
+        border-color: cVals[i]
     .border-focus-{name}
       &:focus
-        border-color: cVals[i] !important
+        border-color: cVals[i]
     .c-hover-{name}
       &:hover
-        color: cVals[i] !important
+        color: cVals[i]
     .c-focus-{name}
       &:focus
-        color: cVals[i] !important
+        color: cVals[i]
 createColors($colorNames, $colorValues)
+
+createColorsImportant(cNames, cVals)
+  for name, i in cNames
+    ._bg-{name}_
+      background: cVals[i] !important
+    ._c-{name}_
+      color: cVals[i] !important
+    ._border-{name}_
+      border-color: cVals[i] !important
+    ._bg-hover-{name}_
+      &:hover
+        background: cVals[i] !important
+    ._bg-focus-{name}_
+      &:focus
+        background: cVals[i] !important
+    ._border-hover-{name}_
+      &:hover
+        border-color: cVals[i] !important
+    ._border-focus-{name}_
+      &:focus
+        border-color: cVals[i] !important
+    ._c-hover-{name}_
+      &:hover
+        color: cVals[i] !important
+    ._c-focus-{name}_
+      &:focus
+        color: cVals[i] !important
+createColorsImportant($colorNames, $colorValues)
 
 createOpacityColors(cNames, cVals, steps)
   for name, i in cNames
     for step in steps
       .bg-{name}-{step}
+        background: rgba(cVals[i], (step / 100))
+
+createOpacityColorsImportant(cNames, cVals, steps)
+  for name, i in cNames
+    for step in steps
+      ._bg-{name}-{step}_
         background: rgba(cVals[i], (step / 100)) !important
-    
+
 createOpacityColors($colorNames, $colorValues, $opacitySteps)
 
 .desaturate

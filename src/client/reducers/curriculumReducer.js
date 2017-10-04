@@ -97,14 +97,19 @@ const curriculum = (state = {
     }
     case 'ADD_BOOKMARK': {
       const newState = { ...state };
-      const item = newState[action.itemCategory][action.itemId];
+
+      const itemCategory = action.itemType === 'path' ? 'paths' : 'lessons';
+      const item = newState[itemCategory][action.itemId];
+
       item.bookmarked = true;
 
       return newState;
     }
     case 'REMOVE_BOOKMARK': {
       const newState = { ...state };
-      const item = newState[action.itemCategory][action.itemId];
+
+      const itemCategory = action.itemType === 'path' ? 'paths' : 'lessons';
+      const item = newState[itemCategory][action.itemId];
 
       item.bookmarked = false;
 
