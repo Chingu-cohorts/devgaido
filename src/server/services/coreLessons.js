@@ -22,7 +22,6 @@ const lessonAttributes = [
   ['subjects', 'required'],
   ['externalSource', 'required'],
   ['estimatedTime', 'required'],
-  ['version', 'required'],
 ];
 
 /**

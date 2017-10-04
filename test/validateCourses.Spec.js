@@ -5,12 +5,12 @@ import { logErrors, logInvalidRelations,
   validateIdComposition, validateIdLength, validateRelationship,
   validateRequiredAttributes, validateUnknownAttributes } from './commonValidations';
 import { getAllCourses, getExpectedAttributes } from '../src/server/services/coreCourses';
-import coreCourses from '../src/server/models/corecourses.json';
-import testCourses from './testdata/testcourses.json';
-import coreLessons from '../src/server/models/corelessons.json';
-import corePaths from '../src/server/models/corepaths.json';
+import { getAllLessons } from '../src/server/services/coreLessons';
+import { getAllPaths } from '../src/server/services/corePaths';
 
 const assert = require('assert');
+
+const maxCourseIdLth = 24;
 
 /**
  * Check the validity of the corecourses.json file
@@ -35,9 +35,9 @@ describe('Validate corecourses.json', () => {
     afterEach(() => {
       invalidCourseIds = logErrors(invalidCourseIds);
     });
-    it('should verify that course ids are <= 16 characters', () => {
-      invalidCourseIds = validateIdLength({ ...getAllCourses() });
-      assert.equal(invalidCourseIds.length, 1);
+    it('should verify that course ids are <= 24 characters', () => {
+      invalidCourseIds = validateIdLength({ ...getAllCourses() }, maxCourseIdLth);
+      assert.equal(invalidCourseIds.length, 0);
     });
   });
   describe('Validate course id composition', () => {
@@ -47,7 +47,7 @@ describe('Validate corecourses.json', () => {
     });
     it('should verify that course ids contain only lowercase letters and digits', () => {
       invalidCourseIds = validateIdComposition({ ...getAllCourses() });
-      assert.equal(invalidCourseIds.length, 1);
+      assert.equal(invalidCourseIds.length, 0);
     });
   });
   describe('Validate lesson ids in the course exists', () => {
@@ -56,8 +56,8 @@ describe('Validate corecourses.json', () => {
       invalidIds = logInvalidRelations('Course', 'Lesson', invalidIds);
     });
     it('should verify that lesson ids exist', () => {
-      invalidIds = validateRelationship('lessonIds', { ...getAllCourses() }, 'lessonId', coreLessons);
-      assert.equal(invalidIds.length, 2);
+      invalidIds = validateRelationship('lessonIds', { ...getAllCourses() }, 'lessonId', { ...getAllLessons() });
+      assert.equal(invalidIds.length, 0);
     });
   });
   describe('Vaidate that there are no orphaned courses', () => {
@@ -66,7 +66,7 @@ describe('Validate corecourses.json', () => {
       orphanedCourseIds = logErrors(orphanedCourseIds);
     });
     it('should verify that each course id is referenced by at least one path', () => {
-      const allPathCourses = Object.values(corePaths).reduce((courseReferences, path) => {
+      const allPathCourses = Object.values({ ...getAllPaths() }).reduce((courseReferences, path) => {
         path.courseIds.forEach((courseId) => {
           if (courseReferences.indexOf(courseId) === -1) {
             courseReferences.push(courseId);
@@ -79,7 +79,7 @@ describe('Validate corecourses.json', () => {
           orphanedCourseIds.push(`ID:${currentCourseId} not referenced by any path`);
         }
       });
-      assert.equal(orphanedCourseIds.length, 1);
+      assert.equal(orphanedCourseIds.length, 0);
     });
   });
 });

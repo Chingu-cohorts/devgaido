@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-const maxIdLength = 16;
 const validIdPattern = /^[0-9a-z]+$/;
 const indentErrMsg = ' '.repeat(9);
 
@@ -77,7 +76,7 @@ const validateIdMatch = jsonData => Object.keys(jsonData).reduce((invalidIds, it
  * must be formatted as {"<id>": {..."<attribute-name>": "<attribute-value>"...}...}
  * @returns {String[]} invalidIds - Array of id's exceeding 16 characters
  */
-const validateIdLength = jsonData => Object.keys(jsonData).reduce((invalidIds, itemId) => {
+const validateIdLength = (jsonData, maxIdLength) => Object.keys(jsonData).reduce((invalidIds, itemId) => {
   if (itemId.length > maxIdLength) {
     invalidIds.push(`${itemId}: greater than ${maxIdLength} characters`);
   }
