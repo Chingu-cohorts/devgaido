@@ -12,7 +12,7 @@ const LinkButton = ({ href, onClick, icon, buttonType, children }) => (
 
 LinkButton.propTypes = {
   href: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   icon: PropTypes.string,
   buttonType: PropTypes.string,
   children: PropTypes.oneOfType([
@@ -24,6 +24,7 @@ LinkButton.propTypes = {
 LinkButton.defaultProps = {
   icon: '',
   buttonType: '',
+  onClick: null,
 };
 
 export default LinkButton;
