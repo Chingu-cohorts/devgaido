@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
 
+import RatingStars from './Cards/shared/RatingStars';
+import SubjectTags from './Cards/shared/SubjectTags';
+
 import StateProvider from '../shared/StateProvider';
 
 import actions from '../../actions';
@@ -54,21 +57,6 @@ const LessonsComplete = ({ item }) => (
   </h4>
 );
 
-const RatingStars = ({ item }) => {
-  const ratingStars = [];
-  for (let i = 0; i < 5; i += 1) {
-    if (i < item.rating) {
-      ratingStars.push(<i className="fa icon-star c-accent h4 margin-left-tiny" key={item.name + i} />);
-    } else {
-      ratingStars.push(<i className="fa icon-star-o c-accent h4 margin-left-tiny" key={item.name + i} />);
-    }
-  }
-  return (
-    <div className="right">
-      {ratingStars}
-    </div>
-  );
-};
 // TODO: Create unique keys
 const Subjects = ({ item }) => {
   const subjects = [];
@@ -77,7 +65,7 @@ const Subjects = ({ item }) => {
     subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-right-tiny" key={item.name + item.subjectNames[i].name + i} >{item.subjectNames[i]}</h5>);
   }
   if (item.subjectNames.length > 3) {
-    subjects.push(<h5 className="tag border-round bg-light-grey c-text" key={item.name + '...'}>{'...'}</h5>);
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text" key={`${item.name  }...`}>{'...'}</h5>);
   }
   return (
     <div className="right">
@@ -87,7 +75,7 @@ const Subjects = ({ item }) => {
 };
 
 const EstimatedTime = ({ item }) => (
-  <h5 className="c-primary uppercase right no-margin">{item.estimatedTimeStr} hours</h5>
+  <h5 className="c-primary uppercase no-margin">{item.estimatedTimeStr} hours</h5>
 );
 
 const typeIcons = {
@@ -120,29 +108,29 @@ const DashboardCard = ({ item }) => {
           {item.completed ? <i className={completeIcon} /> : null}
         </FlexRow>
       </div>
-      <FlexRow>
-        <FlexColumn className="flex-2 margin-horizontal-small margin-top-small items-start justify-between">
-          <p className="">{item.description}</p>
-        </FlexColumn>
-        <FlexColumn className="margin-horizontal-small margin-top-small flex-1">
-          <FlexRow className="items-center justify-end margin-bottom-tiny">
-            <RatingStars item={item} />
-          </FlexRow>
-          <FlexRow className="items-center justify-end">
-            <EstimatedTime item={item} />
-          </FlexRow>
-          {item.nLessonsTotal > 0 ?
-            <Progress item={item} /> : null}
-        </FlexColumn>
-      </FlexRow>
-      <FlexRow className="margin-horizontal-small margin-bottom-small items-center justify-between">
-        <Subjects item={item} />
-        {itemIsPath ?
-          <FlexRow className="justify-end">
+      <div className="margin-horizontal-small margin-top-small">
+        <FlexRow className="flex-column-below-m justify-between-above-m">
+          <RatingStars item={item} />
+          <EstimatedTime item={item} />
+        </FlexRow>
+        <p className="margin-top-small">{item.description}</p>
+        {item.nLessonsTotal > 0 ?
+          <Progress item={item} /> : null}
+      </div>
+      { itemIsPath ?
+        <FlexRow className="flex-column-below-t margin-horizontal-small margin-bottom-small items-start justify-between items-center-below-t">
+          <div className="order-2-below-t">
+            <SubjectTags item={item} />
+          </div>
+          <FlexRow className="justify-end order-1-below-t margin-bottom-small-below-t">
             <MilestonesComplete item={item} />
             <LessonsComplete item={item} />
-          </FlexRow> : <i className={typeIcon} />}
-      </FlexRow>
+          </FlexRow>
+        </FlexRow> :
+        <FlexRow className="margin-horizontal-small margin-bottom-small items-start justify-between">
+          <SubjectTags item={item} />
+          <i className={typeIcon} />
+        </FlexRow> }
     </Link>
   );
 };

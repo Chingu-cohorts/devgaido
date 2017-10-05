@@ -18,7 +18,7 @@ const BookmarkButton = ({ item, type }) => {
   const caption = !item.bookmarked ? 'Bookmark' : 'Remove Bookmark';
 
   return (
-    <Button buttonType="button--default" icon="icon-thumb-tack" onClick={handleClick}>{caption}</Button>
+    <Button className="button--default" icon="icon-thumb-tack" onClick={handleClick}>{caption}</Button>
   );
 };
 

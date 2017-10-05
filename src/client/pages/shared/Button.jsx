@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ onClick, icon, buttonType, children }) => (
-  <button className={`${buttonType || 'button--default'} uppercase width-100-below-t margin-right-small-above-t margin-bottom-small-below-t`} onClick={onClick}>
+const Button = ({ onClick, icon, className, children }) => (
+  <button className={`${className || 'button--default'} uppercase width-100-below-t margin-right-small-above-t margin-bottom-small-below-t`} onClick={onClick}>
     <div className="flex items-center justify-center">
       {icon ? <i className={`fa ${icon} margin-right-tiny`} /> : null}
       {children}
@@ -13,7 +13,7 @@ const Button = ({ onClick, icon, buttonType, children }) => (
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   icon: PropTypes.string,
-  buttonType: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
@@ -22,7 +22,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   icon: '',
-  buttonType: '',
+  className: '',
 };
 
 export default Button;
