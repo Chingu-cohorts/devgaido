@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const PageHero = ({ bgColorClass, bgUrl, title, subtitle, children, full }) => (
   <div className={`${full ? 'page-hero--full' : 'page-hero'} relative`}>
     <div
-      className={`page-hero__bg-image abs-center-stretch desaturate bg-cover`}
+      className={'page-hero__bg-image abs-center-stretch desaturate bg-cover'}
       style={bgUrl !== '' ? { background: `url(${bgUrl})`, backgroundSize: 'cover' } : {}}
     />
     <div className={`page-hero__bg-overlay abs-center-stretch opacity-75 ${bgColorClass}`} />
