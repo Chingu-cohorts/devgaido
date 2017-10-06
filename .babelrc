@@ -1,37 +1,13 @@
 {
-  "plugins": ["react-hot-loader/babel", 
-              "babel-plugin-transform-object-rest-spread"
-            ],
+  "presets": [ "react", ["env", {"modules": false}] ],
+  "plugins": [ "react-hot-loader/babel", "babel-plugin-transform-object-rest-spread"],
   "env": {
-    "development": {
-      "presets": [
-        ["env", { "targets": { "node": true } }],
-        ["es2015", { "modules": false }],
-        "react"
-      ],
-      "plugins": ["transform-react-jsx-self", "transform-react-jsx-source"]
-    },
-    "production": {
-      "presets": [
-        ["env", { "targets": { "node": true } }],
-        ["es2015", { "modules": false }],
-        "react"
-      ],
-      "plugins": [
-        "transform-remove-strict-mode",
-        "transform-react-remove-prop-types",
-        "transform-react-constant-elements",
-        "transform-react-pure-class-to-function",
-        "transform-react-inline-elements"
-      ]
-    },
     "test": {
       "presets": [
         ["env", { "targets": { "node": true } }],
         ["es2015", { "modules": false }],
         "react"
-      ],
-      "plugins": ["transform-es2015-modules-commonjs"]
+      ]
     }
   }
 }
