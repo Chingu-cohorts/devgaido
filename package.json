@@ -17,11 +17,16 @@
     "copyassets": "rimraf ./dist && mkdirp ./dist/public && ncp ./src/client/assets/ ./dist/public/",
     "analyzesize": "webpack -p --config webpack.config.js --json | webpack-bundle-size-analyzer",
     "screenshots": "node ./src/server/screenshots",
+    "jest": "jest",
     "test": "mocha --require ./test/helper.js '+(test|validate)/**/*Spec.js'"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
+    "babel-jest": "^21.2.0",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.4.0",
@@ -33,10 +38,12 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
+    "jest": "^21.2.1",
     "mocha": "^3.4.2",
     "npm-run-all": "^4.0.2",
     "react": "^16.0.0",
     "react-hot-loader": "3.0.0-beta.6",
+    "react-test-renderer": "^16.0.0",
     "redux-logger": "^3.0.1",
     "start-server-webpack-plugin": "^2.2.0",
     "style-loader": "^0.16.1",
