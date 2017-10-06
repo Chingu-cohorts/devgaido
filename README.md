@@ -63,7 +63,8 @@ the wiki for more details and examples.
 | yarn screenshots  | Capture screenshots of all lessons |
 | yarn screenshots new | Capture screenshots of all lessons with no screenshot |
 | yarn screenshots lesson-id | Capture screenshot for specified lesson id |
-| yarn test         | Initiate tests and validations    |
+| yarn jest         | Initiate React UI tests & validations |
+| yarn test         | Initiate Server-side tests and validations    |
 
 ### Configuration
 
@@ -83,7 +84,8 @@ The devGaido project folder is organized in the following manner:
       /models - Data model files
       /services - Microservices
     /test - Mocha tests and validations of JSON files
-      /testdata - Data files designed to exercise the tests and validations
+      /testdata - Data files designed to exercise Server-side tests and validations
+      /testreact - Data files designed to exercise React UI tests and validations
 ```
 
 #### Models - Curriculum JSON Format
@@ -199,6 +201,7 @@ A separate repo is used to manage application runtime components. For more infor
 - [Erik Hos](https://github.com/mrhos)
 - [Kim Kwanka](https://github.com/kimkwanka)
 - [Chance McAllister](https://github.com/tropicalchancer)
+- [Richie McGlory](https://github.com/RichieMcG)
 - [Jim Medlock](https://github.com/jdmedlock)
 - [Nick Papasavvas](https://github.com/nickolaos77)
 
