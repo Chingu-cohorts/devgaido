@@ -14,6 +14,7 @@
     "dev": "yarn run copyassets && npm-run-all --parallel dev:client dev:server",
     "dev:server": "webpack --config webpack.server.config.js --display-error-details",
     "dev:client": "webpack-dev-server",
+    "dev:mongod": "mongod",
     "copyassets": "rimraf ./dist && mkdirp ./dist/public && ncp ./src/client/assets/ ./dist/public/",
     "analyzesize": "webpack -p --config webpack.config.js --json | webpack-bundle-size-analyzer",
     "screenshots": "node ./src/server/screenshots",
