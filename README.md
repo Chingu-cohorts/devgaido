@@ -59,6 +59,7 @@ the wiki for more details and examples.
 | yarn dev          | Start development client & server |
 | yarn dev:server   | Start development client          |
 | yarn dev:client   | Start development server          |
+| yarn dev:mongod   | Start development Mongo instance  |
 | yarn analyzesize  | Analyze bundle sizes              |
 | yarn screenshots  | Capture screenshots of all lessons |
 | yarn screenshots new | Capture screenshots of all lessons with no screenshot |
