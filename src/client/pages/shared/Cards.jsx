@@ -65,7 +65,7 @@ const Subjects = ({ item }) => {
     subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-right-tiny" key={item.name + item.subjectNames[i].name + i} >{item.subjectNames[i]}</h5>);
   }
   if (item.subjectNames.length > 3) {
-    subjects.push(<h5 className="tag border-round bg-light-grey c-text" key={`${item.name  }...`}>{'...'}</h5>);
+    subjects.push(<h5 className="tag border-round bg-light-grey c-text" key={`${item.name}...`}>{'...'}</h5>);
   }
   return (
     <div className="right">
@@ -91,7 +91,10 @@ const MenuCard = ({ children }) => (
   </FlexColumn>
 );
 
-const DashboardCard = ({ item }) => {
+// Add shouldComponentUpdate so opening Milestones doesn't cause needless rerenders
+const shouldComponentUpdate = (that, nextProps) => nextProps.item !== that.props.item;
+
+const ResourceCard = StateProvider(({ item }) => {
   const itemIsPath = item.nLessonsTotal !== undefined;
   const typeIcon = itemIsPath ? '' : typeIcons[item.type];
   const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-white' : 'fa h2 icon-check-circle-o c-white';
@@ -99,8 +102,8 @@ const DashboardCard = ({ item }) => {
   const bgCol = itemIsPath ? 'bg-primary-25' : 'bg-accent-50';
 
   return (
-    <Link className={'image-link-card col-quarter flex-column bg-white border-round c-text margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
-      <div className="image-link-card__img bg-cover border-round-top border-1px border-white relative flex-column justify-center" style={{ backgroundImage: `url(${item.img})` }}>
+    <Link className={'image-link-card col-quarter flex-column bg-white border-round c-text margin-bottom-small _c-text_'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
+      <div className="image-link-card__img bg-cover border-round-top relative flex-column justify-center" style={{ backgroundImage: `url(${item.img})` }}>
         <div className="border-round-top bg-black opacity-50 abs-center-stretch" />
         <div className={`border-round-top ${bgCol} abs-center-stretch`} />
         <FlexRow className={'items-center padding-horizontal-small padding-vertical-tiny border-round-top c-white relative'}>
@@ -108,14 +111,14 @@ const DashboardCard = ({ item }) => {
           {item.completed ? <i className={completeIcon} /> : null}
         </FlexRow>
       </div>
-      <div className="margin-horizontal-small margin-top-small">
+      <div className="margin-horizontal-small margin-top-small flex-1">
         <FlexRow className="flex-column-below-m justify-between-above-m">
           <RatingStars item={item} />
           <EstimatedTime item={item} />
         </FlexRow>
-        <p className="margin-top-small">{item.description}</p>
         {item.nLessonsTotal > 0 ?
           <Progress item={item} /> : null}
+        <p className="margin-top-small">{item.description}</p>
       </div>
       { itemIsPath ?
         <FlexRow className="flex-column-below-t margin-horizontal-small margin-bottom-small items-start justify-between items-center-below-t">
@@ -133,85 +136,9 @@ const DashboardCard = ({ item }) => {
         </FlexRow> }
     </Link>
   );
-};
-const shouldComponentUpdate = (that, nextProps) => nextProps.item !== that.props.item;
-
-const MilestoneSubCard = StateProvider(({ item, completeX }) => {
-  const itemIsPath = item.nLessonsTotal !== undefined;
-  const typeIcon = itemIsPath ? '' : typeIcons[item.type];
-  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-accent' : 'fa h2 icon-check-circle-o c-accent';
-  const pathId = itemIsPath ? item.id : undefined;
-  const underline = itemIsPath ? 'shadow-bottom-primary-2' : 'shadow-bottom-accent-2';
-  const dotClasses = !completeX ? `dot ${item.completed ? '' : 'dot--empty'} dot--displace` : '';
-
-  return (
-    <Link className={`link-card ${dotClasses} flex-column width-100 bg-white border-round c-text margin-bottom-small relative`} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
-      <FlexRow className={`margin-top-small margin-horizontal-small items-center padding-bottom-tiny ${underline}`}>
-        <h3 className="flex-1 no-margin">{item.name}</h3>
-        {item.completed ? <i className={completeIcon} /> : null}
-      </FlexRow>
-      <FlexRow>
-        <FlexColumn className="flex-2 margin-horizontal-small margin-top-small items-start justify-between">
-          <p className="">{item.description}</p>
-        </FlexColumn>
-        <FlexColumn className="margin-horizontal-small margin-top-small flex-1">
-          <FlexRow className="items-center justify-end margin-bottom-tiny">
-            <RatingStars item={item} />
-          </FlexRow>
-          <FlexRow className="items-center justify-end">
-            <EstimatedTime item={item} />
-          </FlexRow>
-          {item.nLessonsTotal > 0 ?
-            <Progress item={item} /> : null}
-        </FlexColumn>
-      </FlexRow>
-      <FlexRow className="margin-horizontal-small margin-bottom-small items-center justify-between">
-        <Subjects item={item} />
-        {itemIsPath ?
-          <FlexRow className="justify-end">
-            <MilestonesComplete item={item} />
-            <LessonsComplete item={item} />
-          </FlexRow> : <i className={typeIcon} />}
-      </FlexRow>
-    </Link>
-  );
 }, {}, {
   shouldComponentUpdate,
 });
-
-const LibraryCard = ({ item, user }) => {
-  const itemIsPath = item.courseIds !== undefined;
-  const typeIcon = itemIsPath ? '' : typeIcons[item.type];
-  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-white' : 'fa h2 icon-check-circle-o c-white';
-  const pathId = itemIsPath ? item.id : undefined;
-  const bgCol = itemIsPath ? 'bg-primary-25' : 'bg-accent-50';
-  const metrics = item.nLessonsCompleted > 0 ?
-    (<FlexRow className="justify-end">
-      <MilestonesComplete item={item} />
-      <LessonsComplete item={item} />
-    </FlexRow>) : <LessonsNumber item={item} />;
-  return (
-    <Link className={'image-link-card col-quarter flex-column bg-white border-round _c-text_ margin-bottom-small'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
-      <div className="image-link-card__img bg-cover border-round-top border-1px border-white relative flex-column justify-center" style={{ backgroundImage: `url(${item.img})` }}>
-        <div className="border-round-top bg-black opacity-50 abs-center-stretch" />
-        <div className={`border-round-top ${bgCol} abs-center-stretch`} />
-        <FlexRow className={'items-center padding-horizontal-small padding-vertical-tiny border-round-top c-white relative'}>
-          <h3 className="flex-1 h4-below-t no-margin text-shadow-subtle uppercase wider">{item.name}</h3>
-          {item.completed ? <i className={completeIcon} /> : null}
-        </FlexRow>
-      </div>
-      <p className="flex-1 margin-small">{item.description}</p>
-      <FlexColumn className="margin-small">
-        <FlexRow className="items-center justify-between">
-          {itemIsPath ? metrics : <i className={typeIcon} />}
-          <RatingStars item={item} />
-        </FlexRow>
-        {user.authenticated && item.nLessonsTotal > 0 ?
-          <Progress item={item} /> : null}
-      </FlexColumn>
-    </Link>
-  );
-};
 
 FlexRow.propTypes = {
   children: PropTypes.oneOfType([
@@ -272,16 +199,8 @@ MenuCard.propTypes = {
   ]).isRequired,
 };
 
-DashboardCard.propTypes = {
+ResourceCard.propTypes = {
   item: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
-MilestoneSubCard.propTypes = {
-  item: PropTypes.objectOf(PropTypes.shape).isRequired,
-};
-
-LibraryCard.propTypes = {
-  user: PropTypes.objectOf(PropTypes.shape).isRequired,
-  item: PropTypes.objectOf(PropTypes.shape).isRequired,
-};
-export { MenuCard, DashboardCard, LibraryCard, MilestoneSubCard };
+export { MenuCard, ResourceCard };

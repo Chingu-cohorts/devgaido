@@ -8,7 +8,7 @@ import BigPathCard from '../shared/Cards/BigPathCard/BigPathCard';
 
 import MilestoneCard from './MilestoneCard';
 import PageHero from '../shared/PageHero';
-import { MilestoneSubCard } from '../shared/Cards';
+import { ResourceCard } from '../shared/Cards';
 import DisqusThread from '../shared/DisqusThread';
 import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
@@ -45,7 +45,7 @@ const Path = ({ match, curriculum, user }) => {
       const lessons = course.lessonIds.map((lessonId) => {
         const lesson = curriculum.lessons[lessonId];
         return (
-          <MilestoneSubCard item={lesson} key={lessonId} completeX={course.completeX} />);
+          <ResourceCard item={lesson} key={lessonId} completeX={course.completeX} />);
       });
 
       return <MilestoneCard index={index} course={course} lessons={lessons} key={courseId} id={`${pathId}/${courseId}`} />;
@@ -55,7 +55,7 @@ const Path = ({ match, curriculum, user }) => {
     const lessons = course.lessonIds.map((lessonId) => {
       const lesson = curriculum.lessons[lessonId];
       return (
-        <MilestoneSubCard
+        <ResourceCard
           item={lesson}
           linkTo={lesson.url}
           bgColorClass={`relative no-milestone dot ${lesson.completed ? '' : 'dot--empty'} dot--displace bg-accent`}

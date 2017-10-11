@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { LibraryCard } from '../shared/Cards';
+import { ResourceCard } from '../shared/Cards';
 import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
 const filterByTermNTopic = (item, uiState) => {
@@ -65,13 +65,13 @@ const Results = ({ curriculum, uiState, user, category }) => {
   filteredIds.map((pathId) => {
     const path = curriculum.paths[pathId];
     return (
-      <LibraryCard item={path} user={user} key={pathId} />
+      <ResourceCard item={path} user={user} key={pathId} />
     );
   }) :
   filteredIds.map((lessonId) => {
     const lesson = curriculum.lessons[lessonId];
     return (
-      <LibraryCard item={lesson} user={user} key={lessonId} />
+      <ResourceCard item={lesson} user={user} key={lessonId} />
     );
   });
 
