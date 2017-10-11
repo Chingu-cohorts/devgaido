@@ -15,7 +15,7 @@ const OpenButton = ({ lesson, user }) => {
     setLastTouchedLesson(lesson.id);
   } : null;
   return (
-    <LinkButton className="button--primary" href={lesson.externalSource} onClick={handleClick}>Open Lesson</LinkButton>
+    <LinkButton className="button--primary" icon="icon-external-link" href={lesson.externalSource} onClick={handleClick}>Open Lesson</LinkButton>
   );
 };
 
