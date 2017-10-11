@@ -19,19 +19,21 @@ const typeIcons = {
 };
 
 const PathMarker = ({ text, dotClass, iconClass, path }) => (
-  <div className={`path-marker mclosed relative ${dotClass} flex items-center bg-grey border-round`}>
-    <h3 className="path-marker__text flex-1 uppercase no-margin c-white margin-right-small wide">{text}</h3>
-    {path && path.nTotal !== 1 ?
-      <h3 className="no-margin right c-white">
-        <i className={'fa icon-flag-checkered h3 right margin-left-big margin-right-tiny'} />
-        <span>{path.nCompleted}/{path.nTotal}</span>
-      </h3> : null}
-    {path && path.nLessonsTotal ?
-      <h3 className="no-margin right c-white">
-        <i className={'fa icon-graduation-cap h3 right margin-left-big margin-right-tiny'} />
-        <span>{path.nLessonsCompleted}/{path.nLessonsTotal}</span>
-      </h3> : null}
-    {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
+  <div className={`path-marker mclosed relative ${dotClass} flex flex-column-below-t items-center items-start-below-t bg-grey border-round`}>
+    <h3 className="path-marker__text flex-1 h4-below-t uppercase no-margin c-white margin-right-small wide">{text}</h3>
+    <div className="flex items-center justify-end width-100-below-t">
+      {path && path.nTotal !== 1 ?
+        <h3 className="no-margin right c-white h4-below-t margin-right-small-below-t">
+          <i className={'fa icon-flag-checkered h3 h4-below-t right margin-left-big-above-t margin-right-tiny'} />
+          <span>{path.nCompleted}/{path.nTotal}</span>
+        </h3> : null}
+      {path && path.nLessonsTotal ?
+        <h3 className="no-margin right c-white h4-below-t">
+          <i className={'fa icon-graduation-cap h3 h4-below-t right margin-left-big-above-t margin-right-tiny'} />
+          <span>{path.nLessonsCompleted}/{path.nLessonsTotal}</span>
+        </h3> : null}
+      {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
+    </div>
   </div>);
 
 const Path = ({ match, curriculum, user }) => {
@@ -95,7 +97,7 @@ const Path = ({ match, curriculum, user }) => {
             <p className="hidden">content</p>
           </div>
         </div>
-        <AnimateVisibleChildrenDiv dontTriggerOnUpdate className="container flex-column">
+        <AnimateVisibleChildrenDiv dontTriggerOnUpdate className="flex-column">
           <PathMarker
             text={`Path: ${path.name}`}
             iconClass="path-marker__start-icon icon-map-marker"

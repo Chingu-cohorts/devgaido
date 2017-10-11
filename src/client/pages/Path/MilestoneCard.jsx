@@ -99,27 +99,29 @@ const MilestoneCard = ({ uiState, id, course, index, lessons, that, state }) => 
   return (
     <div className={collapsed ? 'mclosed margin-bottom-small relative' : 'mopen margin-bottom-small relative'}>
       <div className={`mcard cursor-pointer dot--big ${!course.completed ? 'dot--empty' : ''} flex-column bg-white`} onClick={() => toggleCollapsed(that)(id)}>
-        <div className={`flex padding-tiny items-center bg-primary transition-fast bg-hover-accent ${collapsed ? 'border-round' : 'border-round-top'}`}>
-          <i className={`mcard__icon fa icon-caret-right c-white h2 margin-left-tiny margin-right-small ${collapsed ? '' : 'rotated'}`} />
-          <h3 className="mcard__header__text flex-1 c-white uppercase no-margin wide">Milestone {index + 1}: {course.name}</h3>
+        <div className={`flex flex-column-below-t padding-tiny items-center items-start-below-t justify-between bg-primary transition-fast bg-hover-accent ${collapsed ? 'border-round' : 'border-round-top'}`}>
+          <div className="flex items-center">
+            <i className={`mcard__icon fa icon-caret-right c-white h2 h3-below-t margin-left-tiny margin-right-small ${collapsed ? '' : 'rotated'}`} />
+            <h3 className="mcard__header__text flex-1 h4-below-t c-white uppercase no-margin wide">Milestone {index + 1}: {course.name}</h3>
+          </div>
           {!course.completed ?
-            <h3 className="right no-margin margin-left-big c-white ">
-              <i className={'fa icon-graduation-cap h3 right margin-left-big margin-right-tiny'} />
+            <h3 className="right h4-below-t no-margin margin-left-big-above-t c-white width-100-below-t">
+              <i className={'fa icon-graduation-cap h3 h4-below-t right margin-left-big margin-right-tiny'} />
               <span className="margin-right-tiny">{course.nCompleted}/{course.nTotal}</span>
             </h3> :
-            <h3 className="right no-margin margin-left-big c-white ">
-              <i className={'mcard__checkmark fa icon-check-circle-o h2 margin-right-tiny'} />
+            <h3 className="right h4-below-t no-margin margin-left-big-above-t c-white width-100-below-t">
+              <i className={'mcard__checkmark fa icon-check-circle-o h2 h3-below-t margin-right-tiny'} />
               <i className={'mcard__flag fa icon-flag-checkered h2 absolute'} />
             </h3>
           }
         </div>
       </div>
       <div
-        className={`collapsible width-100 padding-vertical-small ${state.firstRender ? 'absolute opacity-0 pointer-events-none' : 'absolute'} ${collapsed ? 'collapsed' : ''} bg-grey-blue border-round-bottom padding-horizontal-big`}
+        className={`collapsible width-100 padding-vertical-small padding-horizontal-tiny padding-horizontal-big-above-t ${state.firstRender ? 'absolute opacity-0 pointer-events-none' : 'absolute'} ${collapsed ? 'collapsed' : ''} bg-grey-blue border-round-bottom`}
         ref={(domElem) => { that.lessonContainerRef = domElem; }}
       >
         {course.completeX ?
-          <h4 className="bg-white border-round padding-small bold">Complete at least {course.completeX} of the following lessons to finish this milestone:</h4> : null
+          <h4 className="bg-white border-round padding-small bold h5-below-t">Complete at least {course.completeX} of the following lessons to finish this milestone:</h4> : null
         }
         {lessons}
       </div>
