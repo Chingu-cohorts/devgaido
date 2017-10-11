@@ -20,7 +20,7 @@ const BookmarkedTab = ({ curriculum }) => {
 
   return (
     <AnimateVisibleChildrenDiv className="bookmarked-tab margin-bottom-huge">
-      <div>
+      <div className="margin-tiny">
         <span>RESOURCES</span>
         <h2>Bookmarked</h2>
       </div>

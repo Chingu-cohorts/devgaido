@@ -8,7 +8,7 @@ import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
 const CurrentPathSection = ({ path, curriculum }) => (
   <div className="inprogress-tab margin-bottom-small">
-    <div className="container">
+    <div className="margin-tiny">
       <span>PATH</span>
       <h2>Last Worked On</h2>
       <p className="margin-bottom-big">This section shows you the last path you were working on.</p>
@@ -19,9 +19,11 @@ const CurrentPathSection = ({ path, curriculum }) => (
 
 const CurrentLessonSection = ({ lesson, curriculum }) => (
   <div className="inprogress-tab margin-bottom-small">
-    <span>LESSON</span>
-    <h2>Last Viewed</h2>
-    <p className="margin-bottom-big">This section shows the last lesson you viewed.</p>
+    <div className="margin-tiny">
+      <span>LESSON</span>
+      <h2>Last Viewed</h2>
+      <p className="margin-bottom-big">This section shows the last lesson you viewed.</p>
+    </div>
     <ItemList items={[lesson]} curriculum={curriculum} category="lessons" />
   </div>
 );
@@ -55,9 +57,11 @@ const getInProgressPaths = (curriculum) => {
 
 const InProgressSection = ({ inProgressPaths, curriculum }) => (
   <div className="inprogress-tab margin-bottom-huge">
-    <span>ALL PATHS</span>
-    <h2>In Progress</h2>
-    <p className="margin-bottom-big">This section shows you all the paths which have at least one lesson in them you completed. Since lessons can be shared across paths it will show you ALL paths that a completed lesson is in.</p>
+    <div className="margin-tiny">
+      <span>ALL PATHS</span>
+      <h2>In Progress</h2>
+      <p className="margin-bottom-big">This section shows you all the paths which have at least one lesson in them you completed. Since lessons can be shared across paths it will show you ALL paths that a completed lesson is in.</p>
+    </div>
     <ItemList items={inProgressPaths} curriculum={curriculum} category="paths" />
   </div>
 );
