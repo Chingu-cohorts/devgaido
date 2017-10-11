@@ -3,4 +3,4 @@ import makeActionCreator from './makeActionCreator';
 
 export const setLastTouchedPath = makeActionCreator('SET_LAST_TOUCHED_PATH', 'pathId');
 export const setLastTouchedLesson = makeActionCreator('SET_LAST_TOUCHED_LESSON', 'lessonId');
-export const setCurrentPath = makeActionCreator('SET_LAST_TOUCHED_LESSON', 'pathId');
+export const setCurrentPath = makeActionCreator('SET_CURRENT_PATH', 'pathId');

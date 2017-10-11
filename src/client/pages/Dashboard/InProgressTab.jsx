@@ -8,9 +8,11 @@ import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
 const CurrentPathSection = ({ path, curriculum }) => (
   <div className="inprogress-tab margin-bottom-small">
-    <span>PATH</span>
-    <h2>Last Worked On</h2>
-    <p className="margin-bottom-big">This section shows you the last path you were working on.</p>
+    <div className="container">
+      <span>PATH</span>
+      <h2>Last Worked On</h2>
+      <p className="margin-bottom-big">This section shows you the last path you were working on.</p>
+    </div>
     <ItemList items={[path]} curriculum={curriculum} category="paths" />
   </div>
 );
