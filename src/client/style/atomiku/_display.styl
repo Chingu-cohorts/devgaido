@@ -12,3 +12,39 @@
 
 .display-table
   display: table
+
+createResponsiveVisibility(bNames, bValues)
+    for bName, i in bNames
+      @media only screen and (max-width: bValues[i])
+        .display-none-below-{bName}
+          display: none
+
+        .display-inline-block-below-{bName}
+          display: inline-block
+
+        .display-block-below-{bName}
+          display: block
+
+        .display-inline-below-{bName}
+          display: inline
+
+        .display-table-below-{bName}
+          display: table
+
+      @media only screen and (min-width: bValues[i])
+        .display-none-above-{bName}
+          display: none
+
+        .display-inline-above-below-{bName}
+          display: inline-block
+
+        .display-block-above-{bName}
+          display: block
+
+        .display-inline-above-{bName}
+          display: inline
+
+        .display-table-above-{bName}
+          display: table
+
+createResponsiveVisibility($breakpointNames, $breakpointValues)

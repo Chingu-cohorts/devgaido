@@ -87,7 +87,7 @@ const Path = ({ match, curriculum, user }) => {
         ]}
       />
       <PageHero bgColorClass="bg-primary" bgUrl={`/paths/${pathId}.jpg`} title={path.name} full>
-        <i className="fa icon-map-signs c-white h2 abs-top-right margin-top-small margin-right-small" />
+        <i className="fa icon-map-signs c-white h2 abs-top-right margin-top-small margin-right-small display-none-below-t" />
         {path.completed ? <i className="fa icon-check-circle-o c-white h1 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
       </PageHero>
       <BigPathCard path={path} />

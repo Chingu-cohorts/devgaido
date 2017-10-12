@@ -18,7 +18,7 @@ import OpenButton from './OpenButton';
 const BigLessonCard = ({ lesson, user, uiState }) => (
   <BigCard>
     <LessonPreviewImage lesson={lesson} user={user} />
-    <div className="flex flex-column-below-m justify-between-above-m margin-bottom-small">
+    <div className="flex flex-column-below-m justify-between-above-m margin-bottom-small margin-bottom-tiny-below-t items-center-below-m">
       <RatingStars item={lesson} />
       <div className="margin-bottom-tiny">
         <h5 className="c-primary no-margin uppercase">{lesson.estimatedTimeStr} hours</h5>

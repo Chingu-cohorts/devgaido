@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PathImage = ({ path }) => (
-  <div className="path-image margin-bottom-big">
+  <div className="path-image margin-bottom-big margin-bottom-small-below-t">
     <div className="preview border-round" style={{ background: `url(/paths/${path.id}.jpg)`, backgroundSize: 'cover' }} />
   </div>
 );

@@ -61,3 +61,137 @@
   position absolute
   bottom 0
   right 0
+
+createResponsivePositions(bNames, bValues)
+    for bName, i in bNames
+      @media only screen and (max-width: bValues[i])
+        .absolute-below-{bNames[i]}
+          position absolute !important
+
+        .relative-below-{bNames[i]}
+          position relative !important
+
+        .fixed-below-{bNames[i]}
+          position fixed !important
+
+        .z-999-below-{bNames[i]}
+          z-index: 999
+
+        .z-100-below-{bNames[i]}
+          z-index: 100
+
+        .abs-center-below-{bNames[i]}
+          position absolute
+          top 50%
+          left 50%
+          transform: translate(-50%, -50%)
+
+        .abs-center-stretch-below-{bNames[i]}
+          position absolute
+          top 0
+          bottom 0
+          left 0
+          right 0
+
+        .abs-top-below-{bNames[i]}
+          position absolute
+          top 0
+
+        .abs-left-below-{bNames[i]}
+          position absolute
+          left 0
+
+        .abs-right-below-{bNames[i]}
+          position absolute
+          right 0
+
+        .abs-bottom-below-{bNames[i]}
+          position absolute
+          bottom 0
+
+        .abs-top-left-below-{bNames[i]}
+          position absolute
+          top 0
+          left 0
+
+        .abs-top-right-below-{bNames[i]}
+          position absolute
+          top 0
+          right 0
+
+        .abs-bottom-left-below-{bNames[i]}
+          position absolute
+          bottom 0
+          left 0
+
+        .abs-bottom-right-below-{bNames[i]}
+          position absolute
+          bottom 0
+          right 0
+
+      @media only screen and (min-width: bValues[i])
+        .absolute-above-{bNames[i]}
+          position absolute !important
+
+        .relative-above-{bNames[i]}
+          position relative !important
+
+        .fixed-above-{bNames[i]}
+          position fixed !important
+
+        .z-999-above-{bNames[i]}
+          z-index: 999
+
+        .z-100-above-{bNames[i]}
+          z-index: 100
+
+        .abs-center-above-{bNames[i]}
+          position absolute
+          top 50%
+          left 50%
+          transform: translate(-50%, -50%)
+
+        .abs-center-stretch-above-{bNames[i]}
+          position absolute
+          top 0
+          bottom 0
+          left 0
+          right 0
+
+        .abs-top-above-{bNames[i]}
+          position absolute
+          top 0
+
+        .abs-left-above-{bNames[i]}
+          position absolute
+          left 0
+
+        .abs-right-above-{bNames[i]}
+          position absolute
+          right 0
+
+        .abs-bottom-above-{bNames[i]}
+          position absolute
+          bottom 0
+
+        .abs-top-left-above-{bNames[i]}
+          position absolute
+          top 0
+          left 0
+
+        .abs-top-right-above-{bNames[i]}
+          position absolute
+          top 0
+          right 0
+
+        .abs-bottom-left-above-{bNames[i]}
+          position absolute
+          bottom 0
+          left 0
+
+        .abs-bottom-right-above-{bNames[i]}
+          position absolute
+          bottom 0
+          right 0
+
+createResponsivePositions($breakpointNames, $breakpointValues)

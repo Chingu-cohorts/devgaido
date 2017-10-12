@@ -3,7 +3,8 @@
 
 .flex
   display: flex
-
+  flex-direction: row
+  
 .flex-column
   display: flex
   flex-direction: column
@@ -95,6 +96,7 @@ createResponsiveFlex(bNames, bValues)
         @media only screen and (max-width: bValues[i])
           .flex-below-{bNames[i]}
             display: flex
+            flex-direction: row
 
           .flex-column-below-{bNames[i]}
             display: flex
@@ -184,6 +186,7 @@ createResponsiveFlex(bNames, bValues)
         @media only screen and (min-width: bValues[i])
           .flex-above-{bNames[i]}
             display: flex
+            flex-direction: row
 
           .flex-column-above-{bNames[i]}
             display: flex
