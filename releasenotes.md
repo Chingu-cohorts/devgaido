@@ -6,6 +6,7 @@ You can find devGaido at [www.devgaido.com](http://www.devgaido.com).
 
 ### New Features
 
+- Refactored the app to make it more responsive and easier to use across a range of devices for those of you who learn on the go.
 - Added the ability to rate a lesson on completion. Be loud and proud! Let your voice be heard.
 - Refactored the Home page to make the banner text easier to read.
 - Added functionality to expand/collapse tags on cards.
