@@ -13,6 +13,21 @@
 .display-table
   display: table
 
+._display-none_
+  display: none !important
+
+._display-inline-block_
+  display: inline-block !important
+
+._display-block_
+  display: block !important
+
+._display-inline_
+  display: inline !important
+
+._display-table_
+  display: table !important
+
 createResponsiveVisibility(bNames, bValues)
     for bName, i in bNames
       @media only screen and (max-width: bValues[i])
@@ -31,6 +46,21 @@ createResponsiveVisibility(bNames, bValues)
         .display-table-below-{bName}
           display: table
 
+        ._display-none-below-{bName}_
+          display: none !important
+
+        ._display-inline-block-below-{bName}_
+          display: inline-block !important
+
+        ._display-block-below-{bName}_
+          display: block !important
+
+        ._display-inline-below-{bName}_
+          display: inline !important
+
+        ._display-table-below-{bName}_
+          display: table !important
+
       @media only screen and (min-width: bValues[i])
         .display-none-above-{bName}
           display: none
@@ -46,5 +76,20 @@ createResponsiveVisibility(bNames, bValues)
 
         .display-table-above-{bName}
           display: table
+
+        ._display-none-above-{bName}_
+          display: none !important
+
+        ._display-inline-block-above-{bName}_
+          display: inline-block !important
+
+        ._display-block-above-{bName}_
+          display: block !important
+
+        ._display-inline-above-{bName}_
+          display: inline !important
+
+        ._display-table-above-{bName}_
+          display: table !important
 
 createResponsiveVisibility($breakpointNames, $breakpointValues)

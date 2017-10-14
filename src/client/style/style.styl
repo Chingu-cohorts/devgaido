@@ -261,6 +261,10 @@ i::before
   width auto
   height 100%
 
+@media only screen and (max-width: 768px)
+  .dot:after, .dot:before, .dot--big:before, .dot--big:after, .dot--trophy:after, .dot--empty:before, .dot-empty:after, .dot--trophy:before, .mcard__flag, .path-marker__start-icon
+    display none !important
+
 .dot:before
   content: ""
   position: absolute;
@@ -332,7 +336,7 @@ i::before
 
 .path-node__connection
   background alpha($primaryColor,0.3)
-  margin-right -13px
+  margin-right 28px
   width 5px
 
 .collapsible
@@ -524,7 +528,7 @@ i::before
   height: 15px 
 
 .image-link-card__img
-  min-height 120px
+  height 120px
 
 .mclosed, .mopen
   transition all 0.5s

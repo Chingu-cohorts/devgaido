@@ -94,20 +94,25 @@ const MenuCard = ({ children }) => (
 // Add shouldComponentUpdate so opening Milestones doesn't cause needless rerenders
 const shouldComponentUpdate = (that, nextProps) => nextProps.item !== that.props.item;
 
-const ResourceCard = StateProvider(({ item }) => {
+const ResourceCard = StateProvider(({ item, completeX, showDot }) => {
   const itemIsPath = item.nLessonsTotal !== undefined;
   const typeIcon = itemIsPath ? '' : typeIcons[item.type];
-  const completeIcon = itemIsPath ? 'fa h2 icon-check-circle-o c-white' : 'fa h2 icon-check-circle-o c-white';
+  const completeIcon = itemIsPath ? 'fa h2 h3-below-d icon-check-circle-o c-white' : 'fa h2 h3-below-d icon-check-circle-o c-white';
   const pathId = itemIsPath ? item.id : undefined;
   const bgCol = itemIsPath ? 'bg-primary-25' : 'bg-accent-50';
 
+  let dotClasses = '';
+  if (showDot) {
+    dotClasses = !completeX ? `dot ${item.completed ? '' : 'dot--empty'} dot--displace` : '';
+  }
+
   return (
-    <Link className={'image-link-card col-quarter flex-column bg-white border-round c-text margin-bottom-small _c-text_'} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
+    <Link className={`image-link-card ${dotClasses} relative col-quarter flex-column bg-white border-round c-text margin-bottom-small _c-text_`} to={item.url} onClick={pathId ? () => setLastTouchedPath(pathId) : null}>
       <div className="image-link-card__img bg-cover border-round-top relative flex-column justify-center" style={{ backgroundImage: `url(${item.img})` }}>
         <div className="border-round-top bg-black opacity-50 abs-center-stretch" />
         <div className={`border-round-top ${bgCol} abs-center-stretch`} />
         <FlexRow className={'items-center padding-horizontal-small padding-vertical-tiny border-round-top c-white relative'}>
-          <h3 className="flex-1 no-margin text-shadow-subtle uppercase wider h4-below-t center">{item.name}</h3>
+          <h3 className="flex-1 no-margin text-shadow-subtle uppercase wider h4-below-d center">{item.name}</h3>
           {item.completed ? <i className={completeIcon} /> : null}
         </FlexRow>
       </div>

@@ -47,7 +47,7 @@ const Path = ({ match, curriculum, user }) => {
       const lessons = course.lessonIds.map((lessonId) => {
         const lesson = curriculum.lessons[lessonId];
         return (
-          <ResourceCard item={lesson} key={lessonId} completeX={course.completeX} />);
+          <ResourceCard item={lesson} key={lessonId} completeX={course.completeX} showDot />);
       });
 
       return <MilestoneCard index={index} course={course} lessons={lessons} key={courseId} id={`${pathId}/${courseId}`} />;
@@ -64,6 +64,7 @@ const Path = ({ match, curriculum, user }) => {
           iconClass={typeIcons[lesson.type]}
           key={lessonId}
           imgSrc={`/screenshots/${lessonId}.jpg`}
+          showDot
         />);
     });
     milestones = lessons;
@@ -91,8 +92,8 @@ const Path = ({ match, curriculum, user }) => {
         {path.completed ? <i className="fa icon-check-circle-o c-white h1 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
       </PageHero>
       <BigPathCard path={path} />
-      <div className="path__content container flex margin-vertical-big" id="path-content">
-        <div className="path-node flex-column items-center">
+      <div className="path__content container flex margin-vertical-big margin-vertical-tiny-below-t padding-horizontal-tiny-below-t" id="path-content">
+        <div className="path-node flex-column items-center _display-none-below-d1_">
           <div className="path-node__connection flex-1 margin-bottom">
             <p className="hidden">content</p>
           </div>
