@@ -7,6 +7,8 @@
  */
 import makeActionCreator from './makeActionCreator';
 
+// Create action functions tailored to each specific Redux action. See the
+// documentation included in makeActionCreator.js.
 export const toggleNavMenu = makeActionCreator('TOGGLE_NAV_MENU');
 export const toggleMilestoneCard = makeActionCreator('TOGGLE_MILESTONE_CARD', 'milestoneId');
 export const setCurrentDashboardTab = makeActionCreator('SET_CURRENT_DASHBOARD_TAB', 'tabIndex');
