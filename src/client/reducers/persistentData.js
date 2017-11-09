@@ -1,5 +1,9 @@
 import axios from 'axios';
-
+/**
+ * @description Save the users state to the database so it persists
+ * across sessions.
+ * @param {any} state The user's current state
+ */
 const saveToServer = (state) => {
   axios.post('/users', state)
     .then((res) => {
