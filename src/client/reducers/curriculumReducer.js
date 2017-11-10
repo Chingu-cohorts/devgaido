@@ -1,3 +1,8 @@
+
+/**
+ * @description Examine all paths to calculate user-specific path completion metrics.
+ * @param {any} curriculum 
+ */
 const updatePaths = (curriculum) => {
   Object.keys(curriculum.paths).forEach((pathId) => {
     let completed = 0;
@@ -37,6 +42,10 @@ const updatePaths = (curriculum) => {
   });
 };
 
+/**
+ * @description Examine all courses to calculate user-specific course completion metrics.
+ * @param {any} curriculum 
+ */
 const updateCourses = (curriculum) => {
   Object.keys(curriculum.courses).forEach((courseId) => {
     let completed = 0;
