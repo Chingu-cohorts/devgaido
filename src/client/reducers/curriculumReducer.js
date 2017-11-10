@@ -44,7 +44,8 @@ const updatePaths = (curriculum) => {
 
 /**
  * @description Examine all courses to calculate user-specific course completion metrics.
- * @param {any} curriculum 
+ * @param {Object} curriculum An object that contains one object for the paths, courses,
+ * lessons, and subjects that make up the curriculum.
  */
 const updateCourses = (curriculum) => {
   Object.keys(curriculum.courses).forEach((courseId) => {
@@ -67,13 +68,18 @@ const updateCourses = (curriculum) => {
     }
   });
 };
+
 /**
- * Curriculum data consisting of Core Paths, Core Courses, and Core Lessons.
- * In addition this includes subjects which categorize all three fo the above.
- *
- * @param {*} state -
- * @param {*} action -
- * @returns {state} state - The curriculum data maintained in state
+ * @description Apply the Redux action against the curriculum for the current user.
+ * @param {Object} [state={
+ *   lessons: {},
+ *   subjects: {},
+ *   courses: {},
+ *   paths: {},
+ * }] Contains one object each for lessons, subjects, courses, and
+ * paths.
+ * @param {Object} action The Redux action
+ * @returns {Object} state Updated curriculum state
  */
 const curriculum = (state = {
   lessons: {},

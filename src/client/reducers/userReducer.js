@@ -1,10 +1,19 @@
 import persistentData from './persistentData';
+
 /**
- * User state consisting of attributes for the user if logged in.
- *
- * @param {*} state -
- * @param {*} action -
- * @returns {state} state - User data maintained in state
+ * @description User state consisting of attributes for the user if logged in.
+ * @param {Object} [state={
+ *   name: '',
+ *   authenticated: false,
+ *   avatar: '',
+ *   email: '',
+ *   curPathId: '',
+ *   lastPathId: '',
+ *   lastLessonId: '',
+ *   persistentData: {},
+ * }] Current User state
+ * @param {Object} User state action name 
+ * @returns {Object} Updated user state
  */
 const user = (state = {
   name: '',

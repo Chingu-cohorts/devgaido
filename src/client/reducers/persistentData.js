@@ -16,6 +16,13 @@ const saveToServer = (state) => {
     });
 };
 
+/**
+ * @description Locate the index number of the Redux action within the array of
+ * state values.
+ * @param {any} action Redux action to be located.
+ * @param {any} data Array of state values.
+ * @returns {Number} index Cell number of the action string
+ */
 const getIndex = (action, data) => {
   let index = -1;
 
@@ -34,6 +41,15 @@ const getIndex = (action, data) => {
   return index;
 };
 
+/**
+ * @description Save a curriculum state for the current user to the database.
+ * @param {Object} state={
+ *   id: '',
+ *   data: [],
+ * } The state to be saved
+ * @param {String} action
+ * @returns {Object} The new state
+ */
 const persistantData = (state = {
   id: '',
   data: [],

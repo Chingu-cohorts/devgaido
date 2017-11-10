@@ -1,3 +1,20 @@
+/**
+ * @description Update the UI state based on the current action
+ * @param {Object} [state={
+ *   navMenuOpen: false,
+ *   libSearchTerm: '',
+ *   libTopic: 'All Tags',
+ *   libShowCompleted: true,
+ *   libShowIncomplete: true,
+ *   showPopup: false,
+ *   curDashboardTab: 0,
+ *   curLibraryTab: 0,
+ *   openMilestone: '',
+ *   showModal: false,
+ * }] 
+ * @param {Object} action UI state action name
+ * @returns {Object} Updated UI state
+ */
 const uiState = (state = {
   navMenuOpen: false,
   libSearchTerm: '',

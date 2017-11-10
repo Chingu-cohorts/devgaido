@@ -6,6 +6,10 @@ const LoadingPlaceholder = () => (
   <div className="loading__placeholder home-img__loading-spinner loading-spinner border-round" />
 );
 
+/**
+ * @description Place the avatar for a project contributor onto the page
+ * @param {Object} { avatarURL, imageAlignment } Avatar URL and CSS class to be used for image alignment
+ */
 const ContributorImage = ({ avatarURL, imageAlignment }) => (
   <div className={imageAlignment}>
     <LazyLoad height={250} once placeholder={<LoadingPlaceholder />}>
@@ -14,13 +18,22 @@ const ContributorImage = ({ avatarURL, imageAlignment }) => (
   </div>
 );
 
+/**
+ * @description Place the name of a project contributor onto the page
+ * @param {Object} { contributorName, contributorHTML, nameAlignment, nameStyle } Contributor name, link url,
+ * CSS class to be used to align the name, and CSS class for the names styling
+ */
 const ContributorName = ({ contributorName, contributorHTML, nameAlignment, nameStyle }) => (
   <div className={nameAlignment} >
     <a href={contributorHTML} target="_blank" rel="noopener noreferrer" className={nameStyle}>
       {contributorName} </a>
   </div>
 );
-
+/**
+ * @description Generate an HTML element defining the projects contributors
+ * @param {Object} { contributors } Array containing the contributor attributes
+ * @returns {Object} contributorElement HTML element containing the projects contributors
+ */
 const Contributors = ({ contributors }) => {
   const left = 'l';
   const right = 'r';
