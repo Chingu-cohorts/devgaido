@@ -1,5 +1,7 @@
 # [![devGaido][devgaido-image]][devgaido-url]
 
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/Chingu-cohorts/devgaido.svg?columns=all)](https://waffle.io/Chingu-cohorts/devgaido)
+
 devGaido provides a guided learning experience through the Web Development 
 ecosystem by providing those new to the craft with predefined paths to aid in
 achieving web development skills. For experienced developers it provides a 
