@@ -1,0 +1,1 @@
+{<img alt='Waffle.io - Columns and their card count' src='https://badge.waffle.io/Chingu-cohorts/devgaido.svg?columns=all' />}[https://waffle.io/Chingu-cohorts/devgaido]
