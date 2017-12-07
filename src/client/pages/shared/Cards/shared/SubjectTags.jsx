@@ -32,7 +32,7 @@ const SubjectTags = ({ item, setState, state }) => {
     );
   }
   return (
-    <div className="left">
+    <div className="left center">
       {subjects}
     </div>
   );

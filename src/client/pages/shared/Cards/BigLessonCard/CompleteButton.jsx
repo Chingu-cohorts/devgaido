@@ -25,7 +25,7 @@ const CompleteButton = ({ lesson, user }) => {
   const caption = !lesson.completed ? 'Complete Lesson' : 'Un-Complete Lesson';
 
   return (
-    <Button buttonType="button--accent" icon="icon-check-square-o" onClick={handleClick}>{caption}</Button>
+    <Button className="button--accent" icon="icon-check-square-o" onClick={handleClick}>{caption}</Button>
   );
 };
 

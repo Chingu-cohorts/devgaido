@@ -6,7 +6,7 @@ import BackButton from './BackButton';
 const SideDrawer = ({ history }) => {
   const notOnHomeScreen = history.location.pathname !== '/';
   return (
-    <div className={`side-drawer ${notOnHomeScreen ? '' : 'hidden'}`}>
+    <div className={`side-drawer ${notOnHomeScreen ? '' : 'hidden'} display-none-below-t`}>
       <BackButton history={history} />
       <i className="side-drawer__icon fa icon-chevron-left c-accent h2" />
     </div>

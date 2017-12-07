@@ -8,7 +8,7 @@ import BigPathCard from '../shared/Cards/BigPathCard/BigPathCard';
 
 import MilestoneCard from './MilestoneCard';
 import PageHero from '../shared/PageHero';
-import { MilestoneSubCard } from '../shared/Cards';
+import { ResourceCard } from '../shared/Cards';
 import DisqusThread from '../shared/DisqusThread';
 import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
@@ -19,19 +19,21 @@ const typeIcons = {
 };
 
 const PathMarker = ({ text, dotClass, iconClass, path }) => (
-  <div className={`path-marker mclosed relative ${dotClass} flex items-center bg-grey border-round`}>
-    <h3 className="path-marker__text flex-1 uppercase no-margin c-white margin-right-small wide">{text}</h3>
-    {path && path.nTotal !== 1 ?
-      <h3 className="no-margin right c-white">
-        <i className={'fa icon-flag-checkered h3 right margin-left-big margin-right-tiny'} />
-        <span>{path.nCompleted}/{path.nTotal}</span>
-      </h3> : null}
-    {path && path.nLessonsTotal ?
-      <h3 className="no-margin right c-white">
-        <i className={'fa icon-graduation-cap h3 right margin-left-big margin-right-tiny'} />
-        <span>{path.nLessonsCompleted}/{path.nLessonsTotal}</span>
-      </h3> : null}
-    {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
+  <div className={`path-marker mclosed relative ${dotClass} flex flex-column-below-t items-center items-start-below-t bg-grey border-round`}>
+    <h3 className="path-marker__text flex-1 h4-below-t uppercase no-margin c-white margin-right-small wide">{text}</h3>
+    <div className="flex items-center justify-end width-100-below-t">
+      {path && path.nTotal !== 1 ?
+        <h3 className="no-margin right c-white h4-below-t margin-right-small-below-t">
+          <i className={'fa icon-flag-checkered h3 h4-below-t right margin-left-big-above-t margin-right-tiny'} />
+          <span>{path.nCompleted}/{path.nTotal}</span>
+        </h3> : null}
+      {path && path.nLessonsTotal ?
+        <h3 className="no-margin right c-white h4-below-t">
+          <i className={'fa icon-graduation-cap h3 h4-below-t right margin-left-big-above-t margin-right-tiny'} />
+          <span>{path.nLessonsCompleted}/{path.nLessonsTotal}</span>
+        </h3> : null}
+      {iconClass ? <i className={`fa ${iconClass} absolute c-white h1 `} /> : null}
+    </div>
   </div>);
 
 const Path = ({ match, curriculum, user }) => {
@@ -45,7 +47,7 @@ const Path = ({ match, curriculum, user }) => {
       const lessons = course.lessonIds.map((lessonId) => {
         const lesson = curriculum.lessons[lessonId];
         return (
-          <MilestoneSubCard item={lesson} key={lessonId} completeX={course.completeX} />);
+          <ResourceCard item={lesson} key={lessonId} completeX={course.completeX} showDot />);
       });
 
       return <MilestoneCard index={index} course={course} lessons={lessons} key={courseId} id={`${pathId}/${courseId}`} />;
@@ -55,13 +57,14 @@ const Path = ({ match, curriculum, user }) => {
     const lessons = course.lessonIds.map((lessonId) => {
       const lesson = curriculum.lessons[lessonId];
       return (
-        <MilestoneSubCard
+        <ResourceCard
           item={lesson}
           linkTo={lesson.url}
           bgColorClass={`relative no-milestone dot ${lesson.completed ? '' : 'dot--empty'} dot--displace bg-accent`}
           iconClass={typeIcons[lesson.type]}
           key={lessonId}
           imgSrc={`/screenshots/${lessonId}.jpg`}
+          showDot
         />);
     });
     milestones = lessons;
@@ -85,17 +88,17 @@ const Path = ({ match, curriculum, user }) => {
         ]}
       />
       <PageHero bgColorClass="bg-primary" bgUrl={`/paths/${pathId}.jpg`} title={path.name} full>
-        <i className="fa icon-map-signs c-white h2 abs-top-right margin-top-small margin-right-small" />
+        <i className="fa icon-map-signs c-white h2 abs-top-right margin-top-small margin-right-small display-none-below-t" />
         {path.completed ? <i className="fa icon-check-circle-o c-white h1 abs-bottom-right margin-bottom-small margin-right-small" /> : null}
       </PageHero>
       <BigPathCard path={path} />
-      <div className="path__content container flex margin-vertical-big" id="path-content">
-        <div className="path-node flex-column items-center">
+      <div className="path__content container flex margin-vertical-big margin-vertical-tiny-below-t padding-horizontal-tiny-below-t" id="path-content">
+        <div className="path-node flex-column items-center _display-none-below-d1_">
           <div className="path-node__connection flex-1 margin-bottom">
             <p className="hidden">content</p>
           </div>
         </div>
-        <AnimateVisibleChildrenDiv dontTriggerOnUpdate className="container flex-column">
+        <AnimateVisibleChildrenDiv dontTriggerOnUpdate className="flex-column">
           <PathMarker
             text={`Path: ${path.name}`}
             iconClass="path-marker__start-icon icon-map-marker"

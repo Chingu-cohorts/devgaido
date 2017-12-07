@@ -23,8 +23,8 @@ const Home = () => (
           <p className="h4 h5-below-d1 c-white"><span className="c-accent bold">devGaido</span> provides easy to follow learning paths that help you reach your goal without the hassle.</p>
           <p className="h4 h5-below-d1 c-white">Never worry about learning the wrong stuff from subpar resources ever again!</p>
           <div className="margin-top-small width-100">
-            <LinkButton buttonType="button--primary" icon="icon-sign-in" href="/signup">Sign Up Now</LinkButton>
-            <LinkButton buttonType="button--white-clear" icon="icon-search" href="/signup">Explore Library</LinkButton>
+            <LinkButton className="button--primary" icon="icon-sign-in" href="/signup">Sign Up Now</LinkButton>
+            <LinkButton className="button--white-clear" icon="icon-search" href="/signup">Explore Library</LinkButton>
           </div>
         </AnimateVisibleChildrenDiv>
       </div>

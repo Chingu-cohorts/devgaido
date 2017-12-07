@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Button from './Button';
 
 const TabbedContent = ({ content, tabIndex, onClick }) => (
   <div>
-    <div className="bg-white flex flex-column-below-t items-center-below-t justify-center padding-vertical-tiny">
+    <div className="bg-white padding-horizontal-tiny-below-t flex flex-column-below-t items-center-below-t justify-center padding-vertical-tiny">
       {content.map((c, index) => (
-        <button
+        <Button
           className={index === tabIndex ? `${c.buttonClass} uppercase margin-horizontal-tiny margin-bottom-tiny-below-t` : 'button--default uppercase margin-horizontal-tiny margin-bottom-tiny-below-t'}
           onClick={() => onClick(index)}
           key={c.caption}
@@ -14,7 +15,7 @@ const TabbedContent = ({ content, tabIndex, onClick }) => (
             {c.icon ? c.icon : null}
             {c.caption}
           </div>
-        </button>
+        </Button>
         ),
       )}
     </div>

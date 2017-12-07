@@ -6,24 +6,46 @@ import { connect } from 'react-redux';
 import ItemList from './ItemList';
 import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
+const DashboardSection = ({ subCaption, caption, description, children }) => (
+  <section className="margin-bottom-small">
+    <div className="margin-tiny">
+      <span className="h6-below-t">{subCaption}</span>
+      <h2 className="h3-below-t">{caption}</h2>
+      <p className="margin-bottom-big margin-bottom-small-below-t">{description}</p>
+    </div>
+    {children}
+  </section>
+);
+
 const CurrentPathSection = ({ path, curriculum }) => (
-  <div className="inprogress-tab margin-bottom-small">
-    <span>PATH</span>
-    <h2>Last Worked On</h2>
-    <p className="margin-bottom-big">This section shows you the last path you were working on.</p>
+  <DashboardSection
+    caption="Last Worked On"
+    subCaption="PATH"
+    description="This section shows you the last path you were working on."
+  >
     <ItemList items={[path]} curriculum={curriculum} category="paths" />
-  </div>
+  </DashboardSection>
 );
 
 const CurrentLessonSection = ({ lesson, curriculum }) => (
-  <div className="inprogress-tab margin-bottom-small">
-    <span>LESSON</span>
-    <h2>Last Viewed</h2>
-    <p className="margin-bottom-big">This section shows the last lesson you viewed.</p>
+  <DashboardSection
+    caption="Last Viewed"
+    subCaption="LESSON"
+    description="This section shows the last lesson you viewed."
+  >
     <ItemList items={[lesson]} curriculum={curriculum} category="lessons" />
-  </div>
+  </DashboardSection>
 );
 
+const InProgressSection = ({ inProgressPaths, curriculum }) => (
+  <DashboardSection
+    caption="In Progress"
+    subCaption="ALL PATHS"
+    description="This section shows you all the paths which have at least one lesson in them you completed. Since lessons can be shared across paths it will show you ALL paths that a completed lesson is in."
+  >
+    <ItemList items={inProgressPaths} curriculum={curriculum} category="paths" />
+  </DashboardSection>
+);
 
 const isInProgress = (path, courses, lessons) => {
   let inProgress = false;
@@ -50,15 +72,6 @@ const getInProgressPaths = (curriculum) => {
     ).map(pathId => paths[pathId])
   );
 };
-
-const InProgressSection = ({ inProgressPaths, curriculum }) => (
-  <div className="inprogress-tab margin-bottom-huge">
-    <span>ALL PATHS</span>
-    <h2>In Progress</h2>
-    <p className="margin-bottom-big">This section shows you all the paths which have at least one lesson in them you completed. Since lessons can be shared across paths it will show you ALL paths that a completed lesson is in.</p>
-    <ItemList items={inProgressPaths} curriculum={curriculum} category="paths" />
-  </div>
-);
 
 const InProgressTab = ({ user, curriculum }) => {
   const inProgressPaths = getInProgressPaths(curriculum);
