@@ -10,7 +10,7 @@
     "start": "yarn run build && node ./dist/server",
     "build": "yarn copyassets && yarn run build:server && yarn run build:client",
     "build:client": "webpack -p --config webpack.config.js",
-    "build:server": "webpack --config webpack.server.config.js",
+    "build:server": "webpack -p --config webpack.server.config.js",
     "dev": "yarn run copyassets && npm-run-all --parallel dev:client dev:server",
     "dev:server": "webpack --config webpack.server.config.js --display-error-details",
     "dev:client": "webpack-dev-server",
