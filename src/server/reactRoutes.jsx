@@ -19,8 +19,6 @@ const fs = require('fs');
 
 let webpackAssets = null;
 
-console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
-
 if (process.env.NODE_ENV === 'production') {
   webpackAssets = JSON.parse(fs.readFileSync('webpack-assets.json', 'utf8'));
 }

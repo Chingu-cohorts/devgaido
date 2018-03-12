@@ -7,10 +7,10 @@
   "author": "Francesco Agnoletto, Kim Kwanka, Matt Leonard, Jim Medlock, Erik Hos, Oussama Bouguerne",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=production yarn run build && NODE_ENV=production node ./dist/server",
+    "start": "yarn run build && node ./dist/server",
     "build": "yarn copyassets && yarn run build:server && yarn run build:client",
     "build:client": "webpack -p --config webpack.config.js",
-    "build:server": "webpack --config webpack.server.config.js",
+    "build:server": "NODE_ENV=production webpack --config webpack.server.config.js",
     "dev": "yarn run copyassets && npm-run-all --parallel dev:client dev:server",
     "dev:server": "webpack --config webpack.server.config.js --display-error-details",
     "dev:client": "webpack-dev-server",
