@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-const maxIdLength = 16;
 const validIdPattern = /^[0-9a-z]+$/;
 const indentErrMsg = ' '.repeat(9);
 
@@ -43,7 +42,7 @@ const logInvalidRelations = (fromElementNm, toElementNm, invalidIds) => {
  * Validate the composition of a path, course, lesson identifier
  *
  * @param {Object} jsonData - JSON object containing the data elements. This
- * must be formatted as {"<id>": {...id: "<id>"...}...}
+ * must be formatted as {"<id>": {..."<attribute-name>": "<attribute-value>"...}...}
  * @returns {String[]} invalidIds - Array of invalid id's. Those containing
  * something other than lowercase letters and digits.
  */
@@ -59,7 +58,7 @@ const validateIdComposition = jsonData => Object.keys(jsonData).reduce((invalidI
  * attribute inside the element block.
  *
  * @param {Object} jsonData - JSON object containing the data elements. This
- * must be formatted as {"<id>": {...id: "<id>"...}...}.
+ * must be formatted as {"<id>": {..."<attribute-name>": "<attribute-value>"...}...}
  * @returns {String[]} invalidIds - Array of invalid id's. Those that don't
  * match the key of the element block.
  */
@@ -74,10 +73,10 @@ const validateIdMatch = jsonData => Object.keys(jsonData).reduce((invalidIds, it
  * Validate the length of a path, course, lesson identifier
  *
  * @param {Object} jsonData - JSON object containing the data elements. This
- * must be formatted as {"<id>": {...id: "<id>"...}...}
+ * must be formatted as {"<id>": {..."<attribute-name>": "<attribute-value>"...}...}
  * @returns {String[]} invalidIds - Array of id's exceeding 16 characters
  */
-const validateIdLength = jsonData => Object.keys(jsonData).reduce((invalidIds, itemId) => {
+const validateIdLength = (jsonData, maxIdLength) => Object.keys(jsonData).reduce((invalidIds, itemId) => {
   if (itemId.length > maxIdLength) {
     invalidIds.push(`${itemId}: greater than ${maxIdLength} characters`);
   }
@@ -100,10 +99,10 @@ Object.values = anObject =>
  *
  * @param {String} childAttrNm - Attribute name in the child JSON object
  * @param {Object} childJSON - JSON object containing the child data elements.
- * This must be formatted as {"<id>": {...id: "<id>"...}...}
+ * must be formatted as {"<id>": {..."<attribute-name>": "<attribute-value>"...}...}
  * @param {String} parentAttrNm - Attribute name in the child JSON object
  * @param {Object} parentJSON - JSON object containing the parent data elements.
- * This must be formatted as {"<id>": {...id: "<id>"...}...}
+ * must be formatted as {"<id>": {..."<attribute-name>": "<attribute-value>"...}...}
  * @returns {String[]} invalidIds - Array of id's exceeding 16 characters
  */
 const validateRelationship = (childAttrNm, childJSON, parentAttrNm, parentJSON) => {
@@ -123,7 +122,7 @@ const validateRelationship = (childAttrNm, childJSON, parentAttrNm, parentJSON) 
  * Validate that all required attributes have been specified
  *
  * @param {Object} jsonData - JSON object containing the data elements. This
- * must be formatted as {"<id>": {..."attr": "value"...}...}
+ * must be formatted as {"<id>": {..."<attribute-name>": "<attribute-value>"...}...}
  * @param {String[]} expectedAttributes - Array of attribute names and type
  * indicators (e.g. [['attr-name', 'type'], ...]). Type may be either 'required'
  * or 'optional'.
@@ -146,7 +145,7 @@ const validateRequiredAttributes =
  * its attribute keys against an array containing valid attribute names.
  *
  * @param {Object} jsonData - JSON object containing the data elements. This
- * must be formatted as {"<id>": {..."attr": "value"...}...}
+ * must be formatted as {"<id>": {..."<attribute-name>": "<attribute-value>"...}...}
  * @param {String[]} expectedAttributes - Array of attribute names and type
  * indicators (e.g. [['attr-name', 'type'], ...]). Type may be either 'required'
  * or 'optional'.

@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { LibraryCard } from '../shared/Cards';
+import { ResourceCard } from '../shared/Cards';
+import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
 const filterByTermNTopic = (item, uiState) => {
   const filterByTopic = uiState.libTopic !== 'All Tags';
@@ -57,28 +58,28 @@ const getFilteredItems = (allItems, uiState) => {
   return filteredIds;
 };
 
-const Results = ({ curriculum, uiState, category }) => {
+const Results = ({ curriculum, uiState, user, category }) => {
   const filteredIds = category === 'paths' ? getFilteredItems(curriculum.paths, uiState) : getFilteredItems(curriculum.lessons, uiState);
 
   const results = category === 'paths' ?
   filteredIds.map((pathId) => {
     const path = curriculum.paths[pathId];
     return (
-      <LibraryCard item={path} key={pathId} />
+      <ResourceCard item={path} user={user} key={pathId} />
     );
   }) :
   filteredIds.map((lessonId) => {
     const lesson = curriculum.lessons[lessonId];
     return (
-      <LibraryCard item={lesson} key={lessonId} />
+      <ResourceCard item={lesson} user={user} key={lessonId} />
     );
   });
 
   return (
     <div className="results margin-vertical-big">
-      <div className="flex flex-wrap margin-vertical-big justify-around">
+      <AnimateVisibleChildrenDiv dontTriggerOnUpdate className="flex flex-wrap margin-vertical-big justify-around">
         {results}
-      </div>
+      </AnimateVisibleChildrenDiv>
     </div>
   );
 };
@@ -86,11 +87,13 @@ const Results = ({ curriculum, uiState, category }) => {
 Results.propTypes = {
   uiState: PropTypes.objectOf(PropTypes.shape).isRequired,
   curriculum: PropTypes.objectOf(PropTypes.shape).isRequired,
+  user: PropTypes.objectOf(PropTypes.shape).isRequired,
   category: PropTypes.string.isRequired,
 };
 
 export default connect(store => ({
   uiState: store.uiState,
+  user: store.user,
   curriculum: store.curriculum,
 }))(Results);
 

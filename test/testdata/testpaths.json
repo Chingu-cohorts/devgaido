@@ -1,12 +1,62 @@
 {
+  "test2versions" : {
+    "version-2.0": {
+      "description": "Use case where 2 versions exist within a path"
+    },
+    "version-1.0": {
+      "name": "Multiple version test",
+      "description": "Test the case where 2 versions exist in a path",
+      "courseIds": [
+        "error1",
+        "error2"
+      ]
+    }
+  },
+  "test3versions" : {
+    "version-3.0": {
+      "description": "Use case where 3 versions exist within a path"
+    },
+    "version-2.0": {
+      "description": "Use case where 3 versions exist within a path. This is the 2nd one"
+    },
+    "version-1.0": {
+      "name": "Multiple version test",
+      "description": "Test the case where 3 versions exist in a path. This is the first",
+      "courseIds": [
+        "error1",
+        "error2"
+      ]
+    }
+  },
+  "test2versions2" : {
+    "version-3.0": {
+      "description": "Use case where 3 versions exist within a path. Remove course 'error2'.",
+      "courseIds": [
+        "error1"
+      ]
+    },
+    "version-2.0": {
+      "name": "Multiple version test with multiple changes per version",
+      "description": "Use case where 3 versions exist within a path. This is the 2nd one"
+    },
+    "version-1.0": {
+      "name": "Multiple version test",
+      "description": "Test the case where 3 versions exist in a path. This is the first",
+      "courseIds": [
+        "error1",
+        "error2"
+      ]
+    }
+  },
   "E2345678901234567" : {
-    "name": "Error test",
-    "description": "Path id exceeds 16 characters",
-    "courseIds": [
-      "error1",
-      "error2"
-    ],
-    "badAttribute": "Error",
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Error test",
+      "description": "Path id exceeds 16 characters",
+      "courseIds": [
+        "error1",
+        "error2"
+      ],
+      "badAttribute": "Error"
+    }
   }
 }

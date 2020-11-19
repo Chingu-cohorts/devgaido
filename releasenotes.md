@@ -2,7 +2,26 @@
 
 You can find devGaido at [www.devgaido.com](http://www.devgaido.com).
 
-## Next Release date TBD
+## Coming Soon!
+
+### New Features
+
+- Refactored the app to make it more responsive and easier to use across a range of devices for those of you who learn on the go.
+- Added the ability to rate a lesson on completion. Be loud and proud! Let your voice be heard.
+- Refactored the Home page to make the banner text easier to read.
+- Added functionality to expand/collapse tags on cards.
+- Added new page transitions to provide a more distinct, but subdued effect. Don't worry, these are subtle so there's no need to be concerned about motion sickness.
+- Incorporated CSS Purify to prune unused CSS elements to reduce the Production bundle size. We really are fanatical about performance.
+- Added new options to the screenshot generation component. This is used only by the Dev Team. Pay no attention to the man behind the curtain.
+
+## Fixes
+
+- #68:  Some elements are too close to the page borders
+- #124: Incorrect width on Login dialog. 
+- #125: Inconsistent status messages on screenshot capture. You'll never notice this! It's a component used only by the Dev Team. Yay Dev Team!
+- #131: Changed the way we manage curriculum versions to be able to show individual changes to paths, milestones, lessons, and subjects. This sets the stage for a upcoming enhancement that will ensure that new curriculum versions won't impact your in-progress learning.
+
+## August 25, 2017
 
 ### New Features
 

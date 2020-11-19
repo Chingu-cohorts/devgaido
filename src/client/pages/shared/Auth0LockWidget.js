@@ -6,7 +6,7 @@ const Auth0LockWidget = (auth0) => {
       redirectUrl: callbackURL,
       responseType: 'code',
       params: {
-        scope: 'openid name email picture',
+        scope: 'openid name email profile',
       },
     },
     theme: {

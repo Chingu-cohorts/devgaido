@@ -2,6 +2,7 @@
 $primaryColorLight = #e7eaf6
 $primaryColor = #007399
 $accentColor  = #DB684E
+$buttonHoverColor = grey
 
 $fontFamily = 'Fira Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 //$fontFamily = -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -16,6 +17,9 @@ $linkLetterSpacing = 0.2rem
 $containerGap = 20px
 $containerWidth = "calc(1220px + %s * 2)" % ($containerGap)
 // (Check /sutairu/base/_defaultVars.styl and /atomiku/_defaultVars for all default variables.)
+
+// $homeHeight = 600
+$homeHeight = 650px
 
 $pageContentColor = #e5e5e5
 $page-hero-height = 270px
@@ -33,7 +37,7 @@ $page-hero-height--full = 470px
 .boxshadow-underline
   box-shadow 0px 1px $accentColor
 
-a
+a:not(.image-link-card)
   @extend .transition-fast
 
 // Compounds
@@ -43,24 +47,18 @@ a
   @extend .border-text
   @extend .c-text
   @extend .c-hover-white
-  @extend .bg-hover-primary
-  @extend .border-hover-primary
   @extend .transition-fast
 
 .button--primary
   @extend .border-pill
   @extend .bg-primary
   @extend .border-primary
-  @extend .bg-hover-accent
-  @extend .border-hover-accent
   @extend .transition-fast
 
 .button--accent
   @extend .border-pill
   @extend .c-white
   @extend .border-accent
-  @extend .bg-hover-primary
-  @extend .border-hover-primary
   @extend .transition-fast
 
 .button--primary-clear
@@ -68,9 +66,7 @@ a
   @extend .c-primary
   @extend .border-primary
   @extend .bg-transparent
-  @extend .bg-hover-accent
   @extend .c-hover-white
-  @extend .border-hover-accent
   @extend .transition-fast
 
 .button--accent-clear
@@ -78,7 +74,6 @@ a
   @extend .c-accent
   @extend .border-accent
   @extend .bg-transparent
-  @extend .bg-hover-black
   @extend .transition-fast
 
 .button--white-clear
@@ -86,8 +81,6 @@ a
   @extend .c-white
   @extend .border-white
   @extend .bg-transparent
-  @extend .bg-hover-accent
-  @extend .border-hover-accent
   @extend .transition-fast
 
 // Needed to for Icon Font
@@ -146,7 +139,7 @@ i::before
 
 .home-hero
   background-position-y: 50%
-  height 600px
+  height $homeHeight
   background-attachment: fixed
 
 .home-img__loading-spinner
@@ -256,12 +249,21 @@ i::before
   display: inline-block
 
 .preview
-  width 100%
-  height 260px 
+  height 350px
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.5)
+
+@media only screen and (max-width: 768px)
+  .preview
+    height 220px
+
 
 .preview2
   width auto
   height 100%
+
+@media only screen and (max-width: 768px)
+  .dot:after, .dot:before, .dot--big:before, .dot--big:after, .dot--trophy:after, .dot--empty:before, .dot-empty:after, .dot--trophy:before, .mcard__flag, .path-marker__start-icon
+    display none !important
 
 .dot:before
   content: ""
@@ -334,7 +336,7 @@ i::before
 
 .path-node__connection
   background alpha($primaryColor,0.3)
-  margin-right -13px
+  margin-right 28px
   width 5px
 
 .collapsible
@@ -526,4 +528,21 @@ i::before
   height: 15px 
 
 .image-link-card__img
-  min-height 120px
+  height 120px
+
+.mclosed, .mopen
+  transition all 0.5s
+  transform translateY(0)
+
+.libIcon
+  width 30px
+
+@media only screen and (max-width: 768px)
+  .page-hero
+    height 170px
+  .page-hero--full
+    height 170px
+  .page-hero__banner
+    height 170px
+  .page-hero__offset
+    margin-top: 0px !important

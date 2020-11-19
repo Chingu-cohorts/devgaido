@@ -1,24 +1,10 @@
 import CoreCourses from '../models/corecourses.json';
-
+import { collapseVersions } from './commonServices';
 /**
  * Core Courses Model
  *
  * This module contains functions implementing model layer functionality
- * for the application. The JSON file referenced by this module has the
- * following structure:
- *
- * {
- *  "course-identifier" : { <-- Unique path identifier. Max of 16 chars.
- *    "name": "...",        <-- Short course name
- *    "description": "...", <-- Course description must define the objective
- *                              of the course and what the user can expect to
- *                              gain from it.
- *    "lessonIds": [        <-- Array of lesson ids included in the course
- *      "...",              <-- Lesson identifier
- *    ],
- *    "version": "1.0.0"    <-- Semantic version to track changes
- *  },
- * }
+ * for the application.
  */
 
 /*
@@ -29,7 +15,7 @@ const courseAttributes = [
   ['name', 'required'],
   ['description', 'required'],
   ['lessonIds', 'required'],
-  ['version', 'required'],
+  ['completeX', 'optional'],
 ];
 
 /**
@@ -42,17 +28,31 @@ const getExpectedAttributes = () => courseAttributes;
 /**
  * Extract a specific course and its details from the Core Courses
  *
- * @param {String} courseId - Unique course identifier
  * @returns {String[]} - JSON object containing attributes of the course or
  * undefined if no match found
  */
-const getCourse = courseId => CoreCourses[courseId];
 
+const getCourse = (courseId, overrideJSON) => {
+  const course = overrideJSON !== undefined ? overrideJSON[courseId] : CoreCourses[courseId];
+  if (course === undefined) {
+    return course;
+  }
+  return collapseVersions(course);
+};
 /**
- * Retrieve all courses and their details
+ * Retrieve all subjects from the Core Courses
  *
- * @returns {String[]} - JSON object containing all Core Courses
+ * @param {any} overrideJSON - JSON course object that is to be used instead of that
+ * defined by CoreCources. This is an optional parameter used for testing
+ * @returns {Object} - JSON object containing attributes of the core course
  */
-const getAllCourses = () => CoreCourses;
 
+const getAllCourses = (overrideJSON) => {
+  const currentcourse = {};
+  const courses = overrideJSON !== undefined ? overrideJSON : CoreCourses;
+  Object.keys(courses).forEach((key) => {
+    currentcourse[key] = collapseVersions(courses[key]);
+  });
+  return currentcourse;
+};
 export { getExpectedAttributes, getCourse, getAllCourses };

@@ -3,3 +3,21 @@
 
 .visible
   visibility: visible !important
+
+createResponsiveVisibility(bNames, bValues)
+    for bName, i in bNames
+      @media only screen and (max-width: bValues[i])
+        .hidden-below-{bName}
+          visibility: hidden !important
+
+        .visible-below-{bName}
+          visibility: visible !important
+
+      @media only screen and (min-width: bValues[i])
+        .hidden-above-{bName}
+          visibility: hidden !important
+
+        .visible-above-{bName}
+          visibility: visible !important
+
+createResponsiveVisibility($breakpointNames, $breakpointValues)

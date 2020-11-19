@@ -48,7 +48,7 @@ const auth0Auth = (app) => {
   });
 
   app.get('/callback',
-    passport.authenticate('auth0', { failureRedirect: '/url-if-something-fails' }),
+    passport.authenticate('auth0', { scope: 'openid name email profile', failureRedirect: '/url-if-something-fails' }),
     (req, res) => {
       res.redirect(req.session.returnTo || '/');
     });

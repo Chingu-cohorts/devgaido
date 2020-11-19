@@ -19,6 +19,131 @@ createMargins(strs, factors)
       
 createMargins($spaceSizeStrs, $spaceSizeFactors)
 
+createResponsiveMargins(strs, factors, bNames, bValues)
+    for bName, j in bNames
+      @media only screen and (max-width: bValues[j])
+        .no-margin-below-{bName}
+          margin: 0
+        .no-margin-i-below-{bName}
+          margin: 0 !important
+        .margin-left-auto-below-{bName}
+          margin-left: auto !important
+        .margin-right-auto-below-{bName}
+          margin-right: auto !important
+        .margin-top-auto-below-{bName}
+          margin-top: auto !important
+        .margin-bottom-auto-below-{bName}
+          margin-bottom: auto !important
+        .margin-auto-below-{bName}
+          margin: auto !important
+        .margin-vertical-auto-below-{bName}
+          margin-top: auto !important
+          margin-bottom: auto !important
+        .margin-horizontal-auto-below-{bName}
+          margin-left: auto !important
+          margin-right: auto !important
+        .margin-left-0-below-{bName}
+          margin-left: 0 !important
+        .margin-right-0-below-{bName}
+          margin-right: 0 !important
+        .margin-bottom-0-below-{bName}
+          margin-bottom: 0 !important
+        .margin-top-0-below-{bName}
+          margin-top: 0 !important
+        .margin-horizontal-0-below-{bName}
+          margin-left: 0 !important
+          margin-right: 0 !important
+        .margin-vertical-0-below-{bName}
+          margin-top: 0 !important
+          margin-bottom: 0 !important
+      @media only screen and (min-width: bValues[j])
+        .no-margin-above-{bName}
+          margin: 0
+        .no-margin-i-above-{bName}
+          margin: 0 !important
+        .margin-left-auto-above-{bName}
+          margin-left: auto !important
+        .margin-right-auto-above-{bName}
+          margin-right: auto !important
+        .margin-top-auto-above-{bName}
+          margin-top: auto !important
+        .margin-bottom-auto-above-{bName}
+          margin-bottom: auto !important
+        .margin-auto-above-{bName}
+          margin: auto !important
+        .margin-vertical-auto-above-{bName}
+          margin-top: auto !important
+          margin-bottom: auto !important
+        .margin-horizontal-auto-above-{bName}
+          margin-left: auto !important
+          margin-right: auto !important
+        .margin-left-0-above-{bName}
+          margin-left: 0 !important
+        .margin-right-0-above-{bName}
+          margin-right: 0 !important
+        .margin-bottom-0-above-{bName}
+          margin-bottom: 0 !important
+        .margin-top-0-above-{bName}
+          margin-top: 0 !important
+        .margin-horizontal-0-above-{bName}
+          margin-left: 0 !important
+          margin-right: 0 !important
+        .margin-vertical-0-above-{bName}
+          margin-top: 0 !important
+          margin-bottom: 0 !important
+      for str, i in strs
+         @media only screen and (max-width: bValues[j])
+          .margin-left{str}-below-{bName}
+            margin-left: factors[i] * $spaceSize !important
+          .margin-right{str}-below-{bName}
+            margin-right: factors[i] * $spaceSize !important
+          .margin-top{str}-below-{bName}
+            margin-top: factors[i] * $spaceSize !important
+          .margin-bottom{str}-below-{bName}
+            margin-bottom: factors[i] * $spaceSize !important
+          .margin{str}-below-{bName}
+            margin: factors[i] * $spaceSize !important
+          .margin-vertical{str}-below-{bName}
+            margin-top: factors[i] * $spaceSize !important
+            margin-bottom: factors[i] * $spaceSize !important
+          .margin-horizontal{str}-below-{bName}
+            margin-left: factors[i] * $spaceSize !important
+            margin-right: factors[i] * $spaceSize !important
+         @media only screen and (min-width: bValues[j])
+          .margin-left{str}-above-{bName}
+            margin-left: factors[i] * $spaceSize !important
+          .margin-right{str}-above-{bName}
+            margin-right: factors[i] * $spaceSize !important
+          .margin-top{str}-above-{bName}
+            margin-top: factors[i] * $spaceSize !important
+          .margin-bottom{str}-above-{bName}
+            margin-bottom: factors[i] * $spaceSize !important
+          .margin{str}-above-{bName}
+            margin: factors[i] * $spaceSize !important
+          .margin-vertical{str}-above-{bName}
+            margin-top: factors[i] * $spaceSize !important
+            margin-bottom: factors[i] * $spaceSize !important
+          .margin-horizontal{str}-above-{bName}
+            margin-left: factors[i] * $spaceSize !important
+            margin-right: factors[i] * $spaceSize !important
+
+createResponsiveMargins($spaceSizeStrs, $spaceSizeFactors, $breakpointNames, $breakpointValues)
+
+.margin-left-0
+  margin-left: 0 !important
+.margin-right-0
+  margin-right: 0 !important
+.margin-bottom-0
+  margin-bottom: 0 !important
+.margin-top-0
+  margin-top: 0 !important
+.margin-horizontal-0
+  margin-left: 0 !important
+  margin-right: 0 !important
+.margin-vertical-0
+  margin-top: 0 !important
+  margin-bottom: 0 !important
+
 .margin-left-auto
   margin-left: auto !important
 .margin-right-auto
@@ -63,8 +188,103 @@ createPaddings(strs, factors)
 
 createPaddings($spaceSizeStrs, $spaceSizeFactors)
 
+createResponsivePaddings(strs, factors, bNames, bValues)
+    for bName, j in bNames
+      @media only screen and (max-width: bValues[j])
+        .no-padding-below-{bName}
+          padding: 0
+        .no-padding-i-below-{bName}
+          padding: 0 !important
+        .padding-left-0-below-{bName}
+          padding-left: 0 !important
+        .padding-right-0-below-{bName}
+          padding-right: 0 !important
+        .padding-bottom-0-below-{bName}
+          padding-bottom: 0 !important
+        .padding-top-0-below-{bName}
+          padding-top: 0 !important
+        .padding-horizontal-0-below-{bName}
+          padding-left: 0 !important
+          padding-right: 0 !important
+        .padding-vertical-0-below-{bName}
+          padding-top: 0 !important
+          padding-bottom: 0 !important
+
+      @media only screen and (min-width: bValues[j])
+        .no-padding-above-{bName}
+          padding: 0
+        .no-padding-i-above-{bName}
+          padding: 0 !important
+        .padding-left-0-above-{bName}
+          padding-left: 0 !important
+        .padding-right-0-above-{bName}
+          padding-right: 0 !important
+        .padding-bottom-0-above-{bName}
+          padding-bottom: 0 !important
+        .padding-top-0-above-{bName}
+          padding-top: 0 !important
+        .padding-horizontal-0-above-{bName}
+          padding-left: 0 !important
+          padding-right: 0 !important
+        .padding-vertical-0-above-{bName}
+          padding-top: 0 !important
+          padding-bottom: 0 !important
+      for str, i in strs
+        @media only screen and (max-width: bValues[j])
+          .padding-left{str}-below-{bName}
+            padding-left: factors[i] * $spaceSize !important
+          .padding-right{str}-below-{bName}
+            padding-right: factors[i] * $spaceSize !important
+          .padding-top{str}-below-{bName}
+            padding-top: factors[i] * $spaceSize !important
+          .padding-bottom{str}-below-{bName}
+            padding-bottom: factors[i] * $spaceSize !important
+          .padding{str}-below-{bName}
+            padding: factors[i] * $spaceSize !important
+          .padding-vertical{str}-below-{bName}
+            padding-top: factors[i] * $spaceSize !important
+            padding-bottom: factors[i] * $spaceSize !important
+          .padding-horizontal{str}-below-{bName}
+            padding-left: factors[i] * $spaceSize !important
+            padding-right: factors[i] * $spaceSize !important
+
+        @media only screen and (min-width: bValues[j])
+          .padding-left{str}-above-{bName}
+            padding-left: factors[i] * $spaceSize !important
+          .padding-right{str}-above-{bName}
+            padding-right: factors[i] * $spaceSize !important
+          .padding-top{str}-above-{bName}
+            padding-top: factors[i] * $spaceSize !important
+          .padding-bottom{str}-above-{bName}
+            padding-bottom: factors[i] * $spaceSize !important
+          .padding{str}-above-{bName}
+            padding: factors[i] * $spaceSize !important
+          .padding-vertical{str}-above-{bName}
+            padding-top: factors[i] * $spaceSize !important
+            padding-bottom: factors[i] * $spaceSize !important
+          .padding-horizontal{str}-above-{bName}
+            padding-left: factors[i] * $spaceSize !important
+            padding-right: factors[i] * $spaceSize !important
+
+createResponsivePaddings($spaceSizeStrs, $spaceSizeFactors, $breakpointNames, $breakpointValues)
+
 .no-padding
   padding: 0
 
 .no-padding-i
   padding: 0 !important
+
+.padding-left-0
+  padding-left: 0 !important
+.padding-right-0
+  padding-right: 0 !important
+.padding-bottom-0
+  padding-bottom: 0 !important
+.padding-top-0
+  padding-top: 0 !important
+.padding-horizontal-0
+  padding-left: 0 !important
+  padding-right: 0 !important
+.padding-vertical-0
+  padding-top: 0 !important
+  padding-bottom: 0 !important

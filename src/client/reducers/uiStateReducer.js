@@ -4,9 +4,11 @@ const uiState = (state = {
   libTopic: 'All Tags',
   libShowCompleted: true,
   libShowIncomplete: true,
+  showPopup: false,
   curDashboardTab: 0,
   curLibraryTab: 0,
-  openedMilestones: [],
+  openMilestone: '',
+  showModal: false,
 }, action) => {
   switch (action.type) {
     case 'SET_CURRENT_DASHBOARD_TAB': {
@@ -45,6 +47,12 @@ const uiState = (state = {
         libShowIncomplete: !state.libShowIncomplete,
       };
     }
+    case 'TOGGLE_MODAL': {
+      return {
+        ...state,
+        showModal: !state.showModal,
+      };
+    }
     case 'TOGGLE_NAV_MENU': {
       return {
         ...state,
@@ -52,17 +60,9 @@ const uiState = (state = {
       };
     }
     case 'TOGGLE_MILESTONE_CARD': {
-      const openedMilestones = state.openedMilestones.slice(0);
-      const index = openedMilestones.indexOf(action.milestoneId);
-
-      if (index !== -1) {
-        openedMilestones.splice(index, 1);
-      } else {
-        openedMilestones.push(action.milestoneId);
-      }
       return {
         ...state,
-        openedMilestones,
+        openMilestone: state.openMilestone === action.milestoneId ? '' : action.milestoneId,
       };
     }
     default:

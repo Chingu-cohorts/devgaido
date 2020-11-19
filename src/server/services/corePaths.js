@@ -1,25 +1,13 @@
 import CorePaths from '../models/corepaths.json';
+import { collapseVersions } from './commonServices';
 
 /**
  * Core Paths Model
  *
  * This module contains functions implementing model layer functionality
- * for the application. The JSON file referenced by this module has the
- * following structure:
- *
- * {
- *   "path-identifier" : { <-- Unique path identifier. Max of 16 chars.
- *   "name": "...",        <-- Short path name
- *   "description": "...", <-- Path description. Must describe the knowledge
- *                             the user should expect to achieve from taking
- *                             the courses in this path.
- *   "courseIds": [        <-- Array of unique course id's contained in the path.
- *                             Course id's can be referenced in more than one path.
- *     "...",                  <-- Course id
- *   ],
- *   "version": "1.0.0"    <-- Semantic version to track changes
- *  },
- * }
+ * for the application. All access to the path model must be made through
+ * these functions since they collapse versions in the path to create a
+ * single view of the information contained in the path.
  */
 
 /*
@@ -30,7 +18,8 @@ const pathAttributes = [
   ['name', 'required'],
   ['description', 'required'],
   ['courseIds', 'required'],
-  ['version', 'required'],
+  ['goal', 'optional'],
+  ['salary', 'optional'],
 ];
 
 /**
@@ -41,18 +30,34 @@ const pathAttributes = [
 const getExpectedAttributes = () => pathAttributes;
 
 /**
- * Extract a specific path and its details from the Core Paths
+ * Extract a specific path and its details from the Core Paths.
  *
- * @param {String} pathName - Unique path identifier
- * @returns {String[]} - JSON object containing attributes of the path
+ * @param {String} pathId - Identifier of the path that is to be returned
+ * @param {any} overrideJSON - JSON path object that is to be used instead of that
+ * defined by CorePaths. This is an optional parameter used for testing
  */
-const getPath = pathName => CorePaths[pathName];
+const getPath = (pathId, overrideJSON) => {
+  const path = overrideJSON !== undefined ? overrideJSON[pathId] : CorePaths[pathId];
+  if (path === undefined) {
+    return path;
+  }
+  return collapseVersions(path);
+};
 
 /**
  * Retrieve all paths from the Core Paths
  *
+ * @param {any} overrideJSON - JSON path object that is to be used instead of that
+ * defined by CorePaths. This is an optional parameter used for testing
  * @returns {Object} - JSON object containing attributes of the core path
  */
-const getAllPaths = () => CorePaths;
+const getAllPaths = (overrideJSON) => {
+  const currentPath = {};
+  const paths = overrideJSON !== undefined ? overrideJSON : CorePaths;
+  Object.keys(paths).forEach((key) => {
+    currentPath[key] = collapseVersions(paths[key]);
+  });
+  return currentPath;
+};
 
 export { getExpectedAttributes, getPath, getAllPaths };

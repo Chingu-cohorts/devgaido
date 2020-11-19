@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { DashboardCard } from '../shared/Cards';
+import { ResourceCard } from '../shared/Cards';
 
 const ItemList = ({ items }) => (
   <div className="item-list">
     {items.map(item => (
-      <DashboardCard item={item} key={item.name} />
+      <ResourceCard item={item} key={item.name} />
     ))}
   </div>
 );

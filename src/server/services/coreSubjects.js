@@ -1,55 +1,59 @@
 import CoreSubjects from '../models/coresubjects.json';
+import { collapseVersions } from './commonServices';
 
 /**
- *
  * Core Subject Model
  *
  * This module contains functions implementing model layer functionality
- * for the application. The JSON file referenced by this module has the
- * following structure:
- *
- * {
- *  "subject-identifier" : { <-- Unique subject identifier. Max of 16 chars.
- *    "type": "...",         <-- Subject type which categorizes the associated
- *                               subject material (e.g. CSS, HTML, Javascript, etc.)
- *    "focusArea": "...",    <-- Subject focus area based on a specific webdev
- *                               role (e.g. Frontend, Backend, Fullstack, etc.)
- *    "name": "...",         <-- Short subject name
- *    "description": "...",  <-- Subject description describing the associated
- *                               subject material and how it relates to the
- *                               webdev role.
- *    "releaseNo": "...",    <-- Defines the release number for the associated
- *                               technology the subject may be based on (e.g.
- *                               Angular2 vs. Angular4)
- *    "authorityURL": "...", <-- For specific technologies the subject is based
- *                               on this notes the URL of the authorative
- *                               source. For example, for Google's Material
- *                               Design this would be www.materialdesign.io.
- *    "version": "1.0.0"     <-- Semantic version to track changes
- *  },
- * }
+ * for the application.
  */
+
+/*
+ * Attribute directory defines all attribute names expected in the JSON object
+ * and whether they are required or optional.
+ */
+const subjectAttributes = [
+  ['type', 'required'],
+  ['focusArea', 'required'],
+  ['name', 'required'],
+  ['description', 'required'],
+  ['release', 'optional'],
+  ['authorityUrl', 'optional'],
+];
+/**
+ * Retrieve the array of attribute names and types.
+ *
+ * @returns {String[]} subjectAttributes - Array of expected attribute names and types
+ */
+const getExpectedAttributes = () => subjectAttributes;
 
 /**
- * Extract a specific subject and its details from the Subjects
+ * Extract a specific subject and its details from the Core Subjects
  *
- * @param {String} subjectId - Unique subject identifier
- * @returns {String[]} - JSON object containing subject details
+ * @returns {String[]} - JSON object containing attributes of the subject
  */
-const getSubject = subjectId =>
-  JSON.stringify(CoreSubjects.reduce((subjectsList, currentSubject) => {
-    if (currentSubject.Name.toLowerCase() === subjectId.toLocaleLowerCase()
-      && !subjectsList.includes(subjectId)) {
-      subjectsList.push(currentSubject);
-    }
-    return subjectsList;
-  }, []));
+const getSubject = (subjectId, overrideJSON) => {
+  const subject = overrideJSON !== undefined ? overrideJSON[subjectId] : CoreSubjects[subjectId];
+  if (subject === undefined) {
+    return subject;
+  }
+  return collapseVersions(subject);
+};
 
 /**
- * Extract a unique list of unique subjects from the Core Subjects
+ * Retrieve all subjects from the Core Subjects
  *
- * @returns {String[]} - Array of subject names in ascending sequence
+ * @param {any} overrideJSON - JSON subject object that is to be used instead of that
+ * defined by CoreSubjects. This is an optional parameter used for testing
+ * @returns {Object} - JSON object containing attributes of the core subject
  */
-const getAllSubjects = () => CoreSubjects;
+const getAllSubjects = (overrideJSON) => {
+  const currentsubject = {};
+  const subjects = overrideJSON !== undefined ? overrideJSON : CoreSubjects;
+  Object.keys(subjects).forEach((key) => {
+    currentsubject[key] = collapseVersions(subjects[key]);
+  });
+  return currentsubject;
+};
 
-export { getSubject, getAllSubjects };
+export { getExpectedAttributes, getSubject, getAllSubjects };

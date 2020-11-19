@@ -1,569 +1,473 @@
 {
   "git": {
-    "name": "Understanding & Working with Git",
-    "description": "Git is the the source code control system used for both commercial and Open Source projects. This is your first step in understanding how Git helps developers to manage their source code and how to make it part of your daily development workflow.",
-    "lessonIds": [
-      "trygit",
-      "gitsimpleguide"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Understanding & Working with Git",
+      "description": "Git is the the source code control system used for both commercial and Open Source projects. This is your first step in understanding how Git helps developers to manage their source code and how to make it part of your daily development workflow.",
+      "lessonIds": [ "trygit", "gitsimpleguide" ]
+    }
   },
   "github": {
-    "name": "Understanding & Working with GitHub",
-    "description": "As a leader in cloud-based Git systems it's important for web developers to understand its capabilities. In this course you'll learn how it is used not only to manage your team's source code, but also how it can help improve project management.",
-    "lessonIds": [
-      "howtogitngithub",
-      "githubhelloworld",
-      "githubtraining"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Understanding & Working with GitHub",
+      "description": "As a leader in cloud-based Git systems it's important for web developers to understand its capabilities. In this course you'll learn how it is used not only to manage your team's source code, but also how it can help improve project management.",
+      "lessonIds": [ "howtogitngithub", "githubhelloworld", "githubtraining" ]
+    }
   },
   "advancedgit": {
-    "name": "Advanced Git",
-    "description": "To become a senior web developer you'll need to understand Git techniques and workflow processes that will make you an effective part of your team. As part of this you'll learn how to solve complex situations and problems using Git.",
-    "lessonIds": [
-      "gitimmersion"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Advanced Git",
+      "description": "To become a senior web developer you'll need to understand Git techniques and workflow processes that will make you an effective part of your team. As part of this you'll learn how to solve complex situations and problems using Git.",
+      "lessonIds": [ "gitimmersion" ]
+    }
   },
   "buildwebpages": {
-    "name": "Building Webpages",
-    "description": "Learn how to build simple webpages using HTML and CSS",
-    "lessonIds": [
-      "learnhtmlcss",
-      "onlineresume"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Building Webpages",
+      "description": "Learn how to build simple webpages using HTML and CSS",
+      "lessonIds": [ "learnhtmlcss", "onlineresume" ]
+    }
   },
   "beginnerjs": {
-    "name": "Beginning Javascript",
-    "description": "Learn the basics of the Javascript language",
-    "lessonIds": [
-      "ydkjsupngoing",
-      "ydkjsscope"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Beginning Javascript",
+      "description": "Learn the basics of the Javascript language",
+      "lessonIds": [ "ydkjsupngoing", "ydkjsscope" ]
+    }
   },
   "intermediatejs": {
-    "name": "Intermediate Javascript",
-    "description": "Gain insight into how Javascript handles datatypes and objects",
-    "lessonIds": [
-      "ydkjsthis",
-      "ydkjstypes"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Intermediate Javascript",
+      "description": "Gain insight into how Javascript handles datatypes and objects",
+      "lessonIds": [ "ydkjsthis", "ydkjstypes" ]
+    }
   },
   "advancedjs": {
-    "name": "Advanced Javascript",
-    "description": "Acquire and indepth understanding of asynchronous operations and modern ES6 Javascript",
-    "lessonIds": [
-      "ydkjsasync",
-      "ydkjses6"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Advanced Javascript",
+      "description": "Acquire and indepth understanding of asynchronous operations and modern ES6 Javascript",
+      "lessonIds": [ "ydkjsasync", "ydkjses6" ]
+    }
   },
   "ydkjs1": {
-    "name": "You Don't Know JS - Basics",
-    "description": "",
-    "lessonIds": [
-      "ydkjsupngoing",
-      "ydkjsscope"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "You Don't Know JS - Basics",
+      "description": "",
+      "lessonIds": [ "ydkjsupngoing", "ydkjsscope" ]
+    }
   },
   "ydkjs2": {
-    "name": "You Don't Know JS - Intermediate",
-    "description": "",
-    "lessonIds": [
-      "ydkjsthis",
-      "ydkjstypes"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "You Don't Know JS - Intermediate",
+      "description": "",
+      "lessonIds": [ "ydkjsthis", "ydkjstypes" ]
+    }
   },
   "ydkjs3": {
-    "name": "You Don't Know JS - Advanced",
-    "description": "",
-    "lessonIds": [
-      "ydkjsasync",
-      "ydkjses6"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "You Don't Know JS - Advanced",
+      "description": "",
+      "lessonIds": [ "ydkjsasync", "ydkjses6" ]
+    }
   },
   "cs1": {
-    "name": "Computer Science 1",
-    "description": "",
-    "lessonIds": [
-      "cs50x"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Computer Science 1",
+      "description": "",
+      "lessonIds": [ "cs50x" ]
+    }
   },
   "cs2": {
-    "name": "Computer Science 2",
-    "description": "",
-    "lessonIds": [
-      "opendatastructs"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Computer Science 2",
+      "description": "",
+      "lessonIds": [ "opendatastructs" ]
+    }
   },
   "frontendexp1": {
-    "name": "Frontend Expertise 1",
-    "description": "",
-    "lessonIds": [
-      "fccportfolio"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Frontend Expertise 1",
+      "description": "",
+      "lessonIds": [ "fccportfolio" ]
+    }
   },
   "frontendexp2": {
-    "name": "Frontend Expertise 2",
-    "description": "",
-    "lessonIds": [
-      "domenlightment",      
-      "clonenetflix"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Frontend Expertise 2",
+      "description": "",
+      "lessonIds": [ "domenlightment", "clonenetflix" ]
+    }
   },
   "frontendexp3": {
-    "name": "Frontend Expertise 3",
-    "description": "",
-    "lessonIds": [
-      "cloneadmintemp"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Frontend Expertise 3",
+      "description": "",
+      "lessonIds": [ "cloneadmintemp" ]
+    }
   },
   "backendfound": {
-    "name": "Backend Foundations",
-    "description": "",
-    "lessonIds": [
-      "intromongodb",      
-      "fccbackend"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Backend Foundations",
+      "description": "",
+      "lessonIds": [ "intromongodb", "fccbackend" ]
+    }
   },
   "jsboss": {
-    "name": "Javascript like a Boss",
-    "description": "",
-    "lessonIds": [
-      "jsallonge6",
-      "jsdesignpatterns"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Javascript like a Boss",
+      "description": "",
+      "lessonIds": [ "jsallonge6", "jsdesignpatterns" ]
+    }
   },
   "gitngithub": {
-    "name": "Git and GitHub",
-    "description": "Maintaining your source code and publishing the body of work you create on an Open Source collaboration site are basic skills you'll need as a web developer. Complete this prerequisite before starting the four tiers of the P1XT Guide",
-    "lessonIds": [
-      "trygit",
-      "gitsimpleguide",
-      "githubtraining",
-      "githubhelloworld",
-      "gitimmersion",
-      "howtogitngithub"
-    ],
-    "completeX" : 1,
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Git and GitHub",
+      "description": "Maintaining your source code and publishing the body of work you create on an Open Source collaboration site are basic skills you'll need as a web developer. Complete this prerequisite before starting the four tiers of the P1XT Guide",
+      "lessonIds": [
+        "trygit",
+        "gitsimpleguide",
+        "githubtraining",
+        "githubhelloworld",
+        "gitimmersion",
+        "howtogitngithub"
+      ],
+      "completeX": 1
+    }
   },
   "p1xttier1": {
-    "name": "P1XT Guide: Tier 1 - Getting Started",
-    "description": "Prerequisite knowledge you will need before starting the courses that make up the four tiers of the P1XT Guide",
-    "lessonIds": [
-      "ydkjsupngoing",
-      "ydkjsscope",
-      "ydkjsthis",
-      "cs50x",
-      "learnhtmlcss", 
-      "onlineresume",
-      "ydkjstypes",
-      "ydkjsasync",
-      "ydkjses6",
-      "advhtmlcss", 
-      "fccportfolio",
-      "projectspecdocs",
-      "ettmath",
-      "setupes6",
-      "jsallonge6",
-      "getsassy",
-      "towersofhanoi",
-      "createcsstemp"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "P1XT Guide: Tier 1 - Getting Started",
+      "description": "Prerequisite knowledge you will need before starting the courses that make up the four tiers of the P1XT Guide",
+      "lessonIds": [
+        "ydkjsupngoing",
+        "ydkjsscope",
+        "ydkjsthis",
+        "cs50x",
+        "learnhtmlcss",
+        "onlineresume",
+        "ydkjstypes",
+        "ydkjsasync",
+        "ydkjses6",
+        "advhtmlcss",
+        "fccportfolio",
+        "projectspecdocs",
+        "ettmath",
+        "setupes6",
+        "jsallonge6",
+        "getsassy",
+        "towersofhanoi",
+        "createcsstemp"
+      ]
+    }
   },
   "p1xttier2": {
-    "name": "P1XT Guide: Tier 2 - Develop More Expertise",
-    "description": "Establish a solid foundational understanding of Javascript, HTML, and CSS",
-    "lessonIds": [
-      "systematicpd1",
-      "systematicpd2",
-      "systematicpd3", 
-      "domenlightment", 
-      "gulp",
-      "fccsimon", 
-      "intromongodb",
-      "fccbackend",
-      "calculus1", 
-      "jsdesignpatterns", 
-      "clonelandingpage", 
-      "csmaths",
-      "algnflowcharts", 
-      "intropencil",
-      "cloneadmintemp",
-      "thinkjava",
-      "classicpuzzles", 
-      "opendatastructs",
-      "algorithms1", 
-      "algorithms2",
-      "codejam15q2",
-      "clonefrontpage",
-      "mobileuxdesign", 
-      "androiddev",
-      "fccpomodoro"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "P1XT Guide: Tier 2 - Develop More Expertise",
+      "description": "Establish a solid foundational understanding of Javascript, HTML, and CSS",
+      "lessonIds": [
+        "systematicpd1",
+        "systematicpd2",
+        "systematicpd3",
+        "domenlightment",
+        "gulp",
+        "fccsimon",
+        "intromongodb",
+        "fccbackend",
+        "calculus1",
+        "jsdesignpatterns",
+        "clonelandingpage",
+        "csmaths",
+        "algnflowcharts",
+        "intropencil",
+        "cloneadmintemp",
+        "thinkjava",
+        "classicpuzzles",
+        "opendatastructs",
+        "algorithms1",
+        "algorithms2",
+        "codejam15q2",
+        "clonefrontpage",
+        "mobileuxdesign",
+        "androiddev",
+        "fccpomodoro"
+      ]
+    }
   },
   "p1xttier3": {
-    "name": "P1XT Guide: Tier 3 - Add More Rigor",
-    "description": "Increase your knowledge by learning functional programming and webdev technologies and techniques.",
-    "lessonIds": [
-      "frisbys",
-      "testing", 
-      "debugging",
-      "clonenetflix", 
-      "calculus2",
-      "classicpuzzles2", 
-      "softwarearch",
-      "codejam15r1a",
-      "jsspessore",
-      "cloneblog",
-      "databases",
-      "agile",
-      "es6katas",
-      "cloudcomputing", 
-      "codejam15r1b",
-      "buildfacebook",
-      "theoreticalcs", 
-      "codejam15r1c", 
-      "probability",
-      "12colgrid", 
-      "linearalgebra",
-      "classicpuzzles3",
-      "crypto1",
-      "codejam15r2",
-      "crypto2", 
-      "clonetwitter"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "P1XT Guide: Tier 3 - Add More Rigor",
+      "description": "Increase your knowledge by learning functional programming and webdev technologies and techniques.",
+      "lessonIds": [
+        "frisbys",
+        "testing",
+        "debugging",
+        "clonenetflix",
+        "calculus2",
+        "classicpuzzles2",
+        "softwarearch",
+        "codejam15r1a",
+        "jsspessore",
+        "cloneblog",
+        "databases",
+        "agile",
+        "es6katas",
+        "cloudcomputing",
+        "codejam15r1b",
+        "buildfacebook",
+        "theoreticalcs",
+        "codejam15r1c",
+        "probability",
+        "12colgrid",
+        "linearalgebra",
+        "classicpuzzles3",
+        "crypto1",
+        "codejam15r2",
+        "crypto2",
+        "clonetwitter"
+      ]
+    }
   },
   "p1xttier4": {
-    "name": "P1XT Guide: Tier 4 - Polish the Rough Edges",
-    "description": "Round out your knowledge by increasing your knowledge of advanced subjects like Artificial Intelligence, and put your knowledge to the test by completing advanced projects.",
-    "lessonIds": [
-      "computerarch",
-      "codejam15r3",
-      "cybersecurity",
-      "classicpuzzles4",
-      "computergfx", 
-      "ai",
-      "codejam15f",
-      "machinelearning",
-      "webgame",
-      "compilers",
-      "nlp",
-      "cloneharmony",
-      "networks", 
-      "parallel", 
-      "codejam15dist",
-      "cloneslack",
-      "bootstrapfull",
-      "codejam16",
-      "materialdesign"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "P1XT Guide: Tier 4 - Polish the Rough Edges",
+      "description": "Round out your knowledge by increasing your knowledge of advanced subjects like Artificial Intelligence, and put your knowledge to the test by completing advanced projects.",
+      "lessonIds": [
+        "computerarch",
+        "codejam15r3",
+        "cybersecurity",
+        "classicpuzzles4",
+        "computergfx",
+        "ai",
+        "codejam15f",
+        "machinelearning",
+        "webgame",
+        "compilers",
+        "nlp",
+        "cloneharmony",
+        "networks",
+        "parallel",
+        "codejam15dist",
+        "cloneslack",
+        "bootstrapfull",
+        "codejam16",
+        "materialdesign"
+      ]
+    }
   },
   "htmlbasics": {
-    "name": "HTML Basics",
-    "description": "Learn the basics of HTML - the standard used to define webpages.",
-    "lessonIds": [
-      "introhtml",
-      "beginnerhtml",
-      "clonewebpage"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "HTML Basics",
+      "description": "Learn the basics of HTML - the standard used to define webpages.",
+      "lessonIds": [ "introhtml", "beginnerhtml", "clonewebpage" ]
+    }
   },
   "cssbasics": {
-    "name": "CSS Basics",
-    "description": "Learn the basics of CSS - the standard used to style webpages.",
-    "lessonIds": [
-      "introcss",
-      "beginnercss",
-      "clonetributepage"
-     ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "CSS Basics",
+      "description": "Learn the basics of CSS - the standard used to style webpages.",
+      "lessonIds": [ "introcss", "beginnercss", "clonetributepage" ]
+    }
   },
   "marryhtmlcss": {
-    "name": "Marrying HTML & CSS",
-    "description": "Learn how to combine HTML and CSS to create a professional webpage",
-    "lessonIds": [
-      "learnhtmlcss",
-      "cloneresume"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Marrying HTML & CSS",
+      "description": "Learn how to combine HTML and CSS to create a professional webpage",
+      "lessonIds": [ "learnhtmlcss", "cloneresume" ]
+    }
   },
   "intermediatehtml": {
-    "name": "Intermediate HTML",
-    "description": "Improve your HTML knowledge with additional HTML programming techniques",
-    "lessonIds": [
-      "intermediatehtml"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Intermediate HTML",
+      "description": "Improve your HTML knowledge with additional HTML programming techniques",
+      "lessonIds": [ "intermediatehtml" ]
+    }
   },
   "intermediatecss": {
-    "name": "Intermediate CSS",
-    "description": "Improve your CSS knowledge with additional CSS programming techniques",
-    "lessonIds": [
-      "intermediatecss"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Intermediate CSS",
+      "description": "Improve your CSS knowledge with additional CSS programming techniques",
+      "lessonIds": [ "intermediatecss" ]
+    }
   },
   "advancedhtmlcss": {
-    "name": "Advanced HTML & CSS",
-    "description": "Polish your HTML and CSS knowledge and skills with advanced techniques",
-    "lessonIds": [
-      "advancedhtml",
-      "advancedcss",
-      "buildportfolio"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Advanced HTML & CSS",
+      "description": "Polish your HTML and CSS knowledge and skills with advanced techniques",
+      "lessonIds": [ "advancedhtml", "advancedcss", "buildportfolio" ]
+    }
   },
   "introbootstrap": {
-    "name": "Introduction to Bootstrap",
-    "description": "Learn how to use the Bootstrap Library for styling",
-    "lessonIds": [
-      "introbootstrap",
-      "qwbootstrap",
-      "bootstraptribute"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Introduction to Bootstrap",
+      "description": "Learn how to use the Bootstrap Library for styling",
+      "lessonIds": [ "introbootstrap", "qwbootstrap", "bootstraptribute" ]
+    }
   },
   "introfoundation": {
-    "name": "Introduction to Foundation",
-    "description": "Learn how to use the Foundation Library for styling",
-    "lessonIds": [
-      "foundationcrash"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Introduction to Foundation",
+      "description": "Learn how to use the Foundation Library for styling",
+      "lessonIds": [ "foundationcrash" ]
+    }
   },
   "introsass": {
-    "name": "Introduction to Sass",
-    "description": "Learn how to use the Sass Library for styling",
-    "lessonIds": [
-      "introsass"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Introduction to Sass",
+      "description": "Learn how to use the Sass Library for styling",
+      "lessonIds": [ "introsass" ]
+    }
   },
   "introless": {
-    "name": "Introduction to Less",
-    "description": "Learn how to use the Less Library for styling",
-    "lessonIds": [
-      "introless"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Introduction to Less",
+      "description": "Learn how to use the Less Library for styling",
+      "lessonIds": [ "introless" ]
+    }
   },
   "introstylus": {
-    "name": "Introduction to Stylus",
-    "description": "Learn how to use the Stylus Library for styling",
-    "lessonIds": [
-      "introstylus"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Introduction to Stylus",
+      "description": "Learn how to use the Stylus Library for styling",
+      "lessonIds": [ "introstylus" ]
+    }
   },
   "howwebworks": {
-    "name": "Learn How the Web Works",
-    "description": "Learn How the Internet and World Wide Web Work",
-    "lessonIds": [
-      "howinternetworks",
-      "howwebworks"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Learn How the Web Works",
+      "description": "Learn How the Internet and World Wide Web Work",
+      "lessonIds": [ "howinternetworks", "howwebworks" ]
+    }
   },
   "getstartedweb": {
-    "name": "Getting Started with the Web",
-    "description": "Learn how to set up a web project folder and file system for you projects",
-    "lessonIds": [
-      "getstartedweb",
-      "setupwwwfolder"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Getting Started with the Web",
+      "description": "Learn how to set up a web project folder and file system for you projects",
+      "lessonIds": [ "getstartedweb", "setupwwwfolder" ]
+    }
   },
   "reduxconcepts": {
-    "name": "State, Actions, and Reducers",
-    "description": "Gain insight into the fundamentals of how Redux works.",
-    "lessonIds": [
-      "redux01",
-      "redux02",
-      "redux03",
-      "redux04",
-      "redux05"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "State, Actions, and Reducers",
+      "description": "Gain insight into the fundamentals of how Redux works.",
+      "lessonIds": [ "redux01", "redux02", "redux03", "redux04", "redux05" ]
+    }
   },
   "reduxstore": {
-    "name": "The Redux Store",
-    "description": "Learn about the Redux Store.",
-    "lessonIds": [
-      "redux06",
-      "redux07"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "The Redux Store",
+      "description": "Learn about the Redux Store.",
+      "lessonIds": [ "redux06", "redux07" ]
+    }
   },
   "reduxcheckpt": {
-    "name": "Putting it All Together: React & Redux",
-    "description": "See how React and Redux can work together in this simple example.",
-    "lessonIds": [
-      "redux08"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Putting it All Together: React & Redux",
+      "description": "See how React and Redux can work together in this simple example.",
+      "lessonIds": [ "redux08" ]
+    }
   },
   "reduxmutations": {
-    "name": "Avoiding Mutations in Redux",
-    "description": "Understand how to avoid array and object mutations in Redux.",
-    "lessonIds": [
-      "redux09",
-      "redux10"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Avoiding Mutations in Redux",
+      "description": "Understand how to avoid array and object mutations in Redux.",
+      "lessonIds": [ "redux09", "redux10" ]
+    }
   },
   "reduxtodo1": {
-    "name": "Example: Creating a ToDo Application",
-    "description": "Learn how to build an app application using Redux.",
-    "lessonIds": [
-      "redux11",
-      "redux12"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Example: Creating a ToDo Application",
+      "description": "Learn how to build an app application using Redux.",
+      "lessonIds": [ "redux11", "redux12" ]
+    }
   },
   "reduxreducer": {
-    "name": "Understanding Reducer Composition",
-    "description": "Learn about reducer composition in Redux.",
-    "lessonIds": [
-      "redux13",
-      "redux14",
-      "redux15",
-      "redux16"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Understanding Reducer Composition",
+      "description": "Learn about reducer composition in Redux.",
+      "lessonIds": [ "redux13", "redux14", "redux15", "redux16" ]
+    }
   },
   "reduxtodo2": {
-    "name": "Example: Adding Features to the ToDo Application",
-    "description": "Extend your knowledge of Redux through this example of how to add new features to the ToDo app.",
-    "lessonIds": [
-      "redux17",
-      "redux18",
-      "redux19"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Example: Adding Features to the ToDo Application",
+      "description": "Extend your knowledge of Redux through this example of how to add new features to the ToDo app.",
+      "lessonIds": [ "redux17", "redux18", "redux19" ]
+    }
   },
   "reduxextpres": {
-    "name": "Extracting Presentational Components",
-    "description": "See how to extract presentational components to separate app behavior from appearance.",
-    "lessonIds": [
-      "redux20",
-      "redux21"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Extracting Presentational Components",
+      "description": "See how to extract presentational components to separate app behavior from appearance.",
+      "lessonIds": [ "redux20", "redux21" ]
+    }
   },
   "reduxextcont": {
-    "name": "Extracting Container Components",
-    "description": "Learn the how and why of extracting container components to limit the unnecessary passing of props.",
-    "lessonIds": [
-      "redux22",
-      "redux23"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Extracting Container Components",
+      "description": "Learn the how and why of extracting container components to limit the unnecessary passing of props.",
+      "lessonIds": [ "redux22", "redux23" ]
+    }
   },
   "reduxpassstore": {
-    "name": "Passing the Store to App Components",
-    "description": "Learn the how and why of extracting container components to limit the unnecessary passing of props.",
-    "lessonIds": [
-      "redux24",
-      "redux25",
-      "redux26"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Passing the Store to App Components",
+      "description": "Learn the how and why of extracting container components to limit the unnecessary passing of props.",
+      "lessonIds": [ "redux24", "redux25", "redux26" ]
+    }
   },
   "reduxgencont": {
-    "name": "Generating Containers",
-    "description": "Learn the how to use Redux to generate container components.",
-    "lessonIds": [
-      "redux27",
-      "redux28",
-      "redux29"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Generating Containers",
+      "description": "Learn the how to use Redux to generate container components.",
+      "lessonIds": [ "redux27", "redux28", "redux29" ]
+    }
   },
   "reduxextact": {
-    "name": "Extracting Action Creators",
-    "description": "Learn how to extract action creators from components to improve the maintainability of your apps.",
-    "lessonIds": [
-      "redux30"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Extracting Action Creators",
+      "description": "Learn how to extract action creators from components to improve the maintainability of your apps.",
+      "lessonIds": [ "redux30" ]
+    }
   },
   "reactbasicsetup": {
-    "name": "What is React?",
-    "description": "Learn what ReactJS is useful for and how to set up your development environment to begin writing apps that rely on it.",
-    "lessonIds": [
-      "reactbasics01",
-      "reactbasics02",
-      "reactbasics03"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "What is React?",
+      "description": "Learn what ReactJS is useful for and how to set up your development environment to begin writing apps that rely on it.",
+      "lessonIds": [ "reactbasics01", "reactbasics02", "reactbasics03" ]
+    }
   },
   "reactbasiccomps": {
-    "name": "All About Components",
-    "description": "Learn about ReactJS Components and how they function in and app.",
-    "lessonIds": [
-      "reactbasics04",
-      "reactbasics05",
-      "reactbasics06"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "All About Components",
+      "description": "Learn about ReactJS Components and how they function in and app.",
+      "lessonIds": [ "reactbasics04", "reactbasics05", "reactbasics06" ]
+    }
   },
   "reactbasicprops": {
-    "name": "Props, Events, and State",
-    "description": "Learn about ReactJS Components and how they function in and app.",
-    "lessonIds": [
-      "reactbasics07",
-      "reactbasics08"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Props, Events, and State",
+      "description": "Learn about ReactJS Components and how they function in and app.",
+      "lessonIds": [ "reactbasics07", "reactbasics08" ]
+    }
   },
   "reactbasicstate": {
-    "name": "Stateful Components, Stateless Components, and the DOM",
-    "description": "Learn about state and its interaction with the DOM.",
-    "lessonIds": [
-      "reactbasics09",
-      "reactbasics10",
-      "reactbasics11"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Stateful Components, Stateless Components, and the DOM",
+      "description": "Learn about state and its interaction with the DOM.",
+      "lessonIds": [ "reactbasics09", "reactbasics10", "reactbasics11" ]
+    }
   },
   "reactbasiccomm": {
-    "name": "Communicating Between Components and the ReactJS Lifecycle",
-    "description": "Learn how to communicate between parent and child components, as well as about the lifecycle of a React app.",
-    "lessonIds": [
-      "reactbasics12",
-      "reactbasics13",
-      "reactbasics14",
-      "reactbasics15"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "Communicating Between Components and the ReactJS Lifecycle",
+      "description": "Learn how to communicate between parent and child components, as well as about the lifecycle of a React app.",
+      "lessonIds": [ "reactbasics12", "reactbasics13", "reactbasics14", "reactbasics15" ]
+    }
   },
   "reactbasicroute": {
-    "name": "React Routing",
-    "description": "Learn about React Router and how to leverage it in your applications.",
-    "lessonIds": [
-      "reactbasics16",
-      "reactbasics17"
-    ],
-    "version": "1.0.0"
+    "version-1.0": {
+      "name": "React Routing",
+      "description": "Learn about React Router and how to leverage it in your applications.",
+      "lessonIds": [ "reactbasics16", "reactbasics17" ]
+    }
   }
 }
