@@ -12,13 +12,14 @@ const SubjectTags = ({ item, setState, state }) => {
     numSubjects = Math.min(5, item.subjectNames.length);
   }
   for (let i = 0; i < numSubjects; i += 1) {
-    subjects.push(<h5 className="tag normal border-round bg-light-grey c-text margin-right-tiny" key={item.name + item.subjectNames[i].name + i}>{item.subjectNames[i]}</h5>);
+    subjects.push(<h6 className="tag normal border-pill bg-grey c-white " key={item.name + item.subjectNames[i].name + i}>{item.subjectNames[i]}</h6>);
   }
   if (item.subjectNames.length > 5) {
+    const subjectNumberDiff = item.subjectNames.length - 5;
     subjects.push(
       <button
         key={`${item.name}moreSubjects`}
-        className="border-round border-none bg-hover-accent transition-fast bg-light-grey c-text c-hover-white margin-top-tiny"
+        className="h6 border-round border-none bg-hover-accent transition-fast bg-grey c-white c-hover-white "
         onClick={() => {
           setState({
             tagIsOpened: !state.tagIsOpened,
@@ -26,13 +27,13 @@ const SubjectTags = ({ item, setState, state }) => {
         }}
       >
         <div className="flex items-center">
-          {state.tagIsOpened ? '<<' : '...'}
+          {state.tagIsOpened ? '<<' : `and ${subjectNumberDiff} more ...`}
         </div>
       </button>,
     );
   }
   return (
-    <div className="left center">
+    <div className="left center flex items-center flex-wrap">
       {subjects}
     </div>
   );

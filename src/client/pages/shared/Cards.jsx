@@ -123,7 +123,7 @@ const ResourceCard = StateProvider(({ item, completeX, showDot }) => {
         </FlexRow>
         {item.nLessonsTotal > 0 ?
           <Progress item={item} /> : null}
-        <p className="margin-top-small">{item.description}</p>
+        <p className="margin-top-small margin-bottom-big">{item.description}</p>
       </div>
       { itemIsPath ?
         <FlexRow className="flex flex-column-below-t margin-horizontal-small margin-bottom-small items-end justify-between items-center-below-t">
