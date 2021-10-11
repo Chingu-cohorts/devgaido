@@ -37,21 +37,21 @@ const Progress = ({ item }) => {
 };
 
 const MilestonesComplete = ({ item }) => (
-  <h4 className="no-margin">
+  <h4 className="no-margin normal">
     <i className="fa icon-flag-checkered c-primary h4 margin-right-tiny" />
     <span>{item.nCompleted}/{item.nTotal}</span>
   </h4>
 );
 
 const LessonsNumber = ({ item }) => (
-  <h4 className="no-margin">
+  <h4 className="no-margin normal">
     <i className="fa icon-graduation-cap c-accent h4 margin-right-tiny" />
     <span>{item.nLessonsTotal}</span>
   </h4>
 );
 
 const LessonsComplete = ({ item }) => (
-  <h4 className="no-margin margin-left-small">
+  <h4 className="no-margin margin-left-small normal">
     <i className="fa icon-graduation-cap c-accent h4 margin-right-tiny" />
     <span>{item.nLessonsCompleted}/{item.nLessonsTotal}</span>
   </h4>
@@ -123,7 +123,7 @@ const ResourceCard = StateProvider(({ item, completeX, showDot }) => {
         </FlexRow>
         {item.nLessonsTotal > 0 ?
           <Progress item={item} /> : null}
-        <p className="margin-top-small">{item.description}</p>
+        <p className="margin-top-small margin-bottom-big">{item.description}</p>
       </div>
       { itemIsPath ?
         <FlexRow className="flex flex-column-below-t margin-horizontal-small margin-bottom-small items-end justify-between items-center-below-t">

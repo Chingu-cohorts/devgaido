@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = ({ onClick, icon, className, children }) => (
-  <button className={`${className || 'button--default'} uppercase width-100-below-t margin-right-small-above-t margin-bottom-small-below-t`} onClick={onClick}>
+  <button className={`${className || 'button--default'} uppercase width-100-below-t margin-horizontal-tiny-above-t margin-bottom-small-below-t`} onClick={onClick}>
     <div className="flex items-center justify-center">
       {icon ? <i className={`fa ${icon} margin-right-tiny`} /> : null}
       {children}

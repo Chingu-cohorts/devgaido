@@ -21,6 +21,10 @@ const _constructor = (that) => {
 };
 
 const animate = (that) => {
+  if (!that.childrenRefs.length > 0) {
+    return;
+  }
+
   let child = null;
   for (let i = that.firstVisibleIndex; i <= that.lastVisibleIndex; i += 1) {
     child = that.childrenRefs[i];

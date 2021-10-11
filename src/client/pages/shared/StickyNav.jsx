@@ -30,8 +30,6 @@ class StickyNav extends React.Component {
   componentDidMount() {
     if (this.hasDom) {
       this.navBarHeight = this.navbarRef.clientHeight;
-
-      this.navbarRefPlaceholder.style.height = `${this.navBarHeight}px`;
       this.distanceToScrollUntilSticky = this.navBarHeight;
 
       window.addEventListener('scroll', () => this.handleScroll());
@@ -45,6 +43,10 @@ class StickyNav extends React.Component {
   }
 
   handleScroll() {
+    if (!this.navbarRef) {
+      return;
+    }
+
     let sticky = false;
     this.scrollingDown = (window.pageYOffset - this.lastScrollPos) > 0;
     this.lastScrollPos = window.pageYOffset;
@@ -97,9 +99,9 @@ class StickyNav extends React.Component {
     const { user, uiState, auth0 } = this.props;
 
     return (
-      <div className={'width-100 bg-white'} ref={(domElem) => { this.navbarRefPlaceholder = domElem; }}>
+      <div className={'width-100 bg-white'}>
         <div className={`navbar width-100 bg-white ${this.sticky ? 'fixed' : ''}`} ref={(domElem) => { this.navbarRef = domElem; }}>
-          <div className="container flex flex-column-below-t justify-between items-center padding-vertical-small relative">
+          <div className="container flex flex-column-below-t justify-between items-center padding-vertical-tiny relative">
             <NavLink to={user.authenticated ? '/dashboard' : '/'} className="logo" />
             <nav className="flex items-center margin-top-tiny-below-t">
               <ul className="flex items-center no-margin list-style-none uppercase">

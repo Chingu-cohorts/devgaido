@@ -7,7 +7,7 @@ import ItemList from './ItemList';
 import AnimateVisibleChildrenDiv from '../shared/AnimateVisibleChildrenDiv';
 
 const DashboardSection = ({ subCaption, caption, description, children }) => (
-  <section className="margin-bottom-small">
+  <section className="margin-bottom-big">
     <div className="margin-tiny">
       <span className="h6-below-t">{subCaption}</span>
       <h2 className="h3-below-t">{caption}</h2>
