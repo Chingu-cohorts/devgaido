@@ -102,14 +102,14 @@ const MilestoneCard = ({ uiState, id, course, index, lessons, that, state }) => 
         <div className={`flex flex-column-below-t padding-tiny items-center items-start-below-t justify-between bg-primary transition-fast bg-hover-accent ${collapsed ? 'border-round' : 'border-round-top'}`}>
           <div className="flex items-center">
             <i className={`mcard__icon fa icon-caret-right c-white h2 h3-below-t margin-left-tiny margin-right-small ${collapsed ? '' : 'rotated'}`} />
-            <h3 className="mcard__header__text flex-1 h4-below-t c-white uppercase no-margin wide">Milestone {index + 1}: {course.name}</h3>
+            <h3 className="mcard__header__text flex-1 h4-below-t c-white uppercase no-margin wide normal text-shadow-subtle">Milestone {index + 1}: {course.name}</h3>
           </div>
           {!course.completed ?
-            <h3 className="right h4-below-t no-margin margin-left-big-above-t c-white width-100-below-t">
+            <h3 className="right h4-below-t no-margin margin-left-big-above-t c-white width-100-below-t normal text-shadow-subtle">
               <i className={'fa icon-graduation-cap h3 h4-below-t right margin-left-big margin-right-tiny'} />
               <span className="margin-right-tiny">{course.nCompleted}/{course.nTotal}</span>
             </h3> :
-            <h3 className="right h4-below-t no-margin margin-left-big-above-t c-white width-100-below-t">
+            <h3 className="right h4-below-t no-margin margin-left-big-above-t c-white width-100-below-t normal text-shadow-subtle">
               <i className={'mcard__checkmark fa icon-check-circle-o h2 h3-below-t margin-right-tiny'} />
               <i className={'mcard__flag fa icon-flag-checkered h2 absolute'} />
             </h3>
@@ -121,7 +121,7 @@ const MilestoneCard = ({ uiState, id, course, index, lessons, that, state }) => 
         ref={(domElem) => { that.lessonContainerRef = domElem; }}
       >
         {course.completeX ?
-          <h4 className="bg-white border-round padding-small bold h5-below-t">Complete at least {course.completeX} of the following lessons to finish this milestone:</h4> : null
+          <h4 className="bg-white border-round padding-small bold h5-below-t normal">Complete at least {course.completeX} of the following lessons to finish this milestone:</h4> : null
         }
         {lessons}
       </div>

@@ -55,8 +55,9 @@ const renderPage = (matchedRoute, store) => {
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
       <link rel="manifest" href="/manifest.json">
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-      <meta name="theme-color" content="#ffffff">
-      <link href="https://fonts.googleapis.com/css?family=Fira+Sans:400" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" media="print" onload="this.media='all'" />
       ${cssFile}
     </head>
     <body>

@@ -37,21 +37,21 @@ const Progress = ({ item }) => {
 };
 
 const MilestonesComplete = ({ item }) => (
-  <h4 className="no-margin">
+  <h4 className="no-margin normal">
     <i className="fa icon-flag-checkered c-primary h4 margin-right-tiny" />
     <span>{item.nCompleted}/{item.nTotal}</span>
   </h4>
 );
 
 const LessonsNumber = ({ item }) => (
-  <h4 className="no-margin">
+  <h4 className="no-margin normal">
     <i className="fa icon-graduation-cap c-accent h4 margin-right-tiny" />
     <span>{item.nLessonsTotal}</span>
   </h4>
 );
 
 const LessonsComplete = ({ item }) => (
-  <h4 className="no-margin margin-left-small">
+  <h4 className="no-margin margin-left-small normal">
     <i className="fa icon-graduation-cap c-accent h4 margin-right-tiny" />
     <span>{item.nLessonsCompleted}/{item.nLessonsTotal}</span>
   </h4>

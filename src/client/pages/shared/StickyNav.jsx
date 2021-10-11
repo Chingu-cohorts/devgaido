@@ -99,7 +99,7 @@ class StickyNav extends React.Component {
     return (
       <div className={'width-100 bg-white'} ref={(domElem) => { this.navbarRefPlaceholder = domElem; }}>
         <div className={`navbar width-100 bg-white ${this.sticky ? 'fixed' : ''}`} ref={(domElem) => { this.navbarRef = domElem; }}>
-          <div className="container flex flex-column-below-t justify-between items-center padding-vertical-small relative">
+          <div className="container flex flex-column-below-t justify-between items-center padding-vertical-tiny relative">
             <NavLink to={user.authenticated ? '/dashboard' : '/'} className="logo" />
             <nav className="flex items-center margin-top-tiny-below-t">
               <ul className="flex items-center no-margin list-style-none uppercase">

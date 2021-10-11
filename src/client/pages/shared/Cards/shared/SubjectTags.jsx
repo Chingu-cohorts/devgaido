@@ -12,7 +12,7 @@ const SubjectTags = ({ item, setState, state }) => {
     numSubjects = Math.min(5, item.subjectNames.length);
   }
   for (let i = 0; i < numSubjects; i += 1) {
-    subjects.push(<h5 className="tag border-round bg-light-grey c-text margin-right-tiny" key={item.name + item.subjectNames[i].name + i}>{item.subjectNames[i]}</h5>);
+    subjects.push(<h5 className="tag normal border-round bg-light-grey c-text margin-right-tiny" key={item.name + item.subjectNames[i].name + i}>{item.subjectNames[i]}</h5>);
   }
   if (item.subjectNames.length > 5) {
     subjects.push(
