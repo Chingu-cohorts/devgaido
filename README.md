@@ -1,7 +1,5 @@
 # [![devGaido][devgaido-image]][devgaido-url]
 
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/Chingu-cohorts/devgaido.svg?columns=all)](https://waffle.io/Chingu-cohorts/devgaido)
-
 devGaido provides a guided learning experience through the Web Development 
 ecosystem by providing those new to the craft with predefined paths to aid in
 achieving web development skills. For experienced developers it provides a 
@@ -12,8 +10,6 @@ You can find devGaido at [www.devgaido.com](http://www.devgaido.com).
 
 [Features](#features) | [Development](#development) | [Runtime](#runtime) | [Authors](#authors) |
 [License](#license) | [Release Notes](releasenotes.md)
-
-![screenshot]()
 
 ## Features
 
@@ -208,5 +204,5 @@ A separate repo is used to manage application runtime components. For more infor
 
 [MIT](https://tldrlegal.com/license/mit-license)
 
-[devgaido-image]: https://cdn.rawgit.com/Chingu-cohorts/devgaido/development/src/client/assets/img/devGaidoLogo.svg
+[devgaido-image]: https://github.com/Chingu-cohorts/devgaido/blob/master/src/client/assets/img/devGaidoLogo.svg
 [devgaido-url]: https://github.com/Chingu-cohorts/devgaido
