@@ -53,7 +53,7 @@
     "cookie-parser": "^1.4.3",
     "deepcopy": "^0.6.3",
     "dotenv": "^4.0.0",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "express-session": "^1.15.2",
     "extract-text-webpack-plugin": "^2.1.0",
     "mkdirp": "^0.5.1",
